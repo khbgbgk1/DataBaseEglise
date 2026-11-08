@@ -1,0 +1,546 @@
+<?php
+
+/*******************************************************************************
+ *
+ *  filename    : optionManager.php
+ *  last change : 2023-05-19
+ *  website     : http://www.ecclesiacrm.com
+ *                          © 2023 Philippe Logel
+ *
+ ******************************************************************************/
+
+use EcclesiaCRM\GroupPropMasterQuery;
+use EcclesiaCRM\GroupManagerPersonQuery;
+use EcclesiaCRM\GroupQuery;
+use EcclesiaCRM\PersonCustomMasterQuery;
+use EcclesiaCRM\FamilyCustomMasterQuery;
+use EcclesiaCRM\ListOptionQuery;
+use EcclesiaCRM\Map\ListOptionTableMap;
+use EcclesiaCRM\ListOption;
+use EcclesiaCRM\ListOptionIconQuery;
+
+use EcclesiaCRM\Utils\InputUtils;
+use EcclesiaCRM\SessionUser;
+use EcclesiaCRM\Utils\RedirectUtils;
+
+$list_type = 'normal';
+
+// Check security for the mode selected.
+switch ($mode) {
+    case 'famroles':
+    case 'classes':
+        if (!SessionUser::getUser()->isMenuOptionsEnabled()) {
+            RedirectUtils::Redirect('v2/dashboard');
+            exit;
+        }
+        break;
+    case 'grptypes':
+    case 'grptypesSundSchool':
+        // optionId is used in ListID=3 for both the two lists in the same list !!!!
+        // the difference between the grptypes and the grptypesSundSchool is the optionType : 'grptypes' and 'grptypesSundSchool'
+        $listID = 3;
+        $list_type = ($mode == 'grptypesSundSchool') ? 'sunday_school' : 'normal';
+    case 'grproles':// dead code : http://ip/OptionManager.php?mode=grproles&ListID=22
+        if (!$listID) {
+            $listID = $listID;
+        }
+    case 'groupcustom':
+        if (!$listID) {
+            $listID = $listID;
+        }
+
+        $iGroupID = 0;
+        $manager = null;
+
+        $grpManager = GroupPropMasterQuery::Create()->findOneBySpecial($listID);
+
+        if ($grpManager != null) {
+            $iGroupID = $grpManager->getGroupId();
+        }
+
+        if ($iGroupID > 0) {
+            $manager = GroupManagerPersonQuery::Create()->filterByPersonID(SessionUser::getUser()->getPerson()->getId())->filterByGroupId($iGroupID)->findOne();
+        }
+
+        if (!(SessionUser::getUser()->isManageGroupsEnabled() || !empty($manager))) {
+            RedirectUtils::Redirect('v2/dashboard');
+            exit;
+        }
+        break;
+
+    case 'custom':
+    case 'famcustom':
+    case 'securitygrp':
+        if (!SessionUser::getUser()->isMenuOptionsEnabled()) {
+            RedirectUtils::Redirect('v2/dashboard');
+            exit;
+        }
+        break;
+
+    default:
+        RedirectUtils::Redirect('v2/dashboard');
+        break;
+}
+
+// Select the proper settings for the editor mode
+switch ($mode) {
+    case 'famroles':
+        //It don't work for postuguese because in it adjective come after noum
+        $noun = _('Role');
+        //In the same way, the plural isn't only add s
+        $adjplusname = _('Family Role');
+        $adjplusnameplural = _('Family Roles');
+        $sPageTitle = '<i class="fas fa-gear text-primary"></i>&nbsp;' . _('Family Roles Editor');
+        $listID = 2;
+        $embedded = false;
+        break;
+    case 'classes':
+        $noun = _('Classification');
+        $adjplusname = _('Person Classification');
+        $adjplusnameplural = _('Person Classifications');
+        $sPageTitle = '<i class="fas fa-layer-group mr-2 text-muted"></i>&nbsp;' . _('Person Classifications Editor');
+        $listID = 1;
+        $embedded = false;
+        break;
+    case 'grptypesSundSchool':
+        $noun = _('Type');
+        $adjplusname = _('Sunday School Group Type');
+        $adjplusnameplural = _('Sunday School Group Types');
+        $sPageTitle = '<i class="fas fa-school mr-2 text-muted"></i>&nbsp;' . _('Sunday School Group Types Editor');
+        $listID = 3;
+        $embedded = false;
+        break;
+    case 'grptypes':
+        $noun = _('Type');
+        $adjplusname = _('Group Type');
+        $adjplusnameplural = _('Group Types');
+        $sPageTitle = '<i class="fas fa-sitemap mr-2 text-muted"></i>&nbsp;' . _('Group Types Editor');
+        $listID = 3;
+        $embedded = false;
+        break;
+    case 'securitygrp':
+        $noun = _('Group');
+        $adjplusname = _('Security Group');
+        $adjplusnameplural = _('Security Groups');
+        $sPageTitle = '<i class="fas fa-shield-alt mr-2 text-muted"></i>&nbsp;' . _('Security Groups Editor');
+        $listID = 5;
+        $embedded = false;
+        break;
+    case 'grproles':// unusefull : dead code : This can be defined in v2/group/editor/id
+        $noun = _('Role');
+        $adjplusname = _('Group Member Role');
+        $adjplusnameplural = _('Group Member Roles');
+        $sPageTitle = _('Group Member Roles Editor');
+        $listID = $listID;
+        $embedded = true;
+
+        $ormGroupList = GroupQuery::Create()->findOneByRoleListId($listID);
+        if (!is_null($ormGroupList)) {
+            $iDefaultRole = $ormGroupList->getDefaultRole();
+        } else {
+            RedirectUtils::Redirect('v2/dashboard');
+            exit;
+        }
+
+        break;
+    case 'custom':
+        $noun = _('Option');
+        $adjplusname = _('Person Custom List Option');
+        $adjplusnameplural = _('Person Custom List Options');
+        $sPageTitle = '<i class="fas fa-list mr-2 text-muted"></i>&nbsp;' . _('Person Custom List Options Editor');
+        $listID = $listID;
+        $embedded = true;
+
+        $per_cus = PersonCustomMasterQuery::Create()->filterByTypeId(12)->findByCustomSpecial($listID);
+
+        if ($per_cus->count() == 0) {
+            RedirectUtils::Redirect('v2/dashboard');
+            break;
+        }
+
+        break;
+    case 'groupcustom':
+        $noun = _('Option');
+        $adjplusname = _('Custom List Option');
+        $adjplusnameplural = _('Custom List Options');
+        $sPageTitle = '<i class="fas fa-list mr-2 text-muted"></i>&nbsp;' . _('Custom List Options Editor');
+        $listID = $listID;
+        $embedded = true;
+
+        $group_cus = GroupPropMasterQuery::Create()->filterByTypeId(12)->findBySpecial($listID);
+
+        if ($group_cus->count() == 0) {
+            RedirectUtils::Redirect('v2/dashboard');
+            break;
+        }
+
+        break;
+    case 'famcustom':
+        $noun = _('Option');
+        $adjplusname = _('Family Custom List Option');
+        $adjplusnameplural = _('Family Custom List Options');
+        $sPageTitle = '<i class="fas fa-list mr-2 text-muted"></i>&nbsp;' . _('Family Custom List Options Editor');
+        $listID = $listID;
+        $embedded = true;
+
+        $fam_cus = FamilyCustomMasterQuery::Create()->filterByTypeId(12)->findByCustomSpecial($listID);
+
+        if ($fam_cus->count() == 0) {
+            RedirectUtils::Redirect('v2/dashboard');
+            break;
+        }
+
+        break;
+    default:
+        RedirectUtils::Redirect('v2/dashboard');
+        break;
+}
+
+$iNewNameError = 0;
+
+
+// Check if we're adding a field
+if (isset($_POST['AddField'])) {
+    $newFieldName = InputUtils::FilterString($_POST['newFieldName']);
+
+    if (strlen($newFieldName) == 0) {
+        $iNewNameError = 1;
+    } else {
+        // Check for a duplicate option name
+        $list = ListOptionQuery::Create()->filterByOptionType($list_type)->filterByOptionName($newFieldName)->findById($listID);
+
+        if (!is_null($list) && $list->count() > 0) {
+            $iNewNameError = 2;
+        } else {
+            // Get count of the options
+            $list = ListOptionQuery::Create()->filterByOptionType($list_type)->findById($listID);
+
+            $numRows = $list->count();
+            $newOptionSequence = $numRows + 1;
+
+            // Get the new OptionID
+            $listMax = ListOptionQuery::Create()
+                ->addAsColumn('MaxOptionID', 'MAX(' . ListOptionTableMap::COL_LST_OPTIONID . ')')
+                ->findOneById($listID);
+
+            // this ensure that the group list and sundaygroup list has ever an unique optionId.
+            $max = $listMax->getMaxOptionID();
+
+            $newOptionID = $max + 1;
+
+            // Insert into the appropriate options table
+            $lst = new ListOption();
+
+            $lst->setId($listID);
+            $lst->setOptionId($newOptionID);
+            $lst->setOptionSequence($newOptionSequence);
+            $lst->setOptionName($newFieldName);
+            $lst->setOptionType($list_type);
+
+            $lst->save();
+
+            $iNewNameError = 0;
+        }
+    }
+}
+
+$bErrorFlag = false;
+$bDuplicateFound = false;
+
+// Get the original list of options..
+//ADDITION - get Sequence Also
+$ormLists = ListOptionQuery::Create()
+    ->filterByOptionType($list_type)
+    ->orderByOptionSequence()
+    ->findById($listID);
+
+$numRows = $ormLists->count();
+
+$aNameErrors = [];
+
+for ($row = 1; $row <= $numRows; $row++) {
+    $aNameErrors[$row] = 0;
+}
+
+if (isset($_POST['SaveChanges'])) {
+    $row = 1;
+
+    foreach ($ormLists as $ormList) {
+        $aOldNameFields[$row] = $ormList->getOptionName();
+        $aIDs[$row] = $ormList->getOptionId();
+
+        //addition save off sequence also
+        $aSeqs[$row] = $ormList->getOptionSequence();
+
+        $aNameFields[$row] = InputUtils::FilterString($_POST[$row . 'name']);
+
+        $row++;
+    }
+
+    for ($row = 1; $row <= $numRows; $row++) {
+        if (strlen($aNameFields[$row]) == 0) {
+            $aNameErrors[$row] = 1;
+            $bErrorFlag = true;
+        } elseif ($row < $numRows) {
+            $aNameErrors[$row] = 0;
+            for ($rowcmp = $row + 1; $rowcmp <= $numRows; $rowcmp++) {
+                if ($aNameFields[$row] == $aNameFields[$rowcmp]) {
+                    $bErrorFlag = true;
+                    $bDuplicateFound = true;
+                    $aNameErrors[$row] = 2;
+                    break;
+                }
+            }
+        } else {
+            $aNameErrors[$row] = 0;
+        }
+    }
+
+    // If no errors, then update.
+    if (!$bErrorFlag) {
+        for ($row = 1; $row <= $numRows; $row++) {
+            // Update the type's name if it has changed from what was previously stored
+            if ($aOldNameFields[$row] != $aNameFields[$row]) {
+                $list = ListOptionQuery::Create()->filterByOptionId($aIDs[$row])->filterByOptionSequence($row)->filterByOptionType($list_type)->findOneById($listID);
+                $list->setOptionName($aNameFields[$row]);
+                $list->save();
+            }
+        }
+    }
+}
+
+// Get data for the form as it now exists..
+$ormLists = ListOptionQuery::Create()
+    ->filterByOptionType($list_type)
+    ->orderByOptionSequence()
+    ->findById($listID);
+
+$numRows = $ormLists->count();
+
+// Create arrays of the option names and IDs
+$row = 1;
+
+foreach ($ormLists as $ormList) {
+    if (!$bErrorFlag) {
+        $aNameFields[$row] = $ormList->getOptionName();
+    }
+
+    $aIDs[$row] = $ormList->getOptionId();
+    //addition save off sequence also
+    $aSeqs[$row++] = $ormList->getOptionSequence();
+}
+
+//Set the starting row color
+$sRowClass = 'RowColorA';
+
+// Use a minimal page header if this form is going to be used within a frame
+if ($embedded) {
+    require $sRootDocument . '/Include/Header-Minimal.php';
+    ?>
+     <script src="<?= $sRootPath ?>/skin/js/CRMJSOM.js"></script>
+    <?php
+} else {    //It don't work for postuguese because in it adjective come after noum
+    //$sPageTitle = $adj . ' ' . $noun . "s "._("Editor");
+    require $sRootDocument . '/Include/Header.php';
+}
+?>
+
+<form method="post" action="<?= $sRootPath ?>/v2/system/option/manager/<?= $mode?><?= ($listID > 0)?("/".$listID):"" ?>" name="OptionManager">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="card card-outline card-primary shadow-sm rounded-4">
+                <div class="card-header bg-body">
+                    <h3 class="card-title mb-0"><i class="fas fa-cogs text-primary me-2"></i> <?= _("Functions") ?></h3>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-start">
+                        <div class="col-md-2">
+                            <label class="fw-bold" for="newFieldName"><i class="fas fa-signature me-1"></i> <?= _('Name for New') . ' ' . $noun ?></label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-control form-control-sm" type="text" name="newFieldName" id="newFieldName" maxlength="40">
+                            <?php if ($iNewNameError == 1) { ?>
+                                <div class="text-danger small mt-1"><i class="fas fa-exclamation-circle"></i> <?= _('Error: You must enter a name') ?></div>
+                            <?php } ?>
+                            <?php if ($iNewNameError == 2) { ?>
+                                <div class="text-danger small mt-1"><i class="fas fa-exclamation-circle"></i> <?= _('Error: A ') . $noun . _(' by that name already exists.') ?></div>
+                            <?php } ?>
+                        </div>
+                        <div class="col-md-6 text-end">                            
+                            <button type="submit" class="btn btn-success" name="AddField"><i class="fas fa-plus-circle me-1"></i> <?= _('Add New') . ' ' . $adjplusname ?></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+if ($mode == 'classes') {
+    ?>
+    <div
+        class="alert alert-warning"><i class="fas fa-ban"></i> <?= _('Warning: Removing will reset all assignments for all persons with the assignment!') ?></div>
+    <?php
+} else if ($mode == 'famroles') {
+    ?>
+    <div
+        class="alert alert-warning"><i class="fas fa-ban"></i> <?= _('Warning: Removing will reset all assignments for all family roles with the assignment!') ?></div>
+    <?php
+} else if ($mode == 'grptypes' || $mode == 'grptypesSundSchool') {
+    ?>
+    <div
+        class="alert alert-warning"><i class="fas fa-ban"></i> <?= _('Warning: Removing will reset all assignments for all menus with the assignment!') ?></div>
+    <?php
+} else if ($mode == 'grproles') {//dead code
+    ?>
+    <div
+        class="alert alert-warning"><i class="fas fa-ban"></i> <?= _('Warning: Removing will reset all assignments for all group roles with the assignment!') ?></div>
+    <?php
+}
+?>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-outline card-secondary shadow-sm rounded-4">
+                <div class="card-header bg-body">
+                    <h3 class="card-title mb-0"><i class="fa fa-list text-primary me-2"></i> <?= _("Fields") ?></h3>
+                </div>
+                <div class="card-body">
+                    <?php if ($bErrorFlag) { ?>
+                        <div class="alert alert-danger d-flex align-items-center mb-3">
+                            <i class="fas fa-exclamation-triangle fa-2x text-danger me-3"></i>
+                            <div>
+                                <?php if ($bDuplicateFound) { ?>
+                                    <span class="fw-bold text-danger-emphasis"><?= _('Error: Duplicate') . ' ' . $adjplusnameplural . ' ' . _('are not allowed.') ?></span><br>
+                                <?php } ?>
+                                <span class="text-dark small"><?= _('Invalid fields or selections. Changes not saved! Please correct and try again!') ?></span>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered data-table dataTable no-footer dtr-inline" id="option-managers-fields-table" style="width:100%">
+                            <thead class="table-light">
+                                <tr>
+                                    <th><?= _("Place") ?></th>
+                                    <th><?= _("Actions") ?></th>
+                                    <th><?= _('Name') ?></th>
+                                    <?php if ($mode == 'classes') { ?>
+                                    <th><?= _('Icon') ?></th>                                    
+                                    <th><?= _('Visibility') ?></th>
+                                    <?php } ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php for ($row = 1; $row <= $numRows; $row++) { $icon=null; if ($mode == 'classes') { $icon = ListOptionIconQuery::Create()->filterByListId(1)->findOneByListOptionId($aIDs[$row]); } ?>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-secondary" style="min-width: 24px; padding: 4px 0px;"><?= $row ?></span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group btn-sm" role="group">
+                                                <?php if ($numRows > 1) { ?>
+                                                    <?php if ($embedded) { ?>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm row-action" data-mode="<?= $mode ?>" data-order="<?= $aSeqs[$row] ?>" data-listid="<?= $listID ?>" data-id="<?= $aIDs[$row] ?>" data-action="delete" title="<?= _('Delete') ?>"><i class="fa fa-trash-can"></i></button>
+                                                    <?php } else { ?>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm RemoveClassification" data-mode="<?= $mode ?>" data-order="<?= $aSeqs[$row] ?>" data-listid="<?= $listID ?>" data-id="<?= $aIDs[$row] ?>" data-name="<?= htmlentities(stripslashes($aNameFields[$row])) ?>" title="<?= _('Delete') ?>"><i class="fa fa-trash-can"></i></button>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                                <?php if ($row > 1) { ?>
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm row-action" data-mode="<?= $mode ?>" data-order="<?= $aSeqs[$row] ?>" data-listid="<?= $listID ?>" data-id="<?= $aIDs[$row] ?>" data-action="up" title="<?= _('Move up') ?>"><i class="fa-solid fa-arrow-up"></i></button>
+                                                <?php } ?>
+                                                <?php if ($row < $numRows) { ?>
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm row-action" data-mode="<?= $mode ?>" data-order="<?= $aSeqs[$row] ?>" data-listid="<?= $listID ?>" data-id="<?= $aIDs[$row] ?>" data-action="down" title="<?= _('Move down') ?>"><i class="fa-solid fa-arrow-down"></i></button>
+                                                <?php } ?>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input class="form-control form-control-sm" type="text" name="<?= $row . 'name' ?>" value="<?= htmlentities(stripslashes($aNameFields[$row]), ENT_NOQUOTES, 'UTF-8') ?>" maxlength="40">
+                                            <?php if ($aNameErrors[$row] == 1) { ?>
+                                                <span class="text-danger small"><i class="fas fa-exclamation-circle"></i> <?= _('You must enter a name') ?></span>
+                                            <?php } elseif ($aNameErrors[$row] == 2) { ?>
+                                                <span class="text-danger small"><i class="fas fa-exclamation-circle"></i> <?= _('Duplicate name found.') ?></span>
+                                            <?php } ?>
+                                        </td>
+                                        <?php if ($mode == 'grproles') { // dead code ?>
+                                            <td>
+                                                <button class="btn btn-success btn-sm row-action" data-mode="<?= $mode ?>" data-order="<?= $aSeqs[$row] ?>" data-listid="<?= $listID ?>" data-id="<?= $aIDs[$row] ?>" data-action="makedefault" type="button" name="default"> <?= _('Make Default') ?> </button>
+                                            </td>
+                                        <?php } else if ($mode == 'classes') { ?>
+                                            <?php if (is_null($icon) || !is_null($icon) && $icon->getUrl() == '') { ?>
+                                                <td><i class="fa-regular fa-plus AddImage" data-ID="<?= $listID ?>" data-optionID="<?= $aIDs[$row] ?>" data-name="<?= htmlentities(stripslashes($aNameFields[$row]), ENT_NOQUOTES, 'UTF-8') ?>"></i></td>                                                
+                                                <td><input type="checkbox" class="checkOnlyPersonView" data-ID="<?= $listID ?>" data-optionID="<?= $aIDs[$row] ?>" <?= ($icon != null && $icon->getOnlyVisiblePersonView()) ? "checked" : "" ?> /> <?= _("Visible only in PersonView") ?></td>
+                                            <?php } else { ?>
+                                                <td>
+                                                    <div class="d-inline-flex align-items-center gap-2 px-2 py-1 border rounded bg-light shadow-sm">
+                                                        <img src="/skin/icons/markers/<?= $icon->getUrl() ?>" height="25" alt="<?= htmlentities(stripslashes($aNameFields[$row]), ENT_QUOTES, 'UTF-8') ?>" class="me-2">
+                                                        <span class="small text-muted me-2"><?= _('Current marker') ?></span>
+                                                        &nbsp;
+                                                        <button
+                                                            type="button"
+                                                            class="btn btn-outline-danger btn-xs RemoveImage"
+                                                            data-ID="<?= $listID ?>"
+                                                            data-optionID="<?= $aIDs[$row] ?>"
+                                                            data-name="<?= htmlentities(stripslashes($aNameFields[$row]), ENT_QUOTES, 'UTF-8') ?>"
+                                                            title="<?= _('Remove marker') ?>">
+                                                            <i class="fa fa-trash-can me-1"></i><?= _('Remove') ?>
+                                                        </button>
+                                                    </div>
+                                                </td>
+
+                                                <td><input type="checkbox" class="checkOnlyPersonView" data-ID="<?= $listID ?>" data-optionID="<?= $aIDs[$row] ?>" <?= ($icon != null && $icon->getOnlyVisiblePersonView()) ? "checked" : "" ?> /> <?= _("Visible only in PersonView") ?></td>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" name="SaveChanges"><i class="fas fa-check me-1"></i> <?= _('Save Changes') ?></button>
+                    <?php if ($mode == 'groupcustom' || $mode == 'custom' || $mode == 'famcustom') { ?>
+                        <button type="button" class="btn btn-default" name="Exit" id="exit"><i class="fas fa-times"></i> <?= _('Exit') ?></button>
+                    <?php } elseif ($mode != 'grproles') { ?>
+                        <button type="button" class="btn btn-default" name="Exit" onclick="javascript:document.location='<?= '/v2/dashboard' ?>';"><i class="fas fa-times"></i> <?= _('Exit') ?></button>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<?php
+if ($embedded) {
+    ?>
+    <script nonce="<?= $CSPNonce ?>">
+        $(function() {
+            $('#exit').on('click', function () {
+                window.opener.location.reload(true);
+                window.close();
+            });
+        });
+    </script>
+    </body></html>
+    <?php
+} else {
+    require $sRootDocument . '/Include/Footer.php';
+}
+?>
+
+<script nonce="<?= $CSPNonce ?>">
+  $(function() {
+    $("#option-managers-fields-table").DataTable({
+        responsive: true,
+        paging: false,
+        searching: false,
+        ordering: false,
+        info: false,
+        //dom: window.CRM.plugin.dataTable.dom,
+        fnDrawCallback: function (settings) {
+            $("#selector thead").remove();
+        }
+    });
+  });
+</script>
+
+
+<script type="module" src="<?= $sRootPath ?>/skin/js/sidebar/OptionManager.js"></script>

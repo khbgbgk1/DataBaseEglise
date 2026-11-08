@@ -1,0 +1,140 @@
+#Vagrant
+.vagrant/
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+#Exclude composer vendor folders
+vendor
+node_modules
+npm-debug.log*
+BuildConfig.json
+security-checker.phar
+
+# Uploaded Images
+src/Images/Family
+src/Images/Person
+
+src/Images/tmp
+
+src/Upgrade/*
+
+# public dir
+src/public/userdir/*
+src/private/userdir/*
+
+# SASS
+.sass-cache
+
+#skins
+src/skin/external
+src/skin/adminlte
+src/skin/churchcrm.min.css.map
+src/skin/churchcrm.min.css
+
+#locale files
+src/locale/datatables
+src/locale/js
+
+# the documenation sh files
+Documentation/doc-fr/mkdoc.sh
+Documentation/doc-en/mkdoc.sh
+
+# Configuration files with passwords
+src/Include/Config.php
+
+target
+temp_attach
+
+src/EcclesiaCRM/model/EcclesiaCRM/Base/
+src/EcclesiaCRM/model/EcclesiaCRM/Map
+
+src/Plugins/MeetingJitsi/core/model/Base
+src/Plugins/MeetingJitsi/core/model/Map
+
+src/Plugins/NewsDashboard/core/model/Base
+src/Plugins/NewsDashboard/core/model/Map
+
+src/Plugins/ToDoListDashboard/core/model/Base
+src/Plugins/ToDoListDashboard/core/model/Map
+
+src/Plugins/MailChimp/core/model/Base/
+src/Plugins/MeetingJitsi/core/model/Base/
+src/Plugins/NewsDashboard/core/model/Base/
+src/Plugins/NoteDashboard/core/model/Base/
+src/Plugins/ToDoListDashboard/core/model/Base/
+
+src/signatures.json
+src/integrityCheck.json
+src/tmp_attach
+src/logs/*.log
+
+error.log
+/nbproject/private/
+!propel/*
+
+locale/backup/
+locale/connection.php
+
+src/skin/ecclesiacrm.min.css
+src/skin/ecclesiacrm.min.css.map
+
+
+Documentation/doc-en/mkdoc.sh
+Documentation/doc-fr/mkdoc.sh
+
+# ignore the sufolders of propel
+propel/extract_schema.sh
+propel/generated-reversed-database/
+
+# ignore
+prepare_archive.sh
+
+# ignore
+package-lock.json
+
+.DS_Store
+._.DS_Store
+
+# ignore
+upload-71-plateform.sh
+upload-github-release.sh
+upload-imathgeo.com
+
+# ignore the body_archive.txt
+body_archive.txt
+
+# ignore
+src/Plugins/WhatsApp
+locale/JSONKeys_JS_Plugins/WhatsApp
+propel/WhatsApp.schema.xml
+
+src/Plugins/EventWorkflow
+locale/JSONKeys_JS_Plugins/EventWorkflow
+propel/eventworkflow.schema.xml
+
+src/Plugins/SendInBlue
+locale/JSONKeys_JS_Plugins/SendInBlue
+propel/SendInBlue.schema.xml
+
+src/Plugins/Songs
+locale/JSONKeys_JS_Plugins/Songs
+propel/Songs.schema.xml
+
+
+# ignore vscode parameters
+.vscode
+
+# ignore docker datas
+docker/data/
+docker/.env
+docker/logs/
+
+docker/config/ssl/
+

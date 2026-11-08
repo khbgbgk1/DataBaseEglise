@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-15 09:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:112
+msgid "Remove"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:113
+msgid "Collapse"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:200
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:295
+msgid "Pastoral follow-up recorded"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:201
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:296
+msgid "No pastoral follow-up yet"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:218
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:221
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:312
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:315
+msgid "Call"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:220
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:314
+msgid "No phone number available"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:225
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:226
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:229
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:319
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:320
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:323
+msgid "Pastoral follow-up"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:253
+msgid "Deactivate this Person"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:253
+msgid "Activate this Person"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:255
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:348
+msgid "Deactivate"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:255
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:348
+msgid "Activate"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:270
+msgid "No calls since"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:346
+msgid "Deactivate this Family"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:346
+msgid "Activate this Family"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:365
+msgid "Last call"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:375
+msgid "Birthdates of the day"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:389
+msgid "Anniversaries of the day"
+msgstr ""
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:403
+msgid "Unclassified birthdates"
+msgstr ""

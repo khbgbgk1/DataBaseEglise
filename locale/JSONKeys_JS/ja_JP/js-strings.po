@@ -1,0 +1,3519 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2026-08-09T17:50:15.482Z\n"
+"PO-Revision-Date: 2018-07-24T21:40:53.922Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr "バックアップをダウンロードし、サーバー上のコピーを削除"
+
+msgid "You must enter a password"
+msgstr "パスワードの入力が必要"
+
+msgid "Passwords must match"
+msgstr "パスワードが一致すること"
+
+msgid "Backup Running, Please wait."
+msgstr "Backup Running, Please wait."
+
+msgid "Backup in progress, don't close the window !"
+msgstr "バックアップ中、ウィンドウを閉じないでください！"
+
+msgid "Background backup in progress to remote server"
+msgstr "リモートサーバーへのバックグラウンドバックアップ中"
+
+msgid "Background backup in progress"
+msgstr "バックグラウンドバックアップ中"
+
+msgid "Backup Error."
+msgstr "バックアップエラー。"
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr ""
+"選択されたファイルは、このサーバーの最大アップロードサイズを超えています。"
+
+msgid "Restore Running, Please wait."
+msgstr "Restore Running, Please wait."
+
+msgid "Restore backup, don't close the window !"
+msgstr "バックアップを復元し、ウィンドウを閉じないでください！"
+
+msgid "Restore Complete"
+msgstr "復元完了"
+
+msgid "Login to restored Database"
+msgstr "リストアされたデータベースへのログイン"
+
+msgid "Restore Error."
+msgstr "リストアエラー。"
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr "本当にこの画像を削除してもいいのですか？"
+
+msgid "Wrong address format."
+msgstr "誤ったアドレス形式です。"
+
+msgid "Set Calendar Name"
+msgstr "カレンダー名の設定"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Select a resource type"
+msgstr "リソースタイプの選択"
+
+msgid "Room"
+msgstr "ルーム"
+
+msgid "Computer"
+msgstr "コンピュータ"
+
+msgid "Video"
+msgstr "ビデオ"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Add a short description to help identify this resource."
+msgstr "このリソースを識別するのに役立つ短い説明を追加します。"
+
+msgid "Set Resource Name"
+msgstr "リソース名の設定"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Calendars"
+msgstr "カレンダー"
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr "1つまたは複数のカレンダーを選択して、サイドバーでの表示を更新します。"
+
+msgid "Set Status"
+msgstr "ステータスの設定"
+
+msgid "Select [Exclude] or [Include]"
+msgstr "除外」または「含める」を選択してください。"
+
+msgid "[INCLUDE]"
+msgstr "[INCLUDE](インクルード)"
+
+msgid "[EXCLUDE]"
+msgstr "[EXCLUDE]"
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr "サイドバーにカレンダーを表示／非表示する"
+
+msgid "Ok"
+msgstr "OK"
+
+msgid "[👀  ]"
+msgstr "[👀 ]"
+
+msgid "[👀 ✐]"
+msgstr "[👀 ✐]"
+
+msgid "With"
+msgstr "とのことです。"
+
+msgid "Select one or more current shares to update or remove them."
+msgstr "1つまたは複数の現在のシェアを選択し、更新または削除します。"
+
+msgid "Set Rights"
+msgstr "セット権"
+
+msgid "Select your rights"
+msgstr "権利の選択"
+
+msgid "or"
+msgstr "または"
+
+msgid "[R ]"
+msgstr "[R ]"
+
+msgid "[RW]"
+msgstr "[RW]."
+
+msgid "Send email notification"
+msgstr "通知メールの送信"
+
+msgid "Notify added people, families, or groups by email"
+msgstr "追加した人、家族、グループにメールで通知"
+
+msgid "Add persons/Family/groups"
+msgstr "人/家族/グループの追加"
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr "このカレンダーを共有する人、家族、グループを検索して追加します。"
+
+msgid "Share your Calendar"
+msgstr "カレンダーの共有"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr "本当にこのShareを削除してもよろしいですか？"
+
+msgid "Stop sharing"
+msgstr "共有をやめる"
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr "本当にドキュメントの共有を中止してもよろしいですか？"
+
+msgid "Person or Family or Group"
+msgstr "個人または家族またはグループ"
+
+msgid "Are you sure?"
+msgstr "本当ですか？"
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr ""
+"カレンダー、イベント、すべての共有カレンダーも失われます。これは元に戻せませ"
+"ん。"
+
+msgid "Manage"
+msgstr "管理"
+
+msgid "Calendar Management for"
+msgstr "カレンダーの管理"
+
+msgid "Modify Calendar Name"
+msgstr "カレンダー名の変更"
+
+msgid "Modify Group Name"
+msgstr "グループ名の変更"
+
+msgid "Modify Resource Name"
+msgstr "リソース名の変更"
+
+msgid "Modify Share Name"
+msgstr "シェア名の変更"
+
+msgid "Resource Info for"
+msgstr "のリソース情報"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr "管理者のみがResource descriptionを変更する権限を持っています。"
+
+msgid "Actualize"
+msgstr "アクチュアライズ"
+
+msgid "Today"
+msgstr "今日"
+
+msgid "List"
+msgstr "リスト"
+
+msgid "List Week"
+msgstr "リストウィーク"
+
+msgid "List Month"
+msgstr "リスト月"
+
+msgid "This event isn't modifiable !!!"
+msgstr "このイベントは変更できません！！！。"
+
+msgid "No description"
+msgstr "記述なし"
+
+msgid "What would you like to do?"
+msgstr "どうしたい？"
+
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr "削除には注意してください：この操作は元に戻せません。"
+
+msgid "Modify Event"
+msgstr "イベントの修正"
+
+msgid "Delete Event"
+msgstr "イベントの削除"
+
+msgid "Are you sure to delete this event?"
+msgstr "このイベントを削除してよろしいですか？"
+
+msgid "Delete all repeated Events"
+msgstr "繰り返されるイベントをすべて削除"
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr ""
+"このイベントにリンクされている繰り返しのイベントをすべて削除しようとしていま"
+"す。本当にいいのですか？これは取り消すことができません。"
+
+msgid "No"
+msgstr "いいえ"
+
+msgid "Only this event"
+msgstr "このイベントのみ"
+
+msgid "Every Events linked to this Event"
+msgstr "このイベントに関連するすべてのイベント"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr ""
+"イベントを追加するには、まずカレンダーを作成するか、アクティブ化する必要があ"
+"ります。"
+
+msgid "Add More Attendees"
+msgstr "出席者の追加"
+
+msgid "Make Attendance"
+msgstr "アテンダンス"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Resize Event"
+msgstr "イベントのサイズ変更"
+
+msgid "Are you sure about this change?"
+msgstr "この変更でいいのか？"
+
+msgid "will be resized."
+msgstr "がリサイズされます。"
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr "すべてのイベントのサイズを変更しようとしています。ご希望ですか？"
+
+msgid "Only this Event"
+msgstr "このイベントのみ"
+
+msgid "All Events"
+msgstr "全てのイベント"
+
+msgid "Move Event"
+msgstr "ムーブイベント"
+
+msgid "will be dropped."
+msgstr "が落とされます。"
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr "すべてのイベントを移動させるところです。あなたはどうしますか。"
+
+msgid "Event added"
+msgstr "イベント追加"
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr ""
+"イベントの追加に成功しました。出席者の変更や参加者の追加をしたいですか？"
+
+msgid "Event was added successfully."
+msgstr "イベントの追加に成功しました。"
+
+msgid "No attendees"
+msgstr "出席者なし"
+
+msgid "From"
+msgstr "より"
+
+msgid "to"
+msgstr "にしています。"
+
+msgid "Attendance Notes: "
+msgstr "アテンダンス・ノート"
+
+msgid "None"
+msgstr "なし"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Calendar Title"
+msgstr "カレンダータイトル"
+
+msgid "Location"
+msgstr "所在地"
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr "アドレスを確認するには、<b>\"hit return\"</b>と入力してください。"
+
+msgid "To see the Map click this text field."
+msgstr "地図を見るには、このテキストフィールドをクリックしてください。"
+
+msgid "Map"
+msgstr "マップ"
+
+msgid "Desc"
+msgstr "デスコ"
+
+msgid "Event description"
+msgstr "イベント内容"
+
+msgid "Event Type"
+msgstr "イベントタイプ"
+
+msgid "Attendance Counts"
+msgstr "出席者数の推移"
+
+msgid "Start Date"
+msgstr "開始日"
+
+msgid "All day"
+msgstr "終日"
+
+msgid "End Date"
+msgstr "終了日"
+
+msgid "Repeat"
+msgstr "リピート"
+
+msgid "Daily"
+msgstr "デイリー"
+
+msgid "Weekly"
+msgstr "ウィークリー"
+
+msgid "Monthly"
+msgstr "月間"
+
+msgid "Quarterly"
+msgstr "四半期"
+
+msgid "Semesterly"
+msgstr "学期ごと"
+
+msgid "Yearly"
+msgstr "年間"
+
+msgid "End"
+msgstr "終了"
+
+msgid "Alarm"
+msgstr "アラーム"
+
+msgid "NONE"
+msgstr "NONE"
+
+msgid "At time of event"
+msgstr "イベント開催時"
+
+msgid "5 minutes before"
+msgstr "5分前"
+
+msgid "10 minutes before"
+msgstr "10分前"
+
+msgid "15 minutes before"
+msgstr "15分前"
+
+msgid "30 minutes before"
+msgstr "30分前"
+
+msgid "1 hour before"
+msgstr "1時間前"
+
+msgid "2 hour before"
+msgstr "2時間前"
+
+msgid "1 day before"
+msgstr "1日前"
+
+msgid "2 day before"
+msgstr "2日前"
+
+msgid "Calendar"
+msgstr "カレンダー"
+
+msgid "Add as attendees"
+msgstr "出席者として追加"
+
+msgid "Notes"
+msgstr "備考"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "Active"
+msgstr "アクティブ"
+
+msgid "inactive"
+msgstr "インアクティブ"
+
+msgid "Event Creation"
+msgstr "イベント作成"
+
+msgid "Event Editor"
+msgstr "イベント・エディター"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "You've to chose a calendar."
+msgstr "カレンダーを選ぶ必要があります。"
+
+msgid "You have to set a Title for your event"
+msgstr "イベントのタイトルを設定する必要があります。"
+
+msgid "In progress...."
+msgstr "進行中...."
+
+msgid "Events for"
+msgstr "のイベントを開催します。"
+
+msgid "Event for"
+msgstr "のイベントを開催します。"
+
+msgid "Loading finished...."
+msgstr "読み込み終了...."
+
+msgid "Month"
+msgstr "月"
+
+msgid "Actions"
+msgstr "アクション"
+
+msgid "Attendance Counts with real Attendees"
+msgstr "実際に参加している人の数を数えます。"
+
+msgid "Free Attendance Counts without Attendees"
+msgstr "参加者がいない場合の無料出席数"
+
+msgid "Calendar Type"
+msgstr "カレンダータイプ"
+
+msgid "Events in Year"
+msgstr "年のイベント"
+
+msgid "Events in month"
+msgstr "月のイベント"
+
+msgid "Events by Type"
+msgstr "タイプ別イベント"
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr ""
+"何をしたいですか？削除には注意してください、元に戻すことはできません!!!"
+
+msgid "Text for Event ID"
+msgstr "イベントIDのテキスト"
+
+msgid "Undo Check-out"
+msgstr "チェックアウトの取り消し"
+
+msgid "Make Check-out"
+msgstr "チェックアウトを行う"
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr "チェックアウトの編集・作成 - チェックアウトの取り消し"
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr "イベントの参加者のチェックアウトや取り消しができます"
+
+msgid "Edit/Validate Checkout"
+msgstr "チェックアウトの編集・有効化"
+
+msgid "Check-out done"
+msgstr "チェックアウト完了"
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr "CTRL + Cを押して、グループメンバー全員の電話番号をコピーする"
+
+msgid "You have no more items in your cart."
+msgstr "カートの中にはもうアイテムがありません。"
+
+msgid "Address"
+msgstr "アドレス"
+
+msgid "Email"
+msgstr "電子メール"
+
+msgid "Remove"
+msgstr "削除"
+
+msgid "Classification"
+msgstr "分類"
+
+msgid "Family Role"
+msgstr "家族の役割"
+
+msgid "CKEditor Template Creation"
+msgstr "CKEditorのテンプレート作成"
+
+msgid "Template Name"
+msgstr "テンプレート名"
+
+msgid "Explanation field cannot be empty."
+msgstr "説明欄を空にすることはできません。"
+
+msgid "Template Description"
+msgstr "テンプレートの説明"
+
+msgid "Save as Word file in EDrive"
+msgstr "EDriveにWordファイルとして保存"
+
+msgid "Word file name"
+msgstr "ワードファイル名"
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+"このファイルはEDriveにアップロードされます<br><small>この部分はテスト用です"
+"<b>(Beta)</b>。"
+
+msgid "Your note is saved in your EDrive"
+msgstr "メモがEDriveに保存される"
+
+msgid "(No templates defined)"
+msgstr "(テンプレートの定義なし)"
+
+msgid "Content Templates"
+msgstr "コンテンツテンプレート"
+
+msgid "Please select the template to open in the editor"
+msgstr "エディターで開くテンプレートを選択してください"
+
+msgid "Template Options"
+msgstr "テンプレートオプション"
+
+msgid "Modify"
+msgstr "モディファイ"
+
+msgid "Modify the template you select"
+msgstr "選択したテンプレートの修正"
+
+msgid "Delete the template you select"
+msgstr "選択したテンプレートの削除"
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr ""
+"本当にこのテンプレートを削除していいですか？これは元に戻すことはできません。"
+
+msgid "Replace actual content"
+msgstr "実際のコンテンツを置き換える"
+
+msgid "Manage templates"
+msgstr "テンプレートの管理"
+
+msgid "Save templates"
+msgstr "テンプレートの保存"
+
+msgid "Apply templates"
+msgstr "テンプレートの適用"
+
+msgid "Save As Word File in EDrive"
+msgstr "EDriveでWordファイルとして保存"
+
+msgid "First Name"
+msgstr "名前"
+
+msgid "Last Name"
+msgstr "姓名"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Company"
+msgstr "会社概要"
+
+msgid "Unsub"
+msgstr "アンサブ"
+
+msgid "VCard"
+msgstr "VCard"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Merge Tags"
+msgstr "マージ・タグ"
+
+msgid "Subject:"
+msgstr "件名"
+
+msgid "Compose New Message"
+msgstr "新規メッセージの作成"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Error making API Call to"
+msgstr "へのAPIコールがエラーになります。"
+
+msgid "Error text"
+msgstr "エラーテキスト"
+
+msgid "Stack Trace"
+msgstr "スタックトレース"
+
+msgid "The application could not complete this API request."
+msgstr "アプリケーションはこのAPIリクエストを完了できませんでした。"
+
+msgid "Information"
+msgstr "インフォメーション"
+
+msgid "Please confirm"
+msgstr "ご確認ください"
+
+msgid "Update information"
+msgstr "更新情報"
+
+msgid "Make a selection"
+msgstr "選択する"
+
+msgid "In progress"
+msgstr "進行中"
+
+msgid "Please wait while the operation is being completed"
+msgstr "操作完了までしばらくお待ちください"
+
+msgid "There was a problem retrieving the requested object"
+msgstr "要求されたオブジェクトの取得に問題がありました。"
+
+msgid "Add cart to a group"
+msgstr "カートをグループに追加する"
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr ""
+"カートを既存のグループに追加するか、カートから直接新しいグループを作成するか"
+"を選択します。"
+
+msgid "Action"
+msgstr "アクション"
+
+msgid "Select an existing Group"
+msgstr "既存のグループを選択"
+
+msgid "or Create a new Group from the Cart"
+msgstr "または「カート」から「新規グループ作成」を選択"
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr "移動先グループとカートメンバーに割り当てるロールを選択します。"
+
+msgid "Select Group"
+msgstr "グループ選択"
+
+msgid "Select Role"
+msgstr "役割の選択"
+
+msgid "Create a new group and move the current cart into it."
+msgstr "新しいグループを作成し、現在のカートをそのグループに移動する。"
+
+msgid "Group Name"
+msgstr "グループ名"
+
+msgid "Default Name Group"
+msgstr "デフォルト名 グループ"
+
+msgid "Add Cart to Group"
+msgstr "グループにカートを追加"
+
+msgid "Missing selection"
+msgstr "選択漏れ"
+
+msgid "You need to select both a group and a role before continuing."
+msgstr "続行する前に、グループとロールの両方を選択する必要があります。"
+
+msgid "Group name required"
+msgstr "グループ名必須"
+
+msgid "Enter a group name before creating a new group from the cart."
+msgstr "カートから新しいグループを作成する前に、グループ名を入力してください。"
+
+msgid "Deactivate cart persons"
+msgstr "カート関係者の活動停止"
+
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr "現在カートに入っている人全員を本当に無効にしたいのですか？"
+
+msgid "This action can be undone later if needed."
+msgstr "この操作は、必要に応じて後で取り消すことができる。"
+
+msgid "Keep active"
+msgstr "アクティブに"
+
+msgid "Deactivate persons"
+msgstr "人物の活動停止"
+
+msgid "Delete cart persons"
+msgstr "カート関係者の削除"
+
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr "現在カートに入っている人をすべてCRMから削除したいのですか？"
+
+msgid "This action cannot be undone."
+msgstr "この行為は取り消すことができない。"
+
+msgid "Keep persons"
+msgstr "人を保つ"
+
+msgid "Delete persons"
+msgstr "削除者"
+
+msgid "Add cart to event"
+msgstr "イベントにカートを追加する"
+
+msgid "Select the event that should receive the current cart."
+msgstr "現在のカートを受け取るイベントを選択します。"
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr ""
+"また、最初に新しいイベントを作成し、カートを割り当てるためにここに戻ることも"
+"できます。"
+
+msgid "Event"
+msgstr "イベント"
+
+msgid "Choose one of the available events from the list below."
+msgstr "下記のリストからご希望のイベントをお選びください。"
+
+msgid "Create new event"
+msgstr "新しいイベントを作成する"
+
+msgid "Add to Event"
+msgstr "イベントに追加"
+
+msgid "Register"
+msgstr "登録"
+
+msgid "Register your software to CRM team."
+msgstr "CRMチームにソフトウェアを登録します。"
+
+msgid "Simply click this"
+msgstr "これをクリックするだけで"
+
+msgid "to register your software"
+msgstr "をクリックして、ソフトウェアを登録してください。"
+
+msgid "New Release"
+msgstr "ニューリリース"
+
+msgid "Installed version"
+msgstr "インストールされているバージョン"
+
+msgid "New One"
+msgstr "新製品"
+
+msgid "To upgrade simply click this Notification"
+msgstr "アップグレードするには、この通知をクリックしてください。"
+
+msgid "View Cart"
+msgstr "カートを見る"
+
+msgid "Empty Cart"
+msgstr "空のカート"
+
+msgid "Empty Cart to Group"
+msgstr "グループへの空のカート"
+
+msgid "Empty Cart to Family"
+msgstr "空のカートから家族へ"
+
+msgid "Empty Cart to Event"
+msgstr "空のカートからイベントへ"
+
+msgid "Map Cart"
+msgstr "マップカート"
+
+msgid "Deactivate Persons From Cart"
+msgstr "カートの中の人を無効にする"
+
+msgid "Delete Persons From the CRM"
+msgstr "CRMからの人の削除"
+
+msgid "View all"
+msgstr "全てを見る"
+
+msgid "Your Cart is Empty"
+msgstr "カートは空です"
+
+msgid "Software registration"
+msgstr "ソフトウェア登録"
+
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr ""
+"送信する前に、以下の登録情報を確認してください。この情報は、このソフトウェア"
+"の使用状況を追跡するためにのみ使用されます。"
+
+msgid "If you need to make changes to registration data, go to "
+msgstr "登録データを変更する必要がある場合は"
+
+msgid "Admin->Edit General Settings"
+msgstr "管理者->一般設定の編集"
+
+msgid "Church Name"
+msgstr "教会名"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "City"
+msgstr "シティ"
+
+msgid "State"
+msgstr "ステート"
+
+msgid "Zip"
+msgstr "ジップ"
+
+msgid "Country"
+msgstr "国名"
+
+msgid "Church Email"
+msgstr "教会のEメール"
+
+msgid "Base URL"
+msgstr "ベースURL"
+
+msgid "Message"
+msgstr "メッセージ"
+
+msgid "Software Registration"
+msgstr "ソフトウェア登録"
+
+msgid "Your software is now registered. Thank you !"
+msgstr "お使いのソフトウェアが登録されました。ありがとうございました。"
+
+msgid "Select Volunteer Opportunity"
+msgstr "ボランティアの機会を選択"
+
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr "割り当てられるボランティア機会を選択します。"
+
+msgid "This selection will be applied to the current members."
+msgstr "この選択は現在のメンバーに適用される。"
+
+msgid "Volunteer opportunity"
+msgstr "ボランティアの機会"
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr "利用可能なリストから対象のボランティア機会を選択します。"
+
+msgid "Choose the destination for the selected members."
+msgstr "選択したメンバーの行き先を選択します。"
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr ""
+"以下のフィールドを使用して、アクションに応じてグループ、ロール、または両方を"
+"選択します。"
+
+msgid "Group"
+msgstr "グループ"
+
+msgid "Select the target group for the selected members."
+msgstr "選択したメンバーのターゲットグループを選択します。"
+
+msgid "Role"
+msgstr "役割"
+
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr "選択したグループ内で割り当てるべき役割を選択します。"
+
+msgid "GroupID required for role selection prompt"
+msgstr "ロール選択の際に必要なグループID"
+
+msgid "Select Group and Role"
+msgstr "グループと役割の選択"
+
+msgid "Select both the destination group and the role to apply."
+msgstr "適用する宛先グループとロールの両方を選択します。"
+
+msgid "Create a group"
+msgstr "グループを作る"
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr "現在のワークフローから作成される新しいグループ名を入力します。"
+
+msgid "Create group"
+msgstr "グループ作成"
+
+msgid "Calendar Event"
+msgstr "カレンダーイベント"
+
+msgid "Attendees Checked In"
+msgstr "出席者のチェックイン"
+
+msgid "More info"
+msgstr "詳細はこちら"
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr ""
+"1. セッションの有効期限が切れました。ログインページにリダイレクトされます。"
+
+msgid "EDrive File Browser"
+msgstr "EDrive ファイルブラウザ"
+
+msgid "Could not retrieve file URL"
+msgstr "ファイルのURLを取得できませんでした"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Please select a file first"
+msgstr "まずファイルを選択してください"
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr ""
+"警告!既存のデータベースに追加する場合は、このオプションを選択しないでくださ"
+"い。<br/>。"
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr ""
+"初期導入に満足していない場合のみ使用してください。個人情報やメンバー情報はす"
+"べて破棄されます。"
+
+msgid "I Understand"
+msgstr "I Understand"
+
+msgid "Clear Persons and Families"
+msgstr "明確な人物像と家族像"
+
+msgid "Data Cleared Successfully!"
+msgstr "データの消去に成功しました"
+
+msgid "success"
+msgstr "成功"
+
+msgid "Duplicate values"
+msgstr "重複した値"
+
+msgid "You've selected two times the same name"
+msgstr "同じ名前を2回選択している"
+
+msgid "for this field. Chose another one."
+msgstr "このフィールドの別のものを選択してください。"
+
+msgid "Remove Plugin"
+msgstr "プラグインを削除する"
+
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr "あなたはダッシュボードからプラグインを削除しようとしている !"
+
+msgid "Dashboard Item"
+msgstr "ダッシュボード項目"
+
+msgid "Removed from your dashboard !"
+msgstr "ダッシュボードから削除されました !"
+
+msgid "Please confirm deletion of this document"
+msgstr "この文書の削除を確認してください"
+
+msgid "Document Delete Confirmation"
+msgstr "ドキュメント削除確認"
+
+msgid "Document Editor"
+msgstr "ドキュメントエディター"
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr ""
+"ノート、オーディオ、ビデオのエントリーを作成し、明確なタイトルを付けて整理し"
+"ておく。"
+
+msgid "Document details"
+msgstr "資料詳細"
+
+msgid "Set the title and choose the type before writing the content."
+msgstr "内容を書く前にタイトルを設定し、タイプを選択する。"
+
+msgid "Document Title"
+msgstr "ドキュメントタイトル"
+
+msgid "Set your Document title"
+msgstr "ドキュメントのタイトル設定"
+
+msgid "Choose your Document Type"
+msgstr "ドキュメントタイプの選択"
+
+msgid "document"
+msgstr "ドキュメント"
+
+msgid "video"
+msgstr "ビデオ"
+
+msgid "audio"
+msgstr "オーディオ"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Write the main content of your document below."
+msgstr "文書の主な内容を以下に書いてください。"
+
+msgid "Private"
+msgstr "プライベート"
+
+msgid "Private documents are visible only to authorized users."
+msgstr ""
+"プライベート・ドキュメントは、許可されたユーザーのみが見ることができます。"
+
+msgid "Edit Document"
+msgstr "文書の編集"
+
+msgid "Create Document"
+msgstr "ドキュメントの作成"
+
+msgid "You have to set a Title for your document"
+msgstr "ドキュメントのタイトルを設定する必要があります。"
+
+msgid "Free Event Attendees"
+msgstr "無料イベントの参加者"
+
+msgid "Successfully Added!"
+msgstr "無事に追加されました"
+
+msgid "Delete attendee"
+msgstr "出席者の削除"
+
+msgid "This action is permanent"
+msgstr "この措置は恒久的なものである。"
+
+msgid "This can't be undone."
+msgstr "これは取り返しがつかない。"
+
+msgid "You are about to remove this attendee from the event."
+msgstr "この参加者をイベントから削除しようとしています。"
+
+msgid "The attendee will be removed from this event."
+msgstr "参加者はこのイベントから除外されます。"
+
+msgid "Related attendance history may also be affected."
+msgstr "関連する出席履歴も影響を受ける可能性がある。"
+
+msgid "Photo"
+msgstr "写真"
+
+msgid "Attendance actions"
+msgstr "出席アクション"
+
+msgid "Checkin"
+msgstr "チェックイン"
+
+msgid "Checkout"
+msgstr "チェックアウト"
+
+msgid "Gender"
+msgstr "ジェンダー"
+
+msgid "Checkin Date"
+msgstr "チェックイン日"
+
+msgid "Checked In By"
+msgstr "Checked In By"
+
+msgid "Checkout Date"
+msgstr "チェックアウト日"
+
+msgid "Checkout By"
+msgstr "Checkout By"
+
+msgid "Failed"
+msgstr "不合格"
+
+msgid "No event right now."
+msgstr "今はイベントはありません。"
+
+msgid "Move one in the right range."
+msgstr "適正な範囲で1台を動かす。"
+
+msgid "Or"
+msgstr "または"
+
+msgid "Create one."
+msgstr "作る。"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "No event now."
+msgstr "現在、イベントはありません。"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Attention"
+msgstr "注目"
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr "イベントIDからすべての人を削除したいということでよろしいですか？"
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr "本当にこの人をイベントIDからDELETEしますか？"
+
+msgid "Delete Event Type"
+msgstr "イベントタイプの削除"
+
+msgid "This action can never be undone !!!!"
+msgstr "このアクションは決して元に戻すことはできません !!!!"
+
+msgid "preview currently being created"
+msgstr "現在作成中のプレビュー"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Document preview"
+msgstr "ドキュメントプレビュー"
+
+msgid "Read only"
+msgstr "読むだけ"
+
+msgid "Please wait"
+msgstr "お待ちください"
+
+msgid "Unable to create the preview"
+msgstr "プレビューを作成できない"
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr "選択したファイルはプレビューモードでレンダリングできません。"
+
+msgid "Icon"
+msgstr "アイコン"
+
+msgid "Modification Date"
+msgstr "修正日"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "You are about to delete several items together"
+msgstr "複数のアイテムをまとめて削除しようとしている"
+
+msgid "You're about to remove an item"
+msgstr "アイテムを削除しようとしている"
+
+msgid "This can't be undone !!!!"
+msgstr "これは元に戻せません !!!!"
+
+msgid "You've to select at least one line !!!"
+msgstr "最低でも1つのラインを選択しなければなりません!!!"
+
+msgid "Create a Folder"
+msgstr "フォルダの作成"
+
+msgid "Set your Folder name"
+msgstr "フォルダー名の設定"
+
+msgid "Actualize files"
+msgstr "アクチュアライズファイル"
+
+msgid "Set a File/Folder name"
+msgstr "ファイル/フォルダ名の設定"
+
+msgid "Download Error"
+msgstr "ダウンロードエラー"
+
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr "選択したユーザーの共有を停止してもよろしいですか？"
+
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr "本当にすべての共有を止めたいのですか？"
+
+msgid "Selected Rows"
+msgstr "選択された行"
+
+msgid "Pledge"
+msgstr "誓約書"
+
+msgid "Payment"
+msgstr "支払い"
+
+msgid "Confirm Delete"
+msgstr "確認 削除"
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr "本当にそうですか？選択したものを削除しようとしています。"
+
+msgid "payments(s)?"
+msgstr "支払いは？"
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr "この操作は元に戻すことができず、法的にも問題があるかもしれません。"
+
+msgid "Please ensure this what you want to do."
+msgstr "あなたがやりたいことを確認してください。"
+
+msgid "Depid"
+msgstr "デビット"
+
+msgid "Address1"
+msgstr "アドレス1"
+
+msgid "Bank Name"
+msgstr "銀行名"
+
+msgid "Non deductible"
+msgstr "免責事項"
+
+msgid "Statut"
+msgstr "制定"
+
+msgid "Deposit"
+msgstr "デポジット"
+
+msgid "Schedule"
+msgstr "スケジュール"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid "Electronic Transaction Details"
+msgstr "電子取引の詳細"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "Family"
+msgstr "ファミリー"
+
+msgid "Person"
+msgstr "人物"
+
+msgid "Anonymous"
+msgstr "アノニマス"
+
+msgid "Fund"
+msgstr "ファンド"
+
+msgid "Pledge or payment"
+msgstr "誓約書または支払い"
+
+msgid "Method"
+msgstr "方法"
+
+msgid "Check Number"
+msgstr "チェックナンバー"
+
+msgid "Details"
+msgstr "詳細"
+
+msgid "Tracking"
+msgstr "トラッキング"
+
+msgid "Filter by Family"
+msgstr "家族で絞り込む"
+
+msgid "Filter by Fund"
+msgstr "ファンドで絞り込む"
+
+msgid "Export"
+msgstr "エクスポート"
+
+msgid "Slip PDF"
+msgstr "スリップ PDF"
+
+msgid "Deposit ID"
+msgstr "デポジットID"
+
+msgid "Deposit Date"
+msgstr "入金日"
+
+msgid "Deposit Total"
+msgstr "デポジット 合計"
+
+msgid "Deposit Comment"
+msgstr "デポジットコメント"
+
+msgid "Closed"
+msgstr "閉鎖"
+
+msgid "Yes"
+msgstr "はい。"
+
+msgid "Deposit Type"
+msgstr "預金タイプ"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "Please enter at least one winner."
+msgstr "少なくとも1人の当選者をエントリーしてください。"
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr ""
+"不完全な入力が見つかりました。保存したい各行のすべてのフィールド（アイテム、"
+"勝者、価格）を入力してください。"
+
+msgid "Please enter a number greater than 0."
+msgstr "0以上の数字を入力してください。"
+
+msgid "Number"
+msgstr "番号"
+
+msgid "You're about to delete the item !!!"
+msgstr "アイテムを削除しようとしている!"
+
+msgid "Item"
+msgstr "アイテム"
+
+msgid "Multiple"
+msgstr "マルチプル"
+
+msgid "Donor"
+msgstr "ドナー"
+
+msgid "Buyer"
+msgstr "バイヤー"
+
+msgid "Sale Price"
+msgstr "販売価格"
+
+msgid "Estimated value"
+msgstr "推定値"
+
+msgid "Material Value"
+msgstr "素材の価値"
+
+msgid "Minimum Price"
+msgstr "最低価格"
+
+msgid "You're about to delete the buyer !!!"
+msgstr "バイヤーを削除しようとしている!"
+
+msgid "Unassigned"
+msgstr "未分類"
+
+msgid "Buyer Number"
+msgstr "バイヤー番号"
+
+msgid "Save and Add"
+msgstr "保存と追加"
+
+msgid "Generate Statement"
+msgstr "声明の作成"
+
+msgid "Buyer Number Editor"
+msgstr "バイヤーナンバー編集部"
+
+msgid "Please select at least one buyer."
+msgstr "少なくとも1つのバイヤーを選択してください。"
+
+msgid "Your operation completed successfully."
+msgstr "あなたの操作は正常に完了しました。"
+
+msgid "Full Name"
+msgstr "フルネーム"
+
+msgid "Text"
+msgstr "テキスト"
+
+msgid "Date Entered"
+msgstr "入力された日付"
+
+msgid "Date Last Edited"
+msgstr "最終編集日"
+
+msgid "Edited By Name"
+msgstr "名前で編集"
+
+msgid "Deactivated"
+msgstr "機能停止中"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr ""
+"警告このフィールドを削除すると、このフィールドに割り当てられているすべてのグ"
+"ループデータが取り返しのつかないことになります。"
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr "グループ指定プロパティの有効化を確認"
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+"これにより、このグループのためのグループ固有のプロパティテーブルが作成されま"
+"す。その後、「グループ固有のプロパティ」のフォームエディターで必要なプロパ"
+"ティを追加してください。"
+
+msgid "Enable Group Specific Properties"
+msgstr "グループ固有のプロパティを有効にする"
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr "無効化の確認 グループ固有のプロパティ"
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr ""
+"本当にグループ固有の人物プロパティを削除してもいいのですか？グループメンバー"
+"のプロパティデータはすべて失われてしまいます"
+
+msgid "Disable Group Specific Properties"
+msgstr "グループ固有のプロパティの無効化"
+
+msgid "Please enter a role name."
+msgstr "ロール名を入力してください。"
+
+msgid "Confirm Delete Role"
+msgstr "確認 ロールの削除"
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr ""
+"これにより、このロールに関連するすべての人物のメンバーシップも削除されます。"
+
+msgid "A group should have at least one role!"
+msgstr "グループには最低でも1つの役割が必要です"
+
+msgid "Role Name"
+msgstr "役名"
+
+msgid "The role name is now modified."
+msgstr "ロール名が変更されました。"
+
+msgid "Make Default"
+msgstr "デフォルトにする"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Sequence"
+msgstr "シーケンス"
+
+msgid "Move Up"
+msgstr "繰り上げ"
+
+msgid "Move Down"
+msgstr "下に移動"
+
+msgid "Add New Group"
+msgstr "新しいグループの追加"
+
+msgid "Enter group name"
+msgstr "グループ名を入力"
+
+msgid "Please enter a group name."
+msgstr "グループ名を入力してください。"
+
+msgid "Group actions"
+msgstr "グループ行動"
+
+msgid "View"
+msgstr "表示"
+
+msgid "Members"
+msgstr "メンバー"
+
+msgid "Group Cart Status"
+msgstr "グループカートの状態"
+
+msgid "In cart"
+msgstr "カート"
+
+msgid "Remove from cart"
+msgstr "カートから取り出す"
+
+msgid "Not in cart"
+msgstr "カートに入っていない"
+
+msgid "Add to cart"
+msgstr "カートに入れる"
+
+msgid "Cart isn't showable"
+msgstr "カートが表示されない"
+
+msgid "Group Type"
+msgstr "グループタイプ"
+
+msgid "Value"
+msgstr "価値"
+
+msgid "Confirm Delete Group"
+msgstr "確認 グループ削除"
+
+msgid "Please confirm deletion of this group record"
+msgstr "このグループの記録を削除することを確認してください。"
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr ""
+"また、このグループレコードに関連するすべてのロールとグループ固有のプロパティ"
+"データも削除されます。"
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr ""
+"グループのメンバーシップとプロパティはすべて破棄されます。  グループのメン"
+"バー自体は変更されません。"
+
+msgid "Are you sure you want to unassign this property?"
+msgstr "このプロパティの割り当てを解除してよろしいですか？"
+
+msgid "Are you sure you want to change this property?"
+msgstr "本当にこのプロパティを変更してもいいのでしょうか？"
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr "子供には、日曜学校のグループに家族がいるはずだ !"
+
+msgid "401 : Private Datas"
+msgstr "401 : プライベート・データ"
+
+msgid "Group Role"
+msgstr "グループの役割"
+
+msgid "Private Data"
+msgstr "プライベートデータ"
+
+msgid "Zip Code"
+msgstr "郵便番号"
+
+msgid "Cell Phone"
+msgstr "携帯電話"
+
+msgid "You're about to delete all the group members ?"
+msgstr "グループメンバーをすべて削除するところですか？"
+
+msgid "Are you sure ? This can't be undone."
+msgstr "本当にいいの？これは元に戻すことはできません。"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Members to cart"
+msgstr "メンバーをカートに入れる"
+
+msgid "Add to Cart"
+msgstr "カートに入れる"
+
+msgid "Add to Group"
+msgstr "グループに追加"
+
+msgid "Move to Group"
+msgstr "グループへ移動"
+
+msgid "Remove all members"
+msgstr "全メンバーを削除"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Members to another group"
+msgstr "メンバーを別のグループに"
+
+msgid "Remove from Cart"
+msgstr "カートから削除"
+
+msgid "No assigned Manager"
+msgstr "担当マネージャーなし"
+
+msgid "Add users"
+msgstr "ユーザーの追加"
+
+msgid "Manage Group Managers"
+msgstr "グループマネージャーの管理"
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr "本当にこのマネージャーを削除してもよろしいですか？"
+
+msgid "Delete Managers"
+msgstr "マネージャーの削除"
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr "本当にすべてのマネージャーを削除するのですか？"
+
+msgid "Appointment"
+msgstr "アポイントメント"
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr "家族全員のために、この牧会的フォローアップを記録する。"
+
+msgid "For every administrator"
+msgstr "すべての管理者に対して"
+
+msgid "Show"
+msgstr "ショー"
+
+msgid "Hide"
+msgstr "隠す"
+
+msgid "Include all the family members"
+msgstr "家族全員の参加"
+
+msgid "Include"
+msgstr "インクルード"
+
+msgid "Pastoral care note"
+msgstr "牧会ノート"
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr ""
+"ノートの種類を確認し、内容を書き、誰がそれを見ることができるかを定義します。"
+
+msgid "Note"
+msgstr "注"
+
+msgid "Pastoral Care"
+msgstr "パストラルケア"
+
+msgid "Open the pastoral care record"
+msgstr "パストラルケアの記録を開く"
+
+msgid "No records found for this view."
+msgstr "このビューに関する記録は見つかりませんでした。"
+
+msgid "No matching records found."
+msgstr "一致する記録は見つかりませんでした。"
+
+msgid "Loading..."
+msgstr "読み込み中..."
+
+msgid "Never contacted"
+msgstr "連絡なし"
+
+msgid "Pastoral care member"
+msgstr "パストラルケアメンバー"
+
+msgid "Visits/calls"
+msgstr "訪問/コール"
+
+msgid "Last visit/call"
+msgstr "最後の訪問/通話"
+
+msgid "Opening..."
+msgstr "オープニング..."
+
+msgid "Selecting..."
+msgstr "選択..."
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr ""
+"現在、該当するパストラルケアの記録はありません。他のカテゴリーをお試しくださ"
+"い。"
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr "現在、パストラルケア活動を開始することはできない。"
+
+msgid "Delete Pastoral Care Type"
+msgstr "パストラルケアタイプの削除"
+
+msgid "Irreversible action"
+msgstr "不可逆的作用"
+
+msgid "Keep note"
+msgstr "メモを取る"
+
+msgid "Write the pastoral care message associated with this family."
+msgstr "この家族に関連するパストラルケアのメッセージを書きなさい。"
+
+msgid "Pastoral Care Note Creation"
+msgstr "パストラルケアノート作成"
+
+msgid "Last Name (Family Name)"
+msgstr "名字（ファミリーネーム"
+
+msgid "Family Name"
+msgstr "姓名"
+
+msgid "Write the pastoral care message associated with this person."
+msgstr "その人に関連するパストラルケアのメッセージを書きましょう。"
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr "本当にこのファミリーをCRMから削除していいのか？"
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr "本当にCRMからすべてのファミリーを削除してもいいのですか？"
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"すべてのファミリーが削除されたわけではありません：いくつかのファミリーには寄"
+"付の記録があり、これらの寄付が別のファミリーに関連付けられるまでは削除されな"
+"い可能性があります。"
+
+msgid "Review family member information"
+msgstr "家族情報の確認"
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr ""
+"表示された情報を確認し、必要であればこの家族を更新してから保存してください。"
+
+msgid "Update family member details"
+msgstr "家族情報の更新"
+
+msgid "Save changes"
+msgstr "変更を保存する"
+
+msgid "Confirm Deactivation"
+msgstr "ディアクティベーションの確認"
+
+msgid "Confirm Activation"
+msgstr "アクティベーションの確認"
+
+msgid "Please confirm deactivation of family"
+msgstr "家族の活動停止を確認してください"
+
+msgid "Please confirm activation of family"
+msgstr "家族の起動を確認してください。"
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+"GDPRに注意してください。ファミリーが解除された場合、アカウントを再び有効にし"
+"たい場合は、まずファミリーのすべての人に尋ねなければなりません！<br><br>いか"
+"なる許可もなく、GDPRによってこのファミリーを使用することは違法となりま"
+"す。!!!!!"
+
+msgid "Upload Photo"
+msgstr "写真のアップロード"
+
+msgid "Upload an existing Photo"
+msgstr "既存の写真をアップロードする"
+
+msgid "Max photo size"
+msgstr "最大写真サイズ"
+
+msgid "Capture from Webcam"
+msgstr "ウェブカムからのキャプチャ"
+
+msgid "Snap Photo"
+msgstr "スナップ写真"
+
+msgid "Re-Take Photo"
+msgstr "写真を撮り直す"
+
+msgid "Upload Image"
+msgstr "画像のアップロード"
+
+msgid "Family Photo"
+msgstr "家族写真"
+
+msgid "Bank Draft"
+msgstr "銀行手形"
+
+msgid "Credit Card"
+msgstr "クレジットカード"
+
+msgid "Disabled"
+msgstr "無効化"
+
+msgid "Next payment date"
+msgstr "次回支払日"
+
+msgid "Interval (months)"
+msgstr "間隔（月"
+
+msgid "Updated By"
+msgstr "更新日"
+
+msgid "Confirm Delete Automatic payment"
+msgstr "確認 削除 自動支払い"
+
+msgid "Pledge or Payment"
+msgstr "質権または支払い"
+
+msgid "Dep ID"
+msgstr "DEP ID"
+
+msgid "Fiscal Year"
+msgstr "会計年度"
+
+msgid "NonDeductible"
+msgstr "控除対象外"
+
+msgid "CHECK"
+msgstr "CHECK"
+
+msgid "Date Updated"
+msgstr "更新日"
+
+msgid "Donations/eGives Moved by"
+msgstr "寄付/eGives 移動元"
+
+msgid "Verification URL"
+msgstr "検証用URL"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Failed to add verification"
+msgstr "検証の追加に失敗しました。"
+
+msgid "Verification email sent"
+msgstr "検証メールの送信"
+
+msgid "Failed to send verification email"
+msgstr "検証メールの送信に失敗しました"
+
+msgid "Warning !!!!"
+msgstr "警告!"
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+"EcclesiaCRMの全メンバーに大規模なメールを送信しようとしています。<br>-数人ま"
+"たは数家族でテストすることをお勧めします。<br>-アドレスまたは個人で、全員を選"
+"択してください。"
+
+msgid "You're about to send a e-mail to"
+msgstr "あなたはこれから"
+
+msgid "members"
+msgstr "メンバー"
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr "PDFの生成とダウンロードが完了するまで、しばらくお待ちください。"
+
+msgid "A person name or Family"
+msgstr "人名または家族名"
+
+msgid "Modification"
+msgstr "修正"
+
+msgid "By persons"
+msgstr "各位"
+
+msgid "By Adresses"
+msgstr "住所別"
+
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr "すべての人の保留中の確認を削除しようとしています。"
+
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr ""
+"あなたは、すべての人のために行われたすべての確認を削除しようとしている。"
+
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr "あなたは全ファミリーの保留中の確認をすべて削除しようとしている。"
+
+msgid "You're about to delete all done confirmation for all the families."
+msgstr "あなたは全ファミリーの確認が完了したものをすべて削除しようとしている。"
+
+msgid "Delete this person?"
+msgstr "この人を削除する？"
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr "この人を削除しますか？これは元に戻せません。"
+
+msgid "Save your note"
+msgstr "ノートの保存"
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr "メモをWordファイルとしてEDriveに保存しますか？"
+
+msgid "Family Id"
+msgstr "ファミリーID"
+
+msgid "Valid Until"
+msgstr "まで有効"
+
+msgid "Search for a family or address"
+msgstr "家族・住所検索"
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr "この人をCRMから削除してよろしいですか？"
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr "本当にCRMからすべての人を削除してもいいのですか？"
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"すべての人が削除されたわけではありません：一部の人には寄付の記録があり、その"
+"寄付が他の家族に関連づけられるまでは削除されない可能性があります。"
+
+msgid "Review personal information"
+msgstr "個人情報の確認"
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr "現在の値を確認し、修正が必要なフィールドを更新してから保存する。"
+
+msgid "Profile information"
+msgstr "プロフィール"
+
+msgid "Additional information"
+msgstr "追加情報"
+
+msgid "Update personal details"
+msgstr "個人情報の更新"
+
+msgid "Processing..."
+msgstr "処理..."
+
+msgid "Please confirm deactivation of person"
+msgstr "人の無効化を確認してください"
+
+msgid "Please confirm activation of person"
+msgstr "人のアクティベーションを確認してください。"
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+"GDPRには注意が必要で、ある人物が無効化された場合、そのアカウントを再び有効に"
+"したいかどうか、まず本人に尋ねなければなりません！<br><br>いかなる権限もな"
+"く、GDPRによって、この人物の使用は違法とされています。!!!!!"
+
+msgid "Deactivate"
+msgstr "ディアクティベート"
+
+msgid "Activate"
+msgstr "アクティベート"
+
+msgid "Deactivating..."
+msgstr "非アクティブ化..."
+
+msgid "Activating..."
+msgstr "起動..."
+
+msgid "Unable to update this person status."
+msgstr "この人物のステータスを更新できません。"
+
+msgid "Deleting..."
+msgstr "削除..."
+
+msgid "Unable to delete the photo."
+msgstr "写真を削除できない。"
+
+msgid "Preview the current profile photo."
+msgstr "現在のプロフィール写真をプレビューします。"
+
+msgid "Property actions"
+msgstr "財産上の措置"
+
+msgid "Please select a property first."
+msgstr "まず物件をお選びください。"
+
+msgid "Assigning..."
+msgstr "割り当て..."
+
+msgid "Assign"
+msgstr "アサイン"
+
+msgid "Unable to assign this property."
+msgstr "このプロパティを割り当てることができません。"
+
+msgid "Remove group assignment"
+msgstr "グループ割り当てを解除"
+
+msgid "Remove this person from the group"
+msgstr "この人物をグループから外す"
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr ""
+"このグループにリンクされているメンバーシップとロールは、この人物のために削除"
+"されます。"
+
+msgid "Remove from group"
+msgstr "グループから外す"
+
+msgid "Keep assignment"
+msgstr "割り当てを維持する"
+
+msgid "Share your document"
+msgstr "文書を共有する"
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr ""
+"受信者を選択し、アクセス権を定義し、電子メール通知を受信するかどうかを決定し"
+"ます。"
+
+msgid "Current access"
+msgstr "現在のアクセス"
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr "1人または複数の受信者を選択して、アクセス権を更新または削除します。"
+
+msgid "Set rights"
+msgstr "権利の設定"
+
+msgid "Read and write"
+msgstr "読み書き"
+
+msgid "Notification"
+msgstr "お知らせ"
+
+msgid "Add people, families or groups"
+msgstr "人、家族、グループを追加する"
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr ""
+"名前で検索して、別の人、家族、グループ全体にアクセスを許可することができま"
+"す。"
+
+msgid "Please select at least one recipient first."
+msgstr "まず最低1人の受取人を選択してください。"
+
+msgid "Remove shared access"
+msgstr "共有アクセスの削除"
+
+msgid "Remove access for the selected recipients?"
+msgstr "選択した受信者のアクセスを削除しますか？"
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr ""
+"選択した受信者のみが削除されます。他の受信者とはドキュメントが共有されたまま"
+"になります。"
+
+msgid "Remove access"
+msgstr "アクセスを削除する"
+
+msgid "Keep access"
+msgstr "アクセスを維持する"
+
+msgid "Stop sharing this document"
+msgstr "この文書の共有を停止する"
+
+msgid "Stop sharing this document with everyone?"
+msgstr "この文書をみんなと共有するのをやめる？"
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr ""
+"現在受信しているすべての受信者は、直ちにアクセスを失う。文書自体は引き続き利"
+"用可能です。"
+
+msgid "Keep sharing"
+msgstr "共有し続ける"
+
+msgid "Share your Document"
+msgstr "ドキュメントを共有する"
+
+msgid "Unassign property"
+msgstr "プロパティの割り当て解除"
+
+msgid "Remove this property from the current person?"
+msgstr "現在の人物からこのプロパティを削除しますか？"
+
+msgid "The property value will be removed from this profile."
+msgstr "プロパティ値はこのプロファイルから削除されます。"
+
+msgid "Remove property"
+msgstr "プロパティを削除する"
+
+msgid "Keep property"
+msgstr "財産を守る"
+
+msgid "Edit property value"
+msgstr "プロパティ値の編集"
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr "現在の人物プロフィールのこのプロパティに格納されている値を更新する。"
+
+msgid "Save property"
+msgstr "物件を保存する"
+
+msgid "Change classification"
+msgstr "分類の変更"
+
+msgid "Choose the classification that best matches this person profile."
+msgstr "この人のプロフィールに最も合う分類を選んでください。"
+
+msgid "Update classification"
+msgstr "更新区分"
+
+msgid "Change family role"
+msgstr "家族の役割を変える"
+
+msgid "Select the role this person should have inside the family record."
+msgstr "その人が家族記録の中で持つべき役割を選択してください。"
+
+msgid "Update role"
+msgstr "更新の役割"
+
+msgid "Volunteer actions"
+msgstr "ボランティア活動"
+
+msgid "Remove volunteer opportunity"
+msgstr "ボランティアの機会を削除する"
+
+msgid "Remove this volunteer opportunity from the person?"
+msgstr "このボランティアの機会をその人から外すのか？"
+
+msgid "The assignment will be removed from this profile only."
+msgstr "課題はこのプロファイルからのみ削除されます。"
+
+msgid "Remove assignment"
+msgstr "割り当てを解除する"
+
+msgid "Please select at least one volunteer opportunity first."
+msgstr "まず、少なくとも1つのボランティア機会を選択してください。"
+
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr "選択したボランティア機会を割り当てることができません。"
+
+msgid "Some volunteer opportunities could not be assigned."
+msgstr "一部のボランティアは割り当てられなかった。"
+
+msgid "Delete automatic payment"
+msgstr "自動支払いの削除"
+
+msgid "Delete this automatic payment setup?"
+msgstr "この自動支払設定を削除しますか？"
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr "この設定にリンクされている定期的な支払いは、削除後に停止されます。"
+
+msgid "Delete payment"
+msgstr "支払い削除"
+
+msgid "Keep payment"
+msgstr "支払いを続ける"
+
+msgid "Delete pledge or payment"
+msgstr "質権または支払いの削除"
+
+msgid "Delete this pledge or payment entry?"
+msgstr "この誓約書または支払項目を削除しますか？"
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr "このエントリーは、この家族の投稿履歴から削除されます。"
+
+msgid "Delete entry"
+msgstr "エントリーの削除"
+
+msgid "Keep entry"
+msgstr "エントリーを続ける"
+
+msgid "Share this secure verification link with the person."
+msgstr "この安全な認証リンクを本人と共有する。"
+
+msgid "Comments"
+msgstr "コメント"
+
+msgid "Confirmation of plugin removal"
+msgstr "プラグイン削除の確認"
+
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr "選択したプラグインを削除しようとしています。この操作は元に戻せません。"
+
+msgid "Update plugin"
+msgstr "プラグインの更新"
+
+msgid "Add plugin"
+msgstr "プラグインの追加"
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr ""
+"このプラグインをアップデートするには、新しいzipパッケージを選択してください。"
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr "zip圧縮されたプラグインパッケージを選択し、CRMにインストールします。"
+
+msgid "Plugin archive"
+msgstr "プラグインアーカイブ"
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr "ここではzip圧縮されたプラグインパッケージのみを選択してください。"
+
+msgid "The upload starts as soon as you submit this form."
+msgstr "このフォームを送信するとすぐにアップロードが始まります。"
+
+msgid "Plugin manager"
+msgstr "プラグインマネージャー"
+
+msgid "The current images folder is now the public folder !!!"
+msgstr "現在のイメージフォルダがパブリックフォルダになっています。"
+
+msgid "QR Code : Call the register"
+msgstr "QRコード :レジに電話する"
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr "QRコードにカメラを向けると、出席者を自動的にチェックインできます。"
+
+msgid "Scan a QR Code"
+msgstr "QRコードをスキャンする"
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr ""
+"ビデオストリームにアクセスできない（ウェブカメラが有効であることを確認してく"
+"ださい"
+
+msgid "Available Cameras"
+msgstr "利用可能なカメラ"
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr ""
+"QRコードはまだ検出されていません。QRコードをフレームの中に入れてください。"
+
+msgid "Detected data"
+msgstr "検出されたデータ"
+
+msgid "Families"
+msgstr "ファミリ"
+
+msgid "Singles"
+msgstr "シングルス"
+
+msgid "All Groups"
+msgstr "全グループ"
+
+msgid "All Roles"
+msgstr "すべての役割"
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr "検索条件：名前、名、電話番号、物件、グループ名など"
+
+msgid "All search types"
+msgstr "すべての検索タイプ"
+
+msgid "id"
+msgstr "ID"
+
+msgid "Photos"
+msgstr "写真"
+
+msgid "Search result"
+msgstr "検索結果"
+
+msgid "Property Name"
+msgstr "物件名"
+
+msgid "Cart Operations"
+msgstr "カート操作"
+
+msgid "Add This Page"
+msgstr "このページを追加する"
+
+msgid "Loading people in cart...."
+msgstr "cart.... での人の読み込み"
+
+msgid "Add All results"
+msgstr "すべての結果を追加"
+
+msgid "Remove this page"
+msgstr "このページを削除する"
+
+msgid "Removing people in cart...."
+msgstr "cart.... の人を削除する。"
+
+msgid "Remove All results"
+msgstr "すべての結果を削除"
+
+msgid "Intersect result with cart"
+msgstr "結果をカートと交差させる"
+
+msgid "Add People"
+msgstr "人の追加"
+
+msgid "This page is still in the cart."
+msgstr "このページはまだカートに入っています。"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr ""
+"警告このフィールドを削除すると、このフィールドに割り当てられたすべての家族"
+"データが取り返しのつかないことになります。"
+
+msgid "Add Fund"
+msgstr "ファンドの追加"
+
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr "ファンドを削除すると、<b>関連するデータがすべて失われます。</b>"
+
+msgid "Are you sure? This action can't be undone."
+msgstr "本当にいいですか？この操作は元に戻せません。"
+
+msgid "Fund Editor"
+msgstr "ファンド・エディター"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Validate"
+msgstr "検証"
+
+msgid "Enter menu link name"
+msgstr "メニューリンク名を入力"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "Enter URL starting with http:// or https://"
+msgstr "http:// または https:// で始まるURLを入力"
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr ""
+"このリンクは : http://.... または https://.... で始まる必要があります。"
+
+msgid "Add Custom Menu Link"
+msgstr "カスタムメニューリンクの追加"
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"メニューリンクを削除すると、<u><b>接続されているすべてのデータが失われます。"
+"</b></u><br><b>Are you sure?この動作は元に戻せません。</b>。"
+
+msgid "Custom Menu Link Editor"
+msgstr "カスタムメニューリンクエディター"
+
+msgid "Order"
+msgstr "オーダー"
+
+msgid "Uri"
+msgstr "Uri"
+
+msgid "Global Custom Menus"
+msgstr "グローバルカスタムメニュー"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Delete Classification"
+msgstr "分類の削除"
+
+msgid "Please confirm deletion of this classification"
+msgstr "この分類の削除を確認してください"
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr "これにより、関連するすべての人のこの分類も削除されます。"
+
+msgid "Delete map marker"
+msgstr "マップマーカーの削除"
+
+msgid "Please confirm deletion of this marker"
+msgstr "このマーカーの削除を確認してください"
+
+msgid "Map Icon GoogleMap"
+msgstr "地図アイコン GoogleMap"
+
+msgid "Select your classification icon"
+msgstr "分類アイコンを選択"
+
+msgid "Add Pastoral Care Type"
+msgstr "パストラルケアタイプの追加"
+
+msgid "Visible for other authorized users"
+msgstr "他の許可されたユーザーにも見える"
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"Pastoral Careタイプを削除すると、<u><b>接続されているすべてのデータが失われま"
+"す。</b></u><br><b>Are you sure?このアクションは元に戻せません。</b>。"
+
+msgid "Pastoral Care Type Editor"
+msgstr "パストラルケア・タイプエディター"
+
+msgid "Visible"
+msgstr "見える"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr ""
+"警告このフィールドを削除すると、このフィールドに割り当てられていたすべての人"
+"物データが取り返しのつかないことになります。"
+
+msgid "Add a New Property"
+msgstr "新規プロパティの追加"
+
+msgid "Select Property Type"
+msgstr "プロパティタイプの選択"
+
+msgid "with this property..."
+msgstr "この物件で..."
+
+msgid "Prompt"
+msgstr "プロンプト"
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr "この物件を削除しようとしています。引き続きご利用になりますか？"
+
+msgid "Property Type Editor"
+msgstr "プロパティタイプエディタ"
+
+msgid "with this Property..."
+msgstr "このプロパティで..."
+
+msgid "Class"
+msgstr "クラス"
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr ""
+"この一般的なプロパティを削除しようとしています。引き続きご利用になりますか？"
+
+msgid "This general property type is still being used by"
+msgstr "この一般的なプロパティタイプは、現在も"
+
+msgid "property"
+msgstr "プロパティ"
+
+msgid "properties"
+msgstr "プロパティ"
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr ""
+"このタイプを削除すると、以下を使用しているすべてのプロパティも削除されます。"
+
+msgid "it and lose any corresponding property assignments."
+msgstr "そして、それに対応するプロパティの割り当てを失います。"
+
+msgid "Add a New Property Type"
+msgstr "新しいプロパティタイプの追加"
+
+msgid "Setting saved"
+msgstr "設定保存"
+
+msgid "Send Message"
+msgstr "メッセージの送信"
+
+msgid "View Profile"
+msgstr "プロフィールを見る"
+
+msgid "Teachers"
+msgstr "先生方"
+
+msgid "Delete this Teacher?"
+msgstr "この先生を削除しますか？"
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr "この先生を削除しますか？これは元に戻せません。"
+
+msgid "First name"
+msgstr "名前"
+
+msgid "Birth Date"
+msgstr "誕生日"
+
+msgid "Unknown"
+msgstr "不明"
+
+msgid "Boy"
+msgstr "ボーイ"
+
+msgid "Girl"
+msgstr "ガール"
+
+msgid "Age"
+msgstr "年齢"
+
+msgid "Mobile"
+msgstr "モバイル"
+
+msgid "Home Phone"
+msgstr "自宅電話番号"
+
+msgid "Home Address"
+msgstr "ホームアドレス"
+
+msgid "Dad Name"
+msgstr "お父さんの名前"
+
+msgid "Dad Mobile"
+msgstr "お父さんモバイル"
+
+msgid "Dad Email"
+msgstr "パパのEメール"
+
+msgid "Mom Name"
+msgstr "ママの名前"
+
+msgid "Mom Mobile"
+msgstr "ママモバイル"
+
+msgid "Mom Email"
+msgstr "ママのEメール"
+
+msgid "Remove Students from Cart"
+msgstr "カートから生徒を削除"
+
+msgid "Add Students to Cart"
+msgstr "生徒をカートに入れる"
+
+msgid "Remove Teachers from Cart"
+msgstr "カートから講師を削除"
+
+msgid "Add Teachers to Cart"
+msgstr "先生をカートに入れる"
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr "Attendanceの作成に使用するイベントタイプを選択します。"
+
+msgid "Create First A New Event"
+msgstr "最初に新規イベントを作成する"
+
+msgid "Create Event With Students"
+msgstr "学生と一緒にイベントを作る"
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr ""
+"気をつけてくださいね。あなたは、この日曜学校のクラスのイベントを作ったり、再"
+"現したりして、レジを呼ぼうとしています。"
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"すでにイベントが作成されている場合は、「イベント」メニューから「レジへの呼び"
+"出し」を行ってください。"
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr "まず、抽出を行うために時間帯を正しく設定します。"
+
+msgid "Set year range to export"
+msgstr "エクスポートする年の範囲を設定"
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr "まず、抽出を行うために日付範囲を正しく設定します。"
+
+msgid "Extra students"
+msgstr "追加生徒"
+
+msgid "export with photos"
+msgstr "写真付きエクスポート"
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr ""
+"気をつけてくださいね。あなたは、すべての日曜学校のクラスのすべてのイベントを"
+"作成または再現して、レジを呼ぼうとしています。"
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"すでにイベントが作成されている場合は、「イベント」メニューの「レジへの呼び出"
+"し」を行ってください。"
+
+msgid "First, set your date and time."
+msgstr "まず、日付と時間を設定します。"
+
+msgid "Time"
+msgstr "時間"
+
+msgid "Call the Register for all sunday groups"
+msgstr "すべての日曜日のグループのためのレジスタを呼び出す"
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr ""
+"クラスリストやアテンダンスシートを作るには、少なくとも1つのグループが選ばれな"
+"ければなりません。"
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr "課題のタイトルと説明を設定する必要があります。"
+
+msgid "Find member"
+msgstr "会員を探す"
+
+msgid "Search by name, role, or ID."
+msgstr "名前、役割、IDで検索"
+
+msgid "Search a member"
+msgstr "メンバー検索"
+
+msgid "Clear"
+msgstr "クリア"
+
+msgid "In"
+msgstr "で"
+
+msgid "Out"
+msgstr "アウト"
+
+msgid "Notify"
+msgstr "通知"
+
+msgid "Trigger Parent Alert"
+msgstr "トリガーペアレントアラート"
+
+msgid "Kiosk"
+msgstr "キオスク"
+
+msgid "Attendance"
+msgstr "出席"
+
+msgid "Current event"
+msgstr "時事"
+
+msgid "No assignments for kiosk"
+msgstr "キオスクの課題はない"
+
+msgid "Kiosk Name"
+msgstr "キオスク名"
+
+msgid "Assignment"
+msgstr "アサインメント"
+
+msgid "Last Heartbeat"
+msgstr "ラストハートビート"
+
+msgid "Accepted"
+msgstr "アクセプタンス"
+
+msgid "True"
+msgstr "トゥルー"
+
+msgid "False"
+msgstr "False"
+
+msgid "Reload"
+msgstr "リロード"
+
+msgid "Identify"
+msgstr "識別"
+
+msgid "Accept"
+msgstr "受け入れ"
+
+msgid "Two factors authentications"
+msgstr "二要素認証"
+
+msgid "2FA is already enabled on your account."
+msgstr "2FA is already enabled on your account."
+
+msgid "If needed, you can remove it and enroll again."
+msgstr "If needed, you can remove it and enroll again."
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr "2要素認証シークレットの削除"
+
+msgid "2 Factor Authentication Secret"
+msgstr "2ファクター認証の秘密"
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr "TOTPコードを入力して登録を確認する"
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr ""
+"OTP認証情報を紛失した場合に備えて、これらのバックアップパスワードを安全な場所"
+"に保管してください。"
+
+msgid "Unable to remove 2FA right now."
+msgstr "今すぐ2FAを解除することはできません。"
+
+msgid "Current step"
+msgstr "現在のステップ"
+
+msgid "Completed"
+msgstr "完成"
+
+msgid "Locked"
+msgstr "ロック"
+
+msgid "Backup Complete, Ready for Download."
+msgstr "バックアップが完了し、ダウンロードできるようになりました。"
+
+msgid "The user must have an email address."
+msgstr "ユーザーはメールアドレスを持っている必要があります。"
+
+msgid "Select your Role"
+msgstr "役割の選択"
+
+msgid "and update its name if needed."
+msgstr "必要であれば、その名前を更新する。"
+
+msgid "Role management"
+msgstr "役割分担"
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr "本当ですか？このRoleを削除しようとしています。"
+
+msgid "Rename"
+msgstr "名前の変更"
+
+msgid "Choose a Role Name"
+msgstr "役割名の選択"
+
+msgid "You must set another Role Name"
+msgstr "別の役割名を設定する必要があります。"
+
+msgid "this Role Name already exist !!!"
+msgstr "このロール名はすでに存在する!"
+
+msgid "You've to check at least one user."
+msgstr "最低でも1人のユーザーを確認する必要があります。"
+
+msgid "The WebDav Key is"
+msgstr "WebDavキーは"
+
+msgid "The public WebDav Key is"
+msgstr "パブリックWebDavキーは"
+
+msgid "WebDav key"
+msgstr "WebDavキー"
+
+msgid "is now locked"
+msgstr "がロックされました。"
+
+msgid "is now unlocked"
+msgstr "が解除されました。"
+
+msgid "User Delete Confirmation"
+msgstr "ユーザー削除確認"
+
+msgid "Please confirm removal of user status from:"
+msgstr "ユーザーステータスの削除を確認してください。"
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr ""
+"注意してください。ホームフォルダと関連ファイル、カレンダー、共有カレンダー、"
+"すべてのイベントも失われます。"
+
+msgid "This can't be undone"
+msgstr "元に戻すことはできない"
+
+msgid "Action Confirmation"
+msgstr "アクションの確認"
+
+msgid "Please confirm reset failed login count"
+msgstr "Please confirm reset failed login count"
+
+msgid "Reset"
+msgstr "リセット"
+
+msgid "Reset failed login count for"
+msgstr "ログイン失敗回数のリセット"
+
+msgid "done."
+msgstr "を行いました。"
+
+msgid "Please confirm the password reset of this user"
+msgstr "このユーザーのパスワードリセットを確認してください"
+
+msgid "Reset & Send"
+msgstr "リセットして送信"
+
+msgid "Password reset for"
+msgstr "のパスワードリセット"
+
+msgid "Mail connection failure"
+msgstr "メール接続障害"
+
+msgid "to remove two-factor authentication"
+msgstr "をクリックして、2ファクタ認証を解除する"
+
+msgid "Pending"
+msgstr "保留"
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+"ユーザーに回復コードでログインするための60秒を与える。その後、ユーザーはワン"
+"タイムパスワード管理アプリケーションでQRコードを削除するか、単に再スキャンす"
+"る必要があります。"
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr "ユーザーは60秒以内に自分のリカバリーコードを使用することができます。"
+
+msgid "Add New Volunteer Opportunity"
+msgstr "新しいボランティアの機会を追加する"
+
+msgid "Volunteer Opportunity actions"
+msgstr "ボランティア活動"
+
+msgid "Volunteer Cart Status"
+msgstr "ボランティアカートの状況"
+
+msgid "Activ"
+msgstr "アクティヴ"
+
+msgid "Parent (hierarchy)"
+msgstr "親（階層）"
+
+msgid "Color"
+msgstr "カラー"
+
+msgid "Enter volunteer opportunity name"
+msgstr "ボランティアの機会名を入力してください"
+
+msgid "Enter a brief description"
+msgstr "簡単な説明を入力"
+
+msgid "Add to volunteer opportunities"
+msgstr "ボランティア募集に追加する"
+
+msgid "Move to volunteer opportunities"
+msgstr "ボランティアの機会へ移動"
+
+msgid "Confirm Delete This Opportunity"
+msgstr "この機会の削除を確認する"
+
+msgid "Please confirm deletion of this record"
+msgstr "このレコードの削除を確認してください。"
+
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr "すべての会員権は破棄される。  メンバーそのものが変更されることはない。"
+
+#~ msgid "Loading video..."
+#~ msgstr "ビデオの読み込み中..."
+
+#~ msgid "Mailchimp"
+#~ msgstr "Mailchimp"
+
+#~ msgid ""
+#~ "All the lists are now loaded in the CRM.<br><b>If you want to manage "
+#~ "them, click this notification !</b>"
+#~ msgstr ""
+#~ " 1235  4568 リストを管理したい場合は、この通知をクリックしてください "
+#~ "7899 。"
+
+#~ msgid "Saving Campaign ..."
+#~ msgstr "保存版キャンペーン ..."
+
+#~ msgid "Campaign"
+#~ msgstr "キャンペーン"
+
+#~ msgid "saved successfully"
+#~ msgstr "保存成功"
+
+#~ msgid "You're about to send your campaign! Are you sure ?"
+#~ msgstr "キャンペーンを送信しようとしています。本当にいいの？"
+
+#~ msgid "You're about to delete your campaign! Are you sure ?"
+#~ msgstr "キャンペーンを削除しようとしています。本当ですか？"
+
+#~ msgid "Loading data..."
+#~ msgstr "データをロード中..."
+
+#~ msgid "Please wait while we retrieve your MailChimp lists."
+#~ msgstr "MailChimpのリストを取得しますので、しばらくお待ちください。"
+
+#~ msgid "No list are created with this account ...."
+#~ msgstr "このアカウントではリストは作成されません ...."
+
+#~ msgid "You can create a new MailChimp list using the button above."
+#~ msgstr "上のボタンからMailChimpの新規リストを作成できます。"
+
+#~ msgid "Email List"
+#~ msgstr "メールリスト"
+
+#~ msgid "Subject"
+#~ msgstr "件名"
+
+#~ msgid "Members:"
+#~ msgstr "メンバーです。"
+
+#~ msgid "Unsubscribed count:"
+#~ msgstr "購読解除数"
+
+#~ msgid "Unsubscribed count since last send:"
+#~ msgstr "最後に送信してからの配信停止数"
+
+#~ msgid "Cleaned count:"
+#~ msgstr "掃除の回数"
+
+#~ msgid "Cleaned count since last send:"
+#~ msgstr "最後に送信してからのクリーンなカウント。"
+
+#~ msgid "Campaigns"
+#~ msgstr "キャンペーン"
+
+#~ msgid "Tags"
+#~ msgstr "タグ"
+
+#~ msgid "is not configured"
+#~ msgstr "が設定されていない"
+
+#~ msgid "Please update the"
+#~ msgstr "を更新してください。"
+
+#~ msgid "API key in Setting->"
+#~ msgstr "APIキーを設定->。"
+
+#~ msgid "Edit General Settings"
+#~ msgstr "一般設定の編集"
+
+#~ msgid "Then update"
+#~ msgstr "そして更新する"
+
+#~ msgid "For more info see our "
+#~ msgstr "詳細はこちらをご覧ください。"
+
+#~ msgid "support docs."
+#~ msgstr "のサポートドキュメントです。"
+
+#~ msgid "List Title"
+#~ msgstr "リストタイトル"
+
+#~ msgid "Your List Title"
+#~ msgstr "あなたのリストのタイトル"
+
+#~ msgid "Your Subject"
+#~ msgstr "あなたのテーマ"
+
+#~ msgid "Permission Reminder"
+#~ msgstr "パーミッション・リマインダー"
+
+#~ msgid "Archive Bars"
+#~ msgstr "アーカイブ・バー"
+
+#~ msgid "Public"
+#~ msgstr "パブリック"
+
+#~ msgid "List Creation"
+#~ msgstr "リスト作成"
+
+#~ msgid "You're about to delete a tag!"
+#~ msgstr "タグを削除しようとしている!"
+
+#~ msgid ""
+#~ "This will also delete the tag for all the members in this list. Are you "
+#~ "sure ?"
+#~ msgstr ""
+#~ "これにより、このリストに含まれるすべてのメンバーのタグも削除されます。本当"
+#~ "にいいの？"
+
+#~ msgid "Deleting tag"
+#~ msgstr "タグを削除する"
+
+#~ msgid "People"
+#~ msgstr "人々"
+
+#~ msgid "Add a new tag"
+#~ msgstr "新規タグの追加"
+
+#~ msgid "Delete tag from subscriber(s)"
+#~ msgstr "サブスクライバーからのタグ削除"
+
+#~ msgid "Delete tag"
+#~ msgstr "タグの削除"
+
+#~ msgid "Loading resources ..."
+#~ msgstr "読み込み中のリソース ..."
+
+#~ msgid "Check all boxes"
+#~ msgstr "すべてのボックスをチェック"
+
+#~ msgid "Subscribed"
+#~ msgstr "申し込み"
+
+#~ msgid "Unsubscribed"
+#~ msgstr "購読解除"
+
+#~ msgid "Email Marketing"
+#~ msgstr "メールマーケティング"
+
+#~ msgid "New tag"
+#~ msgstr "新しいタグ"
+
+#~ msgid ""
+#~ "Enter the name of the tag to create and apply to the selected members."
+#~ msgstr "選択したメンバーに適用するタグの名前を入力します。"
+
+#~ msgid "Create tag"
+#~ msgstr "タグの作成"
+
+#~ msgid "Adding tag..."
+#~ msgstr "タグの追加..."
+
+#~ msgid "Name is empty !!"
+#~ msgstr "Name is empty !"
+
+#~ msgid "Add tag"
+#~ msgstr "タグの追加"
+
+#~ msgid "Selected tag"
+#~ msgstr "選択されたタグ"
+
+#~ msgid "This will add the tag"
+#~ msgstr "これにより、タグ"
+
+#~ msgid "to all the current selected members in the list."
+#~ msgstr "を、リスト内の現在選択されているすべてのメンバーに送信します。"
+
+#~ msgid "Select One"
+#~ msgstr "一つ選択"
+
+#~ msgid "All Tags"
+#~ msgstr "すべてのタグ"
+
+#~ msgid "Remove tags from selected members"
+#~ msgstr "選択したメンバーからタグを削除する"
+
+#~ msgid "Choose a tag"
+#~ msgstr "タグを選ぶ"
+
+#~ msgid ""
+#~ "Select one tag to remove, or choose all tags for a full cleanup on the "
+#~ "selected members."
+#~ msgstr ""
+#~ "削除するタグを1つ選択するか、選択したメンバーの完全なクリーンアップのため"
+#~ "にすべてのタグを選択します。"
+
+#~ msgid "Apply"
+#~ msgstr "応募する"
+
+#~ msgid "Removing tags..."
+#~ msgstr "タグを外すと..."
+
+#~ msgid "Deleting all tags for the selected members in the list..."
+#~ msgstr "リストで選択したメンバーのすべてのタグを削除する..."
+
+#~ msgid "This action affects the whole list"
+#~ msgstr "このアクションはリスト全体に影響する"
+
+#~ msgid "Keep tag"
+#~ msgstr "キープタグ"
+
+#~ msgid "A person name or Family or Group"
+#~ msgstr "人名、家族、グループ"
+
+#~ msgid "Loading subscriber"
+#~ msgstr "加入者の読み込み"
+
+#~ msgid "Loading subscribers from Group"
+#~ msgstr "グループからサブスクライバーを読み込む"
+
+#~ msgid "Loading subscribers from family"
+#~ msgstr "家族からの購読者を読み込む"
+
+#~ msgid "Loading all persons from EcclesiaCRM<br>This could take a while !"
+#~ msgstr "Loading all persons from EcclesiaCRM<br>This could be take time !"
+
+#~ msgid ""
+#~ "In fact, you've better to quit the CRM, wait 5 minutes and make your "
+#~ "campaigns after.<br>To import huge datas, MailChimp API is slow."
+#~ msgstr "<br>巨大なデータをインポートするには、MailChimp APIは遅いです。"
+
+#~ msgid ""
+#~ "Loading all newsletter subscribers from EcclesiaCRM<br>This could take a "
+#~ "while !"
+#~ msgstr ""
+#~ "EcclesiaCRMからすべてのニュースレター購読者を読み込む<br>これには時間がか"
+#~ "かります !"
+
+#~ msgid ""
+#~ "Loading all families first headpeople subscribers from "
+#~ "EcclesiaCRM<br>This could take a while !"
+#~ msgstr ""
+#~ "EcclesiaCRMからすべてのファミリーの最初のヘッドピープルの購読者を読み込む"
+#~ "<br>これには時間がかかります !"
+
+#~ msgid "Update subscriber status"
+#~ msgstr "購読者ステータスの更新"
+
+#~ msgid "Selected subscriber"
+#~ msgstr "厳選された契約者"
+
+#~ msgid "Choose the status to apply to this subscriber."
+#~ msgstr "この加入者に適用するステータスを選択します。"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Changing status ..."
+#~ msgstr "ステータスの変更 ..."
+
+#~ msgid "Delete subscriber"
+#~ msgstr "購読者の削除"
+
+#~ msgid "Subscriber removal"
+#~ msgstr "加入者の削除"
+
+#~ msgid "You're about to delete a subscriber! Are you sure ?"
+#~ msgstr "サブスクライバーを削除しようとしています。本当にいいの？"
+
+#~ msgid "Keep subscriber"
+#~ msgstr "購読者の維持"
+
+#~ msgid "Deleting Subscriber..."
+#~ msgstr "サブスクライバーを削除する..."
+
+#~ msgid "Delete mailing list"
+#~ msgstr "メーリングリストの削除"
+
+#~ msgid "This action is irreversible"
+#~ msgstr "この作用は不可逆的である"
+
+#~ msgid "Do you really want to delete this mailing list ?"
+#~ msgstr "本当にこのメーリングリストを削除したいのですか？"
+
+#~ msgid "Delete list"
+#~ msgstr "リスト削除"
+
+#~ msgid "Delete all subscribers"
+#~ msgstr "すべての購読者を削除する"
+
+#~ msgid "Bulk deletion"
+#~ msgstr "一括削除"
+
+#~ msgid "Are you sure you want to delete all the subscribers"
+#~ msgstr "本当にすべてのサブスクライバーを削除してもいいのですか？"
+
+#~ msgid "Delete all"
+#~ msgstr "すべて削除"
+
+#~ msgid "Deleting all subscribers..."
+#~ msgstr "すべてのサブスクライバーを削除する..."
+
+#~ msgid ""
+#~ "In fact, you've better to leave the CRM, and in a quater of an hour re-"
+#~ "open it to manage your list.<br>To delete huge datas, MailChimp API is "
+#~ "slow."
+#~ msgstr "<br>巨大なデータを削除するには、MailChimpのAPIは遅いです。"
+
+#~ msgid "Email Campaign Creation"
+#~ msgstr "メールキャンペーンの作成"
+
+#~ msgid ""
+#~ "Prepare a clear title, confirm the target tag and write the content of "
+#~ "your email campaign."
+#~ msgstr ""
+#~ "明確なタイトルを用意し、ターゲットタグを確認し、メールキャンペーンの内容を"
+#~ "書きます。"
+
+#~ msgid "Campaign details"
+#~ msgstr "キャンペーン詳細"
+
+#~ msgid ""
+#~ "Set the campaign title and review the MailChimp target before writing the "
+#~ "message."
+#~ msgstr ""
+#~ "キャンペーンタイトルを設定し、メッセージを書く前にMailChimpのターゲットを"
+#~ "確認します。"
+
+#~ msgid "Campaign Title"
+#~ msgstr "キャンペーンタイトル"
+
+#~ msgid "Your Campaign Title"
+#~ msgstr "キャンペーンタイトル"
+
+#~ msgid "For Tag"
+#~ msgstr "タグの場合"
+
+#~ msgid "Write the subject and the body of your email campaign."
+#~ msgstr "メールキャンペーンの件名と本文を書きます。"
+
+#~ msgid "Mail Subject"
+#~ msgstr "メール件名"
+
+#~ msgid "Your Mail Subject"
+#~ msgstr "メールの件名"
+
+#~ msgid "Compose the content that will be sent to members of this tag."
+#~ msgstr "このタグのメンバーに送信されるコンテンツを作成する。"
+
+#~ msgid "All list members"
+#~ msgstr "全リストメンバー"
+
+#~ msgid "Adding Campaign ..."
+#~ msgstr "キャンペーンの追加 ..."
+
+#~ msgid "Campaign created"
+#~ msgstr "キャンペーン実施"
+
+#~ msgid "Your campaign is ready"
+#~ msgstr "キャンペーン準備完了"
+
+#~ msgid "Would like to manage directly this new campaign ?"
+#~ msgstr "この新しいキャンペーンを直接管理したいですか？"
+
+#~ msgid "Open campaign"
+#~ msgstr "オープンキャンペーン"
+
+#~ msgid "Stay here"
+#~ msgstr "ここに滞在する"
+
+#~ msgid "You have to set a Campaign Title for your eMail Campaign"
+#~ msgstr ""
+#~ "メールキャンペーンには、キャンペーンタイトルを設定する必要があります。"
+
+#~ msgid "Edit list settings"
+#~ msgstr "リスト設定の編集"
+
+#~ msgid "MailChimp list settings"
+#~ msgstr "MailChimpリスト設定"
+
+#~ msgid "Update the main details used by this list and its campaigns."
+#~ msgstr "このリストとそのキャンペーンで使用される主な詳細を更新します。"
+
+#~ msgid "List Name"
+#~ msgstr "リスト名"
+
+#~ msgid "Changing subscribers state..."
+#~ msgstr "加入者の状態を変える..."
+
+#~ msgid "Delete selected subscribers"
+#~ msgstr "選択した購読者を削除する"
+
+#~ msgid "Selected members"
+#~ msgstr "選抜メンバー"
+
+#~ msgid "You're about to delete subscribers! Are you sure ?"
+#~ msgstr "サブスクライバーを削除しようとしています。本当にいいの？"
+
+#~ msgid "selected"
+#~ msgstr "選ばれた"
+
+#~ msgid "Delete selected"
+#~ msgstr "選択削除"
+
+#~ msgid "Deleting Subscribers..."
+#~ msgstr "購読者の削除..."
+
+#~ msgid "ERROR"
+#~ msgstr "ERROR"
+
+#~ msgid "Select the group to which you would like to add your cart"
+#~ msgstr "カートを追加したいグループを選択する"
+
+#~ msgid "You have to set a Group Name"
+#~ msgstr "グループ名を設定する必要があります。"
+
+#~ msgid "Yes : if you're sure"
+#~ msgstr "Yes : if you're sure"
+
+#~ msgid ""
+#~ "You can add the content of the cart to the selected event below<br> - OR "
+#~ "- <br>Create first an event and add them after."
+#~ msgstr ""
+#~ "以下のように、選択したイベントにカートの内容を追加することができます<br> "
+#~ "- OR - <br>最初にイベントを作成し、後から追加することができます。"
+
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr "この内容をご確認の上、送信ボタンを押してCRMをご登録ください。"
+
+#~ msgid "Please select target volunteers for members"
+#~ msgstr "会員ボランティアの対象者を選択してください"
+
+#~ msgid "Please select target Role for members"
+#~ msgstr "対象となるメンバーの役割を選択してください。"
+
+#~ msgid "Add A Group Name"
+#~ msgstr "グループ名の追加"
+
+#~ msgid "Are you sure you want to remove this person's membership from"
+#~ msgstr "この人のメンバーシップを削除してもよろしいですか？"
+
+#~ msgid "Are you sure ? You're about to delete this Person ?"
+#~ msgstr "本当にそうですか？この人物を削除しようとしているのか？"
+
+#~ msgid "Are you sure ? You are about to stop sharing your document ?"
+#~ msgstr "本当にそうですか？ドキュメントの共有をやめようとしているのでは？"
+
+#~ msgid "Confirm Delete volunteer Opportunity"
+#~ msgstr "ボランティア機会の確認と削除"
+
+#~ msgid "Select your zipped plugin file"
+#~ msgstr "zip形式のプラグインファイルを選択"
+
+#~ msgid "Personal"
+#~ msgstr "パーソナル"
+
+#~ msgid "Add your tag name"
+#~ msgstr "タグ名の追加"
+
+#~ msgid "Choose the tag you want to delete :"
+#~ msgstr "削除したいタグを選びます。"
+
+#~ msgid "Select status for : "
+#~ msgstr "のステータスを選択します。"
+
+#~ msgid ""
+#~ "Be carefull, You are about to delete a user from the group and therefore "
+#~ "the entire call history. This is strongly to be avoided."
+#~ msgstr ""
+#~ "グループからユーザーを削除しようとすると、通話履歴全体が削除されます。これ"
+#~ "は絶対に避けるべきです。"
+
+#~ msgid "Place"
+#~ msgstr "場所"
+
+#~ msgid "GDPR"
+#~ msgstr "GDPR"
+
+#~ msgid "Campaigns:"
+#~ msgstr "キャンペーンです。"
+
+#~ msgid "Generate Deposit Slip for Selected"
+#~ msgstr "選択されたDeposit Slipの生成"
+
+#~ msgid "Rows"
+#~ msgstr "ロー"
+
+#~ msgid "Add buyer"
+#~ msgstr "バイヤーの追加"
+
+#~ msgid "All members of this group are in the cart"
+#~ msgstr "このグループのメンバー全員がカートに"
+
+#~ msgid "Not all members of this group are in the cart"
+#~ msgstr ""
+#~ "このグループのすべてのメンバーがカートに入っているわけではありません"
+
+#~ msgid "Regenerate 2 Factor Authentication Secret"
+#~ msgstr "2要素認証シークレットの再生成"
+
+#~ msgid ""
+#~ "<center>You must set another Role Name <br>-- or --<br> this Role Name "
+#~ "already exist !!!</center>"
+#~ msgstr ""
+#~ "<center>別のロールネームを設定する必要があります。<br>または、<br>このロー"
+#~ "ルネームはすでに存在しています!!!</center>。"
+
+#~ msgid "Done !"
+#~ msgstr "Done!"
+
+#~ msgid "Removing finished...."
+#~ msgstr "完成品の取り外し...."
+
+#~ msgid "Nothing to remove."
+#~ msgstr "除去するものはありません。"
+
+#~ msgid "Are you sure you want to remove the selected group members?"
+#~ msgstr "選択したグループメンバーを削除してよろしいですか？"
+
+#~ msgid "Songs"
+#~ msgstr "曲目"
+
+#~ msgid "Add all"
+#~ msgstr "すべてを追加"
+
+#~ msgid ""
+#~ "Use this method to share files with individuals or teams within your "
+#~ "organization. If the recipient already has access to the share, but can't "
+#~ "locate it, you can send them the internal link to facilitate access."
+#~ msgstr ""
+#~ "この方法は、組織内の個人やチームとファイルを共有する場合に使用します。受信"
+#~ "者がすでに共有ファイルにアクセスできるにもかかわらず、その場所を見つけられ"
+#~ "ない場合は、内部リンクを送信してアクセスしやすくすることができます。"
+
+#~ msgid "You're about to remove a folder and it's content"
+#~ msgstr "フォルダとその内容を削除しようとしている"
+
+#~ msgid "Files input"
+#~ msgstr "入力ファイル"
+
+#~ msgid "Upload your files"
+#~ msgstr "ファイルのアップロード"
+
+#~ msgid "Upload"
+#~ msgstr "アップロード"
+
+#~ msgid "Upload your Files"
+#~ msgstr "ファイルのアップロード"
+
+#~ msgid "Share your File"
+#~ msgstr "ファイルの共有"
+
+#~ msgid "Add person"
+#~ msgstr "人の追加"
+
+#~ msgid "Switch Camera"
+#~ msgstr "スイッチカメラ"
+
+#~ msgid "Info"
+#~ msgstr "情報"
+
+#, fuzzy
+#~ msgid "Moved!"
+#~ msgstr "移動"
+
+#~ msgid "Problem"
+#~ msgstr "問題点"
+
+#~ msgid ""
+#~ "Safari isn't yet supported with Jitsi, use something else !<br/>• Your "
+#~ "webcam<br/>• Sharing your windows<br/> won't work with meeting."
+#~ msgstr ""
+#~ "<br/>- ウェブカメラ<br/>- ウィンドウの共有<br/>はミーティングでは動作しま"
+#~ "せん。"
+
+#~ msgid "Set a Jitsi room name"
+#~ msgstr "Jitsiのルームネームの設定"
+
+#~ msgid "Delete all Rooms?"
+#~ msgstr "すべての部屋を削除しますか？"
+
+#~ msgid "All"
+#~ msgstr "すべて"
+
+#~ msgid ""
+#~ "Deleting an event will also delete all attendance counts for that event."
+#~ msgstr ""
+#~ "イベントを削除すると、そのイベントのすべての出席者数も削除されます。"
+
+#~ msgid "Are you sure you want to DELETE the event ?"
+#~ msgstr "本当にイベントを削除していいのですか？"
+
+#~ msgid ""
+#~ "You can create the event automatically with the students<br> - OR - "
+#~ "<br>Add the students to the cart and create an event to add them after."
+#~ msgstr ""
+#~ "生徒と一緒に自動的にイベントを作成することができます<br> - OR - <br>カート"
+#~ "に生徒を追加し、その後に追加するイベントを作成することができます。"

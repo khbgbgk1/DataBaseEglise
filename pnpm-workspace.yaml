@@ -1,0 +1,5 @@
+allowBuilds:
+  '@fortawesome/fontawesome-free': false
+  '@parcel/watcher': false
+  admin-lte: false
+  iltorb: false

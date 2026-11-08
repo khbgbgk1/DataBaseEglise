@@ -1,0 +1,19 @@
+#: ../src/Plugins/NewsDashboard/v2/templates/View.php:49
+msgid "News"
+msgstr ""
+
+#: ../src/Plugins/NewsDashboard/v2/templates/View.php:62
+msgid "No news at this time"
+msgstr ""
+
+#: ../src/Plugins/NewsDashboard/v2/templates/View.php:81
+msgid "Remove"
+msgstr ""
+
+#: ../src/Plugins/NewsDashboard/v2/templates/View.php:82
+msgid "Edit"
+msgstr ""
+
+#: ../src/Plugins/NewsDashboard/v2/templates/View.php:98
+msgid "Add News"
+msgstr ""

@@ -1,0 +1,2023 @@
+<?php
+/*******************************************************************************
+ *
+ *  filename    : templates/personEditor.php
+ *  last change : 2023-06-18
+ * 
+ *  website     : http://www.ecclesiacrm.com
+ *  copyright   : Copyright 2001, 2002, 2003 Deane Barker, Chris Gebhardt
+ *                Copyright 2004-2005 Michael Wilt
+ *                2023 Philippe Logel
+ * 
+ ******************************************************************************/
+
+ use EcclesiaCRM\dto\SystemConfig;
+ use EcclesiaCRM\Utils\InputUtils;
+ use EcclesiaCRM\Utils\OutputUtils;
+ use EcclesiaCRM\Utils\MiscUtils;
+ use EcclesiaCRM\Utils\LoggerUtils;
+ use EcclesiaCRM\Emails\NewPersonOrFamilyEmail;
+ use EcclesiaCRM\PersonQuery;
+ use EcclesiaCRM\Person;
+ use EcclesiaCRM\dto\Photo;
+ use EcclesiaCRM\dto\SystemURLs;
+ use EcclesiaCRM\FamilyQuery;
+ use EcclesiaCRM\Family;
+ use EcclesiaCRM\ListOptionQuery;
+ use EcclesiaCRM\PersonCustomQuery;
+ use EcclesiaCRM\PersonCustom;
+ use EcclesiaCRM\PersonCustomMasterQuery;
+ use EcclesiaCRM\dto\StateDropDown;
+ use EcclesiaCRM\dto\CountryDropDown;
+ use EcclesiaCRM\utils\RedirectUtils;
+ use EcclesiaCRM\SessionUser;
+ use EcclesiaCRM\UserQuery;
+ use EcclesiaCRM\dto\CanvassUtilities;
+ 
+ use Propel\Runtime\Propel;
+
+
+// Security: User must have Add or Edit Records permission to use this form in those manners
+// Clean error handling: (such as somebody typing an incorrect URL ?PersonID= manually)
+if ($iPersonID > 0) {
+    $person = PersonQuery::Create()
+        ->findOneById($iPersonID);
+
+    if (empty($person)) {
+        RedirectUtils::Redirect('v2/dashboard');
+        exit();
+    }
+
+    if ($person->getDateDeactivated() != null && !SessionUser::getUser()->isGdrpDpoEnabled()) {
+        RedirectUtils::Redirect('members/404.php?type=Person');
+    }
+
+    if (!(
+        SessionUser::getUser()->isEditRecordsEnabled() ||
+        (SessionUser::getUser()->isEditSelfEnabled() && $iPersonID == SessionUser::getUser()->getPersonId()) ||
+        (SessionUser::getUser()->isEditSelfEnabled() && $person->getFamId() == SessionUser::getUser()->getPerson()->getFamId())
+    )
+    ) {
+        RedirectUtils::Redirect('v2/dashboard');
+        exit;
+    }
+} elseif (!SessionUser::getUser()->isAddRecordsEnabled()) {
+    RedirectUtils::Redirect('v2/dashboard');
+    exit;
+}
+
+// All the custom fields
+$ormCustomFields = PersonCustomMasterQuery::Create()
+    ->orderByCustomOrder()
+    ->find();
+
+// only the left custom fields
+$ormLeftCustomFields = PersonCustomMasterQuery::Create()
+    ->orderByCustomOrder()
+    ->filterByCustomSide('left')
+    ->find()->toArray();
+
+// only the right custom fields
+$ormRightCustomFields = PersonCustomMasterQuery::Create()
+    ->orderByCustomOrder()
+    ->filterByCustomSide('right')
+    ->find()->toArray();
+
+$numLeftCustomFields = count($ormLeftCustomFields);
+$numRightCustomFields = count($ormRightCustomFields);
+
+$maxCustomFields = max($numRightCustomFields, $numLeftCustomFields);
+
+$numCustomFields = $numRightCustomFields + $numLeftCustomFields;
+
+// Get the lists of canvassers
+$canvassers = CanvassUtilities::CanvassGetCanvassers('Canvassers');
+$braveCanvassers = CanvassUtilities::CanvassGetCanvassers('BraveCanvassers');
+
+
+//Initialize the error flag
+$bErrorFlag = false;
+$sFirstNameError = '';
+
+$sMiddleNameError = '';
+$sLastNameError = '';
+$sEmailError = '';
+$sWorkEmailError = '';
+$sBirthDateError = '';
+$sBirthYearError = '';
+$sFriendDateError = '';
+$sMembershipDateError = '';
+$aCustomErrors = [];
+$bBirthDateUnknown = false;
+$bMembershipDateUnknown = false;
+$bFriendDateUnknown = false;
+
+$fam_Country = '';
+
+$bNoFormat_HomePhone = false;
+$bNoFormat_WorkPhone = false;
+$bNoFormat_CellPhone = false;
+$bFacebookID = $sFacebookError = 0;
+
+$prefilledFamilyRole = 0;
+if ($iPersonID <= 0 && isset($_GET['FamilyRole'])) {
+    $prefilledFamilyRole = InputUtils::LegacyFilterInput($_GET['FamilyRole'], 'int');
+}
+$sTwitter = $sTwitterError = 0;
+$sLinkedIn = $sLinkedInError = 0;
+$type_ID = 0;
+
+
+//Is this the second pass?
+if (isset($_POST['PersonSubmit']) || isset($_POST['PersonSubmitAndAdd'])) {
+    //Get all the variables from the request object and assign them locally
+
+    $sTitle = InputUtils::LegacyFilterInput($_POST['Title']);
+    $sFirstName = InputUtils::FilterString($_POST['FirstName']);
+    $sMiddleName = InputUtils::FilterString($_POST['MiddleName']);
+    $sLastName = InputUtils::FilterString($_POST['LastName']);
+    $sSuffix = InputUtils::FilterString($_POST['Suffix']);
+    $iGender = InputUtils::LegacyFilterInput($_POST['Gender'], 'int');
+
+    // Person address stuff is normally surpressed in favor of family address info
+    $sAddress1 = '';
+    $sAddress2 = '';
+
+    $sCity = '';
+    $sZip = '';
+    $sCountry = '';
+    if (array_key_exists('Address1', $_POST)) {
+        $sAddress1 = InputUtils::FilterString($_POST['Address1']);
+    }
+    if (array_key_exists('Address2', $_POST)) {
+        $sAddress2 = InputUtils::FilterString($_POST['Address2']);
+    }
+    if (array_key_exists('City', $_POST)) {
+        $sCity = InputUtils::FilterString($_POST['City']);
+    }
+    if (array_key_exists('Zip', $_POST)) {
+        $sZip = InputUtils::LegacyFilterInput($_POST['Zip']);
+    }
+
+    if (SessionUser::getUser()->isCanvasserEnabled()) { // Only take modifications to this field if the current user is a canvasser
+        $bOkToCanvass = isset($_POST['OkToCanvass']);
+        $iCanvasser = 0;
+        if (array_key_exists('Canvasser', $_POST)) {
+            $iCanvasser = InputUtils::LegacyFilterInput($_POST['Canvasser']);
+        }
+        if ((!$iCanvasser) && array_key_exists('BraveCanvasser', $_POST)) {
+            $iCanvasser = InputUtils::LegacyFilterInput($_POST['BraveCanvasser']);
+        }
+        if (!$iCanvasser) {
+            $iCanvasser = 0;
+        }
+    }
+
+    // Person address stuff is normally surpressed in favor of family address info
+    $sFamName = '';
+    $sFamAddress1 = '';
+    $sFamAddress2 = '';
+    $sFamCity = '';
+    $sFamZip = '';
+    $sFamState = '';
+    $sFamCountry = '';
+    $bSendNewsLetter = isset($_POST['SendNewsLetter']);
+
+    if ($bSendNewsLetter) {
+        $bSendNewsLetterString = "TRUE";
+    } else {
+        $bSendNewsLetterString = "FALSE";
+    }
+    if ($bOkToCanvass) {
+        $bOkToCanvassString = "TRUE";
+    } else {
+        $bOkToCanvassString = "FALSE";
+    }
+    if (array_key_exists('FamName', $_POST)) {
+        $sFamName = InputUtils::FilterString($_POST['FamName']);
+        if ($sFamName == "") {
+            $sFamName = $sLastName;
+        }
+    }
+    if (array_key_exists('FamAddress1', $_POST)) {
+        $sFamAddress1 = InputUtils::FilterString($_POST['FamAddress1']);
+    }
+    if (array_key_exists('FamAddress2', $_POST)) {
+        $sFamAddress2 = InputUtils::FilterString($_POST['FamAddress2']);
+    }
+    if (array_key_exists('FamCity', $_POST)) {
+        $sFamCity = InputUtils::FilterString($_POST['FamCity']);
+    }
+    if (array_key_exists('FamZip', $_POST)) {
+        $sFamZip = InputUtils::LegacyFilterInput($_POST['FamZip']);
+    }
+    if (array_key_exists('FamState', $_POST)) {
+        $sFamState = InputUtils::FilterString($_POST['FamState']);
+    }
+
+    // bevand10 2012-04-26 Add support for uppercase ZIP - controlled by administrator via cfg param
+    if (SystemConfig::getBooleanValue('bForceUppercaseZip')) {
+        $sFamZip = strtoupper($sFamZip);
+    }
+
+    if (array_key_exists('FamCountry', $_POST)) {
+        $sFamCountry = InputUtils::FilterString($_POST['FamCountry']);
+    }
+
+    $iFamily = InputUtils::LegacyFilterInput($_POST['Family'], 'int');
+    $iFamilyRole = InputUtils::LegacyFilterInput($_POST['FamilyRole'], 'int');
+
+    // Get their family's country in case person's country was not entered
+    if ($iFamily > 0) {
+        $fam = FamilyQuery::Create()->findOneById($iFamily);
+
+        $fam_Country = $fam->getCountry();
+    }
+
+    $sCountryTest = MiscUtils::SelectWhichInfo($sCountry, $fam_Country, false);
+    $sState = '';
+    if ($sCountryTest == 'United States' || $sCountryTest == 'Canada') {
+        if (array_key_exists('State', $_POST)) {
+            $sState = InputUtils::FilterString($_POST['State']);
+        }
+    } else {
+        if (array_key_exists('StateTextbox', $_POST)) {
+            $sState = InputUtils::LegacyFilterInput($_POST['StateTextbox']);
+        }
+    }
+
+    $sHomePhone = InputUtils::LegacyFilterInput($_POST['HomePhone']);
+    $sWorkPhone = InputUtils::LegacyFilterInput($_POST['WorkPhone']);
+    $sCellPhone = InputUtils::LegacyFilterInput($_POST['CellPhone']);
+    $sEmail = InputUtils::LegacyFilterInput($_POST['Email']);
+    $sWorkEmail = InputUtils::LegacyFilterInput($_POST['WorkEmail']);
+
+    $bBirthDateUnknown = isset($_POST['BirthDateUnknown']);
+    $birthDateInput = InputUtils::FilterDate($_POST['BirthDayDate']);
+
+    if ($bBirthDateUnknown) {
+        $iBirthMonth = 1;
+        $iBirthDay = 1;
+        $iBirthYear = 1901;
+        $sBirthDayDate = '';
+    } elseif (!empty($birthDateInput)) {
+        $sBirthDayDate = new DateTime($birthDateInput);
+        $iBirthMonth = $sBirthDayDate->format('m');
+        $iBirthDay = $sBirthDayDate->format('d');
+        $iBirthYear = $sBirthDayDate->format('Y');
+    } else {
+        $iBirthMonth = 0;
+        $iBirthDay = 0;
+        $iBirthYear = 0;
+        $sBirthDayDate = '';
+    }
+
+    $bHideAge = isset($_POST['HideAge']);
+    // Philippe Logel
+    $bFriendDateUnknown = isset($_POST['FriendDateUnknown']);
+    $bMembershipDateUnknown = isset($_POST['MembershipDateUnknown']);
+    $dFriendDate = $bFriendDateUnknown ? '' : InputUtils::FilterDate($_POST['FriendDate']);
+    $dMembershipDate = $bMembershipDateUnknown ? '' : InputUtils::FilterDate($_POST['MembershipDate']);
+    $iClassification = InputUtils::LegacyFilterInput($_POST['Classification'], 'int');
+    $iEnvelope = 0;
+    if (array_key_exists('EnvID', $_POST)) {
+        $iEnvelope = InputUtils::LegacyFilterInput($_POST['EnvID'], 'int');
+    }
+
+    if (array_key_exists('updateBirthYear', $_POST)) {
+        $iupdateBirthYear = InputUtils::LegacyFilterInput($_POST['updateBirthYear'], 'int');
+    }
+    $iFacebook = InputUtils::FilterInt($_POST['Facebook']);
+    $sTwitter = InputUtils::FilterString($_POST['Twitter']);
+    $sLinkedIn = InputUtils::FilterString($_POST['LinkedIn']);
+
+    $bNoFormat_HomePhone = isset($_POST['NoFormat_HomePhone']);
+    $bNoFormat_WorkPhone = isset($_POST['NoFormat_WorkPhone']);
+    $bNoFormat_CellPhone = isset($_POST['NoFormat_CellPhone']);
+
+    //Validate the Last Name.  If family selected, but no last name, inherit from family.
+    if (strlen($sLastName) < 1 && !SystemConfig::getValue('bAllowEmptyLastName')) {
+        if ($iFamily < 1) {
+            $sLastNameError = _('You must enter a Last Name if no Family is selected.');
+            $bErrorFlag = true;
+        } else {
+            $fam = FamilyQuery::Create()->findOneById($iFamily);
+            $sLastName = $fam->getName();
+        }
+    }
+    // If they entered a full date, see if it's valid
+    if (strlen($iBirthYear) > 0) {
+        if ($iBirthYear == 0) { // If zero set to NULL
+            $iBirthYear = null;
+        } elseif ($iBirthYear > 2155 || $iBirthYear < 1901) {
+            $sBirthYearError = _('Invalid Year: allowable values are 1901 to 2155');
+            $bErrorFlag = true;
+        } elseif ($iBirthMonth > 0 && $iBirthDay > 0) {
+            if (!checkdate($iBirthMonth, $iBirthDay, $iBirthYear)) {
+                $sBirthDateError = _('Invalid Birth Date.');
+                $bErrorFlag = true;
+            }
+        }
+    }
+
+    // Validate Friend Date if one was entered
+    if (strlen($dFriendDate) > 0) {
+        $dateString = InputUtils::parseAndValidateDate($dFriendDate, $locale = 'US', $pasfut = 'past');
+        if ($dateString === false) {
+            $sFriendDateError = '<span style="color: red; ">'
+                . _('Not a valid Friend Date') . '</span>';
+            $bErrorFlag = true;
+        } else {
+            $dFriendDate = $dateString;
+        }
+    }
+    // Validate Membership Date if one was entered
+    if (strlen($dMembershipDate) > 0) {
+        $dateString = InputUtils::parseAndValidateDate($dMembershipDate, $locale = 'US', $pasfut = 'past');
+        if ($dateString === false) {
+            $sMembershipDateError = '<span style="color: red; ">'
+                . _('Not a valid Membership Date') . '</span>';
+            $bErrorFlag = true;
+        } else {
+            $dMembershipDate = $dateString;
+        }
+    }
+
+    // Validate Email
+    if (strlen($sEmail) > 0) {
+        if (MiscUtils::checkEmail($sEmail) == false) {
+            $sEmailError = '<span style="color: red; ">'
+                . _('Email is Not Valid') . '</span>';
+            $bErrorFlag = true;
+        } else {
+            $sEmail = $sEmail;
+        }
+    }
+
+    // Validate Work Email
+    if (strlen($sWorkEmail) > 0) {
+        if (MiscUtils::checkEmail($sWorkEmail) == false) {
+            $sWorkEmailError = '<span style="color: red; ">'
+                . _('Work Email is Not Valid') . '</span>';
+            $bErrorFlag = true;
+        } else {
+            $sWorkEmail = $sWorkEmail;
+        }
+    }
+
+    // Validate all the custom fields
+    $aCustomData = [];
+
+    foreach ($ormCustomFields as $rowCustomField) {
+        if (OutputUtils::securityFilter($rowCustomField->getCustomFieldSec())) {
+            $currentFieldData = InputUtils::LegacyFilterInput($_POST[$rowCustomField->getCustomField()]);
+
+            $bErrorFlag |= !InputUtils::validateCustomField($rowCustomField->getTypeId(), $currentFieldData, $rowCustomField->getCustomField(), $aCustomErrors);
+
+            // assign processed value locally to $aPersonProps so we can use it to generate the form later
+            $aCustomData[$rowCustomField->getCustomField()] = $currentFieldData;
+        }
+    }
+
+    //If no errors, then let's update...
+    if (!$bErrorFlag) {
+        $sPhoneCountry = MiscUtils::SelectWhichInfo($sCountry, $fam_Country, false);
+
+        if (!$bNoFormat_HomePhone) {
+            $sHomePhone = MiscUtils::CollapsePhoneNumber($sHomePhone, $sPhoneCountry);
+        }
+        if (!$bNoFormat_WorkPhone) {
+            $sWorkPhone = MiscUtils::CollapsePhoneNumber($sWorkPhone, $sPhoneCountry);
+        }
+        if (!$bNoFormat_CellPhone) {
+            $sCellPhone = MiscUtils::CollapsePhoneNumber($sCellPhone, $sPhoneCountry);
+        }
+
+        //If no birth year, set to NULL
+        if ((strlen($iBirthYear) != 4)) {
+            $iBirthYear = 'NULL';
+        } else {
+            $iBirthYear = "$iBirthYear";
+        }
+
+        // New Family (add)
+        // Family will be named by the Last Name of the Person
+        if ($iFamily == -1) {
+            $family = new Family();
+
+            $family->setName($sFamName);
+            $family->setAddress1($sFamAddress1);
+            $family->setAddress2($sFamAddress2);
+            $family->setCity($sFamCity);
+            $family->setState($sFamState);
+            $family->setZip($sFamZip);
+            $family->setCountry($sFamCountry);
+            $family->setHomePhone($sHomePhone);
+            $family->setWorkPhone($sWorkPhone);
+            $family->setCellPhone($sCellPhone);
+            $family->setEmail($sEmail);
+            $family->setDateEntered(date('YmdHis'));
+            $family->setEnteredBy(SessionUser::getUser()->getPersonId());
+            $family->save();
+
+            $family->updateLanLng();
+            $family->save();
+
+
+            //Get the key back You use the same code in /v2/cart/view
+            $iFamily = $family->getId();
+        } else {// the Family still exist
+            // in the case the family is changing we have to check if the old family has still a member.
+            // maybe we have to deactivate the family
+            $family = FamilyQuery::Create()
+                ->findOneById($iFamily);
+
+            // a member change to a new familly, but the name of the family, shouldn't be changed
+            if (!is_null($family)) {//
+                $family->setName($sFamName);
+                $family->setAddress1($sFamAddress1);
+                $family->setAddress2($sFamAddress2);
+                $family->setCity($sFamCity);
+                $family->setState($sFamState);
+                $family->setZip($sFamZip);
+                $family->setCountry($sFamCountry);
+                $family->setHomePhone($sHomePhone);
+                $family->setWorkPhone($sWorkPhone);
+                $family->setCellPhone($sCellPhone);
+                $family->setEmail($sEmail);
+                $family->setDateEntered(date('YmdHis'));
+                $family->setEnteredBy(SessionUser::getUser()->getPersonId());
+
+                $family->updateLanLng();
+
+                $family->save();
+
+                $iFamily = $family->getId();
+            }
+        }
+
+        if ($bHideAge) {
+            $per_Flags = 1;
+        } else {
+            $per_Flags = 0;
+        }
+
+        // New Person (add)
+        if ($iPersonID < 1) {
+            $iEnvelope = 0;
+
+            $person = new Person();
+            $person->setTitle($sTitle);
+            $person->setFirstName($sFirstName);
+            $person->setMiddleName($sMiddleName);
+            $person->setLastName($sLastName);
+            $person->setSuffix($sSuffix);
+            $person->setGender($iGender);
+            $person->setAddress1($sAddress1);
+            $person->setAddress2($sAddress2);
+            $person->setCity($sCity);
+            $person->setState($sState);
+            $person->setZip($sZip);
+            $person->setCountry($sCountry);
+            $person->setHomePhone($sHomePhone);
+            $person->setWorkPhone($sWorkPhone);
+            $person->setCellPhone($sCellPhone);
+            $person->setEmail($sEmail);
+            $person->setWorkEmail($sWorkEmail);
+            $person->setBirthMonth($iBirthMonth);
+            $person->setBirthDay($iBirthDay);
+            $person->setBirthYear($iBirthYear);            
+
+            // bSendNewsLetterString : When you activated a single person the family is deactivated
+            if ($bSendNewsLetterString == "TRUE" && $iFamily > 0 && !is_null($family)) {
+                $family->setSendNewsletter("FALSE");
+            }
+
+            if (SessionUser::getUser()->isCanvasserEnabled() && !is_null($family)) {
+                $family->setOkToCanvass($bOkToCanvassString);
+                $family->setCanvasser($iCanvasser);
+            }
+
+            if (SessionUser::getUser()->isFinanceEnabled() && SystemConfig::getBooleanValue('bEnabledFinance')) {
+                $person->setEnvelope($iEnvelope);
+            }
+
+            $person->setFamId($iFamily);
+            $person->setFmrId($iFamilyRole);
+
+            if (strlen($dMembershipDate) > 0) {
+                $person->setMembershipDate($dMembershipDate);
+            }
+
+            $person->setClsId($iClassification);
+            $person->setDateEntered(new DateTime());
+            $person->setEnteredBy(SessionUser::getUser()->getPersonId());
+
+            if (strlen($dFriendDate) > 0) {
+                $person->setFriendDate($dFriendDate);
+            }
+
+            $person->setFlags($per_Flags);
+            $person->setFacebookID($iFacebook);
+            $person->setTwitter($sTwitter);
+            $person->setLinkedIn($sLinkedIn);
+
+            $person->save();
+
+            $iPersonID = $person->getId();
+
+            $person->setSendNewsletter($bSendNewsLetterString);
+            $person->save();
+
+            $bGetKeyBack = true;
+
+            // Existing person (update)
+        } else {
+            // we change the email of the User if the user exists
+            $user = UserQuery::Create()->findOneByPersonId($iPersonID);
+
+            if (!is_null($user)) {
+                $user->changePrincipalEmail($sEmail);
+            }
+
+            $person = PersonQuery::Create()
+                ->findOneByID($iPersonID);
+
+            $oldEmail = $person->getEmail();
+
+            $person->setTitle($sTitle);
+            $person->setFirstName($sFirstName);
+            $person->setMiddleName($sMiddleName);
+            $person->setLastName($sLastName);
+            $person->setSuffix($sSuffix);
+            $person->setGender($iGender);
+            $person->setAddress1($sAddress1);
+            $person->setAddress2($sAddress2);
+            $person->setCity($sCity);
+            $person->setState($sState);
+            $person->setZip($sZip);
+            $person->setCountry($sCountry);
+            $person->setHomePhone($sHomePhone);
+            $person->setWorkPhone($sWorkPhone);
+            $person->setCellPhone($sCellPhone);
+            $person->setNewEmail($oldEmail, $sEmail);
+            $person->setWorkEmail($sWorkEmail);
+            $person->setBirthMonth($iBirthMonth);
+            $person->setBirthDay($iBirthDay);
+            $person->setBirthYear($iBirthYear);
+            $person->setSendNewsletter($bSendNewsLetterString);
+
+            // bSendNewsLetterString : When you activated a single person the family is deactivated
+            if ($bSendNewsLetterString == "TRUE" && !is_null($person->getFamily()) ) {
+                $person->getFamily()->setSendNewsletter("FALSE");
+            }
+
+            if (SessionUser::getUser()->isCanvasserEnabled() && !is_null($person->getFamily()) ) {
+                $person->getFamily()->setOkToCanvass($bOkToCanvassString);
+                $person->getFamily()->setCanvasser($iCanvasser);
+            }
+
+            if (SessionUser::getUser()->isFinanceEnabled() && SystemConfig::getBooleanValue('bEnabledFinance')) {
+                $person->setEnvelope($iEnvelope);
+            }
+
+            $person->setFamId($iFamily);
+            $person->setFmrId($iFamilyRole);
+
+            if (strlen($dMembershipDate) > 0) {
+                $person->setMembershipDate($dMembershipDate);
+            }
+
+            $person->setClsId($iClassification);
+            $person->setDateEntered(new DateTime());
+            $person->setEnteredBy(SessionUser::getUser()->getPersonId());
+
+            $person->setDateLastEdited(new DateTime());
+            $person->setEditedBy(SessionUser::getUser()->getPersonId());
+
+            if (strlen($dFriendDate) > 0) {
+                $person->setFriendDate($dFriendDate);
+            }
+
+            $person->setFlags($per_Flags);
+            $person->setFacebookID($iFacebook);
+            $person->setTwitter($sTwitter);
+            $person->setLinkedIn($sLinkedIn);
+
+            $person->save();
+
+            $bGetKeyBack = false;
+        }
+
+        $person = PersonQuery::create()->findOneByID($iPersonID);
+
+        // the Part with note is no more useful :PL
+        // If this is a new person, get the key back and insert a blank row into the person_custom table
+        if ($bGetKeyBack) {
+            $personCustom = new PersonCustom();
+
+            $personCustom->setPerId($iPersonID);
+
+            $personCustom->save();
+
+            if (!empty(SystemConfig::getValue("sNewPersonNotificationRecipientIDs"))) {
+                $person = PersonQuery::create()->findOneByID($iPersonID);
+                $NotificationEmail = new NewPersonOrFamilyEmail($person);
+                if (!$NotificationEmail->send()) {
+                    LoggerUtils::getAppLogger()->warn($NotificationEmail->getError());
+                }
+            }
+        }
+
+        $photo = new Photo("Person", $iPersonID);
+        $photo->refresh();
+
+        // Update the custom person fields.
+        if ($numCustomFields > 0) {
+            $sSQL = '';
+            foreach ($ormCustomFields as $rowCustomField) {
+                if (OutputUtils::securityFilter($rowCustomField->getCustomFieldSec())) {
+                    $currentFieldData = trim($aCustomData[$rowCustomField->getCustomField()]);
+                    MiscUtils::sqlCustomField($sSQL, $rowCustomField->getTypeId(), $currentFieldData, $rowCustomField->getCustomField(), $sPhoneCountry);
+                }
+            }
+
+            // chop off the last 2 characters (comma and space) added in the last while loop iteration.
+            if ($sSQL > '') {
+                $sSQL = 'REPLACE INTO person_custom SET ' . $sSQL . ' per_ID = ' . $iPersonID;
+                //Execute the SQL
+
+                $connection = Propel::getConnection();
+
+                $statement = $connection->prepare($sSQL);
+                $statement->execute();
+            }
+        }
+
+        if (isset($_POST['PersonSubmit']) && $iPersonID > 0) {
+            //Send to the view of this person
+            RedirectUtils::Redirect('v2/people/person/view/' . $iPersonID);
+        } else {
+            //Reload to editor to add another record
+            RedirectUtils::Redirect('v2/people/person/editor');
+        }
+    }
+
+    // Set the envelope in case the form failed.
+    $per_Envelope = $iEnvelope;
+} else {
+
+    //FirstPass
+    //Are we editing or adding?
+    if ($iPersonID > 0) {
+        //Editing....
+        //Get all the data on this record
+        $person = PersonQuery::create()
+            ->leftJoinWithFamily()
+            ->findOneById($iPersonID);
+
+        $sTitle = $person->getTitle();
+        $sFirstName = $person->getFirstName();
+        $sMiddleName = $person->getMiddleName();
+        $sLastName = $person->getLastName();
+        $sSuffix = $person->getSuffix();
+        $iGender = $person->getGender();
+        $sAddress1 = $person->getAddress1();
+        $sAddress2 = $person->getAddress2();
+        $sCity = $person->getCity();
+        $sState = $person->getState();
+        $sZip = $person->getZip();
+        $sCountry = $person->getCountry();
+        $sHomePhone = $person->getHomePhone();
+        $sWorkPhone = $person->getWorkPhone();
+        $sCellPhone = $person->getCellPhone();
+        $sEmail = $person->getEmail();
+        $sWorkEmail = $person->getWorkEmail();
+        $iBirthMonth = $person->getBirthMonth();
+        $iBirthDay = $person->getBirthDay();
+        $iBirthYear = $person->getBirthYear();
+        $bBirthDateUnknown = ($iBirthYear == 1901 && $iBirthMonth == 1 && $iBirthDay == 1);
+        $bHideAge = ($person->getFlags() & 1) != 0;
+        $iOriginalFamily = $person->getFamId();
+        $iFamily = $person->getFamId();
+        $iFamilyRole = $person->getFmrId();
+        $dMembershipDate = ($person->getMembershipDate() != null) ? $person->getMembershipDate()->format('Y-m-d') : "";
+        $dFriendDate = ($person->getFriendDate() != null) ? $person->getFriendDate()->format('Y-m-d') : "";
+        $bMembershipDateUnknown = false;
+        $bFriendDateUnknown = false;
+        $iClassification = $person->getClsId();
+        $iViewAgeFlag = $person->getFlags();
+        $bSendNewsLetter = ($person->getSendNewsletter() == 'TRUE');
+
+        $iFacebookID = $person->getFacebookID();
+        $sTwitter = $person->getTwitter();
+        $sLinkedIn = $person->getLinkedIn();
+
+        $sPhoneCountry = MiscUtils::SelectWhichInfo($sCountry, $fam_Country, false);
+
+        $sHomePhone = MiscUtils::ExpandPhoneNumber($sHomePhone, $sPhoneCountry, $bNoFormat_HomePhone);
+        $sWorkPhone = MiscUtils::ExpandPhoneNumber($sWorkPhone, $sPhoneCountry, $bNoFormat_WorkPhone);
+        $sCellPhone = MiscUtils::ExpandPhoneNumber($sCellPhone, $sPhoneCountry, $bNoFormat_CellPhone);
+
+        //The following values are True booleans if the family record has a value for the
+        //indicated field.  These are used to highlight field headers in red.
+        if ($iFamily > 0) {
+            $fam = FamilyQuery::Create()->findOneById($iFamily);
+
+            if ( !is_null($fam) ) {
+                $bFamilyAddress1 = strlen($fam->getAddress1());
+                $bFamilyAddress2 = strlen($fam->getAddress2());
+                $bFamilyCity = strlen($fam->getCity());
+                $bFamilyState = strlen($fam->getState());
+                $bFamilyZip = strlen($fam->getZip());
+                $bFamilyCountry = strlen($fam->getCountry());
+                $bFamilyHomePhone = strlen($fam->getHomePhone());
+                $bFamilyWorkPhone = strlen($fam->getWorkPhone());
+                $bFamilyCellPhone = strlen($fam->getCellPhone());
+                $bFamilyEmail = strlen($fam->getEmail());
+
+                $bOkToCanvass = ($fam->getOkToCanvass() == 'TRUE');
+                $iCanvasser = $fam->getCanvasser();
+            }
+        }
+
+        $bFacebookID = $iFacebookID != 0;
+        $bTwitter = strlen($sTwitter);
+        $bLinkedIn = strlen($sLinkedIn);
+
+        $aCustomData = [];
+
+        $aCustomData[] = $iPersonID;
+        $aCustomData['per_ID'] = $iPersonID;
+
+        foreach ($ormCustomFields as $ormCustomField) {
+            $personCustom = PersonCustomQuery::Create()
+                ->withcolumn($ormCustomField->getCustomField())
+                ->findOneByPerId($iPersonID);
+
+            if (!is_null($personCustom)) {
+                $aCustomData[] = $personCustom->getVirtualColumn($ormCustomField->getCustomField());
+                $aCustomData[$ormCustomField->getCustomField()] = $personCustom->getVirtualColumn($ormCustomField->getCustomField());
+            }
+        }
+    } else {
+        //Adding....
+        //Set defaults
+        $sTitle = '';
+        $sFirstName = '';
+        $sMiddleName = '';
+        $sLastName = '';
+        $sSuffix = '';
+        $iGender = '';
+        $sAddress1 = '';
+        $sAddress2 = '';
+        $sCity = SystemConfig::getValue('sDefaultCity');
+        $sState = SystemConfig::getValue('sDefaultState');
+        $sZip = '';
+        $sCountry = SystemConfig::getValue('sDefaultCountry');
+        $sHomePhone = '';
+        $sWorkPhone = '';
+        $sCellPhone = '';
+        $sEmail = '';
+        $sWorkEmail = '';
+        $iBirthMonth = 0;
+        $iBirthDay = 0;
+        $iBirthYear = 0;
+        $bBirthDateUnknown = false;
+        $bMembershipDateUnknown = false;
+        $bFriendDateUnknown = false;
+        $bHideAge = 0;
+        $iOriginalFamily = 0;
+        $iFamily = '0';
+        $iFamilyRole = '0';
+        if ($prefilledFamilyRole > 0) {
+            $iFamilyRole = (string)$prefilledFamilyRole;
+        }
+        $dMembershipDate = '';
+        $dFriendDate = date('Y-m-d');
+        $iClassification = '0';
+        $iViewAgeFlag = 0;
+        $sPhoneCountry = '';
+        $bSendNewsLetter = false;
+        $bSendNewsLetter = false;
+        $bOkToCanvass = 1;
+        $iCanvasser = -1;
+
+        $iFacebookID = 0;
+        $sTwitter = '';
+        $sLinkedIn = '';
+
+
+        $sHomePhone = '';
+        $sWorkPhone = '';
+        $sCellPhone = '';
+
+        //The following values are True booleans if the family record has a value for the
+        //indicated field.  These are used to highlight field headers in red.
+        $bFamilyAddress1 = 0;
+        $bFamilyAddress2 = 0;
+        $bFamilyCity = 0;
+        $bFamilyState = 0;
+        $bFamilyZip = 0;
+        $bFamilyCountry = 0;
+        $bFamilyHomePhone = 0;
+        $bFamilyWorkPhone = 0;
+        $bFamilyCellPhone = 0;
+        $bFamilyEmail = 0;
+        $bHomeBound = false;
+        $aCustomData = [];
+    }
+}
+
+if ($bBirthDateUnknown) {
+    $sBirthDayDate = '';
+} elseif ($iBirthDay != 0 and $iBirthMonth != 0 and $iBirthYear) {
+    $sBirthDayDate = $iBirthDay . "-" . $iBirthMonth . "-" . $iBirthYear;
+} else {
+    $sBirthDayDate = '';
+}
+
+//Get Classifications for the drop-down
+// Get Field Security List Matrix
+$ormClassifications = ListOptionQuery::Create()
+    ->orderByOptionSequence()
+    ->findById(1);
+
+//Get Families for the drop-down
+if (SessionUser::getUser()->isGdrpDpoEnabled()) {// only GDRP Pdo can see the super deactivated members
+    $ormFamilies = FamilyQuery::Create()
+        ->orderByName()
+        ->find();
+} else {
+    $ormFamilies = FamilyQuery::Create()
+        ->filterByDateDeactivated(null)// GDRP, when a person is completely deactivated
+        ->orderByName()
+        ->find();
+}
+
+//Get Family Roles for the drop-down
+$ormFamilyRoles = ListOptionQuery::Create()
+    ->orderByOptionSequence()
+    ->findById(2);
+
+
+$bShowAddress = false;
+if ($iFamily == 0 && $iFamilyID != -1) {
+    $iFamily = $iFamilyID;
+}
+
+$familySelectionMode = 'unassigned';
+if ($iFamily == -1) {
+    $familySelectionMode = 'new';
+} elseif ($iFamily > 0) {
+    $familySelectionMode = 'existing';
+}
+
+$sFamName = '';
+
+if ($iFamily != 0) {
+    $bShowAddress = true;
+    $theFamily = FamilyQuery::Create()
+        ->findOneById($iFamily);
+
+    if (!is_null($theFamily)) {
+        $sFamName = $theFamily->getName();
+        $sAddress1 = $theFamily->getAddress1();
+        $sAddress2 = $theFamily->getAddress2();
+        $sCity = $theFamily->getCity();
+        $sState = $theFamily->getState();
+        $sCountry = $theFamily->getCountry();
+        $sZip = $theFamily->getZip();
+    }
+}
+
+require $sRootDocument . '/Include/Header.php';
+
+?>
+<form method="post" action="<?= $sRootPath ?>/v2/people/person/editor<?= ($iPersonID != -1)?("/".$iPersonID):"" ?>" name="PersonEditor">
+    <div class="card card-outline card-primary shadow-sm mb-3">
+        <div class="card-body py-3 px-4">
+            <div class="d-flex flex-wrap align-items-start justify-content-between">
+                <div class="pr-3">
+                    <h2 class="h4 mb-1">
+                        <i class="fas fa-user-edit mr-2 text-primary"></i><?= $iPersonID > 0 ? _('Edit person') : _('Create person') ?>
+                    </h2>
+                    <div class="text-muted small mb-0">
+                        <?= _('Complete the main information, choose how the address should be managed, then save when everything looks correct.') ?>
+                    </div>
+                </div>
+                <div class="small text-muted mt-2 mt-md-0">
+                    <?= _('Sections can be completed independently and saved at any time.') ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-light border shadow-sm alert-dismissible">
+        <i class="fas fa-info-circle text-primary mr-2"></i>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong><span style="color: red;"><?= _('Red text') ?></span></strong> <?= _('indicates items inherited from the associated family record.') ?>
+    </div>
+    <?php if ($bErrorFlag) {
+        ?>
+        <div class="alert alert-danger shadow-sm alert-dismissible">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <?= _('Invalid fields or selections. Changes not saved! Please correct and try again!') ?>
+        </div>
+        <?php
+    } ?>
+    <div class="card card-outline card-info shadow-sm clearfix">
+        <div class="card-header border-0 d-flex justify-content-between align-items-start flex-wrap">
+            <div>
+                <h3 class="mb-1"><i class="fas fa-id-card mr-2 text-info"></i><?= _('Personal Info') ?></h3>
+                <div class="small text-muted"><?= _('Identity, title, birth date and age visibility.') ?></div>
+            </div>
+            <div class="card-tools ml-auto text-right mt-2 mt-md-0">
+                <button type="submit" class="btn btn-sm btn-primary" name="PersonSubmit">
+                    <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                </button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="card-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-1">
+                        <label><?= _('Gender') ?>:</label>
+                        <select name="Gender" class="form-control form-control-sm">
+                            <option value="0"><?= _('Select Gender') ?></option>
+                            <option value="0" disabled>-----------------------</option>
+                            <option value="1" <?= ($iGender == 1) ? 'selected' : '' ?>><?= _('Male') ?></option>
+                            <option value="2" <?= ($iGender == 2) ? 'selected' : '' ?>><?= _('Female') ?></option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="Title"><?= _('Title') ?>:</label>
+                        <input type="text" name="Title" id="Title"
+                               value="<?= htmlentities(stripslashes($sTitle), ENT_NOQUOTES, 'UTF-8') ?>"
+                               class= "form-control form-control-sm" placeholder="<?= _('Mr., Mrs., Dr., Rev.') ?>">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="FirstName"><?= _('First Name') ?>:</label>
+                        <input type="text" name="FirstName" id="FirstName"
+                               value="<?= htmlentities(stripslashes($sFirstName), ENT_NOQUOTES, 'UTF-8') ?>"
+                               class= "form-control form-control-sm">
+                        <?php if ($sFirstNameError) {
+                            ?><span class="text-red"><?= $sFirstNameError ?></span><?php
+                        } ?>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="MiddleName"><?= _('Middle Name') ?>:</label>
+                        <input type="text" name="MiddleName" id="MiddleName"
+                               value="<?= htmlentities(stripslashes($sMiddleName), ENT_NOQUOTES, 'UTF-8') ?>"
+                               class= "form-control form-control-sm">
+                        <?php if ($sMiddleNameError) {
+                            ?><span class="text-red"><?= $sMiddleNameError ?></span><?php
+                        } ?>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="LastName"><?= _('Last Name') ?>:</label>
+                        <input type="text" name="LastName" id="LastName"
+                               value="<?= htmlentities(stripslashes($sLastName), ENT_NOQUOTES, 'UTF-8') ?>"
+                               class= "form-control form-control-sm">
+                        <?php if ($sLastNameError) {
+                            ?><span class="text-red"><?= $sLastNameError ?></span><?php
+                        } ?>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="Suffix"><?= _('Suffix') ?>:</label>
+                        <input type="text" name="Suffix" id="Suffix"
+                               value="<?= htmlentities(stripslashes($sSuffix), ENT_NOQUOTES, 'UTF-8') ?>"
+                               placeholder="<?= _('Jr., Sr., III') ?>" class= "form-control form-control-sm">
+                    </div>                    
+                    <div class="col-md-2">
+                        <label for="birthDateInput"><?= _('Birthday Date') ?>:</label>
+                        <div class="input-group input-group-sm mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                            <input type="text" name="BirthDayDate" class="form-control form-control-sm date-picker" value="<?= OutputUtils::change_date_for_place_holder($sBirthDayDate) ?>" maxlength="10" id="birthDateInput" size="10" placeholder="<?= SystemConfig::getValue("sDatePickerPlaceHolder") ?>" <?= $bBirthDateUnknown ? 'disabled' : '' ?>>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="birthDateUnknown" name="BirthDateUnknown" value="1" <?= $bBirthDateUnknown ? 'checked' : '' ?>>
+                            <label class="custom-control-label small" for="birthDateUnknown"><?= _('Birth date unknown') ?></label>
+                        </div>
+
+                        <?php
+                        if ($sBirthYearError) {
+                            ?><span class="text-red"><?= $sBirthYearError ?></span><?php
+                        }
+                        ?>
+                        
+                    </div>
+                    <div class="col-md-1">
+                        <label><?= _('Hide Age') ?></label>
+                        <div class="custom-control custom-checkbox mt-2">
+                            <input type="checkbox" class="custom-control-input" id="hideAge" name="HideAge" value="1" <?= ($bHideAge) ? ' checked' : '' ?>/>
+                            <label class="custom-control-label small" for="hideAge"><?= _('Yes') ?></label>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="card card-outline card-info shadow-sm clearfix">
+        <div class="card-header border-0 d-flex justify-content-between align-items-start flex-wrap">
+            <div>
+                <h3 class="mb-1"><i class="fas fa-home mr-2 text-info"></i><?= _("Person or Family Info") ?></h3>
+                <div class="small text-muted"><?= _('Role assignment, family link and shared address management.') ?></div>
+            </div>
+            <div class="card-tools ml-auto text-right mt-2 mt-md-0">
+                <button type="submit" class="btn btn-sm btn-primary" name="PersonSubmit">
+                    <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                </button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <label><?= _("Person or Family Role") ?>:</label>
+                    <select name="FamilyRole" class="form-control form-control-sm">
+                        <option value="0"><?= _("Unassigned") ?></option>
+                        <option value="0" disabled>-----------------------</option>
+                        <?php
+                        foreach ($ormFamilyRoles
+
+                        as $ormFamilyRole) {
+                        ?>
+                        <option value="<?= $ormFamilyRole->getOptionId() ?>"
+                            <?= ($iFamilyRole == $ormFamilyRole->getOptionId()) ? ' selected' : '' ?>><?= $ormFamilyRole->getOptionName() ?>
+                            &nbsp;
+                            <?php
+                            }
+                            ?>
+                    </select>
+                </div>
+
+                <div class="col-md-9" <?= (!SessionUser::getUser()->isEditRecordsEnabled()) ? 'style="display: none;"' : '' ?>>
+                    <label><?= _('Address assignment'); ?>:</label>
+                    
+                    <input type="hidden" name="Family" id="familySelectionValue" value="<?= (int)$iFamily ?>">
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="card card-outline card-secondary h-100 mb-0 shadow-sm" style="cursor:pointer;">
+                                <div class="card-body">
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="familyModeUnassigned" name="familyAssignmentMode" value="unassigned" <?= $familySelectionMode === 'unassigned' ? 'checked' : '' ?>>
+                                        <label for="familyModeUnassigned" class="custom-control-label font-weight-bold"><?= _('No assigned address') ?></label>
+                                    </div>
+                                    <div class="small text-muted mt-3">
+                                        <?= _('Keep this person independent, without linking to a family address.') ?>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="card card-outline card-info h-100 mb-0 shadow-sm" style="cursor:pointer;">
+                                <div class="card-body">
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="familyModeNew" name="familyAssignmentMode" value="new" <?= $familySelectionMode === 'new' ? 'checked' : '' ?>>
+                                        <label for="familyModeNew" class="custom-control-label font-weight-bold"><?= _('Create a new address') ?></label>
+                                    </div>
+                                    <div class="small text-muted mt-3">
+                                        <?= _('Create a new address or a new family directly from this form.') ?>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="card card-outline card-primary h-100 mb-0 shadow-sm" style="cursor:pointer;">
+                                <div class="card-body">
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="familyModeExisting" name="familyAssignmentMode" value="existing" <?= $familySelectionMode === 'existing' ? 'checked' : '' ?>>
+                                        <label for="familyModeExisting" class="custom-control-label font-weight-bold"><?= _('Use an existing address') ?></label>
+                                    </div>
+                                    <div class="small text-muted mt-3">
+                                        <?= _('Use this for a move, an address change, or a family reassignment.') ?>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- start of the new code PL -->
+            <div id="familyAddress">
+                <div class="card card-outline card-secondary shadow-none mb-3">
+                    <div class="card-body">
+                <div class="form-group mb-0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="border-bottom mb-3 pb-2">
+                                <h3 class="h5 mb-0"><i class="fas fa-map-marker-alt mr-2"></i><?= _('Person or Family Address') ?></h3>
+                                <div class="small text-muted mt-1"><?= _('Use these fields when creating a new family/address or when reviewing a selected family address.') ?></div>
+                            </div>
+                        </div><!-- /.box-header -->
+                    </div>
+                    <div id="existingFamilyPicker" class="mb-4" <?= $familySelectionMode === 'existing' ? '' : 'style="display:none;"' ?>>
+                        <div class="border rounded bg-light p-3">
+                            <label for="optionFamily" class="font-weight-bold mb-2 d-block"><?= _('Choose an existing family or address') ?></label>
+                            <div class="small text-muted mb-3">
+                                <?= _('Select the shared address first, then review or adjust the values just below.') ?>
+                            </div>
+                            <select class= "form-control form-control-sm" id="optionFamily">
+                            <?php
+                            foreach ($ormFamilies as $ormFamily) {
+                            ?>
+                            <option value="<?= $ormFamily->getId() ?>"
+                                data-family-name="<?= htmlentities($ormFamily->getName(), ENT_QUOTES, 'UTF-8') ?>"
+                                data-family-address="<?= htmlentities(MiscUtils::FormatAddressLine($ormFamily->getAddress1(), $ormFamily->getCity(), $ormFamily->getState()), ENT_QUOTES, 'UTF-8') ?>"
+                                <?= ($iFamily == $ormFamily->getId() || $iFamilyID != -1 && $iFamilyID == $ormFamily->getId()) ? ' selected' : '' ?>><?= $ormFamily->getName() ?> (ID<?= $ormFamily->getId() ?>)
+                                &nbsp;<?= MiscUtils::FormatAddressLine($ormFamily->getAddress1(), $ormFamily->getCity(), $ormFamily->getState()) ?>
+                                <?php
+                                }
+                                ?>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label><?= _('Person Name') ?> <?= _('or') ?> <?= _('Family Name') ?>:</label>
+                            <input type="text" id="FamName" name="FamName"
+                                   value="<?= htmlentities(stripslashes($sFamName), ENT_NOQUOTES, 'UTF-8') ?>" size="50"
+                                   maxlength="250" class= "form-control form-control-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-light border mb-0 py-2 px-3 small">
+                                <i class="fas fa-lightbulb text-warning mr-2"></i><?= _('A person may have a different last name than the family. Enter the family name here only when it must differ from the person name; otherwise leave this field blank.') ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label><?= _('Address') ?> 1:</label>
+                            <input type="text" id="FamAddress1" name="FamAddress1"
+                                   value="<?= htmlentities(stripslashes($sAddress1), ENT_NOQUOTES, 'UTF-8') ?>"
+                                   size="50" maxlength="250" class= "form-control form-control-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <label><?= _('Address') ?> 2:</label>
+                            <input type="text" id="FamAddress2" name="FamAddress2"
+                                   value="<?= htmlentities(stripslashes($sAddress2), ENT_NOQUOTES, 'UTF-8') ?>"
+                                   size="50" maxlength="250" class= "form-control form-control-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <label><?= _('City') ?>:</label>
+                            <input type="text" id="FamCity" name="FamCity"
+                                   value="<?= htmlentities(stripslashes($sCity), ENT_NOQUOTES, 'UTF-8') ?>"
+                                   maxlength="50" class= "form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div
+                            <?= (SystemConfig::getValue('bStateUnusefull')) ? "style=\"display: none;\"" : "class=\"form-group col-md-3\" " ?>>
+                            <label for="StatleTextBox"><?= _('State') ?>: </label><br>
+                            <?php
+                            $statesDDF = new StateDropDown();
+                            echo $statesDDF->getDropDown($sState, "FamState");
+                            ?>
+                        </div>
+                        <div
+                            <?= (SystemConfig::getValue('bStateUnusefull')) ? 'style="display: none;"' : 'class="form-group col-md-3" ' ?>>
+                            <label><?= _('None US/CND State') ?>:</label>
+                            <input type="text" class= "form-control form-control-sm" id="FamStateTextbox" name="FamStateTextbox"
+                                   value="<?php if ($sCountry != 'United States' && $sCountry != 'Canada') {
+                                       echo htmlentities(stripslashes($sState), ENT_NOQUOTES, 'UTF-8');
+                                   } ?>" size="20" maxlength="30">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label><?= _('Zip') ?>:</label>
+                            <input type="text" id="FamZip" name="FamZip" class= "form-control form-control-sm" <?php
+                            // bevand10 2012-04-26 Add support for uppercase ZIP - controlled by administrator via cfg param
+                            if (SystemConfig::getBooleanValue('bForceUppercaseZip')) {
+                                echo 'style="text-transform:uppercase" ';
+                            }
+                            echo 'value="' . htmlentities(stripslashes($sZip), ENT_NOQUOTES, 'UTF-8') . '" '; ?>
+                                   maxlength="10" size="8">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label> <?= _('Country') ?>:</label><br>
+                            <?php
+                            $countriesDDF = new CountryDropDown();
+                            echo $countriesDDF->getDropDown($sCountry, "FamCountry");
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of the new code PL -->
+
+            <!-- canvasser -->
+            <div class="row">
+                <?php if (SessionUser::getUser()->isCanvasserEnabled() && !empty($person) && !is_null($person->getFamily()) && $person->getFamily()->getPeople()->count() == 1) { // Only show this field if the current user is a canvasser?>
+                    <div class="form-group col-md-4">
+                        <label><?= _('Ok To Canvass') ?>: </label>
+                        <input type="checkbox" Name="OkToCanvass" value="1" <?= ($bOkToCanvass) ? ' checked ' : '' ?>>
+                    </div>
+                    <?php
+
+
+                    if (!is_null($canvassers) && $canvassers->count() > 0) {
+                        ?>
+                        <div class="form-group col-md-4">
+                            <label><?= _('Assign a Canvasser') ?>:</label>
+                            <select name='Canvasser' class= "form-control form-control-sm">
+                                <option value="0"><?= _('None selected') ?></option>
+                                <?php // Display all canvassers
+                                foreach ($canvassers as $canvasser) {
+                                    ?>
+                                    <option
+                                        value="<?= $canvasser->getId() ?>" <?= ($canvasser->getId() == $iCanvasser) ? ' selected' : '' ?>>
+                                        <?= $canvasser->getFirstName() . ' ' . $canvasser->getLastName() ?>
+                                    </option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <?php
+                    }
+
+                    if (!is_null($braveCanvassers) && $braveCanvassers->count() > 0) {
+                        ?>
+                        <div class="form-group col-md-4">
+                            <label><?= _('Assign a Brave Canvasser') ?>: </label>
+
+                            <select name='BraveCanvasser' class= "form-control form-control-sm">
+                                <option value="0"><?= _('None selected') ?></option>
+                                <?php // Display all canvassers
+                                foreach ($braveCanvassers as $braveCanvasser) {
+                                    ?>
+                                    <option
+                                        value="<?= $braveCanvasser->getId() ?>" <?= ($braveCanvasser->getId() == $iCanvasser) ? ' selected' : '' ?>>
+                                        <?= $braveCanvasser->getFirstName() . ' ' . $braveCanvasser->getLastName() ?>
+                                    </option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+
+            <!-- canvasser -->
+        </div>
+    </div>
+    <div class="card card-outline card-info shadow-sm clearfix">
+        <div class="card-header border-0 d-flex justify-content-between align-items-start flex-wrap">
+            <div>
+                <h3 class="mb-1"><i class="fas fa-address-book mr-2 text-info"></i><?= _('Contact Info') ?></h3>
+                <div class="small text-muted"><?= _('Personal contact details, phone numbers, email addresses and social links.') ?></div>
+            </div>
+            <div class="card-tools ml-auto text-right mt-2 mt-md-0">
+                <button type="submit" class="btn btn-sm btn-primary" name="PersonSubmit">
+                    <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                </button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="card-body">
+            <div id="personAddress">
+                <?php
+                if (!SystemConfig::getValue('bHidePersonAddress')) { // Person Address can be hidden - General Settings : dead code now
+                    ?>
+                    <div class="border rounded p-3 mb-4 bg-light">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                            <div class="font-weight-bold"><?= _('Personal address') ?></div>
+                            <div class="small text-muted"><?= _('Use this only when the person keeps an individual address.') ?></div>
+                        </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>
+                                    <?php
+                                    if ($bFamilyAddress1) {
+                                    ?>
+                                        <span style="color: red;">
+                                    <?php
+                                    }
+                                    ?>
+
+                          <?= _('Address') . ' 1:' ?>
+
+                          <?php
+                          if ($bFamilyAddress1) {
+                          ?>
+                            </span>
+                                <?php
+                                }
+                                ?>
+                                </label>
+                                <input type="text" name="Address1"
+                                       value="<?= htmlentities(stripslashes($sAddress1), ENT_NOQUOTES, 'UTF-8') ?>"
+                                       size="30" maxlength="50" class= "form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4">
+                                <label>
+                                    <?php
+                                    if ($bFamilyAddress2) {
+                                    ?>
+                                    <span style="color: red;">
+                            <?php
+                            }
+                            ?>
+
+                            <?= _('Address') . ' 2:' ?>
+
+                            <?php
+                            if ($bFamilyAddress2) {
+                            ?>
+                               </span>
+                                <?php
+                                }
+                                ?>
+                                </label>
+                                <input type="text" name="Address2"
+                                       value="<?= htmlentities(stripslashes($sAddress2), ENT_NOQUOTES, 'UTF-8') ?>"
+                                       size="30" maxlength="50" class= "form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4">
+                                <label>
+                                    <?php
+                                    if ($bFamilyCity) {
+                                    ?>
+                                    <span style="color: red;">
+                          <?php
+                          }
+                          ?>
+
+                          <?= _('City') . ':' ?>
+
+                          <?php
+                          if ($bFamilyCity) {
+                          ?>
+                            </span>
+                                <?php
+                                }
+                                ?>
+                                </label>
+                                <input type="text" name="City"
+                                       value="<?= htmlentities(stripslashes($sCity), ENT_NOQUOTES, 'UTF-8') ?>"
+                                       class= "form-control form-control-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <p/>
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="StatleTextBox">
+                                <?php
+                                if ($bFamilyState) {
+                                ?>
+                                <span style="color: red;">
+                        <?php
+                        }
+                        ?>
+
+                        <?= _('State') . ':' ?>
+
+                        <?php
+                        if ($bFamilyState) {
+                        ?>
+                            </span>
+                            <?php
+                            }
+                            ?>
+                            </label>
+                            <?php
+                            $statesDD = new StateDropDown();
+                            echo $statesDD->getDropDown($sState);
+                            ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label><?= _('None US/CND State') ?>:</label>
+                            <input type="text" name="StateTextbox"
+                                   value="<?php if ($sPhoneCountry != 'United States' && $sPhoneCountry != 'Canada') {
+                                       echo htmlentities(stripslashes($sState), ENT_NOQUOTES, 'UTF-8');
+                                   } ?>"
+                                   size="20" maxlength="30" class= "form-control form-control-sm">
+                        </div>
+
+                        <div class="form-group col-md-1">
+                            <label for="Zip">
+                                <?php
+                                if ($bFamilyZip) {
+                                ?>
+                                <span style="color: red;">
+                        <?php
+                        }
+                        ?>
+
+                        <?= _('Zip') . ':' ?>
+
+                        <?php
+                        if ($bFamilyZip) {
+                        ?>
+                            </span>
+                            <?php
+                            }
+                            ?>
+                            </label>
+                            <input type="text" name="Zip" class= "form-control form-control-sm"
+                                <?php
+                                // bevand10 2012-04-26 Add support for uppercase ZIP - controlled by administrator via cfg param
+                                if (SystemConfig::getBooleanValue('bForceUppercaseZip')) {
+                                    echo 'style="text-transform:uppercase" ';
+                                }
+
+                                echo 'value="' . htmlentities(stripslashes($sZip), ENT_NOQUOTES, 'UTF-8') . '" '; ?>
+                                   maxlength="10" size="8">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Zip">
+                                <?php
+                                if ($bFamilyCountry) {
+                                ?>
+                                <span style="color: red;">
+                        <?php
+                        }
+                        ?>
+
+                        <?= _('Country') . ':' ?>
+
+                        <?php
+                        if ($bFamilyCountry) {
+                        ?>
+                            </span>
+                            <?php
+                            }
+                            ?>
+                            </label>
+                            <?php
+                            $countriesDD = new CountryDropDown();
+                            echo $countriesDD->getDropDown($sCountry);
+                            ?>
+                        </div>
+                    </div>
+                    <p/>
+                    </div>
+                    <?php
+                } else { // put the current values in hidden controls so they are not lost if hiding the person-specific info?>
+                    <input type="hidden" name="Address1"
+                           value="<?= htmlentities(stripslashes($sAddress1), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="Address2"
+                           value="<?= htmlentities(stripslashes($sAddress2), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="City"
+                           value="<?= htmlentities(stripslashes($sCity), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="State"
+                           value="<?= htmlentities(stripslashes($sState), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="StateTextbox"
+                           value="<?= htmlentities(stripslashes($sState), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="Zip"
+                           value="<?= htmlentities(stripslashes($sZip), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <input type="hidden" name="Country"
+                           value="<?= htmlentities(stripslashes($sCountry), ENT_NOQUOTES, 'UTF-8') ?>"></input>
+                    <?php
+                } ?>
+            </div>
+            <div class="border rounded p-3 mb-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                    <div class="font-weight-bold"><?= _('Phone numbers and newsletter') ?></div>
+                    <div class="small text-muted"><?= _('Store the preferred phone numbers and mailing preference.') ?></div>
+                </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="HomePhone">
+                        <?php
+                        if ($bFamilyHomePhone) {
+                            ?>
+                            <span style="color: red;"><?= _('Home Phone') ?>:</span>
+                            <?php
+                        } else {
+                            ?>
+                            <?= _('Home Phone') ?>:
+                            <?php
+                        }
+                        ?>
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" name="HomePhone"
+                                   value="<?= htmlentities(stripslashes($sHomePhone), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                                   maxlength="30" class= "form-control form-control-sm"
+                                   data-inputmask='"mask": "<?= SystemConfig::getValue('sPhoneFormat') ?>"' data-mask>
+                        </div>
+                        <br>
+                        <input type="checkbox" name="NoFormat_HomePhone" value="1"
+                            <?= ($bNoFormat_HomePhone) ? ' checked' : '' ?>><?= _('Do not auto-format') ?>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="WorkPhone">
+                        <?php
+                        if ($bFamilyWorkPhone) {
+                            ?>
+                            <span style="color: red;"><?= _('Work Phone') ?>:</span>
+                            <?php
+                        } else {
+                            ?>
+                            <?= _('Work Phone') ?>:
+                            <?php
+                        }
+                        ?>
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" name="WorkPhone"
+                                   value="<?= htmlentities(stripslashes($sWorkPhone), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                                   maxlength="30" class= "form-control form-control-sm"
+                                   data-inputmask='"mask": "<?= SystemConfig::getValue('sPhoneFormatWithExt') ?>"'
+                                   data-mask/>
+                        </div>
+                        <br>
+                        <input type="checkbox" name="NoFormat_WorkPhone" value="1"
+                            <?= ($bNoFormat_WorkPhone) ? ' checked' : '' ?>><?= _('Do not auto-format') ?>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="CellPhone">
+                        <?php
+                        if ($bFamilyCellPhone) {
+                            ?>
+                            <span style="color: red;"><?= _('Mobile Phone') ?>:</span>
+                            <?php
+                        } else {
+                            ?>
+                            <?= _('Mobile Phone') ?>:
+                            <?php
+                        }
+                        ?>
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" name="CellPhone"
+                                   value="<?= htmlentities(stripslashes($sCellPhone), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                                   maxlength="30" class= "form-control form-control-sm"
+                                   data-inputmask='"mask": "<?= SystemConfig::getValue('sPhoneFormatCell') ?>"' data-mask>
+                        </div>
+                        <br><input type="checkbox" name="NoFormat_CellPhone" value="1"
+                            <?= ($bNoFormat_CellPhone) ? ' checked' : '' ?>><?= _('Do not auto-format') ?>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="row">
+                        <br>
+                        <div class="form-group col-md-6">
+                            <label><?= _('Send Newsletter') ?>:</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="checkbox" Name="SendNewsLetter" value="1"
+                                <?= ($bSendNewsLetter) ? ' checked' : '' ?> style="margin-top:10px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p/>
+            </div>
+            <div class="border rounded p-3">
+                <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                    <div class="font-weight-bold"><?= _('Email and social profiles') ?></div>
+                    <div class="small text-muted"><?= _('Add the main email addresses and optional online profile identifiers.') ?></div>
+                </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="Email">
+                        <?php
+                        if ($bFamilyEmail) {
+                            ?>
+                            <span style="color: red;"><?= _('Email') ?>:</span>
+                            <?php
+                        } else {
+                            ?>
+                            <?= _('Email') ?>:
+                            <?php
+                        }
+                        ?>
+                    </label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="far fa-envelope"></i></span>
+                        </div>
+                        <input type="text" name="Email"
+                               value="<?= htmlentities(stripslashes($sEmail), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                               maxlength="100" class= "form-control form-control-sm">
+                        <?php if ($sEmailError) { ?>
+                            <span class="text-red"><?= $sEmailError ?></span><?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="WorkEmail"><?= _('Work / Other Email') ?>:</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                        </div>
+                        <input type="text" name="WorkEmail"
+                               value="<?= htmlentities(stripslashes($sWorkEmail), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                               maxlength="100" class= "form-control form-control-sm">
+                        <?php
+                        if ($sWorkEmailError) {
+                            ?>
+                            <span class="text-red"><?= $sWorkEmailError ?></span>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="FacebookID">
+                        <?php
+                        if ($bFacebookID) {
+                            ?>
+                            <span style="color: red;"><?= _('Facebook') ?> ID:</span>
+                            <?php
+                        } else {
+                            ?>
+                            <?= _('Facebook') ?> ID:
+                            <?php
+                        }
+                        ?>
+                    </label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-facebook"></i></span>
+                        </div>
+                        <input type="text" name="Facebook"
+                               value="<?= htmlentities(stripslashes($iFacebookID), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                               maxlength="100" class= "form-control form-control-sm">
+                        <?php
+                        if ($sFacebookError) {
+                            ?>
+                            <span class="text-red"><?= $sFacebookError ?></span>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Twitter"><?= _('Twitter') ?>:</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-twitter"></i></span>
+                        </div>
+                        <input type="text" name="Twitter"
+                               value="<?= htmlentities(stripslashes($sTwitter), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                               maxlength="100" class= "form-control form-control-sm">
+                        <?php
+                        if ($sTwitterError) {
+                            ?>
+                            <span class="text-red"><?= $sTwitterError ?></span>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="LinkedIn"><?= _('LinkedIn') ?>:</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                        </div>
+                        <input type="text" name="LinkedIn"
+                               value="<?= htmlentities(stripslashes($sLinkedIn), ENT_NOQUOTES, 'UTF-8') ?>" size="30"
+                               maxlength="100" class= "form-control form-control-sm">
+                        <?php
+                        if ($sLinkedInError) {
+                            ?>
+                            <span class="text-red"><?= $sLinkedInError ?></span>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-outline card-info shadow-sm clearfix">
+        <div class="card-header border-0 d-flex justify-content-between align-items-start flex-wrap">
+            <div>
+                <h3 class="mb-1"><i class="fas fa-user-check mr-2 text-info"></i><?= _('Membership Info') ?></h3>
+                <div class="small text-muted"><?= _('Classification, membership date and friend date.') ?></div>
+            </div>
+            <div class="card-tools ml-auto text-right mt-2 mt-md-0">
+                <button type="submit" class="btn btn-sm btn-primary" name="PersonSubmit">
+                    <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                </button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-3 col-lg-3">
+                    <label><?= _('Classification') ?>:</label>
+                    <select name="Classification" class= "form-control form-control-sm">
+                        <option value="0"><?= _('Unassigned') ?></option>
+                        <option value="0" disabled>-----------------------</option>
+
+                        <?php
+                        foreach ($ormClassifications
+
+                        as $ormClassification) {
+                        ?>
+                        <option value="<?= $ormClassification->getOptionId() ?>"
+                            <?= ($iClassification == $ormClassification->getOptionId()) ? ' selected' : '' ?>><?= $ormClassification->getOptionName() ?>
+                            &nbsp;
+                            <?php
+                            }
+                            ?>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 col-lg-3">
+                    <label for="membershipDateInput"><?= _('Membership Date') ?>:</label>
+                    <div class="input-group input-group-sm mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                        </div>
+                        <input type="text" name="MembershipDate" class="form-control form-control-sm date-picker"
+                               value="<?= OutputUtils::change_date_for_place_holder($dMembershipDate) ?>" maxlength="10"
+                               id="membershipDateInput" size="11"
+                               placeholder="<?= SystemConfig::getValue("sDatePickerPlaceHolder") ?>" <?= $bMembershipDateUnknown ? 'disabled' : '' ?>>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="membershipDateUnknown" name="MembershipDateUnknown" value="1" <?= $bMembershipDateUnknown ? 'checked' : '' ?>>
+                        <label class="custom-control-label small" for="membershipDateUnknown"><?= _('Membership date unknown') ?></label>
+                    </div>
+                    <?php
+                    if ($sMembershipDateError) {
+                        ?>
+                        <span class="text-red"><?= $sMembershipDateError ?></span>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php
+                if (!SystemConfig::getBooleanValue('bHideFriendDate')) { /* Friend Date can be hidden - General Settings */
+                    ?>
+                    <div class="form-group col-md-3 col-lg-3">
+                        <label for="friendDateInput"><?= _('Friend Date') ?>:</label>
+                        <div class="input-group input-group-sm mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                            <input type="text" name="FriendDate" class="form-control form-control-sm date-picker"
+                                   value="<?= OutputUtils::change_date_for_place_holder($dFriendDate) ?>" maxlength="10"
+                                   id="friendDateInput" size="10"
+                                   placeholder="<?= SystemConfig::getValue("sDatePickerPlaceHolder") ?>" <?= $bFriendDateUnknown ? 'disabled' : '' ?>>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="friendDateUnknown" name="FriendDateUnknown" value="1" <?= $bFriendDateUnknown ? 'checked' : '' ?>>
+                            <label class="custom-control-label small" for="friendDateUnknown"><?= _('Friend date unknown') ?></label>
+                        </div>
+                        <?php
+                        if ($sFriendDateError) {
+                            ?>
+                            <span class="text-red"><?= $sFriendDateError ?></span>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    if ($numCustomFields > 0) {
+        ?>
+        <div class="card card-outline card-info shadow-sm clearfix">
+            <div class="card-header border-0 d-flex justify-content-between align-items-start flex-wrap">
+                <div>
+                    <h3 class="mb-1"><i class="fas fa-sliders-h mr-2 text-info"></i><?= _('Custom Fields') ?></h3>
+                    <div class="small text-muted"><?= _('Additional information defined specifically for your organization.') ?></div>
+                </div>
+                <div class="card-tools ml-auto text-right mt-2 mt-md-0">
+                    <button type="submit" class="btn btn-sm btn-primary" name="PersonSubmit">
+                        <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                    </button>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="card-body">
+                <?php
+                if ($numCustomFields > 0) {
+                    for ($i = 0; $i < $maxCustomFields; $i++) {
+                        ?>
+                        <div class="row">
+
+                            <div class="form-group col-md-6">
+                                <?php
+                                if ($i < $numLeftCustomFields) {
+                                    $customField = $ormLeftCustomFields[$i];
+
+                                    if (OutputUtils::securityFilter($customField['CustomFieldSec'])) {
+                                        ?>
+                                        <label><?= $customField['CustomName'] ?></label>
+                                        <br>
+                                        <?php
+
+                                        if (!is_null($aCustomData) && array_key_exists($customField['CustomField'], $aCustomData)) {
+                                            $currentFieldData = trim($aCustomData[$customField['CustomField']]);
+                                        } else {
+                                            $currentFieldData = '';
+                                        }
+
+                                        if ($type_ID == 11) {// in the case of a phone number
+                                            $custom_Special = $sPhoneCountry;
+                                        } else {
+                                            $custom_Special = $customField['CustomSpecial'];
+                                        }
+
+                                        echo OutputUtils::formCustomField($customField['TypeId'], $customField['CustomField'], $currentFieldData, $custom_Special, !isset($_POST['PersonSubmit']));
+                                        if (isset($aCustomErrors[$customField['TypeId']])) {
+                                            ?>
+                                            <span
+                                                style="color: red; "><?= $aCustomErrors[$customField['TypeId']] ?></span>
+                                            <?php
+                                        }
+                                    }
+                                }
+                                ?>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <?php
+                                if ($i < $numRightCustomFields) {
+                                    $customField = $ormRightCustomFields[$i];
+
+                                    if (OutputUtils::securityFilter($customField['CustomFieldSec'])) {
+                                        ?>
+                                        <label><?= $customField['CustomName'] ?></label><br>
+                                        <?php
+                                        if (!is_null($aCustomData) && array_key_exists($customField['CustomField'], $aCustomData)) {
+                                            $currentFieldData = trim($aCustomData[$customField['CustomField']]);
+                                        } else {
+                                            $currentFieldData = '';
+                                        }
+
+                                        if ($type_ID == 11) {// in the case of a phone number
+                                            $custom_Special = $sPhoneCountry;
+                                        } else {
+                                            $custom_Special = $customField['CustomSpecial'];
+                                        }
+
+                                        echo OutputUtils::formCustomField($customField['TypeId'], $customField['CustomField'], $currentFieldData, $custom_Special, !isset($_POST['PersonSubmit']));
+
+                                        if (isset($aCustomErrors[$customField['TypeId']])) {
+                                            ?>
+                                            <span
+                                                style="color: red; "><?= $aCustomErrors[$customField['TypeId']] ?></span>
+                                            <?php
+                                        }
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    <div class="card card-outline card-secondary shadow-sm mt-3 mb-3">
+        <div class="card-body py-2 px-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="small text-muted mb-2 mb-md-0">
+                    <?= _('Review the information above before saving. You can come back later to complete missing details.') ?>
+                </div>
+                <div class="d-flex flex-wrap justify-content-end align-items-center">
+                <button type="button" class="btn btn-sm btn-outline-secondary mr-2 mb-1" name="PersonCancel"
+                        onclick="javascript:document.location='<?= $sRootPath ?>/v2/people/list/person';">
+                    <i class="fas fa-times mr-1"></i><?= _('Cancel') ?>
+                </button>
+                <?php
+                if (SessionUser::getUser()->isAddRecordsEnabled()) {
+                    ?>
+                    <button type="submit" class="btn btn-sm btn-success mr-2 mb-1" name="PersonSubmitAndAdd">
+                        <i class="fas fa-user-plus mr-1"></i><?= _('Save and Add') ?>
+                    </button>
+                    <?php
+                }
+                ?>
+                <button type="submit" class="btn btn-sm btn-primary mb-1" name="PersonSubmit">
+                    <i class="fas fa-save mr-1"></i><?= _('Save') ?>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<br/>
+
+<?php if ($iPersonID > 0 && SessionUser::getUser()->isSeePrivacyDataEnabled()) {
+    $bOkToEdit = SessionUser::getUser()->isEditRecordsEnabled() || SessionUser::getUser()->isEditSelfEnabled();
+    $allSacTypes = \EcclesiaCRM\dto\SacramentTypes::getAll();
+    $usedTypes   = [];
+?>
+<div class="card card-outline card-secondary shadow-sm mb-3">
+    <div class="card-header">
+        <h3 class="card-title mb-0"><i class="fas fa-asterisk text-secondary mr-2"></i><?= _('Sacraments') ?></h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush" id="sacraments-list" data-person-id="<?= $iPersonID ?>">
+        <?php
+        foreach ($ormPersonSacraments as $sac) {
+            $usedTypes[$sac->getType()] = true;
+            $d = $sac->getDate() ? OutputUtils::change_date_for_place_holder($sac->getDate()->format('Y-m-d')) : _('(no date)');
+            ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center"
+                data-sacrament-id="<?= $sac->getId() ?>">
+                <span><i class="fas fa-tag text-secondary mr-2"></i><?= $allSacTypes[$sac->getType()] ?? $sac->getType() ?>
+                    — <span class="text-muted"><?= $d ?></span></span>
+                <?php if ($bOkToEdit) { ?>
+                <span>
+                    <a class="btn btn-sm btn-outline-danger remove-sacrament" data-sacrament-id="<?= $sac->getId() ?>" title="<?= _('Delete') ?>"><i class="fas fa-trash-alt"></i></a>
+                </span>
+                <?php } ?>
+            </li>
+            <?php
+        }
+        ?>
+        </ul>
+        <?php if ($bOkToEdit) {
+            $available = array_diff_key($allSacTypes, $usedTypes);
+            if (!empty($available)) { ?>
+        <div class="mt-3 d-flex align-items-center">
+            <div class="btn-group">
+                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-plus mr-1"></i><?= _('Add sacrament') ?>
+                </button>
+                <div class="dropdown-menu add-sacrament-dropdown">
+                <?php foreach ($available as $code => $label) { ?>
+                    <a class="dropdown-item add-sacrament" href="#" data-type="<?= $code ?>" data-type-id-sak="<?= $code ?>"><?= $label ?></a>
+                <?php } ?>
+                </div>
+            </div>
+        </div>
+        <div id="sacrament-date-form" class="mt-2 d-none">
+            <div class="input-group input-group-sm" style="max-width:280px">
+                <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-calendar"></i></span></div>
+                <input type="text" class="form-control date-picker" id="sacrament-date-input" placeholder="<?= SystemConfig::getValue('sDatePickerPlaceHolder') ?>">
+            </div>
+            <button class="btn btn-sm btn-success mt-2" id="sacrament-date-save"><i class="fas fa-check mr-1"></i><?= _('Save') ?></button>
+        </div>
+            <?php } ?>
+        <?php } ?>
+    </div>
+</div>
+<?php } ?>
+
+
+<script nonce="<?= SystemURLs::getCSPNonce() ?>">
+    window.CRM.bShowAddress = <?= ($bShowAddress) ? 'true' : 'false' ?>;
+
+    $(function () {
+        function bindUnknownDateToggle(checkboxSelector, inputSelector) {
+            $(checkboxSelector).on('change', function () {
+                const dateInput = $(inputSelector);
+                const isUnknown = $(this).is(':checked');
+
+                dateInput.prop('disabled', isUnknown);
+
+                if (isUnknown) {
+                    dateInput.val('');
+                }
+            });
+        }
+
+        bindUnknownDateToggle('#birthDateUnknown', '#birthDateInput');
+        bindUnknownDateToggle('#membershipDateUnknown', '#membershipDateInput');
+        bindUnknownDateToggle('#friendDateUnknown', '#friendDateInput');
+    });
+</script>
+
+<script src="<?= SystemURLs::getRootPath() ?>/skin/js/people/PersonEditor.js"></script>
+
+<?php require $sRootDocument . '/Include/Footer.php'; ?>
+
+

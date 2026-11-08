@@ -1,0 +1,84 @@
+<?php
+
+/* copyright 2020/03/10 Philippe Logel all right reserved */
+
+namespace EcclesiaCRM\Search;
+
+use EcclesiaCRM\dto\SystemURLs;
+use EcclesiaCRM\Search\BaseSearchRes;
+use EcclesiaCRM\dto\SystemConfig;
+use EcclesiaCRM\Utils\LoggerUtils;
+use EcclesiaCRM\SessionUser;
+use EcclesiaCRM\Service\FinancialService;
+class PaymentSearchRes extends BaseSearchRes
+{
+    public function __construct($global = false)
+    {
+        $this->name = _('Payments');
+        parent::__construct($global, 'Payments');
+    }
+
+    public function allowed (): bool
+    {
+        return SessionUser::getUser()->isFinanceEnabled();
+    }
+
+    public function buildSearch(string $qry)
+    {
+        $currentUser = SessionUser::getUser();
+
+        if ( $currentUser->isFinanceEnabled() && SystemConfig::getBooleanValue('bEnabledFinance') )
+        {
+            //Search Payments
+            if (SystemConfig::getBooleanValue("bSearchIncludePayments"))
+            {
+                try {
+                    $financial = new FinancialService();
+                    $Payments = $financial->searchPayments($qry);
+
+                    $id = 1;
+
+                    $rootPath = SystemURLs::getRootPath();
+                    $isGlobalSearch = $this->isGlobalSearch();
+                    $maxResults = (int) SystemConfig::getValue("iSearchIncludePaymentsMax");
+                    $resultsCount = 0;
+
+                    if (!is_null($Payments))
+                    {
+                        foreach ($Payments as $Payment) {
+                            $elt = ['id'=>"payment-".$id++,
+                                'text'=>$Payment['displayName'],
+                                'uri'=>$Payment['uri']];
+
+                            if ($isGlobalSearch) {
+                                $elt = [
+                                    "id" => 'payment-' . $Payment['dep_ID'],
+                                    "img" => '<i class="fas fa-university fa-2x"></i>',
+                                    "searchresult" => '<a href="'.$rootPath.'/v2/deposit/slipeditor/'.$Payment['dep_ID'].'/view" data-toggle="tooltip" data-placement="top" title="' . _('Edit') . '">'.$Payment['displayName'].'</a>',
+                                    "address" => "",
+                                    "type" => _($this->getGlobalSearchType()),
+                                    "realType" => " ".$this->getGlobalSearchType(),
+                                    "Gender" => "",
+                                    "Classification" => "",
+                                    "ProNames" => "",
+                                    "FamilyRole" => "",
+                                    "members" => "",
+                                    "actions" => ""
+                                ];
+                            }
+
+                            $this->results[] = $elt;
+                            $resultsCount++;
+
+                            if ($resultsCount >= $maxResults) {
+                                break;
+                            }
+                        }
+                    }
+                } catch (\Exception $e) {
+                    LoggerUtils::getAppLogger()->warn($e->getMessage());
+                }
+            }
+        }
+    }
+}

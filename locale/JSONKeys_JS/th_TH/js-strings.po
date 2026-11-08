@@ -1,0 +1,3576 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2026-08-09T17:50:15.482Z\n"
+"PO-Revision-Date: 2018-07-24T21:40:53.922Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr "กำลังเสริมดาวน์โหลด รับทราบ เซิร์ฟเวอร์ออก"
+
+msgid "You must enter a password"
+msgstr "คุณต้องเข้าไปในรหัสผ่าน"
+
+msgid "Passwords must match"
+msgstr "รหัสผ่านต้องเข้ากัน"
+
+msgid "Backup Running, Please wait."
+msgstr "กำลังเสริม โปรดรอ"
+
+msgid "Backup in progress, don't close the window !"
+msgstr ""
+
+#, fuzzy
+msgid "Background backup in progress to remote server"
+msgstr "สำรองสำรองและเก็บคัดลอก เซิร์ฟเวอร์ระยะไกล"
+
+msgid "Background backup in progress"
+msgstr ""
+
+msgid "Backup Error."
+msgstr ""
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr "ไฟล์ที่ถูกเลือกเกิน เกิน เซอร์เวอร์อัพโหลดสูงสุด"
+
+msgid "Restore Running, Please wait."
+msgstr "ฟื้นฟูวิ่ง กรุณารอ"
+
+msgid "Restore backup, don't close the window !"
+msgstr ""
+
+msgid "Restore Complete"
+msgstr "ฟื้นฟูสมบูรณ์"
+
+msgid "Login to restored Database"
+msgstr "ล็อกเพื่อให้ฐานข้อมูลฟื้นฟู"
+
+msgid "Restore Error."
+msgstr "ฟื้นฟูความบกพร่อง"
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr "คุณแน่ใจนะว่าคุณต้องการลบภาพนี้"
+
+msgid "Wrong address format."
+msgstr "รูปแบบผิด"
+
+msgid "Set Calendar Name"
+msgstr "ตั้งชื่อปฏิทิน"
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Select a resource type"
+msgstr "เลือกประเภทที่ใช้ทรัพยากรหน่อย"
+
+msgid "Room"
+msgstr "ห้อง"
+
+msgid "Computer"
+msgstr "คอมพิวเตอร์"
+
+msgid "Video"
+msgstr "วิดีโอ"
+
+msgid "Description"
+msgstr "บรรยาย"
+
+msgid "Add a short description to help identify this resource."
+msgstr ""
+
+msgid "Set Resource Name"
+msgstr "ตั้ง เรซูร์ซ ชื่อ"
+
+msgid "OK"
+msgstr "โอเค"
+
+msgid "Calendars"
+msgstr "ปฏิทิน"
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr ""
+
+msgid "Set Status"
+msgstr "ตั้งสถานะ"
+
+msgid "Select [Exclude] or [Include]"
+msgstr "จงเลือกเอา หรือเป็นการดัดแปลง"
+
+msgid "[INCLUDE]"
+msgstr "[INCLUDE]"
+
+msgid "[EXCLUDE]"
+msgstr "[EXCLUDE]"
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr "รวมทั้งแยกปฏิทินของคุณ ในภาค SideBar"
+
+msgid "Ok"
+msgstr "โอเค"
+
+msgid "[👀  ]"
+msgstr "[👀  ]"
+
+msgid "[👀 ✐]"
+msgstr "[👀 ✐]"
+
+msgid "With"
+msgstr "ด้วย"
+
+msgid "Select one or more current shares to update or remove them."
+msgstr ""
+
+msgid "Set Rights"
+msgstr "สิทธิการตั้งค่า"
+
+msgid "Select your rights"
+msgstr "เลือกสิทธิของคุณ"
+
+msgid "or"
+msgstr "หรือ"
+
+msgid "[R ]"
+msgstr "[R ]"
+
+msgid "[RW]"
+msgstr "[RW]"
+
+msgid "Send email notification"
+msgstr "ส่งอีเมลล์แจ้ง"
+
+msgid "Notify added people, families, or groups by email"
+msgstr ""
+
+msgid "Add persons/Family/groups"
+msgstr "รวมกลุ่มคน/ครอบครัว/กลุ่ม"
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr ""
+
+msgid "Share your Calendar"
+msgstr "แบ่งปันปฏิทินของคุณ"
+
+msgid "Delete"
+msgstr "ลบ"
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr "คุณแน่ใจนะ อยากลบหุ้นนี่"
+
+msgid "Stop sharing"
+msgstr "หยุดแชร์กันซะที"
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr "คุณแน่ใจนะ คุณอยากหยุด แบ่งเอกสารของคุณ"
+
+msgid "Person or Family or Group"
+msgstr "หรือ ครอบครัว หรือ กรุ๊ป"
+
+msgid "Are you sure?"
+msgstr "แน่ใจเหรอ"
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr "คุณจะสูญเสียปฏิทิน เหตุการณ์และการที่ปฏิทินทั้งหมดด้วย นี่ไม่สามารถแก้ไขได้"
+
+msgid "Manage"
+msgstr "จัดการ"
+
+msgid "Calendar Management for"
+msgstr "จัดการปฏิทิน"
+
+msgid "Modify Calendar Name"
+msgstr "ปรับปรุงชื่อ"
+
+msgid "Modify Group Name"
+msgstr "ชื่อ"
+
+msgid "Modify Resource Name"
+msgstr "ปรับเปลี่ยนชื่อ"
+
+msgid "Modify Share Name"
+msgstr "ชื่อแบ่งปัน"
+
+msgid "Resource Info for"
+msgstr "เรอร์ซ อินโฟเพื่อ"
+
+msgid "Error"
+msgstr "ความบกพร่อง"
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr "มีเพียงผู้บริหารเท่านั้นที่มีสิทธิที่จะเปลี่ยน คำอธิบายของ Resource"
+
+msgid "Actualize"
+msgstr "ยอมรับ"
+
+msgid "Today"
+msgstr "วันนี้"
+
+msgid "List"
+msgstr "ลิส"
+
+msgid "List Week"
+msgstr "ลิซสัปดาห์"
+
+msgid "List Month"
+msgstr "ลิสท์ มอนท์"
+
+msgid "This event isn't modifiable !!!"
+msgstr "เหตุการณ์นี้ไม่สามารถดัดแปลงได้ !"
+
+#, fuzzy
+msgid "No description"
+msgstr "บรรยาย"
+
+msgid "What would you like to do?"
+msgstr ""
+
+#, fuzzy
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr "คุณอยากลบคนๆนี้ไหม นี่ไม่สามารถแก้ไขได้"
+
+msgid "Modify Event"
+msgstr "เปลี่ยนชุด"
+
+msgid "Delete Event"
+msgstr "ลบ อีเวนท์"
+
+msgid "Are you sure to delete this event?"
+msgstr "คุณแน่ใจนะว่าจะลบงานนี้"
+
+msgid "Delete all repeated Events"
+msgstr "ลบทุกสิ่งทุกอย่างที่เกิดขึ้น"
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr "คุณกำลังจะลบทุกสิ่งทุกอย่างที่เกี่ยวข้องกับงานนี้ แน่ใจเหรอ นี่มันไม่สามารถแก้ไขได้"
+
+msgid "No"
+msgstr "ไม่"
+
+msgid "Only this event"
+msgstr "มีแค่เหตุการณ์นี้เท่านั้น"
+
+msgid "Every Events linked to this Event"
+msgstr "ทุกๆอันมีความเชื่อมโยงกับ อีเวนท์"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr "เพื่อเพิ่มเหตุการณ์เข้าไป คุณต้องสร้างปฏิทิน หรือเปิดใช้งานตัวหนึ่งก่อน"
+
+msgid "Add More Attendees"
+msgstr "เพิ่มความเข้าใจมากขึ้น"
+
+msgid "Make Attendance"
+msgstr "ทำให้การประท้วง"
+
+msgid "Edit"
+msgstr "แก้ไข"
+
+msgid "Resize Event"
+msgstr "จัดการอีเวนท์"
+
+msgid "Are you sure about this change?"
+msgstr "คุณแน่ใจเรื่องการเปลี่ยนแปลงนี้เหรอ"
+
+msgid "will be resized."
+msgstr "จะถูกกลับมา"
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr "คุณกำลังจะปรับปรุงเหตุการณ์ทั้งหมดอยู่ คุณอยากจะ :"
+
+msgid "Only this Event"
+msgstr "เพียงวันนี้"
+
+msgid "All Events"
+msgstr "ทุกสิ่ง"
+
+msgid "Move Event"
+msgstr "ย้าย อีเวน"
+
+msgid "will be dropped."
+msgstr "จะลดลง"
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr "คุณกำลังจะย้ายทุกอย่าง คุณอยากจะ :"
+
+msgid "Event added"
+msgstr "เสร็จแล้ว"
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr "แต่ก็เพิ่มขึ้น คุณอยากให้การประท้ายหรือเพิ่มพนักงาน"
+
+msgid "Event was added successfully."
+msgstr "แต่ก็เพิ่มขึ้น"
+
+msgid "No attendees"
+msgstr "ไม่มีผู้เข้าร่วม"
+
+msgid "From"
+msgstr "จาก"
+
+msgid "to"
+msgstr "เพื่อ"
+
+msgid "Attendance Notes: "
+msgstr "สมุดโน้ต:"
+
+msgid "None"
+msgstr "ไม่มี"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Calendar Title"
+msgstr "ปฎิทิน"
+
+msgid "Location"
+msgstr "ที่"
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr "เพื่อตรวจสอบที่อยู่ของคุณ<b>\"ตีตอบ\"</b>"
+
+msgid "To see the Map click this text field."
+msgstr "เพื่อดูแผนที่คลิกสนามข้อความนี้"
+
+msgid "Map"
+msgstr "แผนที่"
+
+msgid "Desc"
+msgstr "เดส"
+
+msgid "Event description"
+msgstr "คำอธิบายไม่ชัดเจน"
+
+msgid "Event Type"
+msgstr "พิมพ์ดี"
+
+msgid "Attendance Counts"
+msgstr "การกระทำผิด"
+
+msgid "Start Date"
+msgstr "เริ่มต้นการเดท"
+
+#, fuzzy
+msgid "All day"
+msgstr "ทุกแท็กส์"
+
+msgid "End Date"
+msgstr "จบวันที่"
+
+msgid "Repeat"
+msgstr "ย้ำ"
+
+msgid "Daily"
+msgstr "วัน"
+
+msgid "Weekly"
+msgstr "อาทิตย์"
+
+msgid "Monthly"
+msgstr "เดือน"
+
+msgid "Quarterly"
+msgstr "4"
+
+msgid "Semesterly"
+msgstr "อย่างแน่นอน"
+
+msgid "Yearly"
+msgstr "หลายปี"
+
+msgid "End"
+msgstr "จบ"
+
+msgid "Alarm"
+msgstr "สัญญาณเตือน"
+
+msgid "NONE"
+msgstr "ไม่มี"
+
+msgid "At time of event"
+msgstr "เวลาแห่งการเกิดเหตุ"
+
+msgid "5 minutes before"
+msgstr "5 นาทีก่อน"
+
+msgid "10 minutes before"
+msgstr "10 นาทีก่อน"
+
+msgid "15 minutes before"
+msgstr "15 นาทีก่อน"
+
+msgid "30 minutes before"
+msgstr "30 นาทีก่อน"
+
+msgid "1 hour before"
+msgstr "1 ชั่วโมงก่อน"
+
+msgid "2 hour before"
+msgstr "2 ชั่วโมงก่อน"
+
+msgid "1 day before"
+msgstr "1 วันก่อน"
+
+msgid "2 day before"
+msgstr "2 วันก่อน"
+
+msgid "Calendar"
+msgstr "ปฏิทิน"
+
+msgid "Add as attendees"
+msgstr "เพิ่มเป็นผู้เข้าร่วม"
+
+msgid "Notes"
+msgstr "โน้ต"
+
+msgid "Status"
+msgstr "สถานะ"
+
+msgid "Active"
+msgstr "แอคเทิล"
+
+msgid "inactive"
+msgstr "ไม่ได้"
+
+msgid "Event Creation"
+msgstr "สร้างบ้าน"
+
+#, fuzzy
+msgid "Event Editor"
+msgstr "ก็ได้"
+
+msgid "Close"
+msgstr "ใกล้เคียง"
+
+msgid "Save"
+msgstr "ช่วยด้วย"
+
+msgid "You've to chose a calendar."
+msgstr "คุณต้องเลือกปฏิทิน"
+
+msgid "You have to set a Title for your event"
+msgstr "คุณต้องทำให้ทิทเทิลสำหรับงานของคุณ"
+
+msgid "In progress...."
+msgstr "ในความคืบหน้า"
+
+msgid "Events for"
+msgstr "สำหรับ"
+
+msgid "Event for"
+msgstr "ก็ได้"
+
+msgid "Loading finished...."
+msgstr "กำลังจะถูกลบ"
+
+msgid "Month"
+msgstr "เดือน"
+
+msgid "Actions"
+msgstr "เริ่มได้"
+
+msgid "Attendance Counts with real Attendees"
+msgstr "การยึดมั่นในนับถือ ผู้ที่ต่อต้านการประท้วง"
+
+msgid "Free Attendance Counts without Attendees"
+msgstr "การกระทำฟรีโดยปราศจากความตั้งใจ"
+
+msgid "Calendar Type"
+msgstr "ปฏิทิน"
+
+msgid "Events in Year"
+msgstr "วันที่เกิดปี"
+
+msgid "Events in month"
+msgstr "เกิดเหตุในเดือน"
+
+msgid "Events by Type"
+msgstr "วิชาพิมพ์"
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr "คุณอยากจะทำยังไง ระวังด้วยการลบ มันเป็นไปไม่ได้ที่จะกลับมา! !"
+
+msgid "Text for Event ID"
+msgstr "ข้อความถึง Event ID"
+
+#, fuzzy
+msgid "Undo Check-out"
+msgstr "ตรวจสอบ"
+
+#, fuzzy
+msgid "Make Check-out"
+msgstr "ตรวจสอบ"
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr ""
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr ""
+
+msgid "Edit/Validate Checkout"
+msgstr ""
+
+#, fuzzy
+msgid "Check-out done"
+msgstr "ตรวจสอบเดท"
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr "กด CTRL + C เพื่อลอกหมายเลขสมาชิกของกลุ่มทั้งหมด"
+
+msgid "You have no more items in your cart."
+msgstr "คุณไม่มีของชิ้นส่วนในเครื่อง"
+
+msgid "Address"
+msgstr "ที่อยู่"
+
+msgid "Email"
+msgstr "อีเมล"
+
+msgid "Remove"
+msgstr "ถอยไป"
+
+msgid "Classification"
+msgstr "ช่วยให้แน่ใจ"
+
+msgid "Family Role"
+msgstr "วงกลมของครอบครัว"
+
+msgid "CKEditor Template Creation"
+msgstr "พวกรัฐเทมเปลสร้าง"
+
+msgid "Template Name"
+msgstr "เทมพลาย นาม"
+
+msgid "Explanation field cannot be empty."
+msgstr "สนามอธิบายไม่ว่างเปล่า"
+
+msgid "Template Description"
+msgstr "ข้อมูลของเทมพลา"
+
+msgid "Save as Word file in EDrive"
+msgstr "ช่วยเหลือเป็นข้อมูลใน EDrive"
+
+msgid "Word file name"
+msgstr "ชื่อแฟ้มคำพูด"
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+"ไฟล์จะถูกอัพโหลด ไปยังเอกสารของคุณ<br><small>ส่วนนี้เพื่อทดสอบ เพียง<b>(เบต้า)</b></"
+"small>"
+
+msgid "Your note is saved in your EDrive"
+msgstr "ข้อความของคุณเก็บไว้ในEDrive ของคุณ"
+
+msgid "(No templates defined)"
+msgstr "(No templates defined)"
+
+msgid "Content Templates"
+msgstr "คอนเทนเทมพลาท"
+
+msgid "Please select the template to open in the editor"
+msgstr "กรุณาเลือกแม่พิเศษให้เปิด บรรณาธิการด้วยครับ"
+
+msgid "Template Options"
+msgstr "เทมพลา ตัดสินใจ"
+
+msgid "Modify"
+msgstr "ปรับเปลี่ยน"
+
+msgid "Modify the template you select"
+msgstr "ปรับแบบแม่พิมพ์ที่คุณเลือก"
+
+msgid "Delete the template you select"
+msgstr "ลบแม่พิมพ์ที่คุณเลือก"
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr "คุณแน่ใจนะว่าจะลบแม่พิมพ์นี้ นี่มันไม่สามารถแก้ไขได้"
+
+msgid "Replace actual content"
+msgstr "แทนที่เนื้อหาจริงๆ"
+
+msgid "Manage templates"
+msgstr "จัดการแม่พิมพ์"
+
+msgid "Save templates"
+msgstr "ช่วยแม่มด"
+
+msgid "Apply templates"
+msgstr "แม่มดน่ะ"
+
+msgid "Save As Word File in EDrive"
+msgstr "ช่วยเหลือคำพูดในอีไดรฟ์"
+
+msgid "First Name"
+msgstr "ชื่อแรก"
+
+msgid "Last Name"
+msgstr "นามสกุล"
+
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+msgid "Company"
+msgstr "บริษัท"
+
+msgid "Unsub"
+msgstr "อันซับ"
+
+msgid "VCard"
+msgstr "VCard"
+
+msgid "Date"
+msgstr "เดท"
+
+msgid "Language"
+msgstr "ภาษา"
+
+msgid "Merge Tags"
+msgstr "เมอรก์แท็กส์"
+
+#, fuzzy
+msgid "Subject:"
+msgstr "เป้าหมาย"
+
+msgid "Compose New Message"
+msgstr ""
+
+msgid "Send"
+msgstr "ส่ง"
+
+msgid "Error making API Call to"
+msgstr "ความบกพร่องทางการเข้ามา API"
+
+msgid "Error text"
+msgstr "ข้อความผิด"
+
+msgid "Stack Trace"
+msgstr "แทรซ์"
+
+msgid "The application could not complete this API request."
+msgstr ""
+
+#, fuzzy
+msgid "Information"
+msgstr "ที่"
+
+#, fuzzy
+msgid "Please confirm"
+msgstr "กรุณาอัพเดทด้วยครับ"
+
+#, fuzzy
+msgid "Update information"
+msgstr "ผู้ใช้ลบ ยืนยัน"
+
+msgid "Make a selection"
+msgstr ""
+
+#, fuzzy
+msgid "In progress"
+msgstr "ในความคืบหน้า"
+
+msgid "Please wait while the operation is being completed"
+msgstr ""
+
+msgid "There was a problem retrieving the requested object"
+msgstr "มีปัญหาเรียกคืนของที่ได้รับการขอ"
+
+#, fuzzy
+msgid "Add cart to a group"
+msgstr "Add Cart to Group"
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr ""
+
+msgid "Action"
+msgstr "แอคชั่น"
+
+msgid "Select an existing Group"
+msgstr "เลือกกลุ่มที่มีอยู่"
+
+msgid "or Create a new Group from the Cart"
+msgstr "หรือสร้างกลุ่มใหม่จากรถเข็น"
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr ""
+
+msgid "Select Group"
+msgstr "เลือกกลุ่ม"
+
+msgid "Select Role"
+msgstr "เลือกบทบาท"
+
+#, fuzzy
+msgid "Create a new group and move the current cart into it."
+msgstr "หรือสร้างกลุ่มใหม่จากรถเข็น"
+
+msgid "Group Name"
+msgstr "กลุ่มชื่อ"
+
+msgid "Default Name Group"
+msgstr "ข้อตกลงชื่อ กรุ๊ป"
+
+msgid "Add Cart to Group"
+msgstr "Add Cart to Group"
+
+msgid "Missing selection"
+msgstr ""
+
+#, fuzzy
+msgid "You need to select both a group and a role before continuing."
+msgstr "คุณต้องเลือกกลุ่มหนึ่ง และบทบาทกลุ่มหนึ่งถ้าคุณต้องการ"
+
+#, fuzzy
+msgid "Group name required"
+msgstr "กลุ่มชื่อ"
+
+#, fuzzy
+msgid "Enter a group name before creating a new group from the cart."
+msgstr "หรือสร้างกลุ่มใหม่จากรถเข็น"
+
+#, fuzzy
+msgid "Deactivate cart persons"
+msgstr "ปลดเครื่อง"
+
+#, fuzzy
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr "คุณอยากปิดคนจริงๆเหรอ"
+
+#, fuzzy
+msgid "This action can be undone later if needed."
+msgstr "การกระทำนี้สามารถยกเลิกได้ !!!"
+
+#, fuzzy
+msgid "Keep active"
+msgstr "หยุดการทำงาน"
+
+#, fuzzy
+msgid "Deactivate persons"
+msgstr "ปลดเครื่อง"
+
+#, fuzzy
+msgid "Delete cart persons"
+msgstr "ลบคนนี้"
+
+#, fuzzy
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr "คุณอยากลบคนออกจาก CRM จริงๆเหรอ"
+
+#, fuzzy
+msgid "This action cannot be undone."
+msgstr "การกระทำนี้ไม่สามารถยกเลิก! !!!"
+
+#, fuzzy
+msgid "Keep persons"
+msgstr "เพิ่มคน"
+
+#, fuzzy
+msgid "Delete persons"
+msgstr "ลบคนนี้"
+
+#, fuzzy
+msgid "Add cart to event"
+msgstr "บวกไป Event"
+
+#, fuzzy
+msgid "Select the event that should receive the current cart."
+msgstr "เลือกเหตุการณ์ที่คุณอยากเพิ่มรถเข็น"
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr ""
+
+msgid "Event"
+msgstr "อีกที"
+
+msgid "Choose one of the available events from the list below."
+msgstr ""
+
+#, fuzzy
+msgid "Create new event"
+msgstr "สร้างความทรงจำใหม่"
+
+msgid "Add to Event"
+msgstr "บวกไป Event"
+
+msgid "Register"
+msgstr "ทะเบียน"
+
+#, fuzzy
+msgid "Register your software to CRM team."
+msgstr "จดทะเบียนซอฟต์แวร์ของคุณ ทีม EcclesiaCRM"
+
+msgid "Simply click this"
+msgstr "แค่คลิกนี่"
+
+msgid "to register your software"
+msgstr "เพื่อลงทะเบียนซอฟต์แวร์ของคุณ"
+
+msgid "New Release"
+msgstr "การปล่อยตัวใหม่"
+
+msgid "Installed version"
+msgstr "เวอร์ชั่นติดตั้ง"
+
+msgid "New One"
+msgstr "ใหม่วัน"
+
+msgid "To upgrade simply click this Notification"
+msgstr "เพื่ออัพเกรดเพียงแค่คลิก การเขียนรายงานนี้"
+
+msgid "View Cart"
+msgstr "วิว คาร์ท"
+
+msgid "Empty Cart"
+msgstr "รถว่างเปล่า"
+
+msgid "Empty Cart to Group"
+msgstr "รถว่างเปล่า ไปยังกลุ่ม"
+
+msgid "Empty Cart to Family"
+msgstr "รถว่างเปล่า ไปยังครอบครัว"
+
+msgid "Empty Cart to Event"
+msgstr "รถว่างเปล่า ไปอีเวนท์"
+
+msgid "Map Cart"
+msgstr "รถเข็น"
+
+msgid "Deactivate Persons From Cart"
+msgstr "ปลดเครื่อง"
+
+msgid "Delete Persons From the CRM"
+msgstr "ลบคนออกจาก CRM"
+
+msgid "View all"
+msgstr "ดูทั้งหมด"
+
+msgid "Your Cart is Empty"
+msgstr "รถคุณเปล่า"
+
+#, fuzzy
+msgid "Software registration"
+msgstr "ซอฟต์แวร์"
+
+#, fuzzy
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr "ข้อมูลนี้ถูกใช้เพื่อตามหา การใช้ซอฟต์แวร์นี้"
+
+msgid "If you need to make changes to registration data, go to "
+msgstr "ถ้าคุณต้องการเปลี่ยนแปลง ข้อมูลจดทะเบียน ก็ไปสิ"
+
+msgid "Admin->Edit General Settings"
+msgstr "Admin-. Edit General Settings"
+
+msgid "Church Name"
+msgstr "โบสถ์"
+
+msgid "Version"
+msgstr "เวอร์ชั่น"
+
+msgid "City"
+msgstr "เมือง"
+
+msgid "State"
+msgstr "รัฐ"
+
+msgid "Zip"
+msgstr "รูดซิป"
+
+msgid "Country"
+msgstr "ประเทศ"
+
+msgid "Church Email"
+msgstr "โบสถ์อีเมล"
+
+msgid "Base URL"
+msgstr "ฐาน URL"
+
+msgid "Message"
+msgstr "ข้อความ"
+
+msgid "Software Registration"
+msgstr "ซอฟต์แวร์"
+
+msgid "Your software is now registered. Thank you !"
+msgstr "ซอฟแวร์ของคุณถูกจดทะเบียนแล้ว ขอบคุณ!"
+
+#, fuzzy
+msgid "Select Volunteer Opportunity"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+msgid "This selection will be applied to the current members."
+msgstr ""
+
+#, fuzzy
+msgid "Volunteer opportunity"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr ""
+
+#, fuzzy
+msgid "Choose the destination for the selected members."
+msgstr "ลบป้ายทะเบียนทุกสำหรับ สมาชิกที่ถูกเลือกในรายการ"
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr ""
+
+msgid "Group"
+msgstr "กลุ่ม"
+
+#, fuzzy
+msgid "Select the target group for the selected members."
+msgstr "กรุณาเลือกกลุ่มเป้าหมาย สำหรับสมาชิก"
+
+#, fuzzy
+msgid "Role"
+msgstr "โรล นาม"
+
+#, fuzzy
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr "เลือกวิธีเพื่อเพิ่มเข้าไปในกลุ่ม"
+
+msgid "GroupID required for role selection prompt"
+msgstr "กราวบี้ต้องการสัญญาในการคัดเลือก"
+
+msgid "Select Group and Role"
+msgstr "เลือกกลุ่มและโรล"
+
+msgid "Select both the destination group and the role to apply."
+msgstr ""
+
+#, fuzzy
+msgid "Create a group"
+msgstr "ลบแท็ก"
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr ""
+
+#, fuzzy
+msgid "Create group"
+msgstr "ลบแท็ก"
+
+msgid "Calendar Event"
+msgstr "ปฏิทิน อีนท์"
+
+msgid "Attendees Checked In"
+msgstr "ผู้เข้าราชการตรวจสอบอิน"
+
+msgid "More info"
+msgstr "ข้อมูลอีก"
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr ""
+
+msgid "EDrive File Browser"
+msgstr ""
+
+msgid "Could not retrieve file URL"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+#, fuzzy
+msgid "Please select a file first"
+msgstr "กรุณาเลือกกลุ่มเป้าหมาย สำหรับสมาชิก"
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr "คำเตือน! อย่าเลือกทางเลือกนี้ ถ้าคุณวางแผนที่จะเพิ่ม ฐานข้อมูลที่มีอยู่<br>"
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr "ใช้เฉพาะเมื่อไม่พอใจ กับการนำเข้าแรกเลย ทุกคนและข้อมูลสมาชิกจะถูกทำลาย"
+
+msgid "I Understand"
+msgstr "ฉันเข้าใจ"
+
+msgid "Clear Persons and Families"
+msgstr "เคลียร์สุขและครอบครัว"
+
+msgid "Data Cleared Successfully!"
+msgstr "ข้อมูลผ่านการเคลียร์"
+
+msgid "success"
+msgstr "สำเร็จ"
+
+msgid "Duplicate values"
+msgstr "ค่าที่ซ้อน"
+
+msgid "You've selected two times the same name"
+msgstr "คุณเลือกสองเท่าของชื่อเดียวกัน"
+
+msgid "for this field. Chose another one."
+msgstr "สำหรับสนามนี้ เลือกอีกคนหนึ่ง"
+
+#, fuzzy
+msgid "Remove Plugin"
+msgstr "ลบทั้งหมด"
+
+#, fuzzy
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr "คุณกำลังจะลบแคมเปญของคุณ! คุณแน่ใจเหรอ?"
+
+#, fuzzy
+msgid "Dashboard Item"
+msgstr "กระดาน"
+
+#, fuzzy
+msgid "Removed from your dashboard !"
+msgstr "ถอดรถออก"
+
+msgid "Please confirm deletion of this document"
+msgstr "กรุณายืนยันการลบเอกสารนี้ด้วยครับ"
+
+msgid "Document Delete Confirmation"
+msgstr "เอกสารลบการยืนยัน"
+
+msgid "Document Editor"
+msgstr "บรรณาธิการเอกสาร"
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr ""
+
+#, fuzzy
+msgid "Document details"
+msgstr "เอกสารทิทเทิล"
+
+msgid "Set the title and choose the type before writing the content."
+msgstr ""
+
+msgid "Document Title"
+msgstr "เอกสารทิทเทิล"
+
+msgid "Set your Document title"
+msgstr "ตั้งชื่อเอกสารของคุณ"
+
+msgid "Choose your Document Type"
+msgstr "เลือกประเภทเอกสารของคุณ"
+
+msgid "document"
+msgstr "เอกสาร"
+
+msgid "video"
+msgstr "วิดีโอ"
+
+msgid "audio"
+msgstr "เสียง"
+
+msgid "Content"
+msgstr ""
+
+msgid "Write the main content of your document below."
+msgstr ""
+
+msgid "Private"
+msgstr "พลทหาร"
+
+#, fuzzy
+msgid "Private documents are visible only to authorized users."
+msgstr "เป็นคนที่มีอำนาจได้รับอนุญาตให้ใช้"
+
+#, fuzzy
+msgid "Edit Document"
+msgstr "เอกสาร"
+
+#, fuzzy
+msgid "Create Document"
+msgstr "สร้างหนึ่ง"
+
+msgid "You have to set a Title for your document"
+msgstr "คุณต้องตั้งเอกสารให้ทิทเทิลฟัง"
+
+msgid "Free Event Attendees"
+msgstr "ผู้ที่ถูกต้อง"
+
+#, fuzzy
+msgid "Successfully Added!"
+msgstr "สำเร็จแล้ว!"
+
+#, fuzzy
+msgid "Delete attendee"
+msgstr "ไม่มีผู้เข้าร่วม"
+
+msgid "This action is permanent"
+msgstr ""
+
+#, fuzzy
+msgid "This can't be undone."
+msgstr "นี่มันไม่สามารถแก้ไขได้"
+
+#, fuzzy
+msgid "You are about to remove this attendee from the event."
+msgstr "คุณแน่ใจนะว่าคุณต้องการลบ คนๆนี้ออกจาก CRM"
+
+msgid "The attendee will be removed from this event."
+msgstr ""
+
+msgid "Related attendance history may also be affected."
+msgstr ""
+
+msgid "Photo"
+msgstr "รูปถ่าย"
+
+#, fuzzy
+msgid "Attendance actions"
+msgstr "การกระทำผิด"
+
+msgid "Checkin"
+msgstr "เช็คซิ"
+
+msgid "Checkout"
+msgstr "ตรวจสอบ"
+
+msgid "Gender"
+msgstr "เพศ"
+
+msgid "Checkin Date"
+msgstr "เช็คกอน เดท"
+
+msgid "Checked In By"
+msgstr "ตรวจสอบอินโดย"
+
+msgid "Checkout Date"
+msgstr "ตรวจสอบเดท"
+
+msgid "Checkout By"
+msgstr "ตรวจสอบโดยการ"
+
+msgid "Failed"
+msgstr "ล้มเหลว"
+
+msgid "No event right now."
+msgstr "ไม่มีเหตุการณ์ตอนนี้"
+
+msgid "Move one in the right range."
+msgstr "เลื่อนไปหนึ่งในระยะที่ถูกต้อง"
+
+msgid "Or"
+msgstr ""
+
+msgid "Create one."
+msgstr "สร้างหนึ่ง"
+
+msgid "User"
+msgstr "ผู้ใช้"
+
+msgid "No event now."
+msgstr "ไม่มีเหตุการณ์ตอนนี้"
+
+msgid "Success"
+msgstr "สำเร็จ"
+
+msgid "Attention"
+msgstr "โปรดทราบ"
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr "คุณแน่ใจนะว่าคุณต้องการกำจัดคนทุกคนจากอีเวนท์"
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr "คุณแน่ใจนะว่าคุณต้องการกำจัดคนนี้จากอีเวนท์ ID:"
+
+msgid "Delete Event Type"
+msgstr "ลบ Event Type"
+
+msgid "This action can never be undone !!!!"
+msgstr "การกระทำนี้ไม่สามารถแก้ไขได้ !!!"
+
+msgid "preview currently being created"
+msgstr ""
+
+msgid "Preview"
+msgstr "ว่าไง"
+
+#, fuzzy
+msgid "Document preview"
+msgstr "เอกสารทิทเทิล"
+
+msgid "Read only"
+msgstr ""
+
+#, fuzzy
+msgid "Please wait"
+msgstr "กรุณาอัพเดทด้วยครับ"
+
+#, fuzzy
+msgid "Unable to create the preview"
+msgstr "ไม่มีเหตุการณ์ตอนนี้"
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr ""
+
+msgid "Icon"
+msgstr "Icon"
+
+msgid "Modification Date"
+msgstr "ปรับเปลี่ยน"
+
+msgid "Type"
+msgstr "พิมพ์"
+
+msgid "Size"
+msgstr "ขนาด"
+
+msgid "You are about to delete several items together"
+msgstr "คุณกำลังจะลบสิ่งของที่เหลืออยู่ด้วยกัน"
+
+msgid "You're about to remove an item"
+msgstr "คุณกำลังจะถอนของออก"
+
+msgid "This can't be undone !!!!"
+msgstr "นี่มันไม่ได้ !!!"
+
+msgid "You've to select at least one line !!!"
+msgstr "เธอต้องเลือกอย่างน้อยก็หนึ่งแถว! !"
+
+#, fuzzy
+msgid "Create a Folder"
+msgstr "สร้างหนึ่ง"
+
+msgid "Set your Folder name"
+msgstr "ตั้งชื่อพันธุ์ของคุณ"
+
+#, fuzzy
+msgid "Actualize files"
+msgstr "ยอมรับ"
+
+msgid "Set a File/Folder name"
+msgstr "ตั้งชื่อให้ไฟล์กับโวลเดอร์"
+
+msgid "Download Error"
+msgstr ""
+
+#, fuzzy
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr "คุณแน่ใจนะ คุณอยากหยุด แบ่งเอกสารของคุณ"
+
+#, fuzzy
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr "คุณแน่ใจนะ คุณอยากหยุด แบ่งเอกสารของคุณ"
+
+msgid "Selected Rows"
+msgstr "เลือกแถว"
+
+msgid "Pledge"
+msgstr "พลิล"
+
+msgid "Payment"
+msgstr "จ่ายเงิน"
+
+msgid "Confirm Delete"
+msgstr "ยืนยันการลบ"
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr "คุณแน่ใจเหรอ? คุณกำลังจะลบทิ้งซะ"
+
+msgid "payments(s)?"
+msgstr "ค่าจ้างเหรอ?"
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr "การกระทำนี้ CANNOT ถูกกำจัด และอาจมีผลกระทบกฎหมาย!"
+
+msgid "Please ensure this what you want to do."
+msgstr "โปรดรับรองว่าคุณต้องการจะทำอะไร"
+
+msgid "Depid"
+msgstr "บ้าจริง"
+
+msgid "Address1"
+msgstr "Address1"
+
+msgid "Bank Name"
+msgstr "ชื่อแบงค์"
+
+msgid "Non deductible"
+msgstr "ไม่สามารถหักล้างได้"
+
+msgid "Statut"
+msgstr "อ่าน"
+
+msgid "Deposit"
+msgstr "ข้างนอก"
+
+msgid "Schedule"
+msgstr "กำหนด"
+
+msgid "Amount"
+msgstr "ท่ามกลาง"
+
+msgid "Comment"
+msgstr "คอมเมนต์"
+
+msgid "Electronic Transaction Details"
+msgstr "รายละเอียดอิเล็กทรานซ์แอคโทรนิค"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "Family"
+msgstr "Family"
+
+msgid "Person"
+msgstr "คนๆนึง"
+
+msgid "Anonymous"
+msgstr "ไม่มีชื่อ"
+
+msgid "Fund"
+msgstr "สนุก"
+
+msgid "Pledge or payment"
+msgstr "หรือจ่ายเงิน"
+
+msgid "Method"
+msgstr "วิธี"
+
+msgid "Check Number"
+msgstr "ตรวจหมายเลข"
+
+msgid "Details"
+msgstr "รายละเอียด"
+
+msgid "Tracking"
+msgstr "ตามรอย"
+
+msgid "Filter by Family"
+msgstr ""
+
+msgid "Filter by Fund"
+msgstr ""
+
+msgid "Export"
+msgstr "ออกกำลังกาย"
+
+msgid "Slip PDF"
+msgstr ""
+
+msgid "Deposit ID"
+msgstr "ระบุตัว"
+
+msgid "Deposit Date"
+msgstr "เดทที่น่าสนใจ"
+
+msgid "Deposit Total"
+msgstr "ทั้งหมด"
+
+msgid "Deposit Comment"
+msgstr "ข้อความ"
+
+msgid "Closed"
+msgstr "ปิด"
+
+msgid "Yes"
+msgstr "ใช่"
+
+msgid "Deposit Type"
+msgstr "ประเภทที่ดี"
+
+#, fuzzy
+msgid "Search"
+msgstr "ค้นหา"
+
+#, fuzzy
+msgid "Please enter at least one winner."
+msgstr "คุณต้องเช็คผู้ใช้หนึ่งคน"
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr ""
+
+msgid "Please enter a number greater than 0."
+msgstr ""
+
+msgid "Number"
+msgstr "หมายเลข"
+
+#, fuzzy
+msgid "You're about to delete the item !!!"
+msgstr "คุณกำลังจะลบแท็ก!"
+
+msgid "Item"
+msgstr "มัน"
+
+msgid "Multiple"
+msgstr "หลายครั้ง"
+
+msgid "Donor"
+msgstr "ผู้บริจาค"
+
+msgid "Buyer"
+msgstr "ผู้ซื้อ"
+
+msgid "Sale Price"
+msgstr "ราคาขาย"
+
+msgid "Estimated value"
+msgstr "มูลค่าที่มีค่า"
+
+msgid "Material Value"
+msgstr "แมทธิเรียล วาลูว์"
+
+msgid "Minimum Price"
+msgstr "ราคาต่ำ"
+
+#, fuzzy
+msgid "You're about to delete the buyer !!!"
+msgstr "คุณกำลังจะลบแท็ก!"
+
+msgid "Unassigned"
+msgstr "ไม่ได้รับมอบหมาย"
+
+msgid "Buyer Number"
+msgstr "ผู้ซื้อหมายเลข"
+
+msgid "Save and Add"
+msgstr "ช่วยและแอด"
+
+msgid "Generate Statement"
+msgstr "การประกาศอุณหภูมิ"
+
+msgid "Buyer Number Editor"
+msgstr "ผู้ซื้อหมายเลข"
+
+#, fuzzy
+msgid "Please select at least one buyer."
+msgstr "กรุณาเลือกเป้าหมายให้สมาชิก"
+
+msgid "Your operation completed successfully."
+msgstr "ปฏิบัติการของคุณเสร็จสมบูรณ์"
+
+msgid "Full Name"
+msgstr "ชื่อเต็ม"
+
+msgid "Text"
+msgstr "ข้อความ"
+
+msgid "Date Entered"
+msgstr "เข้ามาวันที่"
+
+msgid "Date Last Edited"
+msgstr "เดทครั้งสุดท้าย"
+
+msgid "Edited By Name"
+msgstr "บรรยายไทยโดย ZAHNMIMRES"
+
+msgid "Deactivated"
+msgstr "ปลดเคลื่อนไหว"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr "คำเตือน: ด้วยการลบสนามนี้ คุณจะสูญเสียกลุ่มทั้งหมดไปยังสนามนี้"
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr "ยืนยัน สมบัติพิเศษกรุ๊ป"
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+"นี่จะสร้างโต๊ะกลุ่มที่จำเพาะกลุ่ม สำหรับกลุ่มนี้ คุณควรเพิ่มคุณสมบัติที่ต้องการ กับ "
+"บรรณาธิการในการสร้างสรรค์กรกรอบ"
+
+msgid "Enable Group Specific Properties"
+msgstr "เป็น บริษัท พิเศษ กรุ๊ป ที่ มี ความ เป็น จริง"
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr "ยืนยัน สมบัติพิเศษกลุ่มปฏิเสธ"
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr "คุณแน่ใจนะว่าคุณต้องการ เอาสมบัติคนกลุ่มนี้ออกไปได้ ข้อมูลของสมาชิกกลุ่มทุกกลุ่มจะหายไป"
+
+msgid "Disable Group Specific Properties"
+msgstr "ไม่สามารถหยุด สมบัติพิเศษกลุ่ม"
+
+msgid "Please enter a role name."
+msgstr ""
+
+msgid "Confirm Delete Role"
+msgstr "ยืนยัน ลบ Role"
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr "นี่ก็จะลบเลขสมาชิกของบุคคลทั้งหมด ที่เกี่ยวข้องกับบทนี้"
+
+msgid "A group should have at least one role!"
+msgstr "กลุ่มควรมีบทบาทหนึ่ง"
+
+msgid "Role Name"
+msgstr "โรล นาม"
+
+msgid "The role name is now modified."
+msgstr "ชื่อบทบาทได้ถูกแก้ไขแล้ว"
+
+msgid "Make Default"
+msgstr "ทำให้ด้วยความจำ"
+
+msgid "Default"
+msgstr "ข้อตกลง"
+
+msgid "Sequence"
+msgstr "ลำดับ"
+
+#, fuzzy
+msgid "Move Up"
+msgstr "ถอยไป"
+
+#, fuzzy
+msgid "Move Down"
+msgstr "ย้าย อีเวน"
+
+#, fuzzy
+msgid "Add New Group"
+msgstr "Add Cart to Group"
+
+#, fuzzy
+msgid "Enter group name"
+msgstr "กลุ่มชื่อ"
+
+#, fuzzy
+msgid "Please enter a group name."
+msgstr "กรุณาเลือกกลุ่มเป้าหมาย สำหรับสมาชิก"
+
+#, fuzzy
+msgid "Group actions"
+msgstr "กลุ่มชื่อ"
+
+#, fuzzy
+msgid "View"
+msgstr "ดูทั้งหมด"
+
+msgid "Members"
+msgstr "สมาชิก"
+
+msgid "Group Cart Status"
+msgstr "สถานีรถยนต์"
+
+msgid "In cart"
+msgstr ""
+
+#, fuzzy
+msgid "Remove from cart"
+msgstr "ถอดรถออก"
+
+msgid "Not in cart"
+msgstr ""
+
+#, fuzzy
+msgid "Add to cart"
+msgstr "บวกเข้าไปที่คาร์ท"
+
+msgid "Cart isn't showable"
+msgstr "รถเข็นไม่ได้แสดง"
+
+msgid "Group Type"
+msgstr "กลุ่มประเภท"
+
+msgid "Value"
+msgstr "ค่า"
+
+msgid "Confirm Delete Group"
+msgstr "ยืนยัน ลบกรุ๊ป"
+
+msgid "Please confirm deletion of this group record"
+msgstr "กรุณายืนยันการลบประวัติของกลุ่มนี้ด้วยครับ"
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr "นี่ก็จะลบข้อมูลของวงกลบทั้งหมด และกลุ่มความมั่นคง ที่เกี่ยวข้องกับบันทึกกลุ่มนี้"
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr "สมาชิกและสมบัติทั้งหมดจะถูกทำลาย กลุ่มสมาชิกตัวเองจะไม่ได้รับการเปลี่ยนแปลง"
+
+msgid "Are you sure you want to unassign this property?"
+msgstr "คุณแน่ใจนะว่าคุณต้องการ ไม่ให้เข้ามายุ่ง"
+
+msgid "Are you sure you want to change this property?"
+msgstr "คุณแน่ใจนะว่าคุณต้องการเปลี่ยนที่นี่"
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr ""
+
+#, fuzzy
+msgid "401 : Private Datas"
+msgstr "ข้อมูลพลทหาร"
+
+msgid "Group Role"
+msgstr "กลุ่มกลุ่ม"
+
+msgid "Private Data"
+msgstr "ข้อมูลพลทหาร"
+
+msgid "Zip Code"
+msgstr "รหัสซิป"
+
+msgid "Cell Phone"
+msgstr "โทรศัพท์มือถือ"
+
+msgid "You're about to delete all the group members ?"
+msgstr "คุณกำลังจะลบสมาชิกกลุ่มทั้งหมดเลยเหรอ?"
+
+msgid "Are you sure ? This can't be undone."
+msgstr "คุณแน่ใจเหรอ? นี่มันไม่สามารถแก้ไขได้"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Members to cart"
+msgstr "สมาชิกในรถเข็น"
+
+msgid "Add to Cart"
+msgstr "บวกเข้าไปที่คาร์ท"
+
+#, fuzzy
+msgid "Add to Group"
+msgstr "Add Cart to Group"
+
+#, fuzzy
+msgid "Move to Group"
+msgstr "เลือกกลุ่ม"
+
+#, fuzzy
+msgid "Remove all members"
+msgstr "ลบทั้งหมด"
+
+msgid "Move"
+msgstr "ถอยไป"
+
+msgid "Members to another group"
+msgstr "สมาชิกในกลุ่มอื่น"
+
+msgid "Remove from Cart"
+msgstr "ถอดรถออก"
+
+msgid "No assigned Manager"
+msgstr "ไม่มีผู้จัดการที่ได้รับมอบหมายให้"
+
+#, fuzzy
+msgid "Add users"
+msgstr "ผู้ซื้อ"
+
+msgid "Manage Group Managers"
+msgstr "จัดการพวกกลุ่ม"
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr "คุณแน่ใจนะ คุณต้องการลบผู้จัดการคนนี้"
+
+msgid "Delete Managers"
+msgstr "ลบ แมนเกอร์"
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr "คุณแน่ใจนะ คุณต้องการลบผู้จัดการทั้งหมด"
+
+msgid "Appointment"
+msgstr "แต่งตั้ง"
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr ""
+
+msgid "For every administrator"
+msgstr "สำหรับผู้บริหารทุกคน"
+
+msgid "Show"
+msgstr "โชว์"
+
+msgid "Hide"
+msgstr "ซ่อน"
+
+msgid "Include all the family members"
+msgstr "รวมทั้งครอบครัวทั้งหมด"
+
+msgid "Include"
+msgstr "รวมทั้ง"
+
+#, fuzzy
+msgid "Pastoral care note"
+msgstr "บันทึกสิ่งประดิษฐ์"
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr ""
+
+#, fuzzy
+msgid "Note"
+msgstr "โน้ต"
+
+#, fuzzy
+msgid "Pastoral Care"
+msgstr "บันทึกสิ่งประดิษฐ์"
+
+#, fuzzy
+msgid "Open the pastoral care record"
+msgstr "ลบพิมพ์บาทหลวงพิมพ์"
+
+msgid "No records found for this view."
+msgstr ""
+
+msgid "No matching records found."
+msgstr ""
+
+#, fuzzy
+msgid "Loading..."
+msgstr "วีดีโอกำลังทะลุ"
+
+msgid "Never contacted"
+msgstr ""
+
+#, fuzzy
+msgid "Pastoral care member"
+msgstr "บวก บาทหลวงพิมพ์"
+
+msgid "Visits/calls"
+msgstr "เยี่ยม/สาย"
+
+msgid "Last visit/call"
+msgstr "ครั้งสุดท้าย"
+
+#, fuzzy
+msgid "Opening..."
+msgstr "การตรวจสอบ"
+
+#, fuzzy
+msgid "Selecting..."
+msgstr "เลือกหนึ่ง"
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr ""
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr ""
+
+msgid "Delete Pastoral Care Type"
+msgstr "ลบพิมพ์บาทหลวงพิมพ์"
+
+msgid "Irreversible action"
+msgstr ""
+
+msgid "Keep note"
+msgstr ""
+
+msgid "Write the pastoral care message associated with this family."
+msgstr ""
+
+msgid "Pastoral Care Note Creation"
+msgstr "บันทึกสิ่งประดิษฐ์"
+
+msgid "Last Name (Family Name)"
+msgstr "นามสกุล (ชื่อครอบครัว)"
+
+msgid "Family Name"
+msgstr "ชื่อครอบครัว"
+
+msgid "Write the pastoral care message associated with this person."
+msgstr ""
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr "คุณแน่ใจนะว่าคุณต้องการ เอาครอบครัวนี้ออกจาก CRM"
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr "คุณแน่ใจนะว่าคุณต้องการ กำจัดครอบครัวทั้งหมดออกจาก CRM"
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"ไม่ใช่ทุกครอบครัวที่ถูก ไม่มีบันทึกการบริจาค และอาจไม่ถูกลบ "
+"จนกว่าบริจาคเหล่านี้จะเกี่ยวข้องกับครอบครัวอื่น"
+
+msgid "Review family member information"
+msgstr ""
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr ""
+
+#, fuzzy
+msgid "Update family member details"
+msgstr "รวมทั้งครอบครัวทั้งหมด"
+
+#, fuzzy
+msgid "Save changes"
+msgstr "ช่วยแม่มด"
+
+msgid "Confirm Deactivation"
+msgstr "ยืนยันการปิดเครื่อง"
+
+msgid "Confirm Activation"
+msgstr "ยืนยันการทำงานอย่างเต็มที่"
+
+msgid "Please confirm deactivation of family"
+msgstr "กรุณายืนยันการปิดครอบครัว"
+
+msgid "Please confirm activation of family"
+msgstr "กรุณายืนยันการทำงานของครอบครัว"
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+"ระวัง GDPR ไว้ เมื่อครอบครัว ถูกกระตุ้น คุณต้องถามทุกคนในครอบครัว ก่อน "
+"ถ้าคุณต้องการสร้างบัญชีใหม่<br><br>วิธีที่คุณมีอำนาจทำให้คุณใช้ชีวิตครอบครัวคนนี้ !!!"
+
+msgid "Upload Photo"
+msgstr "อัพโหลด รูปภาพ"
+
+msgid "Upload an existing Photo"
+msgstr "อัพโหลด ภาพถ่ายที่มีอยู่"
+
+msgid "Max photo size"
+msgstr "ขนาดแม็กซ์"
+
+msgid "Capture from Webcam"
+msgstr "จับตัวจากเว็บแคม"
+
+msgid "Snap Photo"
+msgstr "รูปถ่าย"
+
+msgid "Re-Take Photo"
+msgstr "Re-Take Photo"
+
+msgid "Upload Image"
+msgstr "อัพโหลด ภาพยนตร์"
+
+msgid "Family Photo"
+msgstr "รูปครอบครัว"
+
+msgid "Bank Draft"
+msgstr "แบงค์ดราฟต์"
+
+msgid "Credit Card"
+msgstr "เครดิตการ์ด"
+
+msgid "Disabled"
+msgstr "ไม่ได้"
+
+msgid "Next payment date"
+msgstr "วันที่จ่ายค่าจ้างครั้งต่อไป"
+
+msgid "Interval (months)"
+msgstr "(เดือน)"
+
+msgid "Updated By"
+msgstr "อัพเดทมา"
+
+msgid "Confirm Delete Automatic payment"
+msgstr "ยืนยันการลบเงิน ออโตแมติค"
+
+msgid "Pledge or Payment"
+msgstr "ค่าจ้างหรือไม่ก็จ่าย"
+
+msgid "Dep ID"
+msgstr "บัตรประชาชน"
+
+msgid "Fiscal Year"
+msgstr "ปีฟิสคาล"
+
+msgid "NonDeductible"
+msgstr "ไม่มีใครคาดหวัง"
+
+msgid "CHECK"
+msgstr "เช็ค"
+
+msgid "Date Updated"
+msgstr "เดท"
+
+msgid "Donations/eGives Moved by"
+msgstr ""
+
+msgid "Verification URL"
+msgstr "พยาบาล"
+
+#, fuzzy
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+msgid "Failed to add verification"
+msgstr "ล้มเหลวในการตรวจสอบ"
+
+msgid "Verification email sent"
+msgstr "อีเมลล์ส่งข้อความ"
+
+msgid "Failed to send verification email"
+msgstr "ล้มเหลวในการส่งอีเมล์ตรวจสอบ"
+
+msgid "Warning !!!!"
+msgstr ""
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+
+#, fuzzy
+msgid "You're about to send a e-mail to"
+msgstr "คุณกำลังจะถอดแฟ้ม"
+
+#, fuzzy
+msgid "members"
+msgstr "สมาชิก"
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr ""
+
+#, fuzzy
+msgid "A person name or Family"
+msgstr "ชื่อคนหรือครอบครัว หรือกลุ่ม"
+
+#, fuzzy
+msgid "Modification"
+msgstr "ปรับเปลี่ยน"
+
+#, fuzzy
+msgid "By persons"
+msgstr "เพิ่มคน"
+
+#, fuzzy
+msgid "By Adresses"
+msgstr "ที่อยู่"
+
+#, fuzzy
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr "คุณกำลังจะลบห้องทั้งหมดของคุณ"
+
+#, fuzzy
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr "คุณกำลังจะลบห้องทั้งหมดของคุณ"
+
+#, fuzzy
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr "คุณกำลังจะลบห้องทั้งหมดของคุณ"
+
+#, fuzzy
+msgid "You're about to delete all done confirmation for all the families."
+msgstr "คุณกำลังจะลบห้องทั้งหมดของคุณ"
+
+msgid "Delete this person?"
+msgstr "ลบคนนี้"
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr "คุณอยากลบคนๆนี้ไหม นี่ไม่สามารถแก้ไขได้"
+
+msgid "Save your note"
+msgstr "เก็บโน๊ตไว้เถอะ"
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr "คุณต้องการบันทึกไว้ในฐานะ คำว่า EDrive ของคุณไหม"
+
+msgid "Family Id"
+msgstr "ครอบครัว Id"
+
+msgid "Valid Until"
+msgstr "มีเหตุผล จนกระทั่ง"
+
+msgid "Search for a family or address"
+msgstr ""
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr "คุณแน่ใจนะว่าคุณต้องการลบ คนๆนี้ออกจาก CRM"
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr "คุณแน่ใจนะว่าคุณต้องการ เอาตัวคนทั้งหมดออกจาก CRM"
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"ไม่ใช่ทุกคนถูกลบหมด บางตัวมีบันทึกการบริจาค และอาจไม่ถูกลบ "
+"จนกว่าบริจาคเหล่านี้จะเกี่ยวข้องกับครอบครัวอื่น"
+
+msgid "Review personal information"
+msgstr ""
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr ""
+
+#, fuzzy
+msgid "Profile information"
+msgstr "ผู้ใช้ลบ ยืนยัน"
+
+#, fuzzy
+msgid "Additional information"
+msgstr "ยืนยัน"
+
+msgid "Update personal details"
+msgstr ""
+
+#, fuzzy
+msgid "Processing..."
+msgstr "การตรวจสอบ"
+
+msgid "Please confirm deactivation of person"
+msgstr "กรุณายืนยันการปิดคน"
+
+msgid "Please confirm activation of person"
+msgstr "กรุณายืนยันการทำงานของคน"
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+"ระวัง GDPR ไว้ เมื่อคนที่ถูกกระตุ้น คุณต้องถามคนก่อน "
+"ถ้าคุณต้องการรักษาบัญชีใหม่<br><br>วิธีที่คุณมีอักษรในการใช้ชุดของคุณ อิลลีกาแอล !!!"
+
+msgid "Deactivate"
+msgstr "หยุดการทำงาน"
+
+msgid "Activate"
+msgstr "เปิดเครื่อง"
+
+#, fuzzy
+msgid "Deactivating..."
+msgstr "หยุดการทำงาน"
+
+#, fuzzy
+msgid "Activating..."
+msgstr "เปิดเครื่อง"
+
+msgid "Unable to update this person status."
+msgstr ""
+
+#, fuzzy
+msgid "Deleting..."
+msgstr "เลือกหนึ่ง"
+
+#, fuzzy
+msgid "Unable to delete the photo."
+msgstr "ไม่มีเหตุการณ์ตอนนี้"
+
+msgid "Preview the current profile photo."
+msgstr ""
+
+#, fuzzy
+msgid "Property actions"
+msgstr "นามสกุลทรัพย์สิน"
+
+#, fuzzy
+msgid "Please select a property first."
+msgstr "กรุณาเลือกกลุ่มเป้าหมาย สำหรับสมาชิก"
+
+#, fuzzy
+msgid "Assigning..."
+msgstr "การตรวจสอบ"
+
+#, fuzzy
+msgid "Assign"
+msgstr "การตรวจสอบ"
+
+#, fuzzy
+msgid "Unable to assign this property."
+msgstr "คุณแน่ใจนะว่าคุณต้องการ ไม่ให้เข้ามายุ่ง"
+
+#, fuzzy
+msgid "Remove group assignment"
+msgstr "ถอดรถออก"
+
+#, fuzzy
+msgid "Remove this person from the group"
+msgstr "สมาชิกในกลุ่ม"
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr ""
+
+#, fuzzy
+msgid "Remove from group"
+msgstr "สมาชิกในกลุ่ม"
+
+#, fuzzy
+msgid "Keep assignment"
+msgstr "การตรวจสอบ"
+
+#, fuzzy
+msgid "Share your document"
+msgstr "ตั้งชื่อเอกสารของคุณ"
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr ""
+
+msgid "Current access"
+msgstr ""
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr ""
+
+#, fuzzy
+msgid "Set rights"
+msgstr "สิทธิการตั้งค่า"
+
+msgid "Read and write"
+msgstr ""
+
+#, fuzzy
+msgid "Notification"
+msgstr "ปรับเปลี่ยน"
+
+#, fuzzy
+msgid "Add people, families or groups"
+msgstr "รวมกลุ่มคน/ครอบครัว/กลุ่ม"
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr ""
+
+#, fuzzy
+msgid "Please select at least one recipient first."
+msgstr "กรุณาเลือกเป้าหมายให้สมาชิก"
+
+#, fuzzy
+msgid "Remove shared access"
+msgstr "เอาผู้คน"
+
+#, fuzzy
+msgid "Remove access for the selected recipients?"
+msgstr "ลบทั้งหมด"
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr ""
+
+#, fuzzy
+msgid "Remove access"
+msgstr "ลบทั้งหมด"
+
+#, fuzzy
+msgid "Keep access"
+msgstr "ลบแท็ก"
+
+#, fuzzy
+msgid "Stop sharing this document"
+msgstr "หยุดแชร์กันซะที"
+
+msgid "Stop sharing this document with everyone?"
+msgstr ""
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr ""
+
+#, fuzzy
+msgid "Keep sharing"
+msgstr "หยุดแชร์กันซะที"
+
+#, fuzzy
+msgid "Share your Document"
+msgstr "ตั้งชื่อเอกสารของคุณ"
+
+#, fuzzy
+msgid "Unassign property"
+msgstr "ไม่ได้รับมอบหมาย"
+
+msgid "Remove this property from the current person?"
+msgstr ""
+
+msgid "The property value will be removed from this profile."
+msgstr ""
+
+#, fuzzy
+msgid "Remove property"
+msgstr "ถอดรถออก"
+
+#, fuzzy
+msgid "Keep property"
+msgstr "ทรัพย์สิน"
+
+#, fuzzy
+msgid "Edit property value"
+msgstr "นามสกุลทรัพย์สิน"
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr ""
+
+#, fuzzy
+msgid "Save property"
+msgstr "ทรัพย์สิน"
+
+msgid "Change classification"
+msgstr "เปลี่ยนความหมายใหม่"
+
+msgid "Choose the classification that best matches this person profile."
+msgstr ""
+
+#, fuzzy
+msgid "Update classification"
+msgstr "เปลี่ยนความหมายใหม่"
+
+#, fuzzy
+msgid "Change family role"
+msgstr "เปลี่ยนบทบาทหน่อย"
+
+msgid "Select the role this person should have inside the family record."
+msgstr ""
+
+#, fuzzy
+msgid "Update role"
+msgstr "อัพเดทมา"
+
+msgid "Volunteer actions"
+msgstr ""
+
+#, fuzzy
+msgid "Remove volunteer opportunity"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Remove this volunteer opportunity from the person?"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+msgid "The assignment will be removed from this profile only."
+msgstr ""
+
+#, fuzzy
+msgid "Remove assignment"
+msgstr "การตรวจสอบ"
+
+#, fuzzy
+msgid "Please select at least one volunteer opportunity first."
+msgstr "กรุณาเลือกเป้าหมายให้สมาชิก"
+
+#, fuzzy
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Some volunteer opportunities could not be assigned."
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Delete automatic payment"
+msgstr "ยืนยันการลบเงิน ออโตแมติค"
+
+#, fuzzy
+msgid "Delete this automatic payment setup?"
+msgstr "ยืนยันการลบเงิน ออโตแมติค"
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr ""
+
+#, fuzzy
+msgid "Delete payment"
+msgstr "ลบ อีเวนท์"
+
+#, fuzzy
+msgid "Keep payment"
+msgstr "หรือจ่ายเงิน"
+
+#, fuzzy
+msgid "Delete pledge or payment"
+msgstr "หรือจ่ายเงิน"
+
+#, fuzzy
+msgid "Delete this pledge or payment entry?"
+msgstr "ลบคนนี้"
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr ""
+
+#, fuzzy
+msgid "Delete entry"
+msgstr "ลบ อีเวนท์"
+
+#, fuzzy
+msgid "Keep entry"
+msgstr "ลบแท็ก"
+
+msgid "Share this secure verification link with the person."
+msgstr ""
+
+msgid "Comments"
+msgstr "ความเห็น"
+
+msgid "Confirmation of plugin removal"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr "คุณอยากลบคนๆนี้ไหม นี่ไม่สามารถแก้ไขได้"
+
+#, fuzzy
+msgid "Update plugin"
+msgstr "อัพเดทมา"
+
+#, fuzzy
+msgid "Add plugin"
+msgstr "Add Fund"
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr ""
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr ""
+
+msgid "Plugin archive"
+msgstr ""
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr ""
+
+msgid "The upload starts as soon as you submit this form."
+msgstr ""
+
+msgid "Plugin manager"
+msgstr ""
+
+msgid "The current images folder is now the public folder !!!"
+msgstr "แฟ้มภาพปัจจุบัน ตอนนี้แฟ้มสาธารณะ! !"
+
+msgid "QR Code : Call the register"
+msgstr "โทรเรียกทะเบียน"
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr ""
+
+#, fuzzy
+msgid "Scan a QR Code"
+msgstr "ไม่มีการตรวจจับ QR รหัส"
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr "ไม่สามารถเข้าถึงลำธารได้"
+
+msgid "Available Cameras"
+msgstr ""
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr ""
+
+msgid "Detected data"
+msgstr ""
+
+msgid "Families"
+msgstr "ครอบครัว"
+
+msgid "Singles"
+msgstr ""
+
+msgid "All Groups"
+msgstr "ทุกกลุ่ม"
+
+msgid "All Roles"
+msgstr "ทุก ๆ บทบาท"
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr ""
+
+msgid "All search types"
+msgstr ""
+
+msgid "id"
+msgstr "บัตรประจำตัว"
+
+msgid "Photos"
+msgstr "รูปถ่าย"
+
+msgid "Search result"
+msgstr "ค้นหา"
+
+msgid "Property Name"
+msgstr "นามสกุลทรัพย์สิน"
+
+#, fuzzy
+msgid "Cart Operations"
+msgstr "เทมพลา ตัดสินใจ"
+
+msgid "Add This Page"
+msgstr ""
+
+msgid "Loading people in cart...."
+msgstr "เอาคนขับรถเข็น..."
+
+msgid "Add All results"
+msgstr ""
+
+#, fuzzy
+msgid "Remove this page"
+msgstr "เอาผู้คน"
+
+msgid "Removing people in cart...."
+msgstr "เอารถเข็นออกไป"
+
+#, fuzzy
+msgid "Remove All results"
+msgstr "ลบทั้งหมด"
+
+msgid "Intersect result with cart"
+msgstr ""
+
+msgid "Add People"
+msgstr "เพิ่มคน"
+
+msgid "This page is still in the cart."
+msgstr "หน้านี้ยังอยู่ในรถเข็น"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr "คำเตือน: ด้วยการลบสนามนี้ คุณจะสูญเสียข้อมูลของครอบครัวทั้งหมดให้กับสนามนี้"
+
+msgid "Add Fund"
+msgstr "Add Fund"
+
+#, fuzzy
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr ""
+"ถ้าคุณลบกองทุน<u><b>คุณจะสูญเสียความติดต่อกับทุกอย่าง</b>6781<br><b>คุณแน่ใจหรือไม่ "
+"การกระทำนี้ไม่สามารถแก้ไขได้</b>"
+
+#, fuzzy
+msgid "Are you sure? This action can't be undone."
+msgstr "คุณแน่ใจเหรอ? นี่มันไม่สามารถแก้ไขได้"
+
+msgid "Fund Editor"
+msgstr "บรรณาธิการการใช้งาน"
+
+msgid "ID"
+msgstr "บัตรประชาชน"
+
+msgid "Validate"
+msgstr "ผู้สมัครใจ"
+
+msgid "Enter menu link name"
+msgstr ""
+
+msgid "URI"
+msgstr "URI"
+
+#, fuzzy
+msgid "Enter URL starting with http:// or https://"
+msgstr ""
+"การเชื่อมต่อนี้ควรจะเริ่มต้นด้วย ://///// การเชื่อมต่อควรเริ่มต้นด้วย หรือ https:///// "
+"ฉันรู้ว่าคุณมีสิทธิ์"
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr ""
+"การเชื่อมต่อนี้ควรจะเริ่มต้นด้วย ://///// การเชื่อมต่อควรเริ่มต้นด้วย หรือ https:///// "
+"ฉันรู้ว่าคุณมีสิทธิ์"
+
+msgid "Add Custom Menu Link"
+msgstr "Add Custom Menu Link"
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"ถ้าคุณลบ Menu Link,<u><b>คุณจะสูญเสียความต่อเนื่อง</b>6781<br><b>คุณแน่ใจหรือไม่ "
+"การกระทำนี้ไม่สามารถแก้ไขได้</b>"
+
+msgid "Custom Menu Link Editor"
+msgstr "ผู้บริหารลิงค์ลิงค์"
+
+msgid "Order"
+msgstr ""
+
+msgid "Uri"
+msgstr "ยูริ"
+
+msgid "Global Custom Menus"
+msgstr "โกลบอล คุสตาม เมนัส"
+
+msgid "Dashboard"
+msgstr "กระดาน"
+
+msgid "Delete Classification"
+msgstr "ลบปริมาณการใช้งาน"
+
+msgid "Please confirm deletion of this classification"
+msgstr "โปรดยืนยันการลบ การตรวจสอบการตรวจสอบ"
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr "นี่ก็จะลบทิ้งแน่นอน สำหรับคนที่เกี่ยวข้อง"
+
+#, fuzzy
+msgid "Delete map marker"
+msgstr "ลบ แมนเกอร์"
+
+#, fuzzy
+msgid "Please confirm deletion of this marker"
+msgstr "กรุณายืนยันการลบประวัติของกลุ่มนี้ด้วยครับ"
+
+msgid "Map Icon GoogleMap"
+msgstr "แผนที่ ไอคอน กูเกิ้ลแม็ป"
+
+msgid "Select your classification icon"
+msgstr "เลือกไอคอนของคุณ"
+
+msgid "Add Pastoral Care Type"
+msgstr "บวก บาทหลวงพิมพ์"
+
+msgid "Visible for other authorized users"
+msgstr "เป็นคนที่มีอำนาจได้รับอนุญาตให้ใช้"
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"ถ้าคุณลบ ประเภทบาทหลวงได้<u><b>คุณจะสูญเสียความต่อเนื่อง</b>6781<br><b>คุณแน่ใจหรือไม่ "
+"การกระทำนี้ไม่สามารถแก้ไขได้</b>"
+
+msgid "Pastoral Care Type Editor"
+msgstr "บรรณาธิการวิชาพิเศษของพระเจ้า"
+
+msgid "Visible"
+msgstr "เป็นไปไม่ได้"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr "คำเตือน: ด้วยการลบสนามนี้ คุณจะสูญเสียข้อมูลทั้งหมดให้กับสนามนี้"
+
+msgid "Add a New Property"
+msgstr "เพิ่มสมบัติใหม่"
+
+msgid "Select Property Type"
+msgstr "เลือกพิมพ์สมบัติ"
+
+msgid "with this property..."
+msgstr "ด้วยทรัพย์สินนี้..."
+
+msgid "Prompt"
+msgstr "Prompt"
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr "คุณกำลังจะลบสมบัตินี้ คุณอยากจะเล่นต่อไหม?"
+
+msgid "Property Type Editor"
+msgstr "บรรณาธิการของสมบัติ"
+
+msgid "with this Property..."
+msgstr "ด้วยความสมบัตินี้"
+
+msgid "Class"
+msgstr "ชั้นเรียน"
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr "คุณกำลังจะลบสมบัติทั่วไปนี้ คุณอยากจะเล่นต่อไหม?"
+
+msgid "This general property type is still being used by"
+msgstr "ประเภททั่วไปนี้ยังถูกใช้อยู่"
+
+msgid "property"
+msgstr "ทรัพย์สิน"
+
+msgid "properties"
+msgstr "สมบัติ"
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr "ถ้าคุณลบประเภทนี้ คุณก็ตัดสมบัติทั้งหมดโดยใช้"
+
+msgid "it and lose any corresponding property assignments."
+msgstr "และสูญเสียการบ้านที่ตรงกันของทรัพย์สิน"
+
+msgid "Add a New Property Type"
+msgstr "เพิ่มพิมพ์สมบัติใหม่"
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Send Message"
+msgstr "ส่งข้อความ"
+
+msgid "View Profile"
+msgstr "วิว โปรไฟล์"
+
+msgid "Teachers"
+msgstr "ครู"
+
+msgid "Delete this Teacher?"
+msgstr "ลบอาจารย์คนนี้"
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr "คุณอยากลบครูคนนี้ทิ้งมั้ย นี่ไม่สามารถแก้ไขได้"
+
+msgid "First name"
+msgstr "ชื่อแรก"
+
+msgid "Birth Date"
+msgstr "วันเกิด"
+
+msgid "Unknown"
+msgstr "ไม่รู้"
+
+msgid "Boy"
+msgstr "เด็กน้อย"
+
+msgid "Girl"
+msgstr "สาวน้อย"
+
+msgid "Age"
+msgstr "อายุ"
+
+msgid "Mobile"
+msgstr "โมบิล"
+
+msgid "Home Phone"
+msgstr "โฮมโทรศัพท์"
+
+msgid "Home Address"
+msgstr "ที่อยู่บ้าน"
+
+msgid "Dad Name"
+msgstr "พ่อ ชื่อ"
+
+msgid "Dad Mobile"
+msgstr "พ่อ โมบีล"
+
+msgid "Dad Email"
+msgstr "พ่อ อีเมล"
+
+msgid "Mom Name"
+msgstr "แม่ชื่อ"
+
+msgid "Mom Mobile"
+msgstr "แม่ โมบีล"
+
+msgid "Mom Email"
+msgstr "แม่ อีเมล"
+
+msgid "Remove Students from Cart"
+msgstr "เอานักเรียนที่อยู่ในรถ"
+
+msgid "Add Students to Cart"
+msgstr "เพิ่มนักเรียนที่เข้ารหัส"
+
+msgid "Remove Teachers from Cart"
+msgstr "เอาครูจากรถเข็น"
+
+msgid "Add Teachers to Cart"
+msgstr "เพิ่มครูเข้ารหัส"
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr "เลือกสิ่งที่คุณต้องการ ที่จะใช้สร้างการประท้วง"
+
+msgid "Create First A New Event"
+msgstr "สร้างความทรงจำใหม่"
+
+msgid "Create Event With Students"
+msgstr "สร้างมือกับนักเรียน"
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr "ระวังด้วย! คุณกำลังจะสร้าง หรือสร้างงานวิชาโรงเรียนวันอาทิตย์ เพื่อโทรหาเงินทะเบียน"
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr "ถ้าเกิดเหตุเกิดขึ้นแล้ว ก็ไปที่เมนูอีเวนส์ แล้วก็โทรเรียกทะเบียน"
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr "อย่างแรก ตั้งเวลาของคุณ ระยะทางที่ถูกต้อง เพื่อให้การสกัด"
+
+msgid "Set year range to export"
+msgstr "ช่วงปีที่จะส่งออก"
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr "อย่างแรก ตั้งวันที่ของคุณ ให้เหมาะสม เพื่อให้การสกัด"
+
+msgid "Extra students"
+msgstr "นักเรียนพิเศษ"
+
+msgid "export with photos"
+msgstr "ตั้งใจเรียนภาพถ่าย"
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr ""
+"ระวังด้วย! คุณกำลังจะสร้าง หรือสร้างงานวิชาทั้งหมดของโรงเรียนวันอาทิตย์ ที่จะเรียกทะเบียนรถ"
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr "ถ้าเกิดเหตุเกิดขึ้นแล้ว ก็ไปที่เมนูอีเวนส์ แล้วก็โทรเรียกทะเบียน"
+
+msgid "First, set your date and time."
+msgstr "ก่อนอื่น ตั้งวันและเวลา"
+
+msgid "Time"
+msgstr "เวลา"
+
+msgid "Call the Register for all sunday groups"
+msgstr "โทรเรียกที่รับจ้างกลุ่มอาทิตย์"
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr "อย่างน้อยก็มีกลุ่มหนึ่ง ถูกเลือกที่จะทำรายชื่อ หรือผ้าที่เข้าเรียน"
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr "คุณต้องตั้งแนวหน้าทิวเทิล และข้อความสำหรับประเด็นของคุณ"
+
+#, fuzzy
+msgid "Find member"
+msgstr "สมาชิก"
+
+msgid "Search by name, role, or ID."
+msgstr ""
+
+#, fuzzy
+msgid "Search a member"
+msgstr "ลบทั้งหมด"
+
+msgid "Clear"
+msgstr ""
+
+#, fuzzy
+msgid "In"
+msgstr "Icon"
+
+msgid "Out"
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Trigger Parent Alert"
+msgstr "ผู้ปกครองที่ตัดสินใจ"
+
+msgid "Kiosk"
+msgstr "คิออค"
+
+#, fuzzy
+msgid "Attendance"
+msgstr "ทำให้การประท้วง"
+
+msgid "Current event"
+msgstr ""
+
+msgid "No assignments for kiosk"
+msgstr "ไม่มีการบ้านให้คิออค"
+
+msgid "Kiosk Name"
+msgstr "คิออค ชื่อ"
+
+msgid "Assignment"
+msgstr "การตรวจสอบ"
+
+msgid "Last Heartbeat"
+msgstr "หัวใจที่แล้ว"
+
+msgid "Accepted"
+msgstr "ยอมรับ"
+
+msgid "True"
+msgstr "จริง"
+
+msgid "False"
+msgstr "ผิดพลาด"
+
+msgid "Reload"
+msgstr "บรรจุกระสุน"
+
+msgid "Identify"
+msgstr "ระบุตัว"
+
+msgid "Accept"
+msgstr "ยอมรับ"
+
+msgid "Two factors authentications"
+msgstr "สองตัวประกอบการตรวจสอบ"
+
+msgid "2FA is already enabled on your account."
+msgstr "2FA is already enabled on your account."
+
+msgid "If needed, you can remove it and enroll again."
+msgstr "If needed, you can remove it and enroll again."
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr "ลบความลับการตรวจสอบ 2 ตัว"
+
+msgid "2 Factor Authentication Secret"
+msgstr "ความลับที่แท้จริง 2 ตัว"
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr "เข้าสู่รหัสทอทีพี เพื่อยืนยันการลงทะเบียน"
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr "เก็บรหัสผ่านสำรองข้อมูลนี้ไว้ในที่ปลอดภัย เผื่อคุณสูญเสียใบอนุญาติ"
+
+#, fuzzy
+msgid "Unable to remove 2FA right now."
+msgstr "ไม่มีเหตุการณ์ตอนนี้"
+
+msgid "Current step"
+msgstr ""
+
+#, fuzzy
+msgid "Completed"
+msgstr "คอมพิวเตอร์"
+
+msgid "Locked"
+msgstr ""
+
+msgid "Backup Complete, Ready for Download."
+msgstr "เสร็จสมบูรณ์ พร้อมสำหรับดาวน์โหลด"
+
+msgid "The user must have an email address."
+msgstr "ผู้ใช้ต้องมีอีเมล์"
+
+msgid "Select your Role"
+msgstr "เลือกบทบาทของคุณ"
+
+msgid "and update its name if needed."
+msgstr ""
+
+msgid "Role management"
+msgstr "การจัดการวงกลม"
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr "แน่ใจเหรอ คุณกำลังจะลบ Role นี้"
+
+msgid "Rename"
+msgstr "ฉายาว"
+
+msgid "Choose a Role Name"
+msgstr "เลือกชื่อโรล"
+
+#, fuzzy
+msgid "You must set another Role Name"
+msgstr "เลือกชื่อโรล"
+
+msgid "this Role Name already exist !!!"
+msgstr ""
+
+msgid "You've to check at least one user."
+msgstr "คุณต้องเช็คผู้ใช้หนึ่งคน"
+
+msgid "The WebDav Key is"
+msgstr "กุญแจเว็บแดดเป็น"
+
+msgid "The public WebDav Key is"
+msgstr "กุญแจเว็บแดดสาธารณะ"
+
+msgid "WebDav key"
+msgstr "กุญแจเว็บดาฟ"
+
+msgid "is now locked"
+msgstr "ตอนนี้ล็อคแล้ว"
+
+msgid "is now unlocked"
+msgstr "ตอนนี้ไม่ได้ล็อค"
+
+msgid "User Delete Confirmation"
+msgstr "ผู้ใช้ลบ ยืนยัน"
+
+msgid "Please confirm removal of user status from:"
+msgstr "กรุณายืนยันสถานะผู้ใช้ที่"
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr "ระวังตัวด้วยนะ คุณกำลังจะเสียแฟ้มที่เกี่ยวข้อง และแฟ้มที่เกี่ยวข้อง ปฏิทิน ปฏิทิน ปฏิทิน"
+
+msgid "This can't be undone"
+msgstr "นี่มันไม่สามารถแก้ไขได้"
+
+msgid "Action Confirmation"
+msgstr "ยืนยัน"
+
+msgid "Please confirm reset failed login count"
+msgstr "กรุณายืนยันการนับเงินล้มเหลวด้วยครับ"
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset failed login count for"
+msgstr "รีเซ็ตล้มเหลวสำหรับ"
+
+msgid "done."
+msgstr "เสร็จแล้ว"
+
+msgid "Please confirm the password reset of this user"
+msgstr "กรุณายืนยันรหัสผ่านผู้ใช้คนนี้ด้วยครับ"
+
+msgid "Reset & Send"
+msgstr ""
+
+msgid "Password reset for"
+msgstr "รหัสผ่าน"
+
+msgid "Mail connection failure"
+msgstr ""
+
+msgid "to remove two-factor authentication"
+msgstr "เพื่อลบ 2 ปัจจัย"
+
+msgid "Pending"
+msgstr "เพนดิ้ง"
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+"ให้ผู้ใช้เวลา 60 วินาทีในการล็อกระบบ กับรหัสของพวกเขา ผู้ใช้จะต้องลบหรือแค่ให้รหัสควบคุม "
+"ในการจัดการที่OTP"
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr "ผู้ใช้มีเวลา 60 วินาที ในการใช้รหัสของเขา"
+
+#, fuzzy
+msgid "Add New Volunteer Opportunity"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Volunteer Opportunity actions"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Volunteer Cart Status"
+msgstr "สถานีรถยนต์"
+
+msgid "Activ"
+msgstr "Activ"
+
+msgid "Parent (hierarchy)"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+#, fuzzy
+msgid "Enter volunteer opportunity name"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Enter a brief description"
+msgstr "คำอธิบายไม่ชัดเจน"
+
+#, fuzzy
+msgid "Add to volunteer opportunities"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Move to volunteer opportunities"
+msgstr "เพิ่ม โอกาส ของ วอวอน ทีย์ นิว"
+
+#, fuzzy
+msgid "Confirm Delete This Opportunity"
+msgstr "ยืนยันการลบโอกาสของอาสาสมัครที่ดี"
+
+#, fuzzy
+msgid "Please confirm deletion of this record"
+msgstr "กรุณายืนยันการลบประวัติของกลุ่มนี้ด้วยครับ"
+
+#, fuzzy
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr "สมาชิกและสมบัติทั้งหมดจะถูกทำลาย กลุ่มสมาชิกตัวเองจะไม่ได้รับการเปลี่ยนแปลง"
+
+#~ msgid "Loading video..."
+#~ msgstr "วีดีโอกำลังทะลุ"
+
+#~ msgid "Mailchimp"
+#~ msgstr "ใบไม้ผลิตภัณฑ์"
+
+#, fuzzy
+#~ msgid ""
+#~ "All the lists are now loaded in the CRM.<br><b>If you want to manage "
+#~ "them, click this notification !</b>"
+#~ msgstr ""
+#~ "รายชื่อทั้งหมดถูกโหลดในปีEcclesia<b>CRM</b><br><b>ถ้าคุณต้องการจัดการพวกเขา "
+#~ "ก็กดการแจ้งเตือน</b>"
+
+#~ msgid "Saving Campaign ..."
+#~ msgstr "ช่วยชีวิตค่าเทพ"
+
+#~ msgid "Campaign"
+#~ msgstr "แคมเปญ"
+
+#~ msgid "saved successfully"
+#~ msgstr "ช่วยเหลือผู้ประสบความสำเร็จ"
+
+#~ msgid "You're about to send your campaign! Are you sure ?"
+#~ msgstr "คุณกำลังจะส่งแคมเปญของคุณ! คุณแน่ใจเหรอ?"
+
+#~ msgid "You're about to delete your campaign! Are you sure ?"
+#~ msgstr "คุณกำลังจะลบแคมเปญของคุณ! คุณแน่ใจเหรอ?"
+
+#, fuzzy
+#~ msgid "Loading data..."
+#~ msgstr "วันที่กำลังหลอก"
+
+#~ msgid "No list are created with this account ...."
+#~ msgstr "ไม่มีรายชื่อที่ถูกสร้างขึ้นด้วยบัญชีนี้"
+
+#~ msgid "Email List"
+#~ msgstr "รายชื่ออีเมล"
+
+#~ msgid "Subject"
+#~ msgstr "เป้าหมาย"
+
+#~ msgid "Members:"
+#~ msgstr "สมาชิก:"
+
+#~ msgid "Unsubscribed count:"
+#~ msgstr "นับไม่ได้รับการยอมรับ:"
+
+#~ msgid "Unsubscribed count since last send:"
+#~ msgstr "นับไม่ถูกต้อง ตั้งแต่ส่งสัญญาณ"
+
+#~ msgid "Cleaned count:"
+#~ msgstr "นับถ่ายเกินไป"
+
+#~ msgid "Cleaned count since last send:"
+#~ msgstr "นับถือความสะอาด ตั้งแต่ส่งสุดท้าย"
+
+#~ msgid "Campaigns"
+#~ msgstr "แคมเปญ"
+
+#~ msgid "Tags"
+#~ msgstr "แท็กส์"
+
+#~ msgid "is not configured"
+#~ msgstr "ไม่มีการจัดเรียงใด"
+
+#~ msgid "Please update the"
+#~ msgstr "กรุณาอัพเดทด้วยครับ"
+
+#~ msgid "API key in Setting->"
+#~ msgstr "API กุญแจในการตั้งค่า"
+
+#~ msgid "Edit General Settings"
+#~ msgstr "แก้ไข นายพลตั้งค่า"
+
+#, fuzzy
+#~ msgid "Then update"
+#~ msgstr "งั้นก็อัพเดทซะ"
+
+#~ msgid "For more info see our "
+#~ msgstr "เพื่อให้ข้อมูลเพิ่มเติม"
+
+#~ msgid "support docs."
+#~ msgstr "สนับสนุน"
+
+#~ msgid "List Title"
+#~ msgstr "ลิซ ทิทเทิล"
+
+#~ msgid "Your List Title"
+#~ msgstr "ลิสต์ ทิทเทิลของคุณ"
+
+#~ msgid "Your Subject"
+#~ msgstr "วิชาของคุณ"
+
+#~ msgid "Permission Reminder"
+#~ msgstr "ขอยืนยัน"
+
+#~ msgid "Archive Bars"
+#~ msgstr "อาร์เชิลบาร์"
+
+#~ msgid "Public"
+#~ msgstr "สาธารณะ"
+
+#~ msgid "List Creation"
+#~ msgstr "ลิสต์สร้าง"
+
+#~ msgid "You're about to delete a tag!"
+#~ msgstr "คุณกำลังจะลบแท็ก!"
+
+#~ msgid ""
+#~ "This will also delete the tag for all the members in this list. Are you "
+#~ "sure ?"
+#~ msgstr "นี่ก็ลบแท็ก สำหรับสมาชิกทุกคนในรายชื่อนี้ด้วย คุณแน่ใจเหรอ?"
+
+#~ msgid "Deleting tag"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "People"
+#~ msgstr "ผู้คน"
+
+#~ msgid "Add a new tag"
+#~ msgstr "เพิ่มป้ายป้ายใหม่"
+
+#~ msgid "Delete tag from subscriber(s)"
+#~ msgstr "ลบแท็กจากผู้เขียนหนังสือ"
+
+#~ msgid "Delete tag"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "Loading resources ..."
+#~ msgstr "กำลังเติมทรัพยากร"
+
+#~ msgid "Check all boxes"
+#~ msgstr "ตรวจดูทุกกล่อง"
+
+#~ msgid "Subscribed"
+#~ msgstr "เขียนไว้"
+
+#~ msgid "Unsubscribed"
+#~ msgstr "ไม่ได้รับการยอมรับ"
+
+#~ msgid "Email Marketing"
+#~ msgstr "การตลาดอีเมล"
+
+#, fuzzy
+#~ msgid "New tag"
+#~ msgstr "เพิ่มป้ายป้ายใหม่"
+
+#, fuzzy
+#~ msgid "Create tag"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "Adding tag..."
+#~ msgstr "เพิ่ม..."
+
+#~ msgid "Name is empty !!"
+#~ msgstr "ชื่อว่างเปล่า!"
+
+#, fuzzy
+#~ msgid "Add tag"
+#~ msgstr "ป้ายทะเบียนด้วยหรอ?"
+
+#, fuzzy
+#~ msgid "Selected tag"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "This will add the tag"
+#~ msgstr "นี่จะเพิ่มเลขที่"
+
+#~ msgid "to all the current selected members in the list."
+#~ msgstr "ที่เป็นสมาชิกที่เลือกทั้งหมดในรายชื่อ"
+
+#~ msgid "Select One"
+#~ msgstr "เลือกหนึ่ง"
+
+#~ msgid "All Tags"
+#~ msgstr "ทุกแท็กส์"
+
+#, fuzzy
+#~ msgid "Remove tags from selected members"
+#~ msgstr "ลบทั้งหมด"
+
+#, fuzzy
+#~ msgid "Choose a tag"
+#~ msgstr "เลือกชื่อโรล"
+
+#~ msgid "Removing tags..."
+#~ msgstr "ถอดป้ายทะเบียน..."
+
+#~ msgid "Deleting all tags for the selected members in the list..."
+#~ msgstr "ลบป้ายทะเบียนทุกสำหรับ สมาชิกที่ถูกเลือกในรายการ"
+
+#, fuzzy
+#~ msgid "Keep tag"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "A person name or Family or Group"
+#~ msgstr "ชื่อคนหรือครอบครัว หรือกลุ่ม"
+
+#~ msgid "Loading subscriber"
+#~ msgstr "บรรจุผู้เขียนไว้"
+
+#~ msgid "Loading subscribers from Group"
+#~ msgstr "ผู้เขียนหนังสือจากกรุ๊ป"
+
+#~ msgid "Loading subscribers from family"
+#~ msgstr "ผู้เขียนหนังสือจากครอบครัว"
+
+#~ msgid "Loading all persons from EcclesiaCRM<br>This could take a while !"
+#~ msgstr "กำลังเติมคนทั้งหมดจาก EcclesiaCRM<br>นี่คงใช้เวลาสักพัก"
+
+#~ msgid ""
+#~ "In fact, you've better to quit the CRM, wait 5 minutes and make your "
+#~ "campaigns after.<br>To import huge datas, MailChimp API is slow."
+#~ msgstr ""
+#~ "ที่จริง คุณควรที่จะลาออกจาก CRM รออีก 5 นาที "
+#~ "และทำการหาเสียงของคุณหลังจากนั้น<br>นำเข้าวันที่ใหญ่โต รัฐมาชิมป์ก็ช้า"
+
+#~ msgid ""
+#~ "Loading all newsletter subscribers from EcclesiaCRM<br>This could take a "
+#~ "while !"
+#~ msgstr "กำลังเติมนักข่าวทั้งหมดเขียนข่าว จากEcclesiaCRM<br>นี่คงใช้เวลาสักพัก"
+
+#~ msgid ""
+#~ "Loading all families first headpeople subscribers from "
+#~ "EcclesiaCRM<br>This could take a while !"
+#~ msgstr ""
+#~ "ปิดครอบครัวทั้งหมดเป็นครั้งแรก ผู้เขียนรายงาน จากปี EcclesiaCRM<br>นี่ต้องใช้เวลาสักพัก"
+
+#, fuzzy
+#~ msgid "Update subscriber status"
+#~ msgstr "การเปลี่ยนแปลงสภาวะผู้เขียนวิชาการ"
+
+#, fuzzy
+#~ msgid "Selected subscriber"
+#~ msgstr "ลบผู้เขียนหนังสือ"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "อัพเดทมา"
+
+#~ msgid "Changing status ..."
+#~ msgstr "การเปลี่ยนแปลงสถานะ"
+
+#, fuzzy
+#~ msgid "Delete subscriber"
+#~ msgstr "ลบผู้เขียนหนังสือ"
+
+#, fuzzy
+#~ msgid "Subscriber removal"
+#~ msgstr "เขียนไว้"
+
+#~ msgid "You're about to delete a subscriber! Are you sure ?"
+#~ msgstr "คุณกำลังจะลบผู้เขียนหนังสือ คุณแน่ใจเหรอ?"
+
+#, fuzzy
+#~ msgid "Keep subscriber"
+#~ msgstr "บรรจุผู้เขียนไว้"
+
+#~ msgid "Deleting Subscriber..."
+#~ msgstr "ลบผู้เขียนหนังสือ"
+
+#, fuzzy
+#~ msgid "Delete mailing list"
+#~ msgstr "ลบ แมนเกอร์"
+
+#, fuzzy
+#~ msgid "This action is irreversible"
+#~ msgstr "การกระทำนี้ไม่สามารถแก้ไขได้ !!!"
+
+#~ msgid "Do you really want to delete this mailing list ?"
+#~ msgstr "คุณอยากลบรายชื่อส่งสัญญานี่จริงๆเหรอ"
+
+#, fuzzy
+#~ msgid "Delete list"
+#~ msgstr "ลบแท็ก"
+
+#, fuzzy
+#~ msgid "Delete all subscribers"
+#~ msgstr "ลบผู้เขียนทั้งหมด"
+
+#~ msgid "Are you sure you want to delete all the subscribers"
+#~ msgstr "คุณแน่ใจนะว่าคุณต้องการลบผู้เขียนทั้งหมด"
+
+#, fuzzy
+#~ msgid "Delete all"
+#~ msgstr "ลบแท็ก"
+
+#~ msgid "Deleting all subscribers..."
+#~ msgstr "ลบผู้เขียนทั้งหมด"
+
+#~ msgid ""
+#~ "In fact, you've better to leave the CRM, and in a quater of an hour re-"
+#~ "open it to manage your list.<br>To delete huge datas, MailChimp API is "
+#~ "slow."
+#~ msgstr ""
+#~ "ที่จริง คุณควรทิ้ง CRM ไว้ดีกว่า "
+#~ "และในอีกสี่สิบชั่วโมงเปิดมันใหม่เพื่อจัดการรายชื่อของคุณ<br>เพื่อลบฐานที่ใหญ่ที่สุด, MailChimp "
+#~ "API ก็ช้า"
+
+#~ msgid "Email Campaign Creation"
+#~ msgstr "สร้าง อีเมล แคมเปญ"
+
+#, fuzzy
+#~ msgid "Campaign details"
+#~ msgstr "แคมเปญ ทิทเทิล"
+
+#~ msgid "Campaign Title"
+#~ msgstr "แคมเปญ ทิทเทิล"
+
+#~ msgid "Your Campaign Title"
+#~ msgstr "เสียงหอบของคุณ"
+
+#~ msgid "For Tag"
+#~ msgstr "เพื่อแท็ก"
+
+#, fuzzy
+#~ msgid "Write the subject and the body of your email campaign."
+#~ msgstr "คุณต้องตั้ง แคมเปญ ทิวเทิลให้กับโคมเปญ อีเมล"
+
+#~ msgid "Mail Subject"
+#~ msgstr "จดหมาย"
+
+#~ msgid "Your Mail Subject"
+#~ msgstr "วิชาจดหมายของคุณ"
+
+#~ msgid "All list members"
+#~ msgstr "รายชื่อทั้งหมด"
+
+#~ msgid "Adding Campaign ..."
+#~ msgstr "เพิ่ม แคมเปญ"
+
+#, fuzzy
+#~ msgid "Campaign created"
+#~ msgstr "แคมเปญ ทิทเทิล"
+
+#, fuzzy
+#~ msgid "Your campaign is ready"
+#~ msgstr "เสียงหอบของคุณ"
+
+#~ msgid "Would like to manage directly this new campaign ?"
+#~ msgstr "อยากจะจัดการแคมเปญใหม่โดยตรง"
+
+#, fuzzy
+#~ msgid "Open campaign"
+#~ msgstr "แคมเปญ"
+
+#~ msgid "You have to set a Campaign Title for your eMail Campaign"
+#~ msgstr "คุณต้องตั้ง แคมเปญ ทิวเทิลให้กับโคมเปญ อีเมล"
+
+#, fuzzy
+#~ msgid "Edit list settings"
+#~ msgstr "แก้ไข นายพลตั้งค่า"
+
+#~ msgid "List Name"
+#~ msgstr "ลิซชื่อ"
+
+#~ msgid "Changing subscribers state..."
+#~ msgstr "การเปลี่ยนแปลงสภาวะผู้เขียนวิชาการ"
+
+#, fuzzy
+#~ msgid "Delete selected subscribers"
+#~ msgstr "ลบแท็กจากผู้เขียนหนังสือ"
+
+#, fuzzy
+#~ msgid "Selected members"
+#~ msgstr "เลือกแถว"
+
+#~ msgid "You're about to delete subscribers! Are you sure ?"
+#~ msgstr "คุณกำลังจะลบผู้เขียนทิ้ง คุณแน่ใจเหรอ?"
+
+#, fuzzy
+#~ msgid "selected"
+#~ msgstr "เลือก"
+
+#, fuzzy
+#~ msgid "Delete selected"
+#~ msgstr "ลบ อีเวนท์"
+
+#~ msgid "Deleting Subscribers..."
+#~ msgstr "ลบผู้เขียนที่ถูกลบ"
+
+#~ msgid "ERROR"
+#~ msgstr "อีร์โรร์"
+
+#~ msgid "Select the group to which you would like to add your cart"
+#~ msgstr "เลือกกลุ่มที่คุณต้องการเพิ่มรถเข็น"
+
+#~ msgid "You have to set a Group Name"
+#~ msgstr "คุณต้องตั้งชื่อกลุ่ม"
+
+#~ msgid "Yes : if you're sure"
+#~ msgstr "ใช่ : ถ้าคุณแน่ใจ"
+
+#~ msgid ""
+#~ "You can add the content of the cart to the selected event below<br> - OR "
+#~ "- <br>Create first an event and add them after."
+#~ msgstr ""
+#~ "คุณสามารถเพิ่มเนื้อหาของรถเข็น เข้าไปด้วยเหตุการณ์ที่เลือกต่ำกว่า<br>- หรือ "
+#~ "-<br>สร้างเหตุการณ์แรก แล้วบวกมันหลังจากนั้น"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr "กรุณาจดทะเบียนสำเนาของคุณ EcclesiaCRM ด้วยการตรวจสอบข้อมูลนี้ และกดปุ่มส่งมา"
+
+#, fuzzy
+#~ msgid "Please select target volunteers for members"
+#~ msgstr "กรุณาเลือกเป้าหมายให้สมาชิก"
+
+#~ msgid "Please select target Role for members"
+#~ msgstr "กรุณาเลือกเป้าหมายให้สมาชิก"
+
+#~ msgid "Add A Group Name"
+#~ msgstr "บวกชื่อกลุ่ม"
+
+#~ msgid "Are you sure you want to remove this person's membership from"
+#~ msgstr "คุณแน่ใจนะว่าคุณต้องการ ลบสมาชิกของคนๆนี้ออก"
+
+#~ msgid "Are you sure ? You're about to delete this Person ?"
+#~ msgstr "คุณแน่ใจเหรอ? คุณกำลังจะลบ ผู้ชายคนนี้หรือ?"
+
+#~ msgid "Are you sure ? You are about to stop sharing your document ?"
+#~ msgstr "คุณแน่ใจเหรอ? คุณกำลังจะหยุด แบ่งเอกสารของคุณ?"
+
+#~ msgid "Confirm Delete volunteer Opportunity"
+#~ msgstr "ยืนยันการลบโอกาสของอาสาสมัครที่ดี"
+
+#, fuzzy
+#~ msgid "Select your zipped plugin file"
+#~ msgstr "เลือกบทบาทของคุณ"
+
+#~ msgid "Personal"
+#~ msgstr "ส่วนตัว"
+
+#~ msgid "Add your tag name"
+#~ msgstr "ใส่ชื่อแท็กของเธอ"
+
+#~ msgid "Choose the tag you want to delete :"
+#~ msgstr "เลือกป้ายทะเบียนที่คุณต้องการลบ:"
+
+#~ msgid "Select status for : "
+#~ msgstr "เลือกสถานะให้:"
+
+#~ msgid "Place"
+#~ msgstr "ที่นั่น"
+
+#~ msgid "GDPR"
+#~ msgstr "GDPR"
+
+#~ msgid "Campaigns:"
+#~ msgstr "แคมเปญ:"
+
+#~ msgid "Generate Deposit Slip for Selected"
+#~ msgstr "เจเรเรตดีปป์สำหรับการเลือก"
+
+#~ msgid "Rows"
+#~ msgstr "แถว"
+
+#~ msgid "Add buyer"
+#~ msgstr "ผู้ซื้อ"
+
+#~ msgid "All members of this group are in the cart"
+#~ msgstr "สมาชิกทุกคนในกลุ่มนี้อยู่ในรถเข็น"
+
+#~ msgid "Not all members of this group are in the cart"
+#~ msgstr "ไม่ใช่สมาชิกทุกคนในกลุ่มนี้ อยู่ในรถเข็น"
+
+#~ msgid "Regenerate 2 Factor Authentication Secret"
+#~ msgstr "ปรับตัว 2 ความลับ"
+
+#~ msgid ""
+#~ "<center>You must set another Role Name <br>-- or --<br> this Role Name "
+#~ "already exist !!!</center>"
+#~ msgstr "<center>คุณต้องทำให้โรลชื่ออีกตัว<br>หรือ<br>ชื่อ โรล ชื่อนี้มีอยู่แล้ว!! !</center>"
+
+#~ msgid "Done !"
+#~ msgstr "เสร็จแล้ว!"
+
+#~ msgid "Removing finished...."
+#~ msgstr "ถอนตัว..."
+
+#~ msgid "Nothing to remove."
+#~ msgstr "ไม่มีอะไรต้องเอาออก"
+
+#~ msgid "Are you sure you want to remove the selected group members?"
+#~ msgstr "คุณแน่ใจนะว่าคุณต้องการ เอาสมาชิกกลุ่มที่ถูกเลือก"
+
+#~ msgid "Add all"
+#~ msgstr "บวกทั้งหมด"
+
+#~ msgid "You're about to remove a folder and it's content"
+#~ msgstr "คุณกำลังจะลบแฟ้มออก และมันก็เนื้อหา"
+
+#~ msgid "Files input"
+#~ msgstr "ข้อมูลข้อมูล"
+
+#~ msgid "Upload your files"
+#~ msgstr "อัพโหลดไฟล์ของคุณ"
+
+#~ msgid "Upload"
+#~ msgstr "อัพโหลด"
+
+#~ msgid "Upload your Files"
+#~ msgstr "อัพโหลดไฟล์ของคุณ"
+
+#~ msgid "Share your File"
+#~ msgstr "แบ่งปันไฟล์ของคุณ"
+
+#~ msgid "Add person"
+#~ msgstr "เพิ่มคน"
+
+#~ msgid "Switch Camera"
+#~ msgstr "สลับกล้อง"
+
+#~ msgid "Info"
+#~ msgstr "อินโฟ"
+
+#, fuzzy
+#~ msgid "Moved!"
+#~ msgstr "ถอยไป"
+
+#~ msgid "Problem"
+#~ msgstr "ปัญหา"
+
+#~ msgid ""
+#~ "Safari isn't yet supported with Jitsi, use something else !<br/>• Your "
+#~ "webcam<br/>• Sharing your windows<br/> won't work with meeting."
+#~ msgstr ""
+#~ "ซาฟารียังไม่สนับสนุนจิสซี่ "
+#~ "ใช้อย่างอื่น<br>เว็บแคมของคุณ<br>การแบ่งปันหน้าต่าง<br>ไม่ได้ทำงานกับการประชุม"
+
+#~ msgid "Set a Jitsi room name"
+#~ msgstr "ตั้งชื่อห้อง Jitsi"
+
+#~ msgid "Delete all Rooms?"
+#~ msgstr "ลบห้องทั้งหมดเลยเหรอ"
+
+#~ msgid "All"
+#~ msgstr "ทั้งหมด"
+
+#~ msgid ""
+#~ "Deleting an event will also delete all attendance counts for that event."
+#~ msgstr "การที่ลบเหตุการณ์นั้น ก็จะลบทุกการเข้าเรียนทั้งหมดสำหรับงานนั้นด้วย"
+
+#~ msgid "Are you sure you want to DELETE the event ?"
+#~ msgstr "คุณแน่ใจนะว่าคุณต้องการจบงานนี้"
+
+#~ msgid ""
+#~ "You can create the event automatically with the students<br> - OR - "
+#~ "<br>Add the students to the cart and create an event to add them after."
+#~ msgstr "คุณสามารถสร้างงานอัตโนมัติกับนักเรียน<br>- หรือ<br>บวกนักเรียนลงรถเข็น"

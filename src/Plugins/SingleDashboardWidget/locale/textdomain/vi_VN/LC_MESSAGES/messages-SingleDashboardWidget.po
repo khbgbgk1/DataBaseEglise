@@ -1,0 +1,7 @@
+#: ../src/Plugins/SingleDashboardWidget/v2/templates/View.php:22
+msgid "Singles"
+msgstr ""
+
+#: ../src/Plugins/SingleDashboardWidget/v2/templates/View.php:31
+msgid "View Singles"
+msgstr ""

@@ -1,0 +1,147 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-14 19:48+0000\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:34
+msgid "None"
+msgstr "Ingen"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:67
+msgid "Excellent coverage"
+msgstr "Utmerket dekning"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:68
+#, fuzzy, php-format
+msgid ""
+"More than 60% of members have been visited. Keep up the great pastoral work!"
+msgstr ""
+"Mer enn 60 % av medlemmene har fått besøk. Fortsett det gode pastorale "
+"arbeidet!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:72
+msgid "Good progress"
+msgstr "God fremgang"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:73
+msgid ""
+"Between 30% and 60% of members have been visited. Continue your efforts!"
+msgstr "Mellom 30 og 60 % av medlemmene har fått besøk. Fortsett innsatsen!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:77
+msgid "Attention needed"
+msgstr "Oppmerksomhet nødvendig"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:78
+msgid ""
+"Only 10% to 30% of members have been visited. It is time to intensify "
+"pastoral activities."
+msgstr ""
+"Bare 10-30 % av medlemmene har fått besøk. Det er på tide å intensivere de "
+"pastorale aktivitetene."
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:82
+msgid "Critical situation"
+msgstr "Kritisk situasjon"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:83
+#, fuzzy, php-format
+msgid ""
+"Less than 10% of members have been visited. Immediate pastoral action is "
+"required!"
+msgstr ""
+"Mindre enn 10 % av medlemmene har fått besøk. Øyeblikkelig pastoral handling "
+"er påkrevd!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:92
+msgid "Persons"
+msgstr "Personer"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:93
+msgid "Families"
+msgstr "Familier"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:94
+msgid "Singles"
+msgstr "Singler"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:95
+msgid "Retired"
+msgstr "Pensjonert"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:96
+msgid "Young People"
+msgstr "Unge mennesker"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:102
+msgid "Members"
+msgstr "Medlemmer"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:103
+msgid "Progress"
+msgstr "Fremgang"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:104
+msgid "Count"
+msgstr "Telle"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:132
+msgid "Pastoral Care"
+msgstr "Sjelesorg"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "Period from"
+msgstr "Periode fra"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "to"
+msgstr "til"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Latest"
+msgstr "Siste"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Individual Pastoral Care"
+msgstr "Individuell sjelesorg"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Last"
+msgstr "Siste"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Family Pastoral Care"
+msgstr "Familiepastoral omsorg"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:162
+msgid "Statistics"
+msgstr "Statistikk"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:183
+msgid "Visit/Call your church members"
+msgstr "Besøk/ring dine menighetsmedlemmer"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:185
+msgid "Manage Pastoral Care"
+msgstr "Administrere sjelesorg"
+
+#~ msgid "Persons not reached"
+#~ msgstr "Personer som ikke nås"
+
+#~ msgid "Families not reached"
+#~ msgstr "Familier som ikke nås"
+
+#~ msgid "Single Persons not reached"
+#~ msgstr "Enslige personer som ikke nås"
+
+#~ msgid "Retired Persons not reached"
+#~ msgstr "Pensjonister som ikke er nådd"
+
+#~ msgid "Young People not reached"
+#~ msgstr "Unge som ikke nås"

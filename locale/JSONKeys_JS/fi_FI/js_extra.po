@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-24 23:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de_de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "true"
+msgstr "adevărat"
+
+msgid "false"
+msgstr "fals"
+
+msgid "pm"
+msgstr "pm"
+
+msgid "am"
+msgstr "am"
+
+msgid "Teachers"
+msgstr "Profesori"
+
+msgid "Students"
+msgstr "Studenți"
+
+msgid "Teacher"
+msgstr "Profesor"
+
+msgid "Student"
+msgstr "Student"
+
+msgid "Parents"
+msgstr "Părinți"
+
+msgid "Kids"
+msgstr "Copii"
+
+msgid "create"
+msgstr "creați"
+
+msgid "edit"
+msgstr "editează"
+
+msgid "photo"
+msgstr "fotografie"
+
+msgid "group"
+msgstr "grup"
+
+msgid "Group"
+msgstr "Grup"
+
+msgid "note"
+msgstr "nota"
+
+msgid "You have to set a Title for your event"
+msgstr "Trebuie să setați un titlu pentru evenimentul dvs."
+
+msgid "This event isn't modifiable !!!"
+msgstr "Acest eveniment nu este modificabil !!!"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr ""
+"Pentru a adăuga un eveniment, trebuie să creați mai întâi un calendar sau "
+"să activați unul."
+
+msgid "Event added"
+msgstr "Eveniment adăugat"
+
+msgid "Event was added successfully."
+msgstr "Evenimentul a fost adăugat cu succes."
+
+msgid "Electronic Transaction Details"
+msgstr "Detalii privind tranzacția electronică"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Săptămânal"
+
+msgid "Monthly"
+msgstr "Lunar"
+
+msgid "Quarterly"
+msgstr "Trimestrial"
+
+msgid "Once"
+msgstr "Odată ce"
+
+msgid "Other"
+msgstr "Altele"
+
+msgid "CREDITCARD"
+msgstr "CARTE DE CREDIT"
+
+msgid "CASH"
+msgstr "CASH"
+
+msgid "Bank"
+msgstr "Banca"
+
+msgid "CreditCard"
+msgstr "Card de credit"
+
+msgid "BankDraft"
+msgstr "Tragere la bancă"
+
+msgid ""
+"Some families haven't any \"head of household\" role name defined or there's any "
+"activated members in this families:"
+msgstr ""
+"Unele familii nu au nici un nume de rol de \"cap de familie\" definit sau nu "
+"există membri activi în aceste familii:"
+
+msgid "send"
+msgstr "trimiteți"
+
+msgid "save"
+msgstr "salvați"
+
+msgid "subscribed"
+msgstr "abonat"
+
+msgid "unsubscribed"
+msgstr "dezabonat"
+
+msgid "sent"
+msgstr "trimis"
+
+msgid "schedule"
+msgstr "program"
+
+msgid "paused"
+msgstr "a făcut o pauză"
+
+msgid "cleaned"
+msgstr "curățat"
+
+msgid "pending"
+msgstr "în așteptare"
+
+msgid "Invalid date"
+msgstr "Dată invalidă"

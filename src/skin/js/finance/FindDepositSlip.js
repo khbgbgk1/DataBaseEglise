@@ -1,0 +1,162 @@
+var dataT = 0;
+
+$(function() {
+    const updateSelectionActions = function () {
+        var selectedRows = dataT.rows('.selected').data().length;
+
+        $("#deleteSelectedRows").prop('disabled', !(selectedRows));
+        $("#deleteSelectedRows").html('<i class="fas fa-trash-alt mr-1"></i>' + i18next.t("Delete") + " (" + selectedRows + ") " + i18next.t("Selected Rows"));
+
+        $("#exportSelectedRows").prop('disabled', !(selectedRows));
+        $("#exportSelectedRows").html('<i class="fas fa-download mr-1"></i>' + i18next.t("Export") + " (" + selectedRows + ") OFX");
+
+        $("#exportSelectedRowsCSV").prop('disabled', !(selectedRows));
+        $("#exportSelectedRowsCSV").html('<i class="fas fa-download mr-1"></i>' + i18next.t("Export") + " (" + selectedRows + ") CSV");
+
+        $("#generateDepositSlip").prop('disabled', !(selectedRows));
+        $("#generateDepositSlip").html('<i class="fas fa-file-pdf mr-1"></i>' + i18next.t("Slip PDF") + " (" + selectedRows + ")");
+    };
+
+    $("#depositDate").datepicker({
+        format: window.CRM.datePickerformat,
+        language: window.CRM.lang
+    }).datepicker("setDate", new Date());
+
+    $("#addNewDeposit").on('click',function (e) {
+        var newDeposit = {
+            'depositType': $("#depositType option:selected").val(),
+            'depositComment': $("#depositComment").val(),
+            'depositDate': moment($("#depositDate").val(), window.CRM.datePickerformat.toUpperCase()).format('YYYY-MM-DD'),
+            //'depositFund': $("#depositFund option:selected").val()
+        };
+
+        window.CRM.APIRequest({
+            method: "POST",
+            path: "deposits",
+            data: JSON.stringify(newDeposit)
+        }, function (data) {
+            data.totalAmount = '';
+            dataT.row.add(data);
+            dataT.rows().invalidate().draw(true);
+
+            $(".count-deposit").html(dataT.column(0).data().length);
+
+            $(".deposit-current-deposit-item").show();
+
+            dataT.ajax.reload();
+            updateSelectionActions();
+        });
+    });
+
+    var dataTableConfig = {
+        "language": {
+            "url": window.CRM.plugin.dataTable.language.url
+        },
+        pageLength: 10,
+        autoWidth: false,
+        responsive: true,
+        ajax: {
+            url: window.CRM.root + "/api/deposits",
+            dataSrc: "Deposits",
+            "beforeSend": function (xhr) {
+                xhr.setRequestHeader('Authorization',
+                    "Bearer " +  window.CRM.jwtToken
+                );
+            }
+        },
+        "deferRender": true,
+        columns: [
+            {
+                title: i18next.t('Deposit ID'),
+                data: 'Id',
+                render: function (data, type, full, meta) {
+                    if (type === 'display') {
+                        return '<a href=\'' + window.CRM.root + '/v2/deposit/slipeditor/' + full.Id + '\' class="mr-1"><span class="fa-stack"><i class="fas fa-square fa-stack-2x"></i><i class="fas fa-search-plus fa-stack-1x fa-inverse"></i></span></a>' + full.Id;
+                    } else {
+                        return parseInt(full.Id);
+                    }
+                },
+                type: 'num'
+            },
+            /*{
+              title:i18next.t('Fund'),
+              data: 'fundName',
+              render: function (data, type, full, meta) {
+                if (data) {
+                  return data;
+                } else {
+                  return i18next.t('None');
+                }
+              }
+            },*/
+            {
+                title: i18next.t('Deposit Date'),
+                data: 'Date',
+                render: function (data, type, full, meta) {
+                    if (type === 'display') {
+                        return moment(data).format(window.CRM.datePickerformat.toUpperCase());
+                    } else {
+                        return data
+                    }
+                },
+                searchable: true
+            },
+            {
+                title: i18next.t('Deposit Total'),
+                data: 'totalAmount',
+                searchable: false,
+                render: function (data, type, full, meta) {
+                    return Number(data).toLocaleString(window.CRM.lang, {maximumSignificantDigits: 21});
+                }
+            },
+            {
+                title: i18next.t('Deposit Comment'),
+                data: 'Comment',
+                searchable: true
+            },
+            {
+                title: i18next.t('Closed'),
+                data: 'Closed',
+                searchable: true,
+                render: function (data, type, full, meta) {
+                    return data == 1
+                        ? '<span class="badge badge-danger">' + i18next.t('Yes') + '</span>'
+                        : '<span class="badge badge-success">' + i18next.t('No') + '</span>';
+                }
+            },
+            {
+                title: i18next.t('Deposit Type'),
+                data: 'Type',
+                searchable: true,
+                render: function (data, type, full, meta) {
+                    return i18next.t(data);
+                }
+            }
+        ],
+        order: [0, 'desc']
+    }
+
+    $.extend(dataTableConfig, window.CRM.plugin.dataTable);
+
+    dataT = $("#depositsTable").DataTable(dataTableConfig);
+
+    $("#depositsTable tbody").on('click', 'tr', function () {
+        $(this).toggleClass('selected');
+        updateSelectionActions();
+    });
+
+    dataT.on('draw', function () {
+        updateSelectionActions();
+    });
+
+    $('.exportButton').on('click',function (sender) {
+        var selectedRows = dataT.rows('.selected').data();
+        var type = this.getAttribute("data-exportType");
+        $.each(selectedRows, function (index, value) {
+            window.CRM.VerifyThenLoadAPIContent(window.CRM.root + '/api/deposits/' + value.Id + '/' + type);
+        });
+    });
+
+    updateSelectionActions();
+
+});

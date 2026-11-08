@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09T17:50:47.156Z\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+msgid "Remove"
+msgstr "Távolítsa el a"
+
+msgid "Edit"
+msgstr "Szerkesztés"
+
+msgid "News Title"
+msgstr "Hírek címe"
+
+msgid "Set your News title"
+msgstr "Hírek címének beállítása"
+
+msgid "Choose your News Type"
+msgstr "Válassza ki a hír típusát"
+
+msgid "Infos"
+msgstr "Infos"
+
+msgid "To plan"
+msgstr "Tervezni"
+
+msgid "To note"
+msgstr "Megjegyzendő"
+
+msgid "Important"
+msgstr "Fontos"
+
+msgid "Very important"
+msgstr "Nagyon fontos"
+
+msgid "News"
+msgstr "Hírek"
+
+msgid "News Editor"
+msgstr "Hírszerkesztő"
+
+msgid "You have to set a Title for your news"
+msgstr "Be kell állítania egy címet a híreknek"
+
+#~ msgid "Last modification on"
+#~ msgstr "Utolsó módosítás"
+
+#~ msgid "week(s)"
+#~ msgstr "hét(ek)"
+
+#~ msgid "No news at this time"
+#~ msgstr "Jelenleg nincs hír"
+
+#~ msgid "Add News"
+#~ msgstr "Hírek hozzáadása"

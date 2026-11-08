@@ -1,0 +1,71 @@
+
+@media (max-width: 767px) {
+    .skin-blue .main-header .navbar .dropdown-menu li a {
+        color: #000000;
+    }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+   background-color: #e8f1ff;
+   border: 1px solid #bfd3ff;
+   color: #1e4fa8;
+}
+
+
+/* Philippe Logel : file in Header.php */
+.user-header a.item_link {
+  color: #555 !important ; 
+  cursor:pointer;
+    cursor:hand;
+}
+
+.user-header a.item_link:link {
+  color: #555 !important; 
+  cursor:pointer;
+    cursor:hand;
+}
+
+.user-header a.item_link:hover {
+  color: #777 !important ; 
+  cursor:pointer;
+    cursor:hand;
+}
+
+
+.table-dropdown-menu {
+   margin-top:-10px;
+   margin-left:-10px;
+   margin-right:-20px;
+   width:278px;
+   background:rgba(255, 255, 255, 0.91);
+}
+
+.skin-blue-light .main-header .navbar .dropdown-menu li a {
+   color: #333;
+   font-weight: 300;
+}
+
+.skin-yellow-light .main-header .navbar .dropdown-menu li a {
+   color: #333;
+   font-weight: 300;
+}
+
+.skin-green-light .main-header .navbar .dropdown-menu li a {
+   color: #333;
+   font-weight: 300;
+}
+
+.skin-purple-light .main-header .navbar .dropdown-menu li a {
+   color: #333;
+   font-weight: 300;
+}
+
+.skin-black-light .main-header .navbar .dropdown-menu li a {
+   color: #333;
+   font-weight: 300;
+}
+
+.skin-red-light .main-header .navbar .dropdown-menu li a {
+  color: #333;
+  font-weight: 300;
+}

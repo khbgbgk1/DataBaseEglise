@@ -1,0 +1,7 @@
+#: ../src/Plugins/NoteDashboard/v2/templates/View.php:39
+msgid "Note"
+msgstr ""
+
+#: ../src/Plugins/NoteDashboard/v2/templates/View.php:53
+msgid "Save"
+msgstr ""

@@ -1,0 +1,532 @@
+//
+//  This code is under copyright not under MIT Licence
+//  copyright   : 2018 Philippe Logel all right reserved.
+//                This code can't be included in another software.
+//
+//  Updated : 2020/06/18
+//
+
+window.CRM.editor = null;
+window.CRM.dataT = null;
+
+$(function() {
+
+    const reloadCheckinTable = function (resetPaging) {
+        if (window.CRM.dataT) {
+            window.CRM.dataT.ajax.reload(null, resetPaging === true);
+        }
+    };
+
+    const addEvent = (dateStart, dateEnd) => {
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'calendar/numberofcalendars',
+        },function(data) {
+            if (data.CalendarNumber > 0) {
+                if (window.CRM.editor != null) {
+                    CKEDITOR.remove(window.CRM.editor);
+                    window.CRM.editor = null;
+                }
+
+                modal = createEventEditorWindow(dateStart, dateEnd, 'createEvent', 0, '', 'v2/calendar/events/checkin');
+
+                // we add the calendars and the types
+                addCalendars();
+                addCalendarEventTypes(-1, true);
+
+                // finish installing the window
+                installAndfinishEventEditorWindow();
+
+                $("#typeEventrecurrence").prop("disabled", true);
+                $("#endDateEventrecurrence").prop("disabled", true);
+
+                $('#EventCalendar option:first-child').attr("selected", "selected");
+
+                modal.modal("show");
+
+                initMap();
+            } else {
+                window.CRM.DisplayAlert(i18next.t("Error"),i18next.t("To add an event, You have to create a calendar or activate one first."));
+            }
+        });
+    }
+
+    $("#addFreeAttendees").on('click',function () {
+        var counts = {};
+
+        $(".freeAttendeesCount").each(function(element, index, set) {
+            var countid = $(this).data('countid');
+            var val     = $(this).val();
+
+            counts[countid] = val;
+        });
+
+        var fieldText = $("#fieldText").val();
+
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'attendees/addFreeAttendees',
+            data: JSON.stringify({"eventID": window.CRM.EventID, "fieldText": fieldText, "counts": counts})
+        },function (data) {
+            window.CRM.DisplayAlert(i18next.t("Free Event Attendees"), i18next.t("Successfully Added!"));
+        });
+    })
+
+
+
+    $('#add-event').on('click', function (e) {
+        var fmt = 'YYYY-MM-DD HH:mm:ss';
+
+        var dateStart = moment().format(fmt);
+        var dateEnd = moment().format(fmt);
+
+        addEvent(dateStart, dateEnd);
+    });
+
+    const getNextAttendanceState = function ($button) {
+        return parseInt($button.data('checked'), 10) !== 1;
+    };
+
+    const renderAttendanceButton = function (options) {
+        var buttonClass = 'btn btn-sm btn-block ' + options.variant;
+
+        if (options.isActive) {
+            buttonClass += ' active';
+        }
+
+        return `<button type="button"
+                        class="${buttonClass} ${options.actionClass}"
+                        data-personid="${options.personId}"
+                        data-eventid="${options.eventId}"
+                        data-checked="${options.isActive ? 1 : 0}"
+                        aria-pressed="${options.isActive ? 'true' : 'false'}"
+                        ${options.isDisabled ? 'disabled' : ''}>
+                    <i class="fas ${options.icon} mr-1"></i>${options.label}
+                </button>`;
+    };
+
+
+    $(document).on("click", ".PersonCheckinChangeState", function () {
+        var $button = $(this);
+        var checked = getNextAttendanceState($button);
+        var personID = $(this).data("personid");
+        var eventID = $(this).data("eventid");
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'attendees/checkin',
+            data: JSON.stringify({"checked": checked, "personID": personID, "eventID": eventID})
+        },function (data) {
+            if (data.status) {
+                reloadCheckinTable(false);
+            }
+        });
+    });
+
+    $(document).on("click", ".PersonCheckoutChangeState", function () {
+        var $button = $(this);
+        var checked = getNextAttendanceState($button);
+        var personID = $(this).data("personid");
+        var eventID = $(this).data("eventid");
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'attendees/checkout',
+            data: JSON.stringify({"checked": checked, "personID": personID, "eventID": eventID})
+        },function (data) {
+            if (data.status) {
+                reloadCheckinTable(false);
+            }
+        });
+    });
+
+    const setToggleButtonState = function ($button, isChecked) {
+        const labelAll = $button.data('label-all');
+        const labelNone = $button.data('label-none');
+
+        $button.data('checked', isChecked ? 1 : 0);
+        $button.attr('data-checked', isChecked ? '1' : '0');
+
+        const $icon = $button.find('.toggle-icon');
+        const $label = $button.find('.toggle-label');
+
+        if (isChecked) {
+            $icon.removeClass('fa-check-square').addClass('fa-square');
+            $label.text(labelNone);
+        } else {
+            $icon.removeClass('fa-square').addClass('fa-check-square');
+            $label.text(labelAll);
+        }
+    };
+
+    $(document).on("click", "#toggleAllCheckin, #toggleAllCheckout", function () {
+        const $button = $(this);
+        const eventID = $button.data("id");
+        const type = parseInt($button.data("type"), 10);
+        const isChecked = parseInt($button.data("checked"), 10) === 1;
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: isChecked ? 'attendees/uncheckAll' : 'attendees/checkAll',
+            data: JSON.stringify({"eventID": eventID, "type": type})
+        },function (data) {
+            setToggleButtonState($button, !isChecked);
+            reloadCheckinTable(false);
+        });
+    });
+
+
+    $(document).on("click", "#addAndCheckIn", function () {
+        var childid = $("#addAndCheckIn").data("childid");
+        var adultid = $("#addAndCheckIn").data("adultid");
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'attendees/addPerson',
+            data: JSON.stringify({"eventID": window.CRM.EventID, "iChildID": childid, "iAdultID": adultid})
+        },function (data) {
+            reloadCheckinTable(true);
+            SetPersonHtml($('#childDetails'), null);
+            SetPersonHtml($('#adultDetails'), null);
+            $("#child").val("");
+            $("#adult").val("");
+        });
+    });
+
+    $(document).on("click", ".DeleteBtn", function () {
+        var personId = $(this).data('id');
+        var eventId = $(this).data('eventid');
+
+        bootbox.confirm({
+            title: `<span class="d-flex align-items-center">
+                <i class="fas fa-exclamation-triangle text-warning mr-2"></i>
+                <span>${i18next.t("Delete attendee")}</span>
+            </span>`,
+            message: `<div class="text-left">
+                <div class="alert alert-warning mb-3" role="alert">
+                    <div class="font-weight-bold mb-1">${i18next.t("This action is permanent")}</div>
+                    <div>${i18next.t("This can't be undone.")}</div>
+                </div>
+                <p class="mb-3">${i18next.t("You are about to remove this attendee from the event.")}</p>
+                <ul class="mb-0 pl-3">
+                    <li>${i18next.t("The attendee will be removed from this event.")}</li>
+                    <li>${i18next.t("Related attendance history may also be affected.")}</li>
+                </ul>
+            </div>`,
+            buttons: {
+                confirm: {
+                    label: `<i class="far fa-trash-alt mr-1"></i>${i18next.t("Delete")}`,
+                    className: 'btn btn-outline-danger'
+                },
+                cancel: {
+                    label: `<i class="fas fa-times mr-1"></i>${i18next.t("Cancel")}`,
+                    className: 'btn btn-outline-secondary'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    window.CRM.APIRequest({
+                        method: 'POST',
+                        path: 'attendees/deletePerson',
+                        data: JSON.stringify({"eventID": eventId, "personID": personId})
+                    },function (data) {
+                        reloadCheckinTable(true);
+                    });
+                }
+            }
+        });
+    });
+
+    $(document).on("click", "#validateAttendees", function () {
+        var eventId = window.CRM.EventID;
+        var noteText = CKEDITOR.instances['NoteText'].getData();//$('form #eventNotes').val();
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'attendees/validate',
+            data: JSON.stringify({"eventID": eventId, "noteText": noteText})
+        },function (data) {
+            window.location = window.CRM.root + '/v2/calendar';
+        });
+    });
+
+    $(document).on("click", "#resetDetails", function () {
+        SetPersonHtml($('#childDetails'), null);
+        SetPersonHtml($('#adultDetails'), null);
+        $("#child").val("");
+        $("#adult").val("");
+    });
+
+
+    if (window.CRM.EventID > 0) {
+        var perArr;
+
+        dataTableConfig = {
+            "language": {
+                "url": window.CRM.plugin.dataTable.language.url
+            },
+            //pageLength: 50,
+            responsive: true,
+            ajax: {
+                url: window.CRM.root + "/api/attendees/event/" + window.CRM.EventID,
+                dataSrc: "CheckinCheckoutEvents",
+                "beforeSend": function (xhr) {
+                    xhr.setRequestHeader('Authorization',
+                        "Bearer " +  window.CRM.jwtToken
+                    );
+                }    
+            },
+            deferRender: true,
+            columns: [
+                {
+                    title: i18next.t('Photo'),
+                    data: 'Id',
+                    render: function (data, type, full, meta) {
+                        return full.img;
+                    }
+                },
+                {
+                    title: i18next.t('Action'),
+                    data: 'Id',
+                    render: function (data, type, full, meta) {
+                        var isCheckinActive = String(full.isCheckinDate || '').indexOf('checked') > -1;
+                        var isCheckinDisabled = String(full.isCheckinDate || '').indexOf('disabled') > -1;
+                        var isCheckoutActive = String(full.isCheckoutDate || '').indexOf('checked') > -1;
+                        var isCheckoutDisabled = String(full.isCheckoutDate || '').indexOf('disabled') > -1;
+
+                        return `<div class="btn-group-vertical btn-group-sm w-100" role="group" aria-label="${i18next.t('Attendance actions')}">
+                            <div class="mb-2">
+                                ${renderAttendanceButton({
+                                    actionClass: 'PersonCheckinChangeState',
+                                    personId: data,
+                                    eventId: window.CRM.EventID,
+                                    isActive: isCheckinActive,
+                                    isDisabled: isCheckinDisabled,
+                                    variant: 'btn-outline-primary',
+                                    icon: 'fa-sign-in-alt',
+                                    label: i18next.t('Checkin')
+                                })}
+                            </div>
+                            <div>
+                                ${renderAttendanceButton({
+                                    actionClass: 'PersonCheckoutChangeState',
+                                    personId: data,
+                                    eventId: window.CRM.EventID,
+                                    isActive: isCheckoutActive,
+                                    isDisabled: isCheckoutDisabled,
+                                    variant: 'btn-outline-success',
+                                    icon: 'fa-sign-out-alt',
+                                    label: i18next.t('Checkout')
+                                })}
+                            </div>
+                        </div>`;
+                    }
+                },
+
+                {
+                    title: i18next.t('First Name'),
+                    data: 'FirstName',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Last Name'),
+                    data: 'LastName',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Gender'),
+                    data: 'Gender',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Checkin Date'),
+                    data: 'checkinDate',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Checked In By'),
+                    data: 'checkinby',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Checkout Date'),
+                    data: 'checkoutDate',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+                {
+                    title: i18next.t('Checkout By'),
+                    data: 'checkoutby',
+                    render: function (data, type, full, meta) {
+                        return data;
+                    }
+                },
+
+                {
+                    title: i18next.t('Delete'),
+                    data: 'Id',
+                    render: function (data, type, full, meta) {
+                        return `<button type="button"
+                                        class="btn btn-sm btn-outline-danger DeleteBtn"
+                                        data-id="${full.Id}"
+                                        data-eventid="${window.CRM.EventID}">
+                                    <i class="far fa-trash-alt mr-1"></i>${i18next.t('Delete')}
+                                </button>`;
+                    }
+                },
+
+            ],
+            order: [2, 'asc']
+        }
+
+        $.extend(dataTableConfig, window.CRM.plugin.dataTable);
+
+        window.CRM.dataT = $("#checkedinTable").DataTable(dataTableConfig);
+
+        $('#checkedinTable').DataTable().page.len(50).draw();
+
+        $("#page-length-select").on('change',function(){
+            $('#checkedinTable').DataTable().page.len($(this).val()).draw();
+        });
+
+        var theme = 'n1theme,/skin/js/ckeditor/themes/n1theme/';
+        if (window.CRM.bDarkMode) {
+            theme = 'moono-dark,/skin/js/ckeditor/themes/moono-dark/';
+        }
+
+       
+        var editor = CKEDITOR.replace('NoteText', {
+            customConfig: window.CRM.root + '/skin/js/ckeditor/configs/note_editor_config_minimal.js',
+            language: window.CRM.lang,
+            skin:theme
+        });
+
+        editor.on('instanceReady', function () {
+            var editableBody = editor.document.getBody();
+
+            editableBody.setStyle('background-color', '#fffb8cfc');
+            editableBody.setStyle('border-color', '#f39c12');            
+            editableBody.setStyle('color', '#212529');
+
+            // 2. Supprimer la bordure et l'ombre de l'interface globale
+            if (editor.container) {
+                editor.container.setStyle('border', 'none');
+                editor.container.setStyle('box-shadow', 'none');
+                editor.container.setStyle('margin-left', '-4px');
+                editor.container.setStyle('margin-right', '-4px');
+                editor.container.setStyle('margin-bottom', '-4px');
+            }
+        });
+        
+
+        add_ckeditor_buttons(editor);
+
+        $('.collapse').on('shown.bs.collapse', function () {
+            $(this).parent().find(".fa-chevron-down").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+        }).on('hidden.bs.collapse', function () {
+            $(this).parent().find(".fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+        });
+
+        var input = $("#child, #adult, #adultout");
+        input.autocomplete({
+            source: function (request, response) {
+                window.CRM.APIRequest({
+                    method: 'GET',
+                    path: 'persons/search/' + request.term
+                },function (data) {
+                    console.log(data);
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.text,
+                            value: item.objid,
+                            obj: item
+                        };
+                    }));
+                })
+            },
+            minLength: 2,
+            select: function (event, ui) {
+                $('[id=' + event.target.id + ']').val(ui.item.obj.text);
+                $('[id=' + event.target.id + '-id]').val(ui.item.obj.objid);
+                SetPersonHtml($('#' + event.target.id + 'Details'), ui.item.obj);
+
+                if (event.target.id == "adult") {
+                    $("#addAndCheckIn").data("adultid", ui.item.obj.objid)
+                } else {// in the case of a child
+                    $("#addAndCheckIn").data("childid", ui.item.obj.objid)
+                }
+                return false;
+            }
+        });
+
+
+        const SetPersonHtml = (element, perArr) => {
+            if (perArr) {
+                element.html(
+                    '<div class="text-center">' +
+                    '<a target="_top" href="v2/people/person/view/' + perArr.objid + '"><h4>' + perArr.text + '</h4></a>' +
+                    '<img src="' + window.CRM.root + '/api/persons/' + perArr.objid + '/thumbnail"' +
+                    'class="initials-image profile-user-img img-responsive img-circle"> </div>'
+                );
+                element.removeClass('hidden');
+            } else {
+                element.html('');
+                element.addClass('hidden');
+            }
+        }
+    }
+
+    $(document).on("click", "#qrcode-call", function () {
+        var qrcode = new QRCodeScanner(function(code) {
+            var res = code.split(' ');
+            
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'attendees/qrcodeCall',
+                data: JSON.stringify({ "groupID": res[0], "personID": res[1] })
+            }, function (data) {
+                if (data.status == 'failed') {
+                    alert(i18next.t('Failed') + " : " + i18next.t("No event right now.") + "\n\n" + "• "
+                        + i18next.t("Move one in the right range.")
+                        + "\n\n" + i18next.t("Or") + "\n\n" + "• "
+                        + i18next.t("Create one.") + "\n\n" + i18next.t('Group')
+                        + ' : ' + data.group + "\n" + i18next.t("User") + ' : ' + data.person);
+                } else if (data.status == 'global_failed') {
+                    alert(i18next.t("Failed") + " : " + i18next.t("No event now."));
+                } else {
+                    alert(i18next.t('Success') + "\n\n" + i18next.t('Group') + ' : ' + data.group + "\n" + i18next.t("User") + ' : ' + data.person);
+                    reloadCheckinTable(false);
+                }
+            });
+        });
+        qrcode.setParameters({
+            "width": 470,
+            "height": 570,
+            "fps": 10,
+            "qrbox": 250
+        })
+        qrcode.show();
+    });
+
+
+    setInterval(function(){
+            reloadCheckinTable(false);
+        }, 8000
+    );
+
+    $(document).on("click", "#addVisitor", function () {
+        window.location = window.CRM.root + '/v2/people/person/editor';
+    });
+});

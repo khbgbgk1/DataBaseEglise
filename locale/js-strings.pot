@@ -1,0 +1,2832 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  js-strings1.pot (i18next-conv)  #-#-#-#-#\n"
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2026-08-09T19:37:53.514Z\n"
+"PO-Revision-Date: 2026-08-09T19:37:53.514Z\n"
+"#-#-#-#-#  js-strings2.pot (i18next-conv)  #-#-#-#-#\n"
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2026-08-09T19:37:53.564Z\n"
+"PO-Revision-Date: 2026-08-09T19:37:53.564Z\n"
+"#-#-#-#-#  js-strings3.pot (i18next-conv)  #-#-#-#-#\n"
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2026-08-09T19:37:53.605Z\n"
+"PO-Revision-Date: 2026-08-09T19:37:53.605Z\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr ""
+
+msgid "You must enter a password"
+msgstr ""
+
+msgid "Passwords must match"
+msgstr ""
+
+msgid "Backup Running, Please wait."
+msgstr ""
+
+msgid "Backup in progress, don't close the window !"
+msgstr ""
+
+msgid "Background backup in progress to remote server"
+msgstr ""
+
+msgid "Background backup in progress"
+msgstr ""
+
+msgid "Backup Error."
+msgstr ""
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr ""
+
+msgid "Restore Running, Please wait."
+msgstr ""
+
+msgid "Restore backup, don't close the window !"
+msgstr ""
+
+msgid "Restore Complete"
+msgstr ""
+
+msgid "Login to restored Database"
+msgstr ""
+
+msgid "Restore Error."
+msgstr ""
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr ""
+
+msgid "Wrong address format."
+msgstr ""
+
+msgid "Set Calendar Name"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Select a resource type"
+msgstr ""
+
+msgid "Room"
+msgstr ""
+
+msgid "Computer"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Add a short description to help identify this resource."
+msgstr ""
+
+msgid "Set Resource Name"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Calendars"
+msgstr ""
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr ""
+
+msgid "Set Status"
+msgstr ""
+
+msgid "Select [Exclude] or [Include]"
+msgstr ""
+
+msgid "[INCLUDE]"
+msgstr ""
+
+msgid "[EXCLUDE]"
+msgstr ""
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "[👀  ]"
+msgstr ""
+
+msgid "[👀 ✐]"
+msgstr ""
+
+msgid "With"
+msgstr ""
+
+msgid "Select one or more current shares to update or remove them."
+msgstr ""
+
+msgid "Set Rights"
+msgstr ""
+
+msgid "Select your rights"
+msgstr ""
+
+msgid "or"
+msgstr ""
+
+msgid "[R ]"
+msgstr ""
+
+msgid "[RW]"
+msgstr ""
+
+msgid "Send email notification"
+msgstr ""
+
+msgid "Notify added people, families, or groups by email"
+msgstr ""
+
+msgid "Add persons/Family/groups"
+msgstr ""
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr ""
+
+msgid "Share your Calendar"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr ""
+
+msgid "Stop sharing"
+msgstr ""
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr ""
+
+msgid "Person or Family or Group"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr ""
+
+msgid "Manage"
+msgstr ""
+
+msgid "Calendar Management for"
+msgstr ""
+
+msgid "Modify Calendar Name"
+msgstr ""
+
+msgid "Modify Group Name"
+msgstr ""
+
+msgid "Modify Resource Name"
+msgstr ""
+
+msgid "Modify Share Name"
+msgstr ""
+
+msgid "Resource Info for"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr ""
+
+msgid "Actualize"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "List Week"
+msgstr ""
+
+msgid "List Month"
+msgstr ""
+
+msgid "This event isn't modifiable !!!"
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "What would you like to do?"
+msgstr ""
+
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr ""
+
+msgid "Modify Event"
+msgstr ""
+
+msgid "Delete Event"
+msgstr ""
+
+msgid "Are you sure to delete this event?"
+msgstr ""
+
+msgid "Delete all repeated Events"
+msgstr ""
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Only this event"
+msgstr ""
+
+msgid "Every Events linked to this Event"
+msgstr ""
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr ""
+
+msgid "Add More Attendees"
+msgstr ""
+
+msgid "Make Attendance"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Resize Event"
+msgstr ""
+
+msgid "Are you sure about this change?"
+msgstr ""
+
+msgid "will be resized."
+msgstr ""
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr ""
+
+msgid "Only this Event"
+msgstr ""
+
+msgid "All Events"
+msgstr ""
+
+msgid "Move Event"
+msgstr ""
+
+msgid "will be dropped."
+msgstr ""
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr ""
+
+msgid "Event added"
+msgstr ""
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr ""
+
+msgid "Event was added successfully."
+msgstr ""
+
+msgid "No attendees"
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "to"
+msgstr ""
+
+msgid "Attendance Notes: "
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Calendar Title"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr ""
+
+msgid "To see the Map click this text field."
+msgstr ""
+
+msgid "Map"
+msgstr ""
+
+msgid "Desc"
+msgstr ""
+
+msgid "Event description"
+msgstr ""
+
+msgid "Event Type"
+msgstr ""
+
+msgid "Attendance Counts"
+msgstr ""
+
+msgid "Start Date"
+msgstr ""
+
+msgid "All day"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Semesterly"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Alarm"
+msgstr ""
+
+msgid "NONE"
+msgstr ""
+
+msgid "At time of event"
+msgstr ""
+
+msgid "5 minutes before"
+msgstr ""
+
+msgid "10 minutes before"
+msgstr ""
+
+msgid "15 minutes before"
+msgstr ""
+
+msgid "30 minutes before"
+msgstr ""
+
+msgid "1 hour before"
+msgstr ""
+
+msgid "2 hour before"
+msgstr ""
+
+msgid "1 day before"
+msgstr ""
+
+msgid "2 day before"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Add as attendees"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "Event Creation"
+msgstr ""
+
+msgid "Event Editor"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "You've to chose a calendar."
+msgstr ""
+
+msgid "You have to set a Title for your event"
+msgstr ""
+
+msgid "In progress...."
+msgstr ""
+
+msgid "Events for"
+msgstr ""
+
+msgid "Event for"
+msgstr ""
+
+msgid "Loading finished...."
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Attendance Counts with real Attendees"
+msgstr ""
+
+msgid "Free Attendance Counts without Attendees"
+msgstr ""
+
+msgid "Calendar Type"
+msgstr ""
+
+msgid "Events in Year"
+msgstr ""
+
+msgid "Events in month"
+msgstr ""
+
+msgid "Events by Type"
+msgstr ""
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr ""
+
+msgid "Text for Event ID"
+msgstr ""
+
+msgid "Undo Check-out"
+msgstr ""
+
+msgid "Make Check-out"
+msgstr ""
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr ""
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr ""
+
+msgid "Edit/Validate Checkout"
+msgstr ""
+
+msgid "Check-out done"
+msgstr ""
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr ""
+
+msgid "You have no more items in your cart."
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Classification"
+msgstr ""
+
+msgid "Family Role"
+msgstr ""
+
+msgid "CKEditor Template Creation"
+msgstr ""
+
+msgid "Template Name"
+msgstr ""
+
+msgid "Explanation field cannot be empty."
+msgstr ""
+
+msgid "Template Description"
+msgstr ""
+
+msgid "Save as Word file in EDrive"
+msgstr ""
+
+msgid "Word file name"
+msgstr ""
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+
+msgid "Your note is saved in your EDrive"
+msgstr ""
+
+msgid "(No templates defined)"
+msgstr ""
+
+msgid "Content Templates"
+msgstr ""
+
+msgid "Please select the template to open in the editor"
+msgstr ""
+
+msgid "Template Options"
+msgstr ""
+
+msgid "Modify"
+msgstr ""
+
+msgid "Modify the template you select"
+msgstr ""
+
+msgid "Delete the template you select"
+msgstr ""
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr ""
+
+msgid "Replace actual content"
+msgstr ""
+
+msgid "Manage templates"
+msgstr ""
+
+msgid "Save templates"
+msgstr ""
+
+msgid "Apply templates"
+msgstr ""
+
+msgid "Save As Word File in EDrive"
+msgstr ""
+
+msgid "First Name"
+msgstr ""
+
+msgid "Last Name"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Unsub"
+msgstr ""
+
+msgid "VCard"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Merge Tags"
+msgstr ""
+
+msgid "Subject:"
+msgstr ""
+
+msgid "Compose New Message"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Error making API Call to"
+msgstr ""
+
+msgid "Error text"
+msgstr ""
+
+msgid "Stack Trace"
+msgstr ""
+
+msgid "The application could not complete this API request."
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Please confirm"
+msgstr ""
+
+msgid "Update information"
+msgstr ""
+
+msgid "Make a selection"
+msgstr ""
+
+msgid "In progress"
+msgstr ""
+
+msgid "Please wait while the operation is being completed"
+msgstr ""
+
+msgid "There was a problem retrieving the requested object"
+msgstr ""
+
+msgid "Add cart to a group"
+msgstr ""
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Select an existing Group"
+msgstr ""
+
+msgid "or Create a new Group from the Cart"
+msgstr ""
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr ""
+
+msgid "Select Group"
+msgstr ""
+
+msgid "Select Role"
+msgstr ""
+
+msgid "Create a new group and move the current cart into it."
+msgstr ""
+
+msgid "Group Name"
+msgstr ""
+
+msgid "Default Name Group"
+msgstr ""
+
+msgid "Add Cart to Group"
+msgstr ""
+
+msgid "Missing selection"
+msgstr ""
+
+msgid "You need to select both a group and a role before continuing."
+msgstr ""
+
+msgid "Group name required"
+msgstr ""
+
+msgid "Enter a group name before creating a new group from the cart."
+msgstr ""
+
+msgid "Deactivate cart persons"
+msgstr ""
+
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr ""
+
+msgid "This action can be undone later if needed."
+msgstr ""
+
+msgid "Keep active"
+msgstr ""
+
+msgid "Deactivate persons"
+msgstr ""
+
+msgid "Delete cart persons"
+msgstr ""
+
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr ""
+
+msgid "This action cannot be undone."
+msgstr ""
+
+msgid "Keep persons"
+msgstr ""
+
+msgid "Delete persons"
+msgstr ""
+
+msgid "Add cart to event"
+msgstr ""
+
+msgid "Select the event that should receive the current cart."
+msgstr ""
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Choose one of the available events from the list below."
+msgstr ""
+
+msgid "Create new event"
+msgstr ""
+
+msgid "Add to Event"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Register your software to CRM team."
+msgstr ""
+
+msgid "Simply click this"
+msgstr ""
+
+msgid "to register your software"
+msgstr ""
+
+msgid "New Release"
+msgstr ""
+
+msgid "Installed version"
+msgstr ""
+
+msgid "New One"
+msgstr ""
+
+msgid "To upgrade simply click this Notification"
+msgstr ""
+
+msgid "View Cart"
+msgstr ""
+
+msgid "Empty Cart"
+msgstr ""
+
+msgid "Empty Cart to Group"
+msgstr ""
+
+msgid "Empty Cart to Family"
+msgstr ""
+
+msgid "Empty Cart to Event"
+msgstr ""
+
+msgid "Map Cart"
+msgstr ""
+
+msgid "Deactivate Persons From Cart"
+msgstr ""
+
+msgid "Delete Persons From the CRM"
+msgstr ""
+
+msgid "View all"
+msgstr ""
+
+msgid "Your Cart is Empty"
+msgstr ""
+
+msgid "Software registration"
+msgstr ""
+
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr ""
+
+msgid "If you need to make changes to registration data, go to "
+msgstr ""
+
+msgid "Admin->Edit General Settings"
+msgstr ""
+
+msgid "Church Name"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Church Email"
+msgstr ""
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Software Registration"
+msgstr ""
+
+msgid "Your software is now registered. Thank you !"
+msgstr ""
+
+msgid "Select Volunteer Opportunity"
+msgstr ""
+
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr ""
+
+msgid "This selection will be applied to the current members."
+msgstr ""
+
+msgid "Volunteer opportunity"
+msgstr ""
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr ""
+
+msgid "Choose the destination for the selected members."
+msgstr ""
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Select the target group for the selected members."
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr ""
+
+msgid "GroupID required for role selection prompt"
+msgstr ""
+
+msgid "Select Group and Role"
+msgstr ""
+
+msgid "Select both the destination group and the role to apply."
+msgstr ""
+
+msgid "Create a group"
+msgstr ""
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr ""
+
+msgid "Create group"
+msgstr ""
+
+msgid "Calendar Event"
+msgstr ""
+
+msgid "Attendees Checked In"
+msgstr ""
+
+msgid "More info"
+msgstr ""
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr ""
+
+msgid "EDrive File Browser"
+msgstr ""
+
+msgid "Could not retrieve file URL"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Please select a file first"
+msgstr ""
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr ""
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr ""
+
+msgid "I Understand"
+msgstr ""
+
+msgid "Clear Persons and Families"
+msgstr ""
+
+msgid "Data Cleared Successfully!"
+msgstr ""
+
+msgid "success"
+msgstr ""
+
+msgid "Duplicate values"
+msgstr ""
+
+msgid "You've selected two times the same name"
+msgstr ""
+
+msgid "for this field. Chose another one."
+msgstr ""
+
+msgid "Remove Plugin"
+msgstr ""
+
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr ""
+
+msgid "Dashboard Item"
+msgstr ""
+
+msgid "Removed from your dashboard !"
+msgstr ""
+
+msgid "Please confirm deletion of this document"
+msgstr ""
+
+msgid "Document Delete Confirmation"
+msgstr ""
+
+msgid "Document Editor"
+msgstr ""
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr ""
+
+msgid "Document details"
+msgstr ""
+
+msgid "Set the title and choose the type before writing the content."
+msgstr ""
+
+msgid "Document Title"
+msgstr ""
+
+msgid "Set your Document title"
+msgstr ""
+
+msgid "Choose your Document Type"
+msgstr ""
+
+msgid "document"
+msgstr ""
+
+msgid "video"
+msgstr ""
+
+msgid "audio"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Write the main content of your document below."
+msgstr ""
+
+msgid "Private"
+msgstr ""
+
+msgid "Private documents are visible only to authorized users."
+msgstr ""
+
+msgid "Edit Document"
+msgstr ""
+
+msgid "Create Document"
+msgstr ""
+
+msgid "You have to set a Title for your document"
+msgstr ""
+
+msgid "Free Event Attendees"
+msgstr ""
+
+msgid "Successfully Added!"
+msgstr ""
+
+msgid "Delete attendee"
+msgstr ""
+
+msgid "This action is permanent"
+msgstr ""
+
+msgid "This can't be undone."
+msgstr ""
+
+msgid "You are about to remove this attendee from the event."
+msgstr ""
+
+msgid "The attendee will be removed from this event."
+msgstr ""
+
+msgid "Related attendance history may also be affected."
+msgstr ""
+
+msgid "Photo"
+msgstr ""
+
+msgid "Attendance actions"
+msgstr ""
+
+msgid "Checkin"
+msgstr ""
+
+msgid "Checkout"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Checkin Date"
+msgstr ""
+
+msgid "Checked In By"
+msgstr ""
+
+msgid "Checkout Date"
+msgstr ""
+
+msgid "Checkout By"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "No event right now."
+msgstr ""
+
+msgid "Move one in the right range."
+msgstr ""
+
+msgid "Or"
+msgstr ""
+
+msgid "Create one."
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "No event now."
+msgstr ""
+
+msgid "Success"
+msgstr ""
+
+msgid "Attention"
+msgstr ""
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr ""
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr ""
+
+msgid "Delete Event Type"
+msgstr ""
+
+msgid "This action can never be undone !!!!"
+msgstr ""
+
+msgid "preview currently being created"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Document preview"
+msgstr ""
+
+msgid "Read only"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Unable to create the preview"
+msgstr ""
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgid "Modification Date"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "You are about to delete several items together"
+msgstr ""
+
+msgid "You're about to remove an item"
+msgstr ""
+
+msgid "This can't be undone !!!!"
+msgstr ""
+
+msgid "You've to select at least one line !!!"
+msgstr ""
+
+msgid "Create a Folder"
+msgstr ""
+
+msgid "Set your Folder name"
+msgstr ""
+
+msgid "Actualize files"
+msgstr ""
+
+msgid "Set a File/Folder name"
+msgstr ""
+
+msgid "Download Error"
+msgstr ""
+
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr ""
+
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr ""
+
+msgid "Selected Rows"
+msgstr ""
+
+msgid "Pledge"
+msgstr ""
+
+msgid "Payment"
+msgstr ""
+
+msgid "Confirm Delete"
+msgstr ""
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr ""
+
+msgid "payments(s)?"
+msgstr ""
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr ""
+
+msgid "Please ensure this what you want to do."
+msgstr ""
+
+msgid "Depid"
+msgstr ""
+
+msgid "Address1"
+msgstr ""
+
+msgid "Bank Name"
+msgstr ""
+
+msgid "Non deductible"
+msgstr ""
+
+msgid "Statut"
+msgstr ""
+
+msgid "Deposit"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Electronic Transaction Details"
+msgstr ""
+
+msgid "TOTAL"
+msgstr ""
+
+msgid "Family"
+msgstr ""
+
+msgid "Person"
+msgstr ""
+
+msgid "Anonymous"
+msgstr ""
+
+msgid "Fund"
+msgstr ""
+
+msgid "Pledge or payment"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Check Number"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Tracking"
+msgstr ""
+
+msgid "Filter by Family"
+msgstr ""
+
+msgid "Filter by Fund"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Slip PDF"
+msgstr ""
+
+msgid "Deposit ID"
+msgstr ""
+
+msgid "Deposit Date"
+msgstr ""
+
+msgid "Deposit Total"
+msgstr ""
+
+msgid "Deposit Comment"
+msgstr ""
+
+msgid "Closed"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Deposit Type"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Please enter at least one winner."
+msgstr ""
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr ""
+
+msgid "Please enter a number greater than 0."
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "You're about to delete the item !!!"
+msgstr ""
+
+msgid "Item"
+msgstr ""
+
+msgid "Multiple"
+msgstr ""
+
+msgid "Donor"
+msgstr ""
+
+msgid "Buyer"
+msgstr ""
+
+msgid "Sale Price"
+msgstr ""
+
+msgid "Estimated value"
+msgstr ""
+
+msgid "Material Value"
+msgstr ""
+
+msgid "Minimum Price"
+msgstr ""
+
+msgid "You're about to delete the buyer !!!"
+msgstr ""
+
+msgid "Unassigned"
+msgstr ""
+
+msgid "Buyer Number"
+msgstr ""
+
+msgid "Save and Add"
+msgstr ""
+
+msgid "Generate Statement"
+msgstr ""
+
+msgid "Buyer Number Editor"
+msgstr ""
+
+msgid "Please select at least one buyer."
+msgstr ""
+
+msgid "Your operation completed successfully."
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Date Entered"
+msgstr ""
+
+msgid "Date Last Edited"
+msgstr ""
+
+msgid "Edited By Name"
+msgstr ""
+
+msgid "Deactivated"
+msgstr ""
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr ""
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr ""
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+
+msgid "Enable Group Specific Properties"
+msgstr ""
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr ""
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr ""
+
+msgid "Disable Group Specific Properties"
+msgstr ""
+
+msgid "Please enter a role name."
+msgstr ""
+
+msgid "Confirm Delete Role"
+msgstr ""
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr ""
+
+msgid "A group should have at least one role!"
+msgstr ""
+
+msgid "Role Name"
+msgstr ""
+
+msgid "The role name is now modified."
+msgstr ""
+
+msgid "Make Default"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Sequence"
+msgstr ""
+
+msgid "Move Up"
+msgstr ""
+
+msgid "Move Down"
+msgstr ""
+
+msgid "Add New Group"
+msgstr ""
+
+msgid "Enter group name"
+msgstr ""
+
+msgid "Please enter a group name."
+msgstr ""
+
+msgid "Group actions"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Members"
+msgstr ""
+
+msgid "Group Cart Status"
+msgstr ""
+
+msgid "In cart"
+msgstr ""
+
+msgid "Remove from cart"
+msgstr ""
+
+msgid "Not in cart"
+msgstr ""
+
+msgid "Add to cart"
+msgstr ""
+
+msgid "Cart isn't showable"
+msgstr ""
+
+msgid "Group Type"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Confirm Delete Group"
+msgstr ""
+
+msgid "Please confirm deletion of this group record"
+msgstr ""
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr ""
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr ""
+
+msgid "Are you sure you want to unassign this property?"
+msgstr ""
+
+msgid "Are you sure you want to change this property?"
+msgstr ""
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr ""
+
+msgid "401 : Private Datas"
+msgstr ""
+
+msgid "Group Role"
+msgstr ""
+
+msgid "Private Data"
+msgstr ""
+
+msgid "Zip Code"
+msgstr ""
+
+msgid "Cell Phone"
+msgstr ""
+
+msgid "You're about to delete all the group members ?"
+msgstr ""
+
+msgid "Are you sure ? This can't be undone."
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Members to cart"
+msgstr ""
+
+msgid "Add to Cart"
+msgstr ""
+
+msgid "Add to Group"
+msgstr ""
+
+msgid "Move to Group"
+msgstr ""
+
+msgid "Remove all members"
+msgstr ""
+
+msgid "Move"
+msgstr ""
+
+msgid "Members to another group"
+msgstr ""
+
+msgid "Remove from Cart"
+msgstr ""
+
+msgid "No assigned Manager"
+msgstr ""
+
+msgid "Add users"
+msgstr ""
+
+msgid "Manage Group Managers"
+msgstr ""
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr ""
+
+msgid "Delete Managers"
+msgstr ""
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr ""
+
+msgid "Appointment"
+msgstr ""
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr ""
+
+msgid "For every administrator"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Include all the family members"
+msgstr ""
+
+msgid "Include"
+msgstr ""
+
+msgid "Pastoral care note"
+msgstr ""
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Pastoral Care"
+msgstr ""
+
+msgid "Open the pastoral care record"
+msgstr ""
+
+msgid "No records found for this view."
+msgstr ""
+
+msgid "No matching records found."
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Never contacted"
+msgstr ""
+
+msgid "Pastoral care member"
+msgstr ""
+
+msgid "Visits/calls"
+msgstr ""
+
+msgid "Last visit/call"
+msgstr ""
+
+msgid "Opening..."
+msgstr ""
+
+msgid "Selecting..."
+msgstr ""
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr ""
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr ""
+
+msgid "Delete Pastoral Care Type"
+msgstr ""
+
+msgid "Irreversible action"
+msgstr ""
+
+msgid "Keep note"
+msgstr ""
+
+msgid "Write the pastoral care message associated with this family."
+msgstr ""
+
+msgid "Pastoral Care Note Creation"
+msgstr ""
+
+msgid "Last Name (Family Name)"
+msgstr ""
+
+msgid "Family Name"
+msgstr ""
+
+msgid "Write the pastoral care message associated with this person."
+msgstr ""
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr ""
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr ""
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+
+msgid "Review family member information"
+msgstr ""
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr ""
+
+msgid "Update family member details"
+msgstr ""
+
+msgid "Save changes"
+msgstr ""
+
+msgid "Confirm Deactivation"
+msgstr ""
+
+msgid "Confirm Activation"
+msgstr ""
+
+msgid "Please confirm deactivation of family"
+msgstr ""
+
+msgid "Please confirm activation of family"
+msgstr ""
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+
+msgid "Upload Photo"
+msgstr ""
+
+msgid "Upload an existing Photo"
+msgstr ""
+
+msgid "Max photo size"
+msgstr ""
+
+msgid "Capture from Webcam"
+msgstr ""
+
+msgid "Snap Photo"
+msgstr ""
+
+msgid "Re-Take Photo"
+msgstr ""
+
+msgid "Upload Image"
+msgstr ""
+
+msgid "Family Photo"
+msgstr ""
+
+msgid "Bank Draft"
+msgstr ""
+
+msgid "Credit Card"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Next payment date"
+msgstr ""
+
+msgid "Interval (months)"
+msgstr ""
+
+msgid "Updated By"
+msgstr ""
+
+msgid "Confirm Delete Automatic payment"
+msgstr ""
+
+msgid "Pledge or Payment"
+msgstr ""
+
+msgid "Dep ID"
+msgstr ""
+
+msgid "Fiscal Year"
+msgstr ""
+
+msgid "NonDeductible"
+msgstr ""
+
+msgid "CHECK"
+msgstr ""
+
+msgid "Date Updated"
+msgstr ""
+
+msgid "Donations/eGives Moved by"
+msgstr ""
+
+msgid "Verification URL"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Failed to add verification"
+msgstr ""
+
+msgid "Verification email sent"
+msgstr ""
+
+msgid "Failed to send verification email"
+msgstr ""
+
+msgid "Warning !!!!"
+msgstr ""
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+
+msgid "You're about to send a e-mail to"
+msgstr ""
+
+msgid "members"
+msgstr ""
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr ""
+
+msgid "A person name or Family"
+msgstr ""
+
+msgid "Modification"
+msgstr ""
+
+msgid "By persons"
+msgstr ""
+
+msgid "By Adresses"
+msgstr ""
+
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr ""
+
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr ""
+
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr ""
+
+msgid "You're about to delete all done confirmation for all the families."
+msgstr ""
+
+msgid "Delete this person?"
+msgstr ""
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr ""
+
+msgid "Save your note"
+msgstr ""
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr ""
+
+msgid "Family Id"
+msgstr ""
+
+msgid "Valid Until"
+msgstr ""
+
+msgid "Search for a family or address"
+msgstr ""
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr ""
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr ""
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+
+msgid "Review personal information"
+msgstr ""
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr ""
+
+msgid "Profile information"
+msgstr ""
+
+msgid "Additional information"
+msgstr ""
+
+msgid "Update personal details"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
+
+msgid "Please confirm deactivation of person"
+msgstr ""
+
+msgid "Please confirm activation of person"
+msgstr ""
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Deactivating..."
+msgstr ""
+
+msgid "Activating..."
+msgstr ""
+
+msgid "Unable to update this person status."
+msgstr ""
+
+msgid "Deleting..."
+msgstr ""
+
+msgid "Unable to delete the photo."
+msgstr ""
+
+msgid "Preview the current profile photo."
+msgstr ""
+
+msgid "Property actions"
+msgstr ""
+
+msgid "Please select a property first."
+msgstr ""
+
+msgid "Assigning..."
+msgstr ""
+
+msgid "Assign"
+msgstr ""
+
+msgid "Unable to assign this property."
+msgstr ""
+
+msgid "Remove group assignment"
+msgstr ""
+
+msgid "Remove this person from the group"
+msgstr ""
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr ""
+
+msgid "Remove from group"
+msgstr ""
+
+msgid "Keep assignment"
+msgstr ""
+
+msgid "Share your document"
+msgstr ""
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr ""
+
+msgid "Current access"
+msgstr ""
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr ""
+
+msgid "Set rights"
+msgstr ""
+
+msgid "Read and write"
+msgstr ""
+
+msgid "Notification"
+msgstr ""
+
+msgid "Add people, families or groups"
+msgstr ""
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr ""
+
+msgid "Please select at least one recipient first."
+msgstr ""
+
+msgid "Remove shared access"
+msgstr ""
+
+msgid "Remove access for the selected recipients?"
+msgstr ""
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr ""
+
+msgid "Remove access"
+msgstr ""
+
+msgid "Keep access"
+msgstr ""
+
+msgid "Stop sharing this document"
+msgstr ""
+
+msgid "Stop sharing this document with everyone?"
+msgstr ""
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr ""
+
+msgid "Keep sharing"
+msgstr ""
+
+msgid "Share your Document"
+msgstr ""
+
+msgid "Unassign property"
+msgstr ""
+
+msgid "Remove this property from the current person?"
+msgstr ""
+
+msgid "The property value will be removed from this profile."
+msgstr ""
+
+msgid "Remove property"
+msgstr ""
+
+msgid "Keep property"
+msgstr ""
+
+msgid "Edit property value"
+msgstr ""
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr ""
+
+msgid "Save property"
+msgstr ""
+
+msgid "Change classification"
+msgstr ""
+
+msgid "Choose the classification that best matches this person profile."
+msgstr ""
+
+msgid "Update classification"
+msgstr ""
+
+msgid "Change family role"
+msgstr ""
+
+msgid "Select the role this person should have inside the family record."
+msgstr ""
+
+msgid "Update role"
+msgstr ""
+
+msgid "Volunteer actions"
+msgstr ""
+
+msgid "Remove volunteer opportunity"
+msgstr ""
+
+msgid "Remove this volunteer opportunity from the person?"
+msgstr ""
+
+msgid "The assignment will be removed from this profile only."
+msgstr ""
+
+msgid "Remove assignment"
+msgstr ""
+
+msgid "Please select at least one volunteer opportunity first."
+msgstr ""
+
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr ""
+
+msgid "Some volunteer opportunities could not be assigned."
+msgstr ""
+
+msgid "Delete automatic payment"
+msgstr ""
+
+msgid "Delete this automatic payment setup?"
+msgstr ""
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr ""
+
+msgid "Delete payment"
+msgstr ""
+
+msgid "Keep payment"
+msgstr ""
+
+msgid "Delete pledge or payment"
+msgstr ""
+
+msgid "Delete this pledge or payment entry?"
+msgstr ""
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr ""
+
+msgid "Delete entry"
+msgstr ""
+
+msgid "Keep entry"
+msgstr ""
+
+msgid "Share this secure verification link with the person."
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Confirmation of plugin removal"
+msgstr ""
+
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr ""
+
+msgid "Update plugin"
+msgstr ""
+
+msgid "Add plugin"
+msgstr ""
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr ""
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr ""
+
+msgid "Plugin archive"
+msgstr ""
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr ""
+
+msgid "The upload starts as soon as you submit this form."
+msgstr ""
+
+msgid "Plugin manager"
+msgstr ""
+
+msgid "The current images folder is now the public folder !!!"
+msgstr ""
+
+msgid "QR Code : Call the register"
+msgstr ""
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr ""
+
+msgid "Scan a QR Code"
+msgstr ""
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr ""
+
+msgid "Available Cameras"
+msgstr ""
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr ""
+
+msgid "Detected data"
+msgstr ""
+
+msgid "Families"
+msgstr ""
+
+msgid "Singles"
+msgstr ""
+
+msgid "All Groups"
+msgstr ""
+
+msgid "All Roles"
+msgstr ""
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr ""
+
+msgid "All search types"
+msgstr ""
+
+msgid "id"
+msgstr ""
+
+msgid "Photos"
+msgstr ""
+
+msgid "Search result"
+msgstr ""
+
+msgid "Property Name"
+msgstr ""
+
+msgid "Cart Operations"
+msgstr ""
+
+msgid "Add This Page"
+msgstr ""
+
+msgid "Loading people in cart...."
+msgstr ""
+
+msgid "Add All results"
+msgstr ""
+
+msgid "Remove this page"
+msgstr ""
+
+msgid "Removing people in cart...."
+msgstr ""
+
+msgid "Remove All results"
+msgstr ""
+
+msgid "Intersect result with cart"
+msgstr ""
+
+msgid "Add People"
+msgstr ""
+
+msgid "This page is still in the cart."
+msgstr ""
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr ""
+
+msgid "Add Fund"
+msgstr ""
+
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr ""
+
+msgid "Are you sure? This action can't be undone."
+msgstr ""
+
+msgid "Fund Editor"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Validate"
+msgstr ""
+
+msgid "Enter menu link name"
+msgstr ""
+
+msgid "URI"
+msgstr ""
+
+msgid "Enter URL starting with http:// or https://"
+msgstr ""
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr ""
+
+msgid "Add Custom Menu Link"
+msgstr ""
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+
+msgid "Custom Menu Link Editor"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Uri"
+msgstr ""
+
+msgid "Global Custom Menus"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Delete Classification"
+msgstr ""
+
+msgid "Please confirm deletion of this classification"
+msgstr ""
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr ""
+
+msgid "Delete map marker"
+msgstr ""
+
+msgid "Please confirm deletion of this marker"
+msgstr ""
+
+msgid "Map Icon GoogleMap"
+msgstr ""
+
+msgid "Select your classification icon"
+msgstr ""
+
+msgid "Add Pastoral Care Type"
+msgstr ""
+
+msgid "Visible for other authorized users"
+msgstr ""
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+
+msgid "Pastoral Care Type Editor"
+msgstr ""
+
+msgid "Visible"
+msgstr ""
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr ""
+
+msgid "Add a New Property"
+msgstr ""
+
+msgid "Select Property Type"
+msgstr ""
+
+msgid "with this property..."
+msgstr ""
+
+msgid "Prompt"
+msgstr ""
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr ""
+
+msgid "Property Type Editor"
+msgstr ""
+
+msgid "with this Property..."
+msgstr ""
+
+msgid "Class"
+msgstr ""
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr ""
+
+msgid "This general property type is still being used by"
+msgstr ""
+
+msgid "property"
+msgstr ""
+
+msgid "properties"
+msgstr ""
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr ""
+
+msgid "it and lose any corresponding property assignments."
+msgstr ""
+
+msgid "Add a New Property Type"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Send Message"
+msgstr ""
+
+msgid "View Profile"
+msgstr ""
+
+msgid "Teachers"
+msgstr ""
+
+msgid "Delete this Teacher?"
+msgstr ""
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr ""
+
+msgid "First name"
+msgstr ""
+
+msgid "Birth Date"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Boy"
+msgstr ""
+
+msgid "Girl"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "Home Phone"
+msgstr ""
+
+msgid "Home Address"
+msgstr ""
+
+msgid "Dad Name"
+msgstr ""
+
+msgid "Dad Mobile"
+msgstr ""
+
+msgid "Dad Email"
+msgstr ""
+
+msgid "Mom Name"
+msgstr ""
+
+msgid "Mom Mobile"
+msgstr ""
+
+msgid "Mom Email"
+msgstr ""
+
+msgid "Remove Students from Cart"
+msgstr ""
+
+msgid "Add Students to Cart"
+msgstr ""
+
+msgid "Remove Teachers from Cart"
+msgstr ""
+
+msgid "Add Teachers to Cart"
+msgstr ""
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr ""
+
+msgid "Create First A New Event"
+msgstr ""
+
+msgid "Create Event With Students"
+msgstr ""
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr ""
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr ""
+
+msgid "Set year range to export"
+msgstr ""
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr ""
+
+msgid "Extra students"
+msgstr ""
+
+msgid "export with photos"
+msgstr ""
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr ""
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+
+msgid "First, set your date and time."
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Call the Register for all sunday groups"
+msgstr ""
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr ""
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr ""
+
+msgid "Find member"
+msgstr ""
+
+msgid "Search by name, role, or ID."
+msgstr ""
+
+msgid "Search a member"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "In"
+msgstr ""
+
+msgid "Out"
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Trigger Parent Alert"
+msgstr ""
+
+msgid "Kiosk"
+msgstr ""
+
+msgid "Attendance"
+msgstr ""
+
+msgid "Current event"
+msgstr ""
+
+msgid "No assignments for kiosk"
+msgstr ""
+
+msgid "Kiosk Name"
+msgstr ""
+
+msgid "Assignment"
+msgstr ""
+
+msgid "Last Heartbeat"
+msgstr ""
+
+msgid "Accepted"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "Identify"
+msgstr ""
+
+msgid "Accept"
+msgstr ""
+
+msgid "Two factors authentications"
+msgstr ""
+
+msgid "2FA is already enabled on your account."
+msgstr ""
+
+msgid "If needed, you can remove it and enroll again."
+msgstr ""
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr ""
+
+msgid "2 Factor Authentication Secret"
+msgstr ""
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr ""
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr ""
+
+msgid "Unable to remove 2FA right now."
+msgstr ""
+
+msgid "Current step"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Locked"
+msgstr ""
+
+msgid "Backup Complete, Ready for Download."
+msgstr ""
+
+msgid "The user must have an email address."
+msgstr ""
+
+msgid "Select your Role"
+msgstr ""
+
+msgid "and update its name if needed."
+msgstr ""
+
+msgid "Role management"
+msgstr ""
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Choose a Role Name"
+msgstr ""
+
+msgid "You must set another Role Name"
+msgstr ""
+
+msgid "this Role Name already exist !!!"
+msgstr ""
+
+msgid "You've to check at least one user."
+msgstr ""
+
+msgid "The WebDav Key is"
+msgstr ""
+
+msgid "The public WebDav Key is"
+msgstr ""
+
+msgid "WebDav key"
+msgstr ""
+
+msgid "is now locked"
+msgstr ""
+
+msgid "is now unlocked"
+msgstr ""
+
+msgid "User Delete Confirmation"
+msgstr ""
+
+msgid "Please confirm removal of user status from:"
+msgstr ""
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr ""
+
+msgid "This can't be undone"
+msgstr ""
+
+msgid "Action Confirmation"
+msgstr ""
+
+msgid "Please confirm reset failed login count"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset failed login count for"
+msgstr ""
+
+msgid "done."
+msgstr ""
+
+msgid "Please confirm the password reset of this user"
+msgstr ""
+
+msgid "Reset & Send"
+msgstr ""
+
+msgid "Password reset for"
+msgstr ""
+
+msgid "Mail connection failure"
+msgstr ""
+
+msgid "to remove two-factor authentication"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr ""
+
+msgid "Add New Volunteer Opportunity"
+msgstr ""
+
+msgid "Volunteer Opportunity actions"
+msgstr ""
+
+msgid "Volunteer Cart Status"
+msgstr ""
+
+msgid "Activ"
+msgstr ""
+
+msgid "Parent (hierarchy)"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Enter volunteer opportunity name"
+msgstr ""
+
+msgid "Enter a brief description"
+msgstr ""
+
+msgid "Add to volunteer opportunities"
+msgstr ""
+
+msgid "Move to volunteer opportunities"
+msgstr ""
+
+msgid "Confirm Delete This Opportunity"
+msgstr ""
+
+msgid "Please confirm deletion of this record"
+msgstr ""
+
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr ""

@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-14 19:46+0000\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:34
+msgid "None"
+msgstr "Geen"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:67
+msgid "Excellent coverage"
+msgstr "Uitstekende dekking"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:68
+#, fuzzy, php-format
+msgid ""
+"More than 60% of members have been visited. Keep up the great pastoral work!"
+msgstr ""
+"Meer dan 60% van de leden is bezocht. Ga zo door met het geweldige pastorale "
+"werk!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:72
+msgid "Good progress"
+msgstr "Goede vooruitgang"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:73
+msgid ""
+"Between 30% and 60% of members have been visited. Continue your efforts!"
+msgstr ""
+"Tussen 30% en 60% van de leden is bezocht. Ga door met je inspanningen!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:77
+msgid "Attention needed"
+msgstr "Aandacht nodig"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:78
+msgid ""
+"Only 10% to 30% of members have been visited. It is time to intensify "
+"pastoral activities."
+msgstr ""
+"Slechts 10% tot 30% van de leden is bezocht. Het is tijd om de pastorale "
+"activiteiten te intensiveren."
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:82
+msgid "Critical situation"
+msgstr "Kritieke situatie"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:83
+#, fuzzy, php-format
+msgid ""
+"Less than 10% of members have been visited. Immediate pastoral action is "
+"required!"
+msgstr ""
+"Minder dan 10% van de leden is bezocht. Er is onmiddellijk pastorale actie "
+"nodig!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:92
+msgid "Persons"
+msgstr "Personen"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:93
+msgid "Families"
+msgstr "Gezinnen"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:94
+msgid "Singles"
+msgstr "Singles"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:95
+msgid "Retired"
+msgstr "Gepensioneerd"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:96
+msgid "Young People"
+msgstr "Jongeren"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:102
+msgid "Members"
+msgstr "Leden"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:103
+msgid "Progress"
+msgstr "Vooruitgang"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:104
+msgid "Count"
+msgstr "Graaf"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:132
+msgid "Pastoral Care"
+msgstr "Pastorale Zorg"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "Period from"
+msgstr "Periode van"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "to"
+msgstr "naar"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Latest"
+msgstr "Nieuwste"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Individual Pastoral Care"
+msgstr "Individuele Pastorale Zorg"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Last"
+msgstr "Laatste"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Family Pastoral Care"
+msgstr "Pastorale zorg voor gezinnen"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:162
+msgid "Statistics"
+msgstr "Statistieken"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:183
+msgid "Visit/Call your church members"
+msgstr "Bezoek/bel uw kerkleden"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:185
+msgid "Manage Pastoral Care"
+msgstr "Pastorale zorg beheren"
+
+#~ msgid "Persons not reached"
+#~ msgstr "Niet bereikte personen"
+
+#~ msgid "Families not reached"
+#~ msgstr "Niet bereikte gezinnen"
+
+#~ msgid "Single Persons not reached"
+#~ msgstr "Alleenstaanden niet bereikt"
+
+#~ msgid "Retired Persons not reached"
+#~ msgstr "Gepensioneerden niet bereikt"
+
+#~ msgid "Young People not reached"
+#~ msgstr "Jongeren niet bereikt"

@@ -1,0 +1,3607 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2026-08-09T17:50:15.482Z\n"
+"PO-Revision-Date: 2018-07-24T21:40:53.922Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr "Copie de rezervă descărcată, copie pe server eliminată"
+
+msgid "You must enter a password"
+msgstr "Trebuie să introduceți o parolă"
+
+msgid "Passwords must match"
+msgstr "Parolele trebuie să se potrivească"
+
+msgid "Backup Running, Please wait."
+msgstr "Backup în curs de execuție, vă rugăm să așteptați."
+
+msgid "Backup in progress, don't close the window !"
+msgstr "Copie de siguranță în curs de desfășurare, nu închideți fereastra !"
+
+msgid "Background backup in progress to remote server"
+msgstr "Backup în fundal în desfășurare către serverul de la distanță"
+
+msgid "Background backup in progress"
+msgstr "Backup în fundal în desfășurare"
+
+msgid "Backup Error."
+msgstr "Eroare de rezervă."
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr ""
+"Fișierul selectat depășește dimensiunea maximă de încărcare a serverelor, "
+"care este de"
+
+msgid "Restore Running, Please wait."
+msgstr "Restaurarea este în curs de execuție, vă rugăm să așteptați."
+
+msgid "Restore backup, don't close the window !"
+msgstr "Restaurați copia de rezervă, nu închideți fereastra !"
+
+msgid "Restore Complete"
+msgstr "Restaurare completă"
+
+msgid "Login to restored Database"
+msgstr "Autentificare la baza de date restaurată"
+
+msgid "Restore Error."
+msgstr "Eroare de restaurare."
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr "Sunteți sigur că doriți să ștergeți această imagine?"
+
+msgid "Wrong address format."
+msgstr "Formatul adresei este greșit."
+
+msgid "Set Calendar Name"
+msgstr "Setați numele calendarului"
+
+msgid "Cancel"
+msgstr "Anulează"
+
+msgid "Confirm"
+msgstr "Confirmați"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "Select a resource type"
+msgstr "Selectați un tip de resursă"
+
+msgid "Room"
+msgstr "Cameră"
+
+msgid "Computer"
+msgstr "Computer"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Description"
+msgstr "Descriere"
+
+msgid "Add a short description to help identify this resource."
+msgstr ""
+"Adăugați o scurtă descriere pentru a ajuta la identificarea acestei resurse."
+
+msgid "Set Resource Name"
+msgstr "Setați numele resursei"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Calendars"
+msgstr "Calendare"
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr ""
+"Selectați unul sau mai multe calendare pentru a le actualiza vizibilitatea "
+"în bara laterală."
+
+msgid "Set Status"
+msgstr "Setați starea"
+
+msgid "Select [Exclude] or [Include]"
+msgstr "Selectați [Exclude] sau [Include]"
+
+msgid "[INCLUDE]"
+msgstr "[INCLUDE]"
+
+msgid "[EXCLUDE]"
+msgstr "[EXCLUDE]"
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr "Includeți/Excludeți calendarele în SideBar"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "[👀  ]"
+msgstr "[👀 ]"
+
+msgid "[👀 ✐]"
+msgstr "[👀 ✐]"
+
+msgid "With"
+msgstr "Cu"
+
+msgid "Select one or more current shares to update or remove them."
+msgstr ""
+"Selectați una sau mai multe acțiuni curente pentru a le actualiza sau "
+"elimina."
+
+msgid "Set Rights"
+msgstr "Set de drepturi"
+
+msgid "Select your rights"
+msgstr "Selectați drepturile dumneavoastră"
+
+msgid "or"
+msgstr "sau"
+
+msgid "[R ]"
+msgstr "[R ]"
+
+msgid "[RW]"
+msgstr "[RW]"
+
+msgid "Send email notification"
+msgstr "Trimiteți o notificare prin e-mail"
+
+msgid "Notify added people, families, or groups by email"
+msgstr "Anunțați persoanele, familiile sau grupurile adăugate prin e-mail"
+
+msgid "Add persons/Family/groups"
+msgstr "Adăugați persoane/familii/grupuri"
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr ""
+"Căutați și adăugați persoane, familii sau grupuri pentru a partaja acest "
+"calendar."
+
+msgid "Share your Calendar"
+msgstr "Partajați calendarul dvs."
+
+msgid "Delete"
+msgstr "Ștergeți"
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr "Sunteți sigur că doriți să ștergeți acest Share?"
+
+msgid "Stop sharing"
+msgstr "Opriți partajarea"
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr "Sunteți sigur că nu mai doriți să vă partajați documentul?"
+
+msgid "Person or Family or Group"
+msgstr "Persoană sau familie sau grup"
+
+msgid "Are you sure?"
+msgstr "Ești sigur?"
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr ""
+"Veți pierde calendarul, evenimentele și toate calendarele de partajare. "
+"Acest lucru nu poate fi anulat."
+
+msgid "Manage"
+msgstr "Gestionați"
+
+msgid "Calendar Management for"
+msgstr "Gestionarea calendarului pentru"
+
+msgid "Modify Calendar Name"
+msgstr "Modificarea numelui calendarului"
+
+msgid "Modify Group Name"
+msgstr "Modificarea numelui grupului"
+
+msgid "Modify Resource Name"
+msgstr "Modificarea numelui resursei"
+
+msgid "Modify Share Name"
+msgstr "Modificarea numelui acțiunii"
+
+msgid "Resource Info for"
+msgstr "Informații despre resurse pentru"
+
+msgid "Error"
+msgstr "Eroare"
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr "Numai administratorii au dreptul de a modifica descrierea resurselor."
+
+msgid "Actualize"
+msgstr "Actualizați"
+
+msgid "Today"
+msgstr "Astăzi"
+
+msgid "List"
+msgstr "Lista"
+
+msgid "List Week"
+msgstr "Lista Săptămâna"
+
+msgid "List Month"
+msgstr "Listă Luna"
+
+msgid "This event isn't modifiable !!!"
+msgstr "Acest eveniment nu este modificabil !!!"
+
+msgid "No description"
+msgstr "Nicio descriere"
+
+msgid "What would you like to do?"
+msgstr "Ce ți-ar plăcea să faci?"
+
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr "Aveți grijă cu ștergerea: această acțiune nu poate fi anulată."
+
+msgid "Modify Event"
+msgstr "Modificare eveniment"
+
+msgid "Delete Event"
+msgstr "Ștergeți evenimentul"
+
+msgid "Are you sure to delete this event?"
+msgstr "Sunteți sigur că doriți să ștergeți acest eveniment?"
+
+msgid "Delete all repeated Events"
+msgstr "Ștergeți toate evenimentele repetate"
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr ""
+"Sunteți pe cale să ștergeți toate evenimentele repetate legate de acest "
+"eveniment. Sunteți sigur? Acest lucru nu poate fi anulat."
+
+msgid "No"
+msgstr "Nu"
+
+msgid "Only this event"
+msgstr "Doar acest eveniment"
+
+msgid "Every Events linked to this Event"
+msgstr "Toate evenimentele legate de acest eveniment"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr ""
+"Pentru a adăuga un eveniment, trebuie să creați mai întâi un calendar sau să "
+"activați unul."
+
+msgid "Add More Attendees"
+msgstr "Adăugați mai mulți participanți"
+
+msgid "Make Attendance"
+msgstr "Faceți prezența"
+
+msgid "Edit"
+msgstr "Editați"
+
+msgid "Resize Event"
+msgstr "Eveniment de redimensionare"
+
+msgid "Are you sure about this change?"
+msgstr "Sunteți sigur de această schimbare?"
+
+msgid "will be resized."
+msgstr "va fi redimensionat."
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr "Sunteți pe cale să redimensionați toate evenimentele. Ați dori să :"
+
+msgid "Only this Event"
+msgstr "Doar acest eveniment"
+
+msgid "All Events"
+msgstr "Toate evenimentele"
+
+msgid "Move Event"
+msgstr "Mutarea evenimentului"
+
+msgid "will be dropped."
+msgstr "va fi abandonată."
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr "Sunteți pe cale să mutați toate evenimentele. Ați dori să :"
+
+msgid "Event added"
+msgstr "Eveniment adăugat"
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr ""
+"Evenimentul a fost adăugat cu succes. Doriți să efectuați participarea sau "
+"să adăugați participanți?"
+
+msgid "Event was added successfully."
+msgstr "Evenimentul a fost adăugat cu succes."
+
+msgid "No attendees"
+msgstr "Fără participanți"
+
+msgid "From"
+msgstr "De la"
+
+msgid "to"
+msgstr "la"
+
+msgid "Attendance Notes: "
+msgstr "Note de prezență:"
+
+msgid "None"
+msgstr "Nici unul"
+
+msgid "Title"
+msgstr "Titlu"
+
+msgid "Calendar Title"
+msgstr "Calendar Titlu"
+
+msgid "Location"
+msgstr "Locație"
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr "Pentru a vă valida adresa: <b>\"apăsați return\"</b>."
+
+msgid "To see the Map click this text field."
+msgstr "Pentru a vedea harta, faceți clic pe acest câmp de text."
+
+msgid "Map"
+msgstr "Hartă"
+
+msgid "Desc"
+msgstr "Desc"
+
+msgid "Event description"
+msgstr "Descrierea evenimentului"
+
+msgid "Event Type"
+msgstr "Tip de eveniment"
+
+msgid "Attendance Counts"
+msgstr "Numărătoarea prezenței"
+
+msgid "Start Date"
+msgstr "Data de începere"
+
+msgid "All day"
+msgstr "Toată ziua"
+
+msgid "End Date"
+msgstr "Data de încheiere"
+
+msgid "Repeat"
+msgstr "Repetați"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Săptămânal"
+
+msgid "Monthly"
+msgstr "Lunar"
+
+msgid "Quarterly"
+msgstr "Trimestrial"
+
+msgid "Semesterly"
+msgstr "Semestrial"
+
+msgid "Yearly"
+msgstr "Anual"
+
+msgid "End"
+msgstr "Sfârșitul"
+
+msgid "Alarm"
+msgstr "Alarma"
+
+msgid "NONE"
+msgstr "NIMENI"
+
+msgid "At time of event"
+msgstr "La momentul evenimentului"
+
+msgid "5 minutes before"
+msgstr "Cu 5 minute înainte de"
+
+msgid "10 minutes before"
+msgstr "Cu 10 minute înainte"
+
+msgid "15 minutes before"
+msgstr "Cu 15 minute înainte de"
+
+msgid "30 minutes before"
+msgstr "Cu 30 de minute înainte"
+
+msgid "1 hour before"
+msgstr "Cu 1 oră înainte"
+
+msgid "2 hour before"
+msgstr "2 ore înainte"
+
+msgid "1 day before"
+msgstr "1 zi înainte"
+
+msgid "2 day before"
+msgstr "2 zile înainte"
+
+msgid "Calendar"
+msgstr "Calendar"
+
+msgid "Add as attendees"
+msgstr "Adăugați ca participanți"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "Status"
+msgstr "Stare"
+
+msgid "Active"
+msgstr "Activ"
+
+msgid "inactive"
+msgstr "inactiv"
+
+msgid "Event Creation"
+msgstr "Crearea de evenimente"
+
+msgid "Event Editor"
+msgstr "Editor de evenimente"
+
+msgid "Close"
+msgstr "Închideți"
+
+msgid "Save"
+msgstr "Salvați"
+
+msgid "You've to chose a calendar."
+msgstr "Trebuie să alegi un calendar."
+
+msgid "You have to set a Title for your event"
+msgstr "Trebuie să setați un titlu pentru evenimentul dvs."
+
+msgid "In progress...."
+msgstr "În curs de desfășurare...."
+
+msgid "Events for"
+msgstr "Evenimente pentru"
+
+msgid "Event for"
+msgstr "Eveniment pentru"
+
+msgid "Loading finished...."
+msgstr "Încărcare finalizată...."
+
+msgid "Month"
+msgstr "Luna"
+
+msgid "Actions"
+msgstr "Acțiuni"
+
+msgid "Attendance Counts with real Attendees"
+msgstr "Prezența contează cu participanți reali"
+
+msgid "Free Attendance Counts without Attendees"
+msgstr "Participarea gratuită se numără fără participanți"
+
+msgid "Calendar Type"
+msgstr "Tip de calendar"
+
+msgid "Events in Year"
+msgstr "Evenimentele din an"
+
+msgid "Events in month"
+msgstr "Evenimente în luna"
+
+msgid "Events by Type"
+msgstr "Evenimente pe tipuri"
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr ""
+"Ce ați dori să faceți? Aveți grijă la ștergere, este imposibil de "
+"revenit !!!!"
+
+msgid "Text for Event ID"
+msgstr "Text pentru ID-ul evenimentului"
+
+msgid "Undo Check-out"
+msgstr "Anulare Check-out"
+
+msgid "Make Check-out"
+msgstr "Efectuați Check-out"
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr "Editare/Facere Check-out - Anulare Check-out"
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr "Puteți verifica sau anula verificarea participanților la un eveniment"
+
+msgid "Edit/Validate Checkout"
+msgstr "Editare/Validare Checkout"
+
+msgid "Check-out done"
+msgstr "Check-out făcut"
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr ""
+"Apăsați CTRL + C pentru a copia numerele de telefon ale tuturor membrilor "
+"grupului."
+
+msgid "You have no more items in your cart."
+msgstr "Nu mai aveți niciun articol în coș."
+
+msgid "Address"
+msgstr "Adresa"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Remove"
+msgstr "Eliminați"
+
+msgid "Classification"
+msgstr "Clasificare"
+
+msgid "Family Role"
+msgstr "Rolul familiei"
+
+msgid "CKEditor Template Creation"
+msgstr "Crearea de șabloane CKEditor"
+
+msgid "Template Name"
+msgstr "Nume șablon"
+
+msgid "Explanation field cannot be empty."
+msgstr "Câmpul \"Explicație\" nu poate fi gol."
+
+msgid "Template Description"
+msgstr "Descriere șablon"
+
+msgid "Save as Word file in EDrive"
+msgstr "Salvați ca fișier Word în EDrive"
+
+msgid "Word file name"
+msgstr "Numele fișierului Word"
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+"Fișierul va fi încărcat pe EDrive<br><small>Această parte este doar pentru "
+"testare <b>(Beta)</b>.</small>"
+
+msgid "Your note is saved in your EDrive"
+msgstr "Nota dvs. este salvată în EDrive"
+
+msgid "(No templates defined)"
+msgstr "(Nu sunt definite șabloane)"
+
+msgid "Content Templates"
+msgstr "Modele de conținut"
+
+msgid "Please select the template to open in the editor"
+msgstr "Vă rugăm să selectați șablonul pentru a-l deschide în editor"
+
+msgid "Template Options"
+msgstr "Opțiuni de șablon"
+
+msgid "Modify"
+msgstr "Modificați"
+
+msgid "Modify the template you select"
+msgstr "Modificați șablonul pe care l-ați selectat"
+
+msgid "Delete the template you select"
+msgstr "Ștergeți șablonul pe care l-ați selectat"
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr ""
+"Sunteți sigur că doriți să ștergeți acest șablon? Acest lucru nu poate fi "
+"anulat."
+
+msgid "Replace actual content"
+msgstr "Înlocuiți conținutul real"
+
+msgid "Manage templates"
+msgstr "Gestionați șabloanele"
+
+msgid "Save templates"
+msgstr "Salvați șabloanele"
+
+msgid "Apply templates"
+msgstr "Aplicați șabloane"
+
+msgid "Save As Word File in EDrive"
+msgstr "Salvați ca fișier Word în EDrive"
+
+msgid "First Name"
+msgstr "Primul nume"
+
+msgid "Last Name"
+msgstr "Numele de familie"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Company"
+msgstr "Compania"
+
+msgid "Unsub"
+msgstr "Unsub"
+
+msgid "VCard"
+msgstr "VCard"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Language"
+msgstr "Limba"
+
+msgid "Merge Tags"
+msgstr "Îmbinarea etichetelor"
+
+msgid "Subject:"
+msgstr "Subiect:"
+
+msgid "Compose New Message"
+msgstr "Compuneți un mesaj nou"
+
+msgid "Send"
+msgstr "Trimiteți"
+
+msgid "Error making API Call to"
+msgstr "Eroare la apelul API către"
+
+msgid "Error text"
+msgstr "Text de eroare"
+
+msgid "Stack Trace"
+msgstr "Urmărirea stivei"
+
+msgid "The application could not complete this API request."
+msgstr "Aplicația nu a putut finaliza această cerere API."
+
+msgid "Information"
+msgstr "Informații"
+
+msgid "Please confirm"
+msgstr "Vă rugăm să confirmați"
+
+msgid "Update information"
+msgstr "Informații actualizate"
+
+msgid "Make a selection"
+msgstr "Faceți o selecție"
+
+msgid "In progress"
+msgstr "În curs de desfășurare"
+
+msgid "Please wait while the operation is being completed"
+msgstr "Vă rugăm să așteptați în timp ce operațiunea este finalizată"
+
+msgid "There was a problem retrieving the requested object"
+msgstr "A existat o problemă în recuperarea obiectului solicitat"
+
+msgid "Add cart to a group"
+msgstr "Adăugați coșul la un grup"
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr ""
+"Alegeți dacă doriți să adăugați coșul la un grup existent sau să creați unul "
+"nou direct din coș."
+
+msgid "Action"
+msgstr "Acțiune"
+
+msgid "Select an existing Group"
+msgstr "Selectați un grup existent"
+
+msgid "or Create a new Group from the Cart"
+msgstr "sau Creați un nou grup din coș"
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr ""
+"Selectați grupul de destinație și rolul care urmează să fie atribuit "
+"membrilor coșului."
+
+msgid "Select Group"
+msgstr "Selectați grupul"
+
+msgid "Select Role"
+msgstr "Selectați rolul"
+
+msgid "Create a new group and move the current cart into it."
+msgstr "Creați un grup nou și mutați coșul curent în acesta."
+
+msgid "Group Name"
+msgstr "Numele grupului"
+
+msgid "Default Name Group"
+msgstr "Nume implicit Grup"
+
+msgid "Add Cart to Group"
+msgstr "Adăugați coșul la grup"
+
+msgid "Missing selection"
+msgstr "Selecție lipsă"
+
+msgid "You need to select both a group and a role before continuing."
+msgstr ""
+"Trebuie să selectați atât un grup, cât și un rol înainte de a continua."
+
+msgid "Group name required"
+msgstr "Numele grupului necesar"
+
+msgid "Enter a group name before creating a new group from the cart."
+msgstr "Introduceți un nume de grup înainte de a crea un grup nou din coș."
+
+msgid "Deactivate cart persons"
+msgstr "Dezactivați persoanele din coș"
+
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr "Chiar doriți să dezactivați toate persoanele aflate în prezent în coș?"
+
+msgid "This action can be undone later if needed."
+msgstr "Această acțiune poate fi anulată ulterior, dacă este necesar."
+
+msgid "Keep active"
+msgstr "Rămâneți activi"
+
+msgid "Deactivate persons"
+msgstr "Dezactivarea persoanelor"
+
+msgid "Delete cart persons"
+msgstr "Ștergeți persoanele din coș"
+
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr ""
+"Chiar doriți să ștergeți din CRM toate persoanele aflate în prezent în coș?"
+
+msgid "This action cannot be undone."
+msgstr "Această acțiune nu poate fi anulată."
+
+msgid "Keep persons"
+msgstr "Păstrați persoanele"
+
+msgid "Delete persons"
+msgstr "Ștergeți persoanele"
+
+msgid "Add cart to event"
+msgstr "Adăugați coșul la eveniment"
+
+msgid "Select the event that should receive the current cart."
+msgstr "Selectați evenimentul care ar trebui să primească coșul curent."
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr ""
+"De asemenea, puteți crea mai întâi un eveniment nou, apoi reveniți aici "
+"pentru a atribui coșul."
+
+msgid "Event"
+msgstr "Eveniment"
+
+msgid "Choose one of the available events from the list below."
+msgstr "Alegeți unul dintre evenimentele disponibile din lista de mai jos."
+
+msgid "Create new event"
+msgstr "Crearea unui nou eveniment"
+
+msgid "Add to Event"
+msgstr "Adăugați la eveniment"
+
+msgid "Register"
+msgstr "Înregistrare"
+
+msgid "Register your software to CRM team."
+msgstr "Înregistrați-vă software-ul la echipa CRM."
+
+msgid "Simply click this"
+msgstr "Pur și simplu faceți clic pe acest"
+
+msgid "to register your software"
+msgstr "pentru a vă înregistra software-ul"
+
+msgid "New Release"
+msgstr "Lansare nouă"
+
+msgid "Installed version"
+msgstr "Versiunea instalată"
+
+msgid "New One"
+msgstr "Nouă Unul"
+
+msgid "To upgrade simply click this Notification"
+msgstr "Pentru a face upgrade pur și simplu faceți clic pe această Notificare"
+
+msgid "View Cart"
+msgstr "Vezi coșul de cumpărături"
+
+msgid "Empty Cart"
+msgstr "Coș gol"
+
+msgid "Empty Cart to Group"
+msgstr "Goliți căruciorul în grup"
+
+msgid "Empty Cart to Family"
+msgstr "Cărucior gol pentru familie"
+
+msgid "Empty Cart to Event"
+msgstr "Goliți coșul la eveniment"
+
+msgid "Map Cart"
+msgstr "Coșul cu hărți"
+
+msgid "Deactivate Persons From Cart"
+msgstr "Dezactivarea persoanelor din coș"
+
+msgid "Delete Persons From the CRM"
+msgstr "Ștergerea persoanelor din CRM"
+
+msgid "View all"
+msgstr "Vezi toate"
+
+msgid "Your Cart is Empty"
+msgstr "Coșul dumneavoastră este gol"
+
+msgid "Software registration"
+msgstr "Înregistrare software"
+
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr ""
+"Revizuiți detaliile de înregistrare de mai jos înainte de a le trimite. "
+"Aceste informații sunt utilizate numai pentru a urmări utilizarea acestui "
+"software."
+
+msgid "If you need to make changes to registration data, go to "
+msgstr "Dacă trebuie să faceți modificări la datele de înregistrare, accesați"
+
+msgid "Admin->Edit General Settings"
+msgstr "Admin->Editare setări generale"
+
+msgid "Church Name"
+msgstr "Numele bisericii"
+
+msgid "Version"
+msgstr "Versiunea"
+
+msgid "City"
+msgstr "Orașul"
+
+msgid "State"
+msgstr "Stat"
+
+msgid "Zip"
+msgstr "Zip"
+
+msgid "Country"
+msgstr "Țara"
+
+msgid "Church Email"
+msgstr "Biserica Email"
+
+msgid "Base URL"
+msgstr "URL de bază"
+
+msgid "Message"
+msgstr "Mesaj"
+
+msgid "Software Registration"
+msgstr "Înregistrare software"
+
+msgid "Your software is now registered. Thank you !"
+msgstr "Software-ul dvs. este acum înregistrat. Vă mulțumim !"
+
+msgid "Select Volunteer Opportunity"
+msgstr "Selectați oportunitatea de voluntariat"
+
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr ""
+"Selectați oportunitatea de voluntariat care ar trebui să fie atribuită."
+
+msgid "This selection will be applied to the current members."
+msgstr "Această selecție va fi aplicată membrilor actuali."
+
+msgid "Volunteer opportunity"
+msgstr "Oportunitate de voluntariat"
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr "Alegeți oportunitatea de voluntariat dorită din lista disponibilă."
+
+msgid "Choose the destination for the selected members."
+msgstr "Alegeți destinația pentru membrii selectați."
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr ""
+"Utilizați câmpurile de mai jos pentru a selecta un grup, un rol sau ambele, "
+"în funcție de acțiune."
+
+msgid "Group"
+msgstr "Grup"
+
+msgid "Select the target group for the selected members."
+msgstr "Selectați grupul țintă pentru membrii selectați."
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr ""
+"Selectați rolul care ar trebui să fie atribuit în cadrul grupului ales."
+
+msgid "GroupID required for role selection prompt"
+msgstr "GroupID necesar pentru solicitarea de selectare a rolului"
+
+msgid "Select Group and Role"
+msgstr "Selectați grupul și rolul"
+
+msgid "Select both the destination group and the role to apply."
+msgstr "Selectați atât grupul de destinație, cât și rolul de aplicat."
+
+msgid "Create a group"
+msgstr "Creați un grup"
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr ""
+"Introduceți numele noului grup care ar trebui să fie creat din fluxul de "
+"lucru curent."
+
+msgid "Create group"
+msgstr "Crearea grupului"
+
+msgid "Calendar Event"
+msgstr "Eveniment calendaristic"
+
+msgid "Attendees Checked In"
+msgstr "Participanții au fost înregistrați"
+
+msgid "More info"
+msgstr "Mai multe informații"
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr ""
+"1. Sesiunea dumneavoastră a expirat. Veți fi redirecționat către pagina de "
+"autentificare."
+
+msgid "EDrive File Browser"
+msgstr "EDrive File Browser"
+
+msgid "Could not retrieve file URL"
+msgstr "Nu s-a putut prelua adresa URL a fișierului"
+
+msgid "Warning"
+msgstr "Avertisment"
+
+msgid "Please select a file first"
+msgstr "Vă rugăm să selectați mai întâi un fișier"
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr ""
+"Atenție! Nu selectați această opțiune dacă intenționați să adăugați la o "
+"bază de date existentă.<br/>"
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr ""
+"A se utiliza numai dacă nu este mulțumit de importul inițial. Toate datele "
+"despre persoane și membri vor fi distruse!"
+
+msgid "I Understand"
+msgstr "Înțeleg"
+
+msgid "Clear Persons and Families"
+msgstr "Persoane și familii clare"
+
+msgid "Data Cleared Successfully!"
+msgstr "Datele au fost șterse cu succes!"
+
+msgid "success"
+msgstr "succes"
+
+msgid "Duplicate values"
+msgstr "Valori duplicate"
+
+msgid "You've selected two times the same name"
+msgstr "Ați selectat de două ori același nume"
+
+msgid "for this field. Chose another one."
+msgstr "pentru acest câmp. Alegeți altul."
+
+msgid "Remove Plugin"
+msgstr "Îndepărtați Plugin-ul"
+
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr "Sunteți pe cale să eliminați plugin-ul din tabloul de bord !!!!"
+
+msgid "Dashboard Item"
+msgstr "Element de tablou de bord"
+
+msgid "Removed from your dashboard !"
+msgstr "Eliminat din tabloul de bord !"
+
+msgid "Please confirm deletion of this document"
+msgstr "Vă rugăm să confirmați ștergerea acestui document"
+
+msgid "Document Delete Confirmation"
+msgstr "Confirmare de ștergere a documentului"
+
+msgid "Document Editor"
+msgstr "Editor de documente"
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr ""
+"Creați o notă, o intrare audio sau video și păstrați-o organizată cu un "
+"titlu clar."
+
+msgid "Document details"
+msgstr "Detalii document"
+
+msgid "Set the title and choose the type before writing the content."
+msgstr "Setați titlul și alegeți tipul înainte de a scrie conținutul."
+
+msgid "Document Title"
+msgstr "Titlul documentului"
+
+msgid "Set your Document title"
+msgstr "Setați titlul documentului dvs."
+
+msgid "Choose your Document Type"
+msgstr "Alegeți tipul de document"
+
+msgid "document"
+msgstr "document"
+
+msgid "video"
+msgstr "video"
+
+msgid "audio"
+msgstr "audio"
+
+msgid "Content"
+msgstr "Conținut"
+
+msgid "Write the main content of your document below."
+msgstr "Scrieți mai jos conținutul principal al documentului dumneavoastră."
+
+msgid "Private"
+msgstr "Privat"
+
+msgid "Private documents are visible only to authorized users."
+msgstr ""
+"Documentele private sunt vizibile numai pentru utilizatorii autorizați."
+
+msgid "Edit Document"
+msgstr "Editare document"
+
+msgid "Create Document"
+msgstr "Crearea documentului"
+
+msgid "You have to set a Title for your document"
+msgstr "Trebuie să setați un titlu pentru documentul dvs."
+
+msgid "Free Event Attendees"
+msgstr "Participanții la evenimentul gratuit"
+
+msgid "Successfully Added!"
+msgstr "Adăugat cu succes!"
+
+msgid "Delete attendee"
+msgstr "Ștergeți participantul"
+
+msgid "This action is permanent"
+msgstr "Această acțiune este permanentă"
+
+msgid "This can't be undone."
+msgstr "Acest lucru nu poate fi anulat."
+
+msgid "You are about to remove this attendee from the event."
+msgstr "Sunteți pe cale să eliminați acest participant din eveniment."
+
+msgid "The attendee will be removed from this event."
+msgstr "Participantul va fi eliminat din acest eveniment."
+
+msgid "Related attendance history may also be affected."
+msgstr "Istoricul de prezență aferent poate fi, de asemenea, afectat."
+
+msgid "Photo"
+msgstr "Fotografie"
+
+msgid "Attendance actions"
+msgstr "Acțiuni legate de prezență"
+
+msgid "Checkin"
+msgstr "Checkin"
+
+msgid "Checkout"
+msgstr "Checkout"
+
+msgid "Gender"
+msgstr "Sex"
+
+msgid "Checkin Date"
+msgstr "Data cazării"
+
+msgid "Checked In By"
+msgstr "Înregistrat de"
+
+msgid "Checkout Date"
+msgstr "Data de checkout"
+
+msgid "Checkout By"
+msgstr "Checkout Prin"
+
+msgid "Failed"
+msgstr "A eșuat"
+
+msgid "No event right now."
+msgstr "Nu există niciun eveniment în acest moment."
+
+msgid "Move one in the right range."
+msgstr "Mutați unul în intervalul corect."
+
+msgid "Or"
+msgstr "Sau"
+
+msgid "Create one."
+msgstr "Creați unul."
+
+msgid "User"
+msgstr "Utilizator"
+
+msgid "No event now."
+msgstr "Nu există niciun eveniment acum."
+
+msgid "Success"
+msgstr "Succes"
+
+msgid "Attention"
+msgstr "Atenție"
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr ""
+"Sunteți sigur că doriți să ȘTERGEȚI toate persoanele din ID-ul evenimentului:"
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr ""
+"Sunteți sigur că doriți să ȘTERGEȚI această persoană din ID-ul evenimentului:"
+
+msgid "Delete Event Type"
+msgstr "Ștergeți tipul de eveniment"
+
+msgid "This action can never be undone !!!!"
+msgstr "Această acțiune nu poate fi anulată niciodată !!!!"
+
+msgid "preview currently being created"
+msgstr "previzualizare în curs de creare"
+
+msgid "Preview"
+msgstr "Previzualizare"
+
+msgid "Document preview"
+msgstr "Previzualizare document"
+
+msgid "Read only"
+msgstr "Doar citire"
+
+msgid "Please wait"
+msgstr "Vă rugăm să așteptați"
+
+msgid "Unable to create the preview"
+msgstr "Imposibilitatea de a crea previzualizarea"
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr "Fișierul selectat nu poate fi redat în modul previzualizare."
+
+msgid "Icon"
+msgstr "Icoana"
+
+msgid "Modification Date"
+msgstr "Data modificării"
+
+msgid "Type"
+msgstr "Tip"
+
+msgid "Size"
+msgstr "Dimensiune"
+
+msgid "You are about to delete several items together"
+msgstr "Sunteți pe cale să ștergeți mai multe elemente împreună"
+
+msgid "You're about to remove an item"
+msgstr "Sunteți pe cale să eliminați un element"
+
+msgid "This can't be undone !!!!"
+msgstr "Asta nu poate fi anulat !!!!"
+
+msgid "You've to select at least one line !!!"
+msgstr "Trebuie să selectați cel puțin o linie!!!"
+
+msgid "Create a Folder"
+msgstr "Crearea unui dosar"
+
+msgid "Set your Folder name"
+msgstr "Setați numele dosarului dvs."
+
+msgid "Actualize files"
+msgstr "Actualizați fișierele"
+
+msgid "Set a File/Folder name"
+msgstr "Setați un nume de fișier/folder"
+
+msgid "Download Error"
+msgstr "Descărcare eroare"
+
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr ""
+"Sunteți sigur că doriți să opriți partajarea pentru utilizatorii selectați?"
+
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr "Sunteți sigur că doriți să opriți toate partajele?"
+
+msgid "Selected Rows"
+msgstr "Rânduri selectate"
+
+msgid "Pledge"
+msgstr "Angajament"
+
+msgid "Payment"
+msgstr "Plata"
+
+msgid "Confirm Delete"
+msgstr "Confirmați Ștergerea"
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr "Ești sigur? Sunteți pe cale să ștergeți fișierul selectat"
+
+msgid "payments(s)?"
+msgstr "plăți(e)?"
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr "Această acțiune NU poate fi anulată și poate avea implicații juridice!"
+
+msgid "Please ensure this what you want to do."
+msgstr "Vă rugăm să vă asigurați că este ceea ce doriți să faceți."
+
+msgid "Depid"
+msgstr "Depid"
+
+msgid "Address1"
+msgstr "Adresa1"
+
+msgid "Bank Name"
+msgstr "Numele băncii"
+
+msgid "Non deductible"
+msgstr "Nedeductibil"
+
+msgid "Statut"
+msgstr "Statut"
+
+msgid "Deposit"
+msgstr "Depozit"
+
+msgid "Schedule"
+msgstr "Programare"
+
+msgid "Amount"
+msgstr "Suma"
+
+msgid "Comment"
+msgstr "Comentariu"
+
+msgid "Electronic Transaction Details"
+msgstr "Detalii privind tranzacția electronică"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "Family"
+msgstr "Familie"
+
+msgid "Person"
+msgstr "Persoană"
+
+msgid "Anonymous"
+msgstr "Anonimul"
+
+msgid "Fund"
+msgstr "Fond"
+
+msgid "Pledge or payment"
+msgstr "Angajament sau plată"
+
+msgid "Method"
+msgstr "Metoda"
+
+msgid "Check Number"
+msgstr "Număr de cec"
+
+msgid "Details"
+msgstr "Detalii"
+
+msgid "Tracking"
+msgstr "Urmărire"
+
+msgid "Filter by Family"
+msgstr "Filtrați după familie"
+
+msgid "Filter by Fund"
+msgstr "Filtrați în funcție de fond"
+
+msgid "Export"
+msgstr "Export"
+
+msgid "Slip PDF"
+msgstr "Slip PDF"
+
+msgid "Deposit ID"
+msgstr "ID-ul depozitului"
+
+msgid "Deposit Date"
+msgstr "Data depozitului"
+
+msgid "Deposit Total"
+msgstr "Depozit Total"
+
+msgid "Deposit Comment"
+msgstr "Depozit Comentariu"
+
+msgid "Closed"
+msgstr "Închis"
+
+msgid "Yes"
+msgstr "Da"
+
+msgid "Deposit Type"
+msgstr "Tipul de depozit"
+
+msgid "Search"
+msgstr "Căutare"
+
+msgid "Please enter at least one winner."
+msgstr "Vă rugăm să înscrieți cel puțin un câștigător."
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr ""
+"Intrări incomplete găsite. Vă rugăm să completați toate câmpurile (articol, "
+"câștigător, preț) pentru fiecare rând pe care doriți să îl salvați."
+
+msgid "Please enter a number greater than 0."
+msgstr "Vă rugăm să introduceți un număr mai mare decât 0."
+
+msgid "Number"
+msgstr "Număr"
+
+msgid "You're about to delete the item !!!"
+msgstr "Sunteți pe cale să ștergeți articolul!!!"
+
+msgid "Item"
+msgstr "Articolul"
+
+msgid "Multiple"
+msgstr "Mai multe"
+
+msgid "Donor"
+msgstr "Donator"
+
+msgid "Buyer"
+msgstr "Cumpărător"
+
+msgid "Sale Price"
+msgstr "Preț de vânzare"
+
+msgid "Estimated value"
+msgstr "Valoarea estimată"
+
+msgid "Material Value"
+msgstr "Valoare materială"
+
+msgid "Minimum Price"
+msgstr "Preț minim"
+
+msgid "You're about to delete the buyer !!!"
+msgstr "Sunteți pe cale să ștergeți cumpărătorul!!!"
+
+msgid "Unassigned"
+msgstr "Neatribuite"
+
+msgid "Buyer Number"
+msgstr "Numărul cumpărătorului"
+
+msgid "Save and Add"
+msgstr "Salvați și adăugați"
+
+msgid "Generate Statement"
+msgstr "Generarea declarației"
+
+msgid "Buyer Number Editor"
+msgstr "Numărul cumpărătorului Editor"
+
+msgid "Please select at least one buyer."
+msgstr "Vă rugăm să selectați cel puțin un cumpărător."
+
+msgid "Your operation completed successfully."
+msgstr "Operațiunea dumneavoastră s-a încheiat cu succes."
+
+msgid "Full Name"
+msgstr "Nume și prenume"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Date Entered"
+msgstr "Data introducerii"
+
+msgid "Date Last Edited"
+msgstr "Data ultimei ediții"
+
+msgid "Edited By Name"
+msgstr "Editat după nume"
+
+msgid "Deactivated"
+msgstr "Dezactivat"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr ""
+"Avertisment: Prin ștergerea acestui câmp, veți pierde irevocabil toate "
+"datele de grup atribuite pentru acest câmp!"
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr "Confirmați Activare proprietăți specifice grupului"
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+"Se va crea un tabel de proprietăți specifice grupului pentru acest grup. "
+"Adăugați apoi proprietățile necesare cu ajutorul editorului de formulare "
+"pentru proprietăți specifice grupului."
+
+msgid "Enable Group Specific Properties"
+msgstr "Activați proprietățile specifice grupului"
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr "Confirmați dezactivarea proprietăților specifice grupului"
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr ""
+"Sunteți sigur că doriți să eliminați proprietățile de persoană specifice "
+"grupului? Toate datele privind proprietățile membrilor grupului vor fi "
+"pierdute!"
+
+msgid "Disable Group Specific Properties"
+msgstr "Dezactivarea proprietăților specifice grupului"
+
+msgid "Please enter a role name."
+msgstr "Vă rugăm să introduceți un nume de rol."
+
+msgid "Confirm Delete Role"
+msgstr "Confirmare Ștergere rol"
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr ""
+"Acest lucru va șterge, de asemenea, toate persoanele asociate cu acest rol."
+
+msgid "A group should have at least one role!"
+msgstr "Un grup trebuie să aibă cel puțin un rol!"
+
+msgid "Role Name"
+msgstr "Numele rolului"
+
+msgid "The role name is now modified."
+msgstr "Numele rolului este acum modificat."
+
+msgid "Make Default"
+msgstr "Faceți implicit"
+
+msgid "Default"
+msgstr "Implicit"
+
+msgid "Sequence"
+msgstr "Secvență"
+
+msgid "Move Up"
+msgstr "Mișcați-vă în sus"
+
+msgid "Move Down"
+msgstr "Mutare în jos"
+
+msgid "Add New Group"
+msgstr "Adăugați un grup nou"
+
+msgid "Enter group name"
+msgstr "Introduceți numele grupului"
+
+msgid "Please enter a group name."
+msgstr "Vă rugăm să introduceți un nume de grup."
+
+msgid "Group actions"
+msgstr "Acțiuni de grup"
+
+msgid "View"
+msgstr "Vizualizare"
+
+msgid "Members"
+msgstr "Membri"
+
+msgid "Group Cart Status"
+msgstr "Starea coșului de grup"
+
+msgid "In cart"
+msgstr "În coș"
+
+msgid "Remove from cart"
+msgstr "Îndepărtați din coș"
+
+msgid "Not in cart"
+msgstr "Nu în coș"
+
+msgid "Add to cart"
+msgstr "Adăugați în coș"
+
+msgid "Cart isn't showable"
+msgstr "Coșul nu poate fi afișat"
+
+msgid "Group Type"
+msgstr "Tip de grup"
+
+msgid "Value"
+msgstr "Valoare"
+
+msgid "Confirm Delete Group"
+msgstr "Confirmare Ștergere grup"
+
+msgid "Please confirm deletion of this group record"
+msgstr "Vă rugăm să confirmați ștergerea acestei înregistrări de grup"
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr ""
+"Aceasta va șterge, de asemenea, toate Rolurile și datele privind "
+"proprietățile specifice grupului asociate cu această înregistrare de grup."
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr ""
+"Toți membrii și proprietățile grupului vor fi distruși.  Membrii grupului în "
+"sine nu vor fi modificați."
+
+msgid "Are you sure you want to unassign this property?"
+msgstr "Sunteți sigur că doriți să anulați atribuirea acestei proprietăți?"
+
+msgid "Are you sure you want to change this property?"
+msgstr "Sunteți sigur că doriți să modificați această proprietate?"
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr ""
+"Un copil ar trebui să aibă o familie într-o grupă de școală duminicală !"
+
+msgid "401 : Private Datas"
+msgstr "401 : Date private"
+
+msgid "Group Role"
+msgstr "Rolul grupului"
+
+msgid "Private Data"
+msgstr "Date private"
+
+msgid "Zip Code"
+msgstr "Cod poștal"
+
+msgid "Cell Phone"
+msgstr "Telefon mobil"
+
+msgid "You're about to delete all the group members ?"
+msgstr "Sunteți pe cale să ștergeți toți membrii grupului ?"
+
+msgid "Are you sure ? This can't be undone."
+msgstr "Ești sigur? Asta nu poate fi anulat."
+
+msgid "Add"
+msgstr "Adăugați"
+
+msgid "Members to cart"
+msgstr "Membri în coș"
+
+msgid "Add to Cart"
+msgstr "Adaugă în coș"
+
+msgid "Add to Group"
+msgstr "Adaugă la grup"
+
+msgid "Move to Group"
+msgstr "Mutare la grup"
+
+msgid "Remove all members"
+msgstr "Eliminați toți membrii"
+
+msgid "Move"
+msgstr "Mutarea"
+
+msgid "Members to another group"
+msgstr "Membrii unui alt grup"
+
+msgid "Remove from Cart"
+msgstr "Scoateți din coș"
+
+msgid "No assigned Manager"
+msgstr "Nici un manager desemnat Manager"
+
+msgid "Add users"
+msgstr "Adăugați utilizatori"
+
+msgid "Manage Group Managers"
+msgstr "Gestionați managerii de grup"
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr "Sunteți sigur că doriți să ștergeți acest Manager?"
+
+msgid "Delete Managers"
+msgstr "Ștergeți Managerii"
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr "Sunteți sigur că doriți să ștergeți toți managerii?"
+
+msgid "Appointment"
+msgstr "Programare"
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr "Înregistrați această monitorizare pastorală pentru întreaga familie"
+
+msgid "For every administrator"
+msgstr "Pentru fiecare administrator"
+
+msgid "Show"
+msgstr "Arată"
+
+msgid "Hide"
+msgstr "Ascundeți"
+
+msgid "Include all the family members"
+msgstr "Includeți toți membrii familiei"
+
+msgid "Include"
+msgstr "Includeți"
+
+msgid "Pastoral care note"
+msgstr "Notă de îngrijire pastorală"
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr ""
+"Revizuiți tipul de notă, scrieți conținutul și definiți cine o poate vedea."
+
+msgid "Note"
+msgstr "Notă"
+
+msgid "Pastoral Care"
+msgstr "Asistență pastorală"
+
+msgid "Open the pastoral care record"
+msgstr "Deschideți dosarul de îngrijire pastorală"
+
+msgid "No records found for this view."
+msgstr "Nu s-au găsit înregistrări pentru această vizualizare."
+
+msgid "No matching records found."
+msgstr "Nu s-au găsit înregistrări corespunzătoare."
+
+msgid "Loading..."
+msgstr "Încărcare..."
+
+msgid "Never contacted"
+msgstr "Niciodată contactat"
+
+msgid "Pastoral care member"
+msgstr "Membru de îngrijire pastorală"
+
+msgid "Visits/calls"
+msgstr "Vizite/apeluri"
+
+msgid "Last visit/call"
+msgstr "Ultima vizită/apel"
+
+msgid "Opening..."
+msgstr "Deschidere..."
+
+msgid "Selecting..."
+msgstr "Selectarea..."
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr ""
+"Nu a putut fi pregătită nicio înregistrare de îngrijire pastorală "
+"corespunzătoare în acest moment. Vă rugăm să încercați o altă categorie."
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr ""
+"Imposibilitatea de a începe o acțiune de îngrijire pastorală în acest moment."
+
+msgid "Delete Pastoral Care Type"
+msgstr "Ștergeți tipul de îngrijire pastorală"
+
+msgid "Irreversible action"
+msgstr "Acțiune ireversibilă"
+
+msgid "Keep note"
+msgstr "Păstrați nota"
+
+msgid "Write the pastoral care message associated with this family."
+msgstr "Scrieți mesajul de îngrijire pastorală asociat cu această familie."
+
+msgid "Pastoral Care Note Creation"
+msgstr "Pastorație Notă Creație"
+
+msgid "Last Name (Family Name)"
+msgstr "Numele de familie (numele de familie)"
+
+msgid "Family Name"
+msgstr "Nume de familie"
+
+msgid "Write the pastoral care message associated with this person."
+msgstr "Scrieți mesajul de îngrijire pastorală asociat cu această persoană."
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr "Sunteți sigur că doriți să eliminați această familie din CRM?"
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr "Sunteți sigur că doriți să eliminați toate familiile din CRM?"
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"Nu toate familiile au fost ȘTERSE : Unele dintre ele au înregistrări de "
+"donații și NU pot fi șterse până când aceste donații nu sunt asociate cu o "
+"altă familie."
+
+msgid "Review family member information"
+msgstr "Revizuiți informațiile despre membrii familiei"
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr ""
+"Verificați informațiile afișate și actualizați acest membru al familiei, "
+"dacă este necesar, înainte de a salva."
+
+msgid "Update family member details"
+msgstr "Actualizați datele membrilor familiei"
+
+msgid "Save changes"
+msgstr "Salvați modificările"
+
+msgid "Confirm Deactivation"
+msgstr "Confirmați dezactivarea"
+
+msgid "Confirm Activation"
+msgstr "Confirmați activarea"
+
+msgid "Please confirm deactivation of family"
+msgstr "Vă rugăm să confirmați dezactivarea familiei"
+
+msgid "Please confirm activation of family"
+msgstr "Vă rugăm să confirmați activarea familiei"
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+"Aveți grijă cu GDPR, când o familie este dezactivată, trebuie să întrebați "
+"mai întâi toate persoanele din familie, dacă doriți să reactivați contul !"
+"<br><br>Fără nici o autorizație, GDPR face ca utilizarea acestei familii să "
+"fie ilegală !!!!!"
+
+msgid "Upload Photo"
+msgstr "Încărcați fotografia"
+
+msgid "Upload an existing Photo"
+msgstr "Încărcați o fotografie existentă"
+
+msgid "Max photo size"
+msgstr "Dimensiunea maximă a fotografiei"
+
+msgid "Capture from Webcam"
+msgstr "Captură de la Webcam"
+
+msgid "Snap Photo"
+msgstr "Snap Photo"
+
+msgid "Re-Take Photo"
+msgstr "Refaceți fotografia"
+
+msgid "Upload Image"
+msgstr "Încărcați imaginea"
+
+msgid "Family Photo"
+msgstr "Fotografie de familie"
+
+msgid "Bank Draft"
+msgstr "Cec bancar"
+
+msgid "Credit Card"
+msgstr "Card de credit"
+
+msgid "Disabled"
+msgstr "Persoane cu handicap"
+
+msgid "Next payment date"
+msgstr "Data următoarei plăți"
+
+msgid "Interval (months)"
+msgstr "Interval (luni)"
+
+msgid "Updated By"
+msgstr "Actualizat de"
+
+msgid "Confirm Delete Automatic payment"
+msgstr "Confirmare Ștergere Plată automată"
+
+msgid "Pledge or Payment"
+msgstr "Angajament sau plată"
+
+msgid "Dep ID"
+msgstr "ID de depozit"
+
+msgid "Fiscal Year"
+msgstr "Anul fiscal"
+
+msgid "NonDeductible"
+msgstr "Nedeductibil"
+
+msgid "CHECK"
+msgstr "VERIFICARE"
+
+msgid "Date Updated"
+msgstr "Data actualizării"
+
+msgid "Donations/eGives Moved by"
+msgstr "Donații/eGives Modificat de"
+
+msgid "Verification URL"
+msgstr "URL de verificare"
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Failed to add verification"
+msgstr "Nu s-a reușit adăugarea verificării"
+
+msgid "Verification email sent"
+msgstr "E-mail de verificare trimis"
+
+msgid "Failed to send verification email"
+msgstr "Nu s-a reușit trimiterea e-mailului de verificare"
+
+msgid "Warning !!!!"
+msgstr "Avertisment !!!!"
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+"Sunteți pe cale să trimiteți un e-mail masiv către toți membrii EcclesiaCRM :"
+"<br>- preferați un test cu câteva persoane sau familii<br>- asigurați-vă că "
+"îi selectați pe toți, fie după adresă, fie după persoană."
+
+msgid "You're about to send a e-mail to"
+msgstr "Sunteți pe cale să trimiteți un e-mail către"
+
+msgid "members"
+msgstr "membri"
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr ""
+"Vă rugăm să așteptați până când fișierul PDF este generat și descărcat."
+
+msgid "A person name or Family"
+msgstr "Un nume de persoană sau Familie"
+
+msgid "Modification"
+msgstr "Modificare"
+
+msgid "By persons"
+msgstr "De către persoane"
+
+msgid "By Adresses"
+msgstr "Prin Adrese"
+
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr ""
+"Sunteți pe cale să ștergeți toate confirmările în așteptare pentru toate "
+"persoanele."
+
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr ""
+"Sunteți pe cale să ștergeți toate confirmările efectuate pentru toate "
+"persoanele."
+
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr ""
+"Sunteți pe cale să ștergeți toate confirmările în așteptare pentru toate "
+"familiile."
+
+msgid "You're about to delete all done confirmation for all the families."
+msgstr ""
+"Sunteți pe cale să ștergeți toate confirmările făcute pentru toate familiile."
+
+msgid "Delete this person?"
+msgstr "Ștergeți această persoană?"
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr "Doriți să ștergeți această persoană? Acest lucru nu poate fi anulat."
+
+msgid "Save your note"
+msgstr "Salvează-ți nota"
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr "Doriți să vă salvați nota ca fișier Word în EDrive?"
+
+msgid "Family Id"
+msgstr "Id. de familie"
+
+msgid "Valid Until"
+msgstr "Valabil până la"
+
+msgid "Search for a family or address"
+msgstr "Căutați o familie sau o adresă"
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr "Sunteți sigur că doriți să eliminați această persoană din CRM?"
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr "Sunteți sigur că doriți să eliminați toate persoanele din CRM"
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"Nu toate persoanele au fost ȘTERSE : Unele dintre ele au înregistrări de "
+"donații și NU pot fi șterse până când aceste donații nu sunt asociate cu o "
+"altă familie."
+
+msgid "Review personal information"
+msgstr "Revizuirea informațiilor personale"
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr ""
+"Verificați valorile actuale și actualizați câmpurile care trebuie corectate "
+"înainte de a salva."
+
+msgid "Profile information"
+msgstr "Informații despre profil"
+
+msgid "Additional information"
+msgstr "Informații suplimentare"
+
+msgid "Update personal details"
+msgstr "Actualizarea datelor personale"
+
+msgid "Processing..."
+msgstr "Procesare..."
+
+msgid "Please confirm deactivation of person"
+msgstr "Vă rugăm să confirmați dezactivarea persoanei"
+
+msgid "Please confirm activation of person"
+msgstr "Vă rugăm să confirmați activarea persoanei"
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+"Fiți atenți la GDPR, când o persoană este dezactivată, trebuie să întrebați "
+"mai întâi persoana respectivă dacă doriți să reactivați contul !<br><br>Fără "
+"nici o autorizare, GDPR face ca utilizarea acestei persoane să fie "
+"ilegală !!!!!"
+
+msgid "Deactivate"
+msgstr "Dezactivați"
+
+msgid "Activate"
+msgstr "Activați"
+
+msgid "Deactivating..."
+msgstr "Dezactivarea..."
+
+msgid "Activating..."
+msgstr "Activarea..."
+
+msgid "Unable to update this person status."
+msgstr "Imposibilitatea de a actualiza statutul acestei persoane."
+
+msgid "Deleting..."
+msgstr "Ștergerea..."
+
+msgid "Unable to delete the photo."
+msgstr "Nu se poate șterge fotografia."
+
+msgid "Preview the current profile photo."
+msgstr "Previzualizați fotografia de profil curentă."
+
+msgid "Property actions"
+msgstr "Acțiuni de proprietate"
+
+msgid "Please select a property first."
+msgstr "Vă rugăm să selectați mai întâi o proprietate."
+
+msgid "Assigning..."
+msgstr "Atribuirea..."
+
+msgid "Assign"
+msgstr "Atribuiți"
+
+msgid "Unable to assign this property."
+msgstr "Imposibilitatea de a atribui această proprietate."
+
+msgid "Remove group assignment"
+msgstr "Eliminarea atribuirii grupului"
+
+msgid "Remove this person from the group"
+msgstr "Eliminați această persoană din grup"
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr ""
+"Calitatea de membru și orice rol legat de acest grup vor fi eliminate pentru "
+"această persoană."
+
+msgid "Remove from group"
+msgstr "Eliminați din grup"
+
+msgid "Keep assignment"
+msgstr "Păstrați sarcina"
+
+msgid "Share your document"
+msgstr "Partajați documentul dvs."
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr ""
+"Alegeți destinatarii, definiți accesul acestora și decideți dacă trebuie să "
+"primească o notificare prin e-mail."
+
+msgid "Current access"
+msgstr "Acces curent"
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr ""
+"Selectați unul sau mai mulți destinatari pentru a le actualiza accesul sau "
+"pentru a-i elimina."
+
+msgid "Set rights"
+msgstr "Stabilirea drepturilor"
+
+msgid "Read and write"
+msgstr "Citire și scriere"
+
+msgid "Notification"
+msgstr "Notificare"
+
+msgid "Add people, families or groups"
+msgstr "Adăugați persoane, familii sau grupuri"
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr ""
+"Căutați după nume pentru a acorda acces unei alte persoane, unei familii sau "
+"unui întreg grup."
+
+msgid "Please select at least one recipient first."
+msgstr "Vă rugăm să selectați mai întâi cel puțin un destinatar."
+
+msgid "Remove shared access"
+msgstr "Eliminarea accesului partajat"
+
+msgid "Remove access for the selected recipients?"
+msgstr "Eliminați accesul pentru destinatarii selectați?"
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr ""
+"Doar destinatarii selectați vor fi eliminați. Documentul va rămâne partajat "
+"cu orice alți destinatari."
+
+msgid "Remove access"
+msgstr "Eliminarea accesului"
+
+msgid "Keep access"
+msgstr "Păstrați accesul"
+
+msgid "Stop sharing this document"
+msgstr "Nu mai partajați acest document"
+
+msgid "Stop sharing this document with everyone?"
+msgstr "Nu mai partajați acest document cu toată lumea?"
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr ""
+"Toți destinatarii actuali vor pierde accesul imediat. Documentul în sine va "
+"rămâne disponibil pentru dumneavoastră."
+
+msgid "Keep sharing"
+msgstr "Continuați să partajați"
+
+msgid "Share your Document"
+msgstr "Partajați documentul dvs."
+
+msgid "Unassign property"
+msgstr "Dezasignarea proprietății"
+
+msgid "Remove this property from the current person?"
+msgstr "Eliminați această proprietate de la persoana actuală?"
+
+msgid "The property value will be removed from this profile."
+msgstr "Valoarea proprietății va fi eliminată din acest profil."
+
+msgid "Remove property"
+msgstr "Îndepărtați proprietatea"
+
+msgid "Keep property"
+msgstr "Păstrați proprietatea"
+
+msgid "Edit property value"
+msgstr "Editarea valorii proprietății"
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr ""
+"Actualizează valoarea stocată pentru această proprietate pe profilul "
+"persoanei curente."
+
+msgid "Save property"
+msgstr "Salvați proprietatea"
+
+msgid "Change classification"
+msgstr "Modificarea clasificării"
+
+msgid "Choose the classification that best matches this person profile."
+msgstr ""
+"Alegeți clasificarea care se potrivește cel mai bine profilului acestei "
+"persoane."
+
+msgid "Update classification"
+msgstr "Actualizarea clasificării"
+
+msgid "Change family role"
+msgstr "Schimbarea rolului familiei"
+
+msgid "Select the role this person should have inside the family record."
+msgstr ""
+"Selectați rolul pe care această persoană ar trebui să îl aibă în cadrul "
+"registrului de familie."
+
+msgid "Update role"
+msgstr "Actualizarea rolului"
+
+msgid "Volunteer actions"
+msgstr "Acțiuni de voluntariat"
+
+msgid "Remove volunteer opportunity"
+msgstr "Eliminați oportunitatea de voluntariat"
+
+msgid "Remove this volunteer opportunity from the person?"
+msgstr "Eliminați această oportunitate de voluntariat de la persoană?"
+
+msgid "The assignment will be removed from this profile only."
+msgstr "Sarcina va fi eliminată doar din acest profil."
+
+msgid "Remove assignment"
+msgstr "Eliminarea atribuirii"
+
+msgid "Please select at least one volunteer opportunity first."
+msgstr ""
+"Vă rugăm să selectați mai întâi cel puțin o oportunitate de voluntariat."
+
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr "Imposibilitatea de a atribui oportunitățile de voluntariat selectate."
+
+msgid "Some volunteer opportunities could not be assigned."
+msgstr "Unele oportunități de voluntariat nu au putut fi atribuite."
+
+msgid "Delete automatic payment"
+msgstr "Ștergeți plata automată"
+
+msgid "Delete this automatic payment setup?"
+msgstr "Ștergeți această configurare de plată automată?"
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr ""
+"Plățile recurente legate de această configurare se vor opri după ștergere."
+
+msgid "Delete payment"
+msgstr "Ștergeți plata"
+
+msgid "Keep payment"
+msgstr "Păstrați plata"
+
+msgid "Delete pledge or payment"
+msgstr "Ștergeți angajamentul sau plata"
+
+msgid "Delete this pledge or payment entry?"
+msgstr "Ștergeți acest angajament sau această intrare de plată?"
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr ""
+"Această intrare va fi eliminată din istoricul contribuțiilor pentru această "
+"familie."
+
+msgid "Delete entry"
+msgstr "Ștergeți intrarea"
+
+msgid "Keep entry"
+msgstr "Păstrați intrarea"
+
+msgid "Share this secure verification link with the person."
+msgstr ""
+"Partajați această legătură de verificare securizată cu persoana respectivă."
+
+msgid "Comments"
+msgstr "Comentarii"
+
+msgid "Confirmation of plugin removal"
+msgstr "Confirmarea eliminării plugin-ului"
+
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr ""
+"Sunteți pe cale să ștergeți pluginurile selectate. Această acțiune nu poate "
+"fi anulată!"
+
+msgid "Update plugin"
+msgstr "Actualizare plugin"
+
+msgid "Add plugin"
+msgstr "Adăugați plugin"
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr "Alegeți noul pachet zipat pentru a actualiza acest plugin."
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr "Alegeți un pachet de plugin-uri zipat pentru a-l instala în CRM."
+
+msgid "Plugin archive"
+msgstr "Arhiva pluginului"
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr "Aici ar trebui selectate numai pachetele de pluginuri zipate."
+
+msgid "The upload starts as soon as you submit this form."
+msgstr "Încărcarea începe imediat ce trimiteți acest formular."
+
+msgid "Plugin manager"
+msgstr "Manager de pluginuri"
+
+msgid "The current images folder is now the public folder !!!"
+msgstr "Dosarul de imagini curente este acum dosarul public !!!"
+
+msgid "QR Code : Call the register"
+msgstr "Cod QR : Sunați la registru"
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr ""
+"Îndreptați aparatul foto către un cod QR pentru a înregistra participanții "
+"în mod automat."
+
+msgid "Scan a QR Code"
+msgstr "Scanați un cod QR"
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr ""
+"Nu se poate accesa fluxul video (asigurați-vă că aveți o cameră web activată)"
+
+msgid "Available Cameras"
+msgstr "Camere disponibile"
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr ""
+"Încă nu a fost detectat niciun cod QR. Păstrați codul în interiorul cadrului."
+
+msgid "Detected data"
+msgstr "Date detectate"
+
+msgid "Families"
+msgstr "Familii"
+
+msgid "Singles"
+msgstr "Singuri"
+
+msgid "All Groups"
+msgstr "Toate grupurile"
+
+msgid "All Roles"
+msgstr "Toate rolurile"
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr ""
+"Termeni de căutare precum: nume, prenume, număr de telefon, proprietate, "
+"nume de grup, etc ..."
+
+msgid "All search types"
+msgstr "Toate tipurile de căutare"
+
+msgid "id"
+msgstr "id"
+
+msgid "Photos"
+msgstr "Fotografii"
+
+msgid "Search result"
+msgstr "Rezultatul căutării"
+
+msgid "Property Name"
+msgstr "Numele proprietății"
+
+msgid "Cart Operations"
+msgstr "Operațiuni cu căruciorul"
+
+msgid "Add This Page"
+msgstr "Adaugă această pagină"
+
+msgid "Loading people in cart...."
+msgstr "Încărcare persoane în cart...."
+
+msgid "Add All results"
+msgstr "Adaugă toate rezultatele"
+
+msgid "Remove this page"
+msgstr "Eliminați această pagină"
+
+msgid "Removing people in cart...."
+msgstr "Îndepărtarea persoanelor din cart...."
+
+msgid "Remove All results"
+msgstr "Eliminați toate rezultatele"
+
+msgid "Intersect result with cart"
+msgstr "Intersectați rezultatul cu coșul"
+
+msgid "Add People"
+msgstr "Adăugați oameni"
+
+msgid "This page is still in the cart."
+msgstr "Această pagină este încă în coș."
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr ""
+"Avertisment: Prin ștergerea acestui câmp, veți pierde irevocabil toate "
+"datele de familie atribuite pentru acest câmp!"
+
+msgid "Add Fund"
+msgstr "Adăugați un fond"
+
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr ""
+"Dacă ștergeți fondul, <b>veți pierde toate datele asociate acestuia.</b>"
+
+msgid "Are you sure? This action can't be undone."
+msgstr "Ești sigur? Această acțiune nu poate fi anulată."
+
+msgid "Fund Editor"
+msgstr "Editor de fonduri"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Validate"
+msgstr "Validați"
+
+msgid "Enter menu link name"
+msgstr "Introduceți numele linkului de meniu"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "Enter URL starting with http:// or https://"
+msgstr "Introduceți URL-ul care începe cu http:// sau https://"
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr "Acest link trebuie să înceapă cu : http://.... sau https://...."
+
+msgid "Add Custom Menu Link"
+msgstr "Adăugați un link de meniu personalizat"
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"Dacă ștergeți Legătura de meniu, <u><b>pierdeți toate datele conectate.</b></"
+"u><br><b>Sunteți sigur? Această acțiune nu poate fi anulată.</b>."
+
+msgid "Custom Menu Link Editor"
+msgstr "Editor de linkuri pentru meniuri personalizate"
+
+msgid "Order"
+msgstr "Comandă"
+
+msgid "Uri"
+msgstr "Uri"
+
+msgid "Global Custom Menus"
+msgstr "Meniuri personalizate globale"
+
+msgid "Dashboard"
+msgstr "Tabloul de bord"
+
+msgid "Delete Classification"
+msgstr "Ștergerea clasificării"
+
+msgid "Please confirm deletion of this classification"
+msgstr "Vă rugăm să confirmați ștergerea acestei clasificări"
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr ""
+"Acest lucru va șterge, de asemenea, această clasificare pentru toate "
+"persoanele asociate."
+
+msgid "Delete map marker"
+msgstr "Ștergeți markerul de hartă"
+
+msgid "Please confirm deletion of this marker"
+msgstr "Vă rugăm să confirmați ștergerea acestui marker"
+
+msgid "Map Icon GoogleMap"
+msgstr "Icoana Hartă GoogleHarta"
+
+msgid "Select your classification icon"
+msgstr "Selectați pictograma de clasificare"
+
+msgid "Add Pastoral Care Type"
+msgstr "Adăugați tipul de îngrijire pastorală"
+
+msgid "Visible for other authorized users"
+msgstr "Vizibil pentru alți utilizatori autorizați"
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"Dacă ștergeți tipul de îngrijire pastorală, <u><b>pierdeți toate datele "
+"conectate.</b></u><br><b>Sunteți sigur? Această acțiune nu poate fi anulată."
+"</b>."
+
+msgid "Pastoral Care Type Editor"
+msgstr "Redactor de tip Pastoral Care Type Editor"
+
+msgid "Visible"
+msgstr "Vizibil"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr ""
+"Avertisment: Prin ștergerea acestui câmp, veți pierde irevocabil toate "
+"datele de persoană atribuite pentru acest câmp!"
+
+msgid "Add a New Property"
+msgstr "Adăugați o nouă proprietate"
+
+msgid "Select Property Type"
+msgstr "Selectați tipul de proprietate"
+
+msgid "with this property..."
+msgstr "cu această proprietate..."
+
+msgid "Prompt"
+msgstr "Prompt"
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr "Sunteți pe cale să ștergeți această proprietate. Doriți să continuați?"
+
+msgid "Property Type Editor"
+msgstr "Editor de tip de proprietate"
+
+msgid "with this Property..."
+msgstr "cu această proprietate..."
+
+msgid "Class"
+msgstr "Clasa"
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr ""
+"Sunteți pe cale să ștergeți aceste proprietăți generale. Doriți să "
+"continuați?"
+
+msgid "This general property type is still being used by"
+msgstr "Acest tip general de proprietate este încă folosit de"
+
+msgid "property"
+msgstr "proprietate"
+
+msgid "properties"
+msgstr "proprietăți"
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr ""
+"Dacă ștergeți acest tip, veți elimina și toate proprietățile care utilizează"
+
+msgid "it and lose any corresponding property assignments."
+msgstr "aceasta și pierde orice atribuire de proprietate corespunzătoare."
+
+msgid "Add a New Property Type"
+msgstr "Adăugați un nou tip de proprietate"
+
+msgid "Setting saved"
+msgstr "Setare salvată"
+
+msgid "Send Message"
+msgstr "Trimiteți un mesaj"
+
+msgid "View Profile"
+msgstr "Vezi profilul"
+
+msgid "Teachers"
+msgstr "Profesori"
+
+msgid "Delete this Teacher?"
+msgstr "Ștergeți acest profesor?"
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr "Doriți să ștergeți acest profesor? Acest lucru nu poate fi anulat."
+
+msgid "First name"
+msgstr "Prenume"
+
+msgid "Birth Date"
+msgstr "Data nașterii"
+
+msgid "Unknown"
+msgstr "Necunoscut"
+
+msgid "Boy"
+msgstr "Băiat"
+
+msgid "Girl"
+msgstr "Fata"
+
+msgid "Age"
+msgstr "Vârsta"
+
+msgid "Mobile"
+msgstr "Mobil"
+
+msgid "Home Phone"
+msgstr "Telefonul de acasă"
+
+msgid "Home Address"
+msgstr "Adresa de domiciliu"
+
+msgid "Dad Name"
+msgstr "Numele tatălui"
+
+msgid "Dad Mobile"
+msgstr "Tata Mobile"
+
+msgid "Dad Email"
+msgstr "Tata Email"
+
+msgid "Mom Name"
+msgstr "Numele mamei"
+
+msgid "Mom Mobile"
+msgstr "Mamă mobilă"
+
+msgid "Mom Email"
+msgstr "Mama Email"
+
+msgid "Remove Students from Cart"
+msgstr "Scoateți studenții din coș"
+
+msgid "Add Students to Cart"
+msgstr "Adăugați studenți în coș"
+
+msgid "Remove Teachers from Cart"
+msgstr "Scoateți profesorii din coș"
+
+msgid "Add Teachers to Cart"
+msgstr "Adaugă profesori în coș"
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr ""
+"Selectați tipul de eveniment pe care doriți să îl utilizați pentru a crea "
+"prezența"
+
+msgid "Create First A New Event"
+msgstr "Creați mai întâi un eveniment nou"
+
+msgid "Create Event With Students"
+msgstr "Creați un eveniment cu studenții"
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr ""
+"Aveți grijă! Sunteți pe cale să creați sau să recreați un eveniment al "
+"acestei clase de școală duminicală pentru a apela la registru."
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"În cazul în care evenimentul este deja creat, accesați meniul \"Evenimente\" "
+"și apoi \"Apelare registru\"."
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr ""
+"În primul rând, setați corect intervalul de timp pentru a face extracția."
+
+msgid "Set year range to export"
+msgstr "Setați intervalul de ani pentru export"
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr ""
+"În primul rând, setați corect intervalul de date pentru a face extracția."
+
+msgid "Extra students"
+msgstr "Studenți în plus"
+
+msgid "export with photos"
+msgstr "export cu fotografii"
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr ""
+"Aveți grijă! Sunteți pe cale să creați sau să recreați toate evenimentele "
+"din toate clasele de școală duminicală pentru a apela la registru."
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"Dacă evenimentele sunt deja create, accesați meniul \"Evenimente\" și apoi "
+"\"Apelarea registrului\"."
+
+msgid "First, set your date and time."
+msgstr "În primul rând, setați data și ora."
+
+msgid "Time"
+msgstr "Timp"
+
+msgid "Call the Register for all sunday groups"
+msgstr "Sunați la Registru pentru toate grupurile de duminică"
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr ""
+"Cel puțin un grup trebuie să fie selectat pentru a întocmi liste de clasă "
+"sau foi de prezență."
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr ""
+"Trebuie să setați un titlu și o descriere pentru problema dumneavoastră."
+
+msgid "Find member"
+msgstr "Găsiți membru"
+
+msgid "Search by name, role, or ID."
+msgstr "Căutați după nume, rol sau ID."
+
+msgid "Search a member"
+msgstr "Căutați un membru"
+
+msgid "Clear"
+msgstr "Clar"
+
+msgid "In"
+msgstr "În"
+
+msgid "Out"
+msgstr "Afară"
+
+msgid "Notify"
+msgstr "Notificare"
+
+msgid "Trigger Parent Alert"
+msgstr "Declanșarea alertei pentru părinți"
+
+msgid "Kiosk"
+msgstr "Chioșc"
+
+msgid "Attendance"
+msgstr "Prezența"
+
+msgid "Current event"
+msgstr "Eveniment actual"
+
+msgid "No assignments for kiosk"
+msgstr "Nu există atribuții pentru chioșc"
+
+msgid "Kiosk Name"
+msgstr "Numele chioșcului"
+
+msgid "Assignment"
+msgstr "Atribuire"
+
+msgid "Last Heartbeat"
+msgstr "Ultima bătaie a inimii"
+
+msgid "Accepted"
+msgstr "Acceptat"
+
+msgid "True"
+msgstr "Adevărat"
+
+msgid "False"
+msgstr "Fals"
+
+msgid "Reload"
+msgstr "Reîncărcare"
+
+msgid "Identify"
+msgstr "Identificați"
+
+msgid "Accept"
+msgstr "Acceptă"
+
+msgid "Two factors authentications"
+msgstr "Autentificări cu doi factori"
+
+msgid "2FA is already enabled on your account."
+msgstr "2FA is already enabled on your account."
+
+msgid "If needed, you can remove it and enroll again."
+msgstr "If needed, you can remove it and enroll again."
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr "Eliminați secretul de autentificare cu 2 factori"
+
+msgid "2 Factor Authentication Secret"
+msgstr "Secret de autentificare cu 2 factori"
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr "Introduceți codul TOTP pentru a confirma înscrierea"
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr ""
+"Păstrați aceste parole de rezervă într-un loc sigur, în cazul în care "
+"pierdeți acreditările OTP."
+
+msgid "Unable to remove 2FA right now."
+msgstr "Imposibilitatea de a elimina 2FA chiar acum."
+
+msgid "Current step"
+msgstr "Etapa curentă"
+
+msgid "Completed"
+msgstr "Completat"
+
+msgid "Locked"
+msgstr "Blocat"
+
+msgid "Backup Complete, Ready for Download."
+msgstr "Copie de rezervă completă, gata de descărcare."
+
+msgid "The user must have an email address."
+msgstr "Utilizatorul trebuie să aibă o adresă de e-mail."
+
+msgid "Select your Role"
+msgstr "Selectați rolul dvs."
+
+msgid "and update its name if needed."
+msgstr "și actualizați numele acestuia, dacă este necesar."
+
+msgid "Role management"
+msgstr "Managementul rolului"
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr "Ești sigur? Sunteți pe cale să ștergeți acest rol."
+
+msgid "Rename"
+msgstr "Redenumiți"
+
+msgid "Choose a Role Name"
+msgstr "Alegeți un nume de rol"
+
+msgid "You must set another Role Name"
+msgstr "Trebuie să setați un alt nume de rol"
+
+msgid "this Role Name already exist !!!"
+msgstr "acest nume de rol există deja!!!"
+
+msgid "You've to check at least one user."
+msgstr "Trebuie să verificați cel puțin un utilizator."
+
+msgid "The WebDav Key is"
+msgstr "Cheia WebDav este"
+
+msgid "The public WebDav Key is"
+msgstr "Cheia publică WebDav este"
+
+msgid "WebDav key"
+msgstr "Cheia WebDav"
+
+msgid "is now locked"
+msgstr "este acum blocat"
+
+msgid "is now unlocked"
+msgstr "este acum deblocat"
+
+msgid "User Delete Confirmation"
+msgstr "Confirmarea ștergerii utilizatorului"
+
+msgid "Please confirm removal of user status from:"
+msgstr "Vă rugăm să confirmați înlăturarea statutului de utilizator din:"
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr ""
+"Fiți atenți, Sunteți pe cale să pierdeți dosarul de acasă și fișierele "
+"asociate, Calendarele, calendarele de partajare și toate evenimentele, de "
+"asemenea, pentru"
+
+msgid "This can't be undone"
+msgstr "Asta nu poate fi anulat."
+
+msgid "Action Confirmation"
+msgstr "Confirmarea acțiunii"
+
+msgid "Please confirm reset failed login count"
+msgstr "Vă rugăm să confirmați resetarea numărului de autentificări eșuate"
+
+msgid "Reset"
+msgstr "Resetare"
+
+msgid "Reset failed login count for"
+msgstr "Resetarea numărului de autentificări eșuate pentru"
+
+msgid "done."
+msgstr "făcut."
+
+msgid "Please confirm the password reset of this user"
+msgstr "Vă rugăm să confirmați resetarea parolei acestui utilizator"
+
+msgid "Reset & Send"
+msgstr "Resetare și trimitere"
+
+msgid "Password reset for"
+msgstr "Resetarea parolei pentru"
+
+msgid "Mail connection failure"
+msgstr "Eșecul conexiunii poștale"
+
+msgid "to remove two-factor authentication"
+msgstr "pentru a elimina autentificarea cu doi factori"
+
+msgid "Pending"
+msgstr "În așteptare"
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+"Oferă utilizatorului 60 de secunde pentru a se conecta cu codurile de "
+"recuperare. Utilizatorul va trebui apoi să șteargă sau pur și simplu să "
+"rescanalizeze codul QR în aplicația de gestionare a OTP."
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr ""
+"Utilizatorul are la dispoziție 60 de secunde pentru a utiliza codurile de "
+"recuperare."
+
+msgid "Add New Volunteer Opportunity"
+msgstr "Adăugați o nouă oportunitate de voluntariat"
+
+msgid "Volunteer Opportunity actions"
+msgstr "Acțiuni de voluntariat"
+
+msgid "Volunteer Cart Status"
+msgstr "Statutul căruciorului pentru voluntari"
+
+msgid "Activ"
+msgstr "Activ"
+
+msgid "Parent (hierarchy)"
+msgstr "Părinte (ierarhie)"
+
+msgid "Color"
+msgstr "Culoare"
+
+msgid "Enter volunteer opportunity name"
+msgstr "Introduceți numele oportunității de voluntariat"
+
+msgid "Enter a brief description"
+msgstr "Introduceți o scurtă descriere"
+
+msgid "Add to volunteer opportunities"
+msgstr "Adăugați la oportunitățile de voluntariat"
+
+msgid "Move to volunteer opportunities"
+msgstr "Treceți la oportunități de voluntariat"
+
+msgid "Confirm Delete This Opportunity"
+msgstr "Confirmați Ștergeți această oportunitate"
+
+msgid "Please confirm deletion of this record"
+msgstr "Vă rugăm să confirmați ștergerea acestei înregistrări"
+
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr "Toți membrii vor fi distruși.  Membrii înșiși nu vor fi modificați."
+
+#~ msgid "Loading video..."
+#~ msgstr "Încărcare video..."
+
+#~ msgid "Mailchimp"
+#~ msgstr "Mailchimp"
+
+#~ msgid ""
+#~ "All the lists are now loaded in the CRM.<br><b>If you want to manage "
+#~ "them, click this notification !</b>"
+#~ msgstr ""
+#~ "Toate listele sunt acum încărcate în CRM. 1235  4568 Dacă doriți să le "
+#~ "gestionați, faceți clic pe această notificare ! 7899 "
+
+#~ msgid "Saving Campaign ..."
+#~ msgstr "Campanie de economisire ..."
+
+#~ msgid "Campaign"
+#~ msgstr "Campanie"
+
+#~ msgid "saved successfully"
+#~ msgstr "salvat cu succes"
+
+#~ msgid "You're about to send your campaign! Are you sure ?"
+#~ msgstr "Sunteți pe cale să vă trimiteți campania! Sunteți sigur?"
+
+#~ msgid "You're about to delete your campaign! Are you sure ?"
+#~ msgstr "Sunteți pe cale să vă ștergeți campania! Sunteți sigur?"
+
+#~ msgid "Loading data..."
+#~ msgstr "Încărcarea datelor..."
+
+#~ msgid "Please wait while we retrieve your MailChimp lists."
+#~ msgstr "Vă rugăm să așteptați în timp ce vă recuperăm listele MailChimp."
+
+#~ msgid "No list are created with this account ...."
+#~ msgstr "Nu se creează liste cu acest cont ...."
+
+#~ msgid "You can create a new MailChimp list using the button above."
+#~ msgstr "Puteți crea o nouă listă MailChimp utilizând butonul de mai sus."
+
+#~ msgid "Email List"
+#~ msgstr "Lista de e-mail"
+
+#~ msgid "Subject"
+#~ msgstr "Subiect"
+
+#~ msgid "Members:"
+#~ msgstr "Membrii:"
+
+#~ msgid "Unsubscribed count:"
+#~ msgstr "Număr de neabonați:"
+
+#~ msgid "Unsubscribed count since last send:"
+#~ msgstr "Numărul de neabonați de la ultima trimitere:"
+
+#~ msgid "Cleaned count:"
+#~ msgstr "Numărătoare curată:"
+
+#~ msgid "Cleaned count since last send:"
+#~ msgstr "Numărătoare curățată de la ultima trimitere:"
+
+#~ msgid "Campaigns"
+#~ msgstr "Campanii"
+
+#~ msgid "Tags"
+#~ msgstr "Etichete"
+
+#~ msgid "is not configured"
+#~ msgstr "nu este configurat"
+
+#~ msgid "Please update the"
+#~ msgstr "Vă rugăm să actualizați"
+
+#~ msgid "API key in Setting->"
+#~ msgstr "Cheia API în Setting->"
+
+#~ msgid "Edit General Settings"
+#~ msgstr "Editați setările generale"
+
+#~ msgid "Then update"
+#~ msgstr "Apoi actualizați"
+
+#~ msgid "For more info see our "
+#~ msgstr "Pentru mai multe informații, consultați pagina noastră"
+
+#~ msgid "support docs."
+#~ msgstr "documente de suport."
+
+#~ msgid "List Title"
+#~ msgstr "Titlu listă"
+
+#~ msgid "Your List Title"
+#~ msgstr "Titlul listei dvs."
+
+#~ msgid "Your Subject"
+#~ msgstr "Subiectul dumneavoastră"
+
+#~ msgid "Permission Reminder"
+#~ msgstr "Amintire de permisiune"
+
+#~ msgid "Archive Bars"
+#~ msgstr "Baruri de arhivă"
+
+#~ msgid "Public"
+#~ msgstr "Public"
+
+#~ msgid "List Creation"
+#~ msgstr "Crearea listei"
+
+#~ msgid "You're about to delete a tag!"
+#~ msgstr "Sunteți pe cale să ștergeți o etichetă!"
+
+#~ msgid ""
+#~ "This will also delete the tag for all the members in this list. Are you "
+#~ "sure ?"
+#~ msgstr ""
+#~ "Acest lucru va șterge, de asemenea, eticheta pentru toți membrii din "
+#~ "această listă. Sunteți sigur?"
+
+#~ msgid "Deleting tag"
+#~ msgstr "Ștergerea etichetei"
+
+#~ msgid "People"
+#~ msgstr "Oameni"
+
+#~ msgid "Add a new tag"
+#~ msgstr "Adăugați o nouă etichetă"
+
+#~ msgid "Delete tag from subscriber(s)"
+#~ msgstr "Ștergerea etichetei de la abonat (abonați)"
+
+#~ msgid "Delete tag"
+#~ msgstr "Ștergeți eticheta"
+
+#~ msgid "Loading resources ..."
+#~ msgstr "Încărcarea resurselor ..."
+
+#~ msgid "Check all boxes"
+#~ msgstr "Bifați toate căsuțele"
+
+#~ msgid "Subscribed"
+#~ msgstr "Abonat"
+
+#~ msgid "Unsubscribed"
+#~ msgstr "Dezabonat"
+
+#~ msgid "Email Marketing"
+#~ msgstr "Marketing prin e-mail"
+
+#~ msgid "New tag"
+#~ msgstr "Etichetă nouă"
+
+#~ msgid ""
+#~ "Enter the name of the tag to create and apply to the selected members."
+#~ msgstr ""
+#~ "Introduceți numele etichetei care urmează să fie creată și aplicată "
+#~ "membrilor selectați."
+
+#~ msgid "Create tag"
+#~ msgstr "Creați eticheta"
+
+#~ msgid "Adding tag..."
+#~ msgstr "Adăugarea etichetei..."
+
+#~ msgid "Name is empty !!"
+#~ msgstr "Numele este gol !!"
+
+#~ msgid "Add tag"
+#~ msgstr "Adaugă etichetă"
+
+#~ msgid "Selected tag"
+#~ msgstr "Etichetă selectată"
+
+#~ msgid "This will add the tag"
+#~ msgstr "Acest lucru va adăuga eticheta"
+
+#~ msgid "to all the current selected members in the list."
+#~ msgstr "la toți membrii selectați în prezent din listă."
+
+#~ msgid "Select One"
+#~ msgstr "Selectați unul"
+
+#~ msgid "All Tags"
+#~ msgstr "Toate etichetele"
+
+#~ msgid "Remove tags from selected members"
+#~ msgstr "Eliminarea etichetelor de la membrii selectați"
+
+#~ msgid "Choose a tag"
+#~ msgstr "Alegeți o etichetă"
+
+#~ msgid ""
+#~ "Select one tag to remove, or choose all tags for a full cleanup on the "
+#~ "selected members."
+#~ msgstr ""
+#~ "Selectați o etichetă pentru a o elimina sau selectați toate etichetele "
+#~ "pentru o curățare completă a membrilor selectați."
+
+#~ msgid "Apply"
+#~ msgstr "Aplicați"
+
+#~ msgid "Removing tags..."
+#~ msgstr "Îndepărtarea etichetelor..."
+
+#~ msgid "Deleting all tags for the selected members in the list..."
+#~ msgstr "Ștergerea tuturor etichetelor pentru membrii selectați în listă..."
+
+#~ msgid "This action affects the whole list"
+#~ msgstr "Această acțiune afectează întreaga listă"
+
+#~ msgid "Keep tag"
+#~ msgstr "Păstrați eticheta"
+
+#~ msgid "A person name or Family or Group"
+#~ msgstr "Un nume de persoană sau o familie sau un grup"
+
+#~ msgid "Loading subscriber"
+#~ msgstr "Încărcare abonat"
+
+#~ msgid "Loading subscribers from Group"
+#~ msgstr "Încărcarea abonaților din Grup"
+
+#~ msgid "Loading subscribers from family"
+#~ msgstr "Încărcare abonați din familie"
+
+#~ msgid "Loading all persons from EcclesiaCRM<br>This could take a while !"
+#~ msgstr ""
+#~ "Încărcarea tuturor persoanelor din EcclesiaCRM<br>Acest lucru ar putea "
+#~ "dura ceva timp!"
+
+#~ msgid ""
+#~ "In fact, you've better to quit the CRM, wait 5 minutes and make your "
+#~ "campaigns after.<br>To import huge datas, MailChimp API is slow."
+#~ msgstr ""
+#~ "De fapt, ar fi mai bine să ieșiți din CRM, să așteptați 5 minute și să vă "
+#~ "faceți campaniile după.<br>Pentru a importa date uriașe, MailChimp API "
+#~ "este lent."
+
+#~ msgid ""
+#~ "Loading all newsletter subscribers from EcclesiaCRM<br>This could take a "
+#~ "while !"
+#~ msgstr ""
+#~ "Încărcarea tuturor abonaților la newsletter din EcclesiaCRM<br>Aceasta ar "
+#~ "putea dura ceva timp!"
+
+#~ msgid ""
+#~ "Loading all families first headpeople subscribers from "
+#~ "EcclesiaCRM<br>This could take a while !"
+#~ msgstr ""
+#~ "Încărcarea tuturor familiilor de abonați din EcclesiaCRM<br>Aceasta ar "
+#~ "putea dura ceva timp!"
+
+#~ msgid "Update subscriber status"
+#~ msgstr "Actualizarea statutului abonatului"
+
+#~ msgid "Selected subscriber"
+#~ msgstr "Abonat selectat"
+
+#~ msgid "Choose the status to apply to this subscriber."
+#~ msgstr "Alegeți statutul care se aplică acestui abonat."
+
+#~ msgid "Update"
+#~ msgstr "Actualizare"
+
+#~ msgid "Changing status ..."
+#~ msgstr "Schimbarea statutului ..."
+
+#~ msgid "Delete subscriber"
+#~ msgstr "Ștergeți abonatul"
+
+#~ msgid "Subscriber removal"
+#~ msgstr "Eliminarea abonaților"
+
+#~ msgid "You're about to delete a subscriber! Are you sure ?"
+#~ msgstr "Sunteți pe cale să ștergeți un abonat! Sunteți sigur?"
+
+#~ msgid "Keep subscriber"
+#~ msgstr "Păstrați abonamentul"
+
+#~ msgid "Deleting Subscriber..."
+#~ msgstr "Ștergerea abonatului..."
+
+#~ msgid "Delete mailing list"
+#~ msgstr "Ștergeți lista de corespondență"
+
+#~ msgid "This action is irreversible"
+#~ msgstr "Această acțiune este ireversibilă"
+
+#~ msgid "Do you really want to delete this mailing list ?"
+#~ msgstr "Chiar doriți să ștergeți această listă de discuții?"
+
+#~ msgid "Delete list"
+#~ msgstr "Ștergeți lista"
+
+#~ msgid "Delete all subscribers"
+#~ msgstr "Ștergeți toți abonații"
+
+#~ msgid "Bulk deletion"
+#~ msgstr "Ștergere în masă"
+
+#~ msgid "Are you sure you want to delete all the subscribers"
+#~ msgstr "Sunteți sigur că doriți să ștergeți toți abonații"
+
+#~ msgid "Delete all"
+#~ msgstr "Ștergeți toate"
+
+#~ msgid "Deleting all subscribers..."
+#~ msgstr "Ștergerea tuturor abonaților..."
+
+#~ msgid ""
+#~ "In fact, you've better to leave the CRM, and in a quater of an hour re-"
+#~ "open it to manage your list.<br>To delete huge datas, MailChimp API is "
+#~ "slow."
+#~ msgstr ""
+#~ "De fapt, este mai bine să ieșiți din CRM, iar peste un sfert de oră să îl "
+#~ "redeschideți pentru a vă gestiona lista.<br>Pentru a șterge date uriașe, "
+#~ "MailChimp API este lent."
+
+#~ msgid "Email Campaign Creation"
+#~ msgstr "Crearea campaniilor de e-mail"
+
+#~ msgid ""
+#~ "Prepare a clear title, confirm the target tag and write the content of "
+#~ "your email campaign."
+#~ msgstr ""
+#~ "Pregătiți un titlu clar, confirmați tag-ul țintă și scrieți conținutul "
+#~ "campaniei dvs. de e-mail."
+
+#~ msgid "Campaign details"
+#~ msgstr "Detalii privind campania"
+
+#~ msgid ""
+#~ "Set the campaign title and review the MailChimp target before writing the "
+#~ "message."
+#~ msgstr ""
+#~ "Setați titlul campaniei și analizați ținta MailChimp înainte de a scrie "
+#~ "mesajul."
+
+#~ msgid "Campaign Title"
+#~ msgstr "Titlul campaniei"
+
+#~ msgid "Your Campaign Title"
+#~ msgstr "Titlul campaniei dvs."
+
+#~ msgid "For Tag"
+#~ msgstr "Pentru etichetă"
+
+#~ msgid "Write the subject and the body of your email campaign."
+#~ msgstr "Scrieți subiectul și corpul campaniei dvs. de e-mail."
+
+#~ msgid "Mail Subject"
+#~ msgstr "Mail Subiect"
+
+#~ msgid "Your Mail Subject"
+#~ msgstr "Subiectul e-mailului dvs."
+
+#~ msgid "Compose the content that will be sent to members of this tag."
+#~ msgstr "Compuneți conținutul care va fi trimis membrilor acestei etichete."
+
+#~ msgid "All list members"
+#~ msgstr "Toți membrii listei"
+
+#~ msgid "Adding Campaign ..."
+#~ msgstr "Adăugarea campaniei ..."
+
+#~ msgid "Campaign created"
+#~ msgstr "Campanie creată"
+
+#~ msgid "Your campaign is ready"
+#~ msgstr "Campania dvs. este gata"
+
+#~ msgid "Would like to manage directly this new campaign ?"
+#~ msgstr "Doriți să gestionați direct această nouă campanie?"
+
+#~ msgid "Open campaign"
+#~ msgstr "Campanie deschisă"
+
+#~ msgid "Stay here"
+#~ msgstr "Rămâi aici"
+
+#~ msgid "You have to set a Campaign Title for your eMail Campaign"
+#~ msgstr ""
+#~ "Trebuie să setați un titlu de campanie pentru campania dvs. de e-mail."
+
+#~ msgid "Edit list settings"
+#~ msgstr "Editarea setărilor listei"
+
+#~ msgid "MailChimp list settings"
+#~ msgstr "Setări listă MailChimp"
+
+#~ msgid "Update the main details used by this list and its campaigns."
+#~ msgstr ""
+#~ "Actualizați detaliile principale utilizate de această listă și de "
+#~ "campaniile sale."
+
+#~ msgid "List Name"
+#~ msgstr "Nume listă"
+
+#~ msgid "Changing subscribers state..."
+#~ msgstr "Schimbarea stării abonaților..."
+
+#~ msgid "Delete selected subscribers"
+#~ msgstr "Ștergeți abonații selectați"
+
+#~ msgid "Selected members"
+#~ msgstr "Membri selectați"
+
+#~ msgid "You're about to delete subscribers! Are you sure ?"
+#~ msgstr "Sunteți pe cale să ștergeți abonați! Sunteți sigur?"
+
+#~ msgid "selected"
+#~ msgstr "selectat"
+
+#~ msgid "Delete selected"
+#~ msgstr "Ștergeți selectat"
+
+#~ msgid "Deleting Subscribers..."
+#~ msgstr "Ștergerea abonaților..."
+
+#~ msgid "ERROR"
+#~ msgstr "ERROR"
+
+#~ msgid "Select the group to which you would like to add your cart"
+#~ msgstr "Selectați grupul la care doriți să adăugați coșul de cumpărături"
+
+#~ msgid "You have to set a Group Name"
+#~ msgstr "Trebuie să setați un nume de grup"
+
+#~ msgid "Yes : if you're sure"
+#~ msgstr "Da : dacă sunteți sigur"
+
+#~ msgid ""
+#~ "You can add the content of the cart to the selected event below<br> - OR "
+#~ "- <br>Create first an event and add them after."
+#~ msgstr ""
+#~ "Puteți adăuga conținutul coșului la evenimentul selectat mai jos<br> - "
+#~ "SAU - <br>Crearea mai întâi a unui eveniment și adăugarea lor după aceea."
+
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr ""
+#~ "Vă rugăm să vă înregistrați copia de CRM verificând aceste informații și "
+#~ "apăsând butonul Trimite."
+
+#~ msgid "Please select target volunteers for members"
+#~ msgstr "Vă rugăm să selectați voluntarii țintă pentru membri"
+
+#~ msgid "Please select target Role for members"
+#~ msgstr "Vă rugăm să selectați Rolul țintă pentru membri"
+
+#~ msgid "Add A Group Name"
+#~ msgstr "Adăugați un nume de grup"
+
+#~ msgid "Are you sure you want to remove this person's membership from"
+#~ msgstr ""
+#~ "Sunteți sigur că doriți să eliminați calitatea de membru a acestei "
+#~ "persoane din"
+
+#~ msgid "Are you sure ? You're about to delete this Person ?"
+#~ msgstr "Ești sigur? Ești pe cale să ștergi această persoană?"
+
+#~ msgid "Are you sure ? You are about to stop sharing your document ?"
+#~ msgstr "Ești sigur? Sunteți pe cale să nu mai partajați documentul?"
+
+#~ msgid "Confirm Delete volunteer Opportunity"
+#~ msgstr "Confirmare Ștergeți voluntarul Oportunitate"
+
+#~ msgid "Select your zipped plugin file"
+#~ msgstr "Selectați fișierul de plugin zippat"
+
+#~ msgid "Personal"
+#~ msgstr "Personal"
+
+#~ msgid "Add your tag name"
+#~ msgstr "Adăugați numele etichetei dvs."
+
+#~ msgid "Choose the tag you want to delete :"
+#~ msgstr "Alegeți eticheta pe care doriți să o ștergeți :"
+
+#~ msgid "Select status for : "
+#~ msgstr "Selectați starea pentru :"
+
+#~ msgid ""
+#~ "Be carefull, You are about to delete a user from the group and therefore "
+#~ "the entire call history. This is strongly to be avoided."
+#~ msgstr ""
+#~ "Aveți grijă, sunteți pe cale să ștergeți un utilizator din grup și, prin "
+#~ "urmare, întregul istoric al apelurilor. Acest lucru trebuie neapărat "
+#~ "evitat."
+
+#~ msgid "Place"
+#~ msgstr "Locul"
+
+#~ msgid "GDPR"
+#~ msgstr "GDPR"
+
+#~ msgid "Campaigns:"
+#~ msgstr "Campanii:"
+
+#~ msgid "Generate Deposit Slip for Selected"
+#~ msgstr "Generarea bonului de depunere pentru selectat"
+
+#~ msgid "Rows"
+#~ msgstr "Rânduri"
+
+#~ msgid "Add buyer"
+#~ msgstr "Adăugați cumpărător"
+
+#~ msgid "All members of this group are in the cart"
+#~ msgstr "Toți membrii acestui grup sunt în coș"
+
+#~ msgid "Not all members of this group are in the cart"
+#~ msgstr "Nu toți membrii acestui grup se află în cărucior"
+
+#~ msgid "Regenerate 2 Factor Authentication Secret"
+#~ msgstr "Regenerarea secretului de autentificare cu 2 factori"
+
+#~ msgid ""
+#~ "<center>You must set another Role Name <br>-- or --<br> this Role Name "
+#~ "already exist !!!</center>"
+#~ msgstr ""
+#~ "<center>Trebuie să setați un alt nume de rol <br>-- sau --<br> acest nume "
+#~ "de rol există deja !!!</center>"
+
+#~ msgid "Done !"
+#~ msgstr "Gata!"
+
+#~ msgid "Removing finished...."
+#~ msgstr "Îndepărtarea terminat...."
+
+#~ msgid "Nothing to remove."
+#~ msgstr "Nu este nimic de îndepărtat."
+
+#~ msgid "Are you sure you want to remove the selected group members?"
+#~ msgstr "Sunteți sigur că doriți să eliminați membrii grupului selectat?"
+
+#~ msgid "Songs"
+#~ msgstr "Cântece"
+
+#~ msgid "Add all"
+#~ msgstr "Adăugați toate"
+
+#~ msgid ""
+#~ "Use this method to share files with individuals or teams within your "
+#~ "organization. If the recipient already has access to the share, but can't "
+#~ "locate it, you can send them the internal link to facilitate access."
+#~ msgstr ""
+#~ "Utilizați această metodă pentru a partaja fișiere cu persoane sau echipe "
+#~ "din cadrul organizației dvs. Dacă destinatarul are deja acces la "
+#~ "partajare, dar nu o poate localiza, îi puteți trimite link-ul intern "
+#~ "pentru a facilita accesul."
+
+#~ msgid "You're about to remove a folder and it's content"
+#~ msgstr "Sunteți pe cale să eliminați un dosar și conținutul acestuia"
+
+#~ msgid "Files input"
+#~ msgstr "Intrarea fișierelor"
+
+#~ msgid "Upload your files"
+#~ msgstr "Încărcați fișierele dvs."
+
+#~ msgid "Upload"
+#~ msgstr "Încărcați"
+
+#~ msgid "Upload your Files"
+#~ msgstr "Încărcați fișierele dvs."
+
+#~ msgid "Share your File"
+#~ msgstr "Partajați fișierul dvs."
+
+#~ msgid "Add person"
+#~ msgstr "Adăugați o persoană"
+
+#~ msgid "Switch Camera"
+#~ msgstr "Comutați camera"
+
+#~ msgid "Info"
+#~ msgstr "Informații"
+
+#, fuzzy
+#~ msgid "Moved!"
+#~ msgstr "Mutarea"
+
+#~ msgid "Problem"
+#~ msgstr "Problema"
+
+#~ msgid ""
+#~ "Safari isn't yet supported with Jitsi, use something else !<br/>• Your "
+#~ "webcam<br/>• Sharing your windows<br/> won't work with meeting."
+#~ msgstr ""
+#~ "Safari nu este încă compatibil cu Jitsi, folosiți altceva !<br/>- Camera "
+#~ "dvs. web<br/>- Partajarea ferestrelor<br/> nu va funcționa cu întâlnirea."
+
+#~ msgid "Set a Jitsi room name"
+#~ msgstr "Setați un nume de cameră Jitsi"
+
+#~ msgid "Delete all Rooms?"
+#~ msgstr "Ștergeți toate camerele?"
+
+#~ msgid "All"
+#~ msgstr "Toate"
+
+#~ msgid ""
+#~ "Deleting an event will also delete all attendance counts for that event."
+#~ msgstr ""
+#~ "Ștergerea unui eveniment va șterge, de asemenea, toate datele de prezență "
+#~ "pentru acel eveniment."
+
+#~ msgid "Are you sure you want to DELETE the event ?"
+#~ msgstr "Sunteți sigur că doriți să ȘTERGEȚI evenimentul?"
+
+#~ msgid ""
+#~ "You can create the event automatically with the students<br> - OR - "
+#~ "<br>Add the students to the cart and create an event to add them after."
+#~ msgstr ""
+#~ "Puteți crea evenimentul automat cu elevii<br> - SAU - <br>Adaugați elevii "
+#~ "în coș și creați un eveniment pentru a-i adăuga ulterior."

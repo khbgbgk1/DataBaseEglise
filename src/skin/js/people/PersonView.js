@@ -1,0 +1,1738 @@
+$(function () {
+  function showActionFeedback(message, level) {
+    if (window.CRM.showGlobalMessage) {
+      window.CRM.showGlobalMessage(message, level || 'danger');
+      return;
+    }
+
+    openInfoDialog({
+      title: i18next.t('Error'),
+      lead: message,
+      okClass: 'btn-danger'
+    });
+  }
+
+  function setButtonBusy(button, isBusy, options) {
+    if (!button || !button.length) {
+      return;
+    }
+
+    const settings = options || {};
+    const defaultHtml = settings.defaultHtml || button.data('original-html') || button.html();
+    const loadingHtml = settings.loadingHtml || '<i class="fas fa-spinner fa-spin mr-1"></i>' + i18next.t('Processing...');
+
+    if (!button.data('original-html')) {
+      button.data('original-html', defaultHtml);
+    }
+
+    button.prop('disabled', isBusy);
+    button.toggleClass('disabled', isBusy);
+    button.html(isBusy ? loadingHtml : button.data('original-html'));
+  }
+
+  function refreshVisibleTables() {
+    [
+      '#assigned-properties-table',
+      '#assigned-volunteer-opps-table',
+      '#automaticPaymentsTable',
+      '#pledgePaymentTable'
+    ].forEach(function (selector) {
+      if ($.fn.DataTable.isDataTable(selector)) {
+        $(selector).DataTable().columns.adjust().responsive.recalc();
+      }
+    });
+  }
+
+  function buildConfirmMessage(options) {
+    const settings = options || {};
+    let content = '<div class="text-left">';
+
+    if (settings.lead) {
+      content += '<p class="mb-2 font-weight-bold">' + settings.lead + '</p>';
+    }
+
+    if (settings.details) {
+      content += '<p class="text-muted mb-0">' + settings.details + '</p>';
+    }
+
+    if (settings.warning) {
+      content += '<div class="alert alert-warning mt-3 mb-0">' + settings.warning + '</div>';
+    }
+
+    content += '</div>';
+    return content;
+  }
+
+  function openConfirmDialog(options) {
+    const settings = options || {};
+
+    bootbox.confirm({
+      title: settings.title || i18next.t('Please confirm'),
+      message: buildConfirmMessage(settings),
+      buttons: {
+        cancel: {
+          label: settings.cancelLabel || i18next.t('Cancel'),
+          className: settings.cancelClass || 'btn-primary'
+        },
+        confirm: {
+          label: settings.confirmLabel || i18next.t('Confirm'),
+          className: settings.confirmClass || 'btn-danger'
+        }
+      },
+      callback: function (result) {
+        if (result && typeof settings.onConfirm === 'function') {
+          settings.onConfirm();
+        }
+      }
+    });
+  }
+
+  function buildInfoMessage(options) {
+    const settings = options || {};
+    let content = '<div class="text-left">';
+
+    if (settings.lead) {
+      content += '<p class="mb-2 font-weight-bold">' + settings.lead + '</p>';
+    }
+
+    if (settings.details) {
+      content += '<div class="text-muted">' + settings.details + '</div>';
+    }
+
+    if (settings.content) {
+      content += '<div class="mt-3">' + settings.content + '</div>';
+    }
+
+    content += '</div>';
+    return content;
+  }
+
+  function openInfoDialog(options) {
+    const settings = options || {};
+
+    bootbox.alert({
+      title: settings.title || i18next.t('Information'),
+      message: buildInfoMessage(settings),
+      backdrop: settings.backdrop !== undefined ? settings.backdrop : true,
+      buttons: {
+        ok: {
+          label: settings.okLabel || i18next.t('Close'),
+          className: settings.okClass || 'btn-primary'
+        }
+      }
+    });
+  }
+
+  function buildPromptTitle(options) {
+    const settings = options || {};
+    let title = '<div class="text-left">';
+    title += '<div class="font-weight-bold">' + (settings.title || i18next.t('Update information')) + '</div>';
+
+    if (settings.details) {
+      title += '<div class="small text-muted mt-1">' + settings.details + '</div>';
+    }
+
+    title += '</div>';
+    return title;
+  }
+
+  function openPromptDialog(options) {
+    const settings = options || {};
+
+    bootbox.prompt({
+      title: buildPromptTitle(settings),
+      inputType: settings.inputType,
+      inputOptions: settings.inputOptions,
+      value: settings.value,
+      size: settings.size || 'large',
+      buttons: {
+        confirm: {
+          label: settings.confirmLabel || i18next.t('Save'),
+          className: settings.confirmClass || 'btn-primary'
+        },
+        cancel: {
+          label: settings.cancelLabel || i18next.t('Cancel'),
+          className: settings.cancelClass || 'btn-default'
+        }
+      },
+      callback: function (result) {
+        if (typeof settings.onSubmit === 'function') {
+          settings.onSubmit(result);
+        }
+      }
+    });
+  }
+
+  $("#activateDeactivate").on('click', function () {
+    const actionButton = $(this);
+    const popupTitle = (window.CRM.currentActive == true ? i18next.t("Confirm Deactivation") : i18next.t('Confirm Activation'));
+    let popupMessage = '';
+    if (window.CRM.currentActive == true) {
+      popupMessage = i18next.t("Please confirm deactivation of person") + ': ' + window.CRM.personFullName;
+    }
+    else {
+      popupMessage = i18next.t("Please confirm activation of person") + ': ' + window.CRM.personFullName;
+    }
+
+    const popupWarning = i18next.t("Be carefull with the GDPR, when a person is de-activated, you have to ask the person first, if you want to reactivate the account !<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!");
+
+    openConfirmDialog({
+      title: popupTitle,
+      lead: popupMessage,
+      warning: popupWarning,
+      confirmLabel: '<i class="far fa-trash-alt mr-1"></i>' + ((window.CRM.currentActive == true) ? i18next.t("Deactivate") : i18next.t("Activate")),
+      confirmClass: 'btn-danger',
+      cancelLabel: '<i class="fas fa-times mr-1"></i>' + i18next.t('Cancel'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        setButtonBusy(actionButton, true, {
+          loadingHtml: '<i class="fas fa-spinner fa-spin mr-1"></i>' + ((window.CRM.currentActive == true) ? i18next.t('Deactivating...') : i18next.t('Activating...'))
+        });
+
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'persons/' + window.CRM.currentPersonID + "/activate/" + !window.CRM.currentActive
+        }, function (data) {
+          if (data.success == true) {
+            window.location.href = window.CRM.root + "/v2/people/person/view/" + window.CRM.currentPersonID;
+            return;
+          }
+
+          setButtonBusy(actionButton, false);
+          showActionFeedback(i18next.t('Unable to update this person status.'));
+        });
+      }
+    });
+  });
+
+  $("#deletePhoto").on('click', function () {
+    const deleteButton = $(this);
+    setButtonBusy(deleteButton, true, {
+      loadingHtml: '<i class="fas fa-spinner fa-spin mr-1"></i>' + i18next.t('Deleting...')
+    });
+
+    window.CRM.APIRequest({
+      method: 'DELETE',
+      path: 'persons/' + window.CRM.currentPersonID + "/photo"
+    }, function (data) {
+      if (!data || data.success === false) {
+        setButtonBusy(deleteButton, false);
+        showActionFeedback(i18next.t('Unable to delete the photo.'));
+        return;
+      }
+
+      location.reload();
+    });
+  });
+
+  window.CRM.photoUploader = $("#photoUploader").PhotoUploader({
+    url: window.CRM.root + "/api/persons/" + window.CRM.currentPersonID + "/photo",
+    maxPhotoSize: window.CRM.maxUploadSize,
+    photoHeight: window.CRM.iPhotoHeight,
+    photoWidth: window.CRM.iPhotoWidth,
+    UploadPhotoText: i18next.t("Upload Photo"),
+    UploadExistingPhotoText: i18next.t("Upload an existing Photo"),
+    MaxPhotoSizeText: i18next.t("Max photo size"),
+    CaptureFromWebcamText: i18next.t("Capture from Webcam"),
+    SnapPhotoText: i18next.t("Snap Photo"),
+    ReTakePhotoText: i18next.t("Re-Take Photo"),
+    CloseText: i18next.t("Close"),
+    UploadImageText: i18next.t("Upload Image"),
+    done: function (e) {
+      window.location.reload();
+    }
+  });
+
+  $("#uploadImageButton").on('click', function () {
+    window.CRM.photoUploader.show();
+  });
+
+
+  $(function () {
+    $("#input-volunteer-opportunities").select2({
+      language: window.CRM.shortLocale
+    });
+    $("#input-person-properties").select2({
+      language: window.CRM.shortLocale
+    });
+
+    contentExists(window.CRM.root + "/api/persons/" + window.CRM.currentPersonID + "/photo", function (success) {
+      if (success) {
+        $("#view-larger-image-btn").removeClass('hide');
+
+        $("#view-larger-image-btn").on('click', function () {
+          openInfoDialog({
+            title: '<div class="d-flex align-items-center justify-content-center mb-2"><i class="fas fa-user-circle fa-lg mr-2 text-info"></i>' + i18next.t("Photo") + '</div>',
+            lead: i18next.t('Preview the current profile photo.'),
+            content: `
+              <div class="text-center p-2 bg-dark rounded">
+                <img src="${window.CRM.root}/api/persons/${window.CRM.currentPersonID}/photo"
+                     alt="Profile Photo"
+                     class="img-fluid rounded shadow border border-light"
+                     style="max-width: 100%; max-height: 60vh; background: #fff;" />
+              </div>
+            `
+          });
+        });
+      }
+    });
+
+  });
+
+  // the assigned properties
+  window.CRM.dataPropertiesTable = $("#assigned-properties-table").DataTable({
+    ajax: {
+      url: window.CRM.root + "/api/persons/personproperties/" + window.CRM.currentPersonID,
+      type: 'POST',
+      contentType: "application/json",
+      dataSrc: "Record2propertyR2ps",
+      "beforeSend": function (xhr) {
+        xhr.setRequestHeader('Authorization',
+          "Bearer " + window.CRM.jwtToken
+        );
+      }
+    },
+    "language": {
+      "url": window.CRM.plugin.dataTable.language.url
+    },
+    "searching": false,
+    columns: [
+      {
+        width: 'auto',
+        title: i18next.t('Actions'),
+        data: 'ProId',
+        render: function (data, type, full, meta) {
+          let ret = '<div class="btn-group btn-group-sm" role="group" aria-label="' + i18next.t('Property actions') + '">';
+
+          if (full.ProPrompt != '') {
+            ret += '<button type="button" class="btn btn-outline-primary edit-property-btn" title="' + i18next.t('Edit') + '" data-toggle="tooltip" data-person_id="' + window.CRM.currentPersonID + '" data-property_id="' + data + '" data-property_name="' + full.R2pValue + '"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>';
+          }
+
+          ret += '<button type="button" class="btn btn-outline-danger remove-property-btn" title="' + i18next.t('Delete') + '" data-toggle="tooltip" data-person_id="' + window.CRM.currentPersonID + '" data-property_id="' + data + '" data-property_name="' + full.R2pValue + '"><i class="far fa-trash-alt" aria-hidden="true"></i></button>';
+          ret += '</div>';
+
+          return ret;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Name'),
+        data: 'ProName',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Value'),
+        data: 'R2pValue',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      }
+    ],
+    responsive: true,
+    createdRow: function (row, data, index) {
+      $(row).addClass("paymentRow");
+    }
+  });
+
+  $('body').on('click', '.assign-property-btn', function (event) {
+    event.preventDefault();
+    const assignButton = $(this);
+    const property_id = $('.input-person-properties').val();
+    const property_pro_value = $('.property-value').val();
+
+    if (!property_id) {
+      showActionFeedback(i18next.t('Please select a property first.'), 'warning');
+      return;
+    }
+
+    setButtonBusy(assignButton, true, {
+      loadingHtml: '<i class="fas fa-spinner fa-spin mr-1"></i>' + (assignButton.data('loading-text') || i18next.t('Assigning...')),
+      defaultHtml: '<i class="fas fa-plus-circle mr-1"></i>' + (assignButton.data('default-text') || i18next.t('Assign'))
+    });
+
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'properties/persons/assign',
+      data: JSON.stringify({ "PersonId": window.CRM.currentPersonID, "PropertyId": property_id, "PropertyValue": property_pro_value })
+    }, function (data) {
+      if (data && data.success) {
+        window.CRM.dataPropertiesTable.ajax.reload();
+        $('#prompt-box').removeClass('form-group').html('');
+        $('#input-person-properties').val('').trigger('change');
+
+        if (data.count > 0) {
+          $("#properties-warning").hide();
+          $("#properties-table").show();
+        }
+      } else {
+        showActionFeedback(i18next.t('Unable to assign this property.'));
+      }
+
+      setButtonBusy(assignButton, false, {
+        defaultHtml: '<i class="fas fa-plus-circle mr-1"></i>' + (assignButton.data('default-text') || i18next.t('Assign'))
+      });
+    });
+  });
+
+
+  $('.changeRole').on('click', function (event) {
+    var GroupID = $(this).data("groupid");
+    window.CRM.groups.promptSelection({ Type: window.CRM.groups.selectTypes.Role, GroupID: GroupID }, function (selection) {
+      window.CRM.groups.addPerson(GroupID, window.CRM.currentPersonID, selection.RoleID, function () {
+        window.location.href = window.CRM.root + '/v2/people/person/view/' + window.CRM.currentPersonID + '/Group';
+      })
+    });
+  });
+
+  $(".groupRemove").on('click', function (event) {
+    var targetGroupID = event.currentTarget.dataset.groupid;
+    var targetGroupName = event.currentTarget.dataset.groupname;
+
+    openConfirmDialog({
+      title: i18next.t('Remove group assignment'),
+      lead: i18next.t("Remove this person from the group") + ' ' + targetGroupName + ' ?',
+      details: i18next.t('The membership and any role linked to this group will be removed for this person.'),
+      confirmLabel: i18next.t('Remove from group'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep assignment'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.groups.removePerson(targetGroupID, window.CRM.currentPersonID, function () {
+          window.location.href = window.CRM.root + '/v2/people/person/view/' + window.CRM.currentPersonID + '/Group';
+        });
+      }
+    });
+  });
+
+  // notes management
+  function addPersonsFromNotes(noteId) {
+    $('#select-share-persons').find('option').remove();
+
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'sharedocument/getallperson',
+      data: JSON.stringify({ "noteId": noteId })
+    }, function (data) {
+      var elt = document.getElementById("select-share-persons");
+      var len = data.length;
+
+      for (i = 0; i < len; ++i) {
+        var option = document.createElement("option");
+        // there is a groups.type in function of the new plan of schema
+        option.text = data[i].name;
+        //option.title = data[i].type;
+        option.value = data[i].id;
+
+        elt.appendChild(option);
+      }
+    });
+
+    //addProfilesToMainDropdown();
+  }
+
+  // the share files
+  window.CRM.BootboxContentShareFiles = function () {
+    var frm_str = '<div class="container-fluid px-0">'
+            +'<div class="alert alert-light border mb-3">'
+              +'<div class="d-flex align-items-start">'
+                +'<i class="fas fa-share-alt text-primary mr-2 mt-1"></i>'
+                +'<div>'
+                  +'<div class="font-weight-bold">' + i18next.t("Share your document") + '</div>'
+                  +'<div class="small text-muted">' + i18next.t("Choose recipients, define their access and decide whether they should receive an email notification.") + '</div>'
+                +'</div>'
+              +'</div>'
+            +'</div>'
+            +'<div class="form-group">'
+              +'<label class="small text-uppercase text-muted mb-2" for="select-share-persons">' + i18next.t("Current access") + '</label>'
+              +'<select size="6" class="form-control" style="width:100%" id="select-share-persons" multiple></select>'
+              +'<small class="form-text text-muted">' + i18next.t("Select one or more recipients to update their access or remove them.") + '</small>'
+            +'</div>'
+            +'<div class="row">'
+              +'<div class="col-md-6">'
+                +'<div class="form-group mb-md-0">'
+                  +'<label class="small text-uppercase text-muted mb-2" for="person-group-rights">' + i18next.t("Set rights") + '</label>'
+                  +'<select name="person-group-Id" id="person-group-rights" class="form-control input-sm" style="width:100%" data-placeholder="text to place">'
+                    +'<option value="0">' + i18next.t("Select your rights") + ' -- </option>'
+                    +'<option value="1">' + i18next.t("Read only") + ' [R]</option>'
+                    +'<option value="2">' + i18next.t("Read and write") + ' [RW]</option>'
+                  +'</select>'
+                +'</div>'
+              +'</div>'
+              +'<div class="col-md-6">'
+                +'<div class="form-group mb-0">'
+                  +'<label class="small text-uppercase text-muted d-block mb-2">' + i18next.t("Notification") + '</label>'
+                  +'<div class="custom-control custom-checkbox pt-1">'
+                    +'<input id="sendEmail" type="checkbox" class="custom-control-input">'
+                    +'<label class="custom-control-label" for="sendEmail">' + i18next.t("Send email notification") + '</label>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            +'</div>'
+            +'<hr class="my-3">'
+            +'<div class="form-group mb-0">'
+              +'<label class="small text-uppercase text-muted mb-2" for="person-group-Id">' + i18next.t("Add people, families or groups") + '</label>'
+              +'<select name="person-group-Id" id="person-group-Id" class="form-control select2" style="width:100%"></select>'
+              +'<small class="form-text text-muted">' + i18next.t("Search by name to grant access to another person, a family or an entire group.") + '</small>'
+            +'</div>'
+          +'</div>';
+
+          var object = $('<div/>').html(frm_str).contents();
+
+        return object
+  }
+
+  function confirmRemoveSharedRecipients(noteId, button, state) {
+    const selectedRecipients = $('#select-share-persons :selected');
+
+    if (!selectedRecipients.length) {
+      showActionFeedback(i18next.t('Please select at least one recipient first.'), 'warning');
+      return;
+    }
+
+    openConfirmDialog({
+      title: i18next.t('Remove shared access'),
+      lead: i18next.t('Remove access for the selected recipients?'),
+      details: i18next.t('Only the selected recipients will be removed. The document will remain shared with any other recipients.'),
+      confirmLabel: i18next.t('Remove access'),
+      confirmClass: 'btn-warning',
+      cancelLabel: i18next.t('Keep access'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        selectedRecipients.each(function (i, sel) {
+          var personID = $(sel).val();
+
+          window.CRM.APIRequest({
+            method: 'POST',
+            path: 'sharedocument/deleteperson',
+            data: JSON.stringify({ "noteId": noteId, "personID": personID })
+          }, function (data) {
+            $("#select-share-persons option[value='" + personID + "']").remove();
+
+            if (data.count == 0) {
+              $(state).css('color', '#777');
+              $(button).data('shared', 0);
+            }
+
+            $("#person-group-Id").val("").trigger("change");
+          });
+        });
+      }
+    });
+  }
+
+  function confirmStopSharing(noteId, button, state, modal, onComplete) {
+    openConfirmDialog({
+      title: i18next.t('Stop sharing this document'),
+      lead: i18next.t('Stop sharing this document with everyone?'),
+      details: i18next.t('All current recipients will lose access immediately. The document itself will remain available to you.'),
+      confirmLabel: i18next.t('Stop sharing'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep sharing'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'sharedocument/cleardocument',
+          data: JSON.stringify({ "noteId": noteId })
+        }, function () {
+          addPersonsFromNotes(noteId);
+          $(state).css('color', '#777');
+          $(button).data('shared', 0);
+          modal.modal('hide');
+
+          if (typeof onComplete === 'function') {
+            onComplete();
+          }
+        });
+      }
+    });
+  }
+
+  // share your notes
+  window.CRM.addSharedButtonsActions = function (noteId,isShared,button,state,modal){
+     $("#person-group-Id").select2({
+        language: window.CRM.shortLocale,
+        minimumInputLength: 2,
+        placeholder: " -- "+i18next.t("Person or Family or Group")+" -- ",
+        allowClear: true, // This is for clear get the clear button if wanted
+        ajax: {
+            url: function (params){
+              return window.CRM.root + "/api/people/search/" + params.term;
+            },
+             headers: {
+                "Authorization": "Bearer " + window.CRM.jwtToken
+            },
+            dataType: 'json',
+            delay: 250,
+            data: "",
+            processResults: function (data, params) {
+              return {results: data};
+            },
+            cache: true
+        }
+      });
+
+     $("#person-group-rights").on('change', function() {
+       var rightAccess = $(this).val();
+       var deferreds = [];
+       var i = 0;
+
+       $('#select-share-persons :selected').each(function(i, sel){
+          var personID = $(sel).val();
+          var str = $(sel).text();
+
+          deferreds.push(
+            window.CRM.APIRequest({
+               method: 'POST',
+               path: 'sharedocument/setrights',
+               data: JSON.stringify({"noteId":noteId,"personID": personID,"rightAccess":rightAccess})
+            }, function(data) {
+              if (rightAccess == 1) {
+                res = str.replace(i18next.t("[👀 ✐]"), i18next.t("[👀  ]"));
+              } else {
+                res = str.replace(i18next.t("[👀  ]"), i18next.t("[👀 ✐]"));
+              }
+
+              var elt = [personID,res];
+              deferreds[i++] = elt;
+            })
+          );
+
+        });
+
+        $.when.apply($, deferreds).done(function(data) {
+         // all images are now prefetched
+         //addPersonsFromNotes(noteId);
+
+         deferreds.forEach(function(element) {
+           $('#select-share-persons option[value="'+element[0]+'"]').text(element[1]);
+         });
+
+         $("#person-group-rights option:first").attr('selected','selected');
+        });
+     });
+
+     $("#select-share-persons").on('change', function() {
+       $("#person-group-rights").val(0);
+     });
+
+
+     $("#person-group-Id").on("select2:select",function (e) {
+       var notification = ($("#sendEmail").is(':checked'))?1:0;
+
+       if (e.params.data.personID !== undefined) {
+           window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/addperson',
+                data: JSON.stringify({"noteId":noteId,"currentPersonID":window.CRM.currentPersonID,"personID": e.params.data.personID,"notification":notification})
+           }, function(data) {
+             addPersonsFromNotes(noteId);
+             $(state).css('color', 'green');
+             $(button).data('shared',1);
+           });
+        } else if (e.params.data.groupID !== undefined) {
+           window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/addgroup',
+                data: JSON.stringify({"noteId":noteId,"currentPersonID":window.CRM.currentPersonID,"groupID": e.params.data.groupID,"notification":notification})
+           }, function(data) {
+             addPersonsFromNotes(noteId);
+             $(state).css('color', 'green');
+             $(button).data('shared',1);
+           });
+        } else if (e.params.data.familyID !== undefined) {
+           window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/addfamily',
+                data: JSON.stringify({"noteId":noteId,"currentPersonID":window.CRM.currentPersonID,"familyID": e.params.data.familyID,"notification":notification})
+           }, function(data) {
+             addPersonsFromNotes(noteId);
+             $(state).css('color', 'green');
+             $(button).data('shared',1);
+           });
+        }
+     });
+
+     addPersonsFromNotes(noteId);
+     modal.modal('show');
+
+    // this will ensure that image and table can be focused
+    $(document).on('focusin', function(e) {e.stopImmediatePropagation();});  }
+
+  function openShareFilesWindow (event, button, state) {
+    var noteId = event.currentTarget.dataset.id;
+    var isShared = event.currentTarget.dataset.shared;
+
+    var modal = bootbox.dialog({
+       title: i18next.t("Share your Document"),
+       message: window.CRM.BootboxContentShareFiles(),
+       size:"large",
+       buttons: [
+        {
+         label: '<i class="fa fa-times"></i> ' + i18next.t("Delete"),
+         className: "btn btn-warning",
+         callback: function() {
+            confirmRemoveSharedRecipients(noteId, button, state);
+            return false;
+         }
+        },
+        {
+         label: '<i class="fa fa-stop-circle-o"></i> ' + i18next.t("Stop sharing"),
+         className: "btn btn-danger",
+         callback: function() {
+          confirmStopSharing(noteId, button, state, modal, function () {
+            window.CRM.reloadEDriveTable();
+          });
+          return false;
+         }
+        },
+        {
+         label: '<i class="fa fa-check"></i> ' + i18next.t("Ok"),
+         className: "btn btn-primary",
+         callback: function() {
+            window.CRM.reloadEDriveTable(function() {
+              uploadWindow.modal("hide");
+            });
+            return true;
+         }
+        },
+       ],
+       show: false,
+       onEscape: function() {
+          window.CRM.dataEDriveTable.ajax.reload(function(json) {
+            modal.modal("hide");
+            installDragAndDrop();
+          });
+       }
+     });
+
+    window.CRM.addSharedButtonsActions(noteId,isShared,button,state,modal);
+  }
+
+  $(".shareNote").on('click', function (event) {
+    var noteId = event.currentTarget.dataset.id;
+    var isShared = event.currentTarget.dataset.shared;
+
+    var button = $(this); //Assuming first tab is selected by default
+    var state = button.find('.fa-stack-2x');
+
+    var modal = bootbox.dialog({
+      title:i18next.t("Share your Document"),
+      message: window.CRM.BootboxContentShareFiles(),
+      size: "large",
+      buttons: [
+        {
+          label: '<i class="fas fa-times"></i> ' + i18next.t("Delete"),
+          className: "btn btn-warning",
+          callback: function () {
+            confirmRemoveSharedRecipients(noteId, button, state);
+            return false;
+          }
+        },
+        {
+          label: '<i class="far fa-stop-circle"></i> ' + i18next.t("Stop sharing"),
+          className: "btn btn-danger",
+          callback: function () {
+            confirmStopSharing(noteId, button, state, modal);
+            return false;
+          }
+        },
+        {
+          label: '<i class="fas fa-check"></i> ' + i18next.t("Ok"),
+          className: "btn btn-primary",
+          callback: function () {
+            modal.modal("hide");
+            return true;
+          }
+        },
+      ],
+      show: false,
+      onEscape: function () {
+        modal.modal("hide");
+      }
+    });
+
+    window.CRM.addSharedButtonsActions(noteId, isShared, button, state, modal);
+  });
+
+  // end of share notes
+
+  $(".filter-timeline").on('change', function () {
+    switch ($(this).val()) {
+      case 'shared':
+        $(".type-file").hide();
+        $(".icon-file").hide();
+        $(".type-note").hide();
+        $(".icon-note").hide();
+        $(".type-video").hide();
+        $(".icon-video").hide();
+        $(".type-audio").hide();
+        $(".icon-audio").hide();
+        $(".type-shared").show();
+        $(".icon-shared").show();
+        break;
+      case 'file':
+        $(".type-file").show();
+        $(".icon-file").show();
+        $(".type-shared").hide();
+        $(".icon-shared").hide();
+        $(".type-note").hide();
+        $(".icon-note").hide();
+        $(".type-video").hide();
+        $(".icon-video").hide();
+        $(".type-audio").hide();
+        $(".icon-audio").hide();
+        break;
+      case 'note':
+        $(".type-shared").hide();
+        $(".icon-shared").hide();
+        $(".type-file").hide();
+        $(".icon-file").hide();
+        $(".type-note").show();
+        $(".icon-note").show();
+        $(".type-video").hide();
+        $(".icon-video").hide();
+        $(".type-audio").hide();
+        $(".icon-audio").hide();
+        break;
+      case 'audio':
+        $(".type-shared").hide();
+        $(".icon-shared").hide();
+        $(".type-file").hide();
+        $(".icon-file").hide();
+        $(".type-note").hide();
+        $(".icon-note").hide();
+        $(".type-audio").show();
+        $(".icon-audio").show();
+        $(".type-video").hide();
+        $(".icon-video").hide();
+        break;
+      case 'video':
+        $(".type-shared").hide();
+        $(".icon-shared").hide();
+        $(".type-file").hide();
+        $(".icon-file").hide();
+        $(".type-note").hide();
+        $(".icon-note").hide();
+        $(".type-audio").hide();
+        $(".icon-audio").hide();
+        $(".type-video").show();
+        $(".icon-video").show();
+        break;
+      case 'all':
+        $(".type-shared").hide();
+        $(".icon-shared").hide();
+        $(".type-file").show();
+        $(".icon-file").show();
+        $(".type-note").show();
+        $(".icon-note").show();
+        $(".type-video").show();
+        $(".icon-video").show();
+        $(".type-audio").show();
+        $(".icon-audio").show();
+        break;
+    }
+
+  });
+
+  // end of note management
+
+  $("#input-person-properties").on("select2:select", function (event) {
+    const promptBox = $("#prompt-box");
+    promptBox.removeClass('form-group').html('');
+    const selected = $("#input-person-properties :selected");
+    const pro_prompt = selected.data('pro_prompt');
+    const pro_value = selected.data('pro_value');
+    if (pro_prompt) {
+      promptBox
+        .addClass('form-group')
+        .append(
+          $('<label class="small text-muted mb-1"></label>').html(pro_prompt)
+        )
+        .append(
+          $('<textarea rows="3" class="form-control property-value" name="PropertyValue"></textarea>').val(pro_value)
+        );
+    }
+
+  });
+
+  $("#input-person-properties").on("select2:clear", function () {
+    $("#prompt-box").removeClass('form-group').html('');
+  });
+
+  $('body').on('click', '.remove-property-btn', function (event) {
+    event.preventDefault();
+    var thisLink = $(this);
+  
+    openConfirmDialog({
+      title: i18next.t('Unassign property'),
+      lead: i18next.t('Remove this property from the current person?'),
+      details: i18next.t('The property value will be removed from this profile.'),
+      warning: i18next.t('This action cannot be undone.'),
+      confirmLabel: i18next.t('Remove property'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep property'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: 'DELETE',
+          path: 'properties/persons/unassign',
+          data: JSON.stringify({
+            PersonId: thisLink.data('person_id'),
+            PropertyId: thisLink.data('property_id')
+         })
+        }, function (data) {
+            if (data && data.success) {
+              window.CRM.dataPropertiesTable.ajax.reload();
+
+              if (data.count == 0) {
+                $("#properties-warning").show();
+                $("#properties-table").hide();
+              }
+            }
+        });
+      }
+    });
+  });
+
+  $('body').on('click', '.edit-property-btn', function (event) {
+    event.preventDefault();
+    var thisLink = $(this);
+    var person_id = thisLink.data('person_id');
+    var property_id = thisLink.data('property_id');
+    var property_name = thisLink.data('property_name');
+
+    openPromptDialog({
+      title: i18next.t('Edit property value'),
+      details: i18next.t('Update the value stored for this property on the current person profile.'),
+      inputType: 'textarea',
+      value: property_name,
+      confirmLabel: i18next.t('Save property'),
+      onSubmit: function (result) {
+        if (result) {
+          window.CRM.APIRequest({
+            method: 'POST',
+            path: 'properties/persons/assign',
+            data: JSON.stringify({ "PersonId": person_id, "PropertyId": property_id, "PropertyValue": result })
+          }, function (data) {
+            if (data && data.success) {
+              window.CRM.dataPropertiesTable.ajax.reload();
+            }
+          });
+        }
+      }
+    });
+  });
+
+  $('#edit-classification-btn').on('click', function (event) {
+    event.preventDefault();
+    var thisLink = $(this);
+    var personId = thisLink.data('person_id');
+    var classificationId = thisLink.data('classification_id');
+    var classificationRole = thisLink.data('classification_role');
+
+    window.CRM.APIRequest({
+      method: 'GET',
+      path: 'people/classifications/all'
+    }, function (data) {
+      if (data.Classifications.length) {
+        classifications = [{ text: classificationRole, value: '' }];
+        for (var i = 0; i < data.Classifications.length; i++) {
+          if (data.Classifications[i].OptionId == classificationId) {
+            continue;
+          }
+
+          classifications[classifications.length] = {
+            text: data.Classifications[i].OptionName,
+            value: data.Classifications[i].OptionId
+          };
+        }
+
+        openPromptDialog({
+          title: i18next.t('Change classification'),
+          details: i18next.t('Choose the classification that best matches this person profile.'),
+          inputType: 'select',
+          inputOptions: classifications,
+          confirmLabel: i18next.t('Update classification'),
+          onSubmit: function (result) {
+            if (result) {
+              window.CRM.APIRequest({
+                method: 'POST',
+                path: 'people/person/classification/assign',
+                data: JSON.stringify({ 
+                  personId: personId, 
+                  classId: result
+                })
+              }, function (data) {   
+                  if (data.success) {
+                    location.reload();
+                  }
+              });
+            }
+          }
+        });
+      }
+    });
+
+  });
+
+  $('#edit-role-btn').on('click', function (event) {
+    event.preventDefault();
+    var thisLink = $(this);
+    var personId = thisLink.data('person_id');
+    var familyRoleId = thisLink.data('family_role_id');
+    var familyRole = thisLink.data('family_role');
+
+    window.CRM.APIRequest({
+      method: 'GET',
+      path: 'roles/all'
+    }, function (data) {  
+        if (data.length) {
+          roles = [{ text: familyRole, value: '' }];
+          for (var i = 0; i < data.length; i++) {
+            if (data[i].OptionId == familyRoleId) {
+              continue;
+            }
+
+            roles[roles.length] = {
+              text: data[i].OptionName,
+              value: data[i].OptionId
+            };
+          }
+
+          openPromptDialog({
+            title: i18next.t('Change family role'),
+            details: i18next.t('Select the role this person should have inside the family record.'),
+            inputType: 'select',
+            inputOptions: roles,
+            confirmLabel: i18next.t('Update role'),
+            onSubmit: function (result) {
+              if (result) {
+                window.CRM.APIRequest({
+                  method: 'POST',
+                  path: 'roles/persons/assign',
+                  data: JSON.stringify({ 
+                    personId: personId,
+                    roleId: result 
+                  })
+                }, function (data) {                
+                      if (data.success) {
+                        location.reload();
+                      }
+                });
+              }
+            }
+          });
+        }
+    });
+
+  });
+
+  $(document).on("click", ".AddOneToPeopleCart", function () {
+    clickedButton = $(this);
+    window.CRM.cart.addPerson([clickedButton.data("onecartpersonid")], function () {
+      $(clickedButton).addClass("RemoveOneFromPeopleCart");
+      $(clickedButton).removeClass("AddOneToPeopleCart");
+      $('i', clickedButton).addClass("fa-times");
+      $('i', clickedButton).removeClass("fa-cart-plus");
+      text = $(clickedButton).find("span.cartActionDescription");
+      if (text) {
+        $(text).text(i18next.t("Remove from Cart"));
+      }
+    });
+  });
+
+  $(document).on("click", ".RemoveOneFromPeopleCart", function () {
+    clickedButton = $(this);
+    window.CRM.cart.removePerson([clickedButton.data("onecartpersonid")], function () {
+      $(clickedButton).addClass("AddOneToPeopleCart");
+      $(clickedButton).removeClass("RemoveOneFromPeopleCart");
+      $('i', clickedButton).removeClass("fa-times");
+      $('i', clickedButton).addClass("fa-cart-plus");
+      text = $(clickedButton).find("span.cartActionDescription");
+      if (text) {
+        $(text).text(i18next.t("Add to Cart"));
+      }
+    });
+  });
+
+  // newMessage event subscribers : Listener CRJSOM.js
+  $(document).on("updateCartMessage", updateButtons);
+
+  // newMessage event handler
+  function updateButtons(e) {
+    if (e.people.length == 0) {
+      $("#AddPersonToCart").addClass("AddOneToPeopleCart");
+      $("#AddPersonToCart").removeClass("RemoveOneFromPeopleCart");
+      $('i', "#AddPersonToCart").removeClass("fa-times");
+      $('i', "#AddPersonToCart").addClass("fa-cart-plus");
+      text = $("#AddPersonToCart").find("span.cartActionDescription")
+      if (text) {
+        $(text).text(i18next.t("Add to Cart"));
+      }
+    }
+  }
+
+  // end of newMessage event subscribers : Listener CRJSOM.js
+
+
+  // this part allows to render the dataTable responsive in Tab
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    $($.fn.dataTable.tables(true)).DataTable()
+      .columns.adjust()
+      .responsive.recalc();
+  });
+
+
+  assignedVolunteerTable = $("#assigned-volunteer-opps-table").DataTable({
+    ajax: {
+      url: window.CRM.root + "/api/persons/volunteers/" + window.CRM.currentPersonID,
+      type: 'POST',
+      contentType: "application/json",
+      dataSrc: "VolunteerOpportunities",
+      "beforeSend": function (xhr) {
+        xhr.setRequestHeader('Authorization',
+          "Bearer " + window.CRM.jwtToken
+        );
+      }
+    },
+    "language": {
+      "url": window.CRM.plugin.dataTable.language.url
+    },
+    "searching": false,
+    columns: [
+      {
+        width: 'auto',
+        title: i18next.t('Actions'),
+        data: 'Id',
+        className: 'text-center',
+        render: function (data, type, full, meta) {
+          return '<div class="btn-group btn-group-sm" role="group" aria-label="' + i18next.t('Volunteer actions') + '">' +
+            '<button type="button" class="btn btn-outline-danger delete-volunteerOpportunityId" title="' + i18next.t('Delete') + '" data-toggle="tooltip" data-volunteerOpportunityId="' + full.Id + '">' +
+            '<i class="far fa-trash-alt" aria-hidden="true"></i>' +
+            '</button>' +
+            '</div>';
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Name'),
+        data: 'Name',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Description'),
+        data: 'Description',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      },
+    ],
+    responsive: true,
+    createdRow: function (row, data, index) {
+      $(row).addClass("assignedVolunteerRow");
+    }
+  });
+
+  $(document).on("click", ".delete-volunteerOpportunityId", function () {
+    var volunteerOpportunityId = $(this).data("volunteeropportunityid");
+
+    openConfirmDialog({
+      title: i18next.t('Remove volunteer opportunity'),
+      lead: i18next.t('Remove this volunteer opportunity from the person?'),
+      details: i18next.t('The assignment will be removed from this profile only.'),
+      confirmLabel: i18next.t('Remove assignment'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep assignment'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'persons/volunteers/delete',
+          data: JSON.stringify({ "personId": window.CRM.currentPersonID, "volunteerOpportunityId": volunteerOpportunityId })
+        }, function (data) {
+          assignedVolunteerTable.ajax.reload();
+
+          if (data && data.success) {
+            assignedVolunteerTable.ajax.reload();
+            if (data.count == 0) {
+              $("#volunter-warning").show();
+              $("#volunter-table").hide();
+            }
+          }
+        });
+      }
+    });
+  });
+
+  $(document).on("click", ".VolunteerOpportunityAssign", function (event) {
+    event.preventDefault();
+    const assignButton = $(this);
+    const volIDs = $('#input-volunteer-opportunities').val();
+
+    if (!volIDs || volIDs.length === 0) {
+      showActionFeedback(i18next.t('Please select at least one volunteer opportunity first.'), 'warning');
+      return;
+    }
+
+    setButtonBusy(assignButton, true, {
+      loadingHtml: '<i class="fas fa-spinner fa-spin mr-1"></i>' + (assignButton.data('loading-text') || i18next.t('Assigning...')),
+      defaultHtml: '<i class="fas fa-plus-circle mr-1"></i>' + (assignButton.data('default-text') || i18next.t('Assign'))
+    });
+
+    const requests = volIDs.map(function (volID) {
+      return new Promise(function (resolve) {
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'persons/volunteers/add',
+          data: JSON.stringify({ "personId": window.CRM.currentPersonID, "volID": volID })
+        }, function (data) {
+          resolve(data);
+        });
+      });
+    });
+
+    Promise.all(requests).then(function (results) {
+      assignedVolunteerTable.ajax.reload();
+
+      const hasSuccess = results.some(function (data) {
+        return data && data.success;
+      });
+      const hasFailure = results.some(function (data) {
+        return !data || data.success === false;
+      });
+
+      if (hasSuccess) {
+        $("#input-volunteer-opportunities").val('').trigger('change');
+        $("#volunter-warning").hide();
+        $("#volunter-table").show();
+      }
+
+      if (hasFailure && !hasSuccess) {
+        showActionFeedback(i18next.t('Unable to assign the selected volunteer opportunities.'));
+      } else if (hasFailure) {
+        showActionFeedback(i18next.t('Some volunteer opportunities could not be assigned.'), 'warning');
+      }
+    }).finally(function () {
+      setButtonBusy(assignButton, false, {
+        defaultHtml: '<i class="fas fa-plus-circle mr-1"></i>' + (assignButton.data('default-text') || i18next.t('Assign'))
+      });
+    });
+  });
+
+
+  automaticPaymentsTable = $("#automaticPaymentsTable").DataTable({
+    ajax: {
+      url: window.CRM.root + "/api/payments/family",
+      type: 'POST',
+      contentType: "application/json",
+      "beforeSend": function (xhr) {
+        xhr.setRequestHeader('Authorization',
+          "Bearer " + window.CRM.jwtToken
+        );
+      },
+      data: function (d) {
+        return JSON.stringify({ "famId": window.CRM.currentFamily });
+      },
+      dataSrc: "AutoPayments"
+    },
+    "language": {
+      "url": window.CRM.plugin.dataTable.language.url
+    },
+    columns: [
+      {
+        width: 'auto',
+        title: i18next.t('Type'),
+        data: 'EnableBankDraft',
+        render: function (data, type, full, meta) {
+          if (full.EnableBankDraft) {
+            return i18next.t('Bank Draft');
+          } else if (full.EnableCreditCard) {
+            return i18next.t('Credit Card');
+          } else {
+            return i18next.t('Disabled');
+          }
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Next payment date'),
+        data: 'NextPayDate',
+        render: function (data, type, full, meta) {
+          var fmt = window.CRM.datePickerformat.toUpperCase();
+
+          return moment(data).format(fmt);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Amount'),
+        data: 'Amount',
+        render: function (data, type, full, meta) {
+          return Number(data).toLocaleString(window.CRM.lang);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Interval (months)'),
+        data: 'Interval',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Fund'),
+        data: 'fundName',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Action'),
+        data: 'Id',
+        render: function (data, type, full, meta) {
+          return '<a href="' + window.CRM.root + '/v2/deposit/autopayment/editor/' + data + '/' + full.Familyid + '/v2-people-person-view-' + window.CRM.currentPersonID + '"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>'
+            + '&nbsp;&nbsp;&nbsp;<a class="delete-payment" data-id="' + data + '"><i class="far fa-trash-alt" aria-hidden="true" style="color:red"></i></a>';
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Updated By'),
+        data: 'DateLastEdited',
+        render: function (data, type, full, meta) {
+          var fmt = window.CRM.datePickerformat.toUpperCase();
+
+          if (window.CRM.timeEnglish == true) {
+            time_format = 'h:mm A';
+          } else {
+            time_format = 'H:mm';
+          }
+
+          return moment(data).format(fmt + ' ' + time_format);;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Updated By'),
+        data: 'EnteredFirstName',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      }
+    ],
+    responsive: true,
+    createdRow: function (row, data, index) {
+      $(row).addClass("paymentRow");
+    }
+  });
+
+
+  $(document).on("click", ".delete-payment", function () {
+    clickedButton = $(this);
+    var autoPaymentId = clickedButton.data("id");
+
+    openConfirmDialog({
+      title: i18next.t('Delete automatic payment'),
+      lead: i18next.t('Delete this automatic payment setup?'),
+      details: i18next.t('Recurring payments linked to this setup will stop after deletion.'),
+      warning: i18next.t('This action cannot be undone.'),
+      confirmLabel: i18next.t('Delete payment'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep payment'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'payments/delete',
+          data: JSON.stringify({ "famId": window.CRM.currentFamily, "paymentId": autoPaymentId })
+        }, function (data) {
+          automaticPaymentsTable.ajax.reload();
+        });
+      }
+    });
+  });
+
+
+  pledgePaymentTable = $("#pledgePaymentTable").DataTable({
+    ajax: {
+      url: window.CRM.root + "/api/pledges/family",
+      type: 'POST',
+      contentType: "application/json",
+      "beforeSend": function (xhr) {
+        xhr.setRequestHeader('Authorization',
+          "Bearer " + window.CRM.jwtToken
+        );
+      },
+      data: function (d) {
+        return JSON.stringify({ "famId": window.CRM.currentFamily });
+      },
+      dataSrc: "Pledges"
+    },
+    "language": {
+      "url": window.CRM.plugin.dataTable.language.url
+    },
+    columns: [
+      {
+        width: 'auto',
+        title: i18next.t('Pledge or Payment'),
+        data: 'Pledgeorpayment',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Dep ID') + " " + i18next.t('Closed'),
+        data: 'Depid',
+        render: function (data, type, full, meta) {
+          return data + "&nbsp;&nbsp;&nbsp;" + (full.Closed == 1 ? '<div style="color:red;display: inline-block;">' + i18next.t('Yes') + '</div>' : '<div style="color:green;display: inline-block;">' + i18next.t('No') + '</div>');
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Fund'),
+        data: 'fundName',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Fiscal Year'),
+        data: 'Fyid',
+        render: function (data, type, full, meta) {
+          return data + 1996;//MakeFYString dans Include
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Date'),
+        data: 'Date',
+        render: function (data, type, full, meta) {
+          var fmt = window.CRM.datePickerformat.toUpperCase();
+
+          return moment(data).format(fmt);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Amount'),
+        data: 'Amount',
+        render: function (data, type, full, meta) {
+          return Number(data).toLocaleString(window.CRM.lang);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('NonDeductible'),
+        data: 'Nondeductible',
+        render: function (data, type, full, meta) {
+          return data;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Schedule'),
+        data: 'Schedule',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Method'),
+        data: 'Method',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('CHECK') + " #",
+        data: 'Checkno',
+        render: function (data, type, full, meta) {
+          if (full.Method == "CHECK")
+            return i18next.t(data);
+          else
+            return i18next.t('None');
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Comment'),
+        data: 'Comment',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      },
+
+      {
+        width: 'auto',
+        title: i18next.t('Action'),
+        data: 'Id',
+        render: function (data, type, full, meta) {
+          var ret = '<a class="" href="' + window.CRM.root + '/v2/deposit/pledge/editor/GroupKey/' + full.Groupkey + '/v2-people-person-view-' + window.CRM.currentPersonID + '"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>';
+
+          if (full.Closed != "1") {
+            ret += '&nbsp;&nbsp;&nbsp;<a class="delete-pledge" data-id="' + data + '"><i class="far fa-trash-alt" aria-hidden="true" style="color:red"></i></a>';
+          }
+
+          return ret;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Date Updated'),
+        data: 'Datelastedited',
+        render: function (data, type, full, meta) {
+          var fmt = window.CRM.datePickerformat.toUpperCase();
+          return moment(data).format(fmt);
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Updated By'),
+        data: 'EnteredFirstName',
+        render: function (data, type, full, meta) {
+          return data + " " + full.EnteredLastName;
+        }
+      },
+      {
+        width: 'auto',
+        title: i18next.t('Donations/eGives Moved by'),
+        data: 'MoveDonationsComment',
+        render: function (data, type, full, meta) {
+          return i18next.t(data);
+        }
+      }
+    ],
+    responsive: true,
+    createdRow: function (row, data, index) {
+      $(row).addClass("paymentRow");
+    }
+  });
+
+  $(document).on("click", ".delete-pledge", function () {
+    clickedButton = $(this);
+    var paymentId = clickedButton.data("id");
+
+    openConfirmDialog({
+      title: i18next.t('Delete pledge or payment'),
+      lead: i18next.t('Delete this pledge or payment entry?'),
+      details: i18next.t('This entry will be removed from the contribution history for this family.'),
+      warning: i18next.t('This action cannot be undone.'),
+      confirmLabel: i18next.t('Delete entry'),
+      confirmClass: 'btn-danger',
+      cancelLabel: i18next.t('Keep entry'),
+      cancelClass: 'btn-primary',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: 'POST',
+          path: 'pledges/delete',
+          data: JSON.stringify({ "famId": window.CRM.currentFamily, "paymentId": paymentId })
+        }, function (data) {
+          pledgePaymentTable.ajax.reload();
+        });
+      }
+    });
+  });
+
+  $('#ShowPledges').on('change', function () {
+    applyFilter();
+  });
+
+  $('#ShowPayments').on('change', function () {
+    applyFilter();
+  });
+
+  $("#date-picker-period").on('change', function () {
+    alert($('#date-picker-period').val());
+  });
+
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+    refreshVisibleTables();
+  });
+
+  /* Custom filtering function which will search data in column four between two values */
+  $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+    if (settings.nTable.id == "automaticPaymentsTable" || settings.nTable.id == "edrive-table") {
+      return true;
+    }
+
+    var fmt = window.CRM.datePickerformat.toUpperCase();
+
+    var min = moment($('#Min').val(), fmt);
+    var max = moment($('#Max').val(), fmt);
+    var age = moment(data[4], fmt);
+
+    if ((isNaN(min) && isNaN(max)) ||
+      (isNaN(min) && age <= max) ||
+      (min <= age && isNaN(max)) ||
+      (min <= age && age <= max)) {
+      return true;
+    }
+    return false;
+  });
+
+  $("#Min").on('change', function () {
+    pledgePaymentTable.draw();
+    var fmt = window.CRM.datePickerformat.toUpperCase();
+
+    var min = moment($(this).val(), fmt).format('YYYY-MM-DD');
+
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'users/showsince',
+      data: JSON.stringify({ "date": min })
+    }, function (data) {
+    });
+  });
+
+  $("#Max").on('change', function () {
+    pledgePaymentTable.draw();
+    var fmt = window.CRM.datePickerformat.toUpperCase();
+
+    var max = moment($(this).val(), fmt).format('YYYY-MM-DD');
+
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'users/showto',
+      data: JSON.stringify({ "date": max })
+    }, function (data) {
+    });
+  });
+
+  $("#verifyURL").on('click', function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'persons/verify/url',
+      data: JSON.stringify({ "perId": window.CRM.currentPersonID })
+    }, function (data) {
+      $('#confirm-verify').modal('hide');
+      openInfoDialog({
+        title: i18next.t("Verification URL"),
+        lead: i18next.t('Share this secure verification link with the person.'),
+        details: i18next.t("Password") + ': <span class="font-weight-bold">' + data.password + '</span>',
+        content: '<div class="mt-2"><a href="' + window.CRM.root + '/' + data.url + '" target="_blank">' + window.CRM.root + '/' + data.url + '</a></div>'
+      });
+    });
+  });
+
+  $("#verifyNow").on('click', function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'persons/verify/' + window.CRM.currentPersonID + '/now',      
+    }, function (data) {
+        $('#confirm-verify').modal('hide');
+        if (data.status == 1) {
+          location.reload();
+        } else {
+          window.CRM.showGlobalMessage(i18next.t("Failed to add verification"), "danger")
+        }
+      });
+  });
+
+  $("#verifyDownloadPDF").on('click', function () {
+    location.href = window.CRM.root + '/Reports/ConfirmReport.php?personId=' + window.CRM.currentPersonID;
+    $('#confirm-verify').modal('hide');
+  });
+
+  $("#onlineVerify").on('click', function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'persons/' + window.CRM.currentPersonID + '/verify'
+    }, function (data) {
+        $('#confirm-verify').modal('hide');
+        if (data.status == 1) {
+          window.CRM.showGlobalMessage(i18next.t("Verification email sent"), "success")
+        } else {
+          window.CRM.showGlobalMessage(i18next.t("Failed to send verification email"), "danger")
+        }
+      });
+  });
+
+  $("#onlineVerifyPDF").on('click', function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'persons/' + window.CRM.currentPersonID + '/verifyPDF'
+    }, function (data) {
+        $('#confirm-verify').modal('hide');
+        if (data.status == 1) {
+          window.CRM.showGlobalMessage(i18next.t("Verification email sent") + ' (PDF)', "success")
+        } else {
+          window.CRM.showGlobalMessage(i18next.t("Failed to send verification email") + ' (PDF)', "danger")
+        }
+      });
+  });
+
+  function applyFilter() {
+    var showPledges = $('#ShowPledges').prop('checked');
+    var showPayments = $('#ShowPayments').prop('checked');
+
+    if (showPledges && showPayments) {
+      pledgePaymentTable.column(0).search(i18next.t("Pledge") + "|" + i18next.t("Payment"), true, false).draw();
+    } else if (showPledges) {
+      pledgePaymentTable.column(0).search(i18next.t("Pledge")).draw();
+    } else if (showPayments) {
+      pledgePaymentTable.column(0).search(i18next.t("Payment")).draw();
+    }
+  }
+
+  applyFilter();
+
+  window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {    
+      let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (matched) {
+        $('.btn-box-tool').addClass('dark-mode');
+      } else {
+        $('.btn-box-tool').removeClass('dark-mode');
+      }
+  }); 
+  // --- Sacraments (fork) ---
+  var showSacramentError = function (msg) {
+    if (typeof showActionFeedback === 'function') {
+      showActionFeedback(msg);
+    } else {
+      console.error(msg);
+      alert(msg);
+    }
+  };
+
+  $('#sacraments-list').on('click', '.remove-sacrament', function () {
+    var id = $(this).data('sacrament-id');
+    $.ajax({
+      url: window.CRM.root + '/api/sacraments/' + id,
+      method: 'DELETE',
+      headers: { Authorization: 'Bearer ' + window.CRM.jwtToken }
+    }).done(function () { location.reload(); });
+  });
+
+  var sacramentTypeToAdd = null;
+  $('.add-sacrament').on('click', function (e) {
+    e.preventDefault();
+    sacramentTypeToAdd = $(this).data('type');
+    $('#sacrament-date-form').removeClass('d-none');
+  });
+  $('#sacrament-date-save').on('click', function () {
+    var dateVal = $('#sacrament-date-input').val() || '';
+    var personId = $('#sacraments-list').data('person-id');
+    $.ajax({
+      url: window.CRM.root + '/api/sacraments/person/' + personId,
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + window.CRM.jwtToken },
+      contentType: 'application/json',
+      data: JSON.stringify({ type: sacramentTypeToAdd, date: dateVal })
+    }).done(function () { location.reload(); })
+      .fail(function (x) { showSacramentError(x.responseJSON ? x.responseJSON.message : i18next.t('Error')); });
+  });
+
+});

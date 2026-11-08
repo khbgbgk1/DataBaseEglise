@@ -1,0 +1,290 @@
+<?php
+
+//
+//  This code is under copyright not under MIT Licence
+//  copyright   : 2021 Philippe Logel all right reserved not MIT licence
+//                This code can't be included in another software
+//
+//  Updated : 2021/04/06
+//
+
+namespace EcclesiaCRM\APIControllers;
+
+use Psr\Container\ContainerInterface;
+use Slim\Http\Response;
+use Slim\Http\ServerRequest;
+
+
+use EcclesiaCRM\PledgeQuery;
+use EcclesiaCRM\AutoPaymentQuery;
+use EcclesiaCRM\utils\MiscUtils;
+use EcclesiaCRM\DepositQuery;
+use EcclesiaCRM\SessionUser;
+
+
+class FinancePaymentController
+{
+    private $container;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
+    public function getPayment (ServerRequest $request, Response $response, array $args): Response {
+        if ( SessionUser::getUser()->isFinanceEnabled() and array_key_exists('id', $args) ) {
+            $id = $args['id'];
+
+            $FinancialService = $this->container->get('FinancialService');
+            return $response->write($FinancialService->getPaymentJSON($FinancialService->getPayments($id)));
+        }
+        return $response->withStatus(401);
+    }
+
+    public function getSubmitOrPayement (ServerRequest $request, Response $response, array $args): Response {
+        $payment = $request->getParsedBody();
+        if ( SessionUser::getUser()->isFinanceEnabled() ) {
+            $FinancialService = $this->container->get('FinancialService');
+            return $response->write(json_encode(['payment' => $FinancialService->submitPledgeOrPayment($payment)]));
+        }
+        return $response->withStatus(401);
+    }
+
+    public function deletePaymentByGroupKey (ServerRequest $request, Response $response, array $args): Response {
+        $payments = (object) $request->getParsedBody();
+
+        if ( SessionUser::getUser()->isFinanceEnabled() and isset($payments->Groupkey) ) {
+            $groupKey = $payments->Groupkey;
+            $FinancialService = $this->container->get('FinancialService');
+            $FinancialService->deletePayment($groupKey);
+
+            return $response->withJson(['status' => 'success']);
+        }
+
+        return $response->withJson(['status' => 'failed']);
+    }
+
+
+    public function getAllPayementsForFamily(ServerRequest $request, Response $response, array $args): Response
+    {
+        $payments = (object)$request->getParsedBody();
+
+        if ( SessionUser::getUser()->isFinanceEnabled() and isset($payments->famId) ) {
+
+            $AutoPayments = AutoPaymentQuery::create()
+                ->leftJoinPerson()
+                ->withColumn('Person.FirstName', 'EnteredFirstName')
+                ->withColumn('Person.LastName', 'EnteredLastName')
+                ->withColumn('Person.FirstName', 'EnteredFirstName')
+                ->withColumn('Person.LastName', 'EnteredLastName')
+                ->leftJoinDonationFund()
+                ->withColumn('DonationFund.Name', 'fundName')
+                ->orderByNextPayDate()
+                ->findByFamilyid($payments->famId);
+
+            return $response->write($AutoPayments->toJSON());
+        }
+
+        return $response->withStatus(401);
+    }
+
+    public function getAutoPaymentInfo(ServerRequest $request, Response $response, array $args): Response
+    {
+        $payments = (object)$request->getParsedBody();
+
+        if (SessionUser::getUser()->isFinanceEnabled() and isset ($payments->autID)) {
+            $AutoPayments = AutoPaymentQuery::create()
+                ->leftJoinFamily()
+                ->findOneById($payments->autID);
+
+            return $response->write($AutoPayments->toJSON());
+        }
+
+        return $response->withJson(['success' => false]);
+    }
+
+    public function getAllPayementsForFamilies(ServerRequest $request, Response $response, array $args): Response
+    {
+        $autoPay = (object)$request->getParsedBody();
+
+        if (!( SessionUser::getUser()->isFinanceEnabled() and isset($autoPay->famId) )) {
+            return $response->withStatus(401);
+        }
+
+        if ($autoPay->type == 'CreditCard') {
+            $autoPayements = AutoPaymentQuery::Create()->filterByEnableCreditCard(true)->findByFamilyid($autoPay->famId);
+        } else if ($autoPay->type == 'BankDraft') {
+            $autoPayements = AutoPaymentQuery::Create()->filterByEnableBankDraft(true)->findByFamilyid($autoPay->famId);
+        } else {
+            $autoPayements = AutoPaymentQuery::Create()->findByFamilyid($autoPay->famId);
+        }
+
+        $result = [];
+
+        foreach ($autoPayements as $autoPayement) {
+            if ($autoPayement->getCreditCard() != '') {
+                $showStr = gettext('Credit card') . " : " . mb_substr($autoPayement->getCreditCard(), strlen($autoPayement->getCreditCard()) - 4, 4) . "....";
+            } else {
+                $showStr = gettext("Bank account") . " : " . $autoPayement->getBankName() . ' ' . $autoPayement->getRoute() . ' ' . $autoPayement->getAccount();
+            }
+
+            $elt = ['authID' => $autoPayement->getId(),
+                'showStr' => $showStr];
+
+            array_push($result, $elt);
+        }
+
+        return $response->withJSON($result);
+    }
+
+    public function deletePaymentForFamily(ServerRequest $request, Response $response, array $args): Response
+    {
+        $payments = (object)$request->getParsedBody();
+
+        if ( !(SessionUser::getUser()->isFinanceEnabled() and isset($payments->famId) and isset($payments->paymentId) ) ) {
+            return $response->withStatus(401);
+        }
+
+        $AutoPayment = AutoPaymentQuery::create()
+            ->filterByFamilyid($payments->famId)
+            ->findOneById($payments->paymentId);
+
+        if (!empty($AutoPayment)) {
+            $AutoPayment->delete();
+        }
+
+        return $response->withJson(['status' => "OK"]);
+    }
+
+    public function deleteAutoPayment(ServerRequest $request, Response $response, array $args): Response
+    {
+        if (!( SessionUser::getUser()->isFinanceEnabled() and array_key_exists('authID', $args) )) {
+            return $response->withStatus(401);
+        }
+
+        $AutoPayment = AutoPaymentQuery::create()
+            ->findOneById($args['authID']);
+
+        if (!empty($AutoPayment)) {
+            $AutoPayment->delete();
+        }
+
+        return $response->withJson(['status' => "OK"]);
+    }
+
+    public function invalidatePledge(ServerRequest $request, Response $response, array $args): Response
+    {
+        $payments = (object)$request->getParsedBody();
+
+        if (!(SessionUser::getUser()->isFinanceEnabled() and isset($payment->Id) )) {
+            return $response->withStatus(401);
+        }
+
+        foreach ($payments->data as $payment) {
+            $pledge = PledgeQuery::Create()->findOneById($payment->Id);
+            if (!empty($pledge)) {
+                $pledge->setPledgeorpayment('Pledge');
+                $pledge->save();
+            }
+        }
+
+        return $response->withJson(['status' => "OK"]);
+    }
+
+    public function validatePledge(ServerRequest $request, Response $response, array $args): Response
+    {
+        $payments = (object)$request->getParsedBody();
+
+        if (!(SessionUser::getUser()->isFinanceEnabled() and isset($payment->Id) )) {
+            return $response->withStatus(401);
+        }
+
+        foreach ($payments->data as $payment) {
+            $pledge = PledgeQuery::Create()->findOneById($payment->Id);
+            if (!empty($pledge)) {
+                $pledge->setPledgeorpayment('Payment');
+                $pledge->save();
+            }
+        }
+
+        return $response->withJson(['status' => "OK"]);
+    }
+
+    public function getDepositSlipChartsArrays(ServerRequest $request, Response $response, array $args): Response
+    {
+        $params = (object)$request->getParsedBody();
+
+        if (!(SessionUser::getUser()->isFinanceEnabled() and isset($params->depositSlipID) )) {
+            return $response->withStatus(401);
+        }
+
+        $thisDeposit = DepositQuery::create()->findOneById($params->depositSlipID);
+
+        $funds = $thisDeposit->getFundTotals();
+
+        $fundLabels = [];
+        $fundDatas = [];
+        $fundBackgroundColor = [];
+        $fundborderColor = [];
+        foreach ($funds as $tmpfund) {
+            $fundLabels[] = $tmpfund['Name'];
+            $fundDatas[] = $tmpfund['Total'];
+            $fundBackgroundColor[] = '#' . MiscUtils::random_color();
+            $fundborderColor[] = '#' . MiscUtils::random_color();
+        }
+
+        $funddatasets = new \StdClass();
+
+        $funddatasets->label = '# of Votes';
+        $funddatasets->data = $fundDatas;
+        $funddatasets->backgroundColor = $fundBackgroundColor;
+        $funddatasets->borderColor = $fundborderColor;
+        $funddatasets->borderWidth = 1;
+
+
+        $fund = new \StdClass();
+
+        $fund->datasets = [];
+        $fund->datasets[] = $funddatasets;
+        $fund->labels = $fundLabels;
+
+
+        // the pledgesDatas
+        $pledgeTypeData = [];
+        $t1 = new \StdClass();
+        $t1->value = $thisDeposit->getTotalamount() ? $thisDeposit->getTotalCash() : '0';
+        $t1->countCash = $thisDeposit->getCountCash();
+        $t1->color = '#197A05';
+        $t1->highlight = '#4AFF23';
+        $t1->label = gettext("Cash");
+        array_push($pledgeTypeData, $t1);
+
+        $t1 = new \StdClass();
+        $t1->value = $thisDeposit->getTotalamount() ? $thisDeposit->getTotalChecks() : '0';
+        $t1->countChecks = $thisDeposit->getCountChecks();
+        $t1->color = '#003399';
+        $t1->highlight = '#3366ff';
+        $t1->label = gettext("Checks");
+        array_push($pledgeTypeData, $t1);
+
+        // the pledges
+        $pledgedatasets = new \StdClass();
+
+        $pledgedatasets->label = '# of Votes';
+        $pledgedatasets->data = [$thisDeposit->getTotalamount() ? $thisDeposit->getTotalCash() : '0', $thisDeposit->getTotalamount() ? $thisDeposit->getTotalChecks() : '0'];
+        $pledgedatasets->backgroundColor = ['#197A05', '#003399'];
+        $pledgedatasets->borderColor = ['#4AFF23', '#3366ff'];
+        $pledgedatasets->borderWidth = 1;
+
+
+        $pledge = new \StdClass();
+
+        $pledge->datasets = [];
+        $pledge->datasets[] = $pledgedatasets;
+        $pledge->labels = [gettext("Cash"), gettext("Checks")];
+
+
+        // now the json
+        return $response->withJson(['status' => "OK", 'pledgeData' => $pledge, 'pledgeTypeData' => $pledgeTypeData, 'fundData' => $fund]);
+    }
+}

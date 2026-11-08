@@ -1,0 +1,156 @@
+<?php
+
+
+namespace EcclesiaCRM\Search;
+
+use EcclesiaCRM\dto\Cart;
+use EcclesiaCRM\GroupQuery;
+use EcclesiaCRM\Person2group2roleP2g2rQuery;
+use EcclesiaCRM\Search\BaseSearchRes;
+use EcclesiaCRM\dto\SystemConfig;
+use EcclesiaCRM\SessionUser;
+use EcclesiaCRM\Utils\LoggerUtils;
+use Propel\Runtime\ActiveQuery\Criteria;
+use EcclesiaCRM\dto\SystemURLs;
+use EcclesiaCRM\Map\Record2propertyR2pTableMap;
+use EcclesiaCRM\Map\PropertyTableMap;
+use EcclesiaCRM\Map\PropertyTypeTableMap;
+use EcclesiaCRM\Map\GroupTableMap;
+
+
+
+class GroupPropsSearchRes extends BaseSearchRes
+{
+    public function __construct($global = false)
+    {
+        $this->name = _('Groups Properties');
+        parent::__construct($global, 'Groups Properties');
+    }
+
+    public function allowed (): bool
+    {
+        return SessionUser::getUser()->isManageGroupsEnabled();
+    }
+
+    public function buildSearch(string $qry)
+    {
+        if (SystemConfig::getBooleanValue("bSearchIncludeGroups")) {
+            try {
+                $currentUser = SessionUser::getUser();
+                $shouldShowCart = $currentUser->isShowCartEnabled();
+                $rootPath = SystemURLs::getRootPath();
+                $quickSearch = $this->isQuickSearch();
+                $groupsInCart = $shouldShowCart ? array_fill_keys(Cart::GroupsInCart(), true) : [];
+                $groups = GroupQuery::create();
+
+                if ($quickSearch) {
+                    $groups->limit(SystemConfig::getValue("iSearchIncludeGroupsMax"));
+                }
+
+                $groups->addJoin(GroupTableMap::COL_GRP_ID, Record2propertyR2pTableMap::COL_R2P_RECORD_ID, Criteria::LEFT_JOIN)
+                    ->addJoin(Record2propertyR2pTableMap::COL_R2P_PRO_ID, PropertyTableMap::COL_PRO_ID, Criteria::LEFT_JOIN)
+                    ->addJoin(PropertyTableMap::COL_PRO_PRT_ID, PropertyTypeTableMap::COL_PRT_ID, Criteria::LEFT_JOIN)
+                    ->addAsColumn('ProPrtId', PropertyTableMap::COL_PRO_PRT_ID)
+                    ->addAsColumn('ProName', PropertyTableMap::COL_PRO_NAME)
+                    ->addAsColumn('ProValue', Record2propertyR2pTableMap::COL_R2P_VALUE)
+                    ->addAsColumn('ProDesc', PropertyTableMap::COL_PRO_DESCRIPTION)
+                    ->addAsColumn('ProPrompt', PropertyTableMap::COL_PRO_PROMPT)
+                    //->addAsColumn('ProTypeName', PropertyTypeTableMap::COL_PRT_NAME)
+                    //->addAsColumn('ProTypeDesc', PropertyTypeTableMap::COL_PRT_DESCRIPTION)
+                    //->addAsColumn('ProTypeName', PropertyTypeTableMap::COL_PRT_NAME)
+                    ->where(PropertyTableMap::COL_PRO_CLASS . "='g' AND (" . PropertyTableMap::COL_PRO_NAME . " LIKE '%".$qry."%' OR " . Record2propertyR2pTableMap::COL_R2P_VALUE . " LIKE '%".$qry."%' )");
+
+
+                $groups = $groups->find();
+                
+
+                if ( $groups->count() > 0 ) {
+                    $id = 1;
+                    $membersByGroupId = [];
+
+                    if (!$quickSearch) {
+                        $groupIds = [];
+
+                        foreach ($groups as $group) {
+                            $groupIds[] = $group->getId();
+                        }
+
+                        if (!empty($groupIds)) {
+                            $members = Person2group2roleP2g2rQuery::create()
+                                ->filterByGroupId($groupIds, Criteria::IN)
+                                ->find();
+
+                            foreach ($members as $member) {
+                                $membersByGroupId[$member->getGroupId()][] = $member->getPersonId();
+                            }
+                        }
+                    }
+
+                    foreach ($groups as $group) {
+                        $groupId = $group->getId();
+
+                        if ($quickSearch) {
+                            $elt = ['id' => 'group-props-' . $id++,
+                                'text' => $group->getName(),
+                                'uri' => "/v2/group/" . $groupId . "/view"];
+                        } else  {
+                            $res_members = $membersByGroupId[$groupId] ?? [];
+                            $inCart = isset($groupsInCart[$groupId]);
+
+                            $res = $this->buildActionButtons([
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => $rootPath . '/v2/group/editor/' . $groupId,
+                                    'icon' => '<i class="fas fa-pencil-alt"></i>',
+                                    'classes' => 'btn btn-sm btn-outline-primary',
+                                    'label' => '',
+                                    'datas' => ['toggle' => 'tooltip', 'placement' => 'top', 'title' => _('Edit')]
+                                ],
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => $rootPath . '/v2/group/' . $groupId . '/view',
+                                    'icon' => '<i class="fas fa-search-plus"></i>',
+                                    'classes' => 'btn btn-sm btn-outline-secondary',
+                                    'label' => '',
+                                    'tooltip' => ['toggle' => 'tooltip', 'placement' => 'top', 'title' => _('View')]
+                                ],
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => '',
+                                    'icon' => (!$inCart ? '<i class="fas fa-cart-plus fa-inverse"></i>' : '<i class="fas fa-times"></i>'),
+                                    'classes' => 'btn btn-sm btn-primary' . ($inCart ? ' RemoveFromGroupCart' : ' AddToGroupCart'),
+                                    'label' => '',
+                                    'datas' => ['cartgroupid' => $groupId, 'toggle' => 'tooltip', 'placement' => 'top', 'title' => (!$inCart ? _('Add to Cart') : _('Remove from Cart'))]
+                                ]
+                            ]); 
+                            
+                            $elt = [
+                                "id" => $groupId,
+                                "img" => '<i class="fas fa-users fa-2x"></i>',
+                                "searchresult" => '<a href="'.$rootPath.'/v2/group/'.$groupId.'/view" data-toggle="tooltip" data-placement="top" title="' . _('Edit') . '">'.$group->getName().'</a>',
+                                "address" => "",
+                                "type" => " "._($this->getGlobalSearchType()),
+                                "realType" => $this->getGlobalSearchType(),
+                                "Gender" => "",
+                                "Classification" => "",
+                                "ProNames" => "",
+                                "FamilyRole" => "",
+                                "members" => $res_members,
+                                "actions" => $res
+                            ];
+                        }
+
+                        array_push($this->results, $elt);
+                    }
+                }
+            } catch (\Exception $e) {
+                LoggerUtils::getAppLogger()->warn($e->getMessage());
+            }
+        }
+    }
+}
+
+

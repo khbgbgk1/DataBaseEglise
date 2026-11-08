@@ -1,0 +1,2457 @@
+/*
+ * EcclesiaCRM JavaScript Object Model Initialization Script
+ */
+
+window.CRM.APIRequest = function (options, callback, callbackError) {
+  if (!options.method) {
+    options.method = "GET"
+  }
+
+  if (!options.ContentType) {
+    options.ContentType = "application/json; charset=utf-8";
+  }
+
+  fetch(window.CRM.root + "/api/" + options.path, {
+    method: options.method,
+    headers: {
+      'Content-Type': options.ContentType,
+      'Authorization': 'Bearer ' + window.CRM.jwtToken,
+    },
+    body: options.data
+  })
+    .then(async res => {
+      var responseBody = await res.text();
+      var redirectedToSession = /\/session\/(Lock|login)/i.test(res.url);
+      var responseData = null;
+
+      try {
+        responseData = JSON.parse(responseBody);
+      } catch (e) {
+        responseData = null;
+      }
+
+      var sessionPage = /lockscreen-credentials|name=["']LoginForm["']/i.test(responseBody);
+
+      if (!res.ok || redirectedToSession || sessionPage) {
+
+        var apiError = new Error(
+          responseData && responseData.message
+            ? responseData.message
+            : (redirectedToSession || sessionPage
+              ? 'Session expired'
+              : ('HTTP ' + (res.status || 500)))
+        );
+        apiError.status = redirectedToSession || sessionPage ? 401 : res.status;
+        apiError.response = responseData;
+        throw apiError;
+      }
+
+      if (responseData === null) {
+        throw new Error('API response is not JSON');
+      }
+
+      return responseData;
+    })
+    .then(data => {
+      // enter you logic when the fetch is successful
+      if (callback) {
+        callback(data);
+      }
+    })
+    .catch(error => {
+      // enter your logic for when there is an error (ex. error toast)
+      console.log(error);
+      if (callbackError) {
+        callbackError(error);
+      }
+    });
+}
+
+window.CRM.APIDownloadRequest = function (options, callback) {
+  if (!options.method) {
+    options.method = "GET";
+  }
+
+  if (!options.extension) {
+    options.extension = 'txt';
+  }
+
+  if (!options.name) {
+    options.name = 'none';
+  }
+
+  if (!options.ContentType) {
+    options.ContentType = "application/json; charset=utf-8";
+  }
+
+  fetch(window.CRM.root + "/api/" + options.path, {
+    method: options.method,
+    headers: {
+      'Content-Type': options.ContentType,
+      'Authorization': 'Bearer ' + window.CRM.jwtToken,
+    },
+    body: options.data
+  })
+    .then(res => res.blob())
+    .then(blob => {
+      // enter you logic when the fetch is successful
+      if (callback) {
+        callback(blob, options.name, options.extension);
+      } else {
+        var fileURL = URL.createObjectURL(blob);
+        var fileLink = document.createElement('a');
+        fileLink.href = fileURL;
+        fileLink.download = options.name + '.' + options.extension;
+        fileLink.click();
+      }
+    })
+    .catch(error => {
+      // enter your logic for when there is an error (ex. error toast)
+      console.log(error)
+    });
+}
+
+window.CRM.DisplayErrorMessage = function (endpoint, error) {
+  if (window.CRM.sLogLevel > 100)
+    return;
+  if (endpoint.indexOf("/api/dashboard") !== -1) {// we are in the case, we're logout
+    location.reload();
+    return;
+  }
+
+  message = "<p>" + i18next.t("Error making API Call to") + ": " + endpoint +
+    "</p><p>" + i18next.t("Error text") + ": " + i18next.t(error.message);
+  if (error.trace) {
+    message += "</p>" + i18next.t("Stack Trace") + ": <pre>" + JSON.stringify(error.trace, undefined, 2) + "</pre>";
+  }
+  window.CRM.openInfoDialog({
+    title: i18next.t("Error"),
+    lead: i18next.t("The application could not complete this API request."),
+    content: message,
+    okClass: 'btn-danger'
+  });
+};
+
+window.CRM.buildBootboxMessage = function (options) {
+  var settings = options || {};
+  var content = '<div class="text-left">';
+
+  if (settings.lead) {
+    content += '<p class="mb-2 font-weight-bold">' + settings.lead + '</p>';
+  }
+
+  if (settings.details) {
+    content += '<div class="text-muted">' + settings.details + '</div>';
+  }
+
+  if (settings.content) {
+    content += '<div class="mt-3">' + settings.content + '</div>';
+  }
+
+  if (settings.warning) {
+    content += '<div class="alert alert-warning mt-3 mb-0">' + settings.warning + '</div>';
+  }
+
+  content += '</div>';
+  return content;
+};
+
+window.CRM.openInfoDialog = function (options) {
+  var settings = options || {};
+
+  return bootbox.alert({
+    title: settings.title || i18next.t('Information'),
+    message: window.CRM.buildBootboxMessage(settings),
+    backdrop: settings.backdrop !== undefined ? settings.backdrop : true,
+    buttons: {
+      ok: {
+        label: settings.okLabel || i18next.t('Close'),
+        className: settings.okClass || 'btn-primary'
+      }
+    },
+    callback: function () {
+      if (settings.callback) {
+        settings.callback();
+      }
+    }
+  });
+};
+
+window.CRM.openConfirmDialog = function (options) {
+  var settings = options || {};
+
+  return bootbox.confirm({
+    title: settings.title || i18next.t('Please confirm'),
+    message: window.CRM.buildBootboxMessage(settings),
+    buttons: {
+      cancel: {
+        label: settings.cancelLabel || i18next.t('Cancel'),
+        className: settings.cancelClass || 'btn-primary'
+      },
+      confirm: {
+        label: settings.confirmLabel || i18next.t('Confirm'),
+        className: settings.confirmClass || 'btn-danger'
+      }
+    },
+    callback: function (result) {
+      if (result) {
+        if (settings.onConfirm) {
+          settings.onConfirm();
+        }
+      } else if (settings.onCancel) {
+        settings.onCancel();
+      }
+    }
+  });
+};
+
+window.CRM.buildPromptTitle = function (options) {
+  var settings = options || {};
+  var title = '<div class="text-left">';
+  title += '<div class="font-weight-bold">' + (settings.title || i18next.t('Update information')) + '</div>';
+
+  if (settings.details) {
+    title += '<div class="small text-muted mt-1">' + settings.details + '</div>';
+  }
+
+  title += '</div>';
+  return title;
+};
+
+window.CRM.openPromptDialog = function (options) {
+  var settings = options || {};
+
+  return bootbox.prompt({
+    title: window.CRM.buildPromptTitle(settings),
+    value: settings.value,
+    inputType: settings.inputType,
+    inputOptions: settings.inputOptions,
+    onEscape: settings.onEscape !== undefined ? settings.onEscape : true,
+    closeButton: settings.closeButton !== undefined ? settings.closeButton : true,
+    buttons: {
+      confirm: {
+        label: settings.confirmLabel || i18next.t('Save'),
+        className: settings.confirmClass || 'btn-primary'
+      },
+      cancel: {
+        label: settings.cancelLabel || i18next.t('Cancel'),
+        className: settings.cancelClass || 'btn-default'
+      }
+    },
+    callback: function (result) {
+      if (settings.onSubmit) {
+        settings.onSubmit(result);
+      }
+    }
+  });
+};
+
+window.CRM.buildSelectionDialogMessage = function (options) {
+  var settings = options || {};
+  var content = '<div class="container-fluid px-0">';
+
+  if (settings.hiddenInputId) {
+    content += '<input type="hidden" id="' + settings.hiddenInputId + '">';
+  }
+
+  content += '<div class="alert alert-light border mb-3">';
+  content += '  <div class="d-flex align-items-start">';
+  content += '    <i class="' + (settings.iconClass || 'fas fa-list-ul') + ' text-primary mr-2 mt-1"></i>';
+  content += '    <div>';
+  content += '      <div class="font-weight-bold">' + (settings.lead || i18next.t('Make a selection')) + '</div>';
+  if (settings.details) {
+    content += '      <div class="small text-muted">' + settings.details + '</div>';
+  }
+  content += '    </div>';
+  content += '  </div>';
+  content += '</div>';
+
+  if (settings.sections) {
+    settings.sections.forEach(function (section) {
+      content += '<div class="card card-outline ' + (section.cardClass || 'card-primary') + ' mb-3">';
+      content += '  <div class="card-body">';
+      if (section.label) {
+        content += '    <label class="small text-uppercase text-muted mb-2 d-block" for="' + section.selectId + '">' + section.label + '</label>';
+      }
+      if (section.helper) {
+        content += '    <div class="small text-muted mb-2">' + section.helper + '</div>';
+      }
+      content += '    <select name="' + section.selectId + '" id="' + section.selectId + '" class="bootbox-input bootbox-input-select form-control form-control-sm"' + (section.style ? ' style="' + section.style + '"' : '') + '></select>';
+      content += '  </div>';
+      content += '</div>';
+    });
+  }
+
+  content += '</div>';
+  return content;
+};
+
+window.CRM.DisplayAlert = function (title, message, callback) {
+  return window.CRM.openInfoDialog({
+    title: title,
+    content: message,
+    callback: callback
+  });
+}
+
+window.CRM.DisplayNormalAlert = function (title, message, callback) {
+  alert(title + "\n\n" + message);
+}
+
+window.CRM.showGlobalMessage = function (message, alertClass) {
+  $("#globalMessage").hide();
+  if (alertClass == '') {
+    alertClass = 'success';
+  }
+  $("#globalMessageText").text(message);
+  $("#globalMessageAlert").removeClass("alert-danger");
+  $("#globalMessageAlert").removeClass("alert-primary");
+  $("#globalMessageAlert").removeClass("alert-warning");
+  $("#globalMessageAlert").removeClass("alert-info");
+  $("#globalMessageAlert").removeClass("alert-success");
+  $("#globalMessageAlert").addClass("alert-" + alertClass);
+  $("#globalMessage").show("slow");
+}
+
+window.CRM.dialogLoading = null;
+
+window.CRM.dialogLoadingFunction = function (message, callback) {
+  window.CRM.dialogLoading = bootbox.dialog(
+    {
+      closeButton: false,
+      title: '<span class="d-inline-flex align-items-center"><i class="fas fa-hourglass-half text-primary mr-2"></i>' + i18next.t("In progress") + '</span>',
+      message: ''
+        + '<div class="py-3 px-2">'
+        + '  <div class="d-flex flex-column align-items-center text-center">'
+        + '    <div class="mb-3">'
+        + '      <span class="d-inline-flex align-items-center justify-content-center rounded-circle border border-primary" style="width:64px;height:64px;">'
+        + '        <i class="fas fa-spinner fa-spin fa-2x text-primary"></i>'
+        + '      </span>'
+        + '    </div>'
+        + '    <div class="h5 mb-2">' + message + '</div>'
+        + '    <div class="text-muted small">' + i18next.t("Please wait while the operation is being completed") + '</div>'
+        + '  </div>'
+        + '</div>',
+      onShown: function (e) {
+        if (callback) {
+          callback();
+        } else {
+          window.CRM.closeDialogLoadingFunction();
+        }
+      }
+    });
+
+  window.CRM.dialogLoading.modal('show');
+}
+
+window.CRM.closeDialogLoadingFunction = function () {
+  if (window.CRM.dialogLoading != null) {
+    window.CRM.dialogLoading.modal('hide');
+    window.CRM.dialogLoading = null;
+  }
+}
+
+window.CRM.notify = function (icon, title, message, link, type, place, delay, target, horizontal) {
+  if (type == 'success') {
+    type = 'bg-success';
+  } else if (type == 'warning') {
+    type = 'bg-warning';
+  } else if (type == 'info') {
+    type = 'bg-lightblue';
+  } else if (type == 'error') {
+    type = 'bg-red';
+  }
+
+  if (horizontal === undefined) {
+    horizontal = 'Right';
+  }
+
+  if (link != null) {
+    message = message + ' <a href="' + link + '" target="' + target + '"><i class="fas fa-arrow-circle-right"></i></a>';
+  }
+
+  $(document).Toasts('create', {
+    position: place + horizontal,
+    title: '<i class="' + icon + '"></i> ' + title,
+    body: message,
+    delay: delay,
+    type: type,
+    autohide: true,
+    animation: true,
+    class: type
+  })
+}
+
+window.CRM.VerifyThenLoadAPIContent = async function (url) {
+  const error = i18next.t("There was a problem retrieving the requested object");
+
+  try {
+    const response = await fetch(url, {
+      method: 'HEAD'
+    });
+
+    if (response.ok) {
+      console.log('Promise resolved and HTTP status is successful');
+    } else {
+      // Custom message for failed HTTP codes
+      if (response.status === 200) window.open(url);
+      else if (response.status === 404) window.CRM.DisplayErrorMessage(url, { message: error });
+      else if (response.status === 500) window.CRM.DisplayErrorMessage(url, { message: error });
+      // For any other server error
+      throw new Error(response.status);
+    }
+  } catch (error) {
+    console.error('Fetch VerifyThenLoadAPIContent', error);
+  }
+}
+
+window.CRM.calendarEvents = {
+  'reload': (callback) => {
+    window.CRM.calendar.refetchEvents();
+    window.CRM.synchronize.refresh();
+
+    if (callback) {
+      callback();
+    }
+  }
+}
+
+window.CRM.cart = {
+  'empty': function (callback) {
+    window.CRM.APIRequest({
+      method: "DELETE",
+      path: "cart/"
+    }, function (data) {
+      if (callback) {
+        callback(data);
+      }
+      window.CRM.cart.refresh();
+      // we update the cart button
+      if (data.PeopleCart !== undefined && data.FamiliesCart != undefined && data.GroupsCart != undefined)
+        window.CRM.cart.updatePage(data.PeopleCart, data.FamiliesCart, data.GroupsCart);
+    });
+  },
+  'emptyCart': function () {
+      window.CRM.cart.empty(function (data) {
+      window.CRM.cart.refresh();
+
+      if (window.CRM.dataTableList) {
+        window.CRM.dataTableList.ajax.reload();
+        window.CRM.dataTableList.ajax.reload();
+      } else if (data.cartPeople) {// this part should be written like this, the code will crash at this point without this test and crash the js code
+        console.log(data.cartPeople);
+
+        if (data.cartPeople.length > 0 && data.currentPageName !== 'v2/cart/view') {
+          $(data.cartPeople).each(function (index, data) {
+            personButton = $("a[data-cartpersonid='" + data + "']");
+            $(personButton).addClass("AddToPeopleCart");
+            $(personButton).removeClass("RemoveFromPeopleCart");
+            $('span i:nth-child(2)', personButton).removeClass("fa-times");
+            $('span i:nth-child(2)', personButton).addClass("fa-cart-plus");
+          });
+        } else {
+          location.reload();
+        }
+      }
+    });
+  },
+  'emptyCartToEvent': function () {
+    window.CRM.cart.emptytoEvent(function (data) {
+      window.CRM.cart.refresh();
+      location.href = window.CRM.root + '/v2/calendar/events/list';
+    });
+  },
+  'emptyCartToGroup': function () {
+    // I have to do this because EventGroup isn't yet present when you load the page the first time
+    $(document).on('change', '#PopupGroupID', function () {
+      var e = document.getElementById("PopupGroupID");
+
+      if (e.selectedIndex > 0) {
+        var option = e.options[e.selectedIndex];
+        var GroupID = option.value;
+
+        window.CRM.APIRequest({
+          path: "groups/" + GroupID + "/roles",
+          method: "GET"
+        }, function (data) {
+          var ListOptions = data.ListOptions;
+          $("#GroupRole").empty();
+          var elt = document.getElementById("GroupRole");
+          if (elt != null) {
+            var len = ListOptions.length;
+
+            // We add the none option
+            var option = document.createElement("option");
+            option.text = i18next.t("None");
+            option.value = 0;
+            option.title = "";
+            elt.appendChild(option);
+
+            for (i = 0; i < len; ++i) {
+              var option = document.createElement("option");
+              // there is a groups.type in function of the new plan of schema
+              option.text = i18next.t(ListOptions[i].OptionName);
+              option.value = ListOptions[i].OptionId;
+              elt.appendChild(option);
+            }
+          }
+        });
+      }
+    });
+
+    const BootboxContentCartTogroup = () => {
+      var frm_str = '<div class="container-fluid px-0">'
+        + '<div class="alert alert-light border mb-3">'
+        + '  <div class="d-flex align-items-start">'
+        + '    <i class="fas fa-layer-group text-primary mr-2 mt-1"></i>'
+        + '    <div>'
+        + '      <div class="font-weight-bold">' + i18next.t('Add cart to a group') + '</div>'
+        + '      <div class="small text-muted">' + i18next.t('Choose whether to add the cart to an existing group or create a new one directly from the cart.') + '</div>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>'
+        + '<form id="some-form">'
+        + '  <div class="form-group">'
+        + '    <label class="small text-uppercase text-muted mb-2" for="GroupSelector">' + i18next.t('Action') + '</label>'
+        + '    <select id="GroupSelector" class="form-control form-control-sm">'
+        + '      <option>' + i18next.t('Select an existing Group') + '</option>'
+        + '      <option>' + i18next.t('or Create a new Group from the Cart') + '</option>'
+        + '    </select>'
+        + '  </div>'
+        + '  <div id="GroupSelect" class="card card-outline card-primary mb-3">'
+        + '    <div class="card-body">'
+        + '      <div class="small text-muted mb-3">' + i18next.t('Select the destination group and the role to assign to the cart members.') + '</div>'
+        + '      <div class="form-group">'
+        + '        <label class="small text-uppercase text-muted mb-2" for="PopupGroupID">' + i18next.t('Select Group') + '</label>'
+        + '        <select id="PopupGroupID" name="PopupGroupID" style="width:100%" class="form-control form-control-sm"></select>'
+        + '      </div>'
+        + '      <div class="form-group mb-0">'
+        + '        <label class="small text-uppercase text-muted mb-2" for="GroupRole">' + i18next.t('Select Role') + '</label>'
+        + '        <select name="GroupRole" id="GroupRole" style="width:100%" class="form-control form-control-sm">'
+        + '          <option>' + i18next.t('None') + '</option>'
+        + '        </select>'
+        + '      </div>'
+        + '    </div>'
+        + '  </div>'
+        + '  <div id="GroupCreation" class="card card-outline card-secondary mb-0">'
+        + '    <div class="card-body">'
+        + '      <div class="small text-muted mb-3">' + i18next.t('Create a new group and move the current cart into it.') + '</div>'
+        + '      <div class="form-group mb-0">'
+        + '        <label class="small text-uppercase text-muted mb-2" for="GroupName">' + i18next.t('Group Name') + '</label>'
+        + '        <input type="text" id="GroupName" value="" size="30" maxlength="100" class="form-control form-control-sm" width="100%" style="width: 100%" placeholder="' + i18next.t("Default Name Group") + '" required>'
+        + '      </div>'
+        + '    </div>'
+        + '  </div>'
+        + '</form>'
+        + '</div>';
+
+      var object = $('<div/>').html(frm_str).contents();
+
+      return object
+    }
+
+    var modal = bootbox.dialog({
+      message: BootboxContentCartTogroup(),
+      title: i18next.t("Add Cart to Group"),
+      buttons: [
+        {
+          label: '<i class="fas fa-check"></i> ' + i18next.t("Save"),
+          className: "btn btn-primary pull-left",
+          callback: function () {
+            var e = document.getElementById("GroupSelector");
+            if (e.selectedIndex == 0) {
+              e = document.getElementById("PopupGroupID");
+
+              if (e.selectedIndex > 0) {
+                var option = e.options[e.selectedIndex];
+                var GroupID = option.value;
+
+                e = document.getElementById("GroupRole");
+                option = e.options[e.selectedIndex];
+                var RoleID = option.value;
+
+                window.CRM.APIRequest({
+                  method: 'POST',
+                  path: 'cart/emptyToGroup',
+                  data: JSON.stringify({ "groupID": GroupID, "groupRoleID": RoleID })
+                }, function (data) {
+                  window.CRM.cart.refresh();
+                  location.href = window.CRM.root + '/v2/group/' + GroupID + '/view';
+                });
+
+                return true;
+              }
+
+                var selectionBox = window.CRM.openInfoDialog({
+                  title: i18next.t("Missing selection"),
+                  lead: i18next.t("You need to select both a group and a role before continuing."),
+                  okClass: 'btn-warning'
+              });
+
+              setTimeout(function () {
+                selectionBox.modal('hide');
+              }, 3000);
+
+              return false;
+            }
+
+            var newGroupName = document.getElementById("GroupName").value;
+
+            if (newGroupName) {
+              window.CRM.APIRequest({
+                method: 'POST',
+                path: 'cart/emptyToNewGroup',
+                data: JSON.stringify({ 'groupName': newGroupName })
+              }, function (data) {
+                window.CRM.cart.refresh();
+                location.href = window.CRM.root + '/v2/group/' + data.Id + '/view';
+              });
+
+              return true;
+            }
+
+            var nameBox = window.CRM.openInfoDialog({
+              title: i18next.t("Group name required"),
+              lead: i18next.t("Enter a group name before creating a new group from the cart."),
+              okClass: 'btn-warning'
+            });
+
+            setTimeout(function () {
+              nameBox.modal('hide');
+            }, 3000);
+
+            return false;
+          }
+        },
+        {
+          label: '<i class="fas fa-times"></i> ' + i18next.t("Close"),
+          className: "btn btn-default pull-left",
+          callback: function () {
+            console.log("just do something on close");
+          }
+        }
+      ],
+      show: false,
+      onEscape: function () {
+        modal.modal("hide");
+      }
+    });
+
+    modal.modal("show");
+
+    // I have to do this because EventGroup isn't yet present when you load the page the first time
+    $(document).on('change', '#GroupSelector', function () {
+      var e = document.getElementById("GroupSelector");
+      if (e.selectedIndex == 0) {
+        $("#GroupCreation").hide();
+        $("#GroupSelect").show();
+      } else {
+        $("#GroupSelect").hide();
+        $("#GroupCreation").show();
+      }
+    });
+
+    // we hide by default the GroupCreation
+    $("#GroupCreation").hide();
+
+    const addGroups = () => {
+      window.CRM.APIRequest({
+        path: "groups/",
+        method: "GET"
+      }, function (data) {
+        var Groups = data.Groups;
+        var elt = document.getElementById("PopupGroupID");
+        if (elt != null) {
+          var len = Groups.length;
+
+          // We add the none option
+          var option = document.createElement("option");
+          option.text = i18next.t("None");
+          option.value = 0;
+          option.title = "";
+          elt.appendChild(option);
+
+          for (i = 0; i < len; ++i) {
+            var option = document.createElement("option");
+            // there is a groups.type in function of the new plan of schema
+            option.text = Groups[i].Name;
+            option.title = Groups[i].RoleListId;
+            option.value = Groups[i].Id;
+            elt.appendChild(option);
+          }
+        }
+      });
+    }
+
+    // we add the group and roles
+    addGroups();
+  },
+  'deactivate': function (callback) {
+    window.CRM.openConfirmDialog({
+      title: i18next.t("Deactivate cart persons"),
+      lead: i18next.t("Do you really want to deactivate all persons currently in the cart?"),
+      warning: i18next.t("This action can be undone later if needed."),
+      cancelLabel: i18next.t('Keep active'),
+      confirmLabel: i18next.t("Deactivate persons"),
+      confirmClass: 'btn-danger',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: "POST",
+          path: "cart/deactivate"
+        }, function (data) {
+          if (callback) {
+            callback(data);
+            window.CRM.cart.refresh();
+            window.CRM.cart.updateLocalePage();// sometimes we've to reload the page or something else
+          }
+          else {
+            window.CRM.cart.refresh();
+          }
+        });
+      },
+      onCancel: function () {
+        if (callback) {
+          callback('nothing was done');
+        }
+      }
+    });
+
+  },
+  'delete': function (callback) {
+    window.CRM.openConfirmDialog({
+      title: i18next.t("Delete cart persons"),
+      lead: i18next.t("Do you really want to delete all persons currently in the cart from the CRM?"),
+      warning: i18next.t("This action cannot be undone."),
+      cancelLabel: i18next.t('Keep persons'),
+      confirmLabel: i18next.t("Delete persons"),
+      confirmClass: 'btn-danger',
+      onConfirm: function () {
+        window.CRM.APIRequest({
+          method: "POST",
+          path: "cart/delete"
+        }, function (data) {
+          if (callback) {
+            callback(data);
+            window.CRM.cart.refresh();
+            window.CRM.cart.updateLocalePage();// sometimes we've to reload the page or something else
+          }
+          else {
+            window.CRM.cart.refresh();
+          }
+        });
+      },
+      onCancel: function () {
+        if (callback) {
+          callback('nothing was done');
+        }
+      }
+    });
+
+  },
+  'emptyToGroup': function (callback) {
+    window.CRM.groups.promptSelection({ Type: window.CRM.groups.selectTypes.Group | window.CRM.groups.selectTypes.Role }, function (selectedRole) {
+      window.CRM.APIRequest({
+        method: 'POST',
+        path: 'cart/emptyToGroup',
+        data: JSON.stringify({ "groupID": selectedRole.GroupID, "groupRoleID": selectedRole.RoleID })
+      }, function (data) {
+        window.CRM.cart.refresh();
+        if (callback) {
+          callback(data);
+        }
+      });
+    });
+  },
+  'emptytoFamily': function () {
+
+  },
+  'emptytoEvent': function (callback) {
+    window.CRM.APIRequest({
+      method: 'GET',
+      path: 'events/names',
+    }, function (eventNames) {
+      var lenType = eventNames.length;
+      var options = new Array();
+
+      var boxOptions = {
+        title: i18next.t('Add cart to event'),
+        message: window.CRM.buildSelectionDialogMessage({
+          iconClass: 'fas fa-calendar-plus',
+          lead: i18next.t('Select the event that should receive the current cart.'),
+          details: i18next.t('You can also create a new event first, then return here to assign the cart.'),
+          sections: [
+            {
+              selectId: 'eventChosen',
+              label: i18next.t('Event'),
+              helper: i18next.t('Choose one of the available events from the list below.'),
+              cardClass: 'card-primary'
+            }
+          ]
+        }),
+        buttons: {
+          addEvent: {
+            label: i18next.t('Create new event'),
+            className: 'btn-info',
+            callback: function () {
+              location.href = window.CRM.root + '/v2/calendar';
+            }
+          },
+          cancel: {
+            label: i18next.t('Cancel'),
+            className: 'btn-danger'
+          },
+          confirm: {
+            label: i18next.t('Add to Event'),
+            className: 'btn-primary',
+            callback: function () {
+              var e = document.getElementById("eventChosen");
+              var EventID = e.options[e.selectedIndex].value;
+
+              window.CRM.APIRequest({
+                method: 'POST',
+                path: 'cart/emptyToEvent',
+                data: JSON.stringify({ "eventID": EventID })
+              }, function (data) {
+                if (callback) {
+                  callback(data);
+                }
+              });
+            }
+          }
+        }
+      };
+
+      for (i = 0; i < lenType; i++) {
+        boxOptions.message = boxOptions.message.replace(
+          '</select>',
+          '<option value="' + eventNames[i].eventTypeID + '">' + eventNames[i].name + '</option></select>'
+        );
+      }
+
+      bootbox.dialog(boxOptions).show();
+    });
+  },
+  'addPerson': function (Persons, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "Persons": Persons })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'intersectPerson': function (Persons, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/interectPerson',
+      data: JSON.stringify({ "Persons": Persons })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'removePerson': function (Persons, callback) {
+    window.CRM.APIRequest({
+      method: 'DELETE',
+      path: 'cart/',
+      data: JSON.stringify({ "Persons": Persons })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'addFamily': function (FamilyID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "Family": FamilyID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'addFamilies': function (Families, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "Families": Families })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'removeFamily': function (FamilyID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "removeFamily": FamilyID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'removeFamilies': function (Families, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "removeFamilies": Families })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+    });
+  },
+  'addVolunteers': function (VolID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/addVolunteers',
+      data: JSON.stringify({ "VolID": VolID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeVolunteers': function (VolID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeVolunteers',
+      data: JSON.stringify({ "VolID": VolID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "Group": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addGroups': function (Groups, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "Groups": Groups })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeGroup',
+      data: JSON.stringify({ "Group": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeGroups': function (Groups, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeGroups',
+      data: JSON.stringify({ "Groups": Groups })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addStudentGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "studentGroup": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addAllStudents': function (callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/addAllStudents',
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeStudentGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeStudentGroup',
+      data: JSON.stringify({ "Group": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeAllStudents': function (callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeAllStudents',
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addTeacherGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/',
+      data: JSON.stringify({ "teacherGroup": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'addAllTeachers': function (callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/addAllTeachers',
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeTeacherGroup': function (GroupID, callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeTeacherGroup',
+      data: JSON.stringify({ "Group": GroupID })
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'removeAllTeachers': function (callback) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'cart/removeAllTeachers',
+    }, function (data) {
+      window.CRM.cart.refresh();
+      if (callback) {
+        callback(data);
+      }
+
+    });
+  },
+  'updateLocalePage': function () {
+    // broadcaster
+    $.event.trigger({
+      type: "updateLocalePageMessage"
+    });
+  },
+  'refresh': function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: "register/isRegisterRequired"
+    }, function (data) {
+      if (data.Register) {
+        window.CRM.notify('fa  fa-info-circle', i18next.t("Register") + ".", i18next.t("Register your software to CRM team.") + "<br><b>" + i18next.t("Simply click this") + " <a href=\"#\" id=\"registerSoftware\"><i class=\"fas fa-arrow-circle-right\"></i></a> " + i18next.t("to register your software") + ".</b>", null, "warning", "top", 10000, '_blank', "Left");
+      }
+    });
+
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: "systemupgrade/isUpdateRequired"
+    }, function (data) {
+      if (data.Upgrade) {
+        window.CRM.notify('fa  fa-info-circle', i18next.t("New Release") + ".", i18next.t("Installed version") + " : " + data.installedVersion + '      ' + i18next.t("New One") + " : " + data.latestVersion.name + '<br><b>' + i18next.t("To upgrade simply click this Notification") + "</b>", window.CRM.root + '/v2/system/upgrade/crm', "info", "bottom", 60000, '_blank');
+      }
+    });
+
+    if (window.CRM.PageName.indexOf("v2/users/change/password") !== -1 && window.CRM.showCart) {// the first time it's unusefull
+      return;
+    }
+
+    if (window.CRM.showCart == false)// in this cas all the broadcast system is deactivated
+      return;
+
+    window.CRM.APIRequest({
+      method: 'GET',
+      path: "cart/"
+    }, function (data) {
+      window.CRM.cart.updatePage(data.PeopleCart, data.FamiliesCart, data.GroupsCart);
+      //window.scrollTo(0, 0);
+      $("#iconCount").text(data.PeopleCart.length);
+
+      var cartDropdownMenu;
+      if (data.PeopleCart.length > 0) {
+        cartDropdownMenu = '\
+          <div id="showWhenCartNotEmpty">\
+              <a href="' + window.CRM.root + '/v2/cart/view" class="dropdown-item">\
+                  <i class="fas fa-shopping-cart text-green"></i> ' + i18next.t("View Cart") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="#" class="dropdown-item emptyCart" >\
+                  <i class="fas fa-eraser"></i> ' + i18next.t("Empty Cart") + ' \
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="#" id="emptyCartToGroup" class="dropdown-item">\
+                  <i class="fas fa-tag text-info"></i> ' + i18next.t("Empty Cart to Group") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="' + window.CRM.root + '/v2/cart/to/family" class="dropdown-item">\
+                  <i class="fa-solid fa-people-roof text-info"></i> ' + i18next.t("Empty Cart to Family") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="#" id="emptyCartToEvent" class="dropdown-item">\
+                  <i class="fas fa-ticket-alt text-info"></i> ' + i18next.t("Empty Cart to Event") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="' + window.CRM.root + '/v2/map/0" class="dropdown-item">\
+                  <i class="fas fa-map-marker-alt text-info"></i> ' + i18next.t("Map Cart") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="#" id="deactivateCart" class="dropdown-item">\
+                 <i class="fas fa-trash-alt text-warning"></i> '+ i18next.t("Deactivate Persons From Cart") + '\
+              </a>\
+              <div class="dropdown-divider"></div>\
+              <a href="#" id="deleteCart" class="dropdown-item">\
+                 <i class="fas fa-trash-alt text-danger"></i> '+ i18next.t("Delete Persons From the CRM") + '\
+              </a>\
+              <!--li class="footer"><a href="#">' + i18next.t("View all") + '</a></li-->\
+          </div>'
+      }
+      else {
+        cartDropdownMenu = '\
+          <span class="dropdown-item dropdown-header">' + i18next.t("Your Cart is Empty") + '</span>';
+
+      }
+      $("#cart-dropdown-menu").html(cartDropdownMenu);
+      $("#CartBlock")
+        .animate({ 'left': (-10) + 'px' }, 30)
+        .animate({ 'left': (+10) + 'px' }, 30)
+        .animate({ 'left': (0) + 'px' }, 30);
+    });
+  },
+  'updatePage': function (cartPeople, familiesCart, groupsCart) {
+
+    // broadcaster
+    $.event.trigger({
+      type: "updateCartMessage",
+      people: cartPeople,
+      families: familiesCart,
+      groups: groupsCart
+    });
+  }
+}
+
+window.CRM.register = function () {
+  const BootboxContentRegister = (data) => {
+    var frm_str = '<div class="container-fluid px-0">'
+      + '  <div class="alert alert-light border mb-3">'
+      + '    <div class="d-flex align-items-start">'
+      + '      <i class="fas fa-id-card text-primary mr-2 mt-1"></i>'
+      + '      <div>'
+      + '        <div class="font-weight-bold">' + i18next.t('Software registration') + '</div>'
+      + '        <div class="small text-muted">' + i18next.t('Review the registration details below before sending them. This information is used only to track the usage of this software.') + '</div>'
+      + '      </div>'
+      + '    </div>'
+      + '  </div>'
+      + '  <div class="card card-warning mb-3">'
+      + '    <div class="card-body">'
+      + i18next.t('If you need to make changes to registration data, go to ') + '<a href="' + window.CRM.root + '/v2/systemsettings">' + i18next.t('Admin->Edit General Settings') + '</a>'
+      + '    </div>'
+      + '  </div>'
+      + '  <div class="card card-outline card-primary mb-0">'
+      + '    <div class="card-body">'
+      + '      <dl class="row mb-3">'
+      + '        <dt class="col-sm-4">' + i18next.t('Church Name') + '</dt><dd class="col-sm-8">' + data.ChurchName + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('Version') + '</dt><dd class="col-sm-8">' + data.InstalledVersion + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('Address') + '</dt><dd class="col-sm-8">' + data.ChurchAddress + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('City') + '</dt><dd class="col-sm-8">' + data.ChurchCity + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('State') + '</dt><dd class="col-sm-8">' + data.ChurchState + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('Zip') + '</dt><dd class="col-sm-8">' + data.ChurchZip + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('Country') + '</dt><dd class="col-sm-8">' + data.ChurchCountry + '</dd>'
+      + '        <dt class="col-sm-4">' + i18next.t('Church Email') + '</dt><dd class="col-sm-8">' + data.ChurchEmail + '</dd>'
+      + '        <dt class="col-sm-4">CRM ' + i18next.t('Base URL') + '</dt><dd class="col-sm-8">' + data.EcclesiaCRMURL + '</dd>'
+      + '      </dl>'
+      + '      <div class="form-group mb-0">'
+      + '        <label class="small text-uppercase text-muted mb-2" for="registeremailmessage">' + i18next.t('Message') + '</label>'
+      + '        <textarea class="form-control form-control-sm" id="registeremailmessage" name="emailmessage" rows="10" cols="72">' + data.EmailMessage + '</textarea>'
+      + '      </div>'
+      + '      <input type="hidden" name="EcclesiaCRMURL" value="' + data.EcclesiaCRMURL + '"/>'
+      + '    </div>'
+      + '  </div>'
+      + '</div>';
+
+    var object = $('<div/>').html(frm_str).contents();
+
+    return object;
+  }
+
+  window.CRM.APIRequest({
+    method: 'POST',
+    path: "register/getRegistredDatas"
+  }, function (data) {
+    var modal = bootbox.dialog({
+      message: BootboxContentRegister(data),
+      title: i18next.t("Software Registration"),
+      size: 'large',
+      buttons: [
+        {
+          label: '<i class="fas fa-paper-plane"></i> ' + i18next.t("Send"),
+          className: "btn btn-primary pull-left",
+          callback: function () {
+            window.CRM.APIRequest({
+              method: 'POST',
+              path: 'register',
+              data: JSON.stringify({ "emailmessage": $("#registeremailmessage").val(), EcclesiaCRMURL: $("input[name=EcclesiaCRMURL]").val() })
+            }, function (data) {
+              window.CRM.DisplayAlert("EcclesiaCRM", i18next.t('Your software is now registered. Thank you !'), function () {
+                location.reload();
+              });
+            });
+          }
+        },
+        {
+          label: '<i class="fas fa-times"></i> ' + i18next.t("Cancel"),
+          className: "btn btn-default pull-left",
+          callback: function () {
+            console.log("just do something on close");
+          }
+        }
+      ],
+      show: false,
+      onEscape: function () {
+        modal.modal("hide");
+      }
+    });
+
+    modal.modal("show");
+  });
+}
+
+window.CRM.kiosks = {
+  assignmentTypes: {
+    "1": "Event Attendance",
+    "2": "Self Registration",
+    "3": "Self Checkin",
+    "4": "General Attendance"
+  },
+  reload: function (id) {
+    window.CRM.APIRequest({
+      "path": "kiosks/" + id + "/reloadKiosk",
+      "method": "POST"
+    }, function (data) {
+      //todo: tell the user the kiosk was reloaded..?  maybe nothing...
+    })
+  },
+  enableRegistration: function (callback) {
+    return window.CRM.APIRequest({
+      "path": "kiosks/allowRegistration",
+      "method": "POST"
+    }, callback)
+  },
+  accept: function (id) {
+    window.CRM.APIRequest({
+      "path": "kiosks/" + id + "/acceptKiosk",
+      "method": "POST"
+    }, function (data) {
+      window.CRM.kioskDataTable.ajax.reload()
+    })
+  },
+  identify: function (id) {
+    window.CRM.APIRequest({
+      "path": "kiosks/" + id + "/identifyKiosk",
+      "method": "POST"
+    }, function (data) {
+      //do nothing...
+      window.CRM.kioskDataTable.ajax.reload();
+    })
+  },
+  delete: function (id) {
+    window.CRM.APIRequest({
+      "path": "kiosks/" + id,
+      "method": "DELETE"
+    }, function (data) {
+      //do nothing...
+      window.CRM.kioskDataTable.ajax.reload();
+    })
+  },
+  setAssignment: function (id, assignmentId) {
+    assignmentSplit = assignmentId.split("-");
+    if (assignmentSplit.length > 0) {
+      assignmentType = assignmentSplit[0];
+      eventId = assignmentSplit[1];
+    }
+    else {
+      assignmentType = assignmentId;
+    }
+
+    window.CRM.APIRequest({
+      "path": "kiosks/" + id + "/setAssignment",
+      "method": "POST",
+      "data": JSON.stringify({ "assignmentType": assignmentType, "eventId": eventId })
+    }, function (data) {
+      window.CRM.kioskDataTable.ajax.reload();
+    })
+  }
+}
+
+window.CRM.events = {
+  getFutureEventes: function () {
+    //this could probably be done better, as this option may present a race condition by
+    //populating a window variable with future events that future elements may rely on
+    window.CRM.APIRequest({
+      "path": "events/notDone"
+    }, function (data) {
+      window.CRM.events.futureEventsLoaded = true;
+      window.CRM.events.futureEvents = data.Events;
+    });
+  }
+};
+
+window.CRM.volunteers = {
+  'get': function (callback) {
+    return window.CRM.APIRequest({
+      path: "volunteeropportunity/get",
+      method: "GET"
+    }, callback);
+  },
+  'addPerson': function (volID, PersonID, callback) {
+    params = {
+      method: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      path: 'volunteeropportunity/addperson',
+      data: JSON.stringify({ 
+        "PersonID": PersonID,
+        "volID": volID
+       })
+    };    
+    return window.CRM.APIRequest(params, callback);
+  },
+  'removePerson': function (volID, PersonID, callback) {
+    return window.CRM.APIRequest({
+      method: 'DELETE', // define the type of HTTP verb we want to use (POST for our form)
+      path: 'volunteeropportunity/removeperson',
+      data: JSON.stringify({ 
+        "PersonID": PersonID,
+        "volID": volID
+       })
+    }, callback);
+  },
+  'defaultVolunteerOpportunity': function (callback) {
+    var res = window.CRM.APIRequest({
+      path: "volunteeropportunity/default",
+      method: "GET"
+    }, function (data) {
+      callback(data);
+    });
+  },
+  'selectTypes': {
+    'Volunteer': 1
+  },
+  'promptSelection': function (selectOptions, selectionCallback) {
+    var options = {
+      message: '',
+      buttons: {
+        cancel: {
+          label: '<i class="fas fa-times mr-1"></i>' + i18next.t('Cancel'),
+          className: 'btn-default'
+        },
+        confirm: {
+          label: '<i class="fas fa-check mr-1"></i>' + i18next.t('OK'),
+          className: 'btn-primary'
+        }
+      }
+    };
+    
+    if (selectOptions.Type & window.CRM.volunteers.selectTypes.Volunteer) {
+      options.title = i18next.t("Select Volunteer Opportunity");
+      options.message = window.CRM.buildSelectionDialogMessage({
+        hiddenInputId: 'targetVolunteerAction',
+        iconClass: 'fas fa-hands-helping',
+        lead: i18next.t('Select the volunteer opportunity that should be assigned.'),
+        details: i18next.t('This selection will be applied to the current members.'),
+        sections: [
+          {
+            selectId: 'targetVolunteerSelection',
+            label: i18next.t('Volunteer opportunity'),
+            helper: i18next.t('Choose the target volunteer opportunity from the available list.'),
+            cardClass: 'card-primary',
+            style: 'width: 100%'
+          }
+        ]
+      });
+      options.buttons.confirm.callback = function () {
+        selectionCallback({ "VolID": $("#targetVolunteerSelection option:selected").val() });
+      };
+    }    
+
+    bootbox.dialog(options).show();
+
+    // this will ensure that image and table can be focused Philippe Logel
+    $(document).on('focusin', function (e) { e.stopImmediatePropagation(); });
+
+    window.CRM.volunteers.get(function (rdata) {
+      volunteerList = $.map(rdata.Opportunities, function (item) {
+        var o = {
+          text: item.Name,
+          id: item.Id
+        };
+        return o;
+      });
+      $volunteerSelect2 = $("#targetVolunteerSelection").select2({
+        data: volunteerList
+      });
+
+      $volunteerSelect2.on("select2:select", function (e) {
+        var targetVolunteerId = $("#targetVolunteerSelection option:selected").val();              
+      });
+    });
+  }
+}
+
+window.CRM.groups = {
+  'get': function (callback) {
+    return window.CRM.APIRequest({
+      path: "groups/",
+      method: "GET"
+    }, callback);
+  },
+  'defaultGroup': function (callback) {
+    var res = window.CRM.APIRequest({
+      path: "groups/defaultGroup",
+      method: "GET"
+    }, function (data) {
+      callback(data);
+    });
+  },
+  'getRoles': function (GroupID, callback) {
+    return window.CRM.APIRequest({
+      path: "groups/" + GroupID + "/roles",
+      method: "GET"
+    }, callback);
+  },
+  'selectTypes': {
+    'Group': 1,
+    'Role': 2,
+  },
+  'promptSelection': function (selectOptions, selectionCallback) {
+    var options = {
+      message: '',
+      buttons: {
+        cancel: {
+          label: '<i class="fas fa-times mr-1"></i>' + i18next.t('Cancel'),
+          className: 'btn-default'
+        },
+        confirm: {
+          label: '<i class="fas fa-check mr-1"></i>' + i18next.t('OK'),
+          className: 'btn-primary'
+        }
+      }
+    };
+    initFunction = function () { };
+    var selectionSections = [];
+    var selectionLead = i18next.t('Choose the destination for the selected members.');
+    var selectionDetails = i18next.t('Use the fields below to select a group, a role, or both depending on the action.');
+
+    if (selectOptions.Type & window.CRM.groups.selectTypes.Group) {
+      options.title = i18next.t("Select Group");
+      selectionSections.push({
+        selectId: 'targetGroupSelection',
+        label: i18next.t('Group'),
+        helper: i18next.t('Select the target group for the selected members.'),
+        cardClass: 'card-primary',
+        style: 'width: 100%'
+      });
+      options.buttons.confirm.callback = function () {
+        selectionCallback({ "GroupID": $("#targetGroupSelection option:selected").val() });
+      };
+    }
+    if (selectOptions.Type & window.CRM.groups.selectTypes.Role) {
+      options.title = i18next.t("Select Role");
+      selectionSections.push({
+        selectId: 'targetRoleSelection',
+        label: i18next.t('Role'),
+        helper: i18next.t('Select the role that should be assigned inside the chosen group.'),
+        cardClass: 'card-secondary'
+      });
+      options.buttons.confirm.callback = function () {
+        selectionCallback({ "RoleID": $("#targetRoleSelection option:selected").val() });
+      };
+      options.buttons.cancel.callback = function () {
+        if (window.CRM.DataTableGroupView) {// this part is important in the v2/groups/22/view /js select2 textfield when you cancel the action
+          $(".personSearch").val(null).trigger('change');
+          window.CRM.DataTableGroupView.ajax.reload();/* we reload the data no need to add the person inside the dataTable */
+        }
+      };
+    }
+
+    if (selectOptions.Type === window.CRM.groups.selectTypes.Role || selectOptions.Role === window.CRM.groups.selectTypes.Role) {
+      if (!selectOptions.GroupID) {
+        throw i18next.t("GroupID required for role selection prompt");
+      }
+      initFunction = function () {
+        window.CRM.groups.getRoles(selectOptions.GroupID, function (rdata) {
+          rolesList = $.map(rdata.ListOptions, function (item) {
+            var o = {
+              text: i18next.t(item.OptionName),// to translate the Teacher and Student in localize text
+              id: item.OptionId
+            };
+            return o;
+          });
+          $("#targetRoleSelection").select2({
+            data: rolesList
+          })
+        })
+      }
+    }
+    if (selectOptions.Type === (window.CRM.groups.selectTypes.Group | window.CRM.groups.selectTypes.Role)) {
+      options.title = i18next.t("Select Group and Role");
+      selectionLead = i18next.t('Select both the destination group and the role to apply.');
+      options.buttons.confirm.callback = function () {
+        selection = {
+          "RoleID": $("#targetRoleSelection option:selected").val(),
+          "GroupID": $("#targetGroupSelection option:selected").val()
+        };
+        console.log(selection);
+        selectionCallback(selection);
+      }
+    }
+    options.message = window.CRM.buildSelectionDialogMessage({
+      hiddenInputId: 'targetGroupAction',
+      iconClass: 'fas fa-users-cog',
+      lead: selectionLead,
+      details: selectionDetails,
+      sections: selectionSections
+    });
+    bootbox.dialog(options).init(initFunction).show();
+
+    // this will ensure that image and table can be focused Philippe Logel
+    $(document).on('focusin', function (e) { e.stopImmediatePropagation(); });
+
+    window.CRM.groups.get(function (rdata) {
+      groupsList = $.map(rdata.Groups, function (item) {
+        var o = {
+          text: item.Name,
+          id: item.Id
+        };
+        return o;
+      });
+      $groupSelect2 = $("#targetGroupSelection").select2({
+        data: groupsList
+      });
+
+      $groupSelect2.on("select2:select", function (e) {
+        var targetGroupId = $("#targetGroupSelection option:selected").val();
+        $parent = $("#targetRoleSelection").parent();
+        $("#targetRoleSelection").empty();
+        window.CRM.groups.getRoles(targetGroupId, function (rdata) {
+          rolesList = $.map(rdata.ListOptions, function (item) {
+            var o = {
+              text: i18next.t(item.OptionName),// this is for the Teacher and Student role
+              id: item.OptionId
+            };
+            return o;
+          });
+          $("#targetRoleSelection").select2({
+            data: rolesList
+          })
+        })
+      });
+    });
+  },
+  'addPerson': function (GroupID, PersonID, RoleID, callback) {
+    params = {
+      method: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      path: 'groups/' + GroupID + '/addperson/' + PersonID
+    };
+    if (RoleID) {
+      params.data = JSON.stringify({
+        RoleID: RoleID
+      });
+    }
+    return window.CRM.APIRequest(params, callback);
+  },
+  'removePerson': function (GroupID, PersonID, callback) {
+    return window.CRM.APIRequest({
+      method: 'DELETE', // define the type of HTTP verb we want to use (POST for our form)
+      path: 'groups/' + GroupID + '/removeperson/' + PersonID,
+    }, callback);
+  },
+  'addGroup': function (callbackM) {
+    window.CRM.openPromptDialog({
+      title: i18next.t("Create a group"),
+      details: i18next.t("Enter the name of the new group that should be created from the current workflow."),
+      value: i18next.t("Default Name Group"),
+      confirmLabel: i18next.t('Create group'),
+      cancelLabel: i18next.t('Cancel'),
+      onSubmit: function (result) {
+        if (result) {
+          var newGroup = { 'groupName': result };
+
+          window.CRM.APIRequest({
+            method: "POST",
+            url: window.CRM.root + "/api/groups/",               //call the groups api handler located at window.CRM.root
+            data: JSON.stringify(newGroup)                      // stringify the object we created earlier, and add it to the data payload
+          }, function (data) {                               //yippie, we got something good back from the server
+            window.CRM.cart.refresh();
+            if (callbackM) {
+              callbackM(data);
+            }
+          });
+        }
+      }
+    });
+  }
+};
+
+window.CRM.system = {
+  'runTimerJobs': function () {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'timerjobs/run'
+    }, function (data) {
+    });
+  }
+};
+
+window.CRM.tools = {
+  'getLinkMapFromAddress': function (address) {
+    if (window.CRM.sMapExternalProvider == "AppleMaps") {
+      return '<a href="http://maps.apple.com/?q=' + address + '" target="_blank">' + address + '</a>';
+    } else if (window.CRM.sMapExternalProvider == "GoogleMaps") {
+      return '<a href="http://maps.google.com/?q=1  ' + address + '" target="_blank">' + address + '</a>';
+    }
+  }
+};
+
+window.CRM.synchronize = {
+  isRedirecting: false,
+  renderers: {
+    EventsCounters: function (data) {
+      if (document.getElementById('BirthdateNumber') != null) {
+        document.getElementById('BirthdateNumber').innerText = data.Birthdays;
+        document.getElementById('AnniversaryNumber').innerText = data.Anniversaries;
+        document.getElementById('EventsNumber').innerText = data.Events.count;
+
+        var alarmLen = data.Events.alarms.length;
+        if (alarmLen > 0) {
+          for (i = 0; i < alarmLen; i++) {
+            if (data.Events.alarms[i].diplayAlarm) {
+              window.CRM.notify('far fa-bell', i18next.t("Calendar Event") + ".", data.Events.alarms[i].summary + "<br><b>", null, "error", "top", 10000, '_blank', "Left");
+            }
+          }
+        }
+      }
+    },
+    FamilyCount: function (data) {
+      let dashBoardFamReal = document.getElementById('realFamilyCNT');
+      let dashBoardSingleP = document.getElementById('singleCNT');
+
+      if (dashBoardFamReal !== null) dashBoardFamReal.innerText = data.familyCount[1];
+      if (dashBoardSingleP !== null) dashBoardSingleP.innerText = data.familyCount[2];
+
+      let latestFamiliesTable = document.getElementById('latestFamiliesDashboardItem');
+      if (latestFamiliesTable != null) {
+        latestFamiliesTable = $('#latestFamiliesDashboardItem').DataTable({
+          retrieve: true,
+          responsive: true,
+          paging: false,
+          ordering: false,
+          searching: false,
+          scrollX: false,
+          info: false,
+          'columns': [
+            {
+              data: 'Name',
+              render: function (data, type, row, meta) {
+                return row.img + ' <a href=' + window.CRM.root + '/v2/people/family/view/' + row.Id + '>' + data + '</a>';
+              }
+            },
+            {
+              data: 'Address1',
+              render: function (data, type, row, meta) {
+                return data.replace(/\\(.)/mg, "$1");// we strip the slashes
+              }
+            },
+            {
+              data: 'DateEntered',
+              render: function (data, type, row, meta) {
+                if (window.CRM.timeEnglish == true) {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' hh:mm a');
+                } else {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' HH:mm');
+                }
+              }
+            }
+          ]
+        });
+        latestFamiliesTable.clear();
+        latestFamiliesTable.rows.add(data.LatestFamilies);
+        latestFamiliesTable.draw(true);
+      }
+
+      let updatedFamiliesTable = document.getElementById('updatedFamiliesDashboardItem');
+      if (updatedFamiliesTable != null) {
+        updatedFamiliesTable = $('#updatedFamiliesDashboardItem').DataTable({
+          retrieve: true,
+          responsive: true,
+          paging: false,
+          ordering: false,
+          searching: false,
+          scrollX: false,
+          info: false,
+          'columns': [
+            {
+              data: 'Name',
+              render: function (data, type, row, meta) {
+                return row.img + ' <a href=' + window.CRM.root + '/v2/people/family/view/' + row.Id + '>' + data + '</a>';
+              }
+            },
+            {
+              data: 'Address1',
+              render: function (data, type, row, meta) {
+                return data.replace(/\\(.)/mg, "$1");// we strip the slashes
+              }
+            },
+            {
+              data: 'DateLastEdited',
+              render: function (data, type, row, meta) {
+                if (window.CRM.timeEnglish == true) {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' hh:mm a');
+                } else {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' HH:mm');
+                }
+              }
+            }
+          ]
+        });
+        updatedFamiliesTable.clear();
+        updatedFamiliesTable.rows.add(data.UpdatedFamilies);
+        updatedFamiliesTable.draw(true);
+      }
+
+    },
+    PersonCount: function (data) {
+      let dashBoardPeopleStats = document.getElementById('peopleStatsDashboard');
+      if (dashBoardPeopleStats != undefined) dashBoardPeopleStats.innerText = data.personCount;
+
+      let latestPersonsTable = document.getElementById('latestPersonsDashboardItem');
+      if (latestPersonsTable != undefined) {
+        latestPersonsTable = $('#latestPersonsDashboardItem').DataTable({
+          retrieve: true,
+          responsive: true,
+          paging: false,
+          ordering: false,
+          searching: false,
+          scrollX: false,
+          info: false,
+          'columns': [
+            {
+              data: 'LastName',
+              render: function (data, type, row, meta) {
+                return row.img + ' <a href=' + window.CRM.root + '/v2/people/person/view/' + row.Id + '>' + data + ' ' + row.FirstName + '</a>';
+              }
+            },
+            {
+              data: 'Address1',
+              render: function (data, type, row, meta) {
+                if (data === null) {
+                  return '';
+                }
+                return data.replace(/\\(.)/mg, "$1");// we strip the slashes
+              }
+            },
+            {
+              data: 'DateEntered',
+              render: function (data, type, row, meta) {
+                if (window.CRM.timeEnglish == true) {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' hh:mm a');
+                } else {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' HH:mm');
+                }
+              }
+            }
+          ]
+        });
+        latestPersonsTable.clear();
+        latestPersonsTable.rows.add(data.LatestPersons);
+        latestPersonsTable.draw(true);
+      }
+
+      let updatedPersonsTable = document.getElementById('updatedPersonsDashboardItem');
+      if (updatedPersonsTable != undefined) {
+        updatedPersonsTable = $('#updatedPersonsDashboardItem').DataTable({
+          retrieve: true,
+          responsive: true,
+          paging: false,
+          ordering: false,
+          searching: false,
+          scrollX: false,
+          info: false,
+          'columns': [
+            {
+              data: 'LastName',
+              render: function (data, type, row, meta) {
+                return row.img + ' <a href=' + window.CRM.root + '/v2/people/person/view/' + row.Id + '>' + data + ' ' + row.FirstName + '</a>';
+              }
+            },
+            {
+              data: 'Address1',
+              render: function (data, type, row, meta) {
+                if (data === null) {
+                  return '';
+                }
+                return data.replace(/\\(.)/mg, "$1");// we strip the slashes
+              }
+            },
+            {
+              data: 'DateLastEdited',
+              render: function (data, type, row, meta) {
+                if (data === null) {
+                  data = row.DateEntered;
+                }
+                if (window.CRM.timeEnglish == true) {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' hh:mm a');
+                } else {
+                  return moment(data).format(window.CRM.datePickerformat.toUpperCase() + ' HH:mm');
+                }
+              }
+            }
+          ]
+        });
+        updatedPersonsTable.clear();
+        updatedPersonsTable.rows.add(data.UpdatedPerson);
+        updatedPersonsTable.draw(true);
+      }
+    },
+    CalendarDisplay: function (data) {
+      let calendarView = document.getElementById('calendar');
+
+      if (calendarView && window.CRM.calendar != null) {
+        if (window.CRM.calendarSignature != data) {
+          window.CRM.calendarSignature = data;
+          window.CRM.addAllCalendars();
+        }
+
+        window.CRM.calendar.refetchEvents();
+      }
+    },
+    EDriveDisplay: function (data) {
+      let edriveView = document.getElementById('edrive-table');
+
+      if (edriveView) {
+        window.CRM.reloadEDriveTable();
+      }
+    },
+    GroupsDisplay: function (data) {
+      let dashBoardStatsSundaySchool = document.getElementById('groupStatsSundaySchool');
+      if (dashBoardStatsSundaySchool) {// We have to check if we are on the dashboard menu
+        dashBoardStatsSundaySchool.innerText = data.sundaySchoolClasses;
+      }
+
+      let dashBoardStatsSundaySchoolKids = document.getElementById('groupStatsSundaySchoolKids');
+      if (dashBoardStatsSundaySchoolKids) {// We have to check if we are on the dashboard menu
+        dashBoardStatsSundaySchoolKids.innerText = data.sundaySchoolkids;
+      }
+
+      let dashBoardGroupsCountDashboard = document.getElementById('groupsCountDashboard');
+
+      if (dashBoardGroupsCountDashboard) {// We have to check if we are on the dashboard menu
+        dashBoardGroupsCountDashboard.innerText = data.groups;
+      }
+    },
+    VolunteersDisplay: function (data) {
+      let dashBoardVolunteersCountDashboard = document.getElementById('volunteerOpportunitiesCountDashboard');
+
+      if (dashBoardVolunteersCountDashboard) {// We have to check if we are on the dashboard menu
+        dashBoardVolunteersCountDashboard.innerText = data.volunteers;
+      }
+    },
+    SundaySchoolDisplay: function (data) {
+      let sundaySchoolClassesDasBoard = document.getElementById('sundaySchoolClassesDasBoard');
+
+      if (sundaySchoolClassesDasBoard) {
+        sundaySchoolClassesDasBoard.innerText = data.sundaySchoolClasses;
+      }
+
+      let sundaySchoolTeachersCNTDasBoard = document.getElementById('sundaySchoolTeachersCNTDasBoard');
+
+      if (sundaySchoolTeachersCNTDasBoard) {
+        sundaySchoolTeachersCNTDasBoard.innerText = data.teachersCNT;
+      }
+
+      let sundaySchoolKidsCNTDasBoard = document.getElementById('sundaySchoolKidsCNTDasBoard');
+
+      if (sundaySchoolKidsCNTDasBoard) {
+        sundaySchoolKidsCNTDasBoard.innerText = data.kidsCNT;
+      }
+
+      let sundaySchoolFamiliesCNTDasBoard = document.getElementById('sundaySchoolFamiliesCNTDasBoard');
+
+      if (sundaySchoolFamiliesCNTDasBoard) {
+        sundaySchoolFamiliesCNTDasBoard.innerText = data.SundaySchoolFamiliesCNT;
+      }
+
+      let sundaySchoolMaleKidsCNTDasBoard = document.getElementById('sundaySchoolMaleKidsCNTDasBoard');
+
+      if (sundaySchoolMaleKidsCNTDasBoard) {
+        sundaySchoolMaleKidsCNTDasBoard.innerText = data.maleKidsCNT;
+      }
+
+      let sundaySchoolFemaleKidsCNTDasBoard = document.getElementById('sundaySchoolFemaleKidsCNTDasBoard');
+
+      if (sundaySchoolFemaleKidsCNTDasBoard) {
+        sundaySchoolFemaleKidsCNTDasBoard.innerText = data.femaleKidsCNT;
+      }
+
+      let sundaySchoolEmailLinkDasBoard = document.getElementById('sEmailLink');
+
+      if (sundaySchoolEmailLinkDasBoard) {
+        $('#sEmailLink').attr('href', 'mailto:' + data.emailLink);
+      }
+
+      let sundaySchoolEmailLinkBCCDasBoard = document.getElementById('sEmailLinkBCC');
+
+      if (sundaySchoolEmailLinkBCCDasBoard) {
+        $('#sEmailLinkBCC').attr('href', 'mailto:?bcc=' + data.emailLink);
+      }
+
+      let sundaySchoolDropDownMailDasBoard = document.getElementById('dropDownMail');
+
+      if (sundaySchoolDropDownMailDasBoard) {
+        $('#dropDownMail').html(data.dropDown.allNormal);
+      }
+
+      let sundaySchoolDropDownBCCMailDasBoard = document.getElementById('dropDownMailBCC');
+
+      if (sundaySchoolDropDownBCCMailDasBoard) {
+        $('#dropDownMailBCC').html(data.dropDown.allNormalBCC);
+      }
+    },
+    EventAttendeesDisplay: function (data) {
+      if (window.CRM.attendeesPresences == false) {
+        window.CRM.notify('fa  fa-info-circle',
+          "<b><big>" + data.EventCountAttend + "</big></b> " + i18next.t("Attendees Checked In") + ".",
+          "<br><b>" + i18next.t("More info") + ' <a href="' + window.CRM.root + '/v2/calendar/events/list"><i class="fas fa-arrow-circle-right"></i> </a> ' + '</b>',
+          null, "warning", "bottom",
+          Math.min(window.CRM.iDashboardPageServiceIntervalTime * 1000, window.CRM.timeOut),
+          '_blank',
+          "Right");
+        window.CRM.attendeesPresences = true;
+      }
+    }
+  },
+  refresh: function () {
+    if (window.CRM.PageName.indexOf("v2/users/change/password") !== -1) {
+      return;
+    }
+    
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'synchronize/page?currentpagename=' + encodeURIComponent(
+        window.CRM.PageName.replace(window.CRM.root, '')
+      ),
+    }, function (data) {
+      if (data && data[0] && data[0].timeOut) {
+        //alert(i18next.t("1. Your session has expired. You will be redirected to the login page."));
+
+        window.location.replace(window.CRM.root + '/session/Lock');
+      } else {
+        for (var key in data[1]) {
+          try {
+            window.CRM.synchronize.renderers[key](data[1][key]);
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      }
+    }, function (error) {
+      if (error && error.status === 401 && !window.CRM.synchronize.isRedirecting) {
+        window.CRM.synchronize.isRedirecting = true;
+        window.location.replace(window.CRM.root + '/session/Lock');
+      }
+    });
+  }
+}
+
+/*
+  function : ElementListener
+  element  : id or class (ie : '.myclass' or '#myid')
+  type     : 'click'
+  callback : the function to target
+*/
+window.CRM.ElementListener = function (element, type, callback) {
+  if (element[0] == '#') {
+    el = document.getElementById(element.substring(1));
+    if (el !== null) {
+      el.addEventListener(type, (event) => {
+        event.stopImmediatePropagation();
+        callback(event);
+      });
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.addEventListener(type, (event) => {
+        event.stopImmediatePropagation();
+        callback(event);
+      });
+    });
+  }
+
+}
+
+window.CRM.addClass = function (element, c = "btn-default") {
+  if (element[0] == '#') {
+    if (el !== null) {
+      el = document.getElementById(element.substring(1));
+      el.classList.add(c);
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.classList.add(c);
+    });
+  }
+}
+
+window.CRM.removeClass = function (element, c = "btn-default") {
+  if (element[0] == '#') {
+    if (el !== null) {
+      el = document.getElementById(element.substring(1));
+      el.classList.remove(c);
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.classList.remove(c);
+    });
+  }
+}
+
+window.CRM.class = function (element, c = "btn-default") {
+  if (element[0] == '#') {
+    el = document.getElementById(element.substring(1));
+    el.setAttribute('class', c);
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.setAttribute('class', c);
+    });
+  }
+}
+
+window.CRM.css = function (element, c = "color:redd") {
+  if (element[0] == '#') {
+    el = document.getElementById(element.substring(1));
+    if (el !== null) {
+      el.setAttribute('style', c);
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.setAttribute('style', c);
+    });
+  }
+}
+
+window.CRM.html = function (element, t = "test") {
+  if (element[0] == '#') {
+    el = document.getElementById(element.substring(1));
+    if (el !== null) {
+      el.innerText = t;
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.innerText = t;
+    });
+  }
+}
+
+window.CRM.disabled = function (element, p = false) {
+  if (element[0] == '#') {
+    el = document.getElementById(element.substring(1));
+    if (el !== null) {
+      el.disabled = p;
+    }
+  } else {
+    document.querySelectorAll(element).forEach(el => {
+      el.disabled = p;
+    });
+  }
+}
+
+var sidebar_skins = [
+    'sidebar-dark-blue',
+    'sidebar-dark-secondary',
+    'sidebar-dark-green',
+    'sidebar-dark-cyan',
+    'sidebar-dark-yellow',
+    'sidebar-dark-red',
+    'sidebar-dark-fuchsia',
+    'sidebar-dark-blue',
+    'sidebar-dark-yellow',
+    'sidebar-dark-indigo',
+    'sidebar-dark-navy',
+    'sidebar-dark-purple',
+    'sidebar-dark-pink',
+    'sidebar-dark-maroon',
+    'sidebar-dark-orange',
+    'sidebar-dark-lime',
+    'sidebar-dark-teal',
+    'sidebar-dark-olive',
+    'sidebar-dark-black',
+    'sidebar-dark-gray-dark',
+    'sidebar-dark-gray',
+    'sidebar-dark-light',
+    'sidebar-light-blue',
+    'sidebar-light-secondary',
+    'sidebar-light-green',
+    'sidebar-light-cyan',
+    'sidebar-light-yellow',
+    'sidebar-light-red',
+    'sidebar-light-fuchsia',
+    'sidebar-light-blue',
+    'sidebar-light-yellow',
+    'sidebar-light-indigo',
+    'sidebar-light-navy',
+    'sidebar-light-purple',
+    'sidebar-light-pink',
+    'sidebar-light-maroon',
+    'sidebar-light-orange',
+    'sidebar-light-lime',
+    'sidebar-light-teal',
+    'sidebar-light-olive',
+    'sidebar-light-black',
+    'sidebar-light-gray-dark',
+    'sidebar-light-gray',
+    'sidebar-light-light'
+];
+
+window.CRM.darkMode = function (mode, save = false) {
+  let classes = $('.main-sidebar').attr('class').split(/\s+/);
+  const resultat = classes.find(classe => classe.startsWith("sidebar-"));
+  color = resultat.split('sidebar-dark-')[1];
+
+  if (color === undefined) {
+    color = resultat.split('sidebar-light-')[1];
+  }
+
+  if(mode == 'dark') {// we're on dark mode            
+      $('.control-sidebar').removeClass('control-sidebar-light');
+      $('.control-sidebar').addClass('control-sidebar-dark');
+      $('.sidebar-mini').removeClass('light-mode');
+      $('.sidebar-mini').addClass('dark-mode');
+      $('.table-dropdown-menu').removeClass('light-mode');
+      $('.table-dropdown-menu').addClass('dark-mode');      
+      $('.dropdown-menu').removeClass('navbar-light');
+      $('.dropdown-menu').addClass('navbar-dark');
+      
+      $('.main-header').removeClass('navbar-light');
+      $('.main-header').addClass('navbar-dark');
+      $('.brand-link').removeClass('navbar-light');
+      $('.brand-link').addClass('navbar-dark');
+      
+      window.CRM.bDarkMode = true;
+  } else {// we're in light mode
+      $('.control-sidebar').removeClass('control-sidebar-dark');
+      $('.control-sidebar').addClass('control-sidebar-light');
+      $('.sidebar-mini').removeClass('dark-mode');
+      $('.sidebar-mini').addClass('light-mode');
+      $('.table-dropdown-menu').removeClass('dark-mode');
+      $('.table-dropdown-menu').addClass('light-mode');
+      $('.dropdown-menu').removeClass('navbar-dark');
+      $('.dropdown-menu').addClass('navbar-light');
+      
+      $('.main-header').removeClass('navbar-dark');
+      $('.main-header').addClass('navbar-light');
+      $('.brand-link').removeClass('navbar-dark');
+      $('.brand-link').addClass('navbar-light');
+      
+            
+      window.CRM.bDarkMode = false;
+  }
+
+  let sidebar = $('.main-sidebar');
+  let sidebar_class = 'sidebar-' + mode + '-' + color;
+  sidebar_skins.map(function (skin) {
+      sidebar.removeClass(skin);
+  })
+
+  sidebar.addClass(sidebar_class);
+
+  if (save) {
+    window.CRM.APIRequest({
+      method: 'POST',
+      path: 'users/setDarkMode',
+      data: JSON.stringify({"darkMode": window.CRM.bDarkMode})
+    }, function (data) {
+    });
+  }
+}
+
+// EDrive Modal function - Opens EDrive file browser and returns selected file URL
+window.CRM.edriveModalOpen = function(callback, 
+    file_type=null, error_file_type_title=null, error_file_type_message=null, error_file_type_callback=null) {
+    if (!callback || typeof callback !== 'function') {
+        console.error('edriveModalOpen requires a callback function');
+        return;
+    }
+
+    // Create modal with iframe loading EDrive browse
+    var edriveModal = bootbox.dialog({
+        title: '<span class="d-inline-flex align-items-center"><i class="fas fa-cloud mr-2"></i><span>' + i18next.t('EDrive File Browser') + '</span></span>',
+        message: '<div style="height: 100%; overflow: hidden; border-radius: 4px; flex: 1;"><iframe id="edrive-iframe" src="' + window.CRM.root + '/browser/browse.php?type=publicDocuments" style="width: 100%; height: 100%; border: none; border-radius: 4px;"></iframe></div>',
+        size: 'extra-large',
+        className: 'edrive-browser-modal',
+        buttons: [
+            {
+                label: '<i class="fas fa-times"></i> ' + i18next.t('Close'),
+                className: 'btn btn-secondary',
+                callback: function() {
+                    edriveModal.modal('hide');
+                    // Clean up event listener
+                    $(document).off('click.edriveDownload');
+                }
+            }
+        ],
+        backdrop: 'static',
+        keyboard: false,
+        show: true,
+        onEscape: function() {
+            $(document).off('click.edriveDownload');
+        }
+    });
+
+    // Apply fullheight styles
+    edriveModal.addClass('edrive-browser-modal');
+
+    // Fix nested modal scrolling issue
+    edriveModal.on('hidden.bs.modal', function() {
+        // Check if there are other modals still open
+        var openModals = $('.modal.show').length;
+        if (openModals > 0) {
+            // Restore modal-open class for parent modal
+            $('body').addClass('modal-open');
+            // Don't force overflow hidden, let Bootstrap handle it
+        } else {
+            // All modals closed - remove modal-open and restore body scroll
+            $('body').removeClass('modal-open');
+            $('body').css('padding-right', '');
+            $('body').css('overflow', '');
+        }
+    });
+
+    // Wait for iframe to load, then attach event listener to iframe content
+    setTimeout(function() {
+        try {
+            var iframeDoc = document.getElementById('edrive-iframe').contentDocument || document.getElementById('edrive-iframe').contentWindow.document;
+            
+            if (iframeDoc) {
+                // Listen for clicks on filemanager-download button in the iframe
+                var iframeWindow = document.getElementById('edrive-iframe').contentWindow;
+                
+                // Store original event handler
+                if (iframeWindow.jQuery) {
+                    var $iframeBody = iframeWindow.jQuery('body');
+                    
+                    // Override the filemanager-download click handler
+                    $iframeBody.off('click', '.filemanager-download');
+                    $iframeBody.on('click', '.filemanager-download', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Get selected rows from DataTable in iframe
+                        if (iframeWindow.CRM && iframeWindow.CRM.dataEDriveTable) {
+                            var selectedRows = iframeWindow.CRM.dataEDriveTable.rows({ selected: true }).data();
+                            
+                            if (selectedRows.length > 0) {
+                                var firstRow = selectedRows[0];
+                                
+                                // Call API to get real link
+                                window.CRM.APIRequest({
+                                    method: 'POST',
+                                    path: 'filemanager/getRealLink',
+                                    data: JSON.stringify({ 
+                                        "personID": iframeWindow.CRM.currentPersonID, 
+                                        "pathFile": firstRow.path 
+                                    })
+                                }, function(data) {
+                                    if (data && data.success) {
+                                        var fileUrl = data.address;
+                                        var fileName = firstRow.name || firstRow.path;
+                                        
+                                        // Validate file type if file_type array is provided
+                                        if (file_type && Array.isArray(file_type) && file_type.length > 0) {
+                                            // Extract file extension
+                                            var fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
+                                            
+                                            // Check if extension is in allowed types
+                                            var isValidType = file_type.some(function(type) {
+                                                return type.toLowerCase() === fileExtension || type.toLowerCase() === '.' + fileExtension;
+                                            });
+                                            
+                                            if (!isValidType) {
+                                                // File type not allowed - show error
+                                                if (error_file_type_title && error_file_type_message) {
+                                                    window.CRM.DisplayAlert(
+                                                        error_file_type_title,
+                                                        error_file_type_message
+                                                    );
+                                                }
+                                                
+                                                // Call error callback if provided
+                                                if (error_file_type_callback && typeof error_file_type_callback === 'function') {
+                                                    error_file_type_callback(fileName, fileExtension);
+                                                }
+                                                
+                                                return;
+                                            }
+                                        }
+                                        
+                                        // Call the callback with the file URL
+                                        callback(fileUrl);
+                                        
+                                        // Close the modal
+                                        edriveModal.modal('hide');
+                                        
+                                        // Clean up event listener
+                                        $(document).off('click.edriveDownload');
+                                    } else {
+                                        window.CRM.DisplayNormalAlert(
+                                            i18next.t('Error'),
+                                            i18next.t('Could not retrieve file URL')
+                                        );
+                                    }
+                                });
+                            } else {
+                                window.CRM.DisplayNormalAlert(
+                                    i18next.t('Warning'),
+                                    i18next.t('Please select a file first')
+                                );
+                            }
+                        }
+                    });
+                }
+            }
+        } catch(e) {
+            console.warn('Unable to access iframe content (might be CORS issue):', e);
+            // Fallback: open as window if iframe access is restricted
+            var browseWindow = window.open(
+                window.CRM.root + '/browser/browse.php?type=publicDocuments',
+                'edriveWindow',
+                'width=1000,height=700,resizable=yes'
+            );
+            
+            // Poll for callback from child window
+            var checkInterval = setInterval(function() {
+                if (browseWindow && browseWindow.closed) {
+                    clearInterval(checkInterval);
+                    edriveModal.modal('hide');
+                }
+                if (browseWindow && browseWindow.CRM && browseWindow.CRM.selectedFileUrl) {
+                    callback(browseWindow.CRM.selectedFileUrl);
+                    browseWindow.close();
+                    clearInterval(checkInterval);
+                    edriveModal.modal('hide');
+                }
+            }, 500);
+        }
+    }, 1000);
+};
+
+
+window.CRM.buildDialogNotice = function (iconClass, title, body, alertClass = 'alert-light border') {
+    return `<div class="alert ${alertClass} mb-0">
+        <div class="d-flex align-items-start">
+        <i class="fas ${iconClass} mr-2 mt-1"></i>
+        <div>
+        <div class="font-weight-bold">${title}</div>
+        <div class="small">${body}</div>
+        </div>
+        </div>
+        </div>`;
+}
+
+window.CRM.buildDialogButtons = function (confirmLabel, confirmClass = 'btn-primary', cancelLabel = i18next.t('Cancel'), cancelClass = 'btn-outline-secondary') {
+    return {
+        confirm: {
+            label: '<i class="fas fa-check"></i> ' + confirmLabel,
+            className: confirmClass
+        },
+        cancel: {
+            label: '<i class="fas fa-times"></i> ' + cancelLabel,
+            className: cancelClass
+        }
+    };
+}
+
+$(document).ajaxError(function (evt, xhr, settings, errortext) {
+  if (errortext !== "abort") {
+    try {
+      var CRMResponse = JSON.parse(xhr.responseText);
+      window.CRM.DisplayErrorMessage(settings.url, CRMResponse);
+    } catch (err) {
+      window.CRM.DisplayErrorMessage(settings.url, { "message": errortext });
+    }
+  }
+});
+
+const LimitTextSize = (theTextArea, size) => {
+  if (theTextArea.value.length > size) {
+    theTextArea.value = theTextArea.value.substr(0, size);
+  }
+}
+
+const popUp = (URL) => {
+  var day = new Date();
+  var id = day.getTime();
+  eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=yes,location=0,statusbar=0,menubar=0,resizable=yes,width=600,height=400,left = 100,top = 50');");
+}

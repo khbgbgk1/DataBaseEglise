@@ -1,0 +1,172 @@
+# Project information
+site_name: 'Documentation EcclesiaCRM'
+site_description: 'Une documentation complète du CRM'
+site_author: 'Philippe Logel'
+site_url: 'https://github.com/phili67/ecclesiacrm'
+
+# Copyright
+copyright: 'Copyright &copy; 2017 - 2023 Philippe Logel'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'fr'
+  palette:
+        primary: 'blue'
+        accent: 'blue'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# Customization
+extra:
+  social:
+    - icon: 'fontawesome/brands/github-alt'
+      link: 'https://github.com/phili67/ecclesiacrm'
+#    - type: 'twitter'
+#      link: 'https://twitter.com/PhilippeLogel'
+#    - type: 'linkedin'
+#      link: 'https://linkedin.com/in/squidfunk'
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+# the site map
+
+site_name: EcclesiaCRM
+nav:
+- "Accueil": 'index.md'
+- "Manuel : Administrateur":
+    - 'Mise en place du CRM':
+        - 'Configuration requise': 'user-guide/doc-installation/doc-requirement.md'
+        - "Procédure d'Installation": 'user-guide/doc-installation/doc-install.md'
+    - 'Gestion des personnes':
+        - 'Présentation': 'user-guide/doc-admin/person/doc-persons.md'
+        - 'Créer une personne': 'user-guide/doc-admin/person/doc-create-person.md'
+        - 'Désactiver/supprimer une personne': 'user-guide/doc-admin/person/doc-delete-person.md'
+        - 'Personnalisation':
+            - 'Gestionnaire de Classification': 'user-guide/doc-admin/person/doc-custom-settings/doc-person-classification.md'
+            - 'Liste des propriétés': 'user-guide/doc-admin/person/doc-custom-settings/doc-person-properties.md'
+            - 'Champs personnalisables': 'user-guide/doc-admin/person/doc-custom-settings/doc-person-customfields.md'
+    - 'Gestion des familles':
+        - 'Présentation': 'user-guide/doc-admin/family/doc-families.md'
+        - 'Créer une famille': 'user-guide/doc-admin/family/doc-create-family.md'
+        - 'Auto-inscription de famille': 'user-guide/doc-admin/family/doc-create-family-auto.md'
+        - 'Auto-vérification de famille': 'user-guide/doc-admin/family/doc-verify-family-auto.md'
+        - 'Désactiver supprimer une famille': 'user-guide/doc-admin/family/doc-delete-family.md'
+        - 'Personnalisation':
+            - 'Rôles de famille': 'user-guide/doc-admin/family/doc-custom-settings/doc-family-roles.md'
+            - 'Propriétés de famille': 'user-guide/doc-admin/family/doc-custom-settings/doc-family-properties.md'
+            - 'Champs personnalisables de famille': 'user-guide/doc-admin/family/doc-custom-settings/doc-family-customfields.md'
+    - 'Gestion des groupes':
+        - 'Présentation': 'user-guide/doc-admin/group/doc-groups.md'
+        - 'Création & Menu': 'user-guide/doc-admin/group/doc-groups-management.md'
+        - 'Gestion du groupe': 'user-guide/doc-admin/group/doc-groups-managers.md'
+        - 'Membres & rôles': 'user-guide/doc-admin/group/doc-groups-members-roles.md'
+        - 'Export Contacts': 'user-guide/doc-admin/group/doc-groups-export-contacts.md'
+        - 'Personnalisation':
+            - 'Propriétés globales': 'user-guide/doc-admin/group/doc-custom-settings/doc-groups-global-properties.md'
+            - 'Propriétés spécifiques': 'user-guide/doc-admin/group/doc-custom-settings/doc-groups-specific-properties.md'
+            - 'Types de groupes': 'user-guide/doc-admin/group/doc-groups-management.md'
+    - 'Droits et gestion des utilisateurs du CRM':
+        - "Mise en place d'un utilisateur": 'user-guide/doc-users/doc-users.md'
+        - "Gestion des rôles utilisateurs": 'user-guide/doc-users/doc-user-role.md'
+    - 'Réglages généraux':
+        - "Localisation CRM en français": 'user-guide/doc-installation/doc-localization.md'
+        - "Rapports CRM en français": 'user-guide/doc-installation/doc-report.md'
+        - "Intégration": 'user-guide/doc-admin/doc-settings/doc-settings-integration.md'
+    - 'Astuces':
+        - "Bugs à la restauration d'une BDD": 'user-guide/doc-admin/doc-tips/doc-restauration-bdd-bug.md'
+#    - 'Personalisation du CRM':
+
+
+- "Manuel : Utilisateur":
+    - "Gérer son profile":
+        - 'Espace Personnel': 'user-guide/doc-person/doc-person-profile.md'
+        - 'Réglages personnels': 'user-guide/doc-person/doc-person-settings.md'
+    - "calendriers":
+        - 'Ajouter supprimer': 'user-guide/doc-person/doc-person-calendar.md'
+        - 'Créer un événement': 'user-guide/doc-person/doc-person-events.md'
+        - 'Partager son calendrier': 'user-guide/doc-person/doc-person-share-calendar.md'
+        - 'Partager avec le Mac': 'user-guide/doc-person/doc-person-share-mac.md'
+    - "Documents":
+        - 'Créer-Gérer': 'user-guide/doc-person/doc-person-document-creation.md'
+        - 'Images et Fichiers': 'user-guide/doc-person/doc-person-document-images-files.md'
+        - 'Les partager': 'user-guide/doc-person/doc-person-document-share.md'
+        - 'Export sous Word (BETA)': 'user-guide/doc-person/doc-person-document-word-export.md'
+        - "Documents & Modèles": 'user-guide/doc-person/doc-person-document-templates.md'
+    - "EDrive":
+        - "EDrive dans le CRM": 'user-guide/doc-person/doc-person-document-edrive.md'
+        - 'EDrive en dehors du CRM':
+            - 'Introduction': 'user-guide/doc-webdav-file/doc-webdav-intro.md'
+            - 'Utiliser le serveur de fichiers': 'user-guide/doc-webdav-file/doc-webdav-use.md'
+    - 'Astuces':
+        - 'Problème Export de Tableau (CSV)': 'user-guide/doc-person/doc-tips/doc-export-CSV.md'
+        - 'Barre de Menu': 'user-guide/doc-person/doc-tips/doc-export-sidebar.md'
+        - 'Visualiser les addresses dans AppleMap, GoogleMap': 'user-guide/doc-person/doc-tips/doc-export-export-address-smartphone.md'
+
+- "Manuel : DPO & RGPD":
+    - 'Introduction': 'user-guide/doc-gdpr/doc-gdpr-introduction.md'
+    - 'Activation & Gestion': 'user-guide/doc-gdpr/doc-gdpr-activation.md'
+
+- "Manuel : Visio (Plugin)":
+      - 'Introduction': 'user-guide/doc-visio/doc-visio-introduction.md'
+      - 'Gestion': 'user-guide/doc-visio/doc-visio-management.md'
+
+- "Manuel : Pasteur & Conseiller":
+      - "Tableau de bord": 'user-guide/doc-pastoral-care/doc-pastoral-care-dashboard.md'
+      - "Activer pour un utilisateur": 'user-guide/doc-pastoral-care/doc-pastoral-care.md'
+      - "Ajouter : Personne & Famille": 'user-guide/doc-pastoral-care/doc-pastoral-care-add-person-family.md'
+      - "Classifications": 'user-guide/doc-pastoral-care/doc-pastoral-care-classifications.md'
+      - "Personnalisation": 'user-guide/doc-pastoral-care/doc-settings/doc-settings-pastoral-care.md'
+
+- "Manuel : Ecole du dimanche":
+    - "Introduction": 'user-guide/doc-sunday-school/doc-sunday-school-introduction.md'
+    - "Faire l'appel": 'user-guide/doc-sunday-school/doc-sunday-school-attendance.md'
+    - "Créer - Editer - trier": 'user-guide/doc-sunday-school/doc-sunday-school-add-edit.md'
+    - "Aide moniteur": 'user-guide/doc-sunday-school/doc-sunday-school-help-teacher.md'
+    - "Export : Bagdes": 'user-guide/doc-sunday-school/doc-sunday-school-badges.md'
+    - "Export : Trombinoscope - tableau de présence": 'user-guide/doc-sunday-school/doc-sunday-school-exports.md'
+    - "Barre Latérale": 'user-guide/doc-sunday-school/doc-sunday-school-menu.md'
+
+- "Manuel : Flux d'événement (plugin)":
+    - "Présentation": 'user-guide/doc-plugins/eventworkflow/introduction.md'
+    - "Créer/gérer (une journée)": 'user-guide/doc-plugins/eventworkflow/createmanage.md'
+
+- "Manuel : Campagne de Publipostage":
+    - "MailChimp":
+        - 'Tableau de bord': 'user-guide/doc-mailchimp/dashboard.md'
+        - 'Gérer les listes': 'user-guide/doc-mailchimp/manage_list.md'
+        - 'Gérer les Tags (étiquettes)': 'user-guide/doc-mailchimp/manage_tag.md'
+        - 'Gérer les campagnes': 'user-guide/doc-mailchimp/manage_campaign.md'
+
+- "Manuel : Plugins":
+    - "Présentation": 'user-guide/doc-plugins/introduction.md'
+    - "Installation/mise à jour": 'user-guide/doc-plugins/installation-upgrade.md'
+
+- "Manuel : développeur":
+    - 'API': 'user-guide/doc-dev/doc-api/api.md'
+    - 'Plugins':
+      - 'Introduction': 'user-guide/doc-dev/doc-plugins/intro.md'
+      - 'Démarrer': 'user-guide/doc-dev/doc-plugins/start.md'
+
+- "Outils":
+    - "Panier": 'user-guide/doc-tools/doc-cart.md'
+    - "Email": 'user-guide/doc-tools/doc-email.md'
+    - "Recherche Géographique": 'user-guide/doc-tools/doc-geographics.md'
+    - "Import/export de personnes et familles": 'user-guide/doc-tools/doc-import.md'
+
+- "À propos":
+    - 'A propos': 'about/about.md'
+    - 'Licence': 'about/license.md'
+    - 'Notes de mise à jour': 'about/release-notes.md'

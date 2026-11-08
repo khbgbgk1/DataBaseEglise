@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 18:28+0000\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/MeetingJitsi/core/VIEWControllers/VIEWMeetingController.php:55
+msgid "Meeting Dashboard"
+msgstr "ミーティングダッシュボード"
+
+#: ../src/Plugins/MeetingJitsi/core/VIEWControllers/VIEWMeetingController.php:102
+msgid "Meeting Settings"
+msgstr "会議の設定"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:25
+msgid "Jitsi Meeting"
+msgstr "ジッツィ・ミーティング"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:27
+msgid "Create, select and launch your rooms"
+msgstr "部屋の作成、選択、立ち上げ"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:36
+msgid "Room names"
+msgstr "部屋名"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:39
+msgid "Create first a room and manage theme with the arrow button"
+msgstr "最初に部屋を作り、矢印ボタンでテーマを管理する"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:40
+msgid "Create Room"
+msgstr "クリエイトルーム"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:54
+msgid "This action will delete all your rooms"
+msgstr "このアクションは、あなたのすべての部屋を削除します。"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:55
+msgid "Delete all Rooms"
+msgstr "すべての部屋を削除"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:59
+msgid "Appointment"
+msgstr "アポイントメント"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:67
+msgid "Room Name"
+msgstr "部屋名"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:68
+msgid "No room selected"
+msgstr "部屋が選択されていない"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:76
+msgid "First create a Jitsi room with the button above !"
+msgstr "まず、上のボタンでJitsiルームを作成してください。"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingdashboard.php:77
+msgid "Then choose a room from the dropdown to launch the meeting"
+msgstr "次に、ドロップダウンから部屋を選択し、会議を開始します。"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:23
+msgid "Settings"
+msgstr "設定"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:24
+msgid "Configure your meeting provider and API access"
+msgstr "会議プロバイダーとAPIアクセスを設定する"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:42
+msgid "The Jitsi domain name, by default"
+msgstr "Jitsiのドメイン名、デフォルトでは"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:45
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:63
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:81
+msgid "Definition"
+msgstr "定義"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:48
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:66
+msgid "or"
+msgstr "または"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:60
+msgid "The path for the script associated with the domain name"
+msgstr "ドメイン名に関連するスクリプトのパス"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:78
+msgid "The api Key"
+msgstr "apiキー"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:84
+msgid "You can find one on the website"
+msgstr "ウェブサイトをご覧ください。"
+
+#: ../src/Plugins/MeetingJitsi/v2/templates/meetingsettings.php:91
+msgid "Save Changes"
+msgstr "変更の保存"

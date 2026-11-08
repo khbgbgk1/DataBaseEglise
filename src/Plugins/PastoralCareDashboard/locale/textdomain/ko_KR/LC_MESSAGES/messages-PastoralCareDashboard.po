@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-14 19:48+0000\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:34
+msgid "None"
+msgstr "없음"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:67
+msgid "Excellent coverage"
+msgstr "뛰어난 커버리지"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:68
+#, fuzzy, php-format
+msgid ""
+"More than 60% of members have been visited. Keep up the great pastoral work!"
+msgstr "회원의 60% 이상이 방문했습니다. 훌륭한 목회를 계속하세요!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:72
+msgid "Good progress"
+msgstr "좋은 진행 상황"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:73
+msgid ""
+"Between 30% and 60% of members have been visited. Continue your efforts!"
+msgstr "회원의 30%에서 60%가 방문했습니다. 계속 노력하세요!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:77
+msgid "Attention needed"
+msgstr "주의 필요"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:78
+msgid ""
+"Only 10% to 30% of members have been visited. It is time to intensify "
+"pastoral activities."
+msgstr "회원의 10~30%만이 방문했습니다. 목회 활동을 강화해야 할 때입니다."
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:82
+msgid "Critical situation"
+msgstr "중요한 상황"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:83
+#, fuzzy, php-format
+msgid ""
+"Less than 10% of members have been visited. Immediate pastoral action is "
+"required!"
+msgstr "회원의 10% 미만이 방문했습니다. 즉각적인 목회적 조치가 필요합니다!"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:92
+msgid "Persons"
+msgstr "사람"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:93
+msgid "Families"
+msgstr "가족"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:94
+msgid "Singles"
+msgstr "싱글"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:95
+msgid "Retired"
+msgstr "은퇴"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:96
+msgid "Young People"
+msgstr "청소년"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:102
+msgid "Members"
+msgstr "회원"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:103
+msgid "Progress"
+msgstr "진행 상황"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:104
+msgid "Count"
+msgstr "Count"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:132
+msgid "Pastoral Care"
+msgstr "사목 케어"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "Period from"
+msgstr "기간"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "to"
+msgstr "에"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Latest"
+msgstr "최신"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Individual Pastoral Care"
+msgstr "개인 사목 관리"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Last"
+msgstr "마지막"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Family Pastoral Care"
+msgstr "가족 사목 돌봄"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:162
+msgid "Statistics"
+msgstr "통계"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:183
+msgid "Visit/Call your church members"
+msgstr "교인 방문/전화"
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:185
+msgid "Manage Pastoral Care"
+msgstr "목회자 관리"
+
+#~ msgid "Persons not reached"
+#~ msgstr "연락이 닿지 않는 사람"
+
+#~ msgid "Families not reached"
+#~ msgstr "연락이 닿지 않는 가족"
+
+#~ msgid "Single Persons not reached"
+#~ msgstr "연락이 닿지 않는 독신자"
+
+#~ msgid "Retired Persons not reached"
+#~ msgstr "연락이 닿지 않는 은퇴자"
+
+#~ msgid "Young People not reached"
+#~ msgstr "연락이 닿지 않는 청소년"

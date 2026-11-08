@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-24 23:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "true"
+msgstr "verdadero"
+
+msgid "false"
+msgstr "falso"
+
+msgid "pm"
+msgstr ""
+
+msgid "am"
+msgstr ""
+
+msgid "Teachers"
+msgstr "Profesores"
+
+msgid "Students"
+msgstr "Estudiantes"
+
+msgid "Teacher"
+msgstr "Profesor"
+
+msgid "Student"
+msgstr "Estudiante"
+
+msgid "Parents"
+msgstr "Padres"
+
+msgid "Kids"
+msgstr "Niños"
+
+msgid "create"
+msgstr "crear"
+
+msgid "edit"
+msgstr "editar"
+
+msgid "photo"
+msgstr "foto"
+
+msgid "group"
+msgstr "grupo"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "note"
+msgstr "nota"
+
+msgid "You have to set a Title for your event"
+msgstr "Tiene que establecer un título para su evento"
+
+msgid "This event isn't modifiable !!!"
+msgstr "¡¡¡Este evento no es modificable !!!"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr "Para añadir un evento, tienes que crear un calendario o activar uno primero."
+
+msgid "Event added"
+msgstr "Evento añadido"
+
+msgid "Event was added successfully."
+msgstr "El evento se ha añadido con éxito."
+
+msgid "Electronic Transaction Details"
+msgstr "Detalles de la transacción electrónica"
+
+msgid "Daily"
+msgstr "Diario"
+
+msgid "Weekly"
+msgstr "Semanal"
+
+msgid "Monthly"
+msgstr "Mensualmente"
+
+msgid "Quarterly"
+msgstr "Trimestralmente"
+
+msgid "Once"
+msgstr "Una vez"
+
+msgid "Other"
+msgstr "Otros"
+
+msgid "CREDITCARD"
+msgstr "TARJETA DE CRÉDITO"
+
+msgid "CASH"
+msgstr "CAJA"
+
+msgid "Bank"
+msgstr "Banco"
+
+msgid "CreditCard"
+msgstr "Tarjeta de crédito"
+
+msgid "BankDraft"
+msgstr "Giro bancario"
+
+msgid ""
+"Some families haven't any \"head of household\" role name defined or there's any "
+"activated members in this families:"
+msgstr ""
+"Algunas familias no tienen definido ningún nombre de rol de \"cabeza de familia\" "
+"o hay algún miembro activado en estas familias:"
+
+msgid "send"
+msgstr "enviar"
+
+msgid "save"
+msgstr "guardar"
+
+msgid "subscribed"
+msgstr "suscrito"
+
+msgid "unsubscribed"
+msgstr "desabonado"
+
+msgid "sent"
+msgstr "enviado"
+
+msgid "schedule"
+msgstr "programar"
+
+msgid "paused"
+msgstr "pausa"
+
+msgid "cleaned"
+msgstr "limpiado"
+
+msgid "pending"
+msgstr "pendiente"
+
+msgid "Invalid date"
+msgstr "Fecha no válida"

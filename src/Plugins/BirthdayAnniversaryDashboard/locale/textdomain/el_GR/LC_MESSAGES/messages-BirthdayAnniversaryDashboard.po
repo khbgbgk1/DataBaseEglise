@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-06 07:47+0000\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:112
+msgid "Remove"
+msgstr "Αφαιρέστε το"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:113
+msgid "Collapse"
+msgstr "Κατάρρευση"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:200
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:295
+msgid "Pastoral follow-up recorded"
+msgstr "Καταγραφή της ποιμαντικής παρακολούθησης"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:201
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:296
+msgid "No pastoral follow-up yet"
+msgstr "Καμία ποιμαντική παρακολούθηση ακόμη"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:218
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:221
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:312
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:315
+msgid "Call"
+msgstr "Καλέστε"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:220
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:314
+msgid "No phone number available"
+msgstr "Δεν υπάρχει διαθέσιμος αριθμός τηλεφώνου"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:225
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:226
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:229
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:319
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:320
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:323
+msgid "Pastoral follow-up"
+msgstr "Ποιμαντική παρακολούθηση"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:253
+msgid "Deactivate this Person"
+msgstr "Απενεργοποιήστε αυτό το άτομο"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:253
+msgid "Activate this Person"
+msgstr "Ενεργοποιήστε αυτό το άτομο"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:255
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:348
+msgid "Deactivate"
+msgstr "Απενεργοποίηση"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:255
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:348
+msgid "Activate"
+msgstr "Ενεργοποίηση"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:270
+msgid "No calls since"
+msgstr "Καμία κλήση από τότε"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:346
+msgid "Deactivate this Family"
+msgstr "Απενεργοποιήστε αυτή την οικογένεια"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:346
+msgid "Activate this Family"
+msgstr "Ενεργοποιήστε αυτή την Οικογένεια"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:365
+msgid "Last call"
+msgstr "Τελευταία κλήση"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:375
+msgid "Birthdates of the day"
+msgstr "Ημερομηνίες γέννησης της ημέρας"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:389
+msgid "Anniversaries of the day"
+msgstr "Επέτειοι της ημέρας"
+
+#: ../src/Plugins/BirthdayAnniversaryDashboard/v2/templates/View.php:403
+msgid "Unclassified birthdates"
+msgstr "Μη ταξινομημένες ημερομηνίες γέννησης"

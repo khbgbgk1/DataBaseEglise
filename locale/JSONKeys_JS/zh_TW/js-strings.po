@@ -1,0 +1,3478 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2026-08-09T17:50:15.482Z\n"
+"PO-Revision-Date: 2018-07-19T20:33:42.797Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr "备份已下载，服务器上的拷贝已删除"
+
+msgid "You must enter a password"
+msgstr "你必须输入一个密码"
+
+msgid "Passwords must match"
+msgstr "密码必须匹配"
+
+msgid "Backup Running, Please wait."
+msgstr "备份正在运行，请等待。"
+
+msgid "Backup in progress, don't close the window !"
+msgstr "正在备份，请勿关闭窗口 ！"
+
+msgid "Background backup in progress to remote server"
+msgstr "正在向远程服务器进行后台备份"
+
+msgid "Background backup in progress"
+msgstr "正在进行后台备份"
+
+msgid "Backup Error."
+msgstr "备份错误。"
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr "所选文件超过了本服务器的最大上传尺寸"
+
+msgid "Restore Running, Please wait."
+msgstr "恢复运行，请等待。"
+
+msgid "Restore backup, don't close the window !"
+msgstr "恢复备份，不要关闭窗口 ！"
+
+msgid "Restore Complete"
+msgstr "恢复完成"
+
+msgid "Login to restored Database"
+msgstr "登录恢复的数据库"
+
+msgid "Restore Error."
+msgstr "复原错误。"
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr "你确定要删除这个图片吗？"
+
+msgid "Wrong address format."
+msgstr "错误的地址格式。"
+
+msgid "Set Calendar Name"
+msgstr "设置日历名称"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Name"
+msgstr "命名"
+
+msgid "Select a resource type"
+msgstr "选择一个资源类型"
+
+msgid "Room"
+msgstr "房间"
+
+msgid "Computer"
+msgstr "计算机"
+
+msgid "Video"
+msgstr "视频"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Add a short description to help identify this resource."
+msgstr "添加简短说明，以帮助识别该资源。"
+
+msgid "Set Resource Name"
+msgstr "设置资源名称"
+
+msgid "OK"
+msgstr "认可"
+
+msgid "Calendars"
+msgstr "日历"
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr "选择一个或多个日历，更新其在侧边栏中的可见性。"
+
+msgid "Set Status"
+msgstr "设置状态"
+
+msgid "Select [Exclude] or [Include]"
+msgstr "选择[排除]或[包括]。"
+
+msgid "[INCLUDE]"
+msgstr "[包括]"
+
+msgid "[EXCLUDE]"
+msgstr "[EXCLUDE]"
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr "在侧边栏中包括/排除你的日历"
+
+msgid "Ok"
+msgstr "好的"
+
+msgid "[👀  ]"
+msgstr "[👀 ]"
+
+msgid "[👀 ✐]"
+msgstr "[👀 ✐]"
+
+msgid "With"
+msgstr "与"
+
+msgid "Select one or more current shares to update or remove them."
+msgstr "选择一个或多个当前份额，更新或删除它们。"
+
+msgid "Set Rights"
+msgstr "设置权利"
+
+msgid "Select your rights"
+msgstr "选择你的权利"
+
+msgid "or"
+msgstr "或"
+
+msgid "[R ]"
+msgstr "[R ]"
+
+msgid "[RW]"
+msgstr "[RW]"
+
+msgid "Send email notification"
+msgstr "发送电子邮件通知"
+
+msgid "Notify added people, families, or groups by email"
+msgstr "通过电子邮件通知添加的人员、家庭或团体"
+
+msgid "Add persons/Family/groups"
+msgstr "添加人员/家庭/团体"
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr "搜索并添加要共享此日历的人、家庭或群组。"
+
+msgid "Share your Calendar"
+msgstr "分享您的日历"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr "你确定要删除这个分享吗？"
+
+msgid "Stop sharing"
+msgstr "停止分享"
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr "你确定你要停止分享你的文件吗？"
+
+msgid "Person or Family or Group"
+msgstr "个人或家庭或团体"
+
+msgid "Are you sure?"
+msgstr "你确定吗？"
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr "你会失去日历、事件和所有的共享日历。这是不可能被撤销的。"
+
+msgid "Manage"
+msgstr "管理"
+
+msgid "Calendar Management for"
+msgstr "日历管理"
+
+msgid "Modify Calendar Name"
+msgstr "修改日历名称"
+
+msgid "Modify Group Name"
+msgstr "修改组名"
+
+msgid "Modify Resource Name"
+msgstr "修改资源名称"
+
+msgid "Modify Share Name"
+msgstr "修改股份名称"
+
+msgid "Resource Info for"
+msgstr "的资源信息"
+
+msgid "Error"
+msgstr "误差"
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr "只有管理员才有权改变资源描述"
+
+msgid "Actualize"
+msgstr "落实"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "List"
+msgstr "列表"
+
+msgid "List Week"
+msgstr "名单周"
+
+msgid "List Month"
+msgstr "列表月"
+
+msgid "This event isn't modifiable !!!"
+msgstr "这个事件是不能修改的！！！。"
+
+msgid "No description"
+msgstr "无说明"
+
+msgid "What would you like to do?"
+msgstr "你想做什么？"
+
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr "小心删除：此操作无法撤销。"
+
+msgid "Modify Event"
+msgstr "修改事件"
+
+msgid "Delete Event"
+msgstr "删除事件"
+
+msgid "Are you sure to delete this event?"
+msgstr "你确定要删除这个事件吗？"
+
+msgid "Delete all repeated Events"
+msgstr "删除所有重复的事件"
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr "您将删除与此事件相关的所有重复事件。你确定吗？这是不可能撤销的。"
+
+msgid "No"
+msgstr "没有"
+
+msgid "Only this event"
+msgstr "只有这个事件"
+
+msgid "Every Events linked to this Event"
+msgstr "与此事件相关的每个事件"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr "要添加一个事件，你必须先创建一个日历或激活一个日历。"
+
+msgid "Add More Attendees"
+msgstr "添加更多与会者"
+
+msgid "Make Attendance"
+msgstr "参加会议"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Resize Event"
+msgstr "调整大小事件"
+
+msgid "Are you sure about this change?"
+msgstr "你确定这种变化吗？"
+
+msgid "will be resized."
+msgstr "将被调整大小。"
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr "你即将调整所有事件的大小。你是否想:"
+
+msgid "Only this Event"
+msgstr "只有这个事件"
+
+msgid "All Events"
+msgstr "所有活动"
+
+msgid "Move Event"
+msgstr "移动事件"
+
+msgid "will be dropped."
+msgstr "将被放弃。"
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr "你即将移动所有的事件。你是否愿意:"
+
+msgid "Event added"
+msgstr "活动添加"
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr "活动已成功添加。您想出席或添加与会者吗？"
+
+msgid "Event was added successfully."
+msgstr "事件已成功添加。"
+
+msgid "No attendees"
+msgstr "没有出席者"
+
+msgid "From"
+msgstr "来自"
+
+msgid "to"
+msgstr "至"
+
+msgid "Attendance Notes: "
+msgstr "出席情况说明。"
+
+msgid "None"
+msgstr "无"
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Calendar Title"
+msgstr "日历标题"
+
+msgid "Location"
+msgstr "地点"
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr "要验证您的地址：<b>\"点击返回\"</b>。"
+
+msgid "To see the Map click this text field."
+msgstr "要查看地图，请点击此文本字段。"
+
+msgid "Map"
+msgstr "地图"
+
+msgid "Desc"
+msgstr "笛声"
+
+msgid "Event description"
+msgstr "事件描述"
+
+msgid "Event Type"
+msgstr "事件类型"
+
+msgid "Attendance Counts"
+msgstr "出席率统计"
+
+msgid "Start Date"
+msgstr "开始日期"
+
+msgid "All day"
+msgstr "全天候"
+
+msgid "End Date"
+msgstr "结束日期"
+
+msgid "Repeat"
+msgstr "重复进行"
+
+msgid "Daily"
+msgstr "每日"
+
+msgid "Weekly"
+msgstr "每周"
+
+msgid "Monthly"
+msgstr "月度"
+
+msgid "Quarterly"
+msgstr "季度"
+
+msgid "Semesterly"
+msgstr "每学期"
+
+msgid "Yearly"
+msgstr "每年一次"
+
+msgid "End"
+msgstr "结束"
+
+msgid "Alarm"
+msgstr "警报"
+
+msgid "NONE"
+msgstr "无"
+
+msgid "At time of event"
+msgstr "在事件发生时"
+
+msgid "5 minutes before"
+msgstr "5分钟前"
+
+msgid "10 minutes before"
+msgstr "10分钟前"
+
+msgid "15 minutes before"
+msgstr "15分钟前"
+
+msgid "30 minutes before"
+msgstr "30分钟前"
+
+msgid "1 hour before"
+msgstr "1小时前"
+
+msgid "2 hour before"
+msgstr "2小时前"
+
+msgid "1 day before"
+msgstr "1天前"
+
+msgid "2 day before"
+msgstr "前2天"
+
+msgid "Calendar"
+msgstr "日历"
+
+msgid "Add as attendees"
+msgstr "添加为参会人员"
+
+msgid "Notes"
+msgstr "笔记"
+
+msgid "Status"
+msgstr "状况"
+
+msgid "Active"
+msgstr "活跃"
+
+msgid "inactive"
+msgstr "不活跃"
+
+msgid "Event Creation"
+msgstr "事件创建"
+
+msgid "Event Editor"
+msgstr "活动编辑"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Save"
+msgstr "拯救"
+
+msgid "You've to chose a calendar."
+msgstr "你必须选择一个日历。"
+
+msgid "You have to set a Title for your event"
+msgstr "你必须为你的事件设置一个标题"
+
+msgid "In progress...."
+msgstr "在进展中...."
+
+msgid "Events for"
+msgstr "活动介绍"
+
+msgid "Event for"
+msgstr "活动为"
+
+msgid "Loading finished...."
+msgstr "载入完毕...."
+
+msgid "Month"
+msgstr "月份"
+
+msgid "Actions"
+msgstr "行动"
+
+msgid "Attendance Counts with real Attendees"
+msgstr "与会人员的真实出席情况"
+
+msgid "Free Attendance Counts without Attendees"
+msgstr "没有出席者的免费出席计数"
+
+msgid "Calendar Type"
+msgstr "日历类型。"
+
+msgid "Events in Year"
+msgstr "年的活动"
+
+msgid "Events in month"
+msgstr "月份的活动"
+
+msgid "Events by Type"
+msgstr "按类型划分的活动"
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr "你想做什么？小心删除，不可能再恢复了！！！。"
+
+msgid "Text for Event ID"
+msgstr "事件ID的文本"
+
+msgid "Undo Check-out"
+msgstr "撤销退房"
+
+msgid "Make Check-out"
+msgstr "办理退房手续"
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr "编辑/结账 - 撤销结账"
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr "你可以为一个活动的参加者结账或撤销结账"
+
+msgid "Edit/Validate Checkout"
+msgstr "编辑/验证结账"
+
+msgid "Check-out done"
+msgstr "退房完成"
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr "按CTRL + C复制所有小组成员的电话号码"
+
+msgid "You have no more items in your cart."
+msgstr "你的购物车里已经没有物品了。"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Classification"
+msgstr "种类"
+
+msgid "Family Role"
+msgstr "家庭角色"
+
+msgid "CKEditor Template Creation"
+msgstr "CKEditor模板创建"
+
+msgid "Template Name"
+msgstr "模板名称"
+
+msgid "Explanation field cannot be empty."
+msgstr "解释字段不能为空。"
+
+msgid "Template Description"
+msgstr "模板描述"
+
+msgid "Save as Word file in EDrive"
+msgstr "在EDrive中保存为Word文件"
+
+msgid "Word file name"
+msgstr "Word文件名"
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+"该文件将被上传到你的EDrive中<br><small>这部分仅用于测试<b>（Beta）</b>.</"
+"small>。"
+
+msgid "Your note is saved in your EDrive"
+msgstr "你的笔记被保存在你的EDrive中"
+
+msgid "(No templates defined)"
+msgstr "(没有定义模板)"
+
+msgid "Content Templates"
+msgstr "内容模板"
+
+msgid "Please select the template to open in the editor"
+msgstr "请选择要在编辑器中打开的模板"
+
+msgid "Template Options"
+msgstr "模板选项"
+
+msgid "Modify"
+msgstr "修改"
+
+msgid "Modify the template you select"
+msgstr "修改你选择的模板"
+
+msgid "Delete the template you select"
+msgstr "删除你选择的模板"
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr "你确定要删除这个模板吗？这是不可能撤销的。"
+
+msgid "Replace actual content"
+msgstr "替换实际内容"
+
+msgid "Manage templates"
+msgstr "管理模板"
+
+msgid "Save templates"
+msgstr "保存模板"
+
+msgid "Apply templates"
+msgstr "应用模板"
+
+msgid "Save As Word File in EDrive"
+msgstr "在EDrive中保存为Word文件"
+
+msgid "First Name"
+msgstr "名字"
+
+msgid "Last Name"
+msgstr "姓氏"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Company"
+msgstr "公司"
+
+msgid "Unsub"
+msgstr "取消订阅"
+
+msgid "VCard"
+msgstr "创业卡"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Merge Tags"
+msgstr "合并标签"
+
+msgid "Subject:"
+msgstr "课题。"
+
+msgid "Compose New Message"
+msgstr "撰写新邮件"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Error making API Call to"
+msgstr "在调用API时出错"
+
+msgid "Error text"
+msgstr "错误文本"
+
+msgid "Stack Trace"
+msgstr "堆栈跟踪"
+
+msgid "The application could not complete this API request."
+msgstr "应用程序无法完成此 API 请求。"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Please confirm"
+msgstr "请确认"
+
+msgid "Update information"
+msgstr "更新信息"
+
+msgid "Make a selection"
+msgstr "进行选择"
+
+msgid "In progress"
+msgstr "进行中"
+
+msgid "Please wait while the operation is being completed"
+msgstr "操作完成后请稍候"
+
+msgid "There was a problem retrieving the requested object"
+msgstr "检索所请求的对象时出现了问题"
+
+msgid "Add cart to a group"
+msgstr "将购物车添加到组"
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr "选择是将购物车添加到现有组，还是直接从购物车创建一个新组。"
+
+msgid "Action"
+msgstr "行动"
+
+msgid "Select an existing Group"
+msgstr "选择一个现有的组"
+
+msgid "or Create a new Group from the Cart"
+msgstr "或从购物车中创建一个新的组"
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr "选择目的地组和要分配给购物车成员的角色。"
+
+msgid "Select Group"
+msgstr "选择组别"
+
+msgid "Select Role"
+msgstr "选择角色"
+
+msgid "Create a new group and move the current cart into it."
+msgstr "创建一个新组，并将当前购物车移入其中。"
+
+msgid "Group Name"
+msgstr "集团名称"
+
+msgid "Default Name Group"
+msgstr "默认名称组"
+
+msgid "Add Cart to Group"
+msgstr "添加购物车到组"
+
+msgid "Missing selection"
+msgstr "缺失的选择"
+
+msgid "You need to select both a group and a role before continuing."
+msgstr "在继续之前，您需要同时选择组和角色。"
+
+msgid "Group name required"
+msgstr "需要组名"
+
+msgid "Enter a group name before creating a new group from the cart."
+msgstr "从购物车创建新组之前，请输入组名。"
+
+msgid "Deactivate cart persons"
+msgstr "停用推车人"
+
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr "您真的想停用购物车中的所有人员吗？"
+
+msgid "This action can be undone later if needed."
+msgstr "如果需要，可以在以后撤销这一操作。"
+
+msgid "Keep active"
+msgstr "保持活跃"
+
+msgid "Deactivate persons"
+msgstr "停用人员"
+
+msgid "Delete cart persons"
+msgstr "删除推车人"
+
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr "您真的想从客户关系管理中删除购物车中的所有人员吗？"
+
+msgid "This action cannot be undone."
+msgstr "该操作无法撤销。"
+
+msgid "Keep persons"
+msgstr "保留人员"
+
+msgid "Delete persons"
+msgstr "删除人员"
+
+msgid "Add cart to event"
+msgstr "将购物车添加到活动"
+
+msgid "Select the event that should receive the current cart."
+msgstr "选择应接收当前购物车的事件。"
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr "您也可以先创建一个新事件，然后返回此处分配购物车。"
+
+msgid "Event"
+msgstr "活动"
+
+msgid "Choose one of the available events from the list below."
+msgstr "从以下列表中选择一项活动。"
+
+msgid "Create new event"
+msgstr "创建新活动"
+
+msgid "Add to Event"
+msgstr "添加到活动"
+
+msgid "Register"
+msgstr "注册"
+
+msgid "Register your software to CRM team."
+msgstr "向 CRM 团队注册您的软件。"
+
+msgid "Simply click this"
+msgstr "只需点击这个"
+
+msgid "to register your software"
+msgstr "来注册你的软件"
+
+msgid "New Release"
+msgstr "新版本"
+
+msgid "Installed version"
+msgstr "安装的版本"
+
+msgid "New One"
+msgstr "新一"
+
+msgid "To upgrade simply click this Notification"
+msgstr "要升级，只需点击这个通知"
+
+msgid "View Cart"
+msgstr "查看购物车"
+
+msgid "Empty Cart"
+msgstr "空车"
+
+msgid "Empty Cart to Group"
+msgstr "清空购物车到集团"
+
+msgid "Empty Cart to Family"
+msgstr "清空购物车给家人"
+
+msgid "Empty Cart to Event"
+msgstr "清空购物车到活动现场"
+
+msgid "Map Cart"
+msgstr "地图车"
+
+msgid "Deactivate Persons From Cart"
+msgstr "从购物车中停用人员"
+
+msgid "Delete Persons From the CRM"
+msgstr "从CRM中删除人员"
+
+msgid "View all"
+msgstr "查看全部"
+
+msgid "Your Cart is Empty"
+msgstr "您的购物车是空的"
+
+msgid "Software registration"
+msgstr "软件注册"
+
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr ""
+"在发送之前，请查看下面的注册详细信息。这些信息仅用于跟踪本软件的使用情况。"
+
+msgid "If you need to make changes to registration data, go to "
+msgstr "如果你需要对注册数据进行修改，请到"
+
+msgid "Admin->Edit General Settings"
+msgstr "管理员->编辑常规设置"
+
+msgid "Church Name"
+msgstr "教会名称"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "City"
+msgstr "城市"
+
+msgid "State"
+msgstr "国家"
+
+msgid "Zip"
+msgstr "邮编"
+
+msgid "Country"
+msgstr "国家"
+
+msgid "Church Email"
+msgstr "教会电子邮件"
+
+msgid "Base URL"
+msgstr "基准网址"
+
+msgid "Message"
+msgstr "留言"
+
+msgid "Software Registration"
+msgstr "软件注册"
+
+msgid "Your software is now registered. Thank you !"
+msgstr "您的软件现在已经注册。谢谢您!"
+
+msgid "Select Volunteer Opportunity"
+msgstr "选择志愿者机会"
+
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr "选择应分配的志愿服务机会。"
+
+msgid "This selection will be applied to the current members."
+msgstr "该选择将适用于当前成员。"
+
+msgid "Volunteer opportunity"
+msgstr "志愿者机会"
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr "从可用列表中选择目标志愿服务机会。"
+
+msgid "Choose the destination for the selected members."
+msgstr "为所选成员选择目的地。"
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr "根据操作的不同，使用下面的字段选择组、角色或两者。"
+
+msgid "Group"
+msgstr "集团"
+
+msgid "Select the target group for the selected members."
+msgstr "为所选成员选择目标群体。"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr "选择应在所选组内分配的角色。"
+
+msgid "GroupID required for role selection prompt"
+msgstr "角色选择提示所需的GroupID"
+
+msgid "Select Group and Role"
+msgstr "选择组别和角色"
+
+msgid "Select both the destination group and the role to apply."
+msgstr "同时选择目标组和要应用的角色。"
+
+msgid "Create a group"
+msgstr "创建小组"
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr "输入应从当前工作流程中创建的新组的名称。"
+
+msgid "Create group"
+msgstr "创建小组"
+
+msgid "Calendar Event"
+msgstr "日历活动"
+
+msgid "Attendees Checked In"
+msgstr "参会者报到"
+
+msgid "More info"
+msgstr "更多信息"
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr "1. 您的会话已过期。您将被重定向至登录页面。"
+
+msgid "EDrive File Browser"
+msgstr "EDrive 文件浏览器"
+
+msgid "Could not retrieve file URL"
+msgstr "无法获取文件 URL"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Please select a file first"
+msgstr "请先选择一个文件"
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr "警告!如果你打算添加到一个现有的数据库，请不要选择这个选项。"
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr "仅在对初始导入不满意时使用。所有个人和成员的数据都将被销毁!"
+
+msgid "I Understand"
+msgstr "我明白了"
+
+msgid "Clear Persons and Families"
+msgstr "清楚的人和家庭"
+
+msgid "Data Cleared Successfully!"
+msgstr "数据清除成功!"
+
+msgid "success"
+msgstr "成功"
+
+msgid "Duplicate values"
+msgstr "重复的值"
+
+msgid "You've selected two times the same name"
+msgstr "你已经选择了两次相同的名字"
+
+msgid "for this field. Chose another one."
+msgstr "为这个领域。选择另一个。"
+
+msgid "Remove Plugin"
+msgstr "删除插件"
+
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr "你即将从你的仪表板上删除该插件！！。"
+
+msgid "Dashboard Item"
+msgstr "仪表板项目"
+
+msgid "Removed from your dashboard !"
+msgstr "从你的仪表板上删除了 !"
+
+msgid "Please confirm deletion of this document"
+msgstr "请确认删除此文件"
+
+msgid "Document Delete Confirmation"
+msgstr "文件删除确认"
+
+msgid "Document Editor"
+msgstr "文件编辑"
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr "创建笔记、音频或视频条目，并用清晰的标题将其组织起来。"
+
+msgid "Document details"
+msgstr "文件详情"
+
+msgid "Set the title and choose the type before writing the content."
+msgstr "在撰写内容之前，先设置标题并选择类型。"
+
+msgid "Document Title"
+msgstr "文件标题"
+
+msgid "Set your Document title"
+msgstr "设置你的文件标题"
+
+msgid "Choose your Document Type"
+msgstr "选择你的文件类型"
+
+msgid "document"
+msgstr "文件"
+
+msgid "video"
+msgstr "视频"
+
+msgid "audio"
+msgstr "音频"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Write the main content of your document below."
+msgstr "请将文件的主要内容写在下面。"
+
+msgid "Private"
+msgstr "私营"
+
+msgid "Private documents are visible only to authorized users."
+msgstr "私人文件只有授权用户才能看到。"
+
+msgid "Edit Document"
+msgstr "编辑文档"
+
+msgid "Create Document"
+msgstr "创建文件"
+
+msgid "You have to set a Title for your document"
+msgstr "你必须为你的文件设置一个标题"
+
+msgid "Free Event Attendees"
+msgstr "免费活动参与者"
+
+msgid "Successfully Added!"
+msgstr "成功添加!"
+
+msgid "Delete attendee"
+msgstr "删除与会者"
+
+msgid "This action is permanent"
+msgstr "这一行动是永久性的"
+
+msgid "This can't be undone."
+msgstr "这是无法挽回的。"
+
+msgid "You are about to remove this attendee from the event."
+msgstr "您将从活动中删除该与会者。"
+
+msgid "The attendee will be removed from this event."
+msgstr "该与会者将被除名。"
+
+msgid "Related attendance history may also be affected."
+msgstr "相关的出勤记录也可能受到影响。"
+
+msgid "Photo"
+msgstr "照片"
+
+msgid "Attendance actions"
+msgstr "考勤行动"
+
+msgid "Checkin"
+msgstr "办理登机手续"
+
+msgid "Checkout"
+msgstr "结账"
+
+msgid "Gender"
+msgstr "性别"
+
+msgid "Checkin Date"
+msgstr "报到日期"
+
+msgid "Checked In By"
+msgstr "签入者"
+
+msgid "Checkout Date"
+msgstr "结账日期"
+
+msgid "Checkout By"
+msgstr "结账方式"
+
+msgid "Failed"
+msgstr "失败"
+
+msgid "No event right now."
+msgstr "现在没有活动。"
+
+msgid "Move one in the right range."
+msgstr "在正确的范围内移动一个。"
+
+msgid "Or"
+msgstr "或者"
+
+msgid "Create one."
+msgstr "创建一个。"
+
+msgid "User"
+msgstr "用户"
+
+msgid "No event now."
+msgstr "现在没有活动。"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Attention"
+msgstr "注意"
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr "你确定你要删除事件ID中的所有人员吗？"
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr "你确定要把这个人从事件ID中删除吗？"
+
+msgid "Delete Event Type"
+msgstr "删除事件类型"
+
+msgid "This action can never be undone !!!!"
+msgstr "这一行动永远不能被撤销 !!!!"
+
+msgid "preview currently being created"
+msgstr "正在创建预览"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Document preview"
+msgstr "文件预览"
+
+msgid "Read only"
+msgstr "只读"
+
+msgid "Please wait"
+msgstr "请稍候"
+
+msgid "Unable to create the preview"
+msgstr "无法创建预览"
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr "所选文件无法在预览模式下渲染。"
+
+msgid "Icon"
+msgstr "图标"
+
+msgid "Modification Date"
+msgstr "修改日期"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Size"
+msgstr "尺寸"
+
+msgid "You are about to delete several items together"
+msgstr "你要一起删除几个项目"
+
+msgid "You're about to remove an item"
+msgstr "你要删除一个项目"
+
+msgid "This can't be undone !!!!"
+msgstr "这是不可能被撤销的 !!!!"
+
+msgid "You've to select at least one line !!!"
+msgstr "你必须至少选择一条线！！！。"
+
+msgid "Create a Folder"
+msgstr "创建文件夹"
+
+msgid "Set your Folder name"
+msgstr "设置你的文件夹名称"
+
+msgid "Actualize files"
+msgstr "实现文件"
+
+msgid "Set a File/Folder name"
+msgstr "设置一个文件/文件夹名称"
+
+msgid "Download Error"
+msgstr "下载错误"
+
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr "您确定要停止共享选定的用户吗？"
+
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr "你确定要停止所有共享？"
+
+msgid "Selected Rows"
+msgstr "选定的行"
+
+msgid "Pledge"
+msgstr "认捐"
+
+msgid "Payment"
+msgstr "付款方式"
+
+msgid "Confirm Delete"
+msgstr "确认删除"
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr "你确定吗？你要删除所选的"
+
+msgid "payments(s)?"
+msgstr "支付(s)？"
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr "这一行动不能被撤销，而且可能会有法律上的影响。"
+
+msgid "Please ensure this what you want to do."
+msgstr "请确保这是你想做的事。"
+
+msgid "Depid"
+msgstr "デバイド"
+
+msgid "Address1"
+msgstr "地址1"
+
+msgid "Bank Name"
+msgstr "银行名称"
+
+msgid "Non deductible"
+msgstr "不予扣除"
+
+msgid "Statut"
+msgstr "规章制度"
+
+msgid "Deposit"
+msgstr "存款"
+
+msgid "Schedule"
+msgstr "时间表"
+
+msgid "Amount"
+msgstr "数量"
+
+msgid "Comment"
+msgstr "评论"
+
+msgid "Electronic Transaction Details"
+msgstr "电子交易详情"
+
+msgid "TOTAL"
+msgstr "总数"
+
+msgid "Family"
+msgstr "家庭"
+
+msgid "Person"
+msgstr "个人"
+
+msgid "Anonymous"
+msgstr "佚名"
+
+msgid "Fund"
+msgstr "基金"
+
+msgid "Pledge or payment"
+msgstr "认捐或付款"
+
+msgid "Method"
+msgstr "方法"
+
+msgid "Check Number"
+msgstr "检查号码"
+
+msgid "Details"
+msgstr "详细内容"
+
+msgid "Tracking"
+msgstr "追踪"
+
+msgid "Filter by Family"
+msgstr "按家庭筛选"
+
+msgid "Filter by Fund"
+msgstr "按基金筛选"
+
+msgid "Export"
+msgstr "出口"
+
+msgid "Slip PDF"
+msgstr "滑动 PDF"
+
+msgid "Deposit ID"
+msgstr "储户身份"
+
+msgid "Deposit Date"
+msgstr "存款日期"
+
+msgid "Deposit Total"
+msgstr "存款总额"
+
+msgid "Deposit Comment"
+msgstr "存款评论"
+
+msgid "Closed"
+msgstr "关闭"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "Deposit Type"
+msgstr "存款类型"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Please enter at least one winner."
+msgstr "请至少输入一位获奖者。"
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr "发现不完整条目。请填写要保存的每一行的所有字段（项目、优胜者、价格）。"
+
+msgid "Please enter a number greater than 0."
+msgstr "请输入大于 0 的数字。"
+
+msgid "Number"
+msgstr "数量"
+
+#, fuzzy
+msgid "You're about to delete the item !!!"
+msgstr "你要删除一个标签!"
+
+msgid "Item"
+msgstr "项目"
+
+msgid "Multiple"
+msgstr "多个"
+
+msgid "Donor"
+msgstr "捐赠者"
+
+msgid "Buyer"
+msgstr "买家"
+
+msgid "Sale Price"
+msgstr "销售价格"
+
+msgid "Estimated value"
+msgstr "估计价值"
+
+msgid "Material Value"
+msgstr "材料价值"
+
+msgid "Minimum Price"
+msgstr "最低价格"
+
+msgid "You're about to delete the buyer !!!"
+msgstr "您即将删除买家！！！"
+
+msgid "Unassigned"
+msgstr "未分配的"
+
+msgid "Buyer Number"
+msgstr "买方编号"
+
+msgid "Save and Add"
+msgstr "保存和添加"
+
+msgid "Generate Statement"
+msgstr "生成报表"
+
+msgid "Buyer Number Editor"
+msgstr "买方编号编辑"
+
+msgid "Please select at least one buyer."
+msgstr "请至少选择一位买家。"
+
+msgid "Your operation completed successfully."
+msgstr "您的操作成功完成。"
+
+msgid "Full Name"
+msgstr "全名"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Date Entered"
+msgstr "进入的日期"
+
+msgid "Date Last Edited"
+msgstr "最后编辑日期"
+
+msgid "Edited By Name"
+msgstr "按名称编辑"
+
+msgid "Deactivated"
+msgstr "已停用"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr "警告。删除这个字段，你将不可挽回地失去为这个字段分配的所有组数据"
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr "确认启用组的特定属性"
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+"这将为该组创建一个组别属性表。然后你应该用组特定属性表格编辑器添加需要的属"
+"性。"
+
+msgid "Enable Group Specific Properties"
+msgstr "启用组的特定属性"
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr "确认禁用组的特定属性"
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr "你确定你要删除组内特定的人的属性吗？所有组内成员的属性数据都会丢失!"
+
+msgid "Disable Group Specific Properties"
+msgstr "禁用组的特定属性"
+
+msgid "Please enter a role name."
+msgstr "请输入角色名称。"
+
+msgid "Confirm Delete Role"
+msgstr "确认删除角色"
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr "这也将删除与该角色相关的所有人员的会员资格。"
+
+msgid "A group should have at least one role!"
+msgstr "一个小组至少应该有一个角色！\"。"
+
+msgid "Role Name"
+msgstr "角色名称"
+
+msgid "The role name is now modified."
+msgstr "角色名称现在已被修改。"
+
+msgid "Make Default"
+msgstr "做为默认值"
+
+msgid "Default"
+msgstr "默认情况下"
+
+msgid "Sequence"
+msgstr "序列"
+
+msgid "Move Up"
+msgstr "向上移动"
+
+msgid "Move Down"
+msgstr "向下移动"
+
+msgid "Add New Group"
+msgstr "添加新组"
+
+msgid "Enter group name"
+msgstr "输入组名"
+
+msgid "Please enter a group name."
+msgstr "请输入组名。"
+
+msgid "Group actions"
+msgstr "小组行动"
+
+msgid "View"
+msgstr "查看"
+
+msgid "Members"
+msgstr "成员"
+
+msgid "Group Cart Status"
+msgstr "组车状态"
+
+msgid "In cart"
+msgstr "手推车"
+
+msgid "Remove from cart"
+msgstr "从购物车中移除"
+
+msgid "Not in cart"
+msgstr "不在购物车中"
+
+msgid "Add to cart"
+msgstr "添加到购物车"
+
+msgid "Cart isn't showable"
+msgstr "购物车无法显示"
+
+msgid "Group Type"
+msgstr "集团类型"
+
+msgid "Value"
+msgstr "价值"
+
+msgid "Confirm Delete Group"
+msgstr "确认删除组"
+
+msgid "Please confirm deletion of this group record"
+msgstr "请确认删除该组记录"
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr "这也将删除与该组记录相关的所有角色和组的特定属性数据。"
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr "所有组的成员和属性都将被销毁。  组成员本身不会被改变。"
+
+msgid "Are you sure you want to unassign this property?"
+msgstr "你确定你要解除这个属性的分配吗？"
+
+msgid "Are you sure you want to change this property?"
+msgstr "你确定你要改变这个属性吗？"
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr "孩子应该在主日学小组中拥有一个家庭 !"
+
+msgid "401 : Private Datas"
+msgstr "401 : Private Datas"
+
+msgid "Group Role"
+msgstr "集团角色"
+
+msgid "Private Data"
+msgstr "私人数据"
+
+msgid "Zip Code"
+msgstr "邮政编码"
+
+msgid "Cell Phone"
+msgstr "手机"
+
+msgid "You're about to delete all the group members ?"
+msgstr "你要删除所有的组员？"
+
+msgid "Are you sure ? This can't be undone."
+msgstr "你确定吗？这是不可能被撤销的。"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Members to cart"
+msgstr "会员到购物车"
+
+msgid "Add to Cart"
+msgstr "添加到购物车"
+
+msgid "Add to Group"
+msgstr "添加到小组"
+
+msgid "Move to Group"
+msgstr "移至组别"
+
+msgid "Remove all members"
+msgstr "删除所有成员"
+
+msgid "Move"
+msgstr "移动"
+
+msgid "Members to another group"
+msgstr "成员到另一个团体"
+
+msgid "Remove from Cart"
+msgstr "从购物车中删除"
+
+msgid "No assigned Manager"
+msgstr "没有指定经理"
+
+msgid "Add users"
+msgstr "添加用户"
+
+msgid "Manage Group Managers"
+msgstr "管理集团经理"
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr "你确定要删除这个经理吗？"
+
+msgid "Delete Managers"
+msgstr "删除管理人员"
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr "你确定你要删除所有的管理人员吗？"
+
+msgid "Appointment"
+msgstr "任命"
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr "为整个家庭记录下这一牧养后续行动"
+
+msgid "For every administrator"
+msgstr "对于每个管理员来说"
+
+msgid "Show"
+msgstr "显示"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "Include all the family members"
+msgstr "包括所有的家庭成员"
+
+msgid "Include"
+msgstr "包括"
+
+msgid "Pastoral care note"
+msgstr "牧师关怀说明"
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr "查看备注类型，编写内容并定义谁可以查看。"
+
+msgid "Note"
+msgstr "备注"
+
+msgid "Pastoral Care"
+msgstr "教牧关怀"
+
+msgid "Open the pastoral care record"
+msgstr "打开教牧关怀记录"
+
+msgid "No records found for this view."
+msgstr "该视图无记录。"
+
+msgid "No matching records found."
+msgstr "未找到匹配记录。"
+
+msgid "Loading..."
+msgstr "正在加载..."
+
+msgid "Never contacted"
+msgstr "从未联系过"
+
+msgid "Pastoral care member"
+msgstr "教牧关怀成员"
+
+msgid "Visits/calls"
+msgstr "访问/通话"
+
+msgid "Last visit/call"
+msgstr "最后一次访问/致电"
+
+msgid "Opening..."
+msgstr "开幕..."
+
+msgid "Selecting..."
+msgstr "选择..."
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr "现在无法准备与之匹配的教牧关怀记录。请尝试其他类别。"
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr "目前无法启动教牧关怀行动。"
+
+msgid "Delete Pastoral Care Type"
+msgstr "删除教牧关怀类型"
+
+msgid "Irreversible action"
+msgstr "不可逆转的作用"
+
+msgid "Keep note"
+msgstr "记录"
+
+msgid "Write the pastoral care message associated with this family."
+msgstr "写出与这个家庭相关的教牧关怀信息。"
+
+msgid "Pastoral Care Note Creation"
+msgstr "牧民关怀笔记创作"
+
+msgid "Last Name (Family Name)"
+msgstr "姓氏 (姓氏)"
+
+msgid "Family Name"
+msgstr "姓氏"
+
+msgid "Write the pastoral care message associated with this person."
+msgstr "写出与此人相关的教牧关怀信息。"
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr "你确定要从CRM中删除这个家族吗？"
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr "你确定要从CRM中删除所有家庭吗？"
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"不是所有的家庭都被删除了：其中一些家庭有捐赠记录，在这些捐赠与另一个家庭相关"
+"联之前，可能不会被删除。"
+
+msgid "Review family member information"
+msgstr "查看家庭成员信息"
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr "保存前，请检查显示的信息并根据需要更新该家庭成员。"
+
+msgid "Update family member details"
+msgstr "更新家庭成员详细信息"
+
+msgid "Save changes"
+msgstr "保存更改"
+
+msgid "Confirm Deactivation"
+msgstr "确认停用"
+
+msgid "Confirm Activation"
+msgstr "确认激活"
+
+msgid "Please confirm deactivation of family"
+msgstr "请确认停用家庭"
+
+msgid "Please confirm activation of family"
+msgstr "请确认激活家庭"
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+"请注意GDPR，当一个家庭被停用时，你必须先询问该家庭的所有成员，如果你想重新激"
+"活该账户！<br><br>在没有任何授权的情况下，GDPR使你对该家庭的使用成为非法"
+"的!!!!!。"
+
+msgid "Upload Photo"
+msgstr "上传照片"
+
+msgid "Upload an existing Photo"
+msgstr "上传一张现有的照片"
+
+msgid "Max photo size"
+msgstr "最大照片尺寸"
+
+msgid "Capture from Webcam"
+msgstr "从网络摄像头捕获"
+
+msgid "Snap Photo"
+msgstr "捕捉照片"
+
+msgid "Re-Take Photo"
+msgstr "重拍照片"
+
+msgid "Upload Image"
+msgstr "上传图片"
+
+msgid "Family Photo"
+msgstr "家庭照片"
+
+msgid "Bank Draft"
+msgstr "银行汇票"
+
+msgid "Credit Card"
+msgstr "信用卡"
+
+msgid "Disabled"
+msgstr "失能"
+
+msgid "Next payment date"
+msgstr "下一次付款日期"
+
+msgid "Interval (months)"
+msgstr "间隔（月"
+
+msgid "Updated By"
+msgstr "更新时间"
+
+msgid "Confirm Delete Automatic payment"
+msgstr "确认 删除 自动付款"
+
+msgid "Pledge or Payment"
+msgstr "认捐或付款"
+
+msgid "Dep ID"
+msgstr "部署ID"
+
+msgid "Fiscal Year"
+msgstr "财政年度"
+
+msgid "NonDeductible"
+msgstr "不予赔偿"
+
+msgid "CHECK"
+msgstr "检查"
+
+msgid "Date Updated"
+msgstr "更新日期"
+
+msgid "Donations/eGives Moved by"
+msgstr "捐赠/电子捐赠"
+
+msgid "Verification URL"
+msgstr "验证网址"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Failed to add verification"
+msgstr "添加验证失败"
+
+msgid "Verification email sent"
+msgstr "发送验证邮件"
+
+msgid "Failed to send verification email"
+msgstr "发送验证邮件失败"
+
+msgid "Warning !!!!"
+msgstr "警告 !!!!"
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+"您即将向 EcclesiaCRM 的所有成员发送一封大容量电子邮件：<br>- 最好先测试几个人"
+"或家庭<br>- 确保您按地址或个人选择了所有成员。"
+
+msgid "You're about to send a e-mail to"
+msgstr "您要发送电子邮件至"
+
+msgid "members"
+msgstr "成员"
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr "请稍等，系统正在生成并下载 PDF 文件。"
+
+msgid "A person name or Family"
+msgstr "人名或家庭"
+
+msgid "Modification"
+msgstr "修改"
+
+msgid "By persons"
+msgstr "由个人"
+
+msgid "By Adresses"
+msgstr "按地址"
+
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr "您将删除所有人员的所有待确认信息。"
+
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr "您将删除所有人员的所有已完成确认。"
+
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr "您将删除所有家庭的所有待确认信息。"
+
+msgid "You're about to delete all done confirmation for all the families."
+msgstr "您将删除所有家庭的所有确认信息。"
+
+msgid "Delete this person?"
+msgstr "删除这个人？"
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr "你想删除这个人吗？这是不能撤销的。"
+
+msgid "Save your note"
+msgstr "保存你的笔记"
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr "你想把你的笔记保存为EDrive中的Word文件吗？"
+
+msgid "Family Id"
+msgstr "家庭身份"
+
+msgid "Valid Until"
+msgstr "有效期至"
+
+msgid "Search for a family or address"
+msgstr "搜索家庭或地址"
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr "你确定要把这个人从CRM中删除吗？"
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr "你确定要从CRM中删除所有人员吗？"
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"不是所有的人都被删除了：有些人有捐赠记录，可能不会被删除，直到这些捐赠与另一"
+"个家庭有关。"
+
+msgid "Review personal information"
+msgstr "审查个人信息"
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr "保存前，检查当前值并更新需要更正的字段。"
+
+msgid "Profile information"
+msgstr "简介信息"
+
+msgid "Additional information"
+msgstr "其他信息"
+
+msgid "Update personal details"
+msgstr "更新个人资料"
+
+msgid "Processing..."
+msgstr "处理..."
+
+msgid "Please confirm deactivation of person"
+msgstr "请确认停用人员"
+
+msgid "Please confirm activation of person"
+msgstr "请确认人的激活"
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+"请注意GDPR，当一个人被取消激活时，你必须先询问这个人，如果你想重新激活这个账"
+"户！<br><br>在没有任何授权的情况下，GDPR使你对这个人的使用成为非法的!!!!!。"
+
+msgid "Deactivate"
+msgstr "停用"
+
+msgid "Activate"
+msgstr "激活"
+
+msgid "Deactivating..."
+msgstr "停用..."
+
+msgid "Activating..."
+msgstr "激活..."
+
+msgid "Unable to update this person status."
+msgstr "无法更新此人状态。"
+
+msgid "Deleting..."
+msgstr "删除..."
+
+msgid "Unable to delete the photo."
+msgstr "无法删除照片。"
+
+msgid "Preview the current profile photo."
+msgstr "预览当前个人照片。"
+
+msgid "Property actions"
+msgstr "财产行动"
+
+msgid "Please select a property first."
+msgstr "请先选择一个属性。"
+
+msgid "Assigning..."
+msgstr "分配..."
+
+msgid "Assign"
+msgstr "分配"
+
+msgid "Unable to assign this property."
+msgstr "无法分配此属性。"
+
+msgid "Remove group assignment"
+msgstr "删除小组分配"
+
+msgid "Remove this person from the group"
+msgstr "将此人从小组中删除"
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr "此人与该组相关的成员资格和任何角色都将被删除。"
+
+msgid "Remove from group"
+msgstr "从小组中删除"
+
+msgid "Keep assignment"
+msgstr "保留任务"
+
+msgid "Share your document"
+msgstr "分享您的文档"
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr "选择收件人，定义他们的访问权限，并决定他们是否应收到电子邮件通知。"
+
+msgid "Current access"
+msgstr "当前访问"
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr "选择一个或多个收件人，更新其访问权限或将其删除。"
+
+msgid "Set rights"
+msgstr "设定权利"
+
+msgid "Read and write"
+msgstr "读写"
+
+msgid "Notification"
+msgstr "通知"
+
+msgid "Add people, families or groups"
+msgstr "添加人员、家庭或团体"
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr "按姓名搜索，将访问权限授予他人、家庭或整个小组。"
+
+msgid "Please select at least one recipient first."
+msgstr "请先选择至少一个收件人。"
+
+msgid "Remove shared access"
+msgstr "删除共享访问"
+
+msgid "Remove access for the selected recipients?"
+msgstr "删除所选收件人的访问权限？"
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr "只有选定的收件人会被移除。文件仍将与其他收件人共享。"
+
+msgid "Remove access"
+msgstr "删除访问"
+
+msgid "Keep access"
+msgstr "保持访问"
+
+msgid "Stop sharing this document"
+msgstr "停止共享本文件"
+
+msgid "Stop sharing this document with everyone?"
+msgstr "停止与所有人分享这份文件？"
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr "所有当前接收者将立即失去访问权。您仍可访问文件本身。"
+
+msgid "Keep sharing"
+msgstr "继续分享"
+
+msgid "Share your Document"
+msgstr "分享您的文件"
+
+msgid "Unassign property"
+msgstr "取消分配属性"
+
+msgid "Remove this property from the current person?"
+msgstr "从当前人身上移除该属性？"
+
+msgid "The property value will be removed from this profile."
+msgstr "属性值将从该配置文件中删除。"
+
+msgid "Remove property"
+msgstr "删除属性"
+
+msgid "Keep property"
+msgstr "保留财产"
+
+msgid "Edit property value"
+msgstr "编辑属性值"
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr "更新当前个人资料中该属性的存储值。"
+
+msgid "Save property"
+msgstr "保存财产"
+
+msgid "Change classification"
+msgstr "改变分类"
+
+msgid "Choose the classification that best matches this person profile."
+msgstr "选择最符合此人特征的分类。"
+
+msgid "Update classification"
+msgstr "更新分类"
+
+msgid "Change family role"
+msgstr "改变家庭角色"
+
+msgid "Select the role this person should have inside the family record."
+msgstr "选择此人在家庭记录中应扮演的角色。"
+
+msgid "Update role"
+msgstr "更新角色"
+
+msgid "Volunteer actions"
+msgstr "志愿者行动"
+
+msgid "Remove volunteer opportunity"
+msgstr "删除志愿者机会"
+
+msgid "Remove this volunteer opportunity from the person?"
+msgstr "将此志愿者机会从该人身上删除？"
+
+msgid "The assignment will be removed from this profile only."
+msgstr "任务只会从该个人资料中删除。"
+
+msgid "Remove assignment"
+msgstr "删除任务"
+
+msgid "Please select at least one volunteer opportunity first."
+msgstr "请先选择至少一个志愿服务机会。"
+
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr "无法分配所选的志愿服务机会。"
+
+msgid "Some volunteer opportunities could not be assigned."
+msgstr "有些志愿服务机会无法分配。"
+
+msgid "Delete automatic payment"
+msgstr "删除自动付款"
+
+msgid "Delete this automatic payment setup?"
+msgstr "删除自动付款设置？"
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr "删除后，与此设置相关联的重复付款将停止。"
+
+msgid "Delete payment"
+msgstr "删除付款"
+
+msgid "Keep payment"
+msgstr "保留付款"
+
+msgid "Delete pledge or payment"
+msgstr "删除认捐或付款"
+
+msgid "Delete this pledge or payment entry?"
+msgstr "删除此认捐或付款条目？"
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr "此条目将从该家庭的贡献历史中删除。"
+
+msgid "Delete entry"
+msgstr "删除条目"
+
+msgid "Keep entry"
+msgstr "保留条目"
+
+msgid "Share this secure verification link with the person."
+msgstr "与对方共享此安全验证链接。"
+
+msgid "Comments"
+msgstr "评论"
+
+msgid "Confirmation of plugin removal"
+msgstr "确认删除插件"
+
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr "你即将删除所选的插件。这个动作不能撤消!"
+
+msgid "Update plugin"
+msgstr "更新插件"
+
+msgid "Add plugin"
+msgstr "添加插件"
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr "选择新的压缩包更新此插件。"
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr "选择一个压缩插件包，将其安装到 CRM 中。"
+
+msgid "Plugin archive"
+msgstr "插件档案"
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr "此处只能选择压缩的插件包。"
+
+msgid "The upload starts as soon as you submit this form."
+msgstr "提交本表后，上传工作即刻开始。"
+
+msgid "Plugin manager"
+msgstr "插件管理器"
+
+msgid "The current images folder is now the public folder !!!"
+msgstr "当前的图像文件夹现在是公共文件夹!!!"
+
+msgid "QR Code : Call the register"
+msgstr "二维码:呼叫登记处"
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr "将相机对准二维码，即可自动为与会者办理登机手续。"
+
+msgid "Scan a QR Code"
+msgstr "扫描 QR 码"
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr "无法访问视频流（请确保你有一个网络摄像头启用）。"
+
+msgid "Available Cameras"
+msgstr "可选相机"
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr "尚未检测到 QR 码。请将二维码放在框架内。"
+
+msgid "Detected data"
+msgstr "检测到的数据"
+
+msgid "Families"
+msgstr "家庭"
+
+msgid "Singles"
+msgstr "单身"
+
+msgid "All Groups"
+msgstr "所有团体"
+
+msgid "All Roles"
+msgstr "所有角色"
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr "搜索条件如：姓名、名字、电话号码、财产、团体名称等 ..."
+
+msgid "All search types"
+msgstr "所有搜索类型"
+
+msgid "id"
+msgstr "身份证"
+
+msgid "Photos"
+msgstr "照片"
+
+msgid "Search result"
+msgstr "搜索结果"
+
+msgid "Property Name"
+msgstr "财产名称"
+
+msgid "Cart Operations"
+msgstr "推车操作"
+
+msgid "Add This Page"
+msgstr "添加此页"
+
+msgid "Loading people in cart...."
+msgstr "在cart....，装载人员"
+
+msgid "Add All results"
+msgstr "添加所有结果"
+
+msgid "Remove this page"
+msgstr "删除此页"
+
+msgid "Removing people in cart...."
+msgstr "在cart.... 删除人"
+
+msgid "Remove All results"
+msgstr "删除所有结果"
+
+msgid "Intersect result with cart"
+msgstr "将结果与购物车相交"
+
+msgid "Add People"
+msgstr "添加人员"
+
+msgid "This page is still in the cart."
+msgstr "这一页仍在购物车中。"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr "警告。删除这个字段，你将不可挽回地失去为这个字段分配的所有家庭数据!"
+
+msgid "Add Fund"
+msgstr "添加基金"
+
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr "如果您删除该基金，<b>您将丢失所有相关数据。</b>"
+
+msgid "Are you sure? This action can't be undone."
+msgstr "您确定吗？此操作无法撤销。"
+
+msgid "Fund Editor"
+msgstr "基金编辑"
+
+msgid "ID"
+msgstr "身份证"
+
+msgid "Validate"
+msgstr "验证"
+
+msgid "Enter menu link name"
+msgstr "输入菜单链接名称"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "Enter URL starting with http:// or https://"
+msgstr "输入以 http:// 或 https:// 开头的 URL"
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr "该链接应以：http://.... 或 https://.... 开始。"
+
+msgid "Add Custom Menu Link"
+msgstr "添加自定义菜单链接"
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"如果你删除了菜单链接，<u><b>你会失去所有连接的数据。</b></u><br><b>你确定吗？"
+"这个动作不能撤销。</b>"
+
+msgid "Custom Menu Link Editor"
+msgstr "自定义菜单链接编辑器"
+
+msgid "Order"
+msgstr "订购"
+
+msgid "Uri"
+msgstr "乌里"
+
+msgid "Global Custom Menus"
+msgstr "全球自定义菜单"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Delete Classification"
+msgstr "删除分类"
+
+msgid "Please confirm deletion of this classification"
+msgstr "请确认删除该分类"
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr "这也将删除所有相关人员的这个分类。"
+
+msgid "Delete map marker"
+msgstr "删除地图标记"
+
+msgid "Please confirm deletion of this marker"
+msgstr "请确认删除此标记"
+
+msgid "Map Icon GoogleMap"
+msgstr "地图图标 GoogleMap"
+
+msgid "Select your classification icon"
+msgstr "选择你的分类图标"
+
+msgid "Add Pastoral Care Type"
+msgstr "添加教牧关怀类型"
+
+msgid "Visible for other authorized users"
+msgstr "对其他授权用户可见"
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"如果你删除了牧养类型，<u><b>你会失去所有连接的数据。</b></u><br><b>你确定吗？"
+"这个动作不能撤销。</b>"
+
+msgid "Pastoral Care Type Editor"
+msgstr "牧民关怀类型编辑"
+
+msgid "Visible"
+msgstr "可见"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr "警告。删除这个字段，你将不可挽回地失去为这个字段分配的所有个人数据!"
+
+msgid "Add a New Property"
+msgstr "添加一个新的属性"
+
+msgid "Select Property Type"
+msgstr "选择物业类型"
+
+msgid "with this property..."
+msgstr "与此属性..."
+
+msgid "Prompt"
+msgstr "提示"
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr "你要删除这个财产。你想继续吗？"
+
+msgid "Property Type Editor"
+msgstr "属性类型编辑器"
+
+msgid "with this Property..."
+msgstr "与此属性..."
+
+msgid "Class"
+msgstr "级别"
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr "你即将删除这个一般属性。你想继续吗？"
+
+msgid "This general property type is still being used by"
+msgstr "这种一般的财产类型仍在被"
+
+msgid "property"
+msgstr "财产"
+
+msgid "properties"
+msgstr "财产"
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr "如果你删除这个类型，你也将删除所有使用"
+
+msgid "it and lose any corresponding property assignments."
+msgstr "它并失去任何相应的财产分配。"
+
+msgid "Add a New Property Type"
+msgstr "添加一个新的财产类型"
+
+msgid "Setting saved"
+msgstr "已保存的设置"
+
+msgid "Send Message"
+msgstr "发送信息"
+
+msgid "View Profile"
+msgstr "查看资料"
+
+msgid "Teachers"
+msgstr "教师"
+
+msgid "Delete this Teacher?"
+msgstr "删除这个老师？"
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr "你想删除这个老师吗？这是不能撤销的。"
+
+msgid "First name"
+msgstr "名字"
+
+msgid "Birth Date"
+msgstr "出生日期"
+
+msgid "Unknown"
+msgstr "不详"
+
+msgid "Boy"
+msgstr "男孩"
+
+msgid "Girl"
+msgstr "女孩"
+
+msgid "Age"
+msgstr "年龄"
+
+msgid "Mobile"
+msgstr "手机"
+
+msgid "Home Phone"
+msgstr "家庭电话"
+
+msgid "Home Address"
+msgstr "家庭地址"
+
+msgid "Dad Name"
+msgstr "爸爸的名字"
+
+msgid "Dad Mobile"
+msgstr "爸爸 手机"
+
+msgid "Dad Email"
+msgstr "爸爸的电子邮件"
+
+msgid "Mom Name"
+msgstr "妈妈的名字"
+
+msgid "Mom Mobile"
+msgstr "妈妈手机"
+
+msgid "Mom Email"
+msgstr "妈妈的电子邮件"
+
+msgid "Remove Students from Cart"
+msgstr "从购物车中删除学生"
+
+msgid "Add Students to Cart"
+msgstr "添加学生到购物车"
+
+msgid "Remove Teachers from Cart"
+msgstr "从购物车中删除教师"
+
+msgid "Add Teachers to Cart"
+msgstr "添加教师到购物车"
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr "选择你想用来创建考勤的事件类型"
+
+msgid "Create First A New Event"
+msgstr "首先创建一个新的活动"
+
+msgid "Create Event With Students"
+msgstr "与学生一起创建活动"
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr "要小心!你即将创建或重新创建这个主日学班的一个事件，以调用登记。"
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr "如果事件已经创建，请进入 \"事件 \"菜单，然后 \"呼叫登记\"。"
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr "首先，正确设置你的时间范围，进行提取。"
+
+msgid "Set year range to export"
+msgstr "设置出口的年份范围"
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr "首先，正确设置你的日期范围以进行提取。"
+
+msgid "Extra students"
+msgstr "额外的学生"
+
+msgid "export with photos"
+msgstr "带照片的出口"
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr "要小心!你即将创建或重新创建所有主日学班级的所有事件，以调用登记册。"
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr "如果事件已经创建，进入 \"事件 \"菜单，然后 \"调用注册\"。"
+
+msgid "First, set your date and time."
+msgstr "首先，设定你的日期和时间。"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Call the Register for all sunday groups"
+msgstr "为所有星期日小组打电话给登记处"
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr "至少要选择一个小组来制作班级名单或考勤表。"
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr "你必须为你的问题设置一个标题和一个描述。"
+
+msgid "Find member"
+msgstr "查找成员"
+
+msgid "Search by name, role, or ID."
+msgstr "按姓名、角色或 ID 搜索。"
+
+msgid "Search a member"
+msgstr "搜索会员"
+
+msgid "Clear"
+msgstr "清晰"
+
+msgid "In"
+msgstr "在"
+
+msgid "Out"
+msgstr "外出"
+
+msgid "Notify"
+msgstr "通知"
+
+msgid "Trigger Parent Alert"
+msgstr "触发家长警报"
+
+msgid "Kiosk"
+msgstr "亭子"
+
+msgid "Attendance"
+msgstr "出席情况"
+
+msgid "Current event"
+msgstr "当前事件"
+
+msgid "No assignments for kiosk"
+msgstr "没有为报刊亭分配任务"
+
+msgid "Kiosk Name"
+msgstr "亭子名称"
+
+msgid "Assignment"
+msgstr "任务"
+
+msgid "Last Heartbeat"
+msgstr "最后的心跳"
+
+msgid "Accepted"
+msgstr "已接受"
+
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假的"
+
+msgid "Reload"
+msgstr "重新加载"
+
+msgid "Identify"
+msgstr "识别"
+
+msgid "Accept"
+msgstr "接受"
+
+msgid "Two factors authentications"
+msgstr "双因素认证"
+
+msgid "2FA is already enabled on your account."
+msgstr "2FA is already enabled on your account."
+
+msgid "If needed, you can remove it and enroll again."
+msgstr "If needed, you can remove it and enroll again."
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr "移除2因素认证的秘密"
+
+msgid "2 Factor Authentication Secret"
+msgstr "双因素认证的秘密"
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr "输入TOTP代码以确认注册"
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr "将这些备份密码保存在一个安全的地方，以防你丢失OTP证书。"
+
+msgid "Unable to remove 2FA right now."
+msgstr "现在无法移除 2FA。"
+
+msgid "Current step"
+msgstr "当前步骤"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Locked"
+msgstr "锁定"
+
+msgid "Backup Complete, Ready for Download."
+msgstr "备份完成，可供下载。"
+
+msgid "The user must have an email address."
+msgstr "该用户必须有一个电子邮件地址。"
+
+msgid "Select your Role"
+msgstr "选择你的角色"
+
+msgid "and update its name if needed."
+msgstr "并根据需要更新其名称。"
+
+msgid "Role management"
+msgstr "角色管理"
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr "你确定吗？你即将删除这个角色。"
+
+msgid "Rename"
+msgstr "重命名"
+
+msgid "Choose a Role Name"
+msgstr "选择一个角色名称"
+
+msgid "You must set another Role Name"
+msgstr "您必须设置另一个角色名称"
+
+msgid "this Role Name already exist !!!"
+msgstr "此角色名称已经存在"
+
+msgid "You've to check at least one user."
+msgstr "你至少要检查一个用户。"
+
+msgid "The WebDav Key is"
+msgstr "WebDav密钥是"
+
+msgid "The public WebDav Key is"
+msgstr "公共WebDav密钥是"
+
+msgid "WebDav key"
+msgstr "WebDav密钥"
+
+msgid "is now locked"
+msgstr "现在已被锁定"
+
+msgid "is now unlocked"
+msgstr "现已解锁"
+
+msgid "User Delete Confirmation"
+msgstr "用户删除确认"
+
+msgid "Please confirm removal of user status from:"
+msgstr "请确认将用户身份从。"
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr "要小心，你将失去主文件夹和相关文件、日历、共享日历和所有事件，因为"
+
+msgid "This can't be undone"
+msgstr "这是不可能被撤销的"
+
+msgid "Action Confirmation"
+msgstr "行动确认"
+
+msgid "Please confirm reset failed login count"
+msgstr "请确认重置失败的登录次数"
+
+msgid "Reset"
+msgstr "重置"
+
+msgid "Reset failed login count for"
+msgstr "重置登录失败计数"
+
+msgid "done."
+msgstr "完成了。"
+
+msgid "Please confirm the password reset of this user"
+msgstr "请确认该用户的密码重置"
+
+msgid "Reset & Send"
+msgstr "重置和发送"
+
+msgid "Password reset for"
+msgstr "密码重设为"
+
+msgid "Mail connection failure"
+msgstr "邮件连接失败"
+
+msgid "to remove two-factor authentication"
+msgstr "移除双因素认证"
+
+msgid "Pending"
+msgstr "待定"
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+"给予用户60秒的时间用他们的恢复码进行登录。然后，用户将不得不删除或简单地重新"
+"扫描OTP管理应用程序中的QR码。"
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr "用户有60秒的时间来使用他的恢复密码。"
+
+msgid "Add New Volunteer Opportunity"
+msgstr "添加新的志愿者机会"
+
+msgid "Volunteer Opportunity actions"
+msgstr "志愿者机会行动"
+
+msgid "Volunteer Cart Status"
+msgstr "志愿者购物车状态"
+
+msgid "Activ"
+msgstr "激活"
+
+msgid "Parent (hierarchy)"
+msgstr "母体（等级制度）"
+
+msgid "Color"
+msgstr "颜色"
+
+msgid "Enter volunteer opportunity name"
+msgstr "输入志愿者机会名称"
+
+msgid "Enter a brief description"
+msgstr "输入简要说明"
+
+msgid "Add to volunteer opportunities"
+msgstr "添加到志愿者机会"
+
+msgid "Move to volunteer opportunities"
+msgstr "转到志愿者机会"
+
+msgid "Confirm Delete This Opportunity"
+msgstr "确认删除此机会"
+
+msgid "Please confirm deletion of this record"
+msgstr "请确认删除此记录"
+
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr "所有成员资格将被销毁。  成员本身不会改变。"
+
+#~ msgid "Loading video..."
+#~ msgstr "正在加载视频..."
+
+#~ msgid "Mailchimp"
+#~ msgstr "邮件营销"
+
+#~ msgid ""
+#~ "All the lists are now loaded in the CRM.<br><b>If you want to manage "
+#~ "them, click this notification !</b>"
+#~ msgstr " 1235  4568 如果您想管理这些列表，请单击此通知 !"
+
+#~ msgid "Saving Campaign ..."
+#~ msgstr "拯救运动..."
+
+#~ msgid "Campaign"
+#~ msgstr "竞选活动"
+
+#~ msgid "saved successfully"
+#~ msgstr "成功保存"
+
+#~ msgid "You're about to send your campaign! Are you sure ?"
+#~ msgstr "你即将发送你的活动!你确定吗？"
+
+#~ msgid "You're about to delete your campaign! Are you sure ?"
+#~ msgstr "你即将删除你的活动!你确定吗？"
+
+#~ msgid "Loading data..."
+#~ msgstr "加载数据..."
+
+#~ msgid "Please wait while we retrieve your MailChimp lists."
+#~ msgstr "请稍候，我们将检索您的 MailChimp 列表。"
+
+#~ msgid "No list are created with this account ...."
+#~ msgstr "该账户没有创建清单 ...."
+
+#~ msgid "You can create a new MailChimp list using the button above."
+#~ msgstr "您可以使用上面的按钮创建一个新的 MailChimp 列表。"
+
+#~ msgid "Email List"
+#~ msgstr "电子邮件列表"
+
+#~ msgid "Subject"
+#~ msgstr "主题"
+
+#~ msgid "Members:"
+#~ msgstr "成员。"
+
+#~ msgid "Unsubscribed count:"
+#~ msgstr "未订阅的数量。"
+
+#~ msgid "Unsubscribed count since last send:"
+#~ msgstr "自上次发送以来，未订阅的计数。"
+
+#~ msgid "Cleaned count:"
+#~ msgstr "清理过的数量。"
+
+#~ msgid "Cleaned count since last send:"
+#~ msgstr "自上次发送以来，已清理的计数。"
+
+#~ msgid "Campaigns"
+#~ msgstr "宣传活动"
+
+#~ msgid "Tags"
+#~ msgstr "标签"
+
+#~ msgid "is not configured"
+#~ msgstr "未配置"
+
+#~ msgid "Please update the"
+#~ msgstr "请更新"
+
+#~ msgid "API key in Setting->"
+#~ msgstr "设置中的API密钥->"
+
+#~ msgid "Edit General Settings"
+#~ msgstr "编辑一般设置"
+
+#~ msgid "Then update"
+#~ msgstr "然后更新"
+
+#~ msgid "For more info see our "
+#~ msgstr "更多信息见我们的"
+
+#~ msgid "support docs."
+#~ msgstr "支持文档。"
+
+#~ msgid "List Title"
+#~ msgstr "列表标题"
+
+#~ msgid "Your List Title"
+#~ msgstr "您的列表标题"
+
+#~ msgid "Your Subject"
+#~ msgstr "您的主题"
+
+#~ msgid "Permission Reminder"
+#~ msgstr "许可提醒"
+
+#~ msgid "Archive Bars"
+#~ msgstr "档案栏"
+
+#~ msgid "Public"
+#~ msgstr "公众"
+
+#~ msgid "List Creation"
+#~ msgstr "列表创建"
+
+#~ msgid "You're about to delete a tag!"
+#~ msgstr "你要删除一个标签!"
+
+#~ msgid ""
+#~ "This will also delete the tag for all the members in this list. Are you "
+#~ "sure ?"
+#~ msgstr "这也将删除该列表中所有成员的标签。你确定吗？"
+
+#~ msgid "Deleting tag"
+#~ msgstr "删除标签"
+
+#~ msgid "People"
+#~ msgstr "人"
+
+#~ msgid "Add a new tag"
+#~ msgstr "添加一个新标签"
+
+#~ msgid "Delete tag from subscriber(s)"
+#~ msgstr "从用户中删除标签"
+
+#~ msgid "Delete tag"
+#~ msgstr "删除标签"
+
+#~ msgid "Loading resources ..."
+#~ msgstr "正在加载资源..."
+
+#~ msgid "Check all boxes"
+#~ msgstr "勾选所有方框"
+
+#~ msgid "Subscribed"
+#~ msgstr "订阅了"
+
+#~ msgid "Unsubscribed"
+#~ msgstr "未订阅"
+
+#~ msgid "Email Marketing"
+#~ msgstr "电子邮件营销"
+
+#~ msgid "New tag"
+#~ msgstr "新标签"
+
+#~ msgid ""
+#~ "Enter the name of the tag to create and apply to the selected members."
+#~ msgstr "输入要创建并应用于所选成员的标记名称。"
+
+#~ msgid "Create tag"
+#~ msgstr "创建标签"
+
+#~ msgid "Adding tag..."
+#~ msgstr "添加标签..."
+
+#~ msgid "Name is empty !!"
+#~ msgstr "名字是空的！!"
+
+#~ msgid "Add tag"
+#~ msgstr "添加标签"
+
+#~ msgid "Selected tag"
+#~ msgstr "选定标签"
+
+#~ msgid "This will add the tag"
+#~ msgstr "这将添加标签"
+
+#~ msgid "to all the current selected members in the list."
+#~ msgstr "到列表中所有当前选中的成员。"
+
+#~ msgid "Select One"
+#~ msgstr "选择一个"
+
+#~ msgid "All Tags"
+#~ msgstr "所有标签"
+
+#~ msgid "Remove tags from selected members"
+#~ msgstr "从选定的成员中移除标记"
+
+#~ msgid "Choose a tag"
+#~ msgstr "选择标签"
+
+#~ msgid ""
+#~ "Select one tag to remove, or choose all tags for a full cleanup on the "
+#~ "selected members."
+#~ msgstr "选择一个标签进行删除，或选择所有标签对所选成员进行全面清理。"
+
+#~ msgid "Apply"
+#~ msgstr "申请"
+
+#~ msgid "Removing tags..."
+#~ msgstr "移除标签..."
+
+#~ msgid "Deleting all tags for the selected members in the list..."
+#~ msgstr "删除列表中选定成员的所有标签..."
+
+#~ msgid "This action affects the whole list"
+#~ msgstr "该操作会影响整个列表"
+
+#~ msgid "Keep tag"
+#~ msgstr "保留标签"
+
+#~ msgid "A person name or Family or Group"
+#~ msgstr "一个人的名字或家庭或团体"
+
+#~ msgid "Loading subscriber"
+#~ msgstr "正在加载订阅者"
+
+#~ msgid "Loading subscribers from Group"
+#~ msgstr "从组中加载订阅者"
+
+#~ msgid "Loading subscribers from family"
+#~ msgstr "正在加载来自家庭的订阅者"
+
+#~ msgid "Loading all persons from EcclesiaCRM<br>This could take a while !"
+#~ msgstr "从EcclesiaCRM加载所有人员<br>这可能需要一些时间!"
+
+#~ msgid ""
+#~ "In fact, you've better to quit the CRM, wait 5 minutes and make your "
+#~ "campaigns after.<br>To import huge datas, MailChimp API is slow."
+#~ msgstr ""
+#~ "事实上，你最好退出CRM，等待5分钟，然后再做你的活动。<br>要导入大量数据，"
+#~ "MailChimp的API很慢。"
+
+#~ msgid ""
+#~ "Loading all newsletter subscribers from EcclesiaCRM<br>This could take a "
+#~ "while !"
+#~ msgstr "从EcclesiaCRM加载所有的通讯订阅者<br>这可能需要一些时间!"
+
+#~ msgid ""
+#~ "Loading all families first headpeople subscribers from "
+#~ "EcclesiaCRM<br>This could take a while !"
+#~ msgstr "从EcclesiaCRM加载所有的家庭首发用户<br>这可能需要一些时间!"
+
+#~ msgid "Update subscriber status"
+#~ msgstr "更新订阅者状态"
+
+#~ msgid "Selected subscriber"
+#~ msgstr "选定用户"
+
+#~ msgid "Choose the status to apply to this subscriber."
+#~ msgstr "选择适用于该订户的状态。"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Changing status ..."
+#~ msgstr "改变地位..."
+
+#~ msgid "Delete subscriber"
+#~ msgstr "删除用户"
+
+#~ msgid "Subscriber removal"
+#~ msgstr "删除订阅者"
+
+#~ msgid "You're about to delete a subscriber! Are you sure ?"
+#~ msgstr "你要删除一个订户！？你确定吗？"
+
+#~ msgid "Keep subscriber"
+#~ msgstr "保持订阅"
+
+#~ msgid "Deleting Subscriber..."
+#~ msgstr "删除订阅者..."
+
+#~ msgid "Delete mailing list"
+#~ msgstr "删除邮件列表"
+
+#~ msgid "This action is irreversible"
+#~ msgstr "这一行动不可逆转"
+
+#~ msgid "Do you really want to delete this mailing list ?"
+#~ msgstr "你真的想删除这个邮件列表吗？"
+
+#~ msgid "Delete list"
+#~ msgstr "删除列表"
+
+#~ msgid "Delete all subscribers"
+#~ msgstr "删除所有订阅者"
+
+#~ msgid "Bulk deletion"
+#~ msgstr "批量删除"
+
+#~ msgid "Are you sure you want to delete all the subscribers"
+#~ msgstr "你确定你要删除所有的用户吗？"
+
+#~ msgid "Delete all"
+#~ msgstr "全部删除"
+
+#~ msgid "Deleting all subscribers..."
+#~ msgstr "删除所有订阅者..."
+
+#~ msgid ""
+#~ "In fact, you've better to leave the CRM, and in a quater of an hour re-"
+#~ "open it to manage your list.<br>To delete huge datas, MailChimp API is "
+#~ "slow."
+#~ msgstr ""
+#~ "事实上，你最好离开CRM，并在四分之一小时内重新打开它来管理你的名单。<br>要"
+#~ "删除大量数据，MailChimp的API很慢。"
+
+#~ msgid "Email Campaign Creation"
+#~ msgstr "创建电子邮件活动"
+
+#~ msgid ""
+#~ "Prepare a clear title, confirm the target tag and write the content of "
+#~ "your email campaign."
+#~ msgstr "准备一个清晰的标题，确认目标标签并撰写电子邮件营销活动的内容。"
+
+#~ msgid "Campaign details"
+#~ msgstr "活动详情"
+
+#~ msgid ""
+#~ "Set the campaign title and review the MailChimp target before writing the "
+#~ "message."
+#~ msgstr "在撰写邮件之前，设置活动标题并查看 MailChimp 目标。"
+
+#~ msgid "Campaign Title"
+#~ msgstr "活动名称"
+
+#~ msgid "Your Campaign Title"
+#~ msgstr "您的活动标题"
+
+#~ msgid "For Tag"
+#~ msgstr "对于标签"
+
+#~ msgid "Write the subject and the body of your email campaign."
+#~ msgstr "撰写电子邮件活动的主题和正文。"
+
+#~ msgid "Mail Subject"
+#~ msgstr "邮件主题"
+
+#~ msgid "Your Mail Subject"
+#~ msgstr "您的邮件主题"
+
+#~ msgid "Compose the content that will be sent to members of this tag."
+#~ msgstr "编写将发送给此标记成员的内容。"
+
+#~ msgid "All list members"
+#~ msgstr "所有名单成员"
+
+#~ msgid "Adding Campaign ..."
+#~ msgstr "添加运动..."
+
+#~ msgid "Campaign created"
+#~ msgstr "创建活动"
+
+#~ msgid "Your campaign is ready"
+#~ msgstr "您的活动已准备就绪"
+
+#~ msgid "Would like to manage directly this new campaign ?"
+#~ msgstr "想直接管理这个新活动吗？"
+
+#~ msgid "Open campaign"
+#~ msgstr "公开活动"
+
+#~ msgid "Stay here"
+#~ msgstr "留在这里"
+
+#~ msgid "You have to set a Campaign Title for your eMail Campaign"
+#~ msgstr "你必须为你的电子邮件活动设置一个活动标题"
+
+#~ msgid "Edit list settings"
+#~ msgstr "编辑列表设置"
+
+#~ msgid "MailChimp list settings"
+#~ msgstr "MailChimp 列表设置"
+
+#~ msgid "Update the main details used by this list and its campaigns."
+#~ msgstr "更新该列表及其活动使用的主要详细信息。"
+
+#~ msgid "List Name"
+#~ msgstr "列表名称"
+
+#~ msgid "Changing subscribers state..."
+#~ msgstr "改变订阅者的状态..."
+
+#~ msgid "Delete selected subscribers"
+#~ msgstr "删除选定的订阅者"
+
+#~ msgid "Selected members"
+#~ msgstr "部分成员"
+
+#~ msgid "You're about to delete subscribers! Are you sure ?"
+#~ msgstr "你要删除订阅者了!你确定吗？"
+
+#~ msgid "selected"
+#~ msgstr "选定的"
+
+#~ msgid "Delete selected"
+#~ msgstr "删除选定"
+
+#~ msgid "Deleting Subscribers..."
+#~ msgstr "删除订阅者..."
+
+#~ msgid "ERROR"
+#~ msgstr "错误"
+
+#~ msgid "Select the group to which you would like to add your cart"
+#~ msgstr "选择你想加入购物车的组别"
+
+#~ msgid "You have to set a Group Name"
+#~ msgstr "你必须设置一个组名"
+
+#~ msgid "Yes : if you're sure"
+#~ msgstr "是的：如果你确定"
+
+#~ msgid ""
+#~ "You can add the content of the cart to the selected event below<br> - OR "
+#~ "- <br>Create first an event and add them after."
+#~ msgstr ""
+#~ "你可以把购物车的内容添加到下面选定的事件中<br> - 或者 - <br>先创建一个事"
+#~ "件，然后再添加它们。"
+
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr "请核对这些信息并按发送按钮注册您的 CRM 版本。"
+
+#~ msgid "Please select target volunteers for members"
+#~ msgstr "请为成员选择目标志愿者"
+
+#~ msgid "Please select target Role for members"
+#~ msgstr "请选择成员的目标角色"
+
+#~ msgid "Add A Group Name"
+#~ msgstr "添加群组名称"
+
+#~ msgid "Are you sure you want to remove this person's membership from"
+#~ msgstr "你确定要把这个人的会员资格从"
+
+#~ msgid "Are you sure ? You're about to delete this Person ?"
+#~ msgstr "你确定吗？你要删除这个人？"
+
+#~ msgid "Are you sure ? You are about to stop sharing your document ?"
+#~ msgstr "你确定吗？你要停止分享你的文件了吗？"
+
+#~ msgid "Confirm Delete volunteer Opportunity"
+#~ msgstr "确认删除志愿者机会"
+
+#~ msgid "Select your zipped plugin file"
+#~ msgstr "选择你压缩的插件文件"
+
+#~ msgid "Personal"
+#~ msgstr "个人"
+
+#~ msgid "Add your tag name"
+#~ msgstr "添加你的标签名称"
+
+#~ msgid "Choose the tag you want to delete :"
+#~ msgstr "选择你要删除的标签 。"
+
+#~ msgid "Select status for : "
+#~ msgstr "选择状态为 。"
+
+#~ msgid ""
+#~ "Be carefull, You are about to delete a user from the group and therefore "
+#~ "the entire call history. This is strongly to be avoided."
+#~ msgstr ""
+#~ "请注意，您将从组中删除一个用户，从而删除整个通话记录。请务必避免这样做。"
+
+#~ msgid "Place"
+#~ msgstr "地点"
+
+#~ msgid "GDPR"
+#~ msgstr "GDPR"
+
+#~ msgid "Campaigns:"
+#~ msgstr "运动。"
+
+#~ msgid "Generate Deposit Slip for Selected"
+#~ msgstr "生成选定的存款单"
+
+#~ msgid "Rows"
+#~ msgstr "行数"
+
+#~ msgid "Add buyer"
+#~ msgstr "添加买家"
+
+#~ msgid "All members of this group are in the cart"
+#~ msgstr "该组的所有成员都在购物车中"
+
+#~ msgid "Not all members of this group are in the cart"
+#~ msgstr "该组成员并非都在车内"
+
+#~ msgid "Regenerate 2 Factor Authentication Secret"
+#~ msgstr "重新生成2因素认证的秘密"
+
+#~ msgid ""
+#~ "<center>You must set another Role Name <br>-- or --<br> this Role Name "
+#~ "already exist !!!</center>"
+#~ msgstr ""
+#~ "<center>你必须设置另一个角色名称<br>--或者--<br>这个角色名称已经存在！！</"
+#~ "center>"
+
+#~ msgid "Done !"
+#~ msgstr "完成了!"
+
+#~ msgid "Removing finished...."
+#~ msgstr "移除成品...."
+
+#~ msgid "Nothing to remove."
+#~ msgstr "没有什么需要移除的。"
+
+#~ msgid "Are you sure you want to remove the selected group members?"
+#~ msgstr "你确定要删除所选组的成员吗？"
+
+#~ msgid "Songs"
+#~ msgstr "歌曲"
+
+#~ msgid "Add all"
+#~ msgstr "添加所有"
+
+#~ msgid ""
+#~ "Use this method to share files with individuals or teams within your "
+#~ "organization. If the recipient already has access to the share, but can't "
+#~ "locate it, you can send them the internal link to facilitate access."
+#~ msgstr ""
+#~ "使用此方法与组织内的个人或团队共享文件。如果接收者已经有访问共享文件的权"
+#~ "限，但却找不到文件，你可以向他们发送内部链接，以方便他们访问。"
+
+#~ msgid "You're about to remove a folder and it's content"
+#~ msgstr "你要删除一个文件夹和它的内容"
+
+#~ msgid "Files input"
+#~ msgstr "文件输入"
+
+#~ msgid "Upload your files"
+#~ msgstr "上传你的文件"
+
+#~ msgid "Upload"
+#~ msgstr "上传"
+
+#~ msgid "Upload your Files"
+#~ msgstr "上传你的文件"
+
+#~ msgid "Share your File"
+#~ msgstr "分享您的文件"
+
+#~ msgid "Add person"
+#~ msgstr "添加人"
+
+#~ msgid "Switch Camera"
+#~ msgstr "开关摄像机"
+
+#~ msgid "Info"
+#~ msgstr "信息"
+
+#, fuzzy
+#~ msgid "Moved!"
+#~ msgstr "移动"
+
+#~ msgid "Problem"
+#~ msgstr "问题"
+
+#~ msgid ""
+#~ "Safari isn't yet supported with Jitsi, use something else !<br/>• Your "
+#~ "webcam<br/>• Sharing your windows<br/> won't work with meeting."
+#~ msgstr ""
+#~ "Safari还不支持Jitsi，请使用其他东西！<br/>- 你的网络摄像头<br/>- 分享你的"
+#~ "窗口<br/> 不会与会议合作。"
+
+#~ msgid "Set a Jitsi room name"
+#~ msgstr "设置一个Jitsi房间名称"
+
+#~ msgid "Delete all Rooms?"
+#~ msgstr "删除所有房间？"
+
+#~ msgid "All"
+#~ msgstr "全部"
+
+#~ msgid ""
+#~ "Deleting an event will also delete all attendance counts for that event."
+#~ msgstr "删除一个活动也将删除该活动的所有出席人数。"
+
+#~ msgid "Are you sure you want to DELETE the event ?"
+#~ msgstr "你确定你要删除该事件吗？"
+
+#~ msgid ""
+#~ "You can create the event automatically with the students<br> - OR - "
+#~ "<br>Add the students to the cart and create an event to add them after."
+#~ msgstr ""
+#~ "你可以和学生一起自动创建事件<br> - 或者 - <br>将学生添加到购物车，然后创建"
+#~ "一个事件来添加他们。"
+
+#~ msgid "Liste par mois"
+#~ msgstr "按月列表"
+
+#~ msgid "Never"
+#~ msgstr "从不"
+
+#~ msgid "Attendances"
+#~ msgstr "就诊人数"
+
+#~ msgid "link"
+#~ msgstr "链接"
+
+#~ msgid "Present"
+#~ msgstr "目前"
+
+#~ msgid "Absent"
+#~ msgstr "缺席"
+
+#~ msgid "Add all tags for the selected members in the list..."
+#~ msgstr "添加列表中选定成员的所有标签..."
+
+#~ msgid "Sunday School Menu assignement"
+#~ msgstr "主日学菜单的分配"
+
+#~ msgid "Sunday School Sub Menu"
+#~ msgstr "主日学次级菜单"
+
+#~ msgid "Sunday School"
+#~ msgstr "主日学"
+
+#~ msgid "List Details"
+#~ msgstr "列表详情"
+
+#~ msgid "Edit Value"
+#~ msgstr "编辑价值"
+
+#~ msgid ""
+#~ "Warning!  Do not select this option if you plan to add to an existing "
+#~ "database.<br/>"
+#~ msgstr "警告!  如果你打算添加到一个现有的数据库，请不要选择这个选项。"
+
+#~ msgid ""
+#~ "Use only if unsatisfied with initial import.  All person and member data "
+#~ "will be destroyed!"
+#~ msgstr "仅在对初始导入不满意时使用。  所有个人和成员的数据都将被销毁!"
+
+#~ msgid "Cart"
+#~ msgstr "頧行"
+
+#~ msgid "Are you sure, you want to delete this Person ?"
+#~ msgstr "你确定你要删除这个人吗？"
+
+#~ msgid "Set the year range to export"
+#~ msgstr "设置要出口的年份范围"

@@ -1,0 +1,206 @@
+<?php
+
+
+namespace EcclesiaCRM\Search;
+
+use EcclesiaCRM\dto\Cart;
+use EcclesiaCRM\Search\BaseSearchRes;
+use EcclesiaCRM\FamilyQuery;
+use EcclesiaCRM\dto\SystemConfig;
+use EcclesiaCRM\SessionUser;
+use EcclesiaCRM\Utils\LoggerUtils;
+use Propel\Runtime\ActiveQuery\Criteria;
+use EcclesiaCRM\dto\SystemURLs;
+use EcclesiaCRM\Map\FamilyTableMap;
+
+
+class FamilySearchRes extends BaseSearchRes
+{
+    public function __construct($global = false)
+    {
+        $this->name = _('Families');
+        parent::__construct($global, 'Families');
+    }
+
+    public function allowed (): bool
+    {        
+        return true;
+    }
+
+    public function buildSearch(string $qry)
+    {
+        if (SystemConfig::getBooleanValue("bSearchIncludeFamilies")) {
+            try {
+                $currentUser = SessionUser::getUser();
+                $searchLikeString = '%' . str_replace('*', '%', $qry) . '%';
+                $searchNeedle = mb_strtolower($qry);
+                $matchAll = str_contains($qry, '*') && trim(str_replace('*', '', $qry)) === '';
+                $isSeePrivacyDataEnabled = $currentUser->isSeePrivacyDataEnabled();
+                $shouldShowCart = $currentUser->isShowCartEnabled();
+                $rootPath = SystemURLs::getRootPath();
+                $shouldSeePrivacyData = $isSeePrivacyDataEnabled;
+                $includeFamilyHoh = SystemConfig::getBooleanValue("bSearchIncludeFamilyHOH");
+                $maxResults = (int) SystemConfig::getValue("iSearchIncludeFamiliesMax");
+                $familiesInCart = $shouldShowCart ? array_fill_keys(Cart::FamiliesInCart(), true) : [];
+
+                $subQuery = FamilyQuery::create()
+                    ->withColumn('Family.Id','FamId')
+                    ->leftJoinPerson()
+                    ->usePersonQuery()
+                        ->filterByDateDeactivated( null)
+                        ->withColumn('COUNT(Person.Id)','cnt')
+                    ->endUse()
+                    ->filterByDateDeactivated(NULL)
+                    ->groupById(FamilyTableMap::COL_FAM_ID);
+
+                $isGlobalSearch = $this->isGlobalSearch();
+                $isStringSearch = $this->isStringSearch();
+                $isQuickSearch  = $this->isQuickSearch();
+
+                $families = FamilyQuery::create()
+                    ->addSelectQuery($subQuery, 'res'); // only real family with more than one member will be showed here
+
+                if ($isGlobalSearch && !$isQuickSearch) {
+                    $families
+                        ->setDistinct()
+                        ->leftJoinWithPerson()
+                        ->usePersonQuery()
+                            ->filterByDateDeactivated(null)
+                        ->endUse();
+                }
+
+                if ( !( mb_strtolower($qry) == mb_strtolower(_('families')) || mb_strtolower($qry) == mb_strtolower(_('family'))
+                        || mb_strtolower($qry) == mb_strtolower(_('single')) || mb_strtolower($qry) == mb_strtolower(_('singles')) ) ) {
+                    if ($isSeePrivacyDataEnabled) {
+                        $families->filterByName("%$qry%", Criteria::LIKE)
+                            ->_or()->filterByHomePhone($searchLikeString, Criteria::LIKE)
+                            ->_or()->filterByCellPhone($searchLikeString, Criteria::LIKE)
+                            ->_or()->filterByWorkPhone($searchLikeString, Criteria::LIKE)
+                            ->_or()->filterByEmail($searchLikeString, Criteria::LIKE);
+                    } else {
+                        $families->filterByName("%$qry%", Criteria::LIKE);
+                    }
+                }
+
+                $compareOp = ">";
+                if ( mb_strtolower($qry) == mb_strtolower(_('single')) || mb_strtolower($qry) == mb_strtolower(_('singles')) ) {
+                    $compareOp = "=";
+                }
+
+                $families->where('res.cnt'.$compareOp.'1 AND Family.Id=res.FamId');
+
+                if ( $isQuickSearch ) {
+                    $families->limit($maxResults);
+                }
+                    
+                $families = $families->find();
+
+                if ( $families->count() > 0 )
+                {
+                    $id=1;
+                    $res_buffer = [];
+
+                    foreach ($families as $family)
+                    {
+                                                $familyId = $family->getId();
+
+                        if ( $isQuickSearch ) {
+                          $elt=[
+                              "id" => 'family-id-'.$id++,
+                                                            "text" => $family->getFamilyString($includeFamilyHoh),
+                              "uri" => $family->getViewURI()
+                          ];
+
+                          array_push($this->results,$elt);
+                        } else {
+                            $inCart = isset($familiesInCart[$familyId]);
+
+                            $res = $this->buildActionButtons([
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => $rootPath . '/v2/people/family/editor/' . $familyId,
+                                    'icon' => '<i class="fas fa-pencil-alt"></i>',
+                                    'classes' => 'btn btn-sm btn-outline-primary',
+                                    'label' => '',
+                                    'datas' => ['toggle' => 'tooltip', 'placement' => 'top', 'title' => _('Edit')]
+                                ],
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => $rootPath . '/v2/people/family/view/' . $familyId,
+                                    'icon' => '<i class="fas fa-search-plus"></i>',
+                                    'classes' => 'btn btn-sm btn-outline-secondary',
+                                    'label' => '',
+                                    'tooltip' => ['toggle' => 'tooltip', 'placement' => 'top', 'title' => _('View')]
+                                ],
+                                [
+                                    'activate' => $shouldShowCart,
+                                    'type' => 'a',
+                                    'href' => '',
+                                    'icon' => (!$inCart ? '<i class="fas fa-cart-plus fa-inverse"></i>' : '<i class="fas fa-times"></i>'),
+                                    'classes' => 'btn btn-sm btn-primary' . ($inCart ? ' RemoveFromFamilyCart' : ' AddToFamilyCart'),
+                                    'label' => '',
+                                    'datas' => ['cartfamilyid' => $familyId, 'toggle' => 'tooltip', 'placement' => 'top', 'title' => (!$inCart ? _('Add to Cart') : _('Remove from Cart'))]
+                                ]
+                            ]);                                                        
+
+                            if ( $isStringSearch ) {
+                                if ($shouldSeePrivacyData) {
+                                    $tableOfRes = [$family->getName(), $family->getEmail(),
+                                        $family->getHomePhone(), $family->getCellPhone(), $family->getWorkPhone(), $family->getState(), _($family->getFamilyString())];
+
+                                } else {
+                                    $tableOfRes = [$family->getName()];
+
+                                }
+                                
+                                foreach ($tableOfRes as $item) {
+                                    $normalizedItem = mb_strtolower((string) $item);
+                                    if ($item !== null && ($matchAll || mb_strpos($normalizedItem, $searchNeedle) !== false) && !isset($res_buffer[$normalizedItem])) {
+                                        $elt = ['id' => 'searchname-family-id-' . ($id++),
+                                            'text' => $item,
+                                            'uri' => ""];
+                                        array_push($this->results, $elt);
+                                        $res_buffer[$normalizedItem] = true;
+                                    }
+                                }
+                            } elseif ( $isGlobalSearch ) {
+                                $members = $family->getPeopleSorted();
+                                $res_members = [];
+                                $globalMembers = "";
+
+                                foreach ($members as $member) {
+                                    $memberId = $member->getId();
+                                    $res_members[] = $memberId;
+                                    $globalMembers .= '• <a href="' . $rootPath . '/v2/people/person/view/' . $memberId . '">' . $member->getFirstName() . ' ' . $member->getLastName() . '</a><br>';
+                                }
+
+                                $elt = [
+                                    "id" => $familyId,
+                                    "img" => $family->getJPGPhotoDatas(),
+                                    "searchresult" => _("Family") . ' : <a href="' . $rootPath . '/v2/people/family/view/' . $familyId . '" data-toggle="tooltip" data-placement="top" title="' . _('Edit') . '">' . $family->getName() . '</a>' . " " . _("Members") . " : <br>" . $globalMembers,
+                                    "address" => (!$shouldSeePrivacyData) ? _('Private Data') : $family->getFamilyString($includeFamilyHoh),
+                                    "type" => (mb_strtolower($qry) == mb_strtolower(_('single')) || mb_strtolower($qry) == mb_strtolower(_('singles'))) ? _("Singles") : _($this->getGlobalSearchType()),
+                                    "realType" => $this->getGlobalSearchType(),
+                                    "Gender" => "",
+                                    "Classification" => "",
+                                    "ProNames" => "",
+                                    "FamilyRole" => "",
+                                    "members" => $res_members,
+                                    "actions" => $res
+                                ];
+
+                                array_push($this->results,$elt);
+                            }
+                        }
+                    }
+                }
+            } catch (\Exception $e) {
+                LoggerUtils::getAppLogger()->warn($e->getMessage());
+            }
+        }
+    }
+}
+
+

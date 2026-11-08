@@ -1,0 +1,101 @@
+<?php
+
+namespace EcclesiaCRM;
+
+use EcclesiaCRM\Base\KioskDevice as BaseKioskDevice;
+use Propel\Runtime\Connection\ConnectionInterface;
+
+class KioskDevice extends BaseKioskDevice
+{
+  protected string $Name;
+
+  public function getActiveAssignment()
+  {
+    return $this->getKioskAssignments()[0];
+  }
+
+  public function setAssignment($assignmentType,$eventId)
+  {
+    $assignment = $this->getActiveAssignment();
+    if (is_null($assignment))
+    {
+      $assignment = new KioskAssignment();
+      $assignment->setKioskDevice($this);
+    }
+    $assignment->setAssignmentType($assignmentType);
+    $assignment->setEventId($eventId);
+    $assignment->save();
+  }
+
+  public function heartbeat()
+  {
+    $this->setLastHeartbeat(date('Y-m-d H:i:s'))
+      ->save();
+
+    $assignmentJSON = null;
+    $assignment = $this->getActiveAssignment();
+
+    if (isset($assignment) && $assignment->getAssignmentType() == dto\KioskAssignmentTypes::EVENTATTENDANCEKIOSK )
+    {
+
+        $assignmentJSON = $assignment->toArray();
+
+        if( !is_null($assignment->getEvent()) ) {
+            $assignmentJSON['Event']['Id'] = $assignment->getEvent()->getId();
+            $assignmentJSON['Event']['Title'] = $assignment->getEvent()->getTitle();
+            $assignmentJSON['Event']['GroupId'] = $assignment->getEvent()->getGroupId();
+            $assignmentJSON['Event']['Start'] = $assignment->getEvent()->getStart();
+            $assignmentJSON['Event']['End'] = $assignment->getEvent()->getEnd();
+        } else {// in the case there isn't any event => AssignmentType != 1
+            $assignmentJSON['Event']['Id'] = -1;
+            $assignmentJSON['Event']['Title'] = "";
+            $assignmentJSON['Event']['GroupId'] = -1;
+            $assignmentJSON['Event']['Start'] = "";
+            $assignmentJSON['Event']['End'] = "";
+
+            $assignmentJSON['AssignmentType'] = 0;
+        }
+
+    }
+
+
+    return array(
+        "Accepted"=>$this->getAccepted(),
+        "Name"=>$this->getName(),
+        "Assignment"=>$assignmentJSON,
+        "Commands"=>$this->getPendingCommands()
+      );
+  }
+
+  public function getPendingCommands()
+  {
+    $commands = parent::getPendingCommands();
+    $this->setPendingCommands(null);
+    $this->save();
+    return $commands;
+  }
+
+  public function reloadKiosk()
+  {
+    $this->setPendingCommands("Reload");
+    $this->save();
+    return true;
+  }
+
+  public function identifyKiosk()
+  {
+    $this->setPendingCommands("Identify");
+    $this->save();
+    return true;
+  }
+
+  public function preInsert(?ConnectionInterface $con = null): bool
+  {
+    if (!isset($this->Name))
+    {
+      $this->setName(Utils\MiscUtils::random_word());
+    }
+    return parent::preInsert();
+  }
+
+}

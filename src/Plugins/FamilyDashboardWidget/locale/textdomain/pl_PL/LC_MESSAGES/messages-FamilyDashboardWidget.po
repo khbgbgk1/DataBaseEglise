@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-08 14:28+0000\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../src/Plugins/FamilyDashboardWidget/v2/templates/View.php:22
+msgid "Families"
+msgstr "Rodziny"
+
+#: ../src/Plugins/FamilyDashboardWidget/v2/templates/View.php:31
+msgid "View Families"
+msgstr "Zobacz rodziny"
+
+#~ msgid "Register your software to CRM team."
+#~ msgstr "Zarejestruj swoje oprogramowanie w zespole CRM."
+
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr ""
+#~ "Zarejestruj swoją kopię CRM, sprawdzając te informacje i naciskając "
+#~ "przycisk Wyślij."

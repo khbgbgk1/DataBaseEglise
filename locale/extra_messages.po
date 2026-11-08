@@ -1,0 +1,202 @@
+
+# extra changes
+
+msgid "Jan"
+msgstr ""
+
+msgid "Feb"
+msgstr ""
+
+msgid "Mar"
+msgstr ""
+
+msgid "Apr"
+msgstr ""
+
+msgid "Aug"
+msgstr ""
+
+msgid "Sept"
+msgstr ""
+
+msgid "Oct"
+msgstr ""
+
+msgid "Nov"
+msgstr ""
+
+msgid "Dec"
+msgstr ""
+
+msgid "There were "
+msgstr ""
+
+msgid "pm"
+msgstr " "
+
+msgid "am"
+msgstr " "
+
+msgid "Assign a New Property:"
+msgstr ""
+
+msgid "Parents"
+msgstr ""
+
+msgid "Kids"
+msgstr ""
+
+msgid "CASH"
+msgstr ""
+
+msgid "CHECK"
+msgstr ""
+
+msgid "CHECKS"
+msgstr ""
+
+msgid "CREDITCARD"
+msgstr ""
+
+msgid "BankDraft"
+msgstr ""
+
+msgid "CreditCard"
+msgstr ""
+
+msgid "unsubscribed"
+msgstr ""
+
+msgid "subscribed"
+msgstr ""
+
+msgid "send"
+msgstr ""
+
+msgid "sent"
+msgstr ""
+
+msgid "save"
+msgstr ""
+
+msgid "schedule"
+msgstr ""
+
+msgid "paused"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "pending"
+msgstr ""
+
+msgid "dark"
+msgstr ""
+
+msgid "light"
+msgstr ""
+
+msgid "automatic"
+msgstr ""
+
+msgid "blue"
+msgstr ""
+
+msgid "secondary"
+msgstr ""
+
+msgid "green"
+msgstr ""
+
+msgid "cyan"
+msgstr ""
+
+msgid "yellow"
+msgstr ""
+
+msgid "red"
+msgstr ""
+
+msgid "fuchsia"
+msgstr ""
+
+msgid "indigo"
+msgstr ""
+
+msgid "navy"
+msgstr ""
+
+msgid "purple"
+msgstr ""
+
+msgid "pink"
+msgstr ""
+
+msgid "maroon"
+msgstr ""
+
+msgid "orange"
+msgstr ""
+
+msgid "lime"
+msgstr ""
+
+msgid "teal"
+msgstr ""
+
+msgid "olive"
+msgstr ""
+
+msgid "black"
+msgstr ""
+
+msgid "gray-dark"
+msgstr ""
+
+msgid "gray"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "True / False"
+msgstr ""
+
+msgid "Text Field (50 char)"
+msgstr ""
+
+msgid "Text Field (Long)"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Person from Group"
+msgstr ""
+
+msgid "Money"
+msgstr ""
+
+msgid "Custom Drop-Down List"
+msgstr ""
+
+msgid "Confirm Datas"
+msgstr ""
+
+
+# eventworkflow
+msgid "Event Workflow"
+msgstr ""
+
+msgid "One Day"
+msgstr ""
+
+msgid "Several days"
+msgstr ""
+
+msgid "Giving Report"
+msgstr ""

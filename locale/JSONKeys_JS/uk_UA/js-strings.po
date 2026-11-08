@@ -1,0 +1,3504 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2026-08-09T17:50:15.482Z\n"
+"PO-Revision-Date: 2018-07-19T20:33:42.797Z\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Backup Downloaded, Copy on server removed"
+msgstr "Резервну копію завантажено, копію на сервері видалено"
+
+msgid "You must enter a password"
+msgstr "Ви повинні ввести пароль"
+
+msgid "Passwords must match"
+msgstr "Паролі повинні збігатися"
+
+msgid "Backup Running, Please wait."
+msgstr "Запускається резервна копія, будь ласка, зачекайте."
+
+msgid "Backup in progress, don't close the window !"
+msgstr "Триває резервне копіювання, не закривайте вікно!"
+
+msgid "Background backup in progress to remote server"
+msgstr "Виконується фонове резервне копіювання на віддалений сервер"
+
+msgid "Background backup in progress"
+msgstr "Виконується фонове резервне копіювання"
+
+msgid "Backup Error."
+msgstr "Помилка резервного копіювання."
+
+msgid "The selected file exceeds this servers maximum upload size of"
+msgstr ""
+"Вибраний файл перевищує максимальний розмір завантаження на цьому сервері"
+
+msgid "Restore Running, Please wait."
+msgstr "Відновити запуск, будь ласка, зачекайте."
+
+msgid "Restore backup, don't close the window !"
+msgstr "Відновіть резервну копію, не закривайте вікно!"
+
+msgid "Restore Complete"
+msgstr "Відновлення завершено"
+
+msgid "Login to restored Database"
+msgstr "Вхід до відновленої бази даних"
+
+msgid "Restore Error."
+msgstr "Відновити помилку."
+
+msgid "Are you sure, you want to delete this image ?"
+msgstr "Ви впевнені, що хочете видалити це зображення?"
+
+msgid "Wrong address format."
+msgstr "Неправильний формат адреси."
+
+msgid "Set Calendar Name"
+msgstr "Встановити назву календаря"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Confirm"
+msgstr "Підтвердити"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Select a resource type"
+msgstr "Виберіть тип ресурсу"
+
+msgid "Room"
+msgstr "Кімната"
+
+msgid "Computer"
+msgstr "Комп'ютер."
+
+msgid "Video"
+msgstr "Відео"
+
+msgid "Description"
+msgstr "Опис"
+
+msgid "Add a short description to help identify this resource."
+msgstr "Додайте короткий опис, щоб допомогти ідентифікувати цей ресурс."
+
+msgid "Set Resource Name"
+msgstr "Задати ім'я ресурсу"
+
+msgid "OK"
+msgstr "ГАРАЗД."
+
+msgid "Calendars"
+msgstr "Календарі"
+
+msgid "Select one or more calendars to update their visibility in the sidebar."
+msgstr ""
+"Виберіть один або кілька календарів, щоб оновити їх видимість на бічній "
+"панелі."
+
+msgid "Set Status"
+msgstr "Встановити статус"
+
+msgid "Select [Exclude] or [Include]"
+msgstr "Виберіть [Виключити] або [Включити]"
+
+msgid "[INCLUDE]"
+msgstr "[ВКЛЮЧИТИ]"
+
+msgid "[EXCLUDE]"
+msgstr "[ВИКЛЮЧЕНО]"
+
+msgid "Include/Exclude your Calendars in the SideBar"
+msgstr "Включення/виключення календарів на бічній панелі"
+
+msgid "Ok"
+msgstr "Гаразд."
+
+msgid "[👀  ]"
+msgstr "[👀 ]"
+
+msgid "[👀 ✐]"
+msgstr "[👀 ✐]"
+
+msgid "With"
+msgstr "З"
+
+msgid "Select one or more current shares to update or remove them."
+msgstr ""
+"Виберіть один або кілька поточних спільних файлів, щоб оновити або видалити "
+"їх."
+
+msgid "Set Rights"
+msgstr "Встановити права"
+
+msgid "Select your rights"
+msgstr "Виберіть свої права"
+
+msgid "or"
+msgstr "або"
+
+msgid "[R ]"
+msgstr "[R ]"
+
+msgid "[RW]"
+msgstr "[RW]"
+
+msgid "Send email notification"
+msgstr "Надіслати сповіщення електронною поштою"
+
+msgid "Notify added people, families, or groups by email"
+msgstr "Сповістити доданих людей, сім'ї або групи електронною поштою"
+
+msgid "Add persons/Family/groups"
+msgstr "Додати осіб/сім'ю/групу"
+
+msgid "Search and add people, families, or groups to share this calendar."
+msgstr ""
+"Шукайте і додавайте людей, сім'ї або групи, щоб поділитися цим календарем."
+
+msgid "Share your Calendar"
+msgstr "Поділіться своїм календарем"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Are you sure, you want to delete this Share ?"
+msgstr "Ви дійсно хочете видалити цю публікацію?"
+
+msgid "Stop sharing"
+msgstr "Припини ділитися"
+
+msgid "Are you sure, you want to stop sharing your document ?"
+msgstr "Ви впевнені, що не хочете ділитися своїм документом?"
+
+msgid "Person or Family or Group"
+msgstr "Особа, сім'я або група"
+
+msgid "Are you sure?"
+msgstr "Ти впевнений?"
+
+msgid ""
+"You'll lose the calendar, the events and all the share calendars too. This "
+"cannot be undone."
+msgstr ""
+"Ви також втратите календар, події та всі спільні календарі. Це неможливо "
+"скасувати."
+
+msgid "Manage"
+msgstr "Керувати"
+
+msgid "Calendar Management for"
+msgstr "Управління календарем для"
+
+msgid "Modify Calendar Name"
+msgstr "Змінити назву календаря"
+
+msgid "Modify Group Name"
+msgstr "Змінити назву групи"
+
+msgid "Modify Resource Name"
+msgstr "Змінити назву ресурсу"
+
+msgid "Modify Share Name"
+msgstr "Змінити назву ресурсу"
+
+msgid "Resource Info for"
+msgstr "Інформація про ресурси для"
+
+msgid "Error"
+msgstr "Помилка."
+
+msgid "Only administrators have the right to change the Resource description"
+msgstr "Тільки адміністратори мають право змінювати опис Ресурсу"
+
+msgid "Actualize"
+msgstr "Актуалізувати"
+
+msgid "Today"
+msgstr "Сьогодні"
+
+msgid "List"
+msgstr "Список"
+
+msgid "List Week"
+msgstr "Тиждень списків"
+
+msgid "List Month"
+msgstr "Перелік Місяць"
+
+msgid "This event isn't modifiable !!!"
+msgstr "Ця подія не підлягає зміні!!!"
+
+msgid "No description"
+msgstr "Без опису"
+
+msgid "What would you like to do?"
+msgstr "Чим би ви хотіли займатися?"
+
+msgid "Be careful with deletion: this action cannot be undone."
+msgstr "Будьте обережні з видаленням: цю дію не можна скасувати."
+
+msgid "Modify Event"
+msgstr "Змінити подію"
+
+msgid "Delete Event"
+msgstr "Видалити подію"
+
+msgid "Are you sure to delete this event?"
+msgstr "Ви впевнені, що хочете видалити цю подію?"
+
+msgid "Delete all repeated Events"
+msgstr "Видалити всі події, що повторюються"
+
+msgid ""
+"You are about to delete all the repeated Events linked to this event. Are "
+"you sure? This can't be undone."
+msgstr ""
+"Ви збираєтеся видалити всі повторювані Події, пов'язані з цією подією. Ви "
+"впевнені? Це не можна скасувати."
+
+msgid "No"
+msgstr "Ні."
+
+msgid "Only this event"
+msgstr "Тільки ця подія"
+
+msgid "Every Events linked to this Event"
+msgstr "Усі події, пов'язані з цією подією"
+
+msgid "To add an event, You have to create a calendar or activate one first."
+msgstr "Щоб додати подію, спочатку потрібно створити або активувати календар."
+
+msgid "Add More Attendees"
+msgstr "Додати більше учасників"
+
+msgid "Make Attendance"
+msgstr "Приєднатися до участі"
+
+msgid "Edit"
+msgstr "Редагувати"
+
+msgid "Resize Event"
+msgstr "Подія зміни розміру"
+
+msgid "Are you sure about this change?"
+msgstr "Ви впевнені в цій зміні?"
+
+msgid "will be resized."
+msgstr "буде змінено."
+
+msgid "You're about to resize all the events. Would you like to :"
+msgstr "Ви збираєтеся змінити розмір усіх подій. Ви хочете, щоб :"
+
+msgid "Only this Event"
+msgstr "Тільки ця Подія"
+
+msgid "All Events"
+msgstr "Всі події"
+
+msgid "Move Event"
+msgstr "Перемістити подію"
+
+msgid "will be dropped."
+msgstr "буде знято."
+
+msgid "You're about to move all the events. Would you like to :"
+msgstr "Ви збираєтеся перенести всі події. Ви б хотіли ..:"
+
+msgid "Event added"
+msgstr "Додано подію"
+
+msgid ""
+"Event was added successfully. Would you like to make the Attendance or to "
+"add attendees ?"
+msgstr ""
+"Подію успішно додано. Бажаєте змінити відвідуваність або додати учасників?"
+
+msgid "Event was added successfully."
+msgstr "Подію успішно додано."
+
+msgid "No attendees"
+msgstr "Відсутні"
+
+msgid "From"
+msgstr "Від"
+
+msgid "to"
+msgstr "до"
+
+msgid "Attendance Notes: "
+msgstr "Відмітки про відвідування:"
+
+msgid "None"
+msgstr "Ні."
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "Calendar Title"
+msgstr "Назва календаря"
+
+msgid "Location"
+msgstr "Місцезнаходження"
+
+msgid "To validate your address : <b>\"hit return\"</b>."
+msgstr "Щоб підтвердити вашу адресу: <b>\"натисніть клавішу повернення\"</b>."
+
+msgid "To see the Map click this text field."
+msgstr "Щоб побачити мапу, натисніть на це текстове поле."
+
+msgid "Map"
+msgstr "Карта"
+
+msgid "Desc"
+msgstr "Спуск"
+
+msgid "Event description"
+msgstr "Опис події"
+
+msgid "Event Type"
+msgstr "Тип події"
+
+msgid "Attendance Counts"
+msgstr "Підрахунок відвідуваності"
+
+msgid "Start Date"
+msgstr "Дата початку"
+
+msgid "All day"
+msgstr "Цілий день."
+
+msgid "End Date"
+msgstr "Дата закінчення"
+
+msgid "Repeat"
+msgstr "Повторити"
+
+msgid "Daily"
+msgstr "Щодня"
+
+msgid "Weekly"
+msgstr "Щотижня"
+
+msgid "Monthly"
+msgstr "Щомісяця"
+
+msgid "Quarterly"
+msgstr "Щоквартально"
+
+msgid "Semesterly"
+msgstr "Щосеместрово"
+
+msgid "Yearly"
+msgstr "Щорічно"
+
+msgid "End"
+msgstr "Кінець"
+
+msgid "Alarm"
+msgstr "Тривога"
+
+msgid "NONE"
+msgstr "НІ"
+
+msgid "At time of event"
+msgstr "Під час заходу"
+
+msgid "5 minutes before"
+msgstr "За 5 хвилин до"
+
+msgid "10 minutes before"
+msgstr "За 10 хвилин до"
+
+msgid "15 minutes before"
+msgstr "За 15 хвилин до"
+
+msgid "30 minutes before"
+msgstr "За 30 хвилин до"
+
+msgid "1 hour before"
+msgstr "За 1 годину до"
+
+msgid "2 hour before"
+msgstr "За 2 години до"
+
+msgid "1 day before"
+msgstr "За 1 день до"
+
+msgid "2 day before"
+msgstr "За 2 дні до цього"
+
+msgid "Calendar"
+msgstr "Календар"
+
+msgid "Add as attendees"
+msgstr "Додати в учасники"
+
+msgid "Notes"
+msgstr "Примітки"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Active"
+msgstr "Активний"
+
+msgid "inactive"
+msgstr "неактивний"
+
+msgid "Event Creation"
+msgstr "Створення подій"
+
+msgid "Event Editor"
+msgstr "Редактор подій"
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "You've to chose a calendar."
+msgstr "Ви повинні вибрати календар."
+
+msgid "You have to set a Title for your event"
+msgstr "Ви маєте встановити назву для вашої події"
+
+msgid "In progress...."
+msgstr "У процесі...."
+
+msgid "Events for"
+msgstr "Заходи для"
+
+msgid "Event for"
+msgstr "Подія для"
+
+msgid "Loading finished...."
+msgstr "Завантаження завершено...."
+
+msgid "Month"
+msgstr "Місяць"
+
+msgid "Actions"
+msgstr "Дії"
+
+msgid "Attendance Counts with real Attendees"
+msgstr "Підрахунок відвідуваності з реальними відвідувачами"
+
+msgid "Free Attendance Counts without Attendees"
+msgstr "Безкоштовне відвідування рахується без відвідувачів"
+
+msgid "Calendar Type"
+msgstr "Тип календаря"
+
+msgid "Events in Year"
+msgstr "Події за рік"
+
+msgid "Events in month"
+msgstr "Події за місяць"
+
+msgid "Events by Type"
+msgstr "Події за типами"
+
+msgid ""
+"What would you like to do ? Be careful with the deletion, it's impossible to "
+"revert !!!"
+msgstr ""
+"Що б ви хотіли зробити? Будьте обережні з видаленням, повернути назад "
+"неможливо!!!"
+
+msgid "Text for Event ID"
+msgstr "Текст для ідентифікатора події"
+
+msgid "Undo Check-out"
+msgstr "Скасувати виїзд"
+
+msgid "Make Check-out"
+msgstr "Здійснити виїзд"
+
+msgid "Edit/Make Check-out - Undo Check-out"
+msgstr "Редагувати/зробити виписку - скасувати виписку"
+
+msgid "You can checkout or undo the checkout of the attendees of an event"
+msgstr "Ви можете зареєструвати або скасувати реєстрацію учасників заходу"
+
+msgid "Edit/Validate Checkout"
+msgstr "Редагувати/підтвердити замовлення"
+
+msgid "Check-out done"
+msgstr "Виселення завершено."
+
+msgid "Press CTRL + C to copy all group members' phone numbers"
+msgstr ""
+"Натисніть CTRL + C, щоб скопіювати номери телефонів усіх учасників групи"
+
+msgid "You have no more items in your cart."
+msgstr "У вашому кошику більше немає товарів."
+
+msgid "Address"
+msgstr "Адреса"
+
+msgid "Email"
+msgstr "Електронна пошта"
+
+msgid "Remove"
+msgstr "Видалити"
+
+msgid "Classification"
+msgstr "Класифікація"
+
+msgid "Family Role"
+msgstr "Роль сім'ї"
+
+msgid "CKEditor Template Creation"
+msgstr "Створення шаблону CKEditor"
+
+msgid "Template Name"
+msgstr "Назва шаблону"
+
+msgid "Explanation field cannot be empty."
+msgstr "Поле пояснення не може бути порожнім."
+
+msgid "Template Description"
+msgstr "Опис шаблону"
+
+msgid "Save as Word file in EDrive"
+msgstr "Зберегти як файл Word в EDrive"
+
+msgid "Word file name"
+msgstr "Ім'я файлу у форматі Word"
+
+msgid ""
+"The file will be uploaded to your EDrive<br><small>This part is for test "
+"only <b>(Beta)</b>.</small>"
+msgstr ""
+"Файл буде завантажено на ваш EDrive<br><small>Ця частина є лише тестовою "
+"<b>(Beta)</b>.</small>."
+
+msgid "Your note is saved in your EDrive"
+msgstr "Ваша нотатка зберігається у вашому EDrive"
+
+msgid "(No templates defined)"
+msgstr "(Шаблонів не визначено)"
+
+msgid "Content Templates"
+msgstr "Шаблони вмісту"
+
+msgid "Please select the template to open in the editor"
+msgstr "Виберіть шаблон для відкриття в редакторі"
+
+msgid "Template Options"
+msgstr "Параметри шаблону"
+
+msgid "Modify"
+msgstr "Змінити"
+
+msgid "Modify the template you select"
+msgstr "Змінити вибраний шаблон"
+
+msgid "Delete the template you select"
+msgstr "Видаліть вибраний шаблон"
+
+msgid "Are you sure to delete this template? This can't be undone."
+msgstr "Ви дійсно хочете видалити цей шаблон? Це не можна скасувати."
+
+msgid "Replace actual content"
+msgstr "Замінити фактичний вміст"
+
+msgid "Manage templates"
+msgstr "Керування шаблонами"
+
+msgid "Save templates"
+msgstr "Зберегти шаблони"
+
+msgid "Apply templates"
+msgstr "Застосувати шаблони"
+
+msgid "Save As Word File in EDrive"
+msgstr "Зберегти як файл Word в EDrive"
+
+msgid "First Name"
+msgstr "Ім'я та прізвище"
+
+msgid "Last Name"
+msgstr "Прізвище"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Company"
+msgstr "Компанія"
+
+msgid "Unsub"
+msgstr "Невідомий"
+
+msgid "VCard"
+msgstr "VCard"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Merge Tags"
+msgstr "Об'єднати теги"
+
+msgid "Subject:"
+msgstr "Тема:"
+
+msgid "Compose New Message"
+msgstr "Створити нове повідомлення"
+
+msgid "Send"
+msgstr "Надіслати"
+
+msgid "Error making API Call to"
+msgstr "Помилка при виконанні API Виклик до"
+
+msgid "Error text"
+msgstr "Текст помилки"
+
+msgid "Stack Trace"
+msgstr "Трасування стека"
+
+msgid "The application could not complete this API request."
+msgstr "Програма не змогла виконати цей API-запит."
+
+msgid "Information"
+msgstr "Інформація"
+
+msgid "Please confirm"
+msgstr "Будь ласка, підтвердіть"
+
+msgid "Update information"
+msgstr "Оновити інформацію"
+
+msgid "Make a selection"
+msgstr "Зробіть вибір"
+
+msgid "In progress"
+msgstr "У процесі виконання"
+
+msgid "Please wait while the operation is being completed"
+msgstr "Будь ласка, зачекайте, поки операція завершиться"
+
+msgid "There was a problem retrieving the requested object"
+msgstr "Виникла проблема з отриманням запитуваного об'єкта"
+
+msgid "Add cart to a group"
+msgstr "Додати кошик до групи"
+
+msgid ""
+"Choose whether to add the cart to an existing group or create a new one "
+"directly from the cart."
+msgstr ""
+"Виберіть, чи додати кошик до існуючої групи, чи створити нову безпосередньо "
+"з кошика."
+
+msgid "Action"
+msgstr "Дія"
+
+msgid "Select an existing Group"
+msgstr "Виберіть існуючу групу"
+
+msgid "or Create a new Group from the Cart"
+msgstr "або Створити нову групу з Кошика"
+
+msgid ""
+"Select the destination group and the role to assign to the cart members."
+msgstr ""
+"Виберіть групу призначення та роль, яку потрібно призначити учасникам кошика."
+
+msgid "Select Group"
+msgstr "Виберіть групу"
+
+msgid "Select Role"
+msgstr "Виберіть роль"
+
+msgid "Create a new group and move the current cart into it."
+msgstr "Створіть нову групу і перемістіть до неї поточний кошик."
+
+msgid "Group Name"
+msgstr "Назва групи"
+
+msgid "Default Name Group"
+msgstr "Група імен за замовчуванням"
+
+msgid "Add Cart to Group"
+msgstr "Додати кошик до групи"
+
+msgid "Missing selection"
+msgstr "Відсутній вибір"
+
+msgid "You need to select both a group and a role before continuing."
+msgstr "Перш ніж продовжити, вам потрібно вибрати групу і роль."
+
+msgid "Group name required"
+msgstr "Потрібна назва групи"
+
+msgid "Enter a group name before creating a new group from the cart."
+msgstr "Введіть назву групи перед створенням нової групи з кошика."
+
+msgid "Deactivate cart persons"
+msgstr "Деактивувати осіб у візку"
+
+msgid "Do you really want to deactivate all persons currently in the cart?"
+msgstr ""
+"Ви дійсно хочете деактивувати всіх осіб, які зараз знаходяться в кошику?"
+
+msgid "This action can be undone later if needed."
+msgstr "Цю дію можна скасувати пізніше, якщо це необхідно."
+
+msgid "Keep active"
+msgstr "Залишайтеся активними"
+
+msgid "Deactivate persons"
+msgstr "Деактивувати осіб"
+
+msgid "Delete cart persons"
+msgstr "Видалити осіб з кошика"
+
+msgid ""
+"Do you really want to delete all persons currently in the cart from the CRM?"
+msgstr ""
+"Ви дійсно хочете видалити з CRM всіх осіб, які зараз знаходяться в кошику?"
+
+msgid "This action cannot be undone."
+msgstr "Цю дію не можна скасувати."
+
+msgid "Keep persons"
+msgstr "Утримувати осіб"
+
+msgid "Delete persons"
+msgstr "Видалення осіб"
+
+msgid "Add cart to event"
+msgstr "Додати кошик до події"
+
+msgid "Select the event that should receive the current cart."
+msgstr "Виберіть подію, яка повинна отримати поточний кошик."
+
+msgid ""
+"You can also create a new event first, then return here to assign the cart."
+msgstr ""
+"Ви також можете спочатку створити нову подію, а потім повернутися сюди, щоб "
+"призначити кошик."
+
+msgid "Event"
+msgstr "Подія"
+
+msgid "Choose one of the available events from the list below."
+msgstr "Виберіть одну з доступних подій зі списку нижче."
+
+msgid "Create new event"
+msgstr "Створити нову подію"
+
+msgid "Add to Event"
+msgstr "Додати до події"
+
+msgid "Register"
+msgstr "Зареєструватися"
+
+msgid "Register your software to CRM team."
+msgstr "Зареєструйте своє програмне забезпечення в CRM-команді."
+
+msgid "Simply click this"
+msgstr "Просто натисніть тут"
+
+msgid "to register your software"
+msgstr "щоб зареєструвати своє програмне забезпечення"
+
+msgid "New Release"
+msgstr "Новий реліз"
+
+msgid "Installed version"
+msgstr "Встановлена версія"
+
+msgid "New One"
+msgstr "Новий."
+
+msgid "To upgrade simply click this Notification"
+msgstr "Щоб оновитися, просто натисніть на це сповіщення"
+
+msgid "View Cart"
+msgstr "Переглянути кошик"
+
+msgid "Empty Cart"
+msgstr "Порожній кошик"
+
+msgid "Empty Cart to Group"
+msgstr "Порожній кошик до групи"
+
+msgid "Empty Cart to Family"
+msgstr "Порожній віз до сім'ї"
+
+msgid "Empty Cart to Event"
+msgstr "Порожній кошик на подію"
+
+msgid "Map Cart"
+msgstr "Карта Карта"
+
+msgid "Deactivate Persons From Cart"
+msgstr "Деактивувати осіб з кошика"
+
+msgid "Delete Persons From the CRM"
+msgstr "Видалення осіб з CRM"
+
+msgid "View all"
+msgstr "Переглянути всі"
+
+msgid "Your Cart is Empty"
+msgstr "Ваш кошик порожній"
+
+msgid "Software registration"
+msgstr "Реєстрація програмного забезпечення"
+
+msgid ""
+"Review the registration details below before sending them. This information "
+"is used only to track the usage of this software."
+msgstr ""
+"Ознайомтеся з реєстраційними даними нижче, перш ніж надсилати їх. Ця "
+"інформація використовується лише для відстеження використання цього "
+"програмного забезпечення."
+
+msgid "If you need to make changes to registration data, go to "
+msgstr ""
+"Якщо вам потрібно внести зміни до реєстраційних даних, перейдіть за "
+"посиланням"
+
+msgid "Admin->Edit General Settings"
+msgstr "Адміністратор->Редагувати загальні налаштування"
+
+msgid "Church Name"
+msgstr "Назва церкви"
+
+msgid "Version"
+msgstr "Версія"
+
+msgid "City"
+msgstr "Місто"
+
+msgid "State"
+msgstr "Держава"
+
+msgid "Zip"
+msgstr "Блискавка."
+
+msgid "Country"
+msgstr "Країна"
+
+msgid "Church Email"
+msgstr "Церковна електронна пошта"
+
+msgid "Base URL"
+msgstr "Базова URL-адреса"
+
+msgid "Message"
+msgstr "Повідомлення"
+
+msgid "Software Registration"
+msgstr "Реєстрація програмного забезпечення"
+
+msgid "Your software is now registered. Thank you !"
+msgstr "Ваше програмне забезпечення зареєстровано. Дякуємо!"
+
+msgid "Select Volunteer Opportunity"
+msgstr "Виберіть можливість для волонтерства"
+
+msgid "Select the volunteer opportunity that should be assigned."
+msgstr "Виберіть волонтерську можливість, яку слід призначити."
+
+msgid "This selection will be applied to the current members."
+msgstr "Цей вибір буде застосовано до поточних учасників."
+
+msgid "Volunteer opportunity"
+msgstr "Можливість для волонтерів"
+
+msgid "Choose the target volunteer opportunity from the available list."
+msgstr "Виберіть цільову волонтерську можливість з доступного списку."
+
+msgid "Choose the destination for the selected members."
+msgstr "Виберіть пункт призначення для вибраних учасників."
+
+msgid ""
+"Use the fields below to select a group, a role, or both depending on the "
+"action."
+msgstr ""
+"Використовуйте поля нижче, щоб вибрати групу, роль або обидва варіанти "
+"залежно від дії."
+
+msgid "Group"
+msgstr "Група"
+
+msgid "Select the target group for the selected members."
+msgstr "Виберіть цільову групу для обраних учасників."
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Select the role that should be assigned inside the chosen group."
+msgstr "Виберіть роль, яку слід призначити всередині обраної групи."
+
+msgid "GroupID required for role selection prompt"
+msgstr "Потрібен ідентифікатор групи для підказки про вибір ролі"
+
+msgid "Select Group and Role"
+msgstr "Виберіть групу та роль"
+
+msgid "Select both the destination group and the role to apply."
+msgstr "Виберіть групу призначення та роль, яку потрібно застосувати."
+
+msgid "Create a group"
+msgstr "Створити групу"
+
+msgid ""
+"Enter the name of the new group that should be created from the current "
+"workflow."
+msgstr ""
+"Введіть назву нової групи, яку слід створити з поточного робочого процесу."
+
+msgid "Create group"
+msgstr "Створити групу"
+
+msgid "Calendar Event"
+msgstr "Подія в календарі"
+
+msgid "Attendees Checked In"
+msgstr "Учасники зареєструвалися"
+
+msgid "More info"
+msgstr "Більше інформації"
+
+msgid "1. Your session has expired. You will be redirected to the login page."
+msgstr ""
+"1. Термін дії вашої сесії закінчився. Ви будете перенаправлені на сторінку "
+"входу."
+
+msgid "EDrive File Browser"
+msgstr "Файловий браузер EDrive"
+
+msgid "Could not retrieve file URL"
+msgstr "Не вдалося отримати URL-адресу файлу"
+
+msgid "Warning"
+msgstr "Попередження"
+
+msgid "Please select a file first"
+msgstr "Будь ласка, спочатку виберіть файл"
+
+msgid ""
+"Warning! Do not select this option if you plan to add to an existing "
+"database.<br/>"
+msgstr ""
+"Увага! Не вибирайте цю опцію, якщо ви плануєте додавати до існуючої бази "
+"даних.<br/>"
+
+msgid ""
+"Use only if unsatisfied with initial import. All person and member data will "
+"be destroyed!"
+msgstr ""
+"Використовуйте тільки якщо вас не влаштовує початковий імпорт. Всі дані про "
+"особу та членів будуть знищені!"
+
+msgid "I Understand"
+msgstr "Я розумію."
+
+msgid "Clear Persons and Families"
+msgstr "Чисті особи та сім'ї"
+
+msgid "Data Cleared Successfully!"
+msgstr "Дані успішно очищено!"
+
+msgid "success"
+msgstr "успіх"
+
+msgid "Duplicate values"
+msgstr "Повторювані значення"
+
+msgid "You've selected two times the same name"
+msgstr "Ви вибрали двічі одне й те саме ім'я"
+
+msgid "for this field. Chose another one."
+msgstr "для цього поля. Вибрав іншу."
+
+msgid "Remove Plugin"
+msgstr "Видалити плагін"
+
+msgid "You're about to remove the plugin from yout dashboard !!!"
+msgstr "Ви збираєтеся видалити плагін з вашої інформаційної панелі!!!"
+
+msgid "Dashboard Item"
+msgstr "Елемент інформаційної панелі"
+
+msgid "Removed from your dashboard !"
+msgstr "Видалено з вашої приладової панелі!"
+
+msgid "Please confirm deletion of this document"
+msgstr "Будь ласка, підтвердіть видалення цього документа"
+
+msgid "Document Delete Confirmation"
+msgstr "Підтвердження видалення документа"
+
+msgid "Document Editor"
+msgstr "Редактор документів"
+
+msgid ""
+"Create a note, audio or video entry and keep it organized with a clear title."
+msgstr ""
+"Створіть нотатку, аудіо- чи відеозапис і зберігайте його впорядкованим з "
+"чітким заголовком."
+
+msgid "Document details"
+msgstr "Деталі документа"
+
+msgid "Set the title and choose the type before writing the content."
+msgstr "Встановіть заголовок і виберіть тип, перш ніж писати контент."
+
+msgid "Document Title"
+msgstr "Назва документу"
+
+msgid "Set your Document title"
+msgstr "Встановіть назву документа"
+
+msgid "Choose your Document Type"
+msgstr "Виберіть тип документа"
+
+msgid "document"
+msgstr "документ"
+
+msgid "video"
+msgstr "відео"
+
+msgid "audio"
+msgstr "аудіо"
+
+msgid "Content"
+msgstr "Зміст"
+
+msgid "Write the main content of your document below."
+msgstr "Нижче викладіть основний зміст вашого документа."
+
+msgid "Private"
+msgstr "Рядовий"
+
+msgid "Private documents are visible only to authorized users."
+msgstr "Приватні документи бачать лише авторизовані користувачі."
+
+msgid "Edit Document"
+msgstr "Редагувати документ"
+
+msgid "Create Document"
+msgstr "Створити документ"
+
+msgid "You have to set a Title for your document"
+msgstr "Ви маєте задати заголовок для вашого документа"
+
+msgid "Free Event Attendees"
+msgstr "Безкоштовне відвідування заходу"
+
+msgid "Successfully Added!"
+msgstr "Успішно додано!"
+
+msgid "Delete attendee"
+msgstr "Видалити учасника"
+
+msgid "This action is permanent"
+msgstr "Ця акція є безстроковою"
+
+msgid "This can't be undone."
+msgstr "Цього не можна скасувати."
+
+msgid "You are about to remove this attendee from the event."
+msgstr "Ви збираєтеся видалити цього учасника з події."
+
+msgid "The attendee will be removed from this event."
+msgstr "Учасник буде видалений з цього заходу."
+
+msgid "Related attendance history may also be affected."
+msgstr "Це також може вплинути на відповідну історію відвідувань."
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "Attendance actions"
+msgstr "Заходи з відвідування"
+
+msgid "Checkin"
+msgstr "Заселення"
+
+msgid "Checkout"
+msgstr "Каса"
+
+msgid "Gender"
+msgstr "Стать"
+
+msgid "Checkin Date"
+msgstr "Дата заїзду"
+
+msgid "Checked In By"
+msgstr "Перевірено"
+
+msgid "Checkout Date"
+msgstr "Дата виїзду"
+
+msgid "Checkout By"
+msgstr "Checkout By"
+
+msgid "Failed"
+msgstr "Не вдалося."
+
+msgid "No event right now."
+msgstr "Зараз нічого не відбувається."
+
+msgid "Move one in the right range."
+msgstr "Перемістіть одиницю в потрібний діапазон."
+
+msgid "Or"
+msgstr "Або"
+
+msgid "Create one."
+msgstr "Створи його."
+
+msgid "User"
+msgstr "Користувач"
+
+msgid "No event now."
+msgstr "Зараз нічого не відбувається."
+
+msgid "Success"
+msgstr "Успіх"
+
+msgid "Attention"
+msgstr "Увага!"
+
+msgid "Are you sure you want to DELETE all persons from Event ID:"
+msgstr "Ви впевнені, що хочете ВИДАЛИТИ всіх осіб з ідентифікатора події?"
+
+msgid "Are you sure you want to DELETE this person from Event ID:"
+msgstr "Ви впевнені, що хочете ВИДАЛИТИ цю особу з ідентифікатора події?"
+
+msgid "Delete Event Type"
+msgstr "Видалити тип події"
+
+msgid "This action can never be undone !!!!"
+msgstr "Ця дія ніколи не може бути скасована !!!!"
+
+msgid "preview currently being created"
+msgstr "попередній перегляд наразі створюється"
+
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+msgid "Document preview"
+msgstr "Попередній перегляд документа"
+
+msgid "Read only"
+msgstr "Тільки для читання"
+
+msgid "Please wait"
+msgstr "Будь ласка, зачекайте."
+
+msgid "Unable to create the preview"
+msgstr "Не вдалося створити попередній перегляд"
+
+msgid "The selected file cannot be rendered in preview mode."
+msgstr "Вибраний файл не можна відобразити в режимі попереднього перегляду."
+
+msgid "Icon"
+msgstr "Ікона"
+
+msgid "Modification Date"
+msgstr "Дата зміни Дата зміни"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Size"
+msgstr "Розмір"
+
+msgid "You are about to delete several items together"
+msgstr "Ви збираєтеся видалити кілька елементів разом"
+
+msgid "You're about to remove an item"
+msgstr "Ви збираєтеся видалити елемент"
+
+msgid "This can't be undone !!!!"
+msgstr "Це не можна скасувати !!!!"
+
+msgid "You've to select at least one line !!!"
+msgstr "Ви повинні вибрати хоча б один рядок!!!"
+
+msgid "Create a Folder"
+msgstr "Створити папку"
+
+msgid "Set your Folder name"
+msgstr "Встановіть ім'я папки"
+
+msgid "Actualize files"
+msgstr "Актуалізація файлів"
+
+msgid "Set a File/Folder name"
+msgstr "Задати ім'я файлу/папки"
+
+msgid "Download Error"
+msgstr "Помилка завантаження"
+
+msgid "Are you sure you want to stop sharing for selected users?"
+msgstr ""
+"Ви впевнені, що хочете припинити надання спільного доступу для вибраних "
+"користувачів?"
+
+msgid "Are you sure, you want to stop all sharing ?"
+msgstr "Ви впевнені, що хочете припинити ділитися?"
+
+msgid "Selected Rows"
+msgstr "Вибрані рядки"
+
+msgid "Pledge"
+msgstr "Обіцянка"
+
+msgid "Payment"
+msgstr "Оплата"
+
+msgid "Confirm Delete"
+msgstr "Підтвердити Видалити"
+
+msgid "Are you sure ? You're about to delete the selected"
+msgstr "Ви впевнені? Ви збираєтеся видалити вибране"
+
+msgid "payments(s)?"
+msgstr "платежі(и)?"
+
+msgid "This action CANNOT be undone, and may have legal implications!"
+msgstr "Ця дія НЕ МОЖЕ бути скасована і може мати юридичні наслідки!"
+
+msgid "Please ensure this what you want to do."
+msgstr "Будь ласка, переконайтеся, що це те, що ви хочете зробити."
+
+msgid "Depid"
+msgstr "Депід"
+
+msgid "Address1"
+msgstr "Адреса 1"
+
+msgid "Bank Name"
+msgstr "Назва банку"
+
+msgid "Non deductible"
+msgstr "Без франшизи"
+
+msgid "Statut"
+msgstr "Статут"
+
+msgid "Deposit"
+msgstr "Депозит"
+
+msgid "Schedule"
+msgstr "Розклад"
+
+msgid "Amount"
+msgstr "Сума"
+
+msgid "Comment"
+msgstr "Коментар"
+
+msgid "Electronic Transaction Details"
+msgstr "Інформація про електронну транзакцію"
+
+msgid "TOTAL"
+msgstr "ВСЬОГО"
+
+msgid "Family"
+msgstr "Сім'я"
+
+msgid "Person"
+msgstr "Людина"
+
+msgid "Anonymous"
+msgstr "Анонім"
+
+msgid "Fund"
+msgstr "Фонд"
+
+msgid "Pledge or payment"
+msgstr "Застава або платіж"
+
+msgid "Method"
+msgstr "Метод"
+
+msgid "Check Number"
+msgstr "Номер чека"
+
+msgid "Details"
+msgstr "Деталі"
+
+msgid "Tracking"
+msgstr "Відстеження"
+
+msgid "Filter by Family"
+msgstr "Фільтр по родині"
+
+msgid "Filter by Fund"
+msgstr "Фільтр за фондом"
+
+msgid "Export"
+msgstr "Експорт"
+
+msgid "Slip PDF"
+msgstr "Сліп PDF"
+
+msgid "Deposit ID"
+msgstr "Ідентифікатор депозиту"
+
+msgid "Deposit Date"
+msgstr "Дата депозиту"
+
+msgid "Deposit Total"
+msgstr "Загальна сума депозиту"
+
+msgid "Deposit Comment"
+msgstr "Коментар до депозиту"
+
+msgid "Closed"
+msgstr "Закрито."
+
+msgid "Yes"
+msgstr "Так."
+
+msgid "Deposit Type"
+msgstr "Тип депозиту"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Please enter at least one winner."
+msgstr "Будь ласка, вкажіть принаймні одного переможця."
+
+msgid ""
+"Incomplete entries found. Please fill in all fields (Item, Winner, Price) "
+"for each row you want to save."
+msgstr ""
+"Знайдено неповні записи. Будь ласка, заповніть всі поля (Позиція, "
+"Переможець, Ціна) для кожного рядка, який ви хочете зберегти."
+
+msgid "Please enter a number greater than 0."
+msgstr "Будь ласка, введіть число більше 0."
+
+msgid "Number"
+msgstr "Номер"
+
+msgid "You're about to delete the item !!!"
+msgstr "Ви збираєтеся видалити товар!!!"
+
+msgid "Item"
+msgstr "Пункт"
+
+msgid "Multiple"
+msgstr "Кілька"
+
+msgid "Donor"
+msgstr "Донор"
+
+msgid "Buyer"
+msgstr "Покупець"
+
+msgid "Sale Price"
+msgstr "Ціна продажу"
+
+msgid "Estimated value"
+msgstr "Орієнтовна вартість"
+
+msgid "Material Value"
+msgstr "Матеріальна цінність"
+
+msgid "Minimum Price"
+msgstr "Мінімальна ціна"
+
+msgid "You're about to delete the buyer !!!"
+msgstr "Ви зараз видалите покупця!!!"
+
+msgid "Unassigned"
+msgstr "Не призначено"
+
+msgid "Buyer Number"
+msgstr "Номер покупця"
+
+msgid "Save and Add"
+msgstr "Зберегти та додати"
+
+msgid "Generate Statement"
+msgstr "Згенерувати виписку"
+
+msgid "Buyer Number Editor"
+msgstr "Редактор номерів покупців"
+
+msgid "Please select at least one buyer."
+msgstr "Будь ласка, оберіть хоча б одного покупця."
+
+msgid "Your operation completed successfully."
+msgstr "Ваша операція завершилася успішно."
+
+msgid "Full Name"
+msgstr "Повне ім'я"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Date Entered"
+msgstr "Дата введення"
+
+msgid "Date Last Edited"
+msgstr "Дата останнього редагування"
+
+msgid "Edited By Name"
+msgstr "Відредаговано за іменами"
+
+msgid "Deactivated"
+msgstr "Деактивовано"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all group data "
+"assigned for this field!"
+msgstr ""
+"Попередження: Видаливши це поле, ви безповоротно втратите всі дані групи, "
+"призначені для цього поля!"
+
+msgid "Confirm Enable Group Specific Properties"
+msgstr "Підтвердити Увімкнення властивостей групи"
+
+msgid ""
+"This will create a group-specific properties table for this group. You "
+"should then add needed properties with the Group-Specific Properties Form "
+"Editor."
+msgstr ""
+"У результаті буде створено таблицю властивостей групи для цієї групи. Після "
+"цього вам слід додати потрібні властивості за допомогою редактора форми "
+"властивостей групи."
+
+msgid "Enable Group Specific Properties"
+msgstr "Увімкнути специфічні для групи властивості"
+
+msgid "Confirm Disable Group Specific Properties"
+msgstr "Підтвердити вимкнення певних властивостей групи"
+
+msgid ""
+"Are you sure you want to remove the group-specific person properties? All "
+"group member properties data will be lost!"
+msgstr ""
+"Ви впевнені, що хочете видалити властивості конкретної особи в групі? Всі "
+"дані про властивості членів групи будуть втрачені!"
+
+msgid "Disable Group Specific Properties"
+msgstr "Вимкнути специфічні властивості групи"
+
+msgid "Please enter a role name."
+msgstr "Будь ласка, введіть ім'я ролі."
+
+msgid "Confirm Delete Role"
+msgstr "Підтвердити видалення ролі"
+
+msgid "This will also delete all persons membership associated with this role."
+msgstr "Це також видалить всіх учасників, пов'язаних з цією роллю."
+
+msgid "A group should have at least one role!"
+msgstr "Група повинна мати принаймні одну роль!"
+
+msgid "Role Name"
+msgstr "Назва ролі Ім'я ролі"
+
+msgid "The role name is now modified."
+msgstr "Назву ролі змінено."
+
+msgid "Make Default"
+msgstr "Зробити за замовчуванням"
+
+msgid "Default"
+msgstr "За замовчуванням"
+
+msgid "Sequence"
+msgstr "Послідовність"
+
+msgid "Move Up"
+msgstr "Рухайся!"
+
+msgid "Move Down"
+msgstr "Вниз!"
+
+msgid "Add New Group"
+msgstr "Додати нову групу"
+
+msgid "Enter group name"
+msgstr "Введіть назву групи"
+
+msgid "Please enter a group name."
+msgstr "Будь ласка, введіть назву групи."
+
+msgid "Group actions"
+msgstr "Групові дії"
+
+msgid "View"
+msgstr "Вигляд"
+
+msgid "Members"
+msgstr "Члени"
+
+msgid "Group Cart Status"
+msgstr "Статус групового кошика"
+
+msgid "In cart"
+msgstr "У кошику"
+
+msgid "Remove from cart"
+msgstr "Видалити з кошика"
+
+msgid "Not in cart"
+msgstr "Немає в кошику"
+
+msgid "Add to cart"
+msgstr "Додати в кошик"
+
+msgid "Cart isn't showable"
+msgstr "Кошик не відображається"
+
+msgid "Group Type"
+msgstr "Тип групи"
+
+msgid "Value"
+msgstr "Значення"
+
+msgid "Confirm Delete Group"
+msgstr "Підтвердити видалення групи"
+
+msgid "Please confirm deletion of this group record"
+msgstr "Будь ласка, підтвердіть видалення цього запису групи"
+
+msgid ""
+"This will also delete all Roles and Group-Specific Property data associated "
+"with this Group record."
+msgstr ""
+"Також буде видалено всі дані Ролей і Властивостей групи, пов'язані з цим "
+"записом групи."
+
+msgid ""
+"All group membership and properties will be destroyed.  The group members "
+"themselves will not be altered."
+msgstr ""
+"Все членство в групі та майно буде знищено.  Самі члени групи не будуть "
+"змінені."
+
+msgid "Are you sure you want to unassign this property?"
+msgstr "Ви впевнені, що хочете скасувати призначення цього об'єкта?"
+
+msgid "Are you sure you want to change this property?"
+msgstr "Ви впевнені, що хочете змінити цю властивість?"
+
+msgid "A kid should have a family in a sunday school group !"
+msgstr "Дитина повинна мати сім'ю в групі недільної школи!"
+
+msgid "401 : Private Datas"
+msgstr "401 : Особисті дані"
+
+msgid "Group Role"
+msgstr "Роль групи"
+
+msgid "Private Data"
+msgstr "Особисті дані"
+
+msgid "Zip Code"
+msgstr "Поштовий індекс"
+
+msgid "Cell Phone"
+msgstr "Мобільний телефон"
+
+msgid "You're about to delete all the group members ?"
+msgstr "Ви збираєтеся видалити всіх учасників групи?"
+
+msgid "Are you sure ? This can't be undone."
+msgstr "Ти впевнений? Це не можна відмінити."
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Members to cart"
+msgstr "Учасники в кошику"
+
+msgid "Add to Cart"
+msgstr "Додати в кошик"
+
+msgid "Add to Group"
+msgstr "Додати до групи"
+
+msgid "Move to Group"
+msgstr "Перейти до групи"
+
+msgid "Remove all members"
+msgstr "Видалити всіх учасників"
+
+msgid "Move"
+msgstr "Відійди."
+
+msgid "Members to another group"
+msgstr "Учасники до іншої групи"
+
+msgid "Remove from Cart"
+msgstr "Видалити з кошика"
+
+msgid "No assigned Manager"
+msgstr "Немає призначеного менеджера"
+
+msgid "Add users"
+msgstr "Додати користувачів"
+
+msgid "Manage Group Managers"
+msgstr "Керуйте менеджерами груп"
+
+msgid "Are you sure, you want to delete this Manager ?"
+msgstr "Ви впевнені, що хочете видалити цього менеджера?"
+
+msgid "Delete Managers"
+msgstr "Видалення менеджерів"
+
+msgid "Are you sure, you want to delete all the managers ?"
+msgstr "Ви впевнені, що хочете видалити всіх менеджерів?"
+
+msgid "Appointment"
+msgstr "Призначення"
+
+msgid "Record this pastoral follow-up for the whole family"
+msgstr "Запишіть цей душпастирський супровід для всієї родини"
+
+msgid "For every administrator"
+msgstr "Для кожного адміністратора"
+
+msgid "Show"
+msgstr "Показати"
+
+msgid "Hide"
+msgstr "Приховати"
+
+msgid "Include all the family members"
+msgstr "Залучайте всіх членів сім'ї"
+
+msgid "Include"
+msgstr "Включає в себе"
+
+msgid "Pastoral care note"
+msgstr "Душпастирська записка"
+
+msgid "Review the note type, write the content and define who can see it."
+msgstr ""
+"Перегляньте тип нотатки, напишіть її зміст і визначте, хто може її побачити."
+
+msgid "Note"
+msgstr "Примітка"
+
+msgid "Pastoral Care"
+msgstr "Душпастирська опіка"
+
+msgid "Open the pastoral care record"
+msgstr "Відкрити запис про душпастирську опіку"
+
+msgid "No records found for this view."
+msgstr "Для цього виду не знайдено записів."
+
+msgid "No matching records found."
+msgstr "Відповідних записів не знайдено."
+
+msgid "Loading..."
+msgstr "Завантаження..."
+
+msgid "Never contacted"
+msgstr "Ніколи не зв'язувався"
+
+msgid "Pastoral care member"
+msgstr "Співробітник душпастирства"
+
+msgid "Visits/calls"
+msgstr "Візити/дзвінки"
+
+msgid "Last visit/call"
+msgstr "Останній візит/дзвінок"
+
+msgid "Opening..."
+msgstr "Відкриття..."
+
+msgid "Selecting..."
+msgstr "Вибираємо..."
+
+msgid ""
+"No matching pastoral care record could be prepared right now. Please try "
+"another category."
+msgstr ""
+"Наразі не знайдено жодного відповідного запису про душпастирську опіку. Будь "
+"ласка, спробуйте іншу категорію."
+
+msgid "Unable to start a pastoral care action at the moment."
+msgstr "Наразі не можемо розпочати душпастирську опіку."
+
+msgid "Delete Pastoral Care Type"
+msgstr "Видалити тип душпастирства"
+
+msgid "Irreversible action"
+msgstr "Незворотна дія"
+
+msgid "Keep note"
+msgstr "Запам'ятай."
+
+msgid "Write the pastoral care message associated with this family."
+msgstr "Напишіть пастирське послання, пов'язане з цією сім'єю."
+
+msgid "Pastoral Care Note Creation"
+msgstr "Створення записки про душпастирську опіку"
+
+msgid "Last Name (Family Name)"
+msgstr "Прізвище (ім'я)"
+
+msgid "Family Name"
+msgstr "Ім'я сім'ї"
+
+msgid "Write the pastoral care message associated with this person."
+msgstr "Напишіть пастирське послання, пов'язане з цією людиною."
+
+msgid "Are you sure you want to remove this family from the CRM"
+msgstr "Ви впевнені, що хочете видалити цю сім'ю з CRM"
+
+msgid "Are you sure you want to remove all families from the CRM"
+msgstr "Ви впевнені, що хочете видалити всі сім'ї з CRM"
+
+msgid ""
+"Not all the families were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"Не всі сім'ї були ВИДАЛЕНІ: деякі з них мають записи про пожертви і не "
+"можуть бути видалені, поки ці пожертви не будуть пов'язані з іншою сім'єю."
+
+msgid "Review family member information"
+msgstr "Перегляньте інформацію про членів сім'ї"
+
+msgid ""
+"Check the displayed information and update this family member if needed "
+"before saving."
+msgstr ""
+"Перед збереженням перевірте відображену інформацію та, за потреби, оновіть "
+"дані про цього члена сім'ї."
+
+msgid "Update family member details"
+msgstr "Оновити дані про членів сім'ї"
+
+msgid "Save changes"
+msgstr "Зберегти зміни"
+
+msgid "Confirm Deactivation"
+msgstr "Підтвердити деактивацію"
+
+msgid "Confirm Activation"
+msgstr "Підтвердити активацію"
+
+msgid "Please confirm deactivation of family"
+msgstr "Будь ласка, підтвердіть деактивацію сім'ї"
+
+msgid "Please confirm activation of family"
+msgstr "Будь ласка, підтвердіть активацію сім'ї"
+
+msgid ""
+"Be carefull with the GDPR, when a family is de-activated, you have to ask "
+"all the persons of the family first, if you want to re-activate the account !"
+"<br><br>WITHOUT ANY AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS FAMILY "
+"ILLEGAL !!!!!"
+msgstr ""
+"Будьте обережні з GDPR, коли сім'я деактивується, ви повинні спочатку "
+"запитати всіх членів сім'ї, чи хочете ви знову активувати обліковий запис! "
+"<br><br>БЕЗ БУДЬ-ЯКОЇ АВТОРИЗАЦІЇ, GDPR ЗРОБИТЬ ВАШЕ ВИКОРИСТАННЯ ЦІЄЇ СІМ'Ї "
+"НЕЛЕГАЛЬНИМ !!!!!"
+
+msgid "Upload Photo"
+msgstr "Завантажити фото"
+
+msgid "Upload an existing Photo"
+msgstr "Завантажити існуючу фотографію"
+
+msgid "Max photo size"
+msgstr "Максимальний розмір фото"
+
+msgid "Capture from Webcam"
+msgstr "Запис з веб-камери"
+
+msgid "Snap Photo"
+msgstr "Зробити фотографію"
+
+msgid "Re-Take Photo"
+msgstr "Перефотографувати"
+
+msgid "Upload Image"
+msgstr "Завантажити зображення"
+
+msgid "Family Photo"
+msgstr "Сімейне фото"
+
+msgid "Bank Draft"
+msgstr "Банківський переказний вексель"
+
+msgid "Credit Card"
+msgstr "Кредитна картка"
+
+msgid "Disabled"
+msgstr "Інваліди"
+
+msgid "Next payment date"
+msgstr "Наступна дата платежу"
+
+msgid "Interval (months)"
+msgstr "Інтервал (місяці)"
+
+msgid "Updated By"
+msgstr "Оновлено"
+
+msgid "Confirm Delete Automatic payment"
+msgstr "Підтвердити Видалити Автоматичний платіж"
+
+msgid "Pledge or Payment"
+msgstr "Застава або платіж"
+
+msgid "Dep ID"
+msgstr "Dep ID"
+
+msgid "Fiscal Year"
+msgstr "Фінансовий рік"
+
+msgid "NonDeductible"
+msgstr "Без франшизи"
+
+msgid "CHECK"
+msgstr "ПЕРЕВІРКА"
+
+msgid "Date Updated"
+msgstr "Дата оновлення"
+
+msgid "Donations/eGives Moved by"
+msgstr "Пожертви/еПожертви перераховані"
+
+msgid "Verification URL"
+msgstr "URL-адреса для верифікації"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Failed to add verification"
+msgstr "Не вдалося додати перевірку"
+
+msgid "Verification email sent"
+msgstr "Підтвердження надіслано електронною поштою"
+
+msgid "Failed to send verification email"
+msgstr "Не вдалося надіслати електронний лист з підтвердженням"
+
+msgid "Warning !!!!"
+msgstr "Попередження !!!!"
+
+msgid ""
+"You're about to send a massive e-mail to all EcclesiaCRM members :<br>- "
+"prefer a test with a few people or families<br>- make sure you select all of "
+"them, either by address or by person."
+msgstr ""
+"Ви збираєтеся надіслати масову розсилку всім користувачам EcclesiaCRM:<br>- "
+"віддайте перевагу тестуванню з кількома людьми або сім'ями<br>- "
+"переконайтеся, що ви вибрали всіх, або за адресою, або за особою."
+
+msgid "You're about to send a e-mail to"
+msgstr "Ви збираєтеся надіслати електронного листа на адресу"
+
+msgid "members"
+msgstr "учасники"
+
+msgid "Please wait while the PDF is generated and downloaded."
+msgstr "Будь ласка, зачекайте, поки файл PDF буде сформовано та завантажено."
+
+msgid "A person name or Family"
+msgstr "Ім'я особи або Сім'я"
+
+msgid "Modification"
+msgstr "Модифікація"
+
+msgid "By persons"
+msgstr "За особами"
+
+msgid "By Adresses"
+msgstr "За адресами"
+
+msgid "You're about to delete all pending confirmation for all the persons."
+msgstr "Ви збираєтеся видалити всі очікувані підтвердження для всіх осіб."
+
+msgid "You're about to delete all done confirmation for all the persons."
+msgstr "Ви збираєтеся видалити всі виконані підтвердження для всіх осіб."
+
+msgid "You're about to delete all pending confirmation for all the families."
+msgstr "Ви збираєтеся видалити всі очікувані підтвердження для всіх сімей."
+
+msgid "You're about to delete all done confirmation for all the families."
+msgstr "Ви збираєтеся видалити всі виконані підтвердження для всіх сімей."
+
+msgid "Delete this person?"
+msgstr "Видалити цю людину?"
+
+msgid "Do you want to delete this person? This cannot be undone."
+msgstr "Ви хочете видалити цю людину? Це не можна скасувати."
+
+msgid "Save your note"
+msgstr "Збережіть свою нотатку"
+
+msgid "Do you want to save your note as a Word File in your EDrive?"
+msgstr "Ви хочете зберегти свою нотатку у вигляді файлу Word у вашому EDrive?"
+
+msgid "Family Id"
+msgstr "Ідентифікатор сім'ї"
+
+msgid "Valid Until"
+msgstr "Дійсний до"
+
+msgid "Search for a family or address"
+msgstr "Пошук сім'ї або адреси"
+
+msgid "Are you sure you want to remove this person from the CRM"
+msgstr "Ви впевнені, що хочете видалити цю людину з CRM"
+
+msgid "Are you sure you want to remove all persons from the CRM"
+msgstr "Ви впевнені, що хочете видалити всіх осіб з CRM"
+
+msgid ""
+"Not all the persons were DELETED : Some of them have records of donations "
+"and may NOT be deleted until these donations are associated with another "
+"family."
+msgstr ""
+"Не всі особи були ВИДАЛЕНІ: деякі з них мають записи про пожертви і не "
+"можуть бути видалені, поки ці пожертви не будуть пов'язані з іншою сім'єю."
+
+msgid "Review personal information"
+msgstr "Перегляд особистої інформації"
+
+msgid ""
+"Check the current values and update the fields that need correction before "
+"saving."
+msgstr ""
+"Перед збереженням перевірте поточні значення та оновіть поля, які потребують "
+"корекції."
+
+msgid "Profile information"
+msgstr "Інформація про профіль"
+
+msgid "Additional information"
+msgstr "Додаткова інформація"
+
+msgid "Update personal details"
+msgstr "Оновити особисті дані"
+
+msgid "Processing..."
+msgstr "Обробка..."
+
+msgid "Please confirm deactivation of person"
+msgstr "Будь ласка, підтвердіть деактивацію особи"
+
+msgid "Please confirm activation of person"
+msgstr "Будь ласка, підтвердіть активацію особи"
+
+msgid ""
+"Be carefull with the GDPR, when a person is de-activated, you have to ask "
+"the person first, if you want to reactivate the account !<br><br>WITHOUT ANY "
+"AUTHORIZATION, THE GDPR MAKE YOUR USE OF THIS PERSON ILLEGAL !!!!!"
+msgstr ""
+"Будьте обережні з GDPR, коли людина деактивується, ви повинні спочатку "
+"запитати людину, чи хочете ви реактивувати обліковий запис! <br><br>БЕЗ БУДЬ-"
+"ЯКОЇ АВТОРИЗАЦІЇ, GDPR ЗРОБИТЬ ВАШЕ ВИКОРИСТАННЯ ЦІЄЇ ОСОБИ НЕЛЕГАЛЬНИМ !!!!!"
+
+msgid "Deactivate"
+msgstr "Деактивувати"
+
+msgid "Activate"
+msgstr "Активувати"
+
+msgid "Deactivating..."
+msgstr "Деактивація..."
+
+msgid "Activating..."
+msgstr "Активація..."
+
+msgid "Unable to update this person status."
+msgstr "Не вдалося оновити статус цієї особи."
+
+msgid "Deleting..."
+msgstr "Видалення..."
+
+msgid "Unable to delete the photo."
+msgstr "Не вдається видалити фотографію."
+
+msgid "Preview the current profile photo."
+msgstr "Попередній перегляд поточного фото профілю."
+
+msgid "Property actions"
+msgstr "Майнові дії"
+
+msgid "Please select a property first."
+msgstr "Будь ласка, спочатку оберіть об'єкт нерухомості."
+
+msgid "Assigning..."
+msgstr "Присвоєння..."
+
+msgid "Assign"
+msgstr "Призначити"
+
+msgid "Unable to assign this property."
+msgstr "Неможливо призначити цю властивість."
+
+msgid "Remove group assignment"
+msgstr "Видалити призначення групи"
+
+msgid "Remove this person from the group"
+msgstr "Видаліть цю людину з групи"
+
+msgid ""
+"The membership and any role linked to this group will be removed for this "
+"person."
+msgstr ""
+"Членство і будь-яка роль, пов'язана з цією групою, буде видалена для цієї "
+"особи."
+
+msgid "Remove from group"
+msgstr "Видалити з групи"
+
+msgid "Keep assignment"
+msgstr "Зберігайте завдання"
+
+msgid "Share your document"
+msgstr "Поділіться своїм документом"
+
+msgid ""
+"Choose recipients, define their access and decide whether they should "
+"receive an email notification."
+msgstr ""
+"Виберіть одержувачів, визначте їхній доступ і вирішіть, чи повинні вони "
+"отримувати сповіщення на електронну пошту."
+
+msgid "Current access"
+msgstr "Поточний доступ"
+
+msgid "Select one or more recipients to update their access or remove them."
+msgstr ""
+"Виберіть одного або декількох одержувачів, щоб оновити їхній доступ або "
+"видалити його."
+
+msgid "Set rights"
+msgstr "Встановити права"
+
+msgid "Read and write"
+msgstr "Читати та писати"
+
+msgid "Notification"
+msgstr "Повідомлення"
+
+msgid "Add people, families or groups"
+msgstr "Додайте людей, сім'ї або групи"
+
+msgid ""
+"Search by name to grant access to another person, a family or an entire "
+"group."
+msgstr ""
+"Шукайте за іменем, щоб надати доступ іншій людині, родині або цілій групі."
+
+msgid "Please select at least one recipient first."
+msgstr "Будь ласка, спочатку виберіть хоча б одного одержувача."
+
+msgid "Remove shared access"
+msgstr "Видалити спільний доступ"
+
+msgid "Remove access for the selected recipients?"
+msgstr "Видалити доступ для обраних одержувачів?"
+
+msgid ""
+"Only the selected recipients will be removed. The document will remain "
+"shared with any other recipients."
+msgstr ""
+"Лише вибрані отримувачі будуть видалені. Документ залишиться доступним для "
+"всіх інших одержувачів."
+
+msgid "Remove access"
+msgstr "Видалити доступ"
+
+msgid "Keep access"
+msgstr "Зберегти доступ"
+
+msgid "Stop sharing this document"
+msgstr "Припиніть ділитися цим документом"
+
+msgid "Stop sharing this document with everyone?"
+msgstr "Припинити ділитися цим документом з усіма?"
+
+msgid ""
+"All current recipients will lose access immediately. The document itself "
+"will remain available to you."
+msgstr ""
+"Всі поточні отримувачі негайно втратять доступ. Сам документ залишиться "
+"доступним для вас."
+
+msgid "Keep sharing"
+msgstr "Продовжуйте ділитися"
+
+msgid "Share your Document"
+msgstr "Поділіться своїм документом"
+
+msgid "Unassign property"
+msgstr "Зніміть присвоєння власності"
+
+msgid "Remove this property from the current person?"
+msgstr "Видалити цю властивість з поточної особи?"
+
+msgid "The property value will be removed from this profile."
+msgstr "Значення властивості буде видалено з цього профілю."
+
+msgid "Remove property"
+msgstr "Видалити власність"
+
+msgid "Keep property"
+msgstr "Зберігати майно"
+
+msgid "Edit property value"
+msgstr "Редагувати значення властивості"
+
+msgid ""
+"Update the value stored for this property on the current person profile."
+msgstr ""
+"Оновити значення, збережене для цієї властивості в профілі поточної особи."
+
+msgid "Save property"
+msgstr "Зберегти власність"
+
+msgid "Change classification"
+msgstr "Класифікація змін"
+
+msgid "Choose the classification that best matches this person profile."
+msgstr "Виберіть класифікацію, яка найкраще відповідає профілю цієї людини."
+
+msgid "Update classification"
+msgstr "Оновлення класифікації"
+
+msgid "Change family role"
+msgstr "Змінити сімейну роль"
+
+msgid "Select the role this person should have inside the family record."
+msgstr "Виберіть роль, яку ця особа повинна мати в сімейному записі."
+
+msgid "Update role"
+msgstr "Роль оновлення"
+
+msgid "Volunteer actions"
+msgstr "Волонтерські акції"
+
+msgid "Remove volunteer opportunity"
+msgstr "Видалити можливість для волонтерів"
+
+msgid "Remove this volunteer opportunity from the person?"
+msgstr "Забрати у людини можливість бути волонтером?"
+
+msgid "The assignment will be removed from this profile only."
+msgstr "Завдання буде видалено тільки з цього профілю."
+
+msgid "Remove assignment"
+msgstr "Видалити призначення"
+
+msgid "Please select at least one volunteer opportunity first."
+msgstr ""
+"Будь ласка, спочатку оберіть принаймні одну можливість для волонтерства."
+
+msgid "Unable to assign the selected volunteer opportunities."
+msgstr "Не вдалося призначити вибрані можливості для волонтерів."
+
+msgid "Some volunteer opportunities could not be assigned."
+msgstr "Деякі волонтерські можливості не могли бути призначені."
+
+msgid "Delete automatic payment"
+msgstr "Видалити автоматичний платіж"
+
+msgid "Delete this automatic payment setup?"
+msgstr "Видалити це налаштування автоматичного платежу?"
+
+msgid "Recurring payments linked to this setup will stop after deletion."
+msgstr ""
+"Повторювані платежі, пов'язані з цим налаштуванням, припиняться після "
+"видалення."
+
+msgid "Delete payment"
+msgstr "Видалити платіж"
+
+msgid "Keep payment"
+msgstr "Зберегти платіж"
+
+msgid "Delete pledge or payment"
+msgstr "Видалити заставу або платіж"
+
+msgid "Delete this pledge or payment entry?"
+msgstr "Видалити цей запис про заставу або платіж?"
+
+msgid ""
+"This entry will be removed from the contribution history for this family."
+msgstr "Цей запис буде видалено з історії внесків для цієї родини."
+
+msgid "Delete entry"
+msgstr "Видалити запис"
+
+msgid "Keep entry"
+msgstr "Тримайте вхід."
+
+msgid "Share this secure verification link with the person."
+msgstr "Поділіться цим захищеним посиланням з людиною."
+
+msgid "Comments"
+msgstr "Коментарі"
+
+msgid "Confirmation of plugin removal"
+msgstr "Підтвердження видалення плагіна"
+
+msgid ""
+"You are about to delete the selected plugins. This action cannot be undone!"
+msgstr "Ви збираєтеся видалити вибрані плагіни. Цю дію неможливо скасувати!"
+
+msgid "Update plugin"
+msgstr "Оновлення плагіна"
+
+msgid "Add plugin"
+msgstr "Додати плагін"
+
+msgid "Choose the new zipped package to update this plugin."
+msgstr "Виберіть новий розархівований пакунок, щоб оновити цей плагін."
+
+msgid "Choose a zipped plugin package to install it in your CRM."
+msgstr "Виберіть заархівований пакет плагіна, щоб встановити його в CRM."
+
+msgid "Plugin archive"
+msgstr "Архів плагінів"
+
+msgid "Only zipped plugin packages should be selected here."
+msgstr "Тут слід вибирати лише заархівовані пакунки плагінів."
+
+msgid "The upload starts as soon as you submit this form."
+msgstr "Завантаження почнеться одразу після того, як ви надішлете цю форму."
+
+msgid "Plugin manager"
+msgstr "Менеджер плагінів"
+
+msgid "The current images folder is now the public folder !!!"
+msgstr "Поточна тека зображень тепер є спільною текою!!!"
+
+msgid "QR Code : Call the register"
+msgstr "QR-код : Зателефонувати до каси"
+
+msgid "Point your camera at a QR code to check in attendees automatically."
+msgstr "Наведіть камеру на QR-код, щоб автоматично зареєструвати учасників."
+
+msgid "Scan a QR Code"
+msgstr "Відскануйте QR-код"
+
+msgid ""
+"Unable to access video stream (please make sure you have a webcam enabled)"
+msgstr ""
+"Не вдається отримати доступ до відеопотоку (будь ласка, переконайтеся, що у "
+"вас увімкнена веб-камера)"
+
+msgid "Available Cameras"
+msgstr "Доступні камери"
+
+msgid "No QR code detected yet. Keep the code inside the frame."
+msgstr "QR-код ще не виявлено. Тримайте код всередині рамки."
+
+msgid "Detected data"
+msgstr "Виявлені дані"
+
+msgid "Families"
+msgstr "Сім'ї"
+
+msgid "Singles"
+msgstr "Одиночки"
+
+msgid "All Groups"
+msgstr "Всі групи"
+
+msgid "All Roles"
+msgstr "Всі ролі"
+
+msgid ""
+"Search terms like : name, first name, phone number, property, group name, "
+"etc ..."
+msgstr ""
+"Пошукові терміни, такі як: ім'я, прізвище, номер телефону, власність, назва "
+"групи тощо..."
+
+msgid "All search types"
+msgstr "Всі типи пошуку"
+
+msgid "id"
+msgstr "ідентифікатор"
+
+msgid "Photos"
+msgstr "Фотографії"
+
+msgid "Search result"
+msgstr "Результат пошуку"
+
+msgid "Property Name"
+msgstr "Назва об'єкта нерухомості"
+
+msgid "Cart Operations"
+msgstr "Операції з візками"
+
+msgid "Add This Page"
+msgstr "Додати цю сторінку"
+
+msgid "Loading people in cart...."
+msgstr "Завантаження людей у кошик...."
+
+msgid "Add All results"
+msgstr "Додати всі результати"
+
+msgid "Remove this page"
+msgstr "Видаліть цю сторінку"
+
+msgid "Removing people in cart...."
+msgstr "Видалення людей у кошику...."
+
+msgid "Remove All results"
+msgstr "Видалити всі результати"
+
+msgid "Intersect result with cart"
+msgstr "Перетинаємо результат з кошиком"
+
+msgid "Add People"
+msgstr "Додати людей"
+
+msgid "This page is still in the cart."
+msgstr "Ця сторінка все ще у кошику."
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all family data "
+"assigned for this field!"
+msgstr ""
+"Попередження: Видаливши це поле, ви безповоротно втратите всі дані сім'ї, "
+"призначені для цього поля!"
+
+msgid "Add Fund"
+msgstr "Поповнити рахунок"
+
+msgid "If you delete the fund, <b>you'll lose all the connected datas.</b>"
+msgstr "Якщо ви видалите фонд, <b>ви втратите всі пов’язані з ним дані.</b>"
+
+msgid "Are you sure? This action can't be undone."
+msgstr "Ви впевнені? Цю дію неможливо скасувати."
+
+msgid "Fund Editor"
+msgstr "Редактор фонду"
+
+msgid "ID"
+msgstr "ІДЕНТИФІКАТОР"
+
+msgid "Validate"
+msgstr "Підтвердити"
+
+msgid "Enter menu link name"
+msgstr "Введіть назву посилання на меню"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "Enter URL starting with http:// or https://"
+msgstr "Введіть URL-адресу, що починається з http:// або https://"
+
+msgid "This link should begin with : http://.... or https://...."
+msgstr "Це посилання має починатися з: http://.... або https://...."
+
+msgid "Add Custom Menu Link"
+msgstr "Додавання посилання на користувацьке меню"
+
+msgid ""
+"If you delete the Menu Link, <u><b>you'll lose all the connected datas.</b></"
+"u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"Якщо ви видалите посилання на меню, <u><b>ви втратите всі підключені дані.</"
+"b></u><br><b>Впевнені? Цю дію не можна скасувати.</b></p> <b>"
+
+msgid "Custom Menu Link Editor"
+msgstr "Редактор посилань на користувацькі меню"
+
+msgid "Order"
+msgstr "Порядок"
+
+msgid "Uri"
+msgstr "Урі."
+
+msgid "Global Custom Menus"
+msgstr "Глобальні користувацькі меню"
+
+msgid "Dashboard"
+msgstr "Приладова панель"
+
+msgid "Delete Classification"
+msgstr "Видалити класифікацію"
+
+msgid "Please confirm deletion of this classification"
+msgstr "Будь ласка, підтвердіть видалення цієї класифікації"
+
+msgid ""
+"This will also delete this Classification for all the associated persons."
+msgstr "Це також видалить цю Класифікацію для всіх пов'язаних з нею осіб."
+
+msgid "Delete map marker"
+msgstr "Видалити маркер мапи"
+
+msgid "Please confirm deletion of this marker"
+msgstr "Будь ласка, підтвердіть видалення цього маркера"
+
+msgid "Map Icon GoogleMap"
+msgstr "Іконка карти GoogleMap"
+
+msgid "Select your classification icon"
+msgstr "Виберіть піктограму вашої класифікації"
+
+msgid "Add Pastoral Care Type"
+msgstr "Додати тип душпастирства"
+
+msgid "Visible for other authorized users"
+msgstr "Видимий для інших авторизованих користувачів"
+
+msgid ""
+"If you delete the pastoral care type, <u><b>you'll lose all the connected "
+"datas.</b></u><br><b>Are you sure? This action can't be undone.</b>"
+msgstr ""
+"Якщо ви видалите тип душпастирської опіки, <u><b>ви втратите всі пов'язані "
+"дані.</b></u><br><b>Ви впевнені? Цю дію не можна скасувати.</b></p> <b>"
+
+msgid "Pastoral Care Type Editor"
+msgstr "Редактор типів душпастирства"
+
+msgid "Visible"
+msgstr "Видимий"
+
+msgid ""
+"Warning: By deleting this field, you will irrevocably lose all person data "
+"assigned for this field!"
+msgstr ""
+"Попередження: Видаливши це поле, ви безповоротно втратите всі дані особи, "
+"призначені для цього поля!"
+
+msgid "Add a New Property"
+msgstr "Додати новий об'єкт нерухомості"
+
+msgid "Select Property Type"
+msgstr "Виберіть тип власності"
+
+msgid "with this property..."
+msgstr "з цим майном..."
+
+msgid "Prompt"
+msgstr "Швидко"
+
+msgid "You're about to delete this property. Would you like to continue ?"
+msgstr "Ви збираєтеся видалити цей об'єкт. Ви хочете продовжити?"
+
+msgid "Property Type Editor"
+msgstr "Редактор типів властивостей"
+
+msgid "with this Property..."
+msgstr "з цим майном..."
+
+msgid "Class"
+msgstr "Клас."
+
+msgid ""
+"You're about to delete this general properties. Would you like to continue ?"
+msgstr "Ви збираєтеся видалити ці загальні властивості. Ви хочете продовжити?"
+
+msgid "This general property type is still being used by"
+msgstr "Цей загальний тип властивостей все ще використовується"
+
+msgid "property"
+msgstr "власність"
+
+msgid "properties"
+msgstr "властивості"
+
+msgid "If you delete this type, you will also remove all properties using"
+msgstr ""
+"Якщо ви видалите цей тип, ви також видалите всі властивості за допомогою"
+
+msgid "it and lose any corresponding property assignments."
+msgstr "і втрачає всі відповідні права власності."
+
+msgid "Add a New Property Type"
+msgstr "Додати новий тип нерухомості"
+
+msgid "Setting saved"
+msgstr "Налаштування збережено"
+
+msgid "Send Message"
+msgstr "Надіслати повідомлення"
+
+msgid "View Profile"
+msgstr "Переглянути профіль"
+
+msgid "Teachers"
+msgstr "Вчителі"
+
+msgid "Delete this Teacher?"
+msgstr "Видалити цього Вчителя?"
+
+msgid "Do you want to delete this teacher? This cannot be undone."
+msgstr "Ви хочете видалити цього вчителя? Це не можна скасувати."
+
+msgid "First name"
+msgstr "Ім'я та прізвище"
+
+msgid "Birth Date"
+msgstr "Дата народження"
+
+msgid "Unknown"
+msgstr "Невідомо"
+
+msgid "Boy"
+msgstr "Хлопче."
+
+msgid "Girl"
+msgstr "Дівчино."
+
+msgid "Age"
+msgstr "Вік"
+
+msgid "Mobile"
+msgstr "Мобільний"
+
+msgid "Home Phone"
+msgstr "Домашній телефон"
+
+msgid "Home Address"
+msgstr "Домашня адреса"
+
+msgid "Dad Name"
+msgstr "Тато Ім'я"
+
+msgid "Dad Mobile"
+msgstr "Dad Mobile"
+
+msgid "Dad Email"
+msgstr "Тато Електронна пошта"
+
+msgid "Mom Name"
+msgstr "Ім'я мами"
+
+msgid "Mom Mobile"
+msgstr "Мама Мобайл"
+
+msgid "Mom Email"
+msgstr "Email мами"
+
+msgid "Remove Students from Cart"
+msgstr "Видалити учнів з кошика"
+
+msgid "Add Students to Cart"
+msgstr "Додати учнів до кошика"
+
+msgid "Remove Teachers from Cart"
+msgstr "Видалити вчителів з кошика"
+
+msgid "Add Teachers to Cart"
+msgstr "Додати вчителів до кошика"
+
+msgid "Select the event Type you would like to use to create the Attendance"
+msgstr ""
+"Виберіть тип події, який ви хочете використовувати для створення "
+"відвідуваності"
+
+msgid "Create First A New Event"
+msgstr "Спочатку створіть нову подію"
+
+msgid "Create Event With Students"
+msgstr "Створіть подію зі студентами"
+
+msgid ""
+"Be careful! You are about to create or recreate an event of this Sunday "
+"school class to call the register."
+msgstr ""
+"Будьте уважні! Ви збираєтеся створити або відтворити подію цього заняття "
+"недільної школи, щоб зателефонувати в реєстратуру."
+
+msgid ""
+"If the event are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"Якщо подію вже створено, перейдіть до меню \"Події\", а потім \"Викликати "
+"реєстратуру\"."
+
+msgid "First, set your time range correctly to make the extraction."
+msgstr "По-перше, правильно встановіть часовий діапазон, щоб зробити витяг."
+
+msgid "Set year range to export"
+msgstr "Встановити діапазон років для експорту"
+
+msgid "First, set your date range correctly to make the extraction."
+msgstr "По-перше, правильно встановіть діапазон дат, щоб зробити вибірку."
+
+msgid "Extra students"
+msgstr "Додаткові студенти"
+
+msgid "export with photos"
+msgstr "експорт з фотографіями"
+
+msgid ""
+"Be careful! You are about to create or recreate all the events of all the "
+"Sunday school classes to call the register."
+msgstr ""
+"Будьте уважні! Ви збираєтеся створити або відтворити всі події всіх занять "
+"недільної школи, щоб викликати реєстратуру."
+
+msgid ""
+"If the events are already created, go to the \"Events\" menu and then \"Call "
+"the register\"."
+msgstr ""
+"Якщо події вже створені, перейдіть до меню \"Події\", а потім \"Викликати "
+"реєстратуру\"."
+
+msgid "First, set your date and time."
+msgstr "По-перше, встановіть дату та час."
+
+msgid "Time"
+msgstr "Час"
+
+msgid "Call the Register for all sunday groups"
+msgstr "Телефонуйте до Реєстру для всіх недільних груп"
+
+msgid ""
+"At least one group must be selected to make class lists or attendance sheets."
+msgstr ""
+"Принаймні одна група повинна бути обрана, щоб скласти списки класів або "
+"таблиці відвідуваності."
+
+msgid "You have to set a Title and a Description for your issue."
+msgstr "Ви маєте задати заголовок та опис для вашого випуску."
+
+msgid "Find member"
+msgstr "Знайти учасника"
+
+msgid "Search by name, role, or ID."
+msgstr "Пошук за іменем, роллю або ідентифікатором."
+
+msgid "Search a member"
+msgstr "Пошук учасника"
+
+msgid "Clear"
+msgstr "Чисто"
+
+msgid "In"
+msgstr "У"
+
+msgid "Out"
+msgstr "Виходьте."
+
+msgid "Notify"
+msgstr "Повідомити"
+
+msgid "Trigger Parent Alert"
+msgstr "Запустити сповіщення для батьків"
+
+msgid "Kiosk"
+msgstr "Кіоск"
+
+msgid "Attendance"
+msgstr "Відвідуваність"
+
+msgid "Current event"
+msgstr "Поточна подія"
+
+msgid "No assignments for kiosk"
+msgstr "Ніяких призначень для кіоску"
+
+msgid "Kiosk Name"
+msgstr "Назва кіоску"
+
+msgid "Assignment"
+msgstr "Завдання"
+
+msgid "Last Heartbeat"
+msgstr "Останній удар серця"
+
+msgid "Accepted"
+msgstr "Прийнято"
+
+msgid "True"
+msgstr "Правда."
+
+msgid "False"
+msgstr "Неправда."
+
+msgid "Reload"
+msgstr "Перезавантажити"
+
+msgid "Identify"
+msgstr "Ідентифікувати"
+
+msgid "Accept"
+msgstr "Прийняти"
+
+msgid "Two factors authentications"
+msgstr "Двофакторна автентифікація"
+
+msgid "2FA is already enabled on your account."
+msgstr "2FA is already enabled on your account."
+
+msgid "If needed, you can remove it and enroll again."
+msgstr "If needed, you can remove it and enroll again."
+
+msgid "Remove 2 Factor Authentication Secret"
+msgstr "Видалити секрет 2-факторної автентифікації"
+
+msgid "2 Factor Authentication Secret"
+msgstr "Секрет 2-факторної автентифікації"
+
+msgid "Enter TOTP code to confirm enrollment"
+msgstr "Введіть код TOTP для підтвердження реєстрації"
+
+msgid ""
+"Keep these backup passwords in a safe place, in case you lose the OTP "
+"credentials."
+msgstr ""
+"Зберігайте ці резервні паролі в безпечному місці на випадок, якщо ви "
+"втратите облікові дані OTP."
+
+msgid "Unable to remove 2FA right now."
+msgstr "Неможливо видалити 2FA зараз."
+
+msgid "Current step"
+msgstr "Поточний крок"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Locked"
+msgstr "Закрито."
+
+msgid "Backup Complete, Ready for Download."
+msgstr "Резервна копія завершена, готова до завантаження."
+
+msgid "The user must have an email address."
+msgstr "Користувач повинен мати адресу електронної пошти."
+
+msgid "Select your Role"
+msgstr "Виберіть свою роль"
+
+msgid "and update its name if needed."
+msgstr "і за потреби оновіть його назву."
+
+msgid "Role management"
+msgstr "Управління ролями"
+
+msgid "Are you sure? You're about to delete this Role."
+msgstr "Ти впевнений? Ви збираєтеся видалити цю роль."
+
+msgid "Rename"
+msgstr "Перейменувати"
+
+msgid "Choose a Role Name"
+msgstr "Виберіть ім'я ролі"
+
+msgid "You must set another Role Name"
+msgstr "Ви повинні задати інше ім'я ролі"
+
+msgid "this Role Name already exist !!!"
+msgstr "це Ім'я ролі вже існує!!!"
+
+msgid "You've to check at least one user."
+msgstr "Ви повинні перевірити хоча б одного користувача."
+
+msgid "The WebDav Key is"
+msgstr "Ключ WebDav - це"
+
+msgid "The public WebDav Key is"
+msgstr "Публічним ключем WebDav є"
+
+msgid "WebDav key"
+msgstr "Ключ WebDav"
+
+msgid "is now locked"
+msgstr "зараз заблоковано."
+
+msgid "is now unlocked"
+msgstr "тепер розблоковано"
+
+msgid "User Delete Confirmation"
+msgstr "Підтвердження видалення користувача"
+
+msgid "Please confirm removal of user status from:"
+msgstr "Будь ласка, підтвердіть видалення статусу користувача з:"
+
+msgid ""
+"Be carefull, You are about to lose the home folder and the associated files, "
+"the Calendars, the Share calendars and all the events too, for"
+msgstr ""
+"Будьте обережні, ви втратите домашню папку і пов'язані з нею файли, "
+"Календарі, Календарі спільного доступу і всі події, тому що"
+
+msgid "This can't be undone"
+msgstr "Це не можна скасувати"
+
+msgid "Action Confirmation"
+msgstr "Підтвердження дії"
+
+msgid "Please confirm reset failed login count"
+msgstr "Будь ласка, підтвердіть скидання кількості невдалих входів"
+
+msgid "Reset"
+msgstr "Перезавантаження"
+
+msgid "Reset failed login count for"
+msgstr "Скинути кількість невдалих входів для"
+
+msgid "done."
+msgstr "Зроблено."
+
+msgid "Please confirm the password reset of this user"
+msgstr "Будь ласка, підтвердіть скидання пароля цього користувача"
+
+msgid "Reset & Send"
+msgstr "Скинути та надіслати"
+
+msgid "Password reset for"
+msgstr "Скидання пароля для"
+
+msgid "Mail connection failure"
+msgstr "Помилка з'єднання з поштою"
+
+msgid "to remove two-factor authentication"
+msgstr "прибрати двофакторну автентифікацію"
+
+msgid "Pending"
+msgstr "На розгляді"
+
+msgid ""
+"Gives the user 60 seconds to log in with their recovery codes. The user will "
+"then have to delete or simply rescan the QR-code in the OTP Management "
+"application."
+msgstr ""
+"Дає користувачеві 60 секунд на вхід за допомогою кодів відновлення. Потім "
+"користувач повинен буде видалити або просто повторно відсканувати QR-код у "
+"додатку OTP Management."
+
+msgid "The user has 60 seconds to use his recovery codes."
+msgstr "Користувач має 60 секунд, щоб використати свої коди відновлення."
+
+msgid "Add New Volunteer Opportunity"
+msgstr "Додати нову можливість для волонтерів"
+
+msgid "Volunteer Opportunity actions"
+msgstr "Дії в рамках програми \"Волонтерська можливість"
+
+msgid "Volunteer Cart Status"
+msgstr "Статус волонтерського візка"
+
+msgid "Activ"
+msgstr "Activ"
+
+msgid "Parent (hierarchy)"
+msgstr "Батько (ієрархія)"
+
+msgid "Color"
+msgstr "Колір"
+
+msgid "Enter volunteer opportunity name"
+msgstr "Введіть назву волонтерської можливості"
+
+msgid "Enter a brief description"
+msgstr "Введіть короткий опис"
+
+msgid "Add to volunteer opportunities"
+msgstr "Долучайтеся до волонтерських можливостей"
+
+msgid "Move to volunteer opportunities"
+msgstr "Переходьте до волонтерських можливостей"
+
+msgid "Confirm Delete This Opportunity"
+msgstr "Підтвердити Видалити цю можливість"
+
+msgid "Please confirm deletion of this record"
+msgstr "Будь ласка, підтвердіть видалення цього запису"
+
+msgid ""
+"All membership will be destroyed.  The members themselves will not be "
+"altered."
+msgstr "Все членство буде знищено.  Самі члени не будуть змінені."
+
+#~ msgid "Loading video..."
+#~ msgstr "Завантаження відео..."
+
+#~ msgid "Mailchimp"
+#~ msgstr "Mailchimp"
+
+#~ msgid ""
+#~ "All the lists are now loaded in the CRM.<br><b>If you want to manage "
+#~ "them, click this notification !</b>"
+#~ msgstr ""
+#~ "Всі списки тепер завантажені в CRM. 1235  4568 Якщо ви хочете керувати "
+#~ "ними, натисніть на це сповіщення ! 7899 "
+
+#~ msgid "Saving Campaign ..."
+#~ msgstr "Кампанія порятунку ..."
+
+#~ msgid "Campaign"
+#~ msgstr "Кампанія"
+
+#~ msgid "saved successfully"
+#~ msgstr "успішно збережено"
+
+#~ msgid "You're about to send your campaign! Are you sure ?"
+#~ msgstr "Ви збираєтеся відправити свою кампанію! Ви впевнені?"
+
+#~ msgid "You're about to delete your campaign! Are you sure ?"
+#~ msgstr "Ви збираєтеся видалити свою кампанію! Ви впевнені?"
+
+#~ msgid "Loading data..."
+#~ msgstr "Завантаження даних..."
+
+#~ msgid "Please wait while we retrieve your MailChimp lists."
+#~ msgstr "Будь ласка, зачекайте, поки ми отримаємо ваші списки MailChimp."
+
+#~ msgid "No list are created with this account ...."
+#~ msgstr "З цим акаунтом не створюються списки ...."
+
+#~ msgid "You can create a new MailChimp list using the button above."
+#~ msgstr "Ви можете створити новий список MailChimp за допомогою кнопки вище."
+
+#~ msgid "Email List"
+#~ msgstr "Список електронної пошти"
+
+#~ msgid "Subject"
+#~ msgstr "Тема"
+
+#~ msgid "Members:"
+#~ msgstr "Члени:"
+
+#~ msgid "Unsubscribed count:"
+#~ msgstr "Невідписані рахуються:"
+
+#~ msgid "Unsubscribed count since last send:"
+#~ msgstr "Кількість невідписаних з моменту останньої відправки:"
+
+#~ msgid "Cleaned count:"
+#~ msgstr "Чистий рахунок:"
+
+#~ msgid "Cleaned count since last send:"
+#~ msgstr "Очищено лічильник з моменту останнього відправлення:"
+
+#~ msgid "Campaigns"
+#~ msgstr "Кампанії"
+
+#~ msgid "Tags"
+#~ msgstr "Теги"
+
+#~ msgid "is not configured"
+#~ msgstr "не налаштовано"
+
+#~ msgid "Please update the"
+#~ msgstr "Будь ласка, оновіть"
+
+#~ msgid "API key in Setting->"
+#~ msgstr "Ключ API у розділі Налаштування->."
+
+#~ msgid "Edit General Settings"
+#~ msgstr "Редагування загальних налаштувань"
+
+#~ msgid "Then update"
+#~ msgstr "Потім оновіть"
+
+#~ msgid "For more info see our "
+#~ msgstr "Для отримання додаткової інформації дивіться наш"
+
+#~ msgid "support docs."
+#~ msgstr "допоміжні документи."
+
+#~ msgid "List Title"
+#~ msgstr "Назва списку"
+
+#~ msgid "Your List Title"
+#~ msgstr "Назва вашого списку"
+
+#~ msgid "Your Subject"
+#~ msgstr "Ваш суб'єкт"
+
+#~ msgid "Permission Reminder"
+#~ msgstr "Нагадування про дозвіл"
+
+#~ msgid "Archive Bars"
+#~ msgstr "Архівні бари"
+
+#~ msgid "Public"
+#~ msgstr "Громадськість"
+
+#~ msgid "List Creation"
+#~ msgstr "Створення списку"
+
+#~ msgid "You're about to delete a tag!"
+#~ msgstr "Ви збираєтеся видалити тег!"
+
+#~ msgid ""
+#~ "This will also delete the tag for all the members in this list. Are you "
+#~ "sure ?"
+#~ msgstr ""
+#~ "Це також видалить тег для всіх учасників у цьому списку. Ви впевнені?"
+
+#~ msgid "Deleting tag"
+#~ msgstr "Видалення тегу"
+
+#~ msgid "People"
+#~ msgstr "Люди"
+
+#~ msgid "Add a new tag"
+#~ msgstr "Додати новий тег"
+
+#~ msgid "Delete tag from subscriber(s)"
+#~ msgstr "Видалити тег у підписника(ів)"
+
+#~ msgid "Delete tag"
+#~ msgstr "Видалити тег"
+
+#~ msgid "Loading resources ..."
+#~ msgstr "Завантаження ресурсів ..."
+
+#~ msgid "Check all boxes"
+#~ msgstr "Поставте всі галочки"
+
+#~ msgid "Subscribed"
+#~ msgstr "Підписано"
+
+#~ msgid "Unsubscribed"
+#~ msgstr "Відписався"
+
+#~ msgid "Email Marketing"
+#~ msgstr "Email-маркетинг"
+
+#~ msgid "New tag"
+#~ msgstr "Новий тег"
+
+#~ msgid ""
+#~ "Enter the name of the tag to create and apply to the selected members."
+#~ msgstr ""
+#~ "Введіть назву мітки, щоб створити її і застосувати до вибраних учасників."
+
+#~ msgid "Create tag"
+#~ msgstr "Створити тег"
+
+#~ msgid "Adding tag..."
+#~ msgstr "Додавання тегу..."
+
+#~ msgid "Name is empty !!"
+#~ msgstr "Ім'я порожнє!!!"
+
+#~ msgid "Add tag"
+#~ msgstr "Додати тег"
+
+#~ msgid "Selected tag"
+#~ msgstr "Вибраний тег"
+
+#~ msgid "This will add the tag"
+#~ msgstr "Це додасть тег"
+
+#~ msgid "to all the current selected members in the list."
+#~ msgstr "усім поточним вибраним учасникам у списку."
+
+#~ msgid "Select One"
+#~ msgstr "Виберіть один"
+
+#~ msgid "All Tags"
+#~ msgstr "Всі теги"
+
+#~ msgid "Remove tags from selected members"
+#~ msgstr "Видалення тегів у вибраних користувачів"
+
+#~ msgid "Choose a tag"
+#~ msgstr "Виберіть тег"
+
+#~ msgid ""
+#~ "Select one tag to remove, or choose all tags for a full cleanup on the "
+#~ "selected members."
+#~ msgstr ""
+#~ "Виберіть один тег для видалення або всі теги для повного очищення "
+#~ "вибраних учасників."
+
+#~ msgid "Apply"
+#~ msgstr "Подати заявку"
+
+#~ msgid "Removing tags..."
+#~ msgstr "Видалення тегів..."
+
+#~ msgid "Deleting all tags for the selected members in the list..."
+#~ msgstr "Видалення всіх тегів для вибраних учасників у списку..."
+
+#~ msgid "This action affects the whole list"
+#~ msgstr "Ця дія впливає на весь список"
+
+#~ msgid "Keep tag"
+#~ msgstr "Зберігай бирку."
+
+#~ msgid "A person name or Family or Group"
+#~ msgstr "Ім'я особи або Сім'я чи Група"
+
+#~ msgid "Loading subscriber"
+#~ msgstr "Завантаження абонента"
+
+#~ msgid "Loading subscribers from Group"
+#~ msgstr "Завантаження підписників з групи"
+
+#~ msgid "Loading subscribers from family"
+#~ msgstr "Завантаження абонентів з сім'ї"
+
+#~ msgid "Loading all persons from EcclesiaCRM<br>This could take a while !"
+#~ msgstr "Завантаження всіх осіб з EcclesiaCRM<br>Це може зайняти деякий час!"
+
+#~ msgid ""
+#~ "In fact, you've better to quit the CRM, wait 5 minutes and make your "
+#~ "campaigns after.<br>To import huge datas, MailChimp API is slow."
+#~ msgstr ""
+#~ "Насправді, краще вийти з CRM, почекати 5 хвилин і зробити кампанії після "
+#~ "цього.<br>Для імпорту великих даних API MailChimp працює повільно."
+
+#~ msgid ""
+#~ "Loading all newsletter subscribers from EcclesiaCRM<br>This could take a "
+#~ "while !"
+#~ msgstr ""
+#~ "Завантаження всіх підписників розсилки з EcclesiaCRM<br>Це може зайняти "
+#~ "деякий час!"
+
+#~ msgid ""
+#~ "Loading all families first headpeople subscribers from "
+#~ "EcclesiaCRM<br>This could take a while !"
+#~ msgstr ""
+#~ "Завантажуємо всі сім'ї спочатку підписників старости з EcclesiaCRM<br>Це "
+#~ "може зайняти деякий час!"
+
+#~ msgid "Update subscriber status"
+#~ msgstr "Оновлення статусу абонента"
+
+#~ msgid "Selected subscriber"
+#~ msgstr "Обраний абонент"
+
+#~ msgid "Choose the status to apply to this subscriber."
+#~ msgstr "Виберіть статус, який ви хочете застосувати до цього абонента."
+
+#~ msgid "Update"
+#~ msgstr "Оновлення"
+
+#~ msgid "Changing status ..."
+#~ msgstr "Зміна статусу ..."
+
+#~ msgid "Delete subscriber"
+#~ msgstr "Видалити абонента"
+
+#~ msgid "Subscriber removal"
+#~ msgstr "Видалення абонента"
+
+#~ msgid "You're about to delete a subscriber! Are you sure ?"
+#~ msgstr "Ви збираєтеся видалити абонента! Ти впевнений?"
+
+#~ msgid "Keep subscriber"
+#~ msgstr "Зберегти підписника"
+
+#~ msgid "Deleting Subscriber..."
+#~ msgstr "Видалення абонента."
+
+#~ msgid "Delete mailing list"
+#~ msgstr "Видалити список розсилки"
+
+#~ msgid "This action is irreversible"
+#~ msgstr "Ця дія є незворотною"
+
+#~ msgid "Do you really want to delete this mailing list ?"
+#~ msgstr "Ви дійсно хочете видалити цей список розсилки?"
+
+#~ msgid "Delete list"
+#~ msgstr "Видалити список"
+
+#~ msgid "Delete all subscribers"
+#~ msgstr "Видалити всіх підписників"
+
+#~ msgid "Bulk deletion"
+#~ msgstr "Масове видалення"
+
+#~ msgid "Are you sure you want to delete all the subscribers"
+#~ msgstr "Ви впевнені, що хочете видалити всіх підписників"
+
+#~ msgid "Delete all"
+#~ msgstr "Видалити все"
+
+#~ msgid "Deleting all subscribers..."
+#~ msgstr "Видалення всіх підписників..."
+
+#~ msgid ""
+#~ "In fact, you've better to leave the CRM, and in a quater of an hour re-"
+#~ "open it to manage your list.<br>To delete huge datas, MailChimp API is "
+#~ "slow."
+#~ msgstr ""
+#~ "Насправді, краще залишити CRM, а через чверть години знову відкрити її, "
+#~ "щоб керувати списком.<br>Для видалення великих даних API MailChimp працює "
+#~ "повільно."
+
+#~ msgid "Email Campaign Creation"
+#~ msgstr "Створення email-розсилок"
+
+#~ msgid ""
+#~ "Prepare a clear title, confirm the target tag and write the content of "
+#~ "your email campaign."
+#~ msgstr ""
+#~ "Підготуйте чіткий заголовок, підтвердьте цільовий тег і напишіть зміст "
+#~ "розсилки."
+
+#~ msgid "Campaign details"
+#~ msgstr "Деталі кампанії"
+
+#~ msgid ""
+#~ "Set the campaign title and review the MailChimp target before writing the "
+#~ "message."
+#~ msgstr ""
+#~ "Задайте назву кампанії та перегляньте ціль MailChimp, перш ніж писати "
+#~ "повідомлення."
+
+#~ msgid "Campaign Title"
+#~ msgstr "Назва кампанії"
+
+#~ msgid "Your Campaign Title"
+#~ msgstr "Назва вашої кампанії"
+
+#~ msgid "For Tag"
+#~ msgstr "Для Тега"
+
+#~ msgid "Write the subject and the body of your email campaign."
+#~ msgstr "Напишіть тему і тіло листа."
+
+#~ msgid "Mail Subject"
+#~ msgstr "Тема листа"
+
+#~ msgid "Your Mail Subject"
+#~ msgstr "Тема вашого листа"
+
+#~ msgid "Compose the content that will be sent to members of this tag."
+#~ msgstr "Складіть вміст, який буде надіслано учасникам цього тегу."
+
+#~ msgid "All list members"
+#~ msgstr "Всі учасники списку"
+
+#~ msgid "Adding Campaign ..."
+#~ msgstr "Додавання кампанії ..."
+
+#~ msgid "Campaign created"
+#~ msgstr "Кампанію створено"
+
+#~ msgid "Your campaign is ready"
+#~ msgstr "Ваша кампанія готова"
+
+#~ msgid "Would like to manage directly this new campaign ?"
+#~ msgstr "Хочете безпосередньо керувати цією новою кампанією?"
+
+#~ msgid "Open campaign"
+#~ msgstr "Відкрита кампанія"
+
+#~ msgid "Stay here"
+#~ msgstr "Залишайся тут."
+
+#~ msgid "You have to set a Campaign Title for your eMail Campaign"
+#~ msgstr "Ви маєте встановити назву кампанії для вашої email-розсилки"
+
+#~ msgid "Edit list settings"
+#~ msgstr "Редагування налаштувань списку"
+
+#~ msgid "MailChimp list settings"
+#~ msgstr "Налаштування списку MailChimp"
+
+#~ msgid "Update the main details used by this list and its campaigns."
+#~ msgstr ""
+#~ "Оновіть основні дані, що використовуються цим списком та його кампаніями."
+
+#~ msgid "List Name"
+#~ msgstr "Назва списку Ім'я"
+
+#~ msgid "Changing subscribers state..."
+#~ msgstr "Зміна стану абонентів..."
+
+#~ msgid "Delete selected subscribers"
+#~ msgstr "Видалення вибраних абонентів"
+
+#~ msgid "Selected members"
+#~ msgstr "Вибрані учасники"
+
+#~ msgid "You're about to delete subscribers! Are you sure ?"
+#~ msgstr "Ви збираєтеся видалити підписників! Ви впевнені?"
+
+#~ msgid "selected"
+#~ msgstr "вибрано"
+
+#~ msgid "Delete selected"
+#~ msgstr "Видалити вибране"
+
+#~ msgid "Deleting Subscribers..."
+#~ msgstr "Видалення підписників..."
+
+#~ msgid "ERROR"
+#~ msgstr "ПОМИЛКА"
+
+#~ msgid "Select the group to which you would like to add your cart"
+#~ msgstr "Виберіть групу, до якої ви хочете додати кошик"
+
+#~ msgid "You have to set a Group Name"
+#~ msgstr "Ви повинні задати ім'я групи"
+
+#~ msgid "Yes : if you're sure"
+#~ msgstr "Так: якщо ви впевнені"
+
+#~ msgid ""
+#~ "You can add the content of the cart to the selected event below<br> - OR "
+#~ "- <br>Create first an event and add them after."
+#~ msgstr ""
+#~ "Ви можете додати вміст кошика до вибраної події нижче<br> - АБО - "
+#~ "<br>Створіть спочатку подію, а потім додайте вміст кошика."
+
+#~ msgid ""
+#~ "Please register your copy of CRM by checking over this information and "
+#~ "pressing the Send button."
+#~ msgstr ""
+#~ "Будь ласка, зареєструйте свою копію CRM, перевіривши цю інформацію та "
+#~ "натиснувши кнопку Надіслати."
+
+#~ msgid "Please select target volunteers for members"
+#~ msgstr "Будь ласка, оберіть цільових волонтерів для членів"
+
+#~ msgid "Please select target Role for members"
+#~ msgstr "Будь ласка, оберіть цільову Роль для учасників"
+
+#~ msgid "Add A Group Name"
+#~ msgstr "Додати назву групи"
+
+#~ msgid "Are you sure you want to remove this person's membership from"
+#~ msgstr "Ви впевнені, що хочете видалити членство цієї особи з"
+
+#~ msgid "Are you sure ? You're about to delete this Person ?"
+#~ msgstr "Ти впевнений? Ви дійсно хочете видалити цю особу?"
+
+#~ msgid "Are you sure ? You are about to stop sharing your document ?"
+#~ msgstr "Ви впевнені? Ви збираєтеся припинити ділитися своїм документом?"
+
+#~ msgid "Confirm Delete volunteer Opportunity"
+#~ msgstr "Підтвердити Видалити можливість волонтера"
+
+#~ msgid "Select your zipped plugin file"
+#~ msgstr "Виберіть заархівований файл плагіна"
+
+#~ msgid "Personal"
+#~ msgstr "Особисте"
+
+#~ msgid "Add your tag name"
+#~ msgstr "Додайте назву тегу"
+
+#~ msgid "Choose the tag you want to delete :"
+#~ msgstr "Виберіть тег, який ви хочете видалити :"
+
+#~ msgid "Select status for : "
+#~ msgstr "Виберіть статус для :"
+
+#~ msgid ""
+#~ "Be carefull, You are about to delete a user from the group and therefore "
+#~ "the entire call history. This is strongly to be avoided."
+#~ msgstr ""
+#~ "Будьте обережні, ви збираєтеся видалити користувача з групи, а отже, і "
+#~ "всю історію дзвінків. Цього настійно рекомендується уникати."
+
+#~ msgid "Place"
+#~ msgstr "Місце"
+
+#~ msgid "GDPR"
+#~ msgstr "GDPR"
+
+#~ msgid "Campaigns:"
+#~ msgstr "Кампанії:"
+
+#~ msgid "Generate Deposit Slip for Selected"
+#~ msgstr "Згенерувати депозитний чек для обраних"
+
+#~ msgid "Rows"
+#~ msgstr "Ряди"
+
+#~ msgid "Add buyer"
+#~ msgstr "Додати покупця"
+
+#~ msgid "All members of this group are in the cart"
+#~ msgstr "Всі учасники цієї групи знаходяться в кошику"
+
+#~ msgid "Not all members of this group are in the cart"
+#~ msgstr "Не всі члени цієї групи є в кошику"
+
+#~ msgid "Regenerate 2 Factor Authentication Secret"
+#~ msgstr "Відновити секрет 2-факторної автентифікації"
+
+#~ msgid ""
+#~ "<center>You must set another Role Name <br>-- or --<br> this Role Name "
+#~ "already exist !!!</center>"
+#~ msgstr ""
+#~ "<center>Ви повинні задати інше Ім'я ролі <br>-- або --<br> це Ім'я ролі "
+#~ "вже існує!!!</center>"
+
+#~ msgid "Done !"
+#~ msgstr "Готово!"
+
+#~ msgid "Removing finished...."
+#~ msgstr "Видалення завершено...."
+
+#~ msgid "Nothing to remove."
+#~ msgstr "Видаляти нічого."
+
+#~ msgid "Are you sure you want to remove the selected group members?"
+#~ msgstr "Ви впевнені, що хочете видалити вибраних учасників групи?"
+
+#~ msgid "Songs"
+#~ msgstr "Пісні"
+
+#~ msgid "Add all"
+#~ msgstr "Додати все"
+
+#~ msgid ""
+#~ "Use this method to share files with individuals or teams within your "
+#~ "organization. If the recipient already has access to the share, but can't "
+#~ "locate it, you can send them the internal link to facilitate access."
+#~ msgstr ""
+#~ "Використовуйте цей метод, щоб ділитися файлами з окремими особами або "
+#~ "командами у вашій організації. Якщо одержувач вже має доступ до ресурсу, "
+#~ "але не може його знайти, ви можете надіслати йому внутрішнє посилання, "
+#~ "щоб полегшити доступ."
+
+#~ msgid "You're about to remove a folder and it's content"
+#~ msgstr "Ви збираєтеся видалити папку та її вміст"
+
+#~ msgid "Files input"
+#~ msgstr "Введення файлів"
+
+#~ msgid "Upload your files"
+#~ msgstr "Завантажте свої файли"
+
+#~ msgid "Upload"
+#~ msgstr "Завантажити"
+
+#~ msgid "Upload your Files"
+#~ msgstr "Завантажте свої файли"
+
+#~ msgid "Share your File"
+#~ msgstr "Поділіться своїм файлом"
+
+#~ msgid "Add person"
+#~ msgstr "Додати людину"
+
+#~ msgid "Switch Camera"
+#~ msgstr "Переключити камеру"

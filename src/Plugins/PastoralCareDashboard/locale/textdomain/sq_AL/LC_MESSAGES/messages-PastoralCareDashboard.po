@@ -1,0 +1,115 @@
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:34
+msgid "None"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:67
+msgid "Excellent coverage"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:68
+#, php-format
+msgid ""
+"More than 60% of members have been visited. Keep up the great pastoral work!"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:72
+msgid "Good progress"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:73
+msgid ""
+"Between 30% and 60% of members have been visited. Continue your efforts!"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:77
+msgid "Attention needed"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:78
+msgid ""
+"Only 10% to 30% of members have been visited. It is time to intensify "
+"pastoral activities."
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:82
+msgid "Critical situation"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:83
+#, php-format
+msgid ""
+"Less than 10% of members have been visited. Immediate pastoral action is "
+"required!"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:92
+msgid "Persons"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:93
+msgid "Families"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:94
+msgid "Singles"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:95
+msgid "Retired"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:96
+msgid "Young People"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:102
+msgid "Members"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:103
+msgid "Progress"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:104
+msgid "Count"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:132
+msgid "Pastoral Care"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "Period from"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:133
+msgid "to"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Latest"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:149
+msgid "Individual Pastoral Care"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Last"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:155
+msgid "Family Pastoral Care"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:162
+msgid "Statistics"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:183
+msgid "Visit/Call your church members"
+msgstr ""
+
+#: ../src/Plugins/PastoralCareDashboard/v2/templates/View.php:185
+msgid "Manage Pastoral Care"
+msgstr ""

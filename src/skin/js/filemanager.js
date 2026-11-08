@@ -1,0 +1,1311 @@
+/* copyright 2025 Philippe Logel */
+
+$(function () {
+    window.CRM.dblclick = false;
+
+    // Helper function to get parameters from the query string.
+    // use to search the ckeditor function to put the right param in the ckeditor image tool
+    const getUrlParam = (paramName) => {
+        var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+        var match = window.location.search.match(reParam);
+
+        return (match && match.length > 1) ? match[1] : null;
+    }
+
+    // DOM callback for all the project
+    window.CRM.reloadEDriveTable = function (callback) {
+        window.CRM.dataEDriveTable.ajax.reload(function (json) {
+            installDragAndDrop();
+            if (callback) {
+                callback();
+            }
+        });
+    }
+
+    // EDrive
+    var selected = [];// the selected rows
+    var uploadWindow = null;
+    var oldTextField = null;
+
+    const openShareDialog = function (id) {
+        $('.filmanager-right').show();
+        
+        ///$('.preview').html("");
+
+        $('.preview-title').html(i18next.t("preview currently being created"));
+
+        let h2 = document.createElement('h2');            
+
+        //$('.preview').append(h2);           
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'filemanager/getPreview',
+            data: JSON.stringify({ "personID": window.CRM.currentPersonID, "name": id })
+        }, function (data) {
+            if (data && data.success) {                    
+                $('.preview-title').html(data.name);
+                if (data.link) {
+                    $('.share-part').hide();
+                    $('.share-part-another-user').show();
+                    sharedByPersonsSabre();
+                } else {
+                    $('.share-part').show();             
+                    $('.share-part-another-user').hide();       
+                    addSharedPersonsSabre();
+                }
+                
+            }
+        }); 
+    }
+
+    const openFilePreviewDialog = function (id) {
+        var dialog = bootbox.dialog({
+            title: `<span class="d-inline-flex align-items-center"><span class="badge badge-primary badge-pill mr-2">EDrive</span><span class="font-weight-bold">${i18next.t('Preview')}</span></span>`,
+            message: `<div class="container-fluid px-0">
+                <div class="card border-0 shadow-sm mb-0">
+                <div class="card-body p-3 p-md-4 bg-light">
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between border-bottom pb-3 mb-3">
+                <div class="mb-2 mb-md-0">
+                <div class="text-uppercase text-muted small font-weight-bold">${i18next.t('Document preview')}</div>
+                <div class="preview-title-global h4 mb-0 text-dark"></div>
+                </div>
+                <span class="badge badge-light border text-muted px-3 py-2">${i18next.t('Read only')}</span>
+                </div>
+                <div class="preview-global card border bg-white rounded-lg text-center overflow-auto"></div>
+                </div>
+                </div>
+                </div>`,
+            closeButton: true,
+            backdrop: true,
+            onEscape: true,
+            size: 'extra-large',
+            buttons: {
+                cancel: {
+                    label: '<i class="fas fa-times"></i> ' + i18next.t('Close'),
+                    className: 'btn-outline-secondary'
+                }
+            }
+        });
+
+        dialog.find('.preview-title-global').html('<span class="text-muted font-weight-normal">' + i18next.t('preview currently being created') + '</span>');
+
+        dialog.find('.preview-global').html(
+            `<div class="d-flex flex-column align-items-center justify-content-center py-5 px-3 text-muted">
+            <div class="spinner-border text-primary mb-3" role="status"><span class="sr-only">Loading...</span></div>
+            <div class="font-weight-bold mb-1">${i18next.t('preview currently being created')}</div>
+            <div class="small">${i18next.t('Please wait')}</div>
+            </div>`
+        );
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'filemanager/getPreview',
+            data: JSON.stringify({ "personID": window.CRM.currentPersonID, "name": id })
+        }, function (data) {
+            if (data && data.success) {
+                dialog.find('.preview-title-global').html(`<span class="d-inline-flex align-items-center"><i class="fas fa-file-alt text-primary mr-2"></i><span class="font-weight-bold">${data.name}</span></span>`);
+                dialog.find('.preview-global').html(data.path);
+            } else {
+                dialog.find('.preview-title-global').html(`<span class="text-warning"><i class="fas fa-exclamation-triangle mr-2"></i>${i18next.t('Preview')}</span>`);
+                dialog.find('.preview-global').html(`<div class="alert alert-warning m-3 text-left"><div class="font-weight-bold mb-1">${i18next.t('Unable to create the preview')}</div><div class="small mb-0">${i18next.t('The selected file cannot be rendered in preview mode.')}</div></div>`);
+            }
+        });
+    }
+
+    var DataTableOpts = {
+        ajax: {
+            url: window.CRM.root + "/api/filemanager/" + window.CRM.currentPersonID,
+            type: 'POST',
+            contentType: "application/json",
+            dataSrc: "files",
+            "beforeSend": function (xhr) {
+                xhr.setRequestHeader('Authorization',
+                    "Bearer " + window.CRM.jwtToken
+                );
+            }
+        },
+        "language": {
+            "url": window.CRM.plugin.dataTable.language.url
+        },
+        order: [[1, 'asc']],
+        searching: true,
+        select: true,
+        paging: false,
+        columns: [            
+            {
+                width: '5%',
+                title: i18next.t('Icon'),
+                data: 'icon',
+                render: function (data, type, full, meta) {
+                    let locked_icon = '';
+                    if (full.locked) {
+                        locked_icon = ' <i class="fa-solid fa-lock"></i>';
+                    }
+                    if (!full.dir) {
+                        return `<span class="drag drag-file" id="${full.name}" type="file" data-path="${full.path}" data-perid="${full.perID}">${data}${locked_icon}</span>`;
+                    } else {
+                        return `<a class="change-folder" data-personid="${window.CRM.currentPersonID}" data-folder="${full.name}"><span class="drag drop" id="${full.name}" type="folder">${data}${locked_icon}</span></a>`;
+                    }
+                }
+            },
+            {
+                width: '50%',
+                title: i18next.t('Name'),
+                data: 'name',
+                type: 'column-name',
+                render: function (data, type, full, meta) {
+                    if (full.dir) {
+                        var fileName = data.substring(1);
+
+                        return `<input type="text" value="${fileName}" class="fileName form-control form-control-sm" data-name="${data}" data-type="folder" readonly>`;
+                    } else {
+                        var fileName = data;
+                        fileName = fileName.substring(0, fileName.lastIndexOf('.')) || fileName;
+
+                        return `<input type="text" value="${fileName}" class="fileName form-control form-control-sm" data-name="${data}" data-type="file" readonly>`;
+                    }
+                }
+            },
+            {
+                width: '5%',
+                title: i18next.t('Actions'),
+                data: 'id',
+                render: function (data, type, full, meta) {
+                    if (!full.dir && !full.link) {
+                        var ret = `<div class="btn-group">
+   <a href="${window.CRM.root}/api/filemanager/getFile/${full.perID}/${full.path}" type="button" id="uploadFile" class="btn btn-outline-primary btn-sm px-2 py-1" data-personid="${window.CRM.currentPersonID}" data-bs-toggle="tooltip" data-bs-placement="top" title="Télécharger"><i class="fa-solid fa-download file-action-icon"></i></a>
+   <button type="button" class="btn ${full.isShared ? 'btn-success' : 'btn-outline-secondary'} btn-sm px-2 py-1 shareFile" data-personid="${window.CRM.currentPersonID}" data-id="${data}" data-shared="${full.isShared}" data-bs-toggle="tooltip" data-bs-placement="top" title="Partager"><i class="fa-solid fa-share-nodes file-action-icon"></i></button>
+</div>`;
+                        return ret;
+                    } else if (!full.link && !(full.name == '/public' && full.currentpath == '/')) {
+                        var ret = `<div class="btn-group">
+   <button type="button" class="btn ${full.isShared ? 'btn-success' : 'btn-outline-secondary'} btn-sm px-2 py-1 shareFile" data-personid="${window.CRM.currentPersonID}" data-id="${data}" data-shared="${full.isShared}" data-bs-toggle="tooltip" data-bs-placement="top" title="Partager"><i class="fa-solid fa-share-nodes file-action-icon"></i></button>
+</div>`;
+                        return ret;
+                    } else if (full.link) {
+                        var ret = `<div class="btn-group">
+   <a href="${window.CRM.root}/api/filemanager/getFile/${full.perID}/${full.path}" type="button" id="uploadFile" class="btn btn-outline-primary btn-sm px-2 py-1" data-personid="${window.CRM.currentPersonID}" data-bs-toggle="tooltip" data-bs-placement="top" title="Télécharger"><i class="fa-solid fa-download file-action-icon"></i></a>
+   <button type="button" class="btn ${full.isShared ? 'btn-success' : 'btn-outline-secondary'} btn-sm px-2 py-1 shareFile" data-personid="${window.CRM.currentPersonID}" data-id="${data}" data-shared="${full.isShared}" data-bs-toggle="tooltip" data-bs-placement="top" title="Lien partagé"><i class="fa-solid fa-link file-action-icon"></i></button>
+</div>`;
+                        return ret;
+                    }
+
+                    return '';
+                }
+            },
+            {
+                width: '15%',
+                title: i18next.t('Modification Date'),
+                data: 'date',
+                render: function (data, type, full, meta) {
+                    return data;
+                }
+            },
+            {
+                width: '10%',
+                title: i18next.t('Type'),
+                data: 'type',
+                render: function (data, type, full, meta) {
+                    return data;
+                }
+            },
+            {
+                width: '10%',
+                title: i18next.t('Size'),
+                data: 'size',
+                type: 'file-size',
+                render: function (data, type, full, meta) {
+                    return data
+                }
+            }
+        ],
+        responsive: true,
+        createdRow: function (row, data, index) {
+            $(row).addClass("edriveRow");
+            //$(row).attr('id', data.id)
+            $(row).attr('id', data.name);
+        },
+        "rowCallback": function (row, data) {
+            if ($.inArray(data.DT_RowId, selected) !== -1) {
+                $(row).addClass('selected');
+            }
+        },
+        "initComplete": function (settings, json) {            
+            if (window.CRM.isPublicFolder) {
+                $(".flex-wrap").removeClass('shift-flex-wrapper-right');
+            }
+        }
+    };
+
+
+    $.extend(DataTableOpts, window.CRM.plugin.dataTable);
+
+    window.CRM.plugin.dataTable.buttons.push({
+        text: '<i class="fas fa-trash-alt"></i> ' + i18next.t("Delete"),
+        attr: {
+            id: 'trash-drop',
+            'data-personid':window.CRM.currentPersonID,
+            'data-toggle':"tooltip",
+            'data-placement': "top",
+            'title': i18next.t("Delete"),            
+        },
+        enabled: false,
+        className: 'btn btn-danger btn-sm drag-elements trash-drop ui-droppable',
+        action: function (e, dt, node, config) {
+            var selected = $.map(window.CRM.dataEDriveTable.rows({ selected: true }).data(), function (item) {
+                return item['name']
+            });
+
+            var title = "";
+
+            if (selected.length > 1) {
+                title = i18next.t("You are about to delete several items together")
+            } else if (selected.length == 1) {
+                title = i18next.t("You're about to remove an item");
+            }
+
+            if (selected.length) {
+                bootbox.confirm({
+                    title: `<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ${title}</span>`,
+                    message: `<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ${i18next.t("This can't be undone !!!!")}</span>`,
+                    buttons: {
+                        cancel: {
+                            label: '<i class="fas fa-times"></i> ' + i18next.t('Cancel'),
+                            className: 'btn-primary'
+                        },
+                        confirm: {
+                            label: '<i class="fas fa-trash-alt"></i> ' + i18next.t('Delete'),
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            window.CRM.APIRequest({
+                                method: 'POST',
+                                path: 'filemanager/deleteFiles',
+                                data: JSON.stringify({ "personID": window.CRM.currentPersonID, "files": selected })
+                            }, function (data) {
+                                if (data && data.success) {
+                                    if (data.error.length) {
+                                        alert(data.error[0]);
+                                    }
+                                    window.CRM.reloadEDriveTable(function () {
+                                        selected.length = 0;
+                                        $('.filmanager-right').hide();
+                                        $("#trash-drop").addClass('disabled');
+                                    });
+                                }
+                            });
+                        }
+                    }
+                });
+            } else {
+                window.CRM.DisplayAlert(i18next.t("Error"), i18next.t("You've to select at least one line !!!"));
+            }
+        }
+    });
+
+    window.CRM.plugin.dataTable.buttons.push({
+        text: '<i class="fas fa-folder"></i> ' + i18next.t("Create a Folder"),
+        className: 'btn btn-secondary btn-sm new-folder',
+        attr: {
+            id: 'new-folder',
+            'data-personid':window.CRM.currentPersonID,
+            'title': i18next.t("Create a Folder"),
+            'data-toggle': 'tooltip',
+            'data-placement':"top"
+        },
+        enabled: true,        
+        action: function (e, dt, node, config) {
+            var personID = $('#new-folder').data("personid");
+
+            bootbox.prompt(i18next.t("Set your Folder name"), function (result) {
+                if (result != '' && result != null) {
+                    window.CRM.APIRequest({
+                        method: 'POST',
+                        path: 'filemanager/newFolder',
+                        data: JSON.stringify({ "personID": personID, "folder": result })
+                    }, function (data) {
+                        if (data && !data.success) {
+                            window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                        }
+
+                        window.CRM.reloadEDriveTable(function () {
+                            selected.length = 0;// no more selected files
+                        });
+                    });
+                }
+            });
+        }
+    });
+
+    window.CRM.plugin.dataTable.buttons.push({
+        text: '<i class="fas fa-sync-alt"></i> ' + i18next.t("Actualize files"),
+        className: 'btn btn-secondary btn-sm drag-elements filemanager-refresh',
+        attr: {
+            id: 'filemanager-refresh',
+            'data-personid':window.CRM.currentPersonID,
+            'title': i18next.t("Actualize files"),
+            'data-toggle': 'tooltip',
+            'data-placement':"top"
+        },
+        enabled: true,        
+        action: function (e, dt, node, config) {
+            var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+            window.CRM.reloadEDriveTable(function () {
+                realRows.select();        
+            });
+        }
+    });
+
+    window.CRM.dataEDriveTable = $("#edrive-table").DataTable(DataTableOpts);
+
+    $("body").on('click', '.filemanager-download', function (e) {
+        var selectedRows = window.CRM.dataEDriveTable.rows({ selected: true }).data()
+        $.each(selectedRows, function (index, value) {
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'filemanager/getRealLink',
+                data: JSON.stringify({ "personID": window.CRM.currentPersonID, "pathFile": value.path })
+            }, function (data) {
+                if (data && data.success) {
+                    var fileUrl = data.address;
+                    if (window.CRM.donatedItemID) {
+                        window.CRM.APIRequest({
+                            method: 'POST',
+                            path: 'fundraiser/donatedItem/submit/picture',
+                            data: JSON.stringify({ "DonatedItemID": window.CRM.donatedItemID, "pathFile": fileUrl })
+                        }, function (data) {
+                            window.close();
+                        });
+                    } else {
+                        var funcNum = getUrlParam('CKEditorFuncNum');
+                        window.opener.CKEDITOR.tools.callFunction(funcNum, fileUrl);
+                        window.close();
+                    }
+                }
+            });
+        });
+    });    
+
+    $('#edrive-table tbody').on('dblclick', 'tr', function(event) {
+        window.CRM.dblclick = true;
+    });
+
+
+    // click in the table
+    $('#edrive-table tbody').on('click', 'tr', function(event) {
+        var data = window.CRM.dataEDriveTable.row(this).data();
+        let id = data['name'];
+        let clickedCellIndex = $(event.target).closest('td').index();
+
+        let ctrlKey = event.ctrlKey;// on pc        
+        let altKey = event.altKey;
+        let shiftKey = event.shiftKey;
+        let optionKey = event.metaKey;// on mac
+
+
+        if (clickedCellIndex === 0
+            && $(event.target).closest('.change-folder').length == 0 
+            && $(event.target).closest('.fa-download').length == 0 
+            && $(event.target).closest('.shareFile').length == 0 
+            && !shiftKey && !ctrlKey && !optionKey && !altKey) {
+            // not click on a folder link : ie click on the line to select and show preview and not click on the line to open the folder    
+            openFilePreviewDialog(id);
+            return;        
+        }
+
+        if (clickedCellIndex > 0 && $(event.target).closest('.shareFile').length > 0) {
+            openShareDialog(id);
+            return;
+        }
+
+        let column = window.CRM.dataEDriveTable.column( this ).index();//unusefull at this moment        
+        var selectedRows = window.CRM.dataEDriveTable.rows({ selected: true }).data().length;
+
+        let clickedRowIsSelected = true;
+
+        let classes = $(this).attr('class').split(/\s+/);
+        let res = $(this).hasClass('selected');
+        if ( $(this).hasClass('selected')==false ) {
+            clickedRowIsSelected = false;
+        }
+
+        if ((ctrlKey || optionKey)) {
+            if (clickedRowIsSelected == true) {
+                selectedRows--;
+            } else {
+                selectedRows++;
+            }
+        } else if (shiftKey) {
+            if (clickedRowIsSelected == true) {
+                selectedRows--;
+            } else {
+                selectedRows++;
+            }
+        } else {
+            if (clickedRowIsSelected == true) {
+                selectedRows--;
+            } else {
+                selectedRows=1;
+            }
+        }
+
+        $(this).toggleClass('selected');        
+        
+        if (window.CRM.browserImage == true) {
+            if (selectedRows) {
+                $(".filemanager-download").css("display", "block");
+            } else {
+                $(".filemanager-download").css("display", "none");
+            }
+        }        
+
+        if (selectedRows) {
+            $("#trash-drop").removeClass('disabled');            
+        } else {
+            $("#trash-drop").addClass('disabled');            
+        }
+
+        if (selectedRows != 1 || window.CRM.dblclick || clickedCellIndex !== 2) {
+            $('.filmanager-right').hide();
+        }
+
+        window.CRM.dblclick = false;
+    });
+
+
+    $("body").on('click', '.fileName', function (e) {
+        if (navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
+            // we're on a SmartPhone
+            var oldName = $(this).data("name");
+            var fileName = '';
+            var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+
+            if (oldName[0] == '/') {
+                fileName = oldName.substring(1);
+            } else {
+                fileName = oldName.substring(0, oldName.lastIndexOf('.')) || oldName;
+            }
+
+            var type = $(this).data("type");
+
+            bootbox.prompt({
+                title: i18next.t("Set a File/Folder name"),
+                value: fileName,
+                callback: function (result) {
+                    if (result != '') {
+                        window.CRM.APIRequest({
+                            method: 'POST',
+                            path: 'filemanager/rename',
+                            data: JSON.stringify({
+                                "personID": window.CRM.currentPersonID,
+                                "oldName": oldName,
+                                "newName": result,
+                                "type": type
+                            })
+                        }, function (data) {
+                            if (data && data.success) {
+                                window.CRM.reloadEDriveTable(function () {
+                                    realRows.select();
+                                });
+                            } else {
+                                window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                                window.CRM.reloadEDriveTable(function () {
+                                   realRows.select();
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    });
+
+    $("body").on('dblclick', '.drag-file', function (e) {
+        if (!navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
+            var perID = $(this).data("perid");
+            var path = $(this).data("path");
+
+            window.location.href = window.CRM.root + '/api/filemanager/getFile/' + perID + '/' + path;
+        }
+    });
+
+    $("body").on('dblclick', '.fileName', function (e) {
+        if (!navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
+            // we're on a computer
+            if (oldTextField != null) {
+                $(oldTextField).css("background", "transparent");
+                $(oldTextField).attr('readonly');
+            }
+
+            $(this).css("background", "white");
+            $(this).removeAttr('readonly');
+
+            oldTextField = this;
+        }
+    });
+
+    $("body").on('click', '.close-file-preview', function (e) {
+        $('.filmanager-right').hide();
+        window.CRM.dblclick = false;
+    });
+
+
+    $("body").on('keypress', '.fileName', function (e) {
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        var newName = $(this).val();
+        var oldName = $(this).data("name");
+        var type = $(this).data("type");
+
+        switch (key) {
+            case 13:// return
+                window.CRM.APIRequest({
+                    method: 'POST',
+                    path: 'filemanager/rename',
+                    data: JSON.stringify({
+                        "personID": window.CRM.currentPersonID,
+                        "oldName": oldName,
+                        "newName": newName,
+                        "type": type
+                    })
+                }, function (data) {
+                    if (data && data.success) {
+                        window.CRM.reloadEDriveTable(function () {
+                           realRows.select();
+                        });
+                    } else  {
+                        window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                        window.CRM.reloadEDriveTable(function () {
+                            realRows.select();
+                        });
+                    }
+                    
+                });
+                break;
+            case 27:// ESC
+                var fileName = oldName;
+
+                if (type == 'file') {
+                    fileName = fileName.substring(0, fileName.lastIndexOf('.')) || fileName;
+                } else {
+                    fileName = fileName.substring(1);
+                }
+
+                $(this).attr('readonly');
+                $(this).css("background", "transparent");
+                $(this).val(fileName);
+                oldTextField = null;
+                break;
+        }
+    });
+
+    $('.folder-back-drop').droppable({
+        drop: function (event, ui) {
+            var name = $(ui.draggable).attr('id');
+            var folderName = '/..';
+
+            var selected = $.map(window.CRM.dataEDriveTable.rows({ selected: true }).data(), function (item) {
+                return item['name']
+            });
+
+            if (selected.length > 0) {// Drag in a folder
+                window.CRM.APIRequest({
+                    method: 'POST',
+                    path: 'filemanager/movefiles',
+                    data: JSON.stringify({
+                        "personID": window.CRM.currentPersonID,
+                        "folder": folderName,
+                        "files": selected
+                    })
+                }, function (data) {
+                    if (data && !data.success) {
+                        window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                    }
+
+                    window.CRM.reloadEDriveTable(function () {
+                        selected.length = 0;
+                    });
+                });
+            } else {
+                window.CRM.APIRequest({
+                    method: 'POST',
+                    path: 'filemanager/movefiles',
+                    data: JSON.stringify({
+                        "personID": window.CRM.currentPersonID,
+                        "folder": folderName,
+                        "files": [name]
+                    })
+                }, function (data) {
+                    if (data && !data.success) {
+                        window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                    }
+
+                    window.CRM.reloadEDriveTable(function () {
+                        selected.length = 0;
+                    });
+                });
+            }
+        }
+
+    });
+
+    function installDragAndDrop() {
+        $('.drag').draggable({
+            helper: 'clone',
+            appendTo: 'body',
+            zIndex: 1100
+            //revert : true
+        });
+
+        $('.drop').droppable({
+            drop: function (event, ui) {
+                var name = $(ui.draggable).attr('id');
+                var folderName = $(event.target).attr('id');
+
+                var selected = $.map(window.CRM.dataEDriveTable.rows({ selected: true }).data(), function (item) {
+                    return item['name']
+                });
+
+                if (selected.length > 0) {// Drag in a folder
+                    window.CRM.APIRequest({
+                        method: 'POST',
+                        path: 'filemanager/movefiles',
+                        data: JSON.stringify({
+                            "personID": window.CRM.currentPersonID,
+                            "folder": folderName,
+                            "files": selected
+                        })
+                    }, function (data) {
+                        if (data && !data.success) {
+                            window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                        }
+
+                        window.CRM.reloadEDriveTable(function () {
+                            selected.length = 0;
+                        });
+                    });
+                } else {
+                    window.CRM.APIRequest({
+                        method: 'POST',
+                        path: 'filemanager/movefiles',
+                        data: JSON.stringify({
+                            "personID": window.CRM.currentPersonID,
+                            "folder": folderName,
+                            "files": [name]
+                        })
+                    }, function (data) {
+                        if (data && !data.success) {
+                            window.CRM.DisplayAlert(i18next.t("Error"), data.message);
+                        }
+
+                        window.CRM.reloadEDriveTable(function () {
+                            selected.length = 0;
+                        });
+                    });
+                }
+            }
+        });
+    }
+
+    const openFolder = (personID, folder) => {
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'filemanager/changeFolder',
+            data: JSON.stringify({ "personID": personID, "folder": folder })
+        }, function (data) {
+            if (data && data.success) {
+                window.CRM.isCurrentPathPublicFolder = data.isCurrentPathPublicFolder;
+                $('.filmanager-right').hide();
+
+                if (data.isCurrentPathPublicFolder && window.CRM.isPublicFolder) {
+                    $(".flex-wrap").removeClass('shift-flex-wrapper-right');
+                    $(".folder-back-drop").hide();
+                } else {
+                    $(".flex-wrap").addClass('shift-flex-wrapper-right');
+                    $(".folder-back-drop").show();
+                }
+                window.CRM.reloadEDriveTable(function () {
+                    $(".flex-wrap").addClass('shift-flex-wrapper-right');
+                    $("#currentPath").html(data.currentPath);
+                    window.CRM.currentpath = data.realCurrentPath;
+                    selected.length = 0;// no more selected files
+                    window.CRM.dblclick = false;
+                });
+            }
+        });
+    }
+
+    $(document).on('click', '.change-folder', function () {
+        if (navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
+            var personID = $(this).data("personid");
+            var folder = $(this).data("folder");
+
+            openFolder(personID, folder);
+        }
+    });
+
+    $(document).on('dblclick', '.change-folder', function () {
+        //$(".change-folder").on('click', function () {
+        var personID = $(this).data("personid");
+        var folder = $(this).data("folder");
+
+        if (!navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
+            var personID = $(this).data("personid");
+            var folder = $(this).data("folder");
+
+            openFolder(personID, folder);
+        }
+    });
+
+    $(".folder-back-drop").on('click', function () {
+        $('.filmanager-right').hide();
+
+        var personID = $(this).data("personid");
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'filemanager/folderBack',
+            data: JSON.stringify({"personID": personID})
+        },function (data) {
+            if (data && data.success) {                
+                window.CRM.reloadEDriveTable(function () {
+                    window.CRM.currentpath = data.realCurrentPath;
+
+                    if (data.isHomeFolder || data.isCurrentPathPublicFolder && window.CRM.isPublicFolder) {
+                        $(".flex-wrap").removeClass('shift-flex-wrapper-right');
+                        $(".folder-back-drop").hide();
+                    } else {
+                        $(".flex-wrap").addClass('shift-flex-wrapper-right');
+                        $(".folder-back-drop").show();
+                    }
+
+                    $("#currentPath").html(data.currentPath);                    
+                });
+            }            
+        });
+    });
+
+    const uploadEvent = () => {
+        const fileInput = document.getElementById('noteInputFile');
+        const dropZone = document.getElementById('edrive-upload-dropzone');
+        const progress = document.getElementById('progress-bar');
+        const progressLabel = document.getElementById('progress-bar-label');
+
+        const setInputFiles = (files) => {
+            if (!fileInput || !files || !files.length) {
+                return;
+            }
+
+            if (typeof DataTransfer !== 'undefined') {
+                const transfer = new DataTransfer();
+                for (const file of files) {
+                    transfer.items.add(file);
+                }
+                fileInput.files = transfer.files;
+            }
+        };
+
+        const uploadFiles = (files) => {
+            const filesToUpload = Array.from(files || []);
+            const totalFilesToUpload = filesToUpload.length;
+
+            if (totalFilesToUpload === 0) {
+                alert('Please select one or more files.');
+                return;
+            }
+
+            window.CRM.css(".download-zone", "display:block");
+            progress.setAttribute('value', 0);
+            progressLabel.innerText = "0%";
+
+            let allRequests = totalFilesToUpload;
+
+            window.CRM.dialogLoadingFunction('Upload in progress', function() {
+                filesToUpload.forEach((file, index) => {
+                    const formData = new FormData();
+                    formData.append('noteInputFile', file);
+                    formData.append('csrfToken', window.CRM.csrfToken);
+
+                    const req = new XMLHttpRequest();
+                    req.open('POST', window.CRM.root + "/api/filemanager/uploadFile/" + window.CRM.currentPersonID);
+                    req.setRequestHeader('Authorization', 'Bearer ' + window.CRM.jwtToken);
+                    req.setRequestHeader('X-CSRF-Token', window.CRM.csrfToken);
+                    req.ecrmPlace = index;
+
+                    req.upload.addEventListener('progress', (event) => {
+                        if (!event.lengthComputable) {
+                            return;
+                        }
+                        const percentComplete = (event.loaded / event.total) * 100;
+                        progress.setAttribute('value', percentComplete);
+                        progressLabel.innerText = Math.round(percentComplete) + "%";
+                    });
+
+                    req.onload = () => {
+                        if (req.status != 200) {
+                            window.CRM.DisplayAlert(i18next.t("Download Error"), `Error ${req.status}: ${req.statusText}`);
+                        } else if (typeof req.response === "string") {
+                            let response = JSON.parse(req.response);
+                            if (response.status == "failed") {
+                                window.CRM.DisplayAlert(i18next.t("Download Error"), `Error ${req.status}: ${req.statusText}`);
+                            }
+                        }
+                    };
+
+                    req.onerror = () => {
+                        window.CRM.DisplayAlert(i18next.t("Download Error"), `Error ${req.status}: ${req.statusText}`);
+                    };
+
+                    req.onloadend = () => {
+                        allRequests--;
+
+                        if (allRequests === 0) {
+                            window.CRM.reloadEDriveTable();
+                            window.CRM.closeDialogLoadingFunction();
+                            window.CRM.css(".download-zone", "display:none");
+                        }
+                    };
+
+                    req.send(formData);
+                });
+            });
+        };
+
+        window.CRM.ElementListener('#formId', 'submit', function (event) {
+            event.preventDefault();
+            uploadFiles(fileInput.files);
+        });
+
+        if (dropZone) {
+            const preventDefaults = (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+            };
+
+            ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+                dropZone.addEventListener(eventName, preventDefaults, false);
+            });
+
+            ["dragenter", "dragover"].forEach((eventName) => {
+                dropZone.addEventListener(eventName, () => {
+                    dropZone.classList.add('border-primary');
+                    dropZone.classList.add('shadow-sm');
+                }, false);
+            });
+
+            ["dragleave", "drop"].forEach((eventName) => {
+                dropZone.addEventListener(eventName, () => {
+                    dropZone.classList.remove('border-primary');
+                    dropZone.classList.remove('shadow-sm');
+                }, false);
+            });
+
+            dropZone.addEventListener('drop', (event) => {
+                const droppedFiles = event.dataTransfer ? event.dataTransfer.files : null;
+                if (!droppedFiles || !droppedFiles.length) {
+                    return;
+                }
+
+                setInputFiles(droppedFiles);
+                uploadFiles(droppedFiles);
+            }, false);
+        }
+    }
+
+    // Share Files management
+    $("#preview-person-group-sabre-Id").select2({
+        language: window.CRM.shortLocale,
+        minimumInputLength: 2,
+        placeholder: " -- " + i18next.t("User") + " -- ",
+        allowClear: true, // This is for clear get the clear button if wanted
+        ajax: {
+            url: function (params) {
+                return window.CRM.root + "/api/people/searchonlyuserwithedrive/" + params.term;
+            },
+            headers: {
+                "Authorization": "Bearer " + window.CRM.jwtToken
+            },
+            dataType: 'json',
+            delay: 250,
+            data: "",
+            processResults: function (data, params) {
+                return { results: data };
+            },
+            cache: true
+        }
+    });
+
+    $("#preview-person-group-sabre-Id").on("select2:select", function (e) {
+        let access = $("#person-group-rights").val();
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        let data = realRows.data();
+        let rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        let notification = document.getElementById("sendEmail-sabre").checked
+
+        if (e.params.data.personID !== undefined) {
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/addpersonsabre',
+                data: JSON.stringify({
+                    "currentPersonID": window.CRM.currentPersonID,
+                    "personToShareID": e.params.data.personID,
+                    "rows": rows,
+                    "access": access, // by default read and write
+                    "notification": notification
+                })
+            }, function (data) {
+                window.CRM.reloadEDriveTable(function () {
+                    realRows.select();
+                });
+                addSharedPersonsSabre();
+            });
+        }
+    });
+
+    
+    const sharedByPersonsSabre = () => {
+        let data = window.CRM.dataEDriveTable.rows({ selected: true }).data();
+        let rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'sharedocument/getShareInfosSabre',
+            data: JSON.stringify({
+                "currentPersonID": window.CRM.currentPersonID,
+                "rows": rows
+            })}, function (data) {
+                let res = '<ul>';
+                for (const element of data) {
+                    res += '<li>' + element['fullName'] + '</li>';
+                }
+                res += '</ul>';
+
+                $(".share-part-another-user-content").html(res);
+            }
+        );
+    }
+
+    const addSharedPersonsSabre = () => {
+        $("#dropdownMenuButtonRights").prop('disabled', true);
+        $("#delete-share").prop('disabled', true);    
+
+        let data = window.CRM.dataEDriveTable.rows({ selected: true }).data();
+        let rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        $('#select-share-persons-sabre').find('option').remove();
+
+        window.CRM.APIRequest({
+            method: 'POST',
+            path: 'sharedocument/getallpersonsabre',
+            data: JSON.stringify({
+                "currentPersonID": window.CRM.currentPersonID,
+                "rows": rows
+            })
+        }, function (data) {
+            var elt = document.getElementById("select-share-persons-sabre");
+            var len = data.length;
+
+            $("#delete-all-share").prop('disabled', (len>0)?false:true);
+            
+            for (i = 0; i < len; ++i) {
+                var option = document.createElement("option");
+                // there is a groups.type in function of the new plan of schema
+                option.text = data[i].name;
+                //option.title = data[i].type;
+                option.value = data[i].id;
+
+                //option.classList.add("fontawesome");
+
+                elt.appendChild(option);
+            }
+        });
+    }
+
+    $("#select-share-persons-sabre").on('change', function () {
+        let values = $('#select-share-persons-sabre').val();
+
+        let activated = false;
+        if (values.length > 0) {
+            activated = true;
+        }
+
+        $("#dropdownMenuButtonRights").prop('disabled', !activated);
+        $("#delete-share").prop('disabled', !activated);
+        //$("#delete-all-share").prop('disabled', !activated);
+    });
+
+    $("#set-right-read").on('click', function () {
+        var rightAccess = 2;
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        let data = realRows.data();
+        var rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        $('#select-share-persons-sabre :selected').each(function (i, sel) {
+            var selection = sel;
+            let personID = $(sel).val();
+            let str = $(sel).text();
+
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/setrightssabre',
+                data: JSON.stringify({
+                    "rows": rows,
+                    "currentPersonID": window.CRM.currentPersonID,
+                    "personToShareID": personID,
+                    "rightAccess": rightAccess
+                })
+            }, function (data) {
+                if (rightAccess == 2) {
+                    res = str.replace(i18next.t("[👀 ✐]"), i18next.t("[👀  ]"));
+                } else {
+                    res = str.replace(i18next.t("[👀  ]"), i18next.t("[👀 ✐]"));
+                }
+                $(selection).text(res);
+
+                window.CRM.reloadEDriveTable(function () {
+                    realRows.select();
+                });
+            })
+        });
+    });
+
+    $("#set-right-read-write").on('click', function () {
+        var rightAccess = 3;
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        let data = realRows.data();
+        var rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        $('#select-share-persons-sabre :selected').each(function (i, sel) {
+            var selection = sel;
+            let personID = $(sel).val();
+            let str = $(sel).text();
+
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/setrightssabre',
+                data: JSON.stringify({
+                    "rows": rows,
+                    "currentPersonID": window.CRM.currentPersonID,
+                    "personToShareID": personID,
+                    "rightAccess": rightAccess
+                })
+            }, function (data) {
+                if (rightAccess == 2) {
+                    res = str.replace(i18next.t("[👀 ✐]"), i18next.t("[👀  ]"));
+                } else {
+                    res = str.replace(i18next.t("[👀  ]"), i18next.t("[👀 ✐]"));
+                }
+                $(selection).text(res);
+
+                window.CRM.reloadEDriveTable(function () {
+                    realRows.select();
+                });
+            })
+        });
+    });
+
+
+    $("#person-group-rights-sabre").on('change', function () {
+        var rightAccess = parseInt($(this).val());
+        let data = window.CRM.dataEDriveTable.rows({ selected: true }).data();
+        var rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        $('#select-share-persons-sabre :selected').each(function (i, sel) {
+            var selection = sel;
+            let personID = $(sel).val();
+            let str = $(sel).text();
+
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'sharedocument/setrightssabre',
+                data: JSON.stringify({
+                    "rows": rows,
+                    "currentPersonID": window.CRM.currentPersonID,
+                    "personToShareID": personID,
+                    "rightAccess": rightAccess
+                })
+            }, function (data) {
+                if (rightAccess == 2) {
+                    res = str.replace(i18next.t("[👀 ✐]"), i18next.t("[👀  ]"));
+                } else {
+                    res = str.replace(i18next.t("[👀  ]"), i18next.t("[👀 ✐]"));
+                }
+                $(selection).text(res);
+            })
+        });
+    });
+
+    $("#delete-share").on('click', function () {
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        var data = realRows.data();
+        var rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        bootbox.confirm({title: '<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ' + i18next.t('Are you sure you want to stop sharing for selected users?') + '</span>',
+            message: '<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ' + i18next.t("This can't be undone !!!!") + '</span>',
+            buttons: {
+                cancel: {
+                    label: '<i class="fas fa-times"></i> ' + i18next.t('Cancel'),
+                    className: 'btn-primary'
+                },
+                confirm: {
+                    label: '<i class="fas fa-trash-alt"></i> ' + i18next.t('Delete'),
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $('#select-share-persons-sabre').each(function (i, sel) {
+                        var personPrincipal = $(sel).val();
+
+                        window.CRM.APIRequest({
+                            method: 'POST',
+                            path: 'sharedocument/deletepersonsabre',
+                            data: JSON.stringify({
+                                "rows": rows,
+                                "personPrincipal": personPrincipal,
+                                "currentPersonID": window.CRM.currentPersonID
+                            })
+                        }, function (data) {
+                            window.CRM.reloadEDriveTable(function () {
+                                realRows.select();
+                            });
+                            $("#select-share-persons-sabre option[value='" + personPrincipal + "']").remove();
+                            addSharedPersonsSabre();
+                        });
+                    });
+                }
+            }
+        });
+    });
+
+
+    $("#delete-all-share").on('click', function () {
+        var realRows = window.CRM.dataEDriveTable.rows({ selected: true });
+        var data = realRows.data();
+        var rows = [];
+        for (let i = 0; i < data.length; i++) {
+            rows.push(data[i]);
+        }
+
+        bootbox.confirm({title: '<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ' + i18next.t('Are you sure, you want to stop all sharing ?') + '</span>',
+            message: '<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> ' + i18next.t("This can't be undone !!!!") + '</span>',
+            buttons: {
+                cancel: {
+                    label: '<i class="fas fa-times"></i> ' + i18next.t('Cancel'),
+                    className: 'btn-primary'
+                },
+                confirm: {
+                    label: '<i class="fas fa-trash-alt"></i> ' + i18next.t('Delete'),
+                    className: 'btn-danger'
+                }
+            },
+            callback:  function (result) {
+                if (result) {
+                    window.CRM.APIRequest({
+                        method: 'POST',
+                        path: 'sharedocument/cleardocumentsabre',
+                        data: JSON.stringify({ 
+                            "rows": rows,
+                            "currentPersonID": window.CRM.currentPersonID
+                        })
+                    }, function (data) {
+                        window.CRM.reloadEDriveTable(function () {
+                            realRows.select();
+                        });
+                        addSharedPersonsSabre();
+                    });
+                }
+            }
+        });
+    });
+
+    $.fn.dataTable.moment = function (format, locale) {
+        var types = $.fn.dataTable.ext.type;
+
+        // Add type detection
+        types.detect.unshift(function (d) {
+            // Removed true as the last parameter of the following moment
+            return moment(d, format, locale).isValid() ?
+                'moment-' + format :
+                null;
+        });
+
+        // Add sorting method - use an integer for the sorting
+        types.order['moment-' + format + '-pre'] = function (d) {
+            console.log("d");
+            return moment(d, format, locale, true).unix();
+        };
+    };
+
+    $.fn.dataTable.ext.type.order['column-name-pre'] = function (data) {
+        var val = $(data).data("name");
+
+        return val;
+    }
+
+    $.fn.dataTable.ext.type.order['file-size-pre'] = function (data) {
+        var units = data.replace(/[\d\.\,\ ]/g, '').toLowerCase();
+        var multiplier = 1;
+
+        if (units === 'kb') {
+            multiplier = 1000;
+        } else if (units === 'mb') {
+            multiplier = 1000000;
+        } else if (units === 'gb') {
+            multiplier = 1000000000;
+        }
+
+        return parseFloat(data) * multiplier;
+    };
+    // end of EDrive management
+
+    $('#edrive-table').on('draw.dt', function () {
+        installDragAndDrop();
+        if (window.CRM.currentpath !== "/") {
+            $(".flex-wrap").addClass('shift-flex-wrapper-right');
+        }
+    });
+
+    uploadEvent();
+
+        if (window.CRM.isPublicFolder) {
+                $(".flex-wrap").removeClass('shift-flex-wrapper-right');
+                $(".folder-back-drop").hide();
+        }
+
+        // Style global pour garder les icônes visibles même sur ligne sélectionnée
+        var style = document.createElement('style');
+        style.innerHTML = `
+            .edriveRow.selected .file-action-icon {
+                color: #212529 !important;
+                filter: none !important;
+                opacity: 1 !important;
+            }
+        `;
+        document.head.appendChild(style);
+});

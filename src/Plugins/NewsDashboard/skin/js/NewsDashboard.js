@@ -1,0 +1,267 @@
+$(function() {
+    const addElementsToNewsDashboardList = (data) => {
+        if (data == undefined) return;
+
+        let cnt = data.items.length;
+        var res = '';
+
+        for (i = 0;i < cnt; i++) {
+            res += `<li class="item">
+                <div class="product-img">
+                    <img src="${window.CRM.root}/Plugins/NewsDashboard/core/images/${data.items[i].Img}" alt="Product Image" class="img-size-35">
+                </div>
+                <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title">${data.items[i].Title}
+                        <span class="badge badge-warning float-right">${data.items[i].Date}</span>
+                    </a>
+                    <span class="product-description">${data.items[i].Text}`;
+            
+
+            if (window.CRM.newsDashboardIsAdmin) {
+                res += `        <div class="row">
+                            <div class="col-md-11">
+                                <button type="button" class="btn btn-outline-danger btn-sm float-right remove-dashboard-news-note" data-id="${data.items[i].Id}"><i class="fas fa-trash"></i> ${i18next.t("Remove", {ns: 'NewsDashboard'})}</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm float-right edit-dashboard-news-note" data-id="${data.items[i].Id}" style="margin-right: 12px"><i class="fas fa-edit"></i> ${i18next.t("Edit", {ns: 'NewsDashboard'})}</button>
+                            </div>
+                        </div>`;
+            }
+
+            res += '           </span>' +
+                '        </div>' +
+                '    </li>';
+        }
+
+        return res;
+    }
+
+    const BootboxContentNewDashboard = (sTitleText, sDocType, sText) => {
+
+        var frm_str = `<div class="container-fluid px-0">
+            <div class="form-group row mb-3">
+                <label for="NewsTitle" class="col-md-3 col-form-label col-form-label-sm">
+                    <span class="text-danger">*</span>
+                    <i class="fas fa-heading text-muted mr-1"></i>${i18next.t('News Title', {ns: 'NewsDashboard'})}
+                </label>
+                <div class="col-md-9">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-pen"></i></span>
+                        </div>
+                        <input type="text" id="NewsTitle" placeholder="${i18next.t("Set your News title", {ns: 'NewsDashboard'})}" maxlength="100" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="NewsType" class="col-md-3 col-form-label col-form-label-sm">
+                    <span class="text-danger">*</span>
+                    <i class="fas fa-tag text-muted mr-1"></i>${i18next.t('Choose your News Type', {ns: 'NewsDashboard'})}
+                </label>
+                <div class="col-md-9">
+                    <select name="NewsType" class="form-control form-control-sm" id="NewsType">
+                        <option value="infos">${i18next.t("Infos", {ns: 'NewsDashboard'})}</option>
+                        <option value="to_plan">${i18next.t("To plan", {ns: 'NewsDashboard'})}</option>
+                        <option value="to_note">${i18next.t("To note", {ns: 'NewsDashboard'})}</option>
+                        <option value="important">${i18next.t("Important", {ns: 'NewsDashboard'})}</option>
+                        <option value="very_important">${i18next.t("Very important", {ns: 'NewsDashboard'})}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group mb-0 eventNotes">
+                <label for="NewsDashboardText" class="col-form-label col-form-label-sm">
+                    <i class="fas fa-align-left text-muted mr-1"></i>${i18next.t('News', {ns: 'NewsDashboard'})}
+                </label>
+                <textarea name="NewsDashboardText" class="form-control form-control-sm" id="NewsDashboardText"></textarea>
+            </div>
+        </div>`;
+
+        var object = $('<div/>').html(frm_str).contents();
+
+        return object;
+    }
+
+    const NewsEditorWindow = (mode, newsID) => {
+
+        var modal = bootbox.dialog({
+            title: i18next.t("News Editor", {ns: 'NewsDashboard'}),
+            message: BootboxContentNewDashboard(),            
+            size: 'large',
+            buttons: [
+                {
+                    label: '<i class="fas fa-times"></i> ' + i18next.t("Close"),
+                    className: "btn btn-default",
+                    callback: function () {
+                    }
+                },
+                {
+                    label: '<i class="fas fa-check"></i> ' + i18next.t("Save"),
+                    className: "btn btn-primary",
+                    callback: function () {
+                        var NewsTitle = $('#NewsTitle').val();
+                        var userID = window.CRM.userID;
+
+                        if (NewsTitle != "") {
+                            window.CRM.NewsDashboardEditor.updateElement();
+                            var htmlBody = window.CRM.NewsDashboardEditor.getData();                            
+                            var Type = $("#NewsType").val();                            
+
+                            if (mode == 'create') {
+                                window.CRM.APIRequest({
+                                    method: 'POST',
+                                    path: 'newsdashboardplugin/create',
+                                    data: JSON.stringify({
+                                        "userID": userID,
+                                        "title": NewsTitle,
+                                        "type": Type,
+                                        "text": htmlBody,
+                                    })
+                                },function (data) {
+                                    if (data.status == "success") {
+                                        var ul = document.getElementById('news-dashboard-list');
+
+                                        var res =  addElementsToNewsDashboardList(data);
+
+                                        ul.innerHTML = res;
+
+                                        addNewsDashboarsListeners();
+                                    }
+                                });
+                            } else if (mode == 'edit') {
+                                window.CRM.APIRequest({
+                                    method: 'POST',
+                                    path: 'newsdashboardplugin/update',
+                                    data: JSON.stringify({
+                                        "userID": userID,
+                                        "newsID": newsID,
+                                        "type": Type,
+                                        "title": NewsTitle,
+                                        "text": htmlBody
+                                    })
+                                },function (data) {
+                                    if (data.status == "success") {
+                                        var ul = document.getElementById('news-dashboard-list');
+
+                                        var res =  addElementsToNewsDashboardList(data);
+
+                                        ul.innerHTML = res;
+
+                                        addNewsDashboarsListeners();
+                                    }
+                                });
+                            }
+                        } else {
+                            window.CRM.DisplayNormalAlert(i18next.t("Error"), i18next.t("You have to set a Title for your news", {ns: 'NewsDashboard'}));
+
+                            return false;
+                        }
+                    }
+                }
+            ],
+            show: false,
+            onEscape: function () {
+            }
+        });
+
+        // this will ensure that image and table can be focused
+        $(document).on('focusin', function (e) {
+            e.stopImmediatePropagation();
+        });
+
+        return modal;
+    }
+
+    const addNewsDashboarsListeners = () => {
+        window.CRM.ElementListener('.edit-dashboard-news-note', 'click', function (event) {
+            var newsID = event.currentTarget.dataset.id
+
+            window.CRM.APIRequest({
+                method: 'POST',
+                path: 'newsdashboardplugin/info',
+                data: JSON.stringify({
+                    "newsID": newsID
+                })
+            }, function (data) {
+                if (data.status == "success") {
+                    if (window.CRM.NewsDashboardEditor) {
+                        CKEDITOR.remove(window.CRM.NewsDashboardEditor);
+                        window.CRM.NewsDashboardEditor = null;
+                    }
+
+                    var modal = NewsEditorWindow('edit', newsID);
+
+                    var theme = 'n1theme,/skin/js/ckeditor/themes/n1theme/';
+                    if (window.CRM.bDarkMode) {
+                        theme = 'moono-dark,/skin/js/ckeditor/themes/moono-dark/';
+                    }
+
+                    // this will create the toolbar for the textarea
+                    if (window.CRM.NewsDashboardEditor == null) {                        
+                        window.CRM.NewsDashboardEditor = CKEDITOR.replace('NewsDashboardText', {
+                            customConfig: window.CRM.root + '/skin/js/ckeditor/configs/note_editor_config_minimal.js',
+                            language: window.CRM.lang,
+                            width: '100%',
+                            skin: theme
+                        });                   
+                    }
+
+                    modal.modal("show");
+
+                    $('#NewsTitle').val(data.note.Title);
+                    $("#NewsType").val(data.note.Type);
+                    CKEDITOR.instances['NewsDashboardText'].setData(data.note.Text);
+                } else {
+                    window.CRM.DisplayNormalAlert(i18next.t("Error"), i18next.t(data.message));
+                }
+            });
+        });
+
+        window.CRM.ElementListener('.remove-dashboard-news-note', 'click', function (event) {
+            var newsID = event.currentTarget.dataset.id
+
+            window.CRM.APIRequest({
+                method: 'DELETE',
+                path: 'newsdashboardplugin/remove',
+                data: JSON.stringify({
+                    "newsID": newsID
+                })
+            }, function (data) {
+                if (data.status == "success") {
+                    var ul = document.getElementById('news-dashboard-list');
+
+                    var res =  addElementsToNewsDashboardList(data);
+
+                    ul.innerHTML = res;
+
+                    addNewsDashboarsListeners();
+                }
+            });
+        });
+    }
+    
+    window.CRM.ElementListener('#add-dashboard-news-note', 'click', function(event) {
+        if (window.CRM.NewsDashboardEditor) {
+            CKEDITOR.remove(window.CRM.NewsDashboardEditor);
+            window.CRM.NewsDashboardEditor = null;
+        }
+
+        var modal = NewsEditorWindow('create', 0);
+
+        var theme = 'n1theme,/skin/js/ckeditor/themes/n1theme/';
+        if (window.CRM.bDarkMode) {
+            theme = 'moono-dark,/skin/js/ckeditor/themes/moono-dark/';
+        }
+
+        // this will create the toolbar for the textarea
+        if (window.CRM.NewsDashboardEditor == null) {            
+            window.CRM.NewsDashboardEditor = CKEDITOR.replace('NewsDashboardText', {
+                customConfig: window.CRM.root + '/skin/js/ckeditor/configs/note_editor_config_minimal.js',
+                language: window.CRM.lang,
+                skin: theme,
+                width: '100%'
+            });
+        }
+
+        modal.modal("show");
+    });    
+
+    addNewsDashboarsListeners();
+});

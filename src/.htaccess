@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Some hosts may require you to use the `RewriteBase` directive.
+# If you need to use the `RewriteBase` directive, it should be the
+# absolute physical path to the directory that contains this htaccess file.
+#
+# RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule .* - [env=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Fix zero file sizes 
+SetEnv proxy-sendcl 1
+
+# See https://httpd.apache.org/docs/current/en/mod/core.html#limitrequestbody
+#LimitRequestBody ${APACHE_MAX_SIZE}
+
+RewriteCond %{HTTP_USER_AGENT} DavClnt
+
+RewriteRule ^$ /server.php/ [L,R=302]
+RewriteRule ^/\.well-known/carddav /addressbookserver.php/ [R=301,L]
+RewriteRule ^/\.well-known/caldav /calendarserver.php/ [R=301,L]

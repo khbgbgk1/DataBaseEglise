@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EcclesiaCRM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09T17:50:19.186Z\n"
+"Language: ar_EG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Edit"
+msgstr "تحرير"
+
+msgid "News Title"
+msgstr "عنوان الخبر"
+
+msgid "Set your News title"
+msgstr "تعيين عنوان أخبارك"
+
+msgid "Choose your News Type"
+msgstr "اختر نوع الأخبار"
+
+msgid "Infos"
+msgstr "المعلومات"
+
+msgid "To plan"
+msgstr "للتخطيط"
+
+msgid "To note"
+msgstr "ملاحظة"
+
+msgid "Important"
+msgstr "مهم"
+
+msgid "Very important"
+msgstr "مهم جداً"
+
+msgid "News"
+msgstr ""
+
+msgid "News Editor"
+msgstr "محرر الأخبار"
+
+msgid "You have to set a Title for your news"
+msgstr "يجب عليك تعيين عنوان لأخبارك"
